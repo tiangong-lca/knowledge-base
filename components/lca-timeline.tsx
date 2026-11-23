@@ -234,7 +234,7 @@ export function LcaTimeline({ embedded = false }: LcaTimelineProps) {
                           {item.sources.map(src => (
                             <Link
                               key={src.id}
-                              href={`/sources/#${src.id}`}
+                              href={`/zh/sources/#${src.id}`}
                               className={styles.sourceChip}
                               title={src.title}
                             >
@@ -257,7 +257,11 @@ export function LcaTimeline({ embedded = false }: LcaTimelineProps) {
                       <div className={styles.chapterLinks}>
                         <span className={styles.chapterLabel}>对应正文：</span>
                         {item.chapters.map(chapter => (
-                          <Link key={chapter.href} href={chapter.href} className={styles.chapterChip}>
+                          <Link
+                            key={chapter.href}
+                            href={chapter.href.startsWith('/zh/') ? chapter.href : `/zh${chapter.href}`}
+                            className={styles.chapterChip}
+                          >
                             《{chapter.label}》
                           </Link>
                         ))}

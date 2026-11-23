@@ -3,8 +3,10 @@ import { getOrderedPages } from '@/lib/reader-book';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 
-export default function Home() {
-  const pages = new Map(getOrderedPages().map(page => [page.url, page]));
+const logicalKey = (url: string) => url.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
+
+export function ZhHomePage() {
+  const pages = new Map(getOrderedPages().map(page => [logicalKey(page.url), page]));
   const units = getPresentationUnits('web');
   const topics = units.filter(unit => unit.kind === 'topic');
   return (
@@ -21,16 +23,16 @@ export default function Home() {
             一件物品背后的世界，如何进入计算，又如何成为环境判断？从早期研究到方法分歧，沿着概念、模型与证据，理解生命周期评价。
           </p>
           <div className="home-actions flex-wrap">
-            <Link className="primary-link whitespace-nowrap" href="/docs/">
+            <Link className="primary-link whitespace-nowrap" href="/zh/docs/">
               开始阅读
             </Link>
-            <Link className="secondary-link whitespace-nowrap" href="/coverage/">
+            <Link className="secondary-link whitespace-nowrap" href="/zh/coverage/">
               全书导览
             </Link>
-            <Link className="secondary-link whitespace-nowrap" href="/timeline/">
+            <Link className="secondary-link whitespace-nowrap" href="/zh/timeline/">
               发展大事记
             </Link>
-            <Link className="secondary-link whitespace-nowrap" href="/print/">
+            <Link className="secondary-link whitespace-nowrap" href="/zh/print/">
               连续阅读与打印
             </Link>
           </div>
@@ -56,8 +58,8 @@ export default function Home() {
         <div className="section-heading">
           <h2>全书 32 章目录</h2>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/coverage/">按问题速查与阅读路径</Link>
-            <Link href="/print/">书籍目录与连续阅读</Link>
+            <Link href="/zh/coverage/">按问题速查与阅读路径</Link>
+            <Link href="/zh/print/">书籍目录与连续阅读</Link>
           </div>
         </div>
         {readerParts.map(part => (
@@ -69,7 +71,7 @@ export default function Home() {
               {units
                 .filter(unit => unit.part === part.number)
                 .map(unit => {
-                  const page = pages.get(unit.key);
+                  const page = pages.get(logicalKey(unit.key));
                   if (!page || page.data.title !== unit.title) {
                     throw new Error(`Missing website contents source: ${unit.key}`);
                   }
@@ -93,11 +95,11 @@ export default function Home() {
       <section className="reading-section">
         <div className="section-heading">
           <h2>概念与实践专题</h2>
-          <Link href="/coverage/#guide-appendices">查看附录 A–E</Link>
+          <Link href="/zh/coverage/#guide-appendices">查看附录 A–E</Link>
         </div>
         <div className="chapter-list">
           {topics.map(unit => {
-            const page = pages.get(unit.key);
+            const page = pages.get(logicalKey(unit.key));
             if (!page) throw new Error(`Missing website topic: ${unit.key}`);
             return (
               <Link className="chapter-row" href={page.url} key={unit.key}>
@@ -122,19 +124,19 @@ export default function Home() {
           </p>
         </div>
         <div className="overview-links">
-          <Link href="/coverage/">
+          <Link href="/zh/coverage/">
             全书导览<span>七部主线、三种路径与六条问题入口</span>
           </Link>
-          <Link href="/timeline/">
+          <Link href="/zh/timeline/">
             发展大事记<span>1969–2026 可视化时间线与一手来源核验</span>
           </Link>
-          <Link href="/research/">
+          <Link href="/zh/research/">
             参考文献与出处<span>书目核读记录与逐条引文位置切换</span>
           </Link>
-          <Link href="/concepts/">
+          <Link href="/zh/concepts/">
             概念索引<span>术语定义与英文原词</span>
           </Link>
-          <Link href="/changes/">
+          <Link href="/zh/changes/">
             版本与勘误<span>历次修订留痕与章节合并记录</span>
           </Link>
         </div>

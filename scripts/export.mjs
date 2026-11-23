@@ -7,6 +7,7 @@ import { publicCatalog } from './knowledge.mjs';
 import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readerInternalIds, validateReaderOutput } from './reader-surface.mjs';
 import { loadCasePublications, validateCasePublications, canonicalCaseInput, caseEvaluationReceipt } from './case-publication.mjs';
+import { getPresentationUnits } from './reader-numbering.mjs';
 import { validateRepository } from './validate.mjs';
 
 export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth') {
@@ -49,16 +50,49 @@ export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth
 }
 
 export function emitRouteRedirects(outDir = 'out', configPath = 'config/route-redirects.json') {
-  if (!existsSync(configPath)) return 0;
-  const cfg = JSON.parse(readFileSync(configPath, 'utf8'));
-  const origin = cfg.canonicalOrigin ?? 'https://prism.tiangong.earth';
+  const origin = existsSync(configPath)
+    ? (JSON.parse(readFileSync(configPath, 'utf8')).canonicalOrigin ?? 'https://prism.tiangong.earth')
+    : 'https://prism.tiangong.earth';
+  const entries = existsSync(configPath)
+    ? [...(JSON.parse(readFileSync(configPath, 'utf8')).redirects ?? [])]
+    : [];
+  const emitted = new Set();
   let count = 0;
-  for (const entry of cfg.redirects ?? []) {
+
+  // When Chinese routes live under /zh/, emit static HTML redirects for every
+  // legacy unprefixed Chinese route so bookmarked links and hash fragments work.
+  if (existsSync(join(outDir, 'zh', 'docs', 'index.html'))) {
+    const legacyRoots = [
+      { from: '/docs', to: '/zh/docs', title: '全书正文' },
+      { from: '/sources', to: '/zh/sources', title: '引文出处' },
+      { from: '/claims', to: '/zh/claims', title: '注释与论证' },
+      { from: '/concepts', to: '/zh/concepts', title: '概念索引' },
+      { from: '/coverage', to: '/zh/coverage', title: '全书导览' },
+      { from: '/changes', to: '/zh/changes', title: '版本与勘误' },
+      { from: '/print', to: '/zh/print', title: '连续阅读与打印' },
+      { from: '/research', to: '/zh/research', title: '参考文献' },
+      { from: '/timeline', to: '/zh/timeline', title: 'LCA 发展大事记' },
+    ];
+    for (const unit of getPresentationUnits('web')) {
+      if (unit.key !== '/docs') {
+        legacyRoots.push({ from: unit.key, to: `/zh${unit.key}`, title: unit.title });
+      }
+    }
+    for (const item of legacyRoots) {
+      if (!entries.some(e => e.from.replace(/\/$/, '') === item.from.replace(/\/$/, ''))) {
+        entries.push(item);
+      }
+    }
+  }
+
+  for (const entry of entries) {
     const destRel = entry.to.replace(/^\//, '').replace(/\/$/, '');
     if (!existsSync(join(outDir, destRel, 'index.html'))) {
       throw new Error(`Route redirect destination missing in build output: ${entry.from} -> ${entry.to}`);
     }
     const fromRel = entry.from.replace(/^\//, '').replace(/\/$/, '');
+    if (emitted.has(fromRel)) continue;
+    emitted.add(fromRel);
     const targetDir = join(outDir, fromRel);
     mkdirSync(targetDir, { recursive: true });
     writeFileSync(join(targetDir, 'index.html'), renderRedirectHtml(entry, origin));
@@ -77,8 +111,14 @@ export async function exportArtifacts(validateSource, validateOutput) {
   // Revalidate joins and public MDX independently of the preceding build step.
   const errors = [...new Set([...validateCasePublications(cases, catalog, { readingRegister: readingLedger }), ...await validateSource(process.cwd())])];
   if (errors.length) throw new Error(errors.join('\n'));
-  for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print', 'research']) {
+  const prefix = existsSync('out/zh/docs/index.html') ? 'zh/' : '';
+  for (const route of ['', `${prefix}docs`, `${prefix}sources`, `${prefix}claims`, `${prefix}concepts`, `${prefix}coverage`, `${prefix}changes`, `${prefix}print`, `${prefix}research`]) {
     if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
+  }
+  if (prefix) {
+    for (const route of ['zh', 'en', 'en/docs', 'en/coverage']) {
+      if (!existsSync(`out/${route}/index.html`)) throw new Error(`Missing bilingual static route: ${route}`);
+    }
   }
   const published = publicCatalog(catalog);
   const digest = createHash('sha256').update(JSON.stringify(published)).digest('hex');
@@ -98,7 +138,8 @@ export async function exportArtifacts(validateSource, validateOutput) {
     writeFileSync(`out/${path}`, bytes);
   }
 
-  writeFileSync('out/llms.txt', '# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](/docs/book/)\n- [参考文献](/research/)\n- [引文出处](/sources/)\n- [注释与论证](/claims/)\n- [概念索引](/concepts/)\n- [连续阅读与打印](/print/)\n- [版本与勘误](/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n');
+  const routeBase = prefix ? '/zh' : '';
+  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文出处](${routeBase}/sources/)\n- [注释与论证](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [连续阅读与打印](${routeBase}/print/)\n- [版本与勘误](${routeBase}/changes/)\n- [English Edition (In Preparation)](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
   emitRouteRedirects('out');

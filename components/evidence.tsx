@@ -18,16 +18,16 @@ const claimsById = new Map(catalog.claims.map(item => [item.id, item]));
 const readingsById = new Map<string, ReadingLedger['readings'][number]>();
 for (const item of readingLedger.readings) if (!readingsById.has(item.id)) readingsById.set(item.id, item);
 
-function ReviewNotice() { return <aside className="review-notice">此处论述暂不提供，请参阅<a href="/changes/">勘误说明</a>。</aside>; }
+function ReviewNotice() { return <aside className="review-notice">此处论述暂不提供，请参阅<a href="/zh/changes/">勘误说明</a>。</aside>; }
 export function SourceRef({ id }: { id: string }) {
   const source = sourcesById.get(id);
   if (!source) throw new Error(`Unknown source: ${id}`);
-  return <Link href={`/sources/#${id}`}>{source.title}</Link>;
+  return <Link href={`/zh/sources/#${id}`}>{source.title}</Link>;
 }
 export function ConceptRef({ id }: { id: string }) {
   const concept = conceptsById.get(id);
   if (!concept) throw new Error(`Unknown concept: ${id}`);
-  return <Link href={`/concepts/#${id}`}>{concept.label}</Link>;
+  return <Link href={`/zh/concepts/#${id}`}>{concept.label}</Link>;
 }
 
 /** Reader-facing citation identity; execution records and hashes remain in the editorial archive. */
@@ -68,7 +68,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = sourcesById.get(item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
-      return <li key={item.id}><Link href={`/sources/#${item.id}`}>{readerCitationSourceTitle(source, Boolean(currentPart5Reread), Boolean(currentUncertaintyComparison))}</Link>。{item.locator.replace(/。+$/u, '')}。
+      return <li key={item.id}><Link href={`/zh/sources/#${item.id}`}>{readerCitationSourceTitle(source, Boolean(currentPart5Reread), Boolean(currentUncertaintyComparison))}</Link>。{item.locator.replace(/。+$/u, '')}。
         {relation !== 'supports' && <span>（{evidenceRelations[relation]}）</span>}
         <EvidencePassage evidence={item} />
       </li>;
@@ -78,7 +78,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
       const linked = claimsById.get(premise);
       if (!linked) throw new Error(`Unknown premise: ${premise}`);
       const reference = premiseReferences?.get(premise);
-      return <li key={premise}><Link href={reference?.href ?? `/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
+      return <li key={premise}><Link href={reference?.href ?? `/zh/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
     })}</ul></details>}
     {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`} download={claim.caseBinding.inputFile}>下载计算输入（版本 {claim.caseBinding.version}）</a>{evaluation && <> <a href={`/downloads/cases/${evaluation}`} download={evaluation}>下载计算结果（版本 {claim.caseBinding.version}）</a></>}</p>}
   </div>;
@@ -90,7 +90,7 @@ export function Prose({ ids }: { ids: string }) {
     const claim = claimsById.get(id);
     if (!claim) { if (isKnownClaim(id)) return <ReviewNotice key={id} />; throw new Error(`Unknown claim: ${id}`); }
     if (claim.status !== 'reviewed') return <ReviewNotice key={id} />;
-    return <p key={id}>{claim.text}<sup className="prose-references"><Link href={`/claims/#${id}`} aria-label="查看这段论述的出处与条件">注</Link></sup></p>;
+    return <p key={id}>{claim.text}<sup className="prose-references"><Link href={`/zh/claims/#${id}`} aria-label="查看这段论述的出处与条件">注</Link></sup></p>;
   })}</div>;
 }
 export function Claim({ id, anchor = false }: { id: string; anchor?: boolean }) {

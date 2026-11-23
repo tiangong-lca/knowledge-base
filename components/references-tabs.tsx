@@ -7,13 +7,13 @@ interface ReferencesTabsProps {
   evidenceCount: number;
 }
 
-export function ReferencesTabs({ active, sourceCount, evidenceCount }: ReferencesTabsProps) {
+export function ReferencesTabs({ active, sourceCount, evidenceCount, prefix = '/zh' }: ReferencesTabsProps & { prefix?: string }) {
   return (
     <nav className={styles.tabNav} aria-label="参考文献与出处视图切换">
       <ul className={styles.tabList}>
         <li className={styles.tabItem}>
           <Link
-            href="/research/"
+            href={`${prefix}/research/`}
             aria-current={active === 'research' ? 'page' : undefined}
             className={`${styles.tabLink} ${active === 'research' ? styles.tabActive : ''}`}
           >
@@ -23,7 +23,7 @@ export function ReferencesTabs({ active, sourceCount, evidenceCount }: Reference
         </li>
         <li className={styles.tabItem}>
           <Link
-            href="/sources/"
+            href={`${prefix}/sources/`}
             aria-current={active === 'sources' ? 'page' : undefined}
             className={`${styles.tabLink} ${active === 'sources' ? styles.tabActive : ''}`}
           >

@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -10,7 +11,10 @@ const apparatus='.chapter-notes,[data-legacy-for],[data-legacy-notice],[data-leg
 const verifiedPagination=new WeakMap();
 /** Qualification cannot be forged with a DOM attribute or retained after mutation. */
 export const isVerifiedReaderPagination=node=>verifiedPagination.has(node)&&verifiedPagination.get(node)===hash(node.outerHTML);
-const routeHref=(href,route)=>href===route||href===route+'/';
+const routeHref=(href,route,prefix='')=>{
+  const expected = prefix && route.startsWith('/') ? `${prefix}${route}` : route;
+  return href===expected||href===expected+'/';
+};
 function fragment(href){if(typeof href!=='string'||!href.startsWith('#'))return null;try{return decodeURIComponent(href.slice(1));}catch{return null;}}
 function metadata(raw){const front=/^---\r?\n([\s\S]*?)\r?\n---/.exec(raw??'')?.[1]??'';const field=name=>new RegExp(`^${name}:\\s*(.+?)\\s*$`,'m').exec(front)?.[1]?.replace(/^(['"])(.*)\1$/,'$2');return {title:field('title'),description:field('description')??''};}
 
@@ -67,7 +71,7 @@ function sidebarFolderErrors(sidebar,units){
   return errors;
 }
 
-function validation(document,path,sources){
+function validation(document,path,sources,prefix=''){
   const errors=[],pairs=new Map(),normalizedHeadings=[],pagination=[],viewLabels=[],semanticNavigation=[],allNumbers=new Set(),allTitles=new Set(),qualifiedTreeNames=new Set();
   const fail=message=>errors.push(`${path}: ${message}`);
   function plain(node,title,label){if(!node||node.text!==title||node.querySelectorAll('[data-reader-number],[data-reader-heading-title]').length)fail(`${label} must retain its exact unnumbered title`);}
@@ -114,8 +118,9 @@ function validation(document,path,sources){
     }
     for(const contract of readerContinuationContracts.filter(contract=>(print?contract.bookSource??contract.route:contract.route)===record.source)) {
       const wanted=getContinuationLink(view,print?contract.bookSourceKey??contract.route:contract.route,contract.sourceHref,contract.sourceLabel),context=print?contract.bookContext:contract.webContext;
-      const candidates=node.querySelectorAll('p a[href]').filter(link=>!link.closest(`${apparatus},.docs-pagination`)&&(link.getAttribute('href')===wanted.href||link.getAttribute('href')===contract.sourceHref||link.text===contract.sourceLabel||link.text===contract.bookLabel));
-      if(candidates.length!==1||candidates[0].getAttribute('href')!==wanted.href||candidates[0].text!==wanted.label||candidates[0].closest('p')?.text!==context||candidates[0].closest('p')?.querySelectorAll('a').length!==1)fail(`Qualified ordinary continuation differs: ${contract.key}`);
+      const expectedHref=prefix&&wanted.href.startsWith('/')?`${prefix}${wanted.href}`:wanted.href;
+      const candidates=node.querySelectorAll('p a[href]').filter(link=>!link.closest(`${apparatus},.docs-pagination`)&&(link.getAttribute('href')===expectedHref||link.getAttribute('href')===wanted.href||link.getAttribute('href')===contract.sourceHref||link.text===contract.sourceLabel||link.text===contract.bookLabel));
+      if(candidates.length!==1||candidates[0].getAttribute('href')!==expectedHref||candidates[0].text!==wanted.label||candidates[0].closest('p')?.text!==context||candidates[0].closest('p')?.querySelectorAll('a').length!==1)fail(`Qualified ordinary continuation differs: ${contract.key}`);
       if(print)targetExists(printReadingEntryAnchor(contract.bookKey),`Continuation ${contract.key}`);
     }
     for(const notes of node.querySelectorAll('.chapter-notes')){const headings=notes.querySelectorAll('h1,h2,h3,h4,h5,h6');if(headings.length!==1||headings[0].tagName!==(print?'H4':'H2')||headings[0].text!=='注释'||headings[0].querySelector('[data-reader-number],[data-reader-heading-title]')||headings[0].getAttribute('data-reader-heading-key'))fail(`Annotation apparatus may not acquire content numbering: ${record.key}`);else if(print)normalizedHeadings.push({node:headings[0],tag:'h3'});}
@@ -153,7 +158,7 @@ function validation(document,path,sources){
     const expected=getUnitHeadingPlan('web',path).filter(slot=>slot.type==='mdx'),tocs=document.querySelectorAll('#nd-toc,[data-toc-popover-content]');if(expected.length&&document.querySelectorAll('#nd-toc').length!==1)fail('Actual website contents missing');
     for(const toc of tocs){const links=toc.querySelectorAll('a[href]').filter(link=>link.getAttribute('href')?.startsWith('#'));if(toc.hasAttribute('data-toc-popover-content')&&!links.length)continue;if(links.length!==expected.length)fail('Actual website local contents roster differs');expected.forEach((slot,index)=>{const link=links[index];if(fragment(link?.getAttribute('href'))!==slot.id)fail(`Wrong website native contents target/order ${slot.key}`);numbered(link,{number:slot.number,title:slot.title},`website contents ${slot.key}`);targetExists(slot.id,'Website contents');});}
     const labels=articles[0]?.querySelectorAll('.reader-view-label')??[],expectedLabel=`网页细读目录${record.partTitle?` · ${record.partLabel} ${record.partTitle}`:''} · 书籍目录与连续阅读`;
-    if(labels.length!==1||labels[0].text!==expectedLabel||!same(labels[0].querySelectorAll('a').map(link=>({href:link.getAttribute('href'),text:link.text})),[{href:'/print/',text:'书籍目录与连续阅读'}]))fail('Actual view/edition navigation label differs');else viewLabels.push(labels[0]);
+    if(labels.length!==1||labels[0].text!==expectedLabel||!same(labels[0].querySelectorAll('a').map(link=>({href:link.getAttribute('href'),text:link.text})),[{href:`${prefix}/print/`,text:'书籍目录与连续阅读'}]))fail('Actual view/edition navigation label differs');else viewLabels.push(labels[0]);
     // Installed Fumadocs16.17.10: default Breadcrumb excludes the page and
     // renders its sole non-index folder as DIV > SPAN > folder name. It has
     // no dedicated data attribute; bind the native classes and header position.
@@ -187,17 +192,17 @@ function validation(document,path,sources){
     }else if(popovers.length||triggers.length||contents.length)fail('Unqualified mobile contents on a page without source headings');
     const sidebars=document.querySelectorAll('#nd-sidebar');
     if(sidebars.length!==1)fail('Actual explicit website sidebar is missing or repeated');
-    else {const names=sidebars[0].querySelectorAll('[data-reader-unit-name]'),web=getPresentationUnits('web');if(!same(names.map(node=>node.getAttribute('data-reader-unit-name')),web.map(unit=>unit.key)))fail('Actual website sidebar complete unit order differs');names.forEach((node,index)=>{if(!web[index]||!routeHref(node.closest('a')?.getAttribute('href'),web[index].key))fail('Actual sidebar unit target differs');});if(!same(sidebars[0].querySelectorAll('[data-reader-part-name]').map(node=>node.getAttribute('data-reader-part-name')),readerParts.map(part=>String(part.number))))fail('Actual website sidebar seven-part order differs');for(const error of sidebarFolderErrors(sidebars[0],web))fail(error);}
+    else {const names=sidebars[0].querySelectorAll('[data-reader-unit-name]'),web=getPresentationUnits('web');if(!same(names.map(node=>node.getAttribute('data-reader-unit-name')),web.map(unit=>unit.key)))fail('Actual website sidebar complete unit order differs');names.forEach((node,index)=>{if(!web[index]||!routeHref(node.closest('a')?.getAttribute('href'),web[index].key,prefix))fail('Actual sidebar unit target differs');});if(!same(sidebars[0].querySelectorAll('[data-reader-part-name]').map(node=>node.getAttribute('data-reader-part-name')),readerParts.map(part=>String(part.number))))fail('Actual website sidebar seven-part order differs');for(const error of sidebarFolderErrors(sidebars[0],web))fail(error);}
     const footers=articles[0]?.querySelectorAll('.docs-pagination')??[],units=getPresentationUnits('web'),at=units.findIndex(unit=>unit.key===record.key),neighbors=[units[at-1],units[at+1]].filter(Boolean);
     if(record.key!=='/docs'){
-      if(footers.length!==1)fail('Actual numbered website pagination missing or repeated');else{const footer=footers[0],links=footer.querySelectorAll('a');if(links.length!==neighbors.length)fail('Actual website pagination roster differs');neighbors.forEach((neighbor,index)=>{const link=links[index],desc=metadata(sources?.get(neighbor.source)).description,name=link?.querySelector(`[data-reader-unit-name="${neighbor.key}"]`);if(!link||!routeHref(link.getAttribute('href'),neighbor.key)||compact(link.text)!==compact(`${neighbor.label??''} ${neighbor.title}${desc}`))fail(`Actual website pagination content differs: ${neighbor.key}`);if(!name)fail(`Missing qualified pagination title: ${neighbor.key}`);});pagination.push(footer);}
+      if(footers.length!==1)fail('Actual numbered website pagination missing or repeated');else{const footer=footers[0],links=footer.querySelectorAll('a');if(links.length!==neighbors.length)fail('Actual website pagination roster differs');neighbors.forEach((neighbor,index)=>{const link=links[index],desc=metadata(sources?.get(neighbor.source)).description,name=link?.querySelector(`[data-reader-unit-name="${neighbor.key}"]`);if(!link||!routeHref(link.getAttribute('href'),neighbor.key,prefix)||compact(link.text)!==compact(`${neighbor.label??''} ${neighbor.title}${desc}`))fail(`Actual website pagination content differs: ${neighbor.key}`);if(!name)fail(`Missing qualified pagination title: ${neighbor.key}`);});pagination.push(footer);}
     }else if(footers.length)fail('Front preface must not add an unqualified pagination row');
   }else if(path==='/'){
     const contents=document.querySelectorAll('[data-reader-contents="web"]');if(contents.length!==1)fail('Actual website contents missing or repeated');const container=contents[0];
-    if(container){const expected=getPresentationUnits('web').filter(unit=>unit.kind==='chapter'),links=container.querySelectorAll('[data-reader-web-unit]');if(!same(links.map(link=>link.getAttribute('data-reader-web-unit')),expected.map(unit=>unit.key)))fail('Website37 fine-unit contents order differs');expected.forEach((record,index)=>{const link=links[index],heading=link?.querySelector('h4');if(!link||!routeHref(link.getAttribute('href'),record.key))fail(`Wrong fine-unit contents href ${record.key}`);titleContainer(heading,record,`fine-unit contents ${record.key}`);});
+    if(container){const expected=getPresentationUnits('web').filter(unit=>unit.kind==='chapter'),links=container.querySelectorAll('[data-reader-web-unit]');if(!same(links.map(link=>link.getAttribute('data-reader-web-unit')),expected.map(unit=>unit.key)))fail('Website37 fine-unit contents order differs');expected.forEach((record,index)=>{const link=links[index],heading=link?.querySelector('h4');if(!link||!routeHref(link.getAttribute('href'),record.key,prefix))fail(`Wrong fine-unit contents href ${record.key}`);titleContainer(heading,record,`fine-unit contents ${record.key}`);});
       const parts=container.querySelectorAll('[data-reader-web-part]');if(!same(parts.map(node=>node.getAttribute('data-reader-web-part')),readerParts.map(part=>String(part.number))))fail('Website seven-part directory order differs');readerParts.forEach((part,index)=>{numbered(parts[index],{number:part.label,title:part.title},`website part ${part.number}`);const group=parts[index]?.parentNode,actual=group?.querySelectorAll('[data-reader-web-unit]').map(node=>node.getAttribute('data-reader-web-unit'));if(!same(actual,expected.filter(unit=>unit.part===part.number).map(unit=>unit.key)))fail(`Website directory part membership differs: ${part.number}`);});}
     const actualTopics=[];
-    for(const heading of document.querySelectorAll('h3')){const link=heading.closest('a[href]'),record=link&&getPresentationUnits('web').find(unit=>unit.kind==='topic'&&routeHref(link.getAttribute('href'),unit.key));if(record){actualTopics.push(record.key);titleContainer(heading,record,`website topic ${record.key}`);}}
+    for(const heading of document.querySelectorAll('h3')){const link=heading.closest('a[href]'),record=link&&getPresentationUnits('web').find(unit=>unit.kind==='topic'&&routeHref(link.getAttribute('href'),unit.key,prefix));if(record){actualTopics.push(record.key);titleContainer(heading,record,`website topic ${record.key}`);}}
     if(!same(actualTopics,getPresentationUnits('web').filter(unit=>unit.kind==='topic').map(unit=>unit.key)))fail('Website topic directory roster differs');
   }
   for(const node of document.querySelectorAll('[data-reader-unit-name]')){if(qualifiedTreeNames.has(node))continue;const record=getUnitNumbering('web',node.getAttribute('data-reader-unit-name'));if(!record||!node.closest('#nd-sidebar,.docs-pagination'))fail('Unknown or misplaced cloned website unit name');else titleContainer(node,record,`cloned unit ${record.key}`);}
@@ -207,10 +212,10 @@ function validation(document,path,sources){
   return {errors,pairs,normalizedHeadings,pagination,viewLabels,semanticNavigation};
 }
 
-export function validateReaderNumberingDocument(document,path,{sources=new Map()}={}){assertReaderNumbering();return validation(document,path,sources).errors;}
+export function validateReaderNumberingDocument(document,path,{sources=new Map(),prefix=''}={}){assertReaderNumbering();return validation(document,path,sources,prefix).errors;}
 /** Only a fully verified clone is normalized. Original rendered bytes are never rewritten. */
-export function prepareNumberedReaderDocument(document,path,{sources=new Map()}={}){
-  assertReaderNumbering();const clone=htmlParser.parse(document.toString()),result=validation(clone,path,sources);if(result.errors.length)return {errors:result.errors,document:null};
+export function prepareNumberedReaderDocument(document,path,{sources=new Map(),prefix=''}={}){
+  assertReaderNumbering();const clone=htmlParser.parse(document.toString()),result=validation(clone,path,sources,prefix);if(result.errors.length)return {errors:result.errors,document:null};
   for(const {number,title,gap}of result.pairs.values()){number.remove();gap.remove();title.replaceWith(title.innerHTML);}
   for(const {node,tag}of result.normalizedHeadings){if(node.tagName.toLowerCase()!==tag){const attrs=Object.entries(node.attributes).map(([key,value])=>`${key}="${String(value).replaceAll('&','&amp;').replaceAll('"','&quot;')}"`).join(' '),replacement=htmlParser.parse(`<${tag} ${attrs}>${node.innerHTML}</${tag}>`).firstChild;node.replaceWith(replacement);}}
   for(const node of result.viewLabels)node.remove();
@@ -222,11 +227,13 @@ export function prepareNumberedReaderDocument(document,path,{sources=new Map()}=
 }
 
 /** Production entrypoint always reads the artifact next to this actual export. */
-export async function validateReaderNumberingOutput(root,{sources,edition}={}){
+export async function validateReaderNumberingOutput(root,{sources,edition,prefix}={}){
+  const activePrefix = prefix !== undefined ? prefix : (existsSync(join(root, 'zh', 'print', 'index.html')) ? '/zh' : '');
+  const prefixDir = activePrefix.replace(/^\//, '');
   const value=await readReaderNumberingArtifact(resolve(root,'..','config')),errors=validateReaderNumberingSources(value,sources??new Map(),edition),documents=new Map();
   for(const path of ['/',...getPresentationUnits('web').map(unit=>unit.key),'/print']){
-    const file=join(root,path==='/'?'index.html':`${path.slice(1)}/index.html`);let raw;try{raw=await readFile(file,'utf8');}catch(error){if(error.code!=='ENOENT')throw error;errors.push(`${path}: missing actual numbered publication output`);continue;}
-    const result=prepareNumberedReaderDocument(htmlParser.parse(raw),path,{sources});errors.push(...result.errors);if(result.document)documents.set(path,result.document);
+    const file=path==='/'?join(root,'index.html'):join(root,prefixDir,`${path.slice(1)}/index.html`);let raw;try{raw=await readFile(file,'utf8');}catch(error){if(error.code!=='ENOENT')throw error;errors.push(`${path}: missing actual numbered publication output`);continue;}
+    const result=prepareNumberedReaderDocument(htmlParser.parse(raw),path,{sources,prefix:activePrefix});errors.push(...result.errors);if(result.document)documents.set(path,result.document);
   }
   return {errors:[...new Set(errors)],documents};
 }

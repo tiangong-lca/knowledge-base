@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "p1-locale-prefix-migration",
+  "date": "2026-11-23",
+  "task": "p1b",
+  "title": "全站双语前缀迁移（/zh/** 与 /en/**）、语言切换与旧链接 301/静态重定向",
+  "rationale": "将中文正文章节与交叉检索工具统一迁移至 /zh/**（保留 / 作为中文默认入口与 canonical 主页），启用 /en/** 英文版路由壳与导览状态页，内置 Fumadocs 语言切换器，并为全部旧版无前缀中文路径及历史合并章节提供 301 与保留锚点的静态跳转页。",
+  "routes": [
+    "/",
+    "/coverage",
+    "/changes"
+  ],
+  "routeChanges": [
+    {
+      "op": "relocate-prefix",
+      "fromPrefix": "",
+      "toPrefix": "/zh",
+      "rationale": "Migrate canonical Chinese edition pages from unprefixed paths to /zh/** to enable parallel /en/** bilingual publication while keeping / as x-default Chinese home."
+    }
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "e734c30b98d69a09ce672c559a0c7ba703b981f832c63236448f466e1bc1260a"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "8f6771b1d6649479e07b29c303193392c148ec4d1ffa867598ec4d4cb84bb2ac"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "2550598668078fa31272e5cf242a43d2f3cdb431d8eee2c4c102cfb6ebd76e48"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "64ae30b96c30d6fbc7be1c3f958234d2216843ced251cc1a8828f277f8e88b3e"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "1998b69523f04d93206d20d38c286610a5d62ff4be76d4a1a992f17bc09a9bc3"
+    },
+    {
+      "path": "asset:reader-css",
+      "sha256": "9d6f7a335cba9aa57fe174b5f032b43fd93c655d51ce3c8b850218fe2da65e76"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "ui-revision",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/p1-locale-prefix-migration/review-record.json",
+      "sha256": "bd8d1fc0c36dec0a47cad928e105ea988bac6fd6006b737ea439844001166e99"
+    }
+  ]
+}

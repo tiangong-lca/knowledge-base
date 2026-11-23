@@ -68,15 +68,18 @@ assertPrintFrontMatter(placements.frontMatter);
 assertFrameworkHeadingHistory(headingHistory);
 export type ReaderPage = ReturnType<typeof source.getPages>[number];
 export type PrintPage = ReaderPage & { kind: string; sections?: { id: string; title: string }[]; part?: string };
+export function logicalPageUrl(url: string): string {
+  return url.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/$/, '') || '/';
+}
 export function getOrderedPages(): ReaderPage[] {
-  const available = new Map(source.getPages().map(page=>[page.url.replace(/\/$/,''),page]));
+  const available = new Map(source.getPages().map(page=>[logicalPageUrl(page.url),page]));
   const ordered = getPresentationUnits('web').map(unit=>{ const page=available.get(unit.key); if (!page) throw new Error(`Missing numbered website page: ${unit.key}`); return page; });
   if (ordered.length !== available.size) throw new Error('Numbered website order omits a canonical source page');
   return ordered;
 }
 export function getBookPages(): ReaderPage[] { return bookChapters(getOrderedPages()); }
 export function getPrintPages(): PrintPage[] {
-  const pages = new Map(source.getPages().map(page => [page.url, page]));
+  const pages = new Map(source.getPages().map(page => [logicalPageUrl(page.url), page]));
   currentEditionKeys(edition, [...pages.keys()], baseline, placements);
   return edition.units.map(unit => ({ ...pages.get(unit.source)!, url: unit.key, kind: unit.kind,
     sections: 'sections' in unit ? unit.sections : undefined, part: 'part' in unit ? unit.part : undefined }));
@@ -96,15 +99,16 @@ const integratedEntries = remapPmSelectionCitations([...pedigreeEntries, ...pmSe
 const legacyEntries: LegacyEntry[] = applyRouteChangesToCitations(applyClaimRetirementsToCitations(relabelHistoricalTargets(flowBoundaryCitationEntries(copyeditHistoryEntries(
   qualifyReadableBookCitations(integratedEntries, hostedHistory, currentBookPlan.migrations), copyeditHistoryPlan(currentCopyedit)), currentFlowBoundary), [...currentServiceConstraints?.routes ?? [], ...currentSubstitutionRules?.routes ?? [], ...currentLoadShift?.routes ?? [], ...currentCircularFootprint?.routes ?? [], ...currentLandRecovery?.routes ?? [], ...currentAcidEquivalents?.routes ?? [], ...currentMineralResources?.routes ?? [], ...currentFossilResources?.routes ?? [], ...currentPhotochemicalOzone?.routes ?? [], ...currentOzoneRadiation?.routes ?? [], ...currentToxicityComparison?.routes ?? [], ...currentWaterScarcity?.routes ?? [], ...currentBiogenicCarbon?.routes ?? [], ...currentEutrophicationPathways?.routes ?? [], ...currentParticulateComparison?.routes ?? [], ...currentPart4Reread?.routes ?? [], ...currentWeightingValuation?.routes ?? [], ...currentLocalizationComparison?.routes ?? [], ...currentSocialComparison?.routes ?? [], ...currentCostSustainability?.routes ?? [], ...currentPart5Reread?.routes ?? [], ...currentDataApplicabilityComparison?.routes ?? [], ...currentUncertaintyComparison?.routes ?? [], ...currentProductFootprintComparison?.routes ?? [], ...currentDataQualityComparison?.routes ?? [], ...currentPart6Reread?.routes ?? [], ...currentWallServiceComparison?.routes ?? [], ...currentInterpretationBags?.routes ?? [], ...currentFutureScenarios?.routes ?? [], ...currentRevisableJudgment?.routes ?? [], ...currentPart7Reread?.routes ?? [], ...currentMarketResponseComparison?.routes ?? [], ...currentPart3Reread?.routes ?? [], ...currentFunctionalReferenceComparison?.routes ?? [], ...currentHybridInventoryComparison?.routes ?? [], ...currentPart2Reread?.routes ?? [], ...currentFrameworkComparison?.routes ?? [], ...currentPart1Reread?.routes ?? [], ...currentWholeBookReread?.routes ?? []]), currentRetirements), currentRevisions);
 export function getLegacyCitations(route: string, print: boolean) {
-  const path = print ? '/print' : route, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
+  const logical = logicalPageUrl(route);
+  const path = print ? '/print' : logical, aliases = new Map<string, LegacyEntry[]>(), notices: LegacyEntry[] = [], scopes = new Map<string, LegacyEntry>();
   for (const entry of legacyEntries) {
     if (entry.path !== path) continue;
-    if (entry.mode === 'retained' && entry.scope && entry.route === route) scopes.set(entry.id, entry);
+    if (entry.mode === 'retained' && entry.scope && entry.route === logical) scopes.set(entry.id, entry);
     const target = entry.targets[0];
-    if (entry.mode === 'alias' && target.route === route) {
+    if (entry.mode === 'alias' && target.route === logical) {
       const list = aliases.get(target.id) ?? []; list.push(entry); aliases.set(target.id, list);
     }
-    if (entry.mode === 'notice' && entry.route === route) notices.push(entry);
+    if (entry.mode === 'notice' && entry.route === logical) notices.push(entry);
   }
   return { aliases, notices, scopes };
 }
@@ -112,7 +116,7 @@ type ChapterReferenceIndex = ReturnType<typeof createChapterReferenceIndex>;
 const productionIndexCache = new Map<boolean, Promise<ChapterReferenceIndex>>();
 async function buildChapterReferenceIndex(print = false): Promise<ChapterReferenceIndex> {
   const pages = print ? getPrintPages() : getOrderedPages();
-  const rawPages = await Promise.all(pages.map(async(page,index)=>({url:page.url,title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
+  const rawPages = await Promise.all(pages.map(async(page,index)=>({url:logicalPageUrl(page.url),title:page.data.title,raw:await page.data.getText('raw'),printOrder:index})));
   const index = () => createChapterReferenceIndex(rawPages.map(page => ({
     ...page, raw: projectExchangeSemanticsRaw(page.url, page.raw, print),
   })), { print });
@@ -126,7 +130,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
     const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
     if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   }
-  const rawSources = new Map(await Promise.all(source.getPages().map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const rawSources = new Map(await Promise.all(source.getPages().map(async page=>[logicalPageUrl(page.url),await page.data.getText('raw')] as const)));
   if (!isRevised('/docs/book/particulate-emissions-and-health')) {
     const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
     if (pmErrors.length) throw new Error(pmErrors.join('\n'));
@@ -201,7 +205,7 @@ export async function getCitationLabel(target: Destination) {
     if (!note) throw new Error(`Missing citation note at ${target.route}: ${target.claimId}`);
     return `《${note.title}》注 ${note.number}`;
   }
-  const page = print ? getPrintPages().find(page=>page.url===target.route) : source.getPages().find(page=>page.url===target.route);
+  const page = print ? getPrintPages().find(page=>logicalPageUrl(page.url)===target.route) : source.getPages().find(page=>logicalPageUrl(page.url)===target.route);
   if (!page) throw new Error(`Missing citation destination ${target.route}`);
   if (currentBookPlan.migrations.length || currentFlowBoundary && flowBoundaryRoutes.includes(target.route) || currentServiceConstraints?.routes.includes(target.route) || currentSubstitutionRules?.routes.includes(target.route) || currentLoadShift?.routes.includes(target.route) || currentCircularFootprint?.routes.includes(target.route) || currentLandRecovery?.routes.includes(target.route) || currentAcidEquivalents?.routes.includes(target.route) || currentMineralResources?.routes.includes(target.route) || currentFossilResources?.routes.includes(target.route) || currentPhotochemicalOzone?.routes.includes(target.route) || currentOzoneRadiation?.routes.includes(target.route) || currentToxicityComparison?.routes.includes(target.route) || currentWaterScarcity?.routes.includes(target.route) || currentBiogenicCarbon?.routes.includes(target.route) || currentEutrophicationPathways?.routes.includes(target.route) || currentParticulateComparison?.routes.includes(target.route) || currentPart4Reread?.routes.includes(target.route) || currentWeightingValuation?.routes.includes(target.route) || currentLocalizationComparison?.routes.includes(target.route) || currentSocialComparison?.routes.includes(target.route) || currentCostSustainability?.routes.includes(target.route) || currentPart5Reread?.routes.includes(target.route) || currentDataApplicabilityComparison?.routes.includes(target.route) || currentUncertaintyComparison?.routes.includes(target.route) || currentProductFootprintComparison?.routes.includes(target.route) || currentDataQualityComparison?.routes.includes(target.route) || currentPart6Reread?.routes.includes(target.route) || currentWallServiceComparison?.routes.includes(target.route) || currentInterpretationBags?.routes.includes(target.route) || currentFutureScenarios?.routes.includes(target.route) || currentRevisableJudgment?.routes.includes(target.route) || currentPart7Reread?.routes.includes(target.route) || currentMarketResponseComparison?.routes.includes(target.route)) {
     if (target.kind === 'heading') {

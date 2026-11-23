@@ -3,7 +3,7 @@ import type { TOCItemType } from 'fumadocs-core/toc';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { assertNumberingToc, getHeadingNumbering, getPresentationUnits, getUnitNumbering, readerParts } from '@/scripts/reader-numbering.mjs';
 
-const routeKey = (value: string) => value.replace(/\/+$/, '') || '/';
+const routeKey = (value: string) => value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
 
 /** Clone navigation for this view; never overwrite source titles or URLs. */
 export function getWebsiteTree(tree: Root): Root {

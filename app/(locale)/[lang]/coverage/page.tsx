@@ -1,17 +1,46 @@
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { PublicationShell } from '@/components/publication-shell';
-import { getOrderedPages } from '@/lib/reader-book';
+import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { getOrderedPages, logicalPageUrl } from '@/lib/reader-book';
 import { readerGuideConfig } from '@/lib/reader-guide';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
+import alignment from '@/knowledge/editions/alignment.json';
 import styles from '@/components/reader-guide.module.css';
 
-export const metadata = {
-  title: '全书导览',
-  description: '七部 32 章逻辑主线、三种阅读路径、六条按问题入口、五篇专题与五份附录的完整阅读地图。',
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map(lang => ({ lang }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (lang === 'en') {
+    return {
+      title: 'Book Guide & Release Status',
+      description: 'Seven-part, 32-chapter roadmap and batch publication status for the meaning-equivalent English edition.',
+    };
+  }
+  return {
+    title: '全书导览',
+    description: '七部 32 章逻辑主线、三种阅读路径、六条按问题入口、五篇专题与五份附录的完整阅读地图。',
+  };
+}
+
+const EN_PART_TITLES: Record<number, { label: string; title: string }> = {
+  1: { label: 'Part I', title: 'Origins, Questions, and Methodological Framework' },
+  2: { label: 'Part II', title: 'Functional Unit, Process Networks, and Life Cycle Inventory' },
+  3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
+  4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
+  5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
+  6: { label: 'Part VI', title: 'Data Quality, Uncertainty, Footprints, and Databases' },
+  7: { label: 'Part VII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
 };
 
-export default function Page() {
-  const pages = new Map(getOrderedPages().map(page => [page.url.replace(/\/$/, ''), page]));
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isSupportedLocale(lang)) notFound();
+
+  const pages = new Map(getOrderedPages().map(page => [logicalPageUrl(page.url), page]));
   const webUnits = getPresentationUnits('web');
   const unitByKey = new Map(webUnits.map(unit => [unit.key, unit]));
 
@@ -19,6 +48,85 @@ export default function Page() {
   const chapters = webUnits.filter(u => u.kind === 'chapter');
   const topics = webUnits.filter(u => u.kind === 'topic');
   const appendices = webUnits.filter(u => u.kind === 'appendix');
+
+  if (lang === 'en') {
+    const publishedEnUnits = new Set(
+      Object.entries(alignment.units as Record<string, { status?: string }>)
+        .filter(([, meta]) => meta?.status === 'published')
+        .map(([unitId]) => unitId)
+    );
+    return (
+      <PublicationShell
+        title="Book Guide & Release Status"
+        description="The English edition is authored part by part as a meaning-equivalent monograph rather than a literal translation. Unpublished chapters remain linked to their Chinese counterparts."
+      >
+        <div className={styles.root} data-en-guide="">
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-status">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-status">Progressive Release Schedule</h2>
+              <p className={styles.sectionMeta}>7 Parts · 32 Chapters · 5 Topics · 5 Appendices</p>
+            </div>
+            <p>
+              Published English units: <strong>{publishedEnUnits.size}</strong> / {webUnits.length}. Units marked{' '}
+              <em>In preparation</em> are not yet published in English and link directly to the Chinese edition.
+            </p>
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-chapters">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-chapters">Parts and Chapters</h2>
+              <p className={styles.sectionMeta}>Full 32-chapter structure shared with the Chinese edition</p>
+            </div>
+            {readerParts.map(part => {
+              const partChapters = chapters.filter(u => u.part === part.number);
+              const enMeta = EN_PART_TITLES[part.number] ?? { label: `Part ${part.number}`, title: part.title };
+              const firstOrd = partChapters[0]?.ordinal ?? 0;
+              const lastOrd = partChapters.at(-1)?.ordinal ?? 0;
+              return (
+                <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
+                  <div className={styles.partHeading}>
+                    <h3>{enMeta.label}: {enMeta.title}</h3>
+                    <span className={styles.rangeTag}>
+                      {firstOrd === lastOrd ? `Chapter ${firstOrd}` : `Chapters ${firstOrd}–${lastOrd}`}
+                    </span>
+                  </div>
+                  <ol className={styles.chapterList}>
+                    {partChapters.map(unit => {
+                      const isPublished = publishedEnUnits.has(unit.key);
+                      return (
+                        <li key={unit.key} className={styles.chapterItem}>
+                          <div className={styles.chapterRowTop}>
+                            <div className={styles.chapterTitleWrap}>
+                              <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
+                              {isPublished ? (
+                                <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
+                                  {unit.title}
+                                </Link>
+                              ) : (
+                                <span className={styles.chapterLink}>{unit.title}</span>
+                              )}
+                            </div>
+                            <span className={styles.rangeTag}>
+                              {isPublished ? 'Published' : 'In preparation — available in the Chinese edition'}
+                            </span>
+                          </div>
+                          {!isPublished && (
+                            <p className={styles.chapterDesc}>
+                              <Link href={`/zh${unit.key}/`}>Read Chinese edition →</Link>
+                            </p>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </section>
+              );
+            })}
+          </section>
+        </div>
+      </PublicationShell>
+    );
+  }
 
   const partGroups = readerParts.map(part => {
     const partChapters = chapters.filter(u => u.part === part.number);
@@ -31,6 +139,9 @@ export default function Page() {
       coreQuestion: readerGuideConfig.partQuestions[String(part.number)] ?? '',
     };
   });
+
+  const zhHref = (href: string) =>
+    href.startsWith('#') || href.startsWith('/zh/') || href.startsWith('http') ? href : `/zh${href}`;
 
   return (
     <PublicationShell
@@ -78,7 +189,7 @@ export default function Page() {
                     {mode.startLabel} →
                   </a>
                 ) : (
-                  <Link href={mode.startHref} className={styles.modeAction}>
+                  <Link href={zhHref(mode.startHref)} className={styles.modeAction}>
                     {mode.startLabel} →
                   </Link>
                 )}
@@ -102,7 +213,7 @@ export default function Page() {
                   {prob.targets.map(target => {
                     const unit = unitByKey.get(target.route);
                     return (
-                      <Link key={target.route} href={`${target.route}/`} className={styles.problemChip}>
+                      <Link key={target.route} href={`/zh${target.route}/`} className={styles.problemChip}>
                         <span>{unit?.label ? `${unit.label}《${unit.title}》` : target.route}</span>
                         <span className={styles.problemChipWhy}>· {target.why}</span>
                       </Link>
@@ -124,7 +235,7 @@ export default function Page() {
             {frontMatter.map(unit => {
               const page = pages.get(unit.key);
               return (
-                <Link key={unit.key} href={`${unit.key}/`} className={styles.frontCard}>
+                <Link key={unit.key} href={`/zh${unit.key}/`} className={styles.frontCard}>
                   <span className={styles.frontTitle}>{unit.title}</span>
                   <p className={styles.frontDesc}>{page?.data.description}</p>
                 </Link>
@@ -157,7 +268,7 @@ export default function Page() {
                       <div className={styles.chapterRowTop}>
                         <div className={styles.chapterTitleWrap}>
                           <span className={styles.chapterNumber}>{unit.label}</span>
-                          <Link href={`${unit.key}/`} className={styles.chapterLink} data-guide-chapter-link={unit.key}>
+                          <Link href={`/zh${unit.key}/`} className={styles.chapterLink} data-guide-chapter-link={unit.key}>
                             {unit.title}
                           </Link>
                         </div>
@@ -168,7 +279,7 @@ export default function Page() {
                               return (
                                 <Link
                                   key={comp.route}
-                                  href={`${comp.route}/`}
+                                  href={`/zh${comp.route}/`}
                                   className={styles.companionBadge}
                                   title={targetUnit ? `${comp.badge}：${targetUnit.title}` : comp.badge}
                                 >
@@ -203,7 +314,7 @@ export default function Page() {
                 <li key={unit.key} className={styles.unitCard}>
                   <div className={styles.unitCardTop}>
                     <span className={styles.unitLabel}>{unit.label}</span>
-                    <Link href={`${unit.key}/`} className={styles.unitLink} data-guide-topic-link={unit.key}>
+                    <Link href={`/zh${unit.key}/`} className={styles.unitLink} data-guide-topic-link={unit.key}>
                       {unit.title}
                     </Link>
                   </div>
@@ -229,7 +340,7 @@ export default function Page() {
                 <li key={unit.key} className={styles.unitCard}>
                   <div className={styles.unitCardTop}>
                     <span className={styles.unitLabel}>{unit.label}</span>
-                    <Link href={`${unit.key}/`} className={styles.unitLink} data-guide-appendix-link={unit.key}>
+                    <Link href={`/zh${unit.key}/`} className={styles.unitLink} data-guide-appendix-link={unit.key}>
                       {unit.title}
                     </Link>
                   </div>
@@ -249,7 +360,7 @@ export default function Page() {
           <ul className={styles.cardGrid}>
             {readerGuideConfig.tools.map(tool => (
               <li key={tool.href} className={styles.unitCard}>
-                <Link href={tool.href} className={styles.unitLink}>
+                <Link href={zhHref(tool.href)} className={styles.unitLink}>
                   {tool.title}
                 </Link>
                 <p className={styles.unitDesc}>{tool.description}</p>

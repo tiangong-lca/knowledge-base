@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "p1-locale-prefix-migration",
+  "date": "2026-11-23",
+  "kind": "ui-revision",
+  "summary": "Migrate Chinese routes to /zh/** with / as canonical Chinese x-default home, add /en/** bilingual shell and language switcher, preserve all legacy unprefixed Chinese routes via 301 and static redirect pages, and keep /downloads/manifest.json unchanged.",
+  "checks": [
+    "pnpm typecheck",
+    "pnpm validate",
+    "pnpm build",
+    "pnpm test",
+    "node scripts/verify-checkpoint-history.mjs"
+  ]
+}
