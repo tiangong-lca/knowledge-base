@@ -22,6 +22,11 @@ const PUBLISHED_EN_CHAPTERS = [
   { label: 'Chapter 17', title: 'Particulate Emissions and Health Damage', href: '/en/docs/book/particulate-emissions-and-health/' },
   { label: 'Chapter 18', title: 'Water Consumption and Scarcity Potential', href: '/en/docs/book/water-scarcity-and-reference/' },
   { label: 'Chapter 19', title: 'Toxicity Pathways', href: '/en/docs/book/usetox-pathways-and-boundaries/' },
+  { label: 'Chapter 20', title: 'Ecological Scarcity Weighting', href: '/en/docs/book/ecological-scarcity-and-targets/' },
+  { label: 'Chapter 21', title: 'Regionalization of Impact Assessment', href: '/en/docs/book/localization-evidence-and-denominators/' },
+  { label: 'Chapter 22', title: 'Monetary Valuation of Environmental Damage', href: '/en/docs/book/lime-preferences-and-damage-weights/' },
+  { label: 'Chapter 23', title: 'Social Performance and Impacts', href: '/en/docs/book/social-assessment-objects-and-meaning/' },
+  { label: 'Chapter 24', title: 'Life Cycle Costing and Integrated Assessment', href: '/en/docs/book/cost-perspectives-and-sustainability-combination/' },
   { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
 ];
 
@@ -74,7 +79,7 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Published English Chapters (Parts I–IV + Pilot)</h2>
+          <h2>Published English Chapters (Parts I–V + Pilot)</h2>
           <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
         <div className="chapter-grid">
