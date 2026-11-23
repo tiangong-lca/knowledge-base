@@ -1,4 +1,5 @@
 import rawTimeline from '@/knowledge/timeline.json';
+import rawTimelineEn from '@/knowledge/editions/en/timeline.json';
 import catalog from '@/lib/catalog';
 
 export type TimelineEraId = 'origins' | 'framing' | 'standardization' | 'consensus' | 'regulation';
@@ -67,3 +68,27 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = rawTimeline.milestones.m
   claimIds: m.evidence?.claimIds ?? [],
   chapters: m.chapters,
 }));
+
+const zhMilestoneById = new Map(TIMELINE_MILESTONES.map(m => [m.id, m]));
+
+export const TIMELINE_ERAS_EN: TimelineEra[] = rawTimelineEn.eras as TimelineEra[];
+export const TIMELINE_TRACKS_EN: TimelineTrack[] = rawTimelineEn.tracks as TimelineTrack[];
+export const TIMELINE_MILESTONES_EN: TimelineMilestone[] = rawTimelineEn.milestones.map(m => {
+  const zh = zhMilestoneById.get(m.id);
+  return {
+    id: m.id,
+    year: m.year,
+    era: m.era as TimelineEraId,
+    track: m.track as TimelineTrackId,
+    title: m.title,
+    actor: m.actor,
+    summary: m.summary,
+    significance: m.significance,
+    status: m.status as TimelineStatus,
+    verificationNote: 'verificationNote' in m ? (m.verificationNote as string | undefined) : undefined,
+    pendingNote: 'pendingNote' in m ? (m.pendingNote as string | undefined) : undefined,
+    sources: zh?.sources ?? [],
+    claimIds: zh?.claimIds ?? [],
+    chapters: m.chapters,
+  };
+});

@@ -1,0 +1,40 @@
+---
+title: Reading System Models
+description: Using ecoinvent's system models to clarify which processes supply one another and who bears the environmental burdens of waste treatment and secondary material production.
+---
+
+Datasets for recycled materials often record both how waste is treated and how secondary material is recovered from that treatment. Before interpreting the numbers, identify which system model governs the database, then trace the material's path to see which upstream and downstream activities are recorded and where environmental burdens hand off.
+
+## Choosing a System Model [#choosing-a-system-model]
+
+<Prose ids="cl-system-model" />
+
+The rules summarized below follow the overview of ecoinvent system models in <SourceRef id="src-ecoinvent-models" />. When working with other life cycle assessment (LCA) databases, consult the documentation for their respective linking and modeling rules.
+
+## Recycling Chains and Burden Attribution [#recycling-chains-and-burden-attribution]
+
+<Prose ids="cl-cutoff" />
+
+Whenever documentation describes a recovered flow as "burden-free," locate the exact handoff point first: check where the secondary material begins accumulating burdens and which earlier burdens are left behind. Collection, transport, and reprocessing after that handoff point must be verified in the specific process records.
+
+<Prose ids="cl-apos" />
+
+To compare cut-off and Allocation at the Point of Substitution (APOS), lay out the treatment and recycling routes included under each model side by side, then check which outputs count as useful products. Differences between two result tables can be traced back to which activities and outputs each model counts.
+
+<Prose ids="cl-conseq" />
+
+When reading a consequential model, check which activity is chosen as the substituted supply, which supply streams are treated as constrained, and what time horizon the study covers. Even when two documents both invoke "substitution," verifying those underlying conditions is necessary to determine whether they apply the same method.
+
+## Naming and Version History [#naming-and-version-history]
+
+<Prose ids="cl-apos-history" />
+
+A model's rename can be confirmed directly from release notes. Determining whether the underlying methodology changed requires comparing the rules actually implemented in each version, while explaining how users were affected requires usage records or other empirical evidence.
+
+## Data Format Versus Modeling Method [#data-format-versus-modeling-method]
+
+<Prose ids="cl-model-not-format" />
+
+To diagnose why two calculations diverge, fix the delivered service first, then line up the inputs, outputs, treatment activities, and burden-sharing rules listed under each model. Pinpoint the exact activity or rule where the two accounts diverge, and state the conditions under which the comparison holds.
+
+[Flows and Exchanges](/en/docs/flows/) explains how inventory data represent objects and process links, and [Functional Unit and Reference Flow](/en/docs/functional-unit/) helps fix the service being delivered. For deeper analysis, [Joint Production](/en/docs/book/joint-production/) compares allocation rationales, reference supplies, and rule boundaries in co-production, while [Market Response](/en/docs/book/market-boundaries-and-response/), [Electricity Systems](/en/docs/book/electricity-service-and-response/), and [Material Recycling Chains](/en/docs/book/recycling-chains-and-accounting/) examine supply response, power-grid scales, and recycling handoffs in turn.

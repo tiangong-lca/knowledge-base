@@ -10541,6 +10541,457 @@
         "This closing synthesis draws on verified primary literature and open calculation cases across the monograph; it does not substitute for site-specific monitoring in a given engineering project or statutory conformity assessment in a given jurisdiction."
       ],
       "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-system-model",
+      "status": "published",
+      "zhDigest": "733b4ceef2f842b87305065da421081e408d024a36b27bd0b624ce5f12feb86a",
+      "text": "In ecoinvent, the choice of system model governs which processes supply one another, how environmental burdens are assigned across functions, and under what conditions substitution is applied. Before using an inventory dataset, check which system model generated it and verify that its linking and attribution rules match the study's goal and system boundary.",
+      "scope": "Overview from the ecoinvent System Models documentation.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-cutoff",
+      "status": "published",
+      "zhDigest": "c54055d0216b467688eee0a7abe23ea1368e4bfd9b0bfb59a611ffa4ad8e0346",
+      "text": "Under ecoinvent's Allocation, cut-off by classification system model, primary production burdens remain with the primary user. Recyclable materials enter the subsequent product system at a designated handoff point free of primary production burdens, while still carrying the burdens associated with recycling activities. Tracing the complete inventory of a recycled product therefore requires following collection, transport, and reprocessing from that handoff point onward.",
+      "scope": "Overview of ecoinvent's Allocation, cut-off by classification system model.",
+      "caveats": [
+        "Specific recycling chains involve exceptions and modeling details; this summary does not substitute for process-by-process inspection."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-apos",
+      "status": "published",
+      "zhDigest": "99b8aff4772b5b85b33eaf1c255b3e110094a457ba1f6819009054e7c4a4d227",
+      "text": "ecoinvent classifies Allocation at the Point of Substitution (APOS) as an attributional system model in which waste generators and downstream users of treatment outputs share the associated burdens. When comparing APOS with the cut-off model, inspect which activities enter the shared-burden pool and at what point treated outputs enter the next product system.",
+      "scope": "Overview of ecoinvent's Allocation at the Point of Substitution (APOS) system model.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-conseq",
+      "status": "published",
+      "zhDigest": "f436cb3cfe26020a27f1f1ab9548e46a78c67ba6f09bbbbf8ce7a688aa1794e9",
+      "text": "ecoinvent's consequential system model resolves multifunctionality through substitution and selects suppliers according to marginal supply assumptions. Interpreting its results requires identifying which processes are substituted and which supply streams are constrained. This description applies specifically to ecoinvent's named consequential system model.",
+      "scope": "Overview of ecoinvent's Substitution, consequential, long-term system model.",
+      "caveats": [
+        "This implementation should not be generalized as the sole approach to consequential life cycle assessment (LCA)."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-apos-history",
+      "status": "published",
+      "zhDigest": "bf22ddaa77b21c749788cdebe640b5d1a549a15025e19676be8931d7a098fa11",
+      "text": "According to ecoinvent's documentation, the system model now called Allocation at the Point of Substitution (APOS) was previously named Allocation, ecoinvent default and was renamed in ecoinvent 3.2.",
+      "scope": "Retrospective naming history reported on the official ecoinvent System Models page.",
+      "caveats": [
+        "A change in model name does not by itself establish that the underlying algorithm or methodology changed."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-model-not-format",
+      "status": "published",
+      "zhDigest": "aa7947d9a94586c505f09ec9fb56ce872cb795b695bd81206e160600eb0ca310",
+      "text": "When comparing two allocation or recycling results, align their intended purpose, system boundary, and active system model before tracing process-to-process links. Even when exchange fields map one-to-one across data files, analysts must still verify whether burden attribution and substitution rules match.",
+      "scope": "Cross-layer comparison between ecoinvent system models and openLCA data representations.",
+      "caveats": [
+        "This statement specifies conditions to verify during comparison and does not declare any system model universally superior."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-ipcc-ar6-gwp-definition",
+      "status": "published",
+      "zhDigest": "acf1eb142704b2b8c567f69401faa815fbc1dc68bf27168685e47698f2572a4c",
+      "text": "The 100-year Global Warming Potential (GWP100) interpretation used in this example follows Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6) Working Group I (WGI) Chapter 7: relative emission metrics compare the physical effect of a given emission against that of a reference CO2 emission, and GWP evaluates integrated radiative forcing over a chosen time horizon. Here, kg CO2-eq preserves the mass-accounting basis rather than representing an actual mass of emitted CO2, a temperature at year 100, or observed climate damage.",
+      "scope": "Corresponding passages of IPCC AR6 WGI Chapter 7 and the October 7, 2025 errata; factor interpretation is bounded to that edition and the stated accounting conditions.",
+      "caveats": [
+        "Citations preserve the historical identity of the textual excerpts used in the original case; parallel excerpts from the primary report or errata listed in the same note do not constitute independent scientific validation.",
+        "The selected metric and characterization factors do not establish comparative conclusions for real-world coatings.",
+        "Characterization factors from this named edition do not automatically serve as default requirements across all reporting frameworks."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-ipcc-ar6-2025-co2-gwp100",
+      "status": "published",
+      "zhDigest": "378d80d58ce50b08903e1a85580fb6faabf1402cb08e7d0c7a9cf044740049b1",
+      "text": "In replacement Table 7.15 of the IPCC AR6 WGI errata (Version 7 October 2025), the GWP-100 value in the CO2 row is 1.000. Teaching calculations write this value as 1 while remaining anchored to that errata edition.",
+      "scope": "Corresponding passages of IPCC AR6 WGI Chapter 7 and the October 7, 2025 errata; factor interpretation is bounded to that edition and the stated accounting conditions.",
+      "caveats": [
+        "Citations preserve the historical identity of the textual excerpts used in the original case; parallel excerpts from the primary report or errata listed in the same note do not constitute independent scientific validation.",
+        "The selected metric and characterization factors do not establish comparative conclusions for real-world coatings.",
+        "Characterization factors from this named edition do not automatically serve as default requirements across all reporting frameworks."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-ipcc-ar6-2025-fossil-ch4-gwp100",
+      "status": "published",
+      "zhDigest": "760ea6c0cb598fc8e4413786f1c22bd4305fc274bfce3899753f6cb5092fcca3",
+      "text": "In the same replacement table, the GWP-100 column for the CH4-fossil row reports 28.1 ± 10.4. This example uses the central value of 28.1 while preserving the fossil-origin species identity; the reported uncertainty is not propagated within the single-parameter range of this worked example, and arithmetic precision must not be mistaken for empirical certainty.",
+      "scope": "Corresponding passages of IPCC AR6 WGI Chapter 7 and the October 7, 2025 errata; factor interpretation is bounded to that edition and the stated accounting conditions.",
+      "caveats": [
+        "Citations preserve the historical identity of the textual excerpts used in the original case; parallel excerpts from the primary report or errata listed in the same note do not constitute independent scientific validation.",
+        "The selected metric and characterization factors do not establish comparative conclusions for real-world coatings.",
+        "Characterization factors from this named edition do not automatically serve as default requirements across all reporting frameworks."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-joos-design",
+      "status": "published",
+      "zhDigest": "4d3526316c6361a90342e0deabefebb0827b1d5daacb80cf2ae9336c0d39d2d4",
+      "text": "The multi-model intercomparison by Joos et al. (2013) defines a shared reference experiment for the carbon dioxide (CO₂) impulse response function. Background atmospheric CO₂ is raised to 389 parts per million (ppm) and held constant. In paired emission-driven runs, researchers inject a 100 gigatonnes of carbon (GtC) pulse in 2015 and subtract a matching control run to isolate the pulse-induced perturbation. The reported \"per-kilogram response\" is therefore a normalized output of this prescribed experiment, with 2015 as the pulse year and 389 ppm as the background state. Because the reference response is conditional on that experimental protocol, it cannot be treated as a forecast for arbitrary future product emissions.",
+      "scope": "100 GtC CO₂ pulse and control runs under the prescribed background protocol of Joos et al. (2013).",
+      "caveats": [
+        "Several participating models did not submit full-length control or pulse runs, as documented separately in the paper and its supplementary protocol; only the published multi-model fit is used here."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-fit",
+      "status": "published",
+      "zhDigest": "df6a2d2ab111b2f94a7a8b8bf4449f5916e552914b7b0d4d20bc1bc27260a723",
+      "text": "Because Joos et al. (2013) publish the fitted parameters explicitly, the reference response can be reconstructed directly. Letting R(t) denote the fraction of an emission pulse remaining in the atmosphere t years after release, the fitted function takes the form R(t) = a₀ + Σ aᵢ exp(−t/τᵢ). In the selected multi-model row of Table 5, the constant term is a₀ = 0.2173, and the three exponential weights 0.2240, 0.2824, and 0.2763 pair with time constants of 394.4, 36.54, and 4.304 years, respectively. The weights sum to 1, ensuring R(0) = 1, and the fit is defined over the paper's specified domain of 0 to 1,000 years after emission.",
+      "scope": "Multi-model CO₂ impulse response fit from Joos et al. (2013), Table 5, over the 0–1,000-year domain.",
+      "caveats": [
+        "The constant term a₀ is a fitting component over this finite 1,000-year horizon and does not assert that a fixed fraction of emitted carbon remains permanently in the real atmosphere."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-integral",
+      "status": "published",
+      "zhDigest": "eeb9f12b20337f3fa76cca4d76531dcdfdd46afff680c82083327b3553ddf337",
+      "text": "Integrating this fitted function term by term yields I(H) = a₀H + Σ aᵢτᵢ[1 − exp(−H/τᵢ)]. Using the printed parameters, the remaining fraction at year 100 is R(100) = 0.409428, and the cumulative integral from 0 to 100 years is I(100) = ∫R(t)dt = 52.355389 years. In the companion figure in the main chapter, the upper curve tracks the instantaneous remaining fraction at each time point, while the shaded area beneath the curve up to that horizon represents the time integral of that fraction.",
+      "scope": "Instantaneous remaining fraction and analytical time integral reconstructed from the printed parameters of the Joos et al. (2013) fit.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-fit-reference",
+      "status": "published",
+      "zhDigest": "d453dd09594de02b739f8cf02532faf39c617a5bfdcb9c8b969086aa920288b7",
+      "text": "At time horizons of 20, 100, and 500 years, this fitted function integrates to approximately 14.242, 52.355, and 183.638 years, corresponding to the values of 14.2, 52.4, and 184 years displayed in Table 4 of Joos et al. (2013). This reconstruction verifies the published fit and its rounding alignment, but it does not regenerate the underlying trajectories of individual Earth system models. Likewise, inter-model spread cannot be transferred directly as a confidence interval for an arbitrary product inventory. The response-and-integral figure in the main chapter plots this fit so that the shaded area in the upper panel matches the corresponding horizon value in the lower panel.",
+      "scope": "Comparison of analytical integrals from the published fit against displayed values in Joos et al. (2013), Table 4.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-reported-precision",
+      "status": "published",
+      "zhDigest": "ee0a2b2b9790e4da5018cae18e4795f5e55def74b45535571f1b3022c40a0b3d",
+      "text": "Recalculating the absolute global warming potential (AGWP) from the fitted integral tests how closely printed inputs reproduce published table entries. Multiplying the 100-year integral by the radiative efficiency of 1.77 × 10⁻¹⁵ W m⁻² kg⁻¹ given in the Joos et al. (2013) table footnote produces 92.669 × 10⁻¹⁵ W m⁻² yr kg⁻¹, whereas Table 4 reports a mean of 92.5 × 10⁻¹⁵ W m⁻² yr kg⁻¹. The two figures are close without matching to every digit, and the exact source of the small gap remains unidentified. Both the parameter-based recalculation and the authors' reported value should therefore be retained separately; even if an adjusted parameter can be back-solved to eliminate the difference, that does not establish it as the authors' undisclosed original input.",
+      "scope": "Recalculation from displayed parameters in Joos et al. (2013) versus Table 4 reported values, without back-solving undisclosed precision.",
+      "caveats": [
+        "The exact source of this small discrepancy is unidentified; displayed parameter precision and physical uncertainty are distinct issues."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-rounded-ratio",
+      "status": "published",
+      "zhDigest": "444e26654274ae66c8a20c976eabe76e71e76c2ad6096fcbab6d9b75eeea0160",
+      "text": "Relative metrics can also fail to reproduce digit for digit from printed absolute values. In the corrected supplementary table of the Intergovernmental Panel on Climate Change (IPCC) Sixth Assessment Report (AR6) Working Group I (WGI), generic methane has an AGWP100 of 2.43 pW m⁻² yr kg⁻¹ and the CO₂ reference is 0.093 pW m⁻² yr kg⁻¹; their direct quotient is 26.129, yet the relative-metric column displays 26.2. If each printed entry is explicitly assumed to carry a rounding band of half a unit in the last displayed place, the columns are mutually consistent. This check diagnoses arithmetic compatibility among displayed numbers; it does not estimate a confidence interval for physical climate effects.",
+      "scope": "Displayed-precision check for the generic methane AGWP100 ratio in the corrected IPCC AR6 WGI supplementary table.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-native-scope",
+      "status": "published",
+      "zhDigest": "76566862eafb683921ccdc45ee1a3ff016f7c0dd453fc1cd95828dbe1242d422",
+      "text": "Re-running historical author code verifies whether a specific source snapshot reproduces the values printed at the time. The 2021 Zenodo archive of the IPCC AR6 WGI Chapter 7 author code and the later GitHub snapshot—which added the carbon-feedback functions and metric-generation workflow—contain different routines. On its 0.1-year time grid over the selected scope, the later snapshot yields a generic methane 100-year global warming potential (GWP100) of 27.859214 and a 100-year global temperature change potential (GTP100) of 5.377065, matching the pre-errata supplementary table. Because this run includes warming-driven carbon-cycle feedbacks but does not execute the fossil oxidation or biogenic uptake pathways for methane's own carbon, it reproduces neither the two main-table methane rows nor the 2025 errata.",
+      "scope": "Selected native routines (0–100 years) from the post-release IPCC AR6 WGI Chapter 7 author-code snapshot for the historical generic methane column.",
+      "caveats": [
+        "Only selected routines over 0–100 years were executed; this does not replay all original models, full notebooks, figures, other gases, or uncertainty ensembles."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-climate-grid",
+      "status": "published",
+      "zhDigest": "032edae955c7826c5ae3e4720c4428d0ce6c0bff0d20769446d369f8f322f5ac",
+      "text": "Refining the time step reveals how sensitive the numerical output is to discretization. Holding all physical parameters constant and halving the feedback-convolution step from 0.1 years to 0.05 years increases GWP100 by approximately 0.079728 and GTP100 by approximately 0.099951. Agreement on the original discrete grid confirms internal consistency for that code version, whereas establishing full numerical convergence requires testing progressively finer grids. Nor does the difference between these two step sizes explain the official errata or measure climate-parameter uncertainty. The value of numerical reconstruction lies in specifying exactly which object is reconstructed and keeping each diagnostic check within its own scope.",
+      "scope": "Numerical grid sensitivity between 0.1-year and 0.05-year time steps under fixed physical parameters.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-cml-toy-determinant",
+      "status": "published",
+      "zhDigest": "2b67c5609f5d8d277d405279e5c8e8fd8ecf44ca40c8d0ba297ff944ee84256e",
+      "text": "Start from the two balance equations in the 1992 Guide from the Center of Environmental Science at Leiden University (CML) aluminum-foil toy model, where x denotes the electricity activity level and y denotes the aluminum activity level. Substituting x = 50y + 0.1 into y = 0.01x + 0.1 gives y = 0.5y + 0.101, so 0.5y = 0.101 and y = 0.202. Direct substitution completes the solution without invoking matrix notation. The original Guide instead solves the system via Cramer's rule—computing intermediate determinants from the coefficient matrix and taking their ratios. On page 39, however, it prints the second column-substituted determinant (replacing the aluminum column with the demand vector) as 0.01 while still printing the aluminum activity level as 0.202. Recalculating from the equations on the same page yields 0.101; dividing the printed value 0.01 by the coefficient-matrix determinant of 0.5 would give only 0.02. Here the activity level is reconstructed from the explicit balance equations while preserving the original discrepancy, rather than treating one matching final value as proof that the entire page is arithmetically consistent.",
+      "scope": "Arithmetic discrepancy on page 39 of the CML 1992 Guide between the printed determinant, balance equations, and reported activity level.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-cml-relative-response",
+      "status": "published",
+      "zhDigest": "4ba5e172491779de0438c3ac0275dbbd7f6d27570f0ed705bc5b199e3a98c874",
+      "text": "Comparing parameters with different physical units requires examining percentage responses. In the CML 1992 Guide aluminum-foil toy model, the normalized local response of total solid waste to the aluminum output coefficient recalculates to −1.973, matching the entry printed in the original table. Near the baseline state, holding per-unit inputs fixed, increasing the aluminum process output coefficient—the mass of aluminum produced per unit of activity—by a small percentage reduces total selected solid waste by approximately 1.973 times that percentage. Electricity generation remains the largest direct source of solid waste, yet the strongest parameter response occurs in aluminum production output. The two findings do not conflict: contribution analysis identifies where existing waste originates, whereas sensitivity analysis measures how the total responds to a parameter change.",
+      "scope": "Normalized local parameter response in the CML 1992 Guide aluminum-foil toy model with all other coefficients held fixed.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-cml-finite-response",
+      "status": "published",
+      "zhDigest": "49e5a1ee1f16a7ea750ffda91c417b144ce9c8e30ec5654c1c0ba32b36c6abb0",
+      "text": "Next, evaluate a finite parameter perturbation directly in the model. Keeping the final demand fixed at 10 aluminum-foil bags and all other coefficients unchanged in the CML 1992 Guide toy model, raising the aluminum output coefficient from 1 kg per unit activity to 1.01 kg per unit activity and re-solving yields approximately 22.084 kg of solid waste—a change of −1.935% from the baseline, compared with the local tangent approximation of −1.973%. The Guide subsequently refers to an approximate 1.9% reduction in the \"total volume of waste,\" even though the model and its tables track waste mass in kilograms without providing a density or volume conversion, and the original sentence does not state its rounding convention. Finite recalculation and local tangent approximation are distinct operations and should not be conflated simply because their numerical outputs lie close together.",
+      "scope": "Finite perturbation versus local approximation for a single aluminum output coefficient at fixed service demand.",
+      "caveats": [
+        "This recalculates the response of a selected parameter and does not claim that every entry in the original marginal matrix was rounded to the nearest displayed digit; original software was not executed.",
+        "The original text uses the phrase \"total volume of waste,\" whereas the selected table and model are expressed in kilograms with no density or volume conversion provided; this recalculation tracks model mass while preserving the original wording separately."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-cml-range-bins",
+      "status": "published",
+      "zhDigest": "de56abf61662a59efb842f0ffd3adac1d0b27527e497303671f6c8f0f85b5d8c",
+      "text": "Whereas the main chapter checks US Environmental Protection Agency (EPA) baseline screening scores against point values of photochemical ozone creation potential (POCP) from the CML 1992 Guide, comparing the same source's scenario ranges against the scoring bins shows what scenario information is lost in discretization. The 1992 Guide lists a POCP range of 0.410–0.830 for toluene: the lower end falls into bin 5, while the upper end falls into bin 3. A single fixed screening score therefore cannot represent the full scenario variation reported in the source table. At the same time, this span does not establish a probability distribution for the score, because the original scenario and multi-day trajectory ranges are not sampling probabilities or confidence intervals.",
+      "scope": "Comparison of CML 1992 Guide toluene POCP scenario range against EPA baseline scoring bins without probabilistic assumptions or site-specific modifiers.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-glass-inputs",
+      "status": "published",
+      "zhDigest": "b958a46e5345bf5748fd7a5bd8e048e50a4a3c61595102eb18bc44ec2ac32ef2",
+      "text": "Begin with the glass-container manufacturing stage, where the denominator is 1 short ton of finished glass containers. Volume II, Table 22 of the 1974 study lists five energy inputs per short ton of glass containers: 1.2 gallons of distillate oil, 5.5 gallons of residual oil, 10,700 cubic feet of natural gas, 0.023 gallons of gasoline, and 263 kilowatt-hours (kWh) of electricity. Interpreting any of these numbers requires stating both the energy carrier and the per-short-ton basis; applying the same figures directly on a \"per bottle\" or \"per filling\" basis alters their physical meaning.",
+      "scope": "Energy-input rows of Volume II, Table 22 of the 1974 EPA container study on the reported per-short-ton basis.",
+      "caveats": [
+        "These five inputs do not constitute the complete glass-system inventory and do not imply identical energy demands across all glass plants."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-fuel-multiplication",
+      "status": "published",
+      "zhDigest": "a5f1de92802a6f602d0367da2374772dec80d7e3bb7eb063b09fdf07a721f5e2",
+      "text": "In the 1974 report, the total energy factors in Volume II, Table 1 are expressed in million British thermal units (Btu) per 1,000 gallons for liquid fuels and million Btu per 1,000 cubic feet for natural gas, while the electricity factor in Table 4 is expressed in million Btu per 1,000 kWh. Because the process inputs are tabulated in single gallons, cubic feet, or kWh, each input must first be divided by 1,000 to match the factor denominator. The five resulting contributions are 1.2 × 158.9 / 1,000, 5.5 × 169.9 / 1,000, 10,700 × 1.086 / 1,000, 0.023 × 144.9 / 1,000, and 263 × 11.1 / 1,000—all in million Btu per short ton of glass. Summing these five terms gives 15.6679627 million Btu per short ton, which rounds to 15.668 at three decimal places and matches the total glass-manufacturing energy of 15.668 reported in Table 14.",
+      "scope": "Selected verification of raw energy inputs multiplied by total energy factors (including upstream supply) in Volume II of the 1974 EPA container study.",
+      "caveats": [
+        "Factor denominators are 1,000 gal, 1,000 ft³, and 1,000 kWh, respectively; calculated decimal places do not represent measurement precision, and matching total energy does not independently verify the separate process and transport columns."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-glass-branch",
+      "status": "published",
+      "zhDigest": "395d8210a0ebcf708ca5d036370b0bf7e608e5030a07d2a0b0aab8d8a6591311",
+      "text": "With glass-container manufacturing energy verified, Volume II, Table 8 can be used to account for glass manufacturing together with its upstream raw-material supply. Table 8 is normalized to 1 short ton of the one-way glass (OWG) container system, meaning every entry is already scaled to the material quantity required for that system rather than to 1 short ton of each individual upstream process. On this shared per-short-ton system basis, the eight stages—feldspar mining (0.100), glass sand mining (0.569), natural soda ash mining (0.040), soda ash manufacturing (1.851), lime manufacturing (0.215), limestone mining (0.031), salt mining (0.049), and glass-container manufacturing (15.668)—sum to 18.523 million Btu. Because this subtotal already includes glass-container manufacturing, the 15.668 term must not be added a second time.",
+      "scope": "Displayed coefficients for the eight glass-manufacturing and upstream inorganic raw-material stages in Volume II, Table 8 of the 1974 EPA container study.",
+      "caveats": [
+        "Entries share the Table 8 common system basis rather than summing per-short-ton outputs of separate processes; this branch excludes full secondary packaging, closures, filling, disposal, and separately itemized system transport."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-branch-scaling",
+      "status": "published",
+      "zhDigest": "4c7f503b882450ffd805806de90e985fab9eba7c05f861eb9d425830a477befb",
+      "text": "Applying the same 18.523 million Btu per short ton branch coefficient to the new-glass mass (in short tons) required for each scenario yields 30.5 × 18.523 = 564.9515 million Btu for the 10-trip returnable glass scenario and 205 × 18.523 = 3,797.215 million Btu for the one-way glass scenario, both referenced to the same 1 million fillings. Because the two container systems differ in both bottle weight and trippage, this comparison does not isolate the effect of trippage alone. Moreover, the recalculation covers only glass manufacturing and upstream raw-material supply, not the full set of activities in either container system.",
+      "scope": "Conditional calculation combining disclosed new-glass tonnages with the Table 8 glass-branch coefficient.",
+      "caveats": [
+        "The same scaling factor is not applied to filling, return packaging flows, or all transport stages."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-branch-check",
+      "status": "published",
+      "zhDigest": "99364cc1908d8f9dd3b5616a07c90ba6eff616fb8167765d0eaeb2e505cea617",
+      "text": "A third scenario provides an additional cross-check on this scaling rule. At 5 trips per bottle, new glass demand is 61 short tons; multiplying 61 × 18.523 gives 1,129.903 million Btu, which rounds to 1,130 and matches the \"Bottle system\" column total of 1,130 in Volume II, Table 9. This agreement verifies only the glass-manufacturing and raw-material supply branch; it does not validate the remaining columns of Table 9 or the entire 5-trip container system.",
+      "scope": "Numerical cross-check between the Volume II, Table 9 bottle-system column and the published Table 8 branch coefficient.",
+      "caveats": [
+        "Internal consistency within a single report does not constitute independent empirical replication."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-hist-rounding-bound",
+      "status": "published",
+      "zhDigest": "b6b69f2d03ae1d9f6d9c59097bfb78ef79fa05a1ec178b5e8dc2aac458579927",
+      "text": "Assembling the full table falls 70.09 million Btu short of the total reported in the 1974 study. To test how much of that gap could stem from displayed-digit rounding alone, suppose only the 13 three-decimal-place coefficients drawn from Table 8 each carry a rounding error of at most 0.0005, while the 205 short tons of glass are held strictly fixed. Under those conditions, the maximum possible cumulative rounding error is 13 × 0.0005 × 205 = 1.3325 million Btu—far smaller than 70.09 million Btu. This bound rules out the hypothesis that displayed rounding of the listed coefficients alone explains the gap under fixed tonnage, but it does not account for undisclosed precision in bottle weight and is not an empirical uncertainty interval.",
+      "scope": "Author-constructed conditional upper bound on coefficient-rounding error, not a statistical analysis from the 1974 report.",
+      "caveats": [
+        "No probability distribution is assumed and the full cause of the discrepancy is not inferred; holding 205 short tons fixed is a prerequisite of this bound."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-source-height",
+      "status": "published",
+      "zhDigest": "cbb2825fd3793ff6952e8fce6d2d468f5b8b8c36bc417f782df8b1372155eed6",
+      "text": "Release height is also built into the Humbert et al. (2011) emission archetypes. For the urban archetype, published intake fractions for fine particulate matter (PM₂.₅) released from high stacks, low stacks, and ground-level sources are 11, 15, and 44 mg/kg, respectively; the corresponding urban values for coarse particulate matter are 8.8, 13, and 40 mg/kg. Here, \"ground-level\" refers to the method's near-ground release archetype. By embedding representative dispersion and population conditions, these figures demonstrate that equal emitted masses can produce markedly different population exposures, yet they neither predict intake for a specific real-world stack nor capture the full environmental consequences of altering stack height.",
+      "scope": "Urban fine and coarse particulate matter intake-fraction archetypes by high-stack, low-stack, and ground-level release height in Humbert et al. (2011).",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-mixture-inputs",
+      "status": "published",
+      "zhDigest": "23be98fac420bc556ebc6362026360a0912fd2f2590226a5c5658850646ce3e5",
+      "text": "Comparing height-averaged intake fractions for mixed emission sources also requires the mass shares emitted from each height class. In the US inventory dataset used by Humbert et al. (2011) to construct height-weighted averages, fine particulate matter emissions split 0.41, 0.17, and 0.42 across high-stack, low-stack, and ground-level sources, whereas coarse particulate matter splits 0.08, 0.02, and 0.90. Coarse particles are heavily concentrated at ground level, with road dust accounting for a major share. Because this weighting dataset excludes wildfires and miscellaneous sources, any inventory that omits road dust requires re-weighting in line with the paper's stated conditions.",
+      "scope": "US mass shares by release height and exclusions used by Humbert et al. (2011) to construct height-weighted average intake fractions for fine and coarse particulate matter.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-mixture-results",
+      "status": "published",
+      "zhDigest": "c6d13b69d057893766d44171f07a5f01be7c5c511e372ea941ab5b8b0e756888",
+      "text": "Weighting the printed urban archetype values by these mass shares gives 0.41 × 11 + 0.17 × 15 + 0.42 × 44 = 25.54 mg/kg for fine particulate matter and 0.08 × 8.8 + 0.02 × 13 + 0.90 × 40 = 36.964 mg/kg for coarse particulate matter, matching the published table entries of 26 and 37 mg/kg. Even though fine particles have a higher intake fraction at every individual release height, the mixed-source ranking reverses because the two size fractions differ sharply in their height distribution. This calculation checks the arithmetic consistency of the height-weighting step; because the individual height factors themselves were derived from unknown-height anchor values and scaling ratios, agreement confirms internal weighting consistency rather than independent validation. Moreover, this comparison concerns intake fraction only and cannot show that coarse particles are more toxic to human health.",
+      "scope": "Height-weighted recalculation of mixed urban fine and coarse intake fractions and the arithmetic condition behind the ranking reversal.",
+      "caveats": [
+        "This arithmetic check does not propagate parameter, structural, or input uncertainty from the original models; extra decimal places reflect exact arithmetic on the listed inputs rather than empirical precision."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-exposure-evidence",
+      "status": "published",
+      "zhDigest": "cb2b451347cb1aa896aa8fc07df90698b1dbfa89bb406fd3743e1a1898baeb7b",
+      "text": "The recommended intake fractions in Humbert et al. (2011) draw on multiple underlying models and literature sources. Primary fine particulate matter relies mainly on re-parameterized USEtox archetype runs, height and size-fraction scaling ratios draw on RiskPoll, and secondary precursors rely on distinct literature models. Harmonizing breathing rates and population conditions enables cross-model consistency checks, but it does not substitute for independent empirical measurements across all scenarios. Because the authors explicitly distinguish inter-model spread, spatial variability, and unquantified uncertainties, a unified summary table should not be read as equally supported empirical evidence across every row.",
+      "scope": "Model lineage (USEtox, RiskPoll, and precursor literature models) and unquantified uncertainty behind the recommended intake fractions in Humbert et al. (2011).",
+      "caveats": [
+        "Supplementary regressions and displayed population figures in Humbert et al. (2011) do not fully close every precursor entry in the main table; main-table values are retained as published without claiming full reconstruction of all recommendations."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-burden-check",
+      "status": "published",
+      "zhDigest": "0df2a5b243191e240e6f11b072f34a7aabdeb611405cc33388076699bff58a97",
+      "text": "Multiplying published factors verifies unit consistency and reported arithmetic, but assessing whether intake estimates align with independent evidence requires comparing distinct estimation pathways. Gronlund et al. (2015) estimated US population intake from both the 2005 national emissions inventory and ambient concentration data, finding that the emissions-based total was roughly 2.2 times the concentration-based total. At the county level, the two approaches also have different spatial boundaries: one sums impacts across all receptors affected by emissions originating in a county, whereas the other sums exposure experienced by residents within that county. Because both pathways share the same health-response and severity derivations, their divergence highlights consistency limits in intake estimation; it neither validates the health-response function independently nor measures the outcome of an actual abatement intervention.",
+      "scope": "The 2.2-fold discrepancy and spatial boundary difference between emissions-based and concentration-based intake estimates for the 2005 US inventory in Gronlund et al. (2015).",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-concentration-balance",
+      "status": "published",
+      "zhDigest": "4f15f0c7d8fadedb08935dba9dd08af01c0e75b4e468a3eb202344350c394331",
+      "text": "The 2017 multi-compartment model for primary particulate matter by Fantke et al. illustrates how emission rates translate into compartment concentrations. Under a continuous, constant emission rate, steady state requires inflows and outflows in every compartment to balance; the rate-constant matrix K records inter-compartment transfers and places total removal rates as negative entries on the diagonal. Defining the fate factor matrix as FF = −K⁻¹, FF carries units of days under the paper's daily time convention. Multiplying FF by an emission-rate vector e (in kg/day) yields the steady-state particulate mass in each compartment, and dividing by each compartment's air volume gives the source-attributable incremental concentration. Meteorology, ventilation, deposition, and compartment dimensions enter through the transfer coefficients and volumes, so numerical evaluation requires their concrete parameter values.",
+      "scope": "Symbolic steady-state mass-balance interpretation of the four-compartment primary particulate model in Fantke et al. (2017).",
+      "caveats": [
+        "Expanding FF × e follows directly from mass balance and dimensional analysis; it does not imply access to the supplementary macro workbook or reconstruction of its numerical parameters."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-indoor-matrix",
+      "status": "published",
+      "zhDigest": "d06cc8901996a35cfef1d45e7e1c6611fcfacb0a820c08f534bdd418cc70cd5d",
+      "text": "Next, the exposure factor (XF) specifies the fraction of each compartment's air volume inhaled per unit time by the corresponding exposed population. Multiplying XF by the compartment fate factor matrix (FF)—which retains residence times and multi-pass transfers—produces the intake fraction (iF). This decomposition allows analysts to trace atmospheric transport and residence separately from human inhalation across compartments. Although sharing a fate–exposure–effect structure helps readers bridge chemical toxicity models such as USEtox and particulate matter models, that shared architecture does not make their substance coverage, characterization factors, or health endpoints automatically equivalent.",
+      "scope": "Matrix decomposition of intake fraction into compartment fate factor matrix (FF) and exposure factor (XF) in Fantke et al. (2017).",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-indoor-time",
+      "status": "published",
+      "zhDigest": "e86e7f446dab0471e44fe243c020d643f7efa8597f78a3b306356b8afbbadcc6",
+      "text": "For indoor activities, emission duration and exposure duration need not coincide. The dynamic indoor model of Bhoonah et al. (2023) starts from the activity-induced incremental indoor concentration, multiplies by occupancy and breathing rate, and integrates over time, so inhalation continues after the emitting activity stops. Room volume, ventilation rate, occupancy, outdoor background concentration, and activity duration jointly govern the outcome. Consequently, intake or health damage calculated for a single reference activity cannot simply be scaled linearly with time while ignoring residual post-activity concentrations and overlapping activities.",
+      "scope": "Dynamic boundary conditions of time-integrated indoor incremental concentration and post-activity residual exposure in Bhoonah et al. (2023).",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-slope-context",
+      "status": "published",
+      "zhDigest": "231958abc8482e7e90ff76251aee4f015c022e8b2c75b3062b862907868580c9",
+      "text": "The distinction between \"marginal\" and \"average\" effects also arises in *Acidification and Nutrient Enrichment*, where average ecosystem effects may be anchored to a policy target or an alternative ecological state. In *Particulate Emissions and Health Damage*, by contrast, the integrated exposure-response (IER) counterfactual derives from epidemiological population-health risk models. Both domains distinguish a local slope near an operating point from an average slope between two states, yet each relies on its own reference state, response metric, and evidentiary base. An ecological guidance document's alternative operating point cannot be substituted directly as a concentration counterfactual for human health.",
+      "scope": "System boundary separating particulate-health counterfactual references from ecological target references in defining marginal versus average effect factors.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-chemistry-model-check",
+      "status": "published",
+      "zhDigest": "1cfdccaf87043ef1aded91550ffa27f8278aaca99ff690b7d8b13197abdd4583",
+      "text": "For a reduced-form atmospheric model, a distinct diagnostic question is how accurately it approximates its full parent model. The TM5-FAst Scenario Screening Tool (TM5-FASST) study derives source–receptor relationships from emission perturbations and tests its linear approximation under selected scenarios; deviations emerge for certain large perturbations, and additive superposition is still assumed where systematic multi-precursor joint runs are unavailable. Such comparisons quantify model-simplification error, but they do not constitute independent empirical abatement tests and cannot replace locally constrained observational chemistry studies such as Cabauw. Both lines of evidence should be weighed according to the specific question each answers.",
+      "scope": "Simplification-error testing of TM5-FASST linear source–receptor approximations against the parent model versus local observational verification.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-factor-correction",
+      "status": "published",
+      "zhDigest": "e36954a636bd70b74f2ea80b136c45c10466e91bba0e18ed31834c0d86fbbcbd",
+      "text": "Using published numerical factors reliably also requires distinguishing among the journal article, its supplementary tables, and subsequent errata. The formal 2019 correction to the global fine particulate matter effect-factor paper by Fantke et al. explicitly relabels columns F:P in the revised workbook as average effect factors and columns R:AB as marginal effect factors, fixing an earlier column-label swap. Such an error does not reveal itself automatically because both sets of columns share the same unit of disability-adjusted life years (DALY) per kg of inhaled PM₂.₅. A usable factor identity therefore requires specifying the release version, column definition, location, and scenario together.",
+      "scope": "Correction of swapped average (columns F:P) and marginal (columns R:AB) labels in the 2019 erratum to Fantke et al. (2019).",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-implementation-layer",
+      "status": "published",
+      "zhDigest": "336f68a160d19e0e48e3cbd83239ba04076774adffefbc56e128bf7a65b3acc5",
+      "text": "While the erratum clarifies how to read the summary columns, whether the workbook's internal formulas reproduce the published values requires a separate audit. The operational sheet of the revised supplementary workbook computes effects from the difference in attributable deaths between two concentration points, yet the revision notes still point to operational columns that do not match the live formulas, and the default-location operational output differs from the published summary value for the same city. Citing published factors, interpreting the paper's analytical equations, and reproducing the workbook's operational formulas are therefore three distinct tasks. Because the exact calculation link between the operational sheet and the published summary remains unresolved, citations should state explicitly which layer a number comes from.",
+      "scope": "Unclosed discrepancy among the paper equations, two-point operational sheet, and published summary values in the Fantke et al. (2019) supplementary workbook.",
+      "caveats": [
+        "This audit does not assign fault for the discrepancy or propose a single unique fix, and does not present operational-sheet recalculation as a full reproduction of the original paper."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-release-date",
+      "status": "published",
+      "zhDigest": "709f5771b96fea67607843014d5e71378bbe78320b6feaca2d193b900bca7c32",
+      "text": "When applying Global Life Cycle Impact Assessment Method (GLAM) factors, users must keep publication dates and workbook release dates separate. The 2026 GLAM human-health journal article notes that version 1 was released publicly in late 2024; the particulate matter workbook inside the official V1.0.2024.10 archive should therefore be cited under its own release identity. The paper's publication year, the characterization-factor release version, and the reference year of the model's background data are three distinct dates and should be documented separately when citing results.",
+      "scope": "Distinction among the 2026 GLAM human-health paper publication date, the V1.0.2024.10 particulate workbook release, and the 2015 background-data year.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-activity-indicators",
+      "status": "published",
+      "zhDigest": "f837c7b9c6576b9e31bae452c8da14e7fe6b1e7d931ee09a7218cb4361216b72",
+      "text": "The indoor indicators described in the GLAM human-health paper also include a midpoint indicator expressed in modeled deaths, which is not the same quantity as endpoint health damage in DALY; the paper derives this mortality midpoint by back-calculating from damage under a specified severity factor. Furthermore, expressing a factor per unit of activity duration links the impact to the emitting activity's length without truncating post-activity exposure when the activity ends. Finally, the fact that an indicator is discussed in the journal article does not by itself establish that it is included in the specific workbook release being used.",
+      "scope": "Relationship between indoor indicators described in the GLAM human-health paper and actual coverage in the published workbook.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-regional-factor",
+      "status": "published",
+      "zhDigest": "1a0864551d1f2d48d9127877e963487958aa0e1f8c2a65d9d11d56154004176f",
+      "text": "The GLAM outdoor framework computes impacts by source location, release height, receptor, and background state before aggregating to regional summaries. Its documentation specifies a 2015 background, a 2 m ground-level release height, and a simplified fate term paired with a global-average effect term beyond 250 km; spatial averages for regional factors are not weighted by population density or actual emission intensity, which the documentation lists as potential alternatives. Spatial averaging across grids, taking an average slope along an exposure-response curve, and weighting release heights by emission shares represent three distinct levels of averaging. Consequently, country and urban/rural entries in the factor table group emissions on the source side, whereas resulting health damage may occur across multiple receptor regions; matching a country name does not ensure that the factor reflects the spatial distribution of a particular stack or industrial sector.",
+      "scope": "Unweighted spatial averaging of GLAM outdoor regional factors and its distinction from exposure-response slope averaging and source-height weighting.",
+      "caveats": [
+        "This notes only that the documentation explicitly omits population and emission weighting; it does not infer from \"unweighted\" that every regional mask, area calculation, or grid-generation script has been audited."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-modern-values",
+      "status": "published",
+      "zhDigest": "6bfb2535180233a77b144f3773d51c4ed79a72cd849304c17e6f6295c7adfcb9",
+      "text": "For example, converting the Australian ground-level primary PM₂.₅ entries in the 2024 GLAM raw workbook into micro-DALY per kg emitted yields approximately 229.937 (marginal) and 205.604 (average) for the urban scenario, and approximately 7.611 (marginal) and 7.981 (average) for the rural scenario. One micro-DALY equals one-millionth of a DALY and is used here purely as a compact display unit, while the denominator remains 1 kg of the listed emission. Because these four characterization factors already express health damage per kilogram of emitted PM₂.₅, they must not be multiplied again by the historical effect factor of 78 from the earlier example.",
+      "scope": "Conversion of the Australian urban and rural ground-level primary PM₂.₅ marginal and average characterization factors in GLAM V1.0.2024.10 to micro-DALY/kg emitted.",
+      "caveats": [],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-pm-modern-ratios",
+      "status": "published",
+      "zhDigest": "19fa6d692f6ca2d520a2edf685d6b73dc1aa7bf9e5f7e0eb281dc4c30b2150d2",
+      "text": "Computed from the unrounded workbook entries, the average-to-marginal ratio is approximately 0.894 in the Australian urban scenario and approximately 1.049 in the rural scenario—one below 1 and the other above 1. Although these two ratios alone do not isolate which background concentration or aggregation condition drives the difference, they are sufficient to refute any blanket claim that average factors are always larger than marginal factors. Comparing average and marginal factors always requires inspecting the underlying exposure-response curve, reference state, and regional aggregation procedure.",
+      "scope": "Australian urban (0.894) and rural (1.049) primary PM₂.₅ average-to-marginal ratios demonstrating bidirectional departure from 1.",
+      "caveats": [
+        "This calculation does not propagate parameter, structural, or input uncertainty from the underlying models; displayed decimal places reflect arithmetic on the tabulated inputs rather than empirical precision."
+      ],
+      "reviewedAt": "2026-11-23"
     }
   ]
 }

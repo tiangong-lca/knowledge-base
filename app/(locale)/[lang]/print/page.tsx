@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
-import { EnInPrepPage } from '@/components/en-in-prep-page';
+import { EnChapterContent } from '@/components/en-chapter-content';
 import { PublicationNote } from '@/components/publication-note';
 import catalog from '@/lib/catalog';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
-import { getLegacyCitations, getPrintPages, logicalPageUrl } from '@/lib/reader-book';
+import { getLegacyCitations, getPrintPages, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
+import { getSource } from '@/lib/source';
 import { currentReaderOrdinaryAttributes, ChapterContent, LegacyCitationAliases } from '@/components/chapter-content';
 import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
@@ -24,6 +25,16 @@ import { part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
 import { wholeBookRereadSource } from '@/scripts/reader-whole-book-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
+const EN_PARTS: Record<number, { label: string; title: string }> = {
+  1: { label: 'Part I', title: 'Origins, Questions, and Methodological Framework' },
+  2: { label: 'Part II', title: 'Functional Unit, Process Networks, and Life Cycle Inventory' },
+  3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
+  4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
+  5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
+  6: { label: 'Part VI', title: 'Data Quality, Uncertainty, Footprints, and Databases' },
+  7: { label: 'Part VII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
+};
+
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map(lang => ({ lang }));
 }
@@ -33,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (lang === 'en') {
     return {
       title: 'Continuous Reading & Print Edition',
-      description: 'Continuous reading and printable English edition (in preparation).',
+      description: 'Complete continuous reading and printable English edition covering all 7 parts, 32 chapters, 5 topical essays, 5 appendices, and references.',
     };
   }
   return { title: '书籍目录、连续阅读与打印' };
@@ -42,23 +53,127 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isSupportedLocale(lang)) notFound();
+
+  const units = getPresentationUnits('book');
+  const frontMatter = units.filter(unit => unit.kind === 'front-matter');
+  const topics = units.filter(unit => unit.kind === 'topic');
+  const appendices = units.filter(unit => unit.kind === 'appendix');
+
   if (lang === 'en') {
+    const enPagesByKey = new Map<string, ReaderPage>(
+      getSource('en').getPages().map(page => [logicalPageUrl(page.url), page as ReaderPage]),
+    );
+    const enUnitLabel = (unit: typeof units[number], idx: number) => {
+      if (unit.kind === 'chapter') return `Chapter ${unit.ordinal}`;
+      if (unit.kind === 'topic') return `Topic ${idx + 1}`;
+      if (unit.kind === 'appendix') return `Appendix ${String.fromCharCode(65 + idx)}`;
+      return undefined;
+    };
+    const renderEnTocItems = (items: typeof units) =>
+      items.map((unit, idx) => {
+        const page = enPagesByKey.get(unit.key);
+        if (!page) return null;
+        return (
+          <li key={unit.key}>
+            <a href={`#en-${printUnitAnchor(unit.key)}`}>
+              <NumberedTitle number={enUnitLabel(unit, idx)}>{page.data.title}</NumberedTitle>
+            </a>
+          </li>
+        );
+      });
+    const renderEnArticle = (unit: typeof units[number], idx: number) => {
+      const page = enPagesByKey.get(unit.key);
+      if (!page) return null;
+      const id = `en-${printUnitAnchor(unit.key)}`;
+      return (
+        <article className="print-chapter prose" key={unit.key} id={id}>
+          <NumberedHeading level={unit.kind === 'front-matter' ? 2 : 3} number={enUnitLabel(unit, idx)}>
+            {page.data.title}
+          </NumberedHeading>
+          {unit.kind !== 'front-matter' && page.data.description && <p>{page.data.description}</p>}
+          <EnChapterContent page={page} print />
+        </article>
+      );
+    };
+
     return (
-      <EnInPrepPage
-        title="Continuous Reading & Print Edition"
-        description="The continuous reading and print edition in English will assemble published parts progressively as each batch is audited and released."
-        zhHref="/zh/print/"
-        zhLabel="Open Chinese print edition"
-      />
+      <PublicationShell
+        lang="en"
+        title="The Past and Present of Life Cycle Assessment"
+        description="Complete continuous reading and print edition. Arranged by part and chapter, followed by topical essays, appendices, and primary references."
+      >
+        <div className="print-controls">
+          <PrintButton />
+          <p>
+            The English web chapters and continuous print edition follow the same 32-chapter numbering. See the{' '}
+            <Link href="/en/coverage/">Book Guide</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
+          </p>
+        </div>
+        <nav aria-label="Book Contents" className="reader-book-contents">
+          <h2>Contents</h2>
+          <ul>{renderEnTocItems(frontMatter)}</ul>
+          {readerParts.map(part => {
+            const enPart = EN_PARTS[part.number];
+            return (
+              <section key={part.number}>
+                <h3>
+                  <a href={`#en-print-part-${part.number}`}>
+                    <NumberedTitle number={enPart?.label ?? `Part ${part.number}`}>
+                      {enPart?.title ?? part.title}
+                    </NumberedTitle>
+                  </a>
+                </h3>
+                <ul>{renderEnTocItems(units.filter(u => u.part === part.number))}</ul>
+              </section>
+            );
+          })}
+          <h3>Topical Essays</h3>
+          <ul>{renderEnTocItems(topics)}</ul>
+          <h3>Appendices</h3>
+          <ul>{renderEnTocItems(appendices)}</ul>
+          <p><a href="#en-print-references">References</a></p>
+        </nav>
+
+        <div className="print-book">
+          {frontMatter.map((u, idx) => renderEnArticle(u, idx))}
+          {readerParts.map(part => {
+            const enPart = EN_PARTS[part.number];
+            return (
+              <section className="print-part" key={part.number}>
+                <h2 id={`en-print-part-${part.number}`}>
+                  <NumberedTitle number={enPart?.label ?? `Part ${part.number}`}>
+                    {enPart?.title ?? part.title}
+                  </NumberedTitle>
+                </h2>
+                {units.filter(u => u.part === part.number).map((u, idx) => renderEnArticle(u, idx))}
+              </section>
+            );
+          })}
+          <section className="print-part">
+            <h2>Topical Essays</h2>
+            {topics.map((u, idx) => renderEnArticle(u, idx))}
+          </section>
+          <section className="print-part">
+            <h2>Appendices</h2>
+            {appendices.map((u, idx) => renderEnArticle(u, idx))}
+          </section>
+          <section className="print-chapter" id="en-print-references">
+            <h2>References</h2>
+            {catalog.sources.map(item => (
+              <div className="evidence-item" key={item.id}>
+                <strong>{item.title}</strong>
+                <p>{item.publisher}. {item.version}.</p>
+                <a href={item.url} rel="noreferrer">Source link</a>
+              </div>
+            ))}
+          </section>
+        </div>
+      </PublicationShell>
     );
   }
 
   const pages = getPrintPages();
-  const units = getPresentationUnits('book');
   const byKey = new Map(pages.map(page=>[logicalPageUrl(page.url),page]));
-  const frontMatter = units.filter(unit=>unit.kind==='front-matter');
-  const topics = units.filter(unit=>unit.kind==='topic');
-  const appendices = units.filter(unit=>unit.kind==='appendix');
   const tocLinks = (items: typeof units) => items.map(unit =>
     <li key={unit.key}><a href={`#${printReadingEntryAnchor(unit.key)}`} data-reader-toc-unit={unit.key}><NumberedTitle number={unit.label}>{unit.title}</NumberedTitle></a>
       {getUnitHeadingPlan('book',unit.key).some(heading=>heading.type==='mdx') && <ul>{getUnitHeadingPlan('book',unit.key).filter(heading=>heading.type==='mdx').map(heading=><li key={heading.key}><a href={`#${printUnitAnchor(unit.key)}-${heading.id}`} data-reader-route={unit.key} data-reader-toc-heading={heading.key}><NumberedTitle number={heading.number}>{heading.title}</NumberedTitle></a></li>)}</ul>}

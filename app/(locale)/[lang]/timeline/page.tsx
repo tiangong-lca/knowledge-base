@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { LcaTimeline } from '@/components/lca-timeline';
-import { EnInPrepPage } from '@/components/en-in-prep-page';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -11,7 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (lang === 'en') {
     return {
       title: 'LCA Historical Timeline (1969–2026)',
-      description: 'Visual timeline of life cycle assessment milestones (in preparation).',
+      description: 'Interactive timeline of 27 life cycle assessment milestones across five historical eras, with primary-source verification badges and direct chapter links.',
+      alternates: { canonical: '/en/docs/appendices/lca-timeline/' },
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
@@ -27,12 +27,18 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
   if (!isSupportedLocale(lang)) notFound();
   if (lang === 'en') {
     return (
-      <EnInPrepPage
+      <PublicationShell
+        lang="en"
         title="LCA Historical Timeline (1969–2026)"
-        description="Visual timeline of life cycle assessment milestones, primary-source verification badges, and chapter links."
-        zhHref="/zh/timeline/"
-        zhLabel="View Chinese Timeline (27 Milestones)"
-      />
+        description="Trace 27 key milestones across five historical eras and four methodological tracks—from early beverage container ledgers and ISO standardization to EU regulatory footprints and prospective dynamic LCA."
+      >
+        <p className="subtle">
+          This timeline is also included in the monograph as{' '}
+          <Link href="/en/docs/appendices/lca-timeline/">Appendix E: Historical Timeline of Life Cycle Assessment</Link>
+          , and appears at the end of the <Link href="/en/print/">Continuous Reading &amp; Print Edition</Link>. Every milestone publicly displays its primary-source verification status (Primary source verified / Unverified).
+        </p>
+        <LcaTimeline lang="en" />
+      </PublicationShell>
     );
   }
   return (

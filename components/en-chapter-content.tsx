@@ -4,9 +4,10 @@ import enClaimsFile from '@/knowledge/editions/en/claims.json';
 import enNotesFile from '@/knowledge/editions/en/notes.json';
 import { getMDXComponents } from '@/mdx-components';
 import { TeachingCase } from '@/components/teaching-case';
+import { LcaTimeline } from '@/components/lca-timeline';
 import type { ReaderPage } from '@/lib/reader-book';
 
-interface EnClaimEntry {
+export interface EnClaimEntry {
   id: string;
   status: string;
   zhDigest?: string;
@@ -27,7 +28,7 @@ interface EnNoteEntry {
 }
 
 const enClaimsList = (enClaimsFile.claims ?? []) as EnClaimEntry[];
-const enClaimsMap: Record<string, EnClaimEntry> = Object.fromEntries(
+export const enClaimsMap: Record<string, EnClaimEntry> = Object.fromEntries(
   enClaimsList.map(c => [c.id, c]),
 );
 const enNotesList = (enNotesFile.notes ?? []) as EnNoteEntry[];
@@ -36,6 +37,7 @@ const enNotesById = new Map(enNotesList.map(n => [n.id, n]));
 const catalogClaims = new Map(catalog.claims.map(c => [c.id, c]));
 const catalogEvidence = new Map(catalog.evidence.map(e => [e.id, e]));
 const catalogSources = new Map(catalog.sources.map(s => [s.id, s]));
+const catalogConcepts = new Map(catalog.concepts.map(c => [c.id, c]));
 
 function collectClaimOrder(raw: string): string[] {
   const seen = new Set<string>();
@@ -52,10 +54,11 @@ function collectClaimOrder(raw: string): string[] {
   return ordered;
 }
 
-export async function EnChapterContent({ page }: { page: ReaderPage }) {
+export async function EnChapterContent({ page, print = false }: { page: ReaderPage; print?: boolean }) {
   const raw = await page.data.getText('raw');
   const noteOrder = collectClaimOrder(raw);
   const noteNumberById = new Map(noteOrder.map((id, idx) => [id, idx + 1]));
+  const noteAnchorPrefix = print ? `en-print-${page.url.replace(/[^a-z0-9]+/gi, '-')}-` : 'en-claim-';
 
   for (const id of noteOrder) {
     const canonical = catalogClaims.get(id);
@@ -77,7 +80,7 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
       <p>
         {enClaim.text}
         <sup className="prose-references">
-          <Link href={`#en-claim-${id}`} role="doc-noteref" aria-label={`Note ${num}`}>
+          <Link href={`#${noteAnchorPrefix}${id}`} role="doc-noteref" aria-label={`Note ${num}`}>
             [{num}]
           </Link>
         </sup>
@@ -96,11 +99,27 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
   }
 
   function ReaderSection({ id }: { id: string }) {
-    return <span id={id} className="reader-section-target" />;
+    return <span id={print ? `${noteAnchorPrefix}${id}` : id} className="reader-section-target" />;
   }
 
   function ReaderFigure(props: React.HTMLAttributes<HTMLElement>) {
     return <figure {...props} />;
+  }
+
+  function EnSourceRef({ id }: { id: string }) {
+    const source = catalogSources.get(id);
+    if (!source) throw new Error(`Unknown source: ${id}`);
+    return <Link href={`/en/sources/#${id}`}>{source.title}</Link>;
+  }
+
+  function EnConceptRef({ id }: { id: string }) {
+    const concept = catalogConcepts.get(id);
+    if (!concept) throw new Error(`Unknown concept: ${id}`);
+    return <Link href={`/en/concepts/#${id}`}>{concept.english || concept.label}</Link>;
+  }
+
+  function EnLcaTimeline(props: Omit<Parameters<typeof LcaTimeline>[0], 'lang'>) {
+    return <LcaTimeline {...props} lang="en" />;
   }
 
   function EditionNote({ id }: { id: string }) {
@@ -141,6 +160,9 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
             Claim: Paragraph,
             ReaderSection,
             ReaderFigure,
+            SourceRef: EnSourceRef,
+            ConceptRef: EnConceptRef,
+            LcaTimeline: EnLcaTimeline,
             EditionNote,
             TeachingCase: EnTeachingCase,
           },
@@ -149,14 +171,14 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
       />
 
       {noteOrder.length > 0 && (
-        <section className="chapter-notes not-prose" aria-labelledby="en-chapter-notes">
-          <h2 id="en-chapter-notes">Notes</h2>
+        <section className="chapter-notes not-prose" aria-labelledby={`${noteAnchorPrefix}notes`}>
+          <h2 id={`${noteAnchorPrefix}notes`}>Notes</h2>
           <ol>
             {noteOrder.map(id => {
               const canonical = catalogClaims.get(id)!;
               const enClaim = enClaimsMap[id]!;
               return (
-                <li key={id} id={`en-claim-${id}`} data-en-claim={id}>
+                <li key={id} id={`${noteAnchorPrefix}${id}`} data-en-claim={id}>
                   {enClaim.scope && <p><strong>Scope:</strong> {enClaim.scope}</p>}
                   {canonical.evidenceIds.length > 0 && (
                     <ul>
@@ -166,7 +188,7 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
                         if (!ev || !src) return null;
                         return (
                           <li key={evId}>
-                            <Link href={`/zh/sources/#${evId}`}>{src.title}</Link>
+                            <Link href={`/en/sources/#${evId}`}>{src.title}</Link>
                             {src.version ? ` (${src.version})` : ''} — {ev.locator}
                           </li>
                         );
@@ -187,7 +209,7 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
                           if (localNum) {
                             return (
                               <li key={premId}>
-                                <a href={`#en-claim-${premId}`}>Chapter Note {localNum}</a>
+                                <a href={`#${noteAnchorPrefix}${premId}`}>Chapter Note {localNum}</a>
                               </li>
                             );
                           }
@@ -195,7 +217,7 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
                           const premZh = catalogClaims.get(premId);
                           return (
                             <li key={premId}>
-                              <Link href={`/zh/claims/#${premId}`}>
+                              <Link href={`/en/claims/#${premId}`}>
                                 {premEn?.text ?? premZh?.text ?? premId}
                               </Link>
                             </li>
