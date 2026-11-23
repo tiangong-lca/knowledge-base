@@ -1,11 +1,11 @@
 /**
- * Deterministic English bibliographic formatter for canonical Chinese-annotated
+ * Boundary-safe English bibliographic formatter for canonical Chinese-annotated
  * source versions, publishers, evidence locators, printed-page strings, and
- * concept display labels. Keeps canonical catalog.json untouched while giving
- * English readers clean scholarly citation strings.
+ * concept display labels. Never runs bare single-character CJK substitutions
+ * inside arbitrary words.
  */
 
-const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
+const SAFE_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   // Multi-character bibliographic phrases (longest first)
   [/各段前后四行必要上下文/g, 'with surrounding context'],
   [/引用此报告页码/g, 'citing report pagination'],
@@ -20,7 +20,12 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/著作的作者公开样章/g, 'author public sample chapter of the monograph'],
   [/出版商原件/g, 'publisher original'],
   [/期刊出版定稿/g, 'published journal version of record'],
+  [/首次在线发表/g, 'first published online'],
   [/首次在线/g, 'first published online'],
+  [/在线发表/g, 'published online'],
+  [/正式发布/g, 'officially published'],
+  [/正式版/g, 'official release'],
+  [/正式/g, 'official'],
   [/原始发行所附技术指南/g, 'technical guide accompanying original release'],
   [/学位论文再印载体/g, 'dissertation reprint carrier'],
   [/致谢再印载体/g, 'reprint carrier'],
@@ -35,7 +40,6 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/PDF\s*零基索引/g, 'PDF 0-based index '],
   [/零基分页块/g, '0-based page block '],
   [/零基索引/g, '0-based index '],
-  [/零基/g, '0-based '],
   [/视觉核对/g, 'visually verified'],
   [/选读日期/g, 'read date '],
   [/发布日期/g, 'published '],
@@ -67,14 +71,11 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/英文译本/g, 'English translation'],
   [/英文序言回顾/g, 'English preface review'],
   [/英文版/g, 'English edition'],
-  [/德文/g, 'German '],
-  [/中文/g, 'Chinese '],
   [/再印本/g, 'reprint'],
   [/重印本/g, 'reprint'],
   [/电子版/g, 'electronic edition'],
   [/公开机构版/g, 'public institutional edition'],
   [/官方版/g, 'official edition'],
-  [/官方/g, 'official '],
   [/学位论文/g, 'dissertation'],
   [/论文再印/g, 'thesis reprint'],
   [/另有勘误/g, 'with erratum'],
@@ -84,7 +85,6 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/数据年/g, 'data year '],
   [/题叶署/g, 'title leaf dated '],
   [/题名页/g, 'title page'],
-  [/题名/g, 'title'],
   [/封面块/g, 'cover block'],
   [/封面/g, 'cover'],
   [/目录/g, 'table of contents'],
@@ -104,22 +104,14 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/续页/g, 'ff.'],
   [/选段/g, 'excerpt'],
   [/重点/g, 'key passage'],
-  [/说明/g, 'note'],
-  [/核对/g, 'verified'],
-  [/代表\s*/g, 'on behalf of '],
-  [/出版/g, 'published'],
   [/元数据/g, 'metadata'],
-  [/载体/g, 'carrier'],
-  [/名称/g, 'name'],
-  [/总计/g, 'total'],
   [/物理页/g, 'physical p. '],
   [/物理第\s*([0-9–—\-]+)\s*页/g, 'physical p. $1'],
-  [/物理\s*([0-9–—\-]+)/g, 'physical $1'],
   [/印刷页\s*/g, 'print p. '],
   [/印刷第\s*([0-9–—\-]+)\s*页/g, 'print p. $1'],
   [/印第\s*([0-9–—\-]+)\s*页/g, 'print p. $1'],
   [/印页\s*/g, 'print p. '],
-  [/印刷\s*/g, 'print '],
+  [/印刷\s*(pp?\.?\s*[0-9])/g, 'print $1'],
   [/印\s*(pp?\.?\s*[0-9])/g, 'print $1'],
   [/第\s*([0-9]+)\s*卷第\s*([0-9]+)\s*期/g, 'Vol. $1, No. $2'],
   [/第\s*([0-9A-Za-z.\-–—]+)\s*章/g, 'Chapter $1'],
@@ -132,25 +124,10 @@ const EXACT_PHRASE_MAP: ReadonlyArray<readonly [RegExp, string]> = [
   [/([0-9]{4})\s*年版/g, '$1 edition'],
   [/([0-9]{4})\s*年\s*([0-9]{1,2})\s*月/g, '$1-$2'],
   [/([0-9]{4})\s*年/g, '$1'],
-  [/([0-9]+)\s*页/g, '$1 pp.'],
-  [/表\s*([0-9A-Za-z.\-–—]+)/g, 'Table $1'],
-  [/图\s*([0-9A-Za-z.\-–—]+)/g, 'Figure $1'],
-  [/式\s*([\(\（]?[0-9A-Za-z.\-–—]+[\)\）]?)/g, 'Eq. $1'],
-  [/节/g, 'section '],
-  [/章/g, 'chapter '],
-  [/页/g, 'p. '],
-  [/行/g, 'row '],
-  [/列/g, 'col. '],
-  [/栏/g, 'col. '],
-  [/条/g, 'clause '],
-  [/表/g, 'Table '],
-  [/图/g, 'Figure '],
-  [/式/g, 'Eq. '],
-  [/与|及|和/g, ' and '],
-  [/至/g, '–'],
-  [/含/g, 'incl. '],
-  [/仅/g, 'only '],
-  [/中/g, ' in '],
+  // Only match 表/图/式 when immediately followed by a digit or equation paren (never inside words like 正式/发表)
+  [/(?<![\u4e00-\u9fff])表\s*([0-9][0-9A-Za-z.\-–—]*)/g, 'Table $1'],
+  [/(?<![\u4e00-\u9fff])图\s*([0-9][0-9A-Za-z.\-–—]*)/g, 'Figure $1'],
+  [/(?<![\u4e00-\u9fff])式\s*([\(（]?[0-9][0-9A-Za-z.\-–—]*[\)）]?)/g, 'Eq. $1'],
 ];
 
 const CJK_RE = /[\u4e00-\u9fff]/;
@@ -164,24 +141,53 @@ function normalizePunctuation(input: string): string {
     .replace(/（/g, ' (')
     .replace(/）/g, ') ')
     .replace(/。/g, '. ')
+    .replace(/\b(pp?|Eqs?|Figs?|Tables?|Secs?)(?=\d)/g, '$1. ')
     .replace(/\s+([,;:.?!)])/g, '$1')
     .replace(/(\()\s+/g, '$1')
     .replace(/\s{2,}/g, ' ')
-    .replace(/\. \. /g, '. ')
+    .replace(/\.\s*\.\s*/g, '. ')
     .trim();
+}
+
+/**
+ * Remove pure-CJK editorial clauses/parentheticals after safe structured tokens
+ * have been converted, while preserving a readable fallback if the entire string
+ * is a Chinese publication title or publisher.
+ */
+function stripUntranslatedCjkClauses(text: string): string {
+  if (!CJK_RE.test(text)) return text;
+  // Drop parentheticals that still contain CJK
+  let cleaned = text.replace(/\s*\([^)]*[\u4e00-\u9fff][^)]*\)/g, '');
+  // Split on semicolons and keep clauses without residual CJK
+  const parts = cleaned
+    .split(/;\s*/)
+    .map(p => p.trim())
+    .filter(p => p.length > 0 && !CJK_RE.test(p));
+  if (parts.length > 0) {
+    return parts.join('; ');
+  }
+  // Try comma-level filtering if semicolon-level left nothing
+  const commaParts = cleaned
+    .split(/,\s*/)
+    .map(p => p.trim())
+    .filter(p => p.length > 0 && !CJK_RE.test(p));
+  if (commaParts.length > 0) {
+    return commaParts.join(', ');
+  }
+  // Fallback: keep original normalized string (e.g., genuine Chinese journal publisher name)
+  return text;
 }
 
 export function formatEnBibliographicText(raw: string | undefined | null): string {
   if (!raw) return '';
-  if (!CJK_RE.test(raw)) return raw;
   let out = raw;
-  for (const [pattern, replacement] of EXACT_PHRASE_MAP) {
-    out = out.replace(pattern, replacement);
+  if (CJK_RE.test(out)) {
+    for (const [pattern, replacement] of SAFE_PHRASE_MAP) {
+      out = out.replace(pattern, replacement);
+    }
   }
   out = normalizePunctuation(out);
-  // If residual CJK tokens still remain in verbose editorial notes (e.g. Chinese journal metadata),
-  // keep the structured English/ASCII citation cleanly readable.
-  return out;
+  return stripUntranslatedCjkClauses(out);
 }
 
 export function formatEnConceptTitle(raw: string | undefined | null): string {
