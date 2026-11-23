@@ -20,7 +20,7 @@ lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 
 # English Writing, Meaning-Alignment, and Teaching Guide
 
-This guide governs the independently authored English edition of *The Evolution and Foundations of Life Cycle Assessment* (`#246`, under Programme `#9`). It is the English counterpart to `_docs/editorial/readable-writing-and-teaching.md`.
+This guide governs the independently authored English edition of *The Past and Present of Life Cycle Assessment* (`#246`, under Programme `#9`, US English spelling standard). It is the English counterpart to `_docs/editorial/readable-writing-and-teaching.md`.
 
 ## 1. Core mandate: meaning-level authoring, never literal translation
 

@@ -50,13 +50,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const appendices = webUnits.filter(u => u.kind === 'appendix');
 
   if (lang === 'en') {
+    const unitEntries = alignment.units as Record<string, { enStatus?: string; enTitle?: string }>;
     const publishedEnUnits = new Set(
-      Object.entries(alignment.units as Record<string, { status?: string }>)
-        .filter(([, meta]) => meta?.status === 'published')
+      Object.entries(unitEntries)
+        .filter(([, meta]) => meta?.enStatus === 'published')
         .map(([unitId]) => unitId)
     );
     return (
       <PublicationShell
+        lang="en"
         title="Book Guide & Release Status"
         description="The English edition is authored part by part as a meaning-equivalent monograph rather than a literal translation. Unpublished chapters remain linked to their Chinese counterparts."
       >
@@ -100,10 +102,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                               <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
                               {isPublished ? (
                                 <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
-                                  {unit.title}
+                                  {unitEntries[unit.key]?.enTitle ?? unit.title}
                                 </Link>
                               ) : (
-                                <span className={styles.chapterLink}>{unit.title}</span>
+                                <span className={styles.chapterLink}>{unitEntries[unit.key]?.enTitle ?? unit.title}</span>
                               )}
                             </div>
                             <span className={styles.rangeTag}>
