@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SiteChrome, SiteProvider } from '@/components/site-header';
 import { EN_PUBLIC_ENABLED, SUPPORTED_LOCALES, isSupportedLocale, toHtmlLang, type Locale } from '@/lib/i18n';
-import { getPublishedPaths, getSearchEntries } from '@/lib/search-entries';
+import { getPublishedPaths } from '@/lib/search-entries';
 import { homePath, languageAlternates, localeMetadata, siteOrigin } from '@/lib/seo-policy.mjs';
 import '../../global.css';
 
@@ -61,12 +61,11 @@ export default async function LocaleRootLayout({
   const { lang } = await params;
   if (!isSupportedLocale(lang)) notFound();
   const locale: Locale = lang;
-  const entries = getSearchEntries(locale);
   const publishedPaths = getPublishedPaths();
   return (
     <html lang={toHtmlLang(locale)} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
-        <SiteProvider lang={locale} entries={entries} publishedPaths={publishedPaths}>
+        <SiteProvider lang={locale} publishedPaths={publishedPaths}>
           <a className="skip-link" href="#main-content">
             {locale === 'en' ? 'Skip to main content' : '跳转到正文'}
           </a>

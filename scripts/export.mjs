@@ -138,8 +138,61 @@ export async function exportArtifacts(validateSource, validateOutput) {
     writeFileSync(`out/${path}`, bytes);
   }
 
+  // Emit lazy-loaded static search indices for ZH and EN so per-page HTML/RSC stays compact.
+  function readMdxMeta(baseDir, urlPrefix) {
+    const rows = [];
+    function scan(dir, relPrefix = '') {
+      if (!existsSync(dir)) return;
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        const full = join(dir, entry.name);
+        if (entry.isDirectory()) scan(full, `${relPrefix}${entry.name}/`);
+        else if (entry.name.endsWith('.mdx')) {
+          const raw = readFileSync(full, 'utf8');
+          const fm = raw.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+          const title = (fm.match(/^title:\s*(.+)$/m)?.[1] ?? '').trim().replace(/^["']|["']$/g, '');
+          const desc = (fm.match(/^description:\s*(.+)$/m)?.[1] ?? '').trim().replace(/^["']|["']$/g, '');
+          const slug = `${relPrefix}${entry.name.replace(/\.mdx$/, '')}`.replace(/(^|\/)index$/, '');
+          const url = slug ? `${urlPrefix}/${slug}/` : `${urlPrefix}/`;
+          if (title) rows.push({ title, text: desc, url });
+        }
+      }
+    }
+    scan(baseDir);
+    return rows;
+  }
+  const enClaimsDoc = existsSync('knowledge/editions/en/claims.json')
+    ? JSON.parse(readFileSync('knowledge/editions/en/claims.json', 'utf8'))
+    : { claims: [] };
+  const formatConceptEn = (s) => (s || '').replace(/\bthe1974container\b/g, 'the 1974 container').replace(/\bthe1974REPA\b/g, 'the 1974 REPA');
+  const zhSearchIndex = [
+    {
+      title: '生命周期评价发展大事记（1969–2026）',
+      text: '可视化历史时间线：早期资源账本、SETAC 与 CML 框架成型、ISO 标准化、数据库与共识模型、欧盟法规与前瞻动态 LCA。',
+      url: '/zh/timeline/',
+      kind: '大事记',
+    },
+    ...readMdxMeta('content/docs', '/zh/docs').map(p => ({ ...p, kind: '章节' })),
+    ...published.claims.map(c => ({ title: c.text, text: c.scope, url: `/zh/claims/#${c.id}`, kind: '论述' })),
+    ...published.concepts.map(c => ({ title: c.label, text: `${c.english} ${(c.aliases || []).join(' ')}`.trim(), url: `/zh/concepts/#${c.id}`, kind: '概念' })),
+    ...published.sources.map(s => ({ title: s.title, text: `${s.publisher} ${s.version}`.trim(), url: `/zh/sources/#${s.id}`, kind: '来源' })),
+  ];
+  const enSearchIndex = [
+    {
+      title: 'LCA Historical Timeline (1969–2026)',
+      text: 'Visual timeline of 27 life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
+      url: '/en/timeline/',
+      kind: 'Timeline',
+    },
+    ...readMdxMeta('content-en/docs', '/en/docs').map(p => ({ ...p, kind: 'Chapter' })),
+    ...(enClaimsDoc.claims || []).map(c => ({ title: c.text, text: c.scope || '', url: `/en/claims/#${c.id}`, kind: 'Claim' })),
+    ...published.concepts.map(c => ({ title: formatConceptEn(c.english || c.label), text: formatConceptEn(c.english || ''), url: `/en/concepts/#${c.id}`, kind: 'Concept' })),
+    ...published.sources.map(s => ({ title: s.title, text: s.publisher || '', url: `/en/sources/#${s.id}`, kind: 'Source' })),
+  ];
+  writeFileSync('out/downloads/search-index-zh.json', JSON.stringify(zhSearchIndex));
+  writeFileSync('out/downloads/search-index-en.json', JSON.stringify(enSearchIndex));
+
   const routeBase = prefix ? '/zh' : '';
-  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文出处](${routeBase}/sources/)\n- [注释与论证](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [连续阅读与打印](${routeBase}/print/)\n- [版本与勘误](${routeBase}/changes/)\n- [English Edition (In Preparation)](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
+  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文出处](${routeBase}/sources/)\n- [注释与论证](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [连续阅读与打印](${routeBase}/print/)\n- [版本与勘误](${routeBase}/changes/)\n- [English Edition](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
   emitRouteRedirects('out');
