@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "p3-part3-en-publication",
+  "date": "2026-11-23",
+  "kind": "ui-revision",
+  "summary": "Publish Part III (Chapters 10–13, 197 claims) of the meaning-equivalent English edition with English CASE-JOINT-BATCH component, bringing total published English claims to 507, and refresh compiled CSS fingerprint.",
+  "checks": [
+    "pnpm typecheck",
+    "pnpm validate",
+    "pnpm build",
+    "node --test scripts/reader-bilingual.test.mjs"
+  ]
+}
