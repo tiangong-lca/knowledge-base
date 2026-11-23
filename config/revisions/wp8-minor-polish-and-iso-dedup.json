@@ -1,0 +1,987 @@
+{
+  "schemaVersion": 1,
+  "id": "wp8-minor-polish-and-iso-dedup",
+  "date": "2026-11-23",
+  "task": "wp8",
+  "title": "收口阅读细部打磨、统一付费标准边界说明并修正残余旧章名",
+  "rationale": "在《阅读导论》集中给出国际与国内付费标准文本的统一核验边界说明，精简各章重复出现的同类免责声明；将第 27 章与第 31 章中残留的合并前旧章名更新为现行章名《数据适用性》与《气候当量》；理顺第 10 章章末两段结语与第 27、32 章跨段衔接；补齐第 30 章与第 32 章首次出现的缩写中文全称。",
+  "routes": [
+    "/docs/book",
+    "/docs/book/framework-responsibilities",
+    "/docs/book/joint-production",
+    "/docs/book/data-quality-and-probability",
+    "/docs/book/product-footprint-rules-and-practice",
+    "/docs/book/wall-service-to-comparison",
+    "/docs/book/interpretation-and-limits",
+    "/docs/book/future-technology-and-context",
+    "/docs/book/revisable-judgment",
+    "/coverage",
+    "/timeline",
+    "/docs/appendices/lca-timeline"
+  ],
+  "claims": [
+    {
+      "id": "cl-fw179-epistemic-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-fw179-epistemic-limits",
+        "kind": "synthesis",
+        "text": "最后须明确本节跨体系对照的史料与证据边界。上述比较全部直接核自 CML 2001 Part 2a、ILCD 2010 详细指南、欧盟（EU）2021/2279 附件一与 GHG Protocol 产品标准（2011）四份公开原文；对于受版权限制的 ISO 14040:2006 与 ISO 14044:2006 付费完整标准文本以及尚未获取的 SETAC 1991/1993 原始会议文集，本书不补造未读到的内部条款，正文提及 ISO 要求之处仅限公开预览定义或明确经由上述公开指南转述的条目。同样重要的是，符合任一评价框架的阶段步骤并通过外部审验或鉴证，只能证明核算遵循了该框架的程序与披露规则，本身既不能弥补缺失的实测排放数据，也不能替代后续各部将逐项展开的功能参照、清单边界、分配规则、影响模型与不确定性验证。",
+        "scope": "本节跨体系框架对照的付费原文边界、未获取史料边界与合规性认识边界。",
+        "evidenceIds": [
+          "ev-fw179-cml-framework",
+          "ev-fw179-ilcd-framework",
+          "ev-fw179-pef-framework",
+          "ev-fw179-ghgp-framework"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-fw179-cml-framework",
+            "relation": "supports",
+            "rationale": "CML 2001 Part 2a 为公开核验载体，其中 ISO 14042 条款属转述。"
+          },
+          {
+            "evidenceId": "ev-fw179-ilcd-framework",
+            "relation": "supports",
+            "rationale": "ILCD 2010 §11 说明审验细则当时尚在编制并以 ISO 14040/14044 为底线。"
+          },
+          {
+            "evidenceId": "ev-fw179-pef-framework",
+            "relation": "supports",
+            "rationale": "EU PEF 2021 Annex I §8.1 核查验证针对合规性与一致性而非替代实测物理验证。"
+          },
+          {
+            "evidenceId": "ev-fw179-ghgp-framework",
+            "relation": "supports",
+            "rationale": "GHG Protocol 产品标准 §12.1 鉴证提供清单报告可信度等级而非多指标环境因果证明。"
+          }
+        ],
+        "premiseIds": [
+          "cl-fw179-method-choice-effects"
+        ],
+        "conceptIds": [
+          "cn-review-scope"
+        ],
+        "caveats": [
+          "本节未直接核验 ISO 14040/14044 付费完整条款与 SETAC 1991/1993 原始会议全文。"
+        ],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-20",
+        "reviewKind": "agent-source-check",
+        "reasoning": "显式声明付费标准与未获取史料边界，并区分框架程序合规与实证科学验证。"
+      },
+      "rationale": "将付费 ISO 标准免责说明收束为指向《阅读导论》统一边界说明的简明提示，保留本章史料与程序边界论证。"
+    },
+    {
+      "id": "cl-allocation-reading-a-rule",
+      "op": "modify",
+      "from": {
+        "id": "cl-allocation-reading-a-rule",
+        "text": "读共同生产的结果，先看数字是分给产品的份额，还是两条供给路线的差。报告份额，要说清为什么这样分担；比较路线，要对齐服务，并说明参照的是哪条供给路线。若要据此判断一项行动的后果，还须查哪些活动真的会改变。采用具名规则时，所用的版本和适用条件也要查清。",
+        "kind": "synthesis",
+        "scope": "分配与替代规则中的核算、因果、规范和版本条件",
+        "evidenceIds": [
+          "ev-allocation-1998-defensibility",
+          "ev-allocation-2005-ethical-link",
+          "ev-allocation-2001-correction"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-allocation-1998-defensibility",
+            "relation": "supports",
+            "rationale": "加总一致性与辩护要求分别支撑核算和选择责任。"
+          },
+          {
+            "evidenceId": "ev-allocation-2005-ethical-link",
+            "relation": "supports",
+            "rationale": "规范性信息用途使规则的解释不能缩为纯计算。"
+          },
+          {
+            "evidenceId": "ev-allocation-2001-correction",
+            "relation": "supports",
+            "rationale": "增补明确撤销规则4并指出例10结论不正确，因此所比较的程序必须绑定修订状态。"
+          }
+        ],
+        "premiseIds": [
+          "cl-allocation-information-and-ethics",
+          "cl-allocation-three-responsibilities",
+          "cl-allocation-fairness-interpretations",
+          "cl-allocation-feasibility-tradeoff",
+          "cl-allocation-limits-on-both-sides",
+          "cl-allocation-addendum-substantive",
+          "cl-allocation-addendum-substitution-duty"
+        ],
+        "caveats": [
+          "这是一套分析组织建议，不表示所有争论已经解决或规则已经实证验证。"
+        ],
+        "reasoning": "核算、因果、规范和版本各自有独立失败方式；让它们逐项可见，才能追查结果差异来自哪里。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-08"
+      },
+      "rationale": "将第 10 章章末两段重构为“先查证口径与规则，再细拆三类量”的递进收束，彻底消除重复结语。"
+    },
+    {
+      "id": "cl-sub105-reporting-objects",
+      "op": "modify",
+      "from": {
+        "id": "cl-sub105-reporting-objects",
+        "text": "产品份额与完整路线差之外，还须单独辨认参照残余。份额回答共同负担怎样分给产品；残余是在联产清单中扣去另一功能的参照供给后留下的量；完整路线差则比较两组相同功能的供给。还要把残余与保留功能的独立参照清单作差，才能回到完整比较。分别标明这三种量，读者才能看清改变的是分担规则、所选的参照供给，还是所回答的问题。",
+        "kind": "interpretation",
+        "scope": "本章既有批次算例及新增规则比较的三种报告量",
+        "evidenceIds": [],
+        "evidenceLinks": [],
+        "premiseIds": [
+          "cl-joint-residual-derivation",
+          "cl-joint-different-questions",
+          "cl-sub105-two-uses",
+          "cl-sub105-pef-report"
+        ],
+        "conceptIds": [],
+        "caveats": [
+          "残余及完整差沿本章固定服务与参照的代数关系；不是某套具体规则已经符合的证明。"
+        ],
+        "reasoning": "为原有份额／路线差概括补明已在正文单独讨论的参照残余，不把它误当完整差或普通负担份额。",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-15"
+      },
+      "rationale": "承接前段查证清单，把产品份额、参照残余与完整路线差三类量逐一拆细并给出回到完整比较的检验。"
+    },
+    {
+      "id": "cl-dqp-ghgp-qualitative-dqi",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-ghgp-qualitative-dqi",
+        "text": "与上述两条定量路径对照，温室气体核算体系（GHG Protocol）2011 年产品标准走向第三条定性披露路线（表 2）：它沿用 Weidema 与 Wesnæs 的 5 项数据质量指标（DQI：技术、时间、地理、完整性与可靠性），但仅给“很好、良好、尚可、差”4 档定性评级，既不设统一数值综合 DQR 公式，也不转为概率分布。标准强制要求对显著过程的数据质量、改进措施、清单不确定性来源与关键方法选择作文字披露，同时把蒙特卡洛模拟或泰勒展开列为可选项。即便指标名称相同，GHG Protocol 选择的是“强制文字披露 + 可选定量传播”，与前文将代表性元数据同定量误差并行保留的立场相呼应。",
+        "kind": "source-statement",
+        "scope": "GHG Protocol 产品标准（2011）第 8.3 节定性 DQI 评级与第 10 章定性/定量不确定性报告边界。",
+        "evidenceIds": [
+          "ev-dqp153-ghgp-qualitative-dqi",
+          "ev-dqp153-ghgp-uncertainty-boundary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-ghgp-qualitative-dqi",
+            "relation": "supports",
+            "rationale": "第 48、55–57 页表 8.1–8.3 证实 5 项定性 DQI 与 4 档文字评级，无统一数值综合 DQR。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ghgp-uncertainty-boundary",
+            "relation": "supports",
+            "rationale": "第 79–83 页证实定性不确定性说明为强制项，蒙特卡洛或泰勒展开定量传播为可选项。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dqp-pef-ordinal-dqr",
+          "cl-unc-alongside"
+        ],
+        "caveats": [
+          "第 8.3.7 节虽提示企业可参考配套工具尝试以 DQI 辅助估算不确定性，但标准正文不要求强制概率转换。"
+        ],
+        "reasoning": "补齐定性披露路线，使“专家方差化—实证校准方差化—序数门槛—定性披露”四类体系形成完整对照。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-22",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "明确跨节指代对象，将“上述两条定量路径”具名为前节 ecoinvent 谱系方差与欧盟 PEF 序数 DQR。"
+    },
+    {
+      "id": "cl-dqp-paywalled-iso-boundary",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-paywalled-iso-boundary",
+        "text": "在来源边界上需要明确说明：国际标准 ISO 14044:2006 中关于数据质量要求与不确定性报告的正式条款属受版权与付费授权保护文本，本书未持有其授权全文，因此本章不引述或转述其具体条款编号与逐字要求。本章全部跨体系对照严格建立在已核验原文的开放获取一手材料之上——即柏林杯重抽样与谱系校准文献（Ciroth 等 2008、2012、2016）、美国环保署数据质量框架（Edelen 与 Ingwersen 2018）、ecoinvent 第三版数据质量导则（Weidema 等 2013）、欧盟委员会建议书 (EU) 2021/2279 及 GHG Protocol 产品标准（2011）；其余付费标准条款留待取得正式授权后再作逐条补证。",
+        "kind": "interpretation",
+        "scope": "本章跨体系比较的一手文献核验边界与 ISO 14044:2006 付费全文缺口声明。",
+        "evidenceIds": [
+          "ev-dqp153-pef-dqr-formula",
+          "ev-dqp153-ghgp-qualitative-dqi"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-pef-dqr-formula",
+            "relation": "context",
+            "rationale": "欧盟 PEF 建议脚注 72 虽提及 ISO 14044“精度”概念，但本仓库不据此反向补造未核验的 ISO 条款原文。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ghgp-qualitative-dqi",
+            "relation": "context",
+            "rationale": "GHG Protocol 产品标准为开放获取全文，可直接核对表 8.1–8.3 与第 10 章条款。"
+          }
+        ],
+        "premiseIds": [
+          "cl-dqp-four-framework-synthesis"
+        ],
+        "caveats": [
+          "该付费标准原文暂留作公开文献边界，待取得正式授权后再作逐条补证。"
+        ],
+        "reasoning": "贯彻公开证据边界原则，避免借二次转述冒充对付费国际标准条款的一手核验。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-22",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "将付费 ISO 14044:2006 边界说明精简并回指《阅读导论》统一说明，保留本章一手文献清单。"
+    },
+    {
+      "id": "cl-dqp-cross-chapter-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-dqp-cross-chapter-bridge",
+        "text": "放回第六部的整体链条中，本章处于数据适用性、不确定性传播与产品足迹规则三者的交汇处：《过程数据的用途》与《数据审查与版本》讨论背景数据库如何通过适用性筛选、区域化父子数据集与多角色审查管理“数据该不该用”，《变异与不确定性》辨明参数随机误差、情景选择与模型结构不确定性为何不能混进同一轮蒙特卡洛抽样，本章则揭示质量评分在各体系中究竟是变成了随机方差、序数准入闸门还是定性披露元数据；而下一章《产品足迹规则》将看到，欧盟 PEF 的 DQR 门槛与 GHG Protocol 的定性披露如何进一步嵌入产品足迹规则与法定合规框架，共同决定一项核算结果能否用于公开声明或跨产品比较。",
+        "kind": "synthesis",
+        "scope": "《质量评分与概率》与第六部其余各篇的概念衔接与分工边界。",
+        "evidenceIds": [
+          "ev-dqp153-pef-dnm-thresholds",
+          "ev-dqp153-ecoinvent-v3-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dqp153-pef-dnm-thresholds",
+            "relation": "context",
+            "rationale": "PEF 数据需求矩阵直接衔接下一章 B28 的产品足迹规则与法定准入体系。"
+          },
+          {
+            "evidenceId": "ev-dqp153-ecoinvent-v3-limits",
+            "relation": "context",
+            "rationale": "谱系方差排除模型不确定性的边界直接呼应 B26 对参数与模型不确定性的区分。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-conditional-use",
+          "cl-book-unc-bridge",
+          "cl-dqp-four-framework-synthesis",
+          "cl-dqp-paywalled-iso-boundary"
+        ],
+        "caveats": [
+          "各章职责衔接用于说明概念依赖关系，具体规则与案例证据仍以各自章节的一手引注为准。"
+        ],
+        "reasoning": "为读者建立第六部四章之间清晰的概念依赖脉络，便于后续整部连续回读。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-22",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "将合并前旧章名《过程数据的用途》与《数据审查与版本》更新为第 25 章现行章名《数据适用性》。"
+    },
+    {
+      "id": "cl-pfr151-paywalled-standard-boundaries",
+      "op": "modify",
+      "from": {
+        "id": "cl-pfr151-paywalled-standard-boundaries",
+        "kind": "interpretation",
+        "scope": "ISO 14067:2018、ISO 14025:2006、EN 15804+A2 与 GB/T 24067-2024 未检视付费全文的公开边界声明",
+        "evidenceIds": [
+          "ev-pfr151-ghgp-comparative-gates",
+          "ev-pfr151-espr-conversion-dpp"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pfr151-ghgp-comparative-gates",
+            "relation": "supports",
+            "rationale": "直接引证已核验官方一手 PDF 原文条款。"
+          },
+          {
+            "evidenceId": "ev-pfr151-espr-conversion-dpp",
+            "relation": "supports",
+            "rationale": "直接引证已核验官方一手 PDF 原文条款。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pfr151-espr-dpp-conversion",
+          "cl-pfr151-comparative-assertion-gates"
+        ],
+        "conceptIds": [
+          "cn-rule-conformance"
+        ],
+        "mappingIds": [],
+        "caveats": [
+          "本条属于研究边界与证据诚实声明；在取得付费标准授权正文前，不对未检视条款编号或模块细则作任何推断性引用。"
+        ],
+        "reasoning": "遵循本书研究纪律：区分已逐页核验的公开一手文本与受版权付费限制的国际/国家标准正文，避免以二手转述冒充一手条文核对。",
+        "text": "最后须明确一处证据边界：除上述已逐页核验的欧盟官方公报与开放获取标准外，国际与国内实践中广泛使用的产品碳足迹通则（ISO 14067:2018 及我国修改采用的国家标准 GB/T 24067-2024）、III 型环境产品声明（EPD）总则（ISO 14025:2006）以及欧洲建筑产品核心类别规则（EN 15804+A2）均属受版权与付费授权保护的标准正文。在本书未持有并逐页核验其授权全文之前，我们只保留它们作为既有制度坐标的公开边界，不从二手摘要反推其内部条款号、模块划分细则或数值豁免条件；实际开展合规申报、建筑 EPD 编制或国际互认时，必须对照现行有效授权原件与所属项目运营方的最新实施细则逐条核查。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-19",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "将四份付费标准（ISO 14067、GB/T 24067、ISO 14025、EN 15804+A2）说明精简并回指《阅读导论》统一边界说明。"
+    },
+    {
+      "id": "cl-wsc157-ghgp-and-paywalled-iso",
+      "op": "modify",
+      "from": {
+        "id": "cl-wsc157-ghgp-and-paywalled-iso",
+        "text": "第三条路线见于单一温室气体核算标准。GHG Protocol 产品标准（2011）第 1.5、5.3.2、13.2 节及附录 A 明确划定边界：该标准“按原样”仅支持同一产品跨期碳绩效追踪与减排评估，不支持关于一产品相对竞品总体环境优劣的比较断言；若确需在产品间开展碳比较、标签或绩效声明，必须另依统一产品规则对齐分析单元、系统与时间边界及分配方法，公开数据质量与不确定性并完成第三方鉴证。在来源边界上还须说明：国际标准 ISO 14044:2006 关于公开比较断言与关键性审查的正式条款属受版权保护的付费文本，本书未持有授权全文，因而此处不引述或补造其内部条款编号，全部跨体系对照均严格立足于已逐页核验的公开一手文献（ILCD 2010、欧盟建议书 (EU) 2021/2279、GHG Protocol 2011 与 Heijungs 2020）。",
+        "kind": "source-statement",
+        "scope": "依据 GHG Protocol 产品标准（2011）第 1.5、5.3.2、13.2 节与附录 A 说明不支持比较断言的边界，并显式声明 ISO 14044:2006 付费全文缺口。",
+        "evidenceIds": [
+          "ev-wsc157-ghgp-no-comparative-assertion"
+        ],
+        "premiseIds": [
+          "cl-pfr151-paywalled-standard-boundaries",
+          "cl-wsc157-ilcd-comparative-assertion",
+          "cl-wsc157-pef-pefcr-and-classes"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-framework-work-products"
+        ],
+        "caveats": [
+          "ISO 14044:2006 付费标准原文暂留作公开文献边界，待取得正式授权后再作逐条补证。"
+        ],
+        "reviewedAt": "2026-11-22",
+        "status": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "精简重复的 ISO 14044 付费文本免责段，统一回指《阅读导论》边界说明。"
+    },
+    {
+      "id": "cl-pack-question",
+      "op": "modify",
+      "from": {
+        "id": "cl-pack-question",
+        "kind": "interpretation",
+        "scope": "围绕原报告的条件性门槛展开整项研究解释",
+        "text": "厚塑料袋要用多少次，气候指标才会低于轻薄袋？英国环境署委托的研究算出，厚 LDPE 袋至少要用于购物五次，包括第一次。这个门槛针对报告设定的容量、制袋、垃圾桶内衬替代和处置条件，也要求两种袋子完成相同的购物运输服务。找出五次是怎样算出来的，就能看出哪些条件会改变门槛。",
+        "evidenceIds": [
+          "ev-pack-ea-ldpe-impacts",
+          "ev-pack-ea-methods"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pack-ea-ldpe-impacts",
+            "relation": "supports",
+            "rationale": "表 5.5 并列零复用及五次的影响。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-methods",
+            "relation": "supports",
+            "rationale": "研究先求气候门槛再按该次数比较其他类别。"
+          }
+        ],
+        "premiseIds": [],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "补齐本章首次出现的 LDPE 中文全称。"
+    },
+    {
+      "id": "cl-pack-provenance",
+      "op": "modify",
+      "from": {
+        "id": "cl-pack-provenance",
+        "kind": "interpretation",
+        "scope": "服务出处和附录计量的核对",
+        "text": "报告分别说明购物量和袋子装填量的资料来源。第 17 页援引 2007 年 TNS 调查的四周 446 件购物物品，随后把一个月的功能单位定为 483 件，未列出具体换算过程。附录 B 则说明 Test Research 在 2007 年末访问购物者，调查袋子装填量。附录有一句将 20.7 写作每袋件数，紧接的表格却将它列为每名购物者的物品数，每袋平均另列 6.6。复算须说明采用的是哪一行，并保留购物量与装填量各自的出处和分母。现有材料尚不足以确定这里的 TNS 记载与 Test Research 调查是什么关系，不能据不同署名断言它们是两项独立调查。",
+        "evidenceIds": [
+          "ev-pack-ea-goal",
+          "ev-pack-ea-capacity"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pack-ea-goal",
+            "relation": "supports",
+            "rationale": "正文的四周与月服务原始线索。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-capacity",
+            "relation": "supports",
+            "rationale": "附录 B 的原表头和调查说明。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pack-capacity"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "补齐本章首次出现的调查机构缩写 TNS 说明。"
+    },
+    {
+      "id": "cl-pack-credit",
+      "op": "modify",
+      "from": {
+        "id": "cl-pack-credit",
+        "kind": "interpretation",
+        "scope": "负担抵扣所代表的替代服务",
+        "text": "轻薄袋用过后若能代替另买的垃圾桶内衬袋，就多提供了一项服务。报告用系统扩展扣除所避免生产的内衬负担：购物袋容积19.1 L，内衬袋29.3 L、重9.3 g，按体积折算，一次替代约避免6.1 g HDPE内衬材料。扣掉这项负担，要以实际发生替代以及两者在这项用途上可等效为前提。",
+        "evidenceIds": [
+          "ev-pack-ea-secondary",
+          "ev-pack-ea-boundary"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pack-ea-secondary",
+            "relation": "supports",
+            "rationale": "第 4.4 节及第 31 页给内衬袋容量、质量和避免量。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-boundary",
+            "relation": "supports",
+            "rationale": "第 3.4 节采用避免负担。"
+          }
+        ],
+        "premiseIds": [
+          "cl-pack-service"
+        ],
+        "conceptIds": [
+          "cn-pack-substitution"
+        ],
+        "mappingIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "补齐本章首次出现的 HDPE 中文全称。"
+    },
+    {
+      "id": "cl-pack-people",
+      "op": "modify",
+      "from": {
+        "id": "cl-pack-people",
+        "kind": "source-statement",
+        "scope": "WRAP Q7、Q8 的受访者分母及多选用途",
+        "text": "替代比例来自另一份调查。WRAP于2005年3月在大不列颠街头访问1,048人；Q7问大约复用多少购物袋，以全部、大部分、一半左右、一些等分类，Q8问用途，允许多选。在全部1,048名受访者中，53%说会用购物袋给厨房垃圾桶作内衬。这个分母是人，不是所有袋子，也不是已经复用的袋子。",
+        "evidenceIds": [
+          "ev-pack-wrap2005-denominators"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pack-wrap2005-denominators",
+            "relation": "supports",
+            "rationale": "原调查的方法、Q7、Q8 及问卷给出样本和提问形式。"
+          }
+        ],
+        "premiseIds": [],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-05",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "补齐本章首次出现的 WRAP 中文全称。"
+    },
+    {
+      "id": "cl-int159-limitations-and-paywalled-iso",
+      "op": "modify",
+      "from": {
+        "id": "cl-int159-limitations-and-paywalled-iso",
+        "text": "收束到对外传播，国际指南最易被忽视的底线是“局限须随结论同行，未检出差异绝不等于等效”。ILCD 2010 第 9.4 节要求所有建议保守源自已核实重大发现，关键局限不得藏入附录而须写入核心结论与执行摘要，且不得在缺乏显著性证明时宣称方案“等效”——算不出显著差别仅表示现有证据不足以区分。欧盟 PEF 附件一第 6.4 节同样要求明示稳健性与适用范围，并指出产品环境足迹是对厂址级环评与化学品风险评估的补充而非替代。此外，ISO 14044:2006 相关正式条款及专门规范评审流程的 ISO/TS 14071:2014 属受版权保护的付费标准，此处未逐条引述原文，全部对照直接依据公开可核验的 ILCD 2010、欧盟官方公报与英丹两国政府报告。",
+        "kind": "interpretation",
+        "scope": "依据 ILCD 2010 第 9.4 节规定条款 II.a—II.d 与欧盟 PEF 附件一第 6.4 节界定局限随行与非等效底线，并说明付费 ISO 14044:2006 与 ISO/TS 14071:2014 原文未逐条引述的边界。",
+        "evidenceIds": [
+          "ev-int159-ilcd-interpretation-checks",
+          "ev-int159-pef-interpretation-report"
+        ],
+        "premiseIds": [
+          "cl-book-no-ranking",
+          "cl-book-not-equivalent",
+          "cl-pack-recommendation",
+          "cl-int159-critical-review-governance"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-variability-uncertainty"
+        ],
+        "caveats": [
+          "ISO 14044:2006 与 ISO/TS 14071:2014 属受版权保护的付费标准，其逐字细则待取得授权文本后再行补充核对。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22"
+      },
+      "rationale": "精简重复的 ISO 14044 与 ISO/TS 14071 付费标准边界段，回指《阅读导论》统一说明。"
+    },
+    {
+      "id": "cl-future-impact-limits",
+      "op": "modify",
+      "from": {
+        "id": "cl-future-impact-limits",
+        "text": "即使新工艺、竞争方案和背景已按同一情景设定，某些排放仍可能没有合适的影响类别或表征因子。2018 年论文将如何进一步发展影响评价留作研究问题。2020 年的论文指出，新材料和新技术可能遇到这种缺口。《排放时间与评价》的动态气候计算处理排放时点和响应的观察期限，其他环境后果需要各自的表征方法。结果表里如果缺少相应的影响指标，应说明这部分后果尚未评价。",
+        "kind": "interpretation",
+        "scope": "三项作品对时间表征与未来技术评价范围的限制；不是具体新材料危害判断。",
+        "evidenceIds": [
+          "ev-time-arv-limits",
+          "ev-time-gie-conditional",
+          "ev-time-lev-limits"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-time-arv-limits",
+            "relation": "supports",
+            "rationale": "实际p1292明确说明本文未展开prospective LCIA，并提出未来影响类别问题。"
+          },
+          {
+            "evidenceId": "ev-time-gie-conditional",
+            "relation": "supports",
+            "rationale": "实际p5 §3.4指出缺少类别或因子可能使潜在影响未被分类。"
+          },
+          {
+            "evidenceId": "ev-time-lev-limits",
+            "relation": "context",
+            "rationale": "实际p101提出其他类别需发展动态因子，说明时间方法的扩展并非现成覆盖。"
+          }
+        ],
+        "premiseIds": [
+          "cl-time-model-limits",
+          "cl-future-definition",
+          "cl-future-background"
+        ],
+        "caveats": [
+          "未识别或量化任何具体未来损害；未把缺失表征直接转成统一阻断规则。"
+        ],
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-22",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "将合并前旧章名《排放时间与评价》更新为第 15 章现行章名《气候当量》。"
+    },
+    {
+      "id": "cl-rev163-comparative-assertion-three-regimes",
+      "op": "modify",
+      "from": {
+        "id": "cl-rev163-comparative-assertion-three-regimes",
+        "text": "即使一项比较在计算上对齐了功能服务、系统边界与背景配对，它是否能够公开宣称“甲方案优于乙方案”，还要经受制度与审查边界的检验。全书对照的三套主要规范在此划出清晰分水岭：国际参考生命周期数据系统手册（ILCD 2010）要求对面向公众的比较断言禁用加权、禁止仅凭清单作出比较断言并引入独立专家小组关键性审查；欧盟产品环境足迹（PEF）及电池法规、可持续产品生态设计法规（ESPR）则依托具名类别规则（PEFCR）、量化热点阈值、性能分级与法定核查路径建立可比与合规边界；而温室气体核算体系产品标准明确不以支持面向公众的产品优劣比较断言为设计目标。至于受版权与付费授权保护的国际标准原文（如 ISO 14044、ISO 14067 与 ISO/TS 14071）中未经逐条核验的细则，本书统一保持边界留白，既不将外部导则与国际标准原文自动画等号，也绝不以二手转述冒充标准原文授权。",
+        "kind": "source-statement",
+        "scope": "综合第六与第七部产品足迹规则、墙面服务与购物袋审查比较，界定计算可比性与 ILCD、欧盟 PEF／法规、GHG Protocol 三大制度边界及付费 ISO 留白纪律。",
+        "evidenceIds": [
+          "ev-pfr151-battery-art7-art96",
+          "ev-pfr151-espr-conversion-dpp",
+          "ev-wsc157-ilcd-equivalence-scenarios",
+          "ev-wsc157-ilcd-weighting-panel",
+          "ev-wsc157-pef-pefcr-classes-verification",
+          "ev-wsc157-ghgp-no-comparative-assertion",
+          "ev-int159-ilcd-critical-review",
+          "ev-int159-danish-epa-multi-indicator",
+          "ev-int159-pef-interpretation-report"
+        ],
+        "premiseIds": [
+          "cl-connect-review-does-not-transfer",
+          "cl-book-conclusion-conditions"
+        ],
+        "conceptIds": [
+          "cn-review-scope",
+          "cn-framework-work-products",
+          "cn-fu"
+        ],
+        "caveats": [
+          "在某一制度下通过核查的结果不可自动平移至另一法域或另一项公开比较断言，跨制度引用须重新核对功能单位、背景库与审查范围。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pfr151-battery-art7-art96",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-pfr151-espr-conversion-dpp",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-wsc157-ilcd-equivalence-scenarios",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-wsc157-ilcd-weighting-panel",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-wsc157-pef-pefcr-classes-verification",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-wsc157-ghgp-no-comparative-assertion",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-int159-ilcd-critical-review",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-int159-danish-epa-multi-indicator",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-int159-pef-interpretation-report",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          }
+        ]
+      },
+      "rationale": "补充指向《阅读导论》统一核验边界说明的对称引用。"
+    },
+    {
+      "id": "cl-closing-pack-threshold-and-review",
+      "op": "modify",
+      "from": {
+        "id": "cl-closing-pack-threshold-and-review",
+        "kind": "synthesis",
+        "text": "购物袋报告说明，审查可以澄清计算能回答什么。英国环境署委托的研究报告署期为 2011 年，以英国 2006/07 年为参照。报告把一个月的购物物品从超市运回家定为名义上的共同服务，再按袋的容量和物品件数算出初始袋量。轻薄袋替代内衬的比例会改变厚袋所需的购物总次数，总数包括第一次。报告在基准计算中假定，约 40.28% 的轻薄 HDPE 袋用于替代原本需要购买的垃圾桶内衬袋。在这种条件下，厚 LDPE 袋合计购物使用五次时，气候指标较低，非生物资源耗竭指标却略高于轻薄袋。审查小组接受修改后的研究，也保留了实际功能、所需次数能否达到，以及主要涉及棉和生物基材料的土地和用水问题。计算告诉我们需要用多少次，实际用到多少次还须观察。",
+        "scope": "2011 年署期的英国环境署 SC030148 报告，其英国 2006/07 超市购物运输服务、模型门槛和最终审查意见。",
+        "premiseIds": [
+          "cl-pack-goal",
+          "cl-pack-service",
+          "cl-pack-credit",
+          "cl-pack-uses",
+          "cl-pack-shift",
+          "cl-pack-categories",
+          "cl-pack-review-flow",
+          "cl-pack-acceptance"
+        ],
+        "evidenceIds": [
+          "ev-pack-ea-goal",
+          "ev-pack-ea-flow",
+          "ev-pack-ea-sensitivity",
+          "ev-pack-ea-thresholds",
+          "ev-pack-ea-hdpe-impacts",
+          "ev-pack-ea-ldpe-impacts",
+          "ev-pack-ea2011-review-required-reuse-limitation",
+          "ev-pack-ea2011-review-final-conditional-acceptance",
+          "ev-pack-ea2011-review-land-water-reservation",
+          "ev-pack-ea2011-critical-review-roles"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-pack-ea-goal",
+            "relation": "supports",
+            "rationale": "界定 2006/07 年英国购物袋范围及报告使用的月度购物任务。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-flow",
+            "relation": "supports",
+            "rationale": "给出功能单位和按袋容量得出的参考流，实际购物复用缺资料。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-sensitivity",
+            "relation": "supports",
+            "rationale": "表 6.1 给出轻薄 HDPE 袋不同内衬替代条件的气候结果。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-thresholds",
+            "relation": "supports",
+            "rationale": "表 8.1 列出厚袋对应气候门槛随所选轻薄袋参照情景而改变。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-hdpe-impacts",
+            "relation": "supports",
+            "rationale": "表 5.1 给出原基准气候与非生物资源耗竭结果。"
+          },
+          {
+            "evidenceId": "ev-pack-ea-ldpe-impacts",
+            "relation": "supports",
+            "rationale": "表 5.5 与表 5.1 同类别对照，显示五次使用时两指标的方向不同。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+            "relation": "qualifies",
+            "rationale": "评论、答复与最终正文区分计算所需次数与独立实际复用证据；E.3 p119还保留实际功能比较缺口。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-review-final-conditional-acceptance",
+            "relation": "supports",
+            "rationale": "E.3 明记接受与保留意见并存。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-review-land-water-reservation",
+            "relation": "qualifies",
+            "rationale": "棉和生物基材料的土地与用水遗漏仍受保留意见约束，报告另有特定土地利用敏感性结果。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-critical-review-roles",
+            "relation": "supports",
+            "rationale": "报告版权页（PDF零基索引1）标明2011年2月署期，E.3回述不同年份的审查。"
+          }
+        ],
+        "conceptIds": [],
+        "reasoning": "固定报告设定的月度运输任务和其余模型条件，才可读出门槛随抵扣改变；这不证明实际功能相当。气候和非生物资源耗竭逐类比较有不同方向，研究者和审查者又明确区分模型所需次数与现实行为资料。",
+        "caveats": [
+          "内衬替代比例是报告模型条件，购物使用总次数含首次。基准下的跨类别对照保留各指标自己的单位和含义。",
+          "最终意见针对该研究版本。土地和用水保留主要涉及棉和生物基材料；实际复用、当代袋型与处置条件、公开推荐还须各有证据。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-09"
+      },
+      "rationale": "补齐第 32 章首次出现的 HDPE 与 LDPE 中文全称。"
+    },
+    {
+      "id": "cl-closing-historical-return",
+      "op": "modify",
+      "from": {
+        "id": "cl-closing-historical-return",
+        "kind": "synthesis",
+        "text": "回到开篇：一件产品在使用时省了电，制造时却多耗了能源。要判断换用它会怎样，首先要看比较的范围。容器研究估计了交付方案的节能潜力，政策研究还须考虑交付系统以外的能源需求。墙面算例说明，即使服务相同，增加一道准备工序也会改变比较结果。购物袋研究算出了厚袋需要用多少次，实际使用能否达到这一门槛，仍缺证据。这些比较说明了生命周期评价怎样支撑判断：追查负担在哪里增减，说明结论在什么条件下成立，并指出哪些新证据会改变结论。",
+        "scope": "本书所选两部早期容器原报告、一项墙面教学案例与一项历史购物袋研究的作者综合。",
+        "premiseIds": [
+          "cl-closing-container-comparison-and-policy",
+          "cl-closing-wall-substrate",
+          "cl-book-conclusion-conditions",
+          "cl-closing-pack-threshold-and-review",
+          "cl-pack-limits",
+          "cl-connect-next-evidence-at-link"
+        ],
+        "evidenceIds": [
+          "ev-early-repa1974-service",
+          "ev-early-rti1972-spending",
+          "ev-pack-ea2011-review-required-reuse-limitation"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-early-repa1974-service",
+            "relation": "context",
+            "rationale": "给出已采用的交付任务和过程到交付的比较关系。"
+          },
+          {
+            "evidenceId": "ev-early-rti1972-spending",
+            "relation": "context",
+            "rationale": "给出作者识别的容器链外消费及净影响缺口。"
+          },
+          {
+            "evidenceId": "ev-pack-ea2011-review-required-reuse-limitation",
+            "relation": "context",
+            "rationale": "给出已发表研究对所需次数与实际复用证据的明确区分。"
+          }
+        ],
+        "conceptIds": [],
+        "reasoning": "三类例证分别显示怎样确定比较对象、怎样通过模型隔离与复核前提变化、怎样标出迈向实际建议所缺的资料。共同的阅读问题及其作者判断由这些受限前提综合推出。",
+        "caveats": [
+          "材料之间的关系是本书的分析对照。制度传承、学科整体进步或历史优先权各需独立史料。",
+          "可追溯的模型关系提供复查起点；实际决定的适用性仍取决于研究证据、范围及相关判断理由。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-09"
+      },
+      "rationale": "将本段由“首次全书结语”顺滑改写为引出七类定向修订路由表的过渡段，消除与文末终结段的双结尾重复。"
+    },
+    {
+      "id": "cl-rev163-targeted-revision-routing",
+      "op": "modify",
+      "from": {
+        "id": "cl-rev163-targeted-revision-routing",
+        "text": "既然一项经得起推敲的结论把服务要求、系统模型、背景数据、影响评价、价值取舍、不确定度与审查体制逐层拆开，那么当新证据出现时，修订也应当是定向的而非推倒重来。实测使用行为或次级功能变化，首先触发功能单位、参考流与复用门槛重算，而不否定上游工艺平衡；背景数据库换版或方法数据包勘误，应定位到清单链接或表征矩阵环节，而不应被误读为工厂能耗突然恶化；归一化分母、权重或地球边界分配原则改变，改变的是综合排序与合规判据，而非底层物理排放清单；类别规则或关键性审查范围更新，改变的是对外宣称的制度资格，而非内部热点诊断本身。通过这种逐层路由，研究团队与读者都能迅速看清：新资料究竟改写了哪一步，又有哪些既有依据仍然有效。",
+        "kind": "interpretation",
+        "scope": "衔接既有历史回望段落，建立全书七部“新增证据—受影响环节—应修订命题—保持不变依据—不得直接推论”的定向修订纪律。",
+        "evidenceIds": [
+          "ev-wsc157-ilcd-equivalence-scenarios",
+          "ev-int159-danish-epa-multi-indicator",
+          "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "ev-weight135-jrc130796-nf-drift-and-rankings",
+          "ev-fut161-steubing-superstructure"
+        ],
+        "premiseIds": [
+          "cl-rev163-lcia-pathway-and-packet-drift",
+          "cl-rev163-pedigree-dqr-and-sampling-limits",
+          "cl-connect-next-evidence-at-link",
+          "cl-closing-historical-return"
+        ],
+        "conceptIds": [
+          "cn-historical-comparison-basis",
+          "cn-system-model",
+          "cn-review-scope"
+        ],
+        "caveats": [
+          "当同一项现实变更同时触及多个层级（例如新工艺既改变功能寿命又改变上游原料路线）时，应按路由表逐行叠加核查，而非只修订最显眼的一层。"
+        ],
+        "status": "reviewed",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-19",
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-wsc157-ilcd-equivalence-scenarios",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-int159-danish-epa-multi-indicator",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          },
+          {
+            "evidenceId": "ev-fut161-steubing-superstructure",
+            "relation": "supports",
+            "rationale": "锚定库内既有经 SHA-256 核验的一手文献证据段，支撑本条跨部综合或定向修订路由陈述，不越出原证据限定范围。"
+          }
+        ]
+      },
+      "rationale": "精简与前段尾句重复的“定向重算而非推倒重来”措辞，使两段衔接自然紧凑。"
+    }
+  ],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [
+    {
+      "path": "content/docs/book/index.mdx",
+      "fromSha256": "807dc7faf71c901b33755ff11a13fa8cc6a68d5f5804a38a785dca0a161ec11e",
+      "toSha256": "41a0c8a02f9c4a51a8d84e3894787d3a575d9cf4d1c011cf4a5386a087d121ed",
+      "previous": "---\ntitle: 阅读导论\ndescription: 按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。\n---\n\n本书围绕一个问题展开：一项环境判断需要哪些依据？先明确所比较的服务，再把提供服务所需的活动组织为系统，据此计算排放和资源需求。环境模型进一步估计这些量可能造成的后果。使用结果时，还须回到原来的问题，判断数据和分析能够支持什么结论。\n\n<ReaderSection id=\"问题与历史\" />\n<ReaderSection id=\"用途与地区语境\" />\n\n第一部沿[生命周期视角](/docs/book/integrative-ambitions/)、[饮料容器账本](/docs/book/early-container-comparisons/)、[容器比较与政策判断](/docs/book/early-container-policy-and-systems/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)与[清洁生产中的生命周期评价](/docs/book/cleaner-production-purpose-and-prospects/)展开：先从早期饮料容器核算与政策分析辨明两类问题所需的不同证据，再系统对照 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段组织、比较断言门槛、影响加权与审验鉴证上的共同核心与分歧，最后考察清洁生产中的应用条件。\n\n<ReaderSection id=\"比较对象与方法选择\" />\n<ReaderSection id=\"从系统关系到计算结果\" />\n\n第二部沿[功能参照](/docs/book/service-and-reference/)、[过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)与[混合清单](/docs/book/inventory-boundary-and-hybrid/)展开，说明系统如何建立与闭合：从功能单位、声明单位与活动层参考产品的四体系对照出发，经线性过程配平、流与交换边界及零/缺项分辨，到过程截断阈值、资本品边界与混合清单防重叠的跨体系比较。第三部沿[共同生产](/docs/book/joint-production/)、[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)展开，区分如何分担已有负担与一项选择会改变哪些供给活动，并对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）在替代边界、市场约束、电力尺度与循环足迹公式（CFF）上的条件与分歧。\n\n清单记录资源采掘、土地利用、取耗水与物质排放。第四部沿[中点与终点](/docs/book/midpoint-endpoint-value-choices/)、[气候当量](/docs/book/climate-equivalence/)、[酸化与营养富集](/docs/book/acidification-and-nutrient-pathways/)、[颗粒物排放与健康损害](/docs/book/particulate-emissions-and-health/)、[耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)与[毒性路径](/docs/book/usetox-pathways-and-boundaries/)展开，系统对照 ReCiPe 2016、欧盟环境足迹（EF 3.1）、GLAM、IPCC AR6、AWARE 与 USEtox，解释清单量如何经由不同环境机制转化为中点与终点指标。阅读时可以选取一个表征因子，追查它所对应的干预对象、空间背景、时间窗口与证据边界。第五部沿[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)与[环境损害估值](/docs/book/lime-preferences-and-damage-weights/)考察跨类别取舍，辨析政策目标距离、混合稳健度权重、空间表征与归一化分母耦合、保护领域截停以及陈述偏好货币估值如何改变方案排序与公开比较边界。\n\n<ReaderSection id=\"时间未来与相邻评价\" />\n\n不同章节中的“时间”也可能表示不同对象。气候计算关心排放发生的时刻和响应的计算终点，[未来技术与情景](/docs/book/future-technology-and-context/)则需要设定工艺规模及其供给背景。第五部后两章通过[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)和[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)进一步区分产品与组织参照、风险工时量表与不可抵消的基本权利底线，以及主体成本账本、异质货币消重、多准则否决阈值与地球边界配额分配；合并使用前，仍须明确某个量表示谁的经历、权利或支出。\n\n<ReaderSection id=\"数据与审查\" />\n<ReaderSection id=\"数据质量与不确定性\" />\n\n第六部考察结果所依据的数据、模型和规则。取得数据并不意味着它就适合当前对象，[数据适用性](/docs/book/data-applicability/)说明背景数据集的适用性、区域化覆盖、审查与换版边界；[变异与不确定性](/docs/book/uncertainty-and-variability/)辨明五类误差层次及全局灵敏度与蒙特卡洛次数的失效边界；[质量评分与概率](/docs/book/data-quality-and-probability/)借柏林杯重调查与跨体系对照区分谱系方差、序数评级门槛与定性披露；[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)则说明自愿与法定规则如何把服务定义、活动量、合格评定与比较条件连成一体。\n\n<ReaderSection id=\"解释与使用\" />\n<ReaderSection id=\"完整做一遍\" />\n\n第七部先用[墙面服务比较](/docs/book/wall-service-to-comparison/)复算假想条件并对照国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的比较断言与成对不确定性门槛；再通过[购物袋研究](/docs/book/interpretation-and-limits/)对照英国环境署与丹麦环保署评估及国际解释审查规则，区分实际资料能解释的差异与需另行佐证的建议；随后借[未来技术与情景](/docs/book/future-technology-and-context/)辨析前瞻性、事前与动态评价中的工艺放大、情景背景与时间边界。\n\n<ReaderSection id=\"把各章接起来\" />\n\n收束章[可修订的判断](/docs/book/revisable-judgment/)结合容器、墙面和购物袋案例，将全书的服务界定、系统边界、背景数据、影响路径、价值取舍、不确定性与审查体制收束为七类定向修订路由。把研究对象、数量关系、适用边界与证据来历说明白，后续研究才知道出现新资料时应重算哪一步、保留哪些既有依据，以及哪些推论不得越界。\n\n初次系统学习可以顺读七部。有清单计算基础的读者，也可以从过程网络或环境路径开始，遇到定义和历史身份问题时再查前文。若想先看一次完整比较，可以从墙面和购物袋案例入手，沿注释及章内链接查阅服务、矩阵或气候指标。三条阅读路线采用同一套案例条件和文献依据。\n"
+    }
+  ],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "352f3e436e5fcfb103b78253b1bd58957517816548f7c8871c571012e7504c79"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "99aa78b15f6572b1c7860c83c9cfc7dca69287773c4f8b17112ae7729892b353"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "c6f987112ddae5cba305aff87ebf957f94c77284f70e9b770fc12d6f9c950ae7"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "f971c57407c917cf0e19dddb9d1f01eb20d465b4b5d1d418b27ec545072231e8"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "1294d0664c58faf364a7a6d20dd867fece654e4be7621121b0ebedb4408249c1"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "8cebdede84f585697511f303700736de8f295c35a87ca6854b88d1a3f03f0845"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "第 4 章《评价框架与分析步骤》",
+      "claimId": "cl-fw179-epistemic-limits",
+      "scope": "将付费 ISO 标准免责说明收束为指向《阅读导论》统一边界说明的简明提示，保留本章史料与程序边界论证。"
+    },
+    {
+      "chapter": "第 10 章《共同生产》",
+      "claimId": "cl-allocation-reading-a-rule",
+      "scope": "将第 10 章章末两段重构为“先查证口径与规则，再细拆三类量”的递进收束，彻底消除重复结语。"
+    },
+    {
+      "chapter": "第 10 章《共同生产》",
+      "claimId": "cl-sub105-reporting-objects",
+      "scope": "承接前段查证清单，把产品份额、参照残余与完整路线差三类量逐一拆细并给出回到完整比较的检验。"
+    },
+    {
+      "chapter": "第 27 章《质量评分与概率》",
+      "claimId": "cl-dqp-ghgp-qualitative-dqi",
+      "scope": "明确跨节指代对象，将“上述两条定量路径”具名为前节 ecoinvent 谱系方差与欧盟 PEF 序数 DQR。"
+    },
+    {
+      "chapter": "第 27 章《质量评分与概率》",
+      "claimId": "cl-dqp-paywalled-iso-boundary",
+      "scope": "将付费 ISO 14044:2006 边界说明精简并回指《阅读导论》统一说明，保留本章一手文献清单。"
+    },
+    {
+      "chapter": "第 27 章《质量评分与概率》",
+      "claimId": "cl-dqp-cross-chapter-bridge",
+      "scope": "将合并前旧章名《过程数据的用途》与《数据审查与版本》更新为第 25 章现行章名《数据适用性》。"
+    },
+    {
+      "chapter": "第 28 章《产品足迹规则》",
+      "claimId": "cl-pfr151-paywalled-standard-boundaries",
+      "scope": "将四份付费标准（ISO 14067、GB/T 24067、ISO 14025、EN 15804+A2）说明精简并回指《阅读导论》统一边界说明。"
+    },
+    {
+      "chapter": "第 29 章《墙面服务比较》",
+      "claimId": "cl-wsc157-ghgp-and-paywalled-iso",
+      "scope": "精简重复的 ISO 14044 付费文本免责段，统一回指《阅读导论》边界说明。"
+    },
+    {
+      "chapter": "第 30 章《购物袋研究》",
+      "claimId": "cl-pack-question",
+      "scope": "补齐本章首次出现的 LDPE 中文全称。"
+    },
+    {
+      "chapter": "第 30 章《购物袋研究》",
+      "claimId": "cl-pack-provenance",
+      "scope": "补齐本章首次出现的调查机构缩写 TNS 说明。"
+    },
+    {
+      "chapter": "第 30 章《购物袋研究》",
+      "claimId": "cl-pack-credit",
+      "scope": "补齐本章首次出现的 HDPE 中文全称。"
+    },
+    {
+      "chapter": "第 30 章《购物袋研究》",
+      "claimId": "cl-pack-people",
+      "scope": "补齐本章首次出现的 WRAP 中文全称。"
+    },
+    {
+      "chapter": "第 30 章《购物袋研究》",
+      "claimId": "cl-int159-limitations-and-paywalled-iso",
+      "scope": "精简重复的 ISO 14044 与 ISO/TS 14071 付费标准边界段，回指《阅读导论》统一说明。"
+    },
+    {
+      "chapter": "第 31 章《未来技术与情景》",
+      "claimId": "cl-future-impact-limits",
+      "scope": "将合并前旧章名《排放时间与评价》更新为第 15 章现行章名《气候当量》。"
+    },
+    {
+      "chapter": "第 32 章《可修订的判断》",
+      "claimId": "cl-rev163-comparative-assertion-three-regimes",
+      "scope": "补充指向《阅读导论》统一核验边界说明的对称引用。"
+    },
+    {
+      "chapter": "第 32 章《可修订的判断》",
+      "claimId": "cl-closing-pack-threshold-and-review",
+      "scope": "补齐第 32 章首次出现的 HDPE 与 LDPE 中文全称。"
+    },
+    {
+      "chapter": "第 32 章《可修订的判断》",
+      "claimId": "cl-closing-historical-return",
+      "scope": "将本段由“首次全书结语”顺滑改写为引出七类定向修订路由表的过渡段，消除与文末终结段的双结尾重复。"
+    },
+    {
+      "chapter": "第 32 章《可修订的判断》",
+      "claimId": "cl-rev163-targeted-revision-routing",
+      "scope": "精简与前段尾句重复的“定向重算而非推倒重来”措辞，使两段衔接自然紧凑。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "editorial-integration",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/wp8-minor-polish-and-iso-dedup/review-record.json",
+      "sha256": "ad8fdc1bbcee08b99159f2d3b921f9cec07e3ae365dd8b68a5fb3f563a9e7691"
+    }
+  ]
+}

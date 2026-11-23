@@ -23,6 +23,7 @@ import { currentRevisions } from './reader-checkpoint.mjs';
 import { isRouteRevised, validateRouteChangesAgainstOutput } from './reader-revisions.mjs';
 import { validateTimelineData } from './reader-timeline.mjs';
 import { validateReaderGuideConfig } from './reader-guide.mjs';
+import { detectInternalDraftChapterNumbers } from './reader-quality-lint.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -154,6 +155,7 @@ async function validatePublication(root, requireCurrent) {
       const numberingConfig = await readOptional('config/reader-numbering.json');
       if (numberingConfig) errors.push(...validateReaderGuideConfig(guideConfig, numberingConfig));
     }
+    errors.push(...detectInternalDraftChapterNumbers(data));
     try {
       if (!isRevised('/docs/book/particulate-emissions-and-health'))
         errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
