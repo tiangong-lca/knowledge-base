@@ -45,6 +45,7 @@ import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { assertNumberingToc, currentPrintReadingHref, printReadingEntryAnchor, getContinuationLink, getHeadingNumbering, getUnitHeadingPlan } from '@/scripts/reader-numbering.mjs';
 import { TeachingCase } from '@/components/teaching-case';
+import { LcaTimeline } from '@/components/lca-timeline';
 import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDestination } from '@/scripts/reader-exchange-semantics.mjs';
 import Link from 'next/link';
 import { createElement, type AnchorHTMLAttributes, type HTMLAttributes } from 'react';
@@ -366,7 +367,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
     {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
-    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasHybridInventoryTables) ? { table: ReaderTable } : {}), ...headings })} />
+    <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, LcaTimeline, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasHybridInventoryTables) ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
       {print ? <h4 id={plan.headingId}>注释</h4> : <h2 id={plan.headingId}>注释</h2>}

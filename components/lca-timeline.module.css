@@ -72,6 +72,12 @@
   background: var(--kb-surface);
 }
 
+.filterRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
 .trackGroup {
   display: flex;
   flex-wrap: wrap;
@@ -265,6 +271,102 @@
   font-weight: 600;
   color: var(--color-fd-foreground);
   line-height: 1.45;
+}
+
+.badgeGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.statusVerified {
+  border-color: color-mix(in srgb, #15803d 35%, var(--color-fd-border));
+  background: color-mix(in srgb, #15803d 10%, var(--color-fd-background));
+  color: #15803d;
+}
+
+.statusPending {
+  border-color: color-mix(in srgb, #b45309 45%, var(--color-fd-border));
+  background: color-mix(in srgb, #d97706 12%, var(--color-fd-background));
+  color: #b45309;
+}
+
+:global(.dark) .statusVerified {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, 0.35);
+  background: rgba(21, 128, 61, 0.22);
+}
+
+:global(.dark) .statusPending {
+  color: #fcd34d;
+  border-color: rgba(252, 211, 77, 0.4);
+  background: rgba(180, 83, 9, 0.24);
+}
+
+.evidenceBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.5rem;
+  margin: 0 0 0.75rem;
+  font-size: 0.76rem;
+}
+
+.sourceChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16rem 0.55rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 4px;
+  color: var(--color-fd-foreground);
+  text-decoration: none;
+  background: var(--kb-surface);
+  transition: border-color 0.14s ease, color 0.14s ease;
+}
+
+.sourceChip:hover {
+  border-color: var(--color-fd-primary);
+  color: var(--color-fd-primary);
+  text-decoration: underline;
+}
+
+.evidenceNote {
+  flex: 1 0 100%;
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--kb-subtle);
+}
+
+.pendingBox {
+  margin: 0 0 0.75rem;
+  padding: 0.48rem 0.72rem;
+  border-left: 3px solid #d97706;
+  background: color-mix(in srgb, #d97706 8%, var(--color-fd-background));
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--color-fd-foreground);
+}
+
+.pendingBox strong {
+  color: #b45309;
+  font-weight: 600;
+}
+
+:global(.dark) .pendingBox strong {
+  color: #fcd34d;
 }
 
 .trackBadge {

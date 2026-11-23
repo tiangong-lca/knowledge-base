@@ -13,7 +13,7 @@ import { showEditorialHistoryInProse } from './reader-editorial-mode.mjs';
 import { extractRouteChanges } from './reader-revisions.mjs';
 
 function routesForChanges(current, sources) {
-  const { merges: routeChanges, mergedFromSet } = extractRouteChanges(current.revisions ?? []);
+  const { merges: routeChanges, addedUnits, mergedFromSet } = extractRouteChanges(current.revisions ?? []);
   const routes = new Set();
   if (current.changes.file.has('app/global.css')) for (const route of sources.keys()) routes.add(route);
   if (current.changes.file.has('components/teaching-case-client.tsx')) routes.add('/docs/book/wall-service-to-comparison');
@@ -30,6 +30,9 @@ function routesForChanges(current, sources) {
   }
   for (const rc of routeChanges) {
     if (rc.op === 'merge' && sources.has(rc.to)) routes.add(rc.to);
+  }
+  for (const added of addedUnits ?? []) {
+    if (sources.has(added.route)) routes.add(added.route);
   }
   const claims = new Set([...current.changes.record.keys()]
     .filter(key => key.startsWith('claims:')).map(key => key.slice('claims:'.length)));

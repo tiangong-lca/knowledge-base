@@ -19,10 +19,10 @@ test('authored full-unit links use current reading entries without changing scop
 });
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 40 actual units, 32 chapters, 120 formal sections and seven real parts', () => {
+test('current book retains 41 actual units, 32 chapters, 120 formal sections, five appendices and seven real parts', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,40);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,4]);
+  assert.equal(units.length,41);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,5]);
   assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,4,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
@@ -37,7 +37,7 @@ test('current book retains 40 actual units, 32 chapters, 120 formal sections and
     .map(unit=>getUnitHeadingPlan('book',unit.key).filter(row=>row.type==='mdx'&&row.depth===2).length);
   assert.equal(sections.reduce((sum,count)=>sum+count,0),120);
   assert(sections.every(count=>count>=3&&count<=5));
-  for (const {key} of units) {
+  for (const {key} of units.filter(u => u.key !== '/docs/appendices/lca-timeline')) {
     const historical = printUnitAnchor(key);
     assert.equal(printReadingEntryAnchor(key),historical.replace('print-unit-','print-reading-unit-'));
   }
@@ -45,14 +45,15 @@ test('current book retains 40 actual units, 32 chapters, 120 formal sections and
   assert.equal(getUnitNumbering('book','/docs/appendices/cml-framework-calculations').label,'附录 B');
   assert.equal(getUnitNumbering('book','/docs/appendices/climate-numerical-reconstruction').label,'附录 C');
   assert.equal(getUnitNumbering('book','/docs/appendices/particulate-factor-calculations').label,'附录 D');
+  assert.equal(getUnitNumbering('book','/docs/appendices/lca-timeline').label,'附录 E');
   assert.equal(getUnitNumbering('book','/docs').label,null);
 });
 
 test('website numbering unifies 32 chapters with book and keeps five unnumbered topic entries',()=>{
   const web=getPresentationUnits('web');
-  assert.equal(web.length,43);
+  assert.equal(web.length,44);
   assert.equal(web.filter(unit=>unit.kind==='chapter').length,32);
-  assert.equal(new Set(web.map(unit=>unit.key)).size,43);
+  assert.equal(new Set(web.map(unit=>unit.key)).size,44);
   assert.equal(getUnitNumbering('web',route).label,'第6章');
   assert.equal(getUnitNumbering('web','/docs/book/framework-responsibilities').label,'第4章');
   assert.equal(getUnitNumbering('web','/docs/book/joint-production').label,'第10章');
