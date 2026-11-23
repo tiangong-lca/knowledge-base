@@ -21,6 +21,7 @@ import { loadCasePublications, validateCasePublications } from './case-publicati
 import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
 import { currentRevisions } from './reader-checkpoint.mjs';
 import { isRouteRevised, validateRouteChangesAgainstOutput } from './reader-revisions.mjs';
+import { validateTimelineData } from './reader-timeline.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -142,6 +143,10 @@ async function validatePublication(root, requireCurrent) {
         anchorsByRoute.set(route, anchors);
       }
       errors.push(...validateRouteChangesAgainstOutput(activeRevisions, [...sources.keys()], anchorsByRoute));
+    }
+    const timelineData = await readOptional('knowledge/timeline.json');
+    if (timelineData) {
+      errors.push(...validateTimelineData(timelineData, data, new Set(sources.keys())));
     }
     try {
       if (!isRevised('/docs/book/particulate-emissions-and-health'))

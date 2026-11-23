@@ -67,10 +67,14 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
     outputs.push({ path: pathKey, route: routeKey, sha256: sha256(Buffer.from(article.outerHTML, 'utf8')) });
   };
   for (const rc of rev.routeChanges ?? []) {
-    if (rc.op !== 'merge') continue;
-    await addOutputReceipt(rc.to, rc.to, `${rc.to.slice(1)}/index.html`);
-    if (rc.bookUnit) {
-      await addOutputReceipt('/print', rc.bookUnit, 'print/index.html');
+    if (rc.op === 'merge') {
+      await addOutputReceipt(rc.to, rc.to, `${rc.to.slice(1)}/index.html`);
+      if (rc.bookUnit) {
+        await addOutputReceipt('/print', rc.bookUnit, 'print/index.html');
+      }
+    } else if (rc.op === 'add-unit') {
+      await addOutputReceipt(rc.route, rc.route, `${rc.route.slice(1)}/index.html`);
+      await addOutputReceipt('/print', rc.route, 'print/index.html');
     }
   }
   if (outputs.length) {

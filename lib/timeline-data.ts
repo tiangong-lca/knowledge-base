@@ -1,5 +1,9 @@
+import rawTimeline from '@/knowledge/timeline.json';
+import catalog from '@/lib/catalog';
+
 export type TimelineEraId = 'origins' | 'framing' | 'standardization' | 'consensus' | 'regulation';
 export type TimelineTrackId = 'framework' | 'inventory' | 'impact' | 'case-policy';
+export type TimelineStatus = 'verified' | 'pending';
 
 export interface TimelineEra {
   id: TimelineEraId;
@@ -18,6 +22,11 @@ export interface TimelineChapterLink {
   href: string;
 }
 
+export interface TimelineSourceRef {
+  id: string;
+  title: string;
+}
+
 export interface TimelineMilestone {
   id: string;
   year: string;
@@ -27,423 +36,34 @@ export interface TimelineMilestone {
   actor: string;
   summary: string;
   significance: string;
+  status: TimelineStatus;
+  verificationNote?: string;
+  pendingNote?: string;
+  sources: TimelineSourceRef[];
+  claimIds: string[];
   chapters: TimelineChapterLink[];
 }
 
-export const TIMELINE_ERAS: TimelineEra[] = [
-  {
-    id: 'origins',
-    span: '1969–1989',
-    title: '早期资源账本',
-    subtitle: '从饮料容器能耗与废物流比较起步，萌生全链条核算意识',
-  },
-  {
-    id: 'framing',
-    span: '1990–1999',
-    title: '框架成型与分化',
-    subtitle: '确立四阶段结构，同时出现归因与后果、物理与经济边界分歧',
-  },
-  {
-    id: 'standardization',
-    span: '2000–2009',
-    title: '标准化与模型深化',
-    subtitle: 'ISO 14040/14044 定型，中点/终点路线、混合清单与共识毒性模型崛起',
-  },
-  {
-    id: 'consensus',
-    span: '2010–2019',
-    title: '指南体系与区域化',
-    subtitle: 'ILCD、GHG Protocol、ecoinvent v3 与水/颗粒物等空间精细化表征普及',
-  },
-  {
-    id: 'regulation',
-    span: '2020–2026',
-    title: '法规强制与前瞻动态',
-    subtitle: '欧盟 PEF、电池法规与生态设计法规落地，前瞻与动态 LCA 走向规范化',
-  },
-];
+const sourceTitleMap = new Map(catalog.sources.map(s => [s.id, s.title]));
 
-export const TIMELINE_TRACKS: TimelineTrack[] = [
-  { id: 'framework', label: '框架与标准' },
-  { id: 'inventory', label: '清单与数据库' },
-  { id: 'impact', label: '影响评价方法' },
-  { id: 'case-policy', label: '经典案例与政策' },
-];
-
-export const TIMELINE_MILESTONES: TimelineMilestone[] = [
-  {
-    id: 'm-1969-mri',
-    year: '1969',
-    era: 'origins',
-    track: 'case-policy',
-    title: '中西部研究所（MRI）饮料容器资源与环境剖面研究',
-    actor: 'Midwest Research Institute（可口可乐委托）',
-    summary: '首次系统追踪玻璃瓶、金属罐与塑料容器从原料开采、制造到废弃处置的能量、原料与排放账本，奠定“从摇篮到坟墓”比较思路。',
-    significance: '公认的现代生命周期清单分析（LCI）源头，把包装争议从单一环节拉向全链条物料能量平衡。',
-    chapters: [
-      { label: '饮料容器账本', href: '/docs/book/early-container-comparisons/' },
-      { label: '生命周期视角', href: '/docs/book/integrative-ambitions/' },
-    ],
-  },
-  {
-    id: 'm-1972-rti',
-    year: '1972',
-    era: 'origins',
-    track: 'case-policy',
-    title: '三角研究所（RTI）饮料容器政策报告',
-    actor: 'Research Triangle Institute',
-    summary: '在能源与固体废弃物政策辩论中引入可回用与一次性容器的系统比较，揭示复用次数、回收率与运输距离如何左右政策优劣。',
-    significance: '首次清晰暴露“相同实物账本在不同使用行为假设下会得出相反政策结论”。',
-    chapters: [
-      { label: '容器比较与政策判断', href: '/docs/book/early-container-policy-and-systems/' },
-      { label: '可修订的判断', href: '/docs/book/revisable-judgment/' },
-    ],
-  },
-  {
-    id: 'm-1974-epa-repa',
-    year: '1974',
-    era: 'origins',
-    track: 'framework',
-    title: '美国环保署（EPA）资源与环境剖面分析（REPA）报告',
-    actor: 'US EPA / Franklin Associates',
-    summary: '公开九种饮料容器系统的资源与环境剖面核算方法与数据边界，形成早期系统化清单核算范式（REPA）。',
-    significance: '让企业内部委托研究走向公开政府报告与可复核方法文本。',
-    chapters: [
-      { label: '饮料容器账本', href: '/docs/book/early-container-comparisons/' },
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-    ],
-  },
-  {
-    id: 'm-1984-bus',
-    year: '1984',
-    era: 'origins',
-    track: 'impact',
-    title: '瑞士联邦环保局（BUS）包装材料生态平衡与临界体积法',
-    actor: '瑞士联邦环保局（BUS）',
-    summary: '在欧洲系统整理包装材料清单数据，并尝试按法规排放限值计算“临界体积”，为后续生态稀缺法（UBP）铺平道路。',
-    significance: '标志欧洲从纯物料能量清单迈向基于环境承载与政策目标的影响汇总尝试。',
-    chapters: [
-      { label: '生态稀缺赋权', href: '/docs/book/ecological-scarcity-and-targets/' },
-    ],
-  },
-  {
-    id: 'm-1990-setac',
-    year: '1990',
-    era: 'framing',
-    track: 'framework',
-    title: 'SETAC 佛蒙特研讨会确立“生命周期评价（LCA）”术语',
-    actor: '环境毒理与化学学会（SETAC）',
-    summary: '汇聚欧美研究者统一术语为 Life Cycle Assessment，并提出清单分析、影响评价与改进分析三组件技术框架。',
-    significance: 'LCA 正式从零散的包装能耗研究升格为跨国学术共同体共建的方法学科。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-    ],
-  },
-  {
-    id: 'm-1992-cml',
-    year: '1992',
-    era: 'framing',
-    track: 'impact',
-    title: '莱顿大学环境科学中心《产品环境生命周期评价指南》（CML 1992）',
-    actor: 'Heijungs 等（荷兰莱顿大学 CML）',
-    summary: '系统构建“分类—表征—归一化—评价”中点影响评价流程，并引入线性代数矩阵表述将过程清单计算形式化。',
-    significance: '奠定现代中点影响评价（Midpoint LCIA）与矩阵化清单求解的双重理论支柱。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-      { label: '过程网络', href: '/docs/book/inventory-calculation/' },
-    ],
-  },
-  {
-    id: 'm-1993-epa-setac-code',
-    year: '1993',
-    era: 'framing',
-    track: 'framework',
-    title: 'US EPA《生命周期评价：清单指南与原则》及 SETAC 实践准则',
-    actor: 'US EPA / SETAC',
-    summary: '细化目标与范围界定、功能单位、数据质量记录与系统边界截断原则，强化同行评议与透明度要求。',
-    significance: '把“先定服务功能、再建过程账本”的规范要求写入可操作的工程手册。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-      { label: '功能参照', href: '/docs/book/service-and-reference/' },
-    ],
-  },
-  {
-    id: 'm-1997-iso14040',
-    year: '1997',
-    era: 'framing',
-    track: 'framework',
-    title: 'ISO 14040 首版发布，确立现代四阶段框架',
-    actor: '国际标准化组织（ISO TC 207）',
-    summary: '将早期“改进分析”重塑为贯穿全程的“生命周期解释”，确立目标与范围、清单分析、影响评价、解释四阶段迭代结构。',
-    significance: '成为全球首个跨国界 LCA 国际标准骨架，后续 14041/14042/14043 随之展开。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-      { label: '清洁生产中的生命周期评价', href: '/docs/book/cleaner-production-purpose-and-prospects/' },
-    ],
-  },
-  {
-    id: 'm-1998-psi-electricity',
-    year: '1998',
-    era: 'framing',
-    track: 'inventory',
-    title: '瑞士保罗谢勒研究所（PSI）电力贸易平衡模型与边际争议',
-    actor: 'Ménard、Frischknecht 等（PSI）',
-    summary: '基于 1995 年瑞士海关与发电统计建立 M1–M4 物理电量分配模型，同时在脚注中显式记录“平均组合 vs 边际供给”的立场分歧。',
-    significance: '首次用严密实证算例揭示“同一度外购电在不同记账边界下对应不同发电来源”。',
-    chapters: [
-      { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
-      { label: '供电系统', href: '/docs/book/electricity-service-and-response/' },
-    ],
-  },
-  {
-    id: 'm-1999-weidema',
-    year: '1999',
-    era: 'framing',
-    track: 'inventory',
-    title: 'Weidema 提出后果式系统扩展与受限市场识别程序',
-    actor: 'Bo Weidema 等',
-    summary: '提出按市场边界、产能趋势与供应约束逐步识别受需求变动影响的边际供应者，推动后果式 LCA（Consequential LCA）独立成派。',
-    significance: '清晰划开“归因记账（谁分担既有排放）”与“后果建模（需求变化让谁多生产）”的分水岭。',
-    chapters: [
-      { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
-      { label: '共同生产', href: '/docs/book/joint-production/' },
-    ],
-  },
-  {
-    id: 'm-2001-cml2001',
-    year: '2001',
-    era: 'standardization',
-    track: 'impact',
-    title: 'CML 2001/2002《ISO 标准操作指南》出版',
-    actor: 'Guinée 等（莱顿大学 CML）',
-    summary: '按简化级、基线级与扩展级系统整理中点表征因子，强推荐归一化并严格重申公开比较断言禁用加权。',
-    significance: '确立近二十年国际学界与工业界最广泛引用的中点基线表征体系之一。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-      { label: '中点与终点', href: '/docs/book/midpoint-endpoint-value-choices/' },
-    ],
-  },
-  {
-    id: 'm-2004-suh-hybrid',
-    year: '2004',
-    era: 'standardization',
-    track: 'inventory',
-    title: 'Suh 等系统建立分层、投入产出型与集成混合清单框架',
-    actor: 'Sangwon Suh 等',
-    summary: '揭示纯过程清单的系统边界截断误差，提出用经济投入产出表（EEIO）闭合上游缺口，同时建立防重复计算扣除方法。',
-    significance: '把“过程截断误差”与“部门聚合/价格折算误差”的权衡推上台面。',
-    chapters: [
-      { label: '混合清单', href: '/docs/book/inventory-boundary-and-hybrid/' },
-    ],
-  },
-  {
-    id: 'm-2005-lime',
-    year: '2005',
-    era: 'standardization',
-    track: 'impact',
-    title: '日本 LIME 损害导向影响评价与货币化估值体系成形',
-    actor: 'Itsubo、Inaba 等（日本产业技术综合研究所）',
-    summary: '以联合分析（Conjoint Analysis）等社会偏好调查建立跨损害终点（人类健康、社会资产、生物多样性、初级生产力）的货币化权重。',
-    significance: '展示终点货币化如何将环境权衡转化为可比货币量，也暴露支付意愿对人口与收入分布的依赖。',
-    chapters: [
-      { label: '环境损害估值', href: '/docs/book/lime-preferences-and-damage-weights/' },
-    ],
-  },
-  {
-    id: 'm-2006-iso14044',
-    year: '2006',
-    era: 'standardization',
-    track: 'framework',
-    title: 'ISO 14040:2006 与 ISO 14044:2006 整合修订版发布',
-    actor: '国际标准化组织（ISO）',
-    summary: '将原 14041–14043 合并为单一要求与指南标准 ISO 14044，明确公开比较断言的强制关键性审查与禁加权底线。',
-    significance: '构成至今仍居全球核心地位的 LCA 原则、要求与评审治理基准。',
-    chapters: [
-      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
-      { label: '墙面服务比较', href: '/docs/book/wall-service-to-comparison/' },
-      { label: '购物袋研究', href: '/docs/book/interpretation-and-limits/' },
-    ],
-  },
-  {
-    id: 'm-2008-usetox',
-    year: '2008',
-    era: 'standardization',
-    track: 'impact',
-    title: 'UNEP/SETAC 毒性共识模型 USEtox 发布',
-    actor: 'Rosenbaum、Hauschild、Jolliet 等',
-    summary: '整合欧美多套多媒体归宿—暴露—效应模型，以统一比较毒性单位（CTUh / CTUe）量化人体毒性与淡水生态毒性。',
-    significance: '将跨模型相差数个数量级的毒性表征收束到透明可复核的科学共识框架。',
-    chapters: [
-      { label: '毒性路径', href: '/docs/book/usetox-pathways-and-boundaries/' },
-    ],
-  },
-  {
-    id: 'm-2009-recipe',
-    year: '2009',
-    era: 'standardization',
-    track: 'impact',
-    title: 'ReCiPe 2008 统一中点与终点视角并引入文化理论三视角',
-    actor: 'Goedkoop、Huijbregts 等',
-    summary: '融合 CML 中点与 Eco-indicator 99 终点路线，按个人主义（I）、层级主义（H）与平等主义（E）三套价值视角显式参数化时间范围与证据门槛。',
-    significance: '明确揭示“终点汇总并非纯自然科学，而是物理因果链与规范性价值选择的结合”。',
-    chapters: [
-      { label: '中点与终点', href: '/docs/book/midpoint-endpoint-value-choices/' },
-    ],
-  },
-  {
-    id: 'm-2010-ilcd',
-    year: '2010',
-    era: 'consensus',
-    track: 'framework',
-    title: '欧盟联合研究中心《ILCD 详细指南》发布',
-    actor: '欧盟联合研究中心（JRC）',
-    summary: '按决策语境划分情景 A（微观）、B（中宏观）与 C1/C2（纯描述核算），系统细化数据质量评分、五维合规块、灵敏度三查与多级审查程序。',
-    significance: '成为欧洲生命周期数据网络与产品足迹体系最详尽的公开操作蓝本。',
-    chapters: [
-      { label: '数据适用性', href: '/docs/book/data-applicability/' },
-      { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
-    ],
-  },
-  {
-    id: 'm-2011-ghgp-ukbag',
-    year: '2011',
-    era: 'consensus',
-    track: 'case-policy',
-    title: 'GHG Protocol 产品标准、UNEP/SETAC 数据导则与英国购物袋评估同一年发布',
-    actor: 'WRI/WBCSD · UNEP/SETAC · 英国环境署（EA）',
-    summary: 'GHG Protocol 确立企业单指标碳足迹归因与鉴证规范；UNEP/SETAC 推出全球数据导则；英国环境署购物袋报告经三人外部评审组审查，揭示垃圾袋次级复用对门槛的决定性影响。',
-    significance: '标示企业碳核算、全球清单治理与政府循证决策三条应用主线同时走向成熟。',
-    chapters: [
-      { label: '购物袋研究', href: '/docs/book/interpretation-and-limits/' },
-      { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '数据适用性', href: '/docs/book/data-applicability/' },
-    ],
-  },
-  {
-    id: 'm-2012-ciroth-pedigree',
-    year: '2012',
-    era: 'consensus',
-    track: 'inventory',
-    title: 'Ciroth 等开展谱系矩阵实证校准（柏林杯重抽样研究）',
-    actor: 'Andreas Ciroth、Muller 等',
-    summary: '以柏林酸奶杯重抽样调查检验定性谱系评分与实证数据散布之间的对应关系，尝试用实证方差替代早期纯专家经验系数。',
-    significance: '首次在实证层面严格追问“数据质量打分究竟能否可靠换算为概率方差”。',
-    chapters: [
-      { label: '质量评分与概率', href: '/docs/book/data-quality-and-probability/' },
-    ],
-  },
-  {
-    id: 'm-2013-ecoinvent3',
-    year: '2013',
-    era: 'consensus',
-    track: 'inventory',
-    title: 'ecoinvent 第三版（v3）上线多系统模型与全球/残差（GLO/RoW）架构',
-    actor: 'ecoinvent 中心（Weidema 等）',
-    summary: '拆分转换活动与消费组合市场活动，提供截断（Cut-off）、分配（APOS）与后果（Consequential）三套并行系统模型，并引入 GLO→RoW 自动残差生成机制。',
-    significance: '彻底改变现代背景数据库的链接方式，也使数据库版本迁移与残差漂移成为核心审计议题。',
-    chapters: [
-      { label: '数据适用性', href: '/docs/book/data-applicability/' },
-      { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
-    ],
-  },
-  {
-    id: 'm-2016-glam-aware-recipe',
-    year: '2016',
-    era: 'consensus',
-    track: 'impact',
-    title: 'ReCiPe 2016、AWARE 缺水模型与 UNEP GLAM 颗粒物共识模型落地',
-    actor: 'UNEP/SETAC GLAM · WULCA · RIVM',
-    summary: '将流域级可用水剩余量（AWARE）、城乡室内外分层细颗粒物健康损害（DALY）与区域化酸化/富营养化路径纳入主流表征体系。',
-    significance: '推动影响评价从全球均质因子迈向高空间分辨率、受体敏感的本地化表征。',
-    chapters: [
-      { label: '耗水与缺水潜势', href: '/docs/book/water-scarcity-and-reference/' },
-      { label: '颗粒物排放与健康损害', href: '/docs/book/particulate-emissions-and-health/' },
-      { label: '影响评价本地化', href: '/docs/book/localization-evidence-and-denominators/' },
-    ],
-  },
-  {
-    id: 'm-2018-danish-bag',
-    year: '2018',
-    era: 'consensus',
-    track: 'case-policy',
-    title: '丹麦环保署购物袋 15 项指标评估暴露跨指标权衡极限',
-    actor: '丹麦环保署（Miljøstyrelsen）',
-    summary: '以 22 L / 12 kg 单次购物为功能单位无加权计算 15 项指标最小复用次数：有机棉袋仅看气候需 149 次，全指标齐平则高达 20,000 次。',
-    significance: '以震撼实证说明单看碳足迹如何掩盖水资源、臭氧消耗与土地利用的跨类别负担转移。',
-    chapters: [
-      { label: '购物袋研究', href: '/docs/book/interpretation-and-limits/' },
-    ],
-  },
-  {
-    id: 'm-2020-method-critiques',
-    year: '2020',
-    era: 'regulation',
-    track: 'impact',
-    title: '不确定性、事前放大与动态时间边界三大方法综述定调',
-    actor: 'Heijungs (2020) · Tsoy 等 (2020) · Lueddeckens 等 (2020)',
-    summary: 'Heijungs 揭示蒙特卡洛运行次数超过实证样本量会制造极端伪显著；Tsoy 总结事前放大 0 篇回验缺口；Lueddeckens 厘清评估、清单与表征三类时间范围。',
-    significance: '为高不确定性、新兴技术放大与动态排放建模划定清晰的方法红线。',
-    chapters: [
-      { label: '变异与不确定性', href: '/docs/book/uncertainty-and-variability/' },
-      { label: '未来技术与情景', href: '/docs/book/future-technology-and-context/' },
-      { label: '气候当量', href: '/docs/book/climate-equivalence/' },
-    ],
-  },
-  {
-    id: 'm-2021-eu-pef-superstructure',
-    year: '2021',
-    era: 'regulation',
-    track: 'framework',
-    title: '欧盟 PEF 建议书 (EU) 2021/2279 与超结构＋IAM 前瞻架构发布',
-    actor: '欧盟委员会 · Steubing & de Koning',
-    summary: '欧盟确立 16 类环境足迹（EF）强制指标、循环足迹公式（CFF）、序数 DQR 准入、PEFCR 专属比较许可与 A–E 五档分级；同年超结构数据库＋情景差异文件（SDF）大幅降低 IAM 未来背景耦合成本。',
-    significance: '一方面把企业足迹推向高度标准化的合规监管路线，另一方面打通面向 2030/2050 脱碳情景的工程计算瓶颈。',
-    chapters: [
-      { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '材料循环', href: '/docs/book/recycling-chains-and-accounting/' },
-      { label: '未来技术与情景', href: '/docs/book/future-technology-and-context/' },
-    ],
-  },
-  {
-    id: 'm-2023-eu-batteries',
-    year: '2023',
-    era: 'regulation',
-    track: 'case-policy',
-    title: '欧盟《电池法规》(EU) 2023/1542 将产品碳足迹写入强制市场准入',
-    actor: '欧洲议会与欧盟理事会',
-    summary: '对电动汽车、轻型交通工具及 >2 kWh 工业电池设立“申报—性能分级—法定最高限值”三阶段强制门槛，要求五大核心部件采用具体工厂级数据并由公告机构评定。',
-    significance: '标志 LCA/碳足迹首次在大型工业品领域从自愿信息披露跨越为具有直接法律约束力的市场准入闸门。',
-    chapters: [
-      { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-    ],
-  },
-  {
-    id: 'm-2024-espr-arvidsson',
-    year: '2024',
-    era: 'regulation',
-    track: 'framework',
-    title: '欧盟《可持续产品生态设计法规》（ESPR）与前瞻性 LCA 术语体系',
-    actor: '欧盟 · Arvidsson 等 (2024)',
-    summary: 'ESPR (EU) 2024/1781 将环境足迹与数字产品护照（DPP）扩展至广泛实物商品；同年 Arvidsson 等以“时间位置×技术成熟度”两维坐标统一前瞻、事前、预期与动态 LCA 术语。',
-    significance: '监管合规基础设施（DPP）与面向未来技术评价的方法术语同步进入制度化阶段。',
-    chapters: [
-      { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '未来技术与情景', href: '/docs/book/future-technology-and-context/' },
-    ],
-  },
-  {
-    id: 'm-2026-dpp-transition',
-    year: '2026',
-    era: 'regulation',
-    track: 'case-policy',
-    title: '欧盟数字产品护照中央注册库节点与 EF 3.1 次级数据过渡指导',
-    actor: '欧盟委员会',
-    summary: 'ESPR 设定 2026 年 7 月建成数字产品护照中央注册库；欧盟委员会亦发布 EF 3.1 次级数据过渡指导（预计延用至 2028 年），直面合规数据库建设与跨研究可比性之间的现实张力。',
-    significance: '提醒研究者与监管者：方法规范落地永远伴随数据供给演进与版本迁移，结论必须保持可追溯、可修订。',
-    chapters: [
-      { label: '数据适用性', href: '/docs/book/data-applicability/' },
-      { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '可修订的判断', href: '/docs/book/revisable-judgment/' },
-    ],
-  },
-];
+export const TIMELINE_ERAS: TimelineEra[] = rawTimeline.eras as TimelineEra[];
+export const TIMELINE_TRACKS: TimelineTrack[] = rawTimeline.tracks as TimelineTrack[];
+export const TIMELINE_MILESTONES: TimelineMilestone[] = rawTimeline.milestones.map(m => ({
+  id: m.id,
+  year: m.year,
+  era: m.era as TimelineEraId,
+  track: m.track as TimelineTrackId,
+  title: m.title,
+  actor: m.actor,
+  summary: m.summary,
+  significance: m.significance,
+  status: m.status as TimelineStatus,
+  verificationNote: 'verificationNote' in m ? (m.verificationNote as string | undefined) : undefined,
+  pendingNote: 'pendingNote' in m ? (m.pendingNote as string | undefined) : undefined,
+  sources: (m.evidence?.sourceIds ?? []).map(id => ({
+    id,
+    title: sourceTitleMap.get(id) ?? id,
+  })),
+  claimIds: m.evidence?.claimIds ?? [],
+  chapters: m.chapters,
+}));

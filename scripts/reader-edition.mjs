@@ -32,11 +32,19 @@ export function assertFrameworkHeadingHistory(history) {
 }
 
 /** Actual source discovery is independent of the mutable edition registration. */
-export function currentEditionKeys(edition, availableSources, baseline, placements, routeChanges = currentRouteChanges.merges) {
+export function currentEditionKeys(edition, availableSources, baseline, placements, routeChanges = currentRouteChanges) {
   const units = edition.units;
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
   const mergeList = Array.isArray(routeChanges) ? routeChanges : (routeChanges?.merges ?? []);
+  const addedList = Array.isArray(routeChanges) ? [] : (routeChanges?.addedUnits ?? []);
+  const addedUnitKeys = new Set(addedList.map(u => u.route));
+  for (const added of addedList) {
+    const found = units.find(u => u.key === added.route);
+    if (!found || found.source !== added.route || found.kind !== added.kind) {
+      throw new Error(`Added unit registration invalid: ${added.route}`);
+    }
+  }
   const mergeByBookUnit = new Map(
     mergeList.filter(rc => rc.op === 'merge' && rc.bookUnit).map(rc => [rc.bookUnit, rc]),
   );
@@ -84,7 +92,8 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route), pmSelectionAppendix];
   const expected = retained.filter(route => route !== dataApplicabilityRoutes[1] && route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === dataApplicabilityRoutes[0] ? dataApplicabilityKey : route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
-  if (JSON.stringify(units.map(unit => unit.key).sort()) !== JSON.stringify([...currentBookLayout('book:unit-keys', expected)].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
+  const baseUnits = units.filter(unit => !addedUnitKeys.has(unit.key));
+  if (JSON.stringify(baseUnits.map(unit => unit.key).sort()) !== JSON.stringify([...currentBookLayout('book:unit-keys', expected)].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
   if (JSON.stringify(units.map(({key,source,kind})=>({key,source,kind}))) !== JSON.stringify(presentation.map(({key,source,kind})=>({key,source,kind})))) throw new Error('Book edition differs from the explicit current seven-part numbered order');
   for (const unit of units) {
@@ -104,7 +113,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     if (key === closingSynthesisKey) return '/monograph/revisable-judgment';
     return null;
   };
-  const roster = units.map(({key,source,kind})=>({
+  const roster = baseUnits.map(({key,source,kind})=>({
     key,
     source: mergeByBookUnit.has(key) ? (preMergeMonographSource(key) ?? source) : source,
     kind,

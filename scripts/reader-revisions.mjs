@@ -91,8 +91,17 @@ export function validateRevisionSchema(revision, label = 'revision') {
       throw new Error(`${label}: routeChanges must be an array`);
     }
     for (const rc of revision.routeChanges) {
-      if (!rc || rc.op !== 'merge') {
-        throw new Error(`${label}: routeChanges entry requires op: 'merge'`);
+      if (!rc || !['merge', 'add-unit'].includes(rc.op)) {
+        throw new Error(`${label}: routeChanges entry requires op: 'merge' or 'add-unit'`);
+      }
+      if (rc.op === 'add-unit') {
+        if (!nonempty(rc.route) || !rc.route.startsWith('/') || !['appendix', 'topic'].includes(rc.kind)) {
+          throw new Error(`${label}: routeChanges add-unit requires '/' route and kind ('appendix' | 'topic')`);
+        }
+        if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
+          throw new Error(`${label}: routeChanges add-unit requires clean reader-facing rationale without internal claim IDs`);
+        }
+        continue;
       }
       if (!Array.isArray(rc.from) || rc.from.length < 2 || !rc.from.every(r => nonempty(r) && r.startsWith('/'))) {
         throw new Error(`${label}: routeChanges merge requires at least two '/' routes in from`);
@@ -148,12 +157,28 @@ export function validateRevisionSchema(revision, label = 'revision') {
 
 export function extractRouteChanges(revisions) {
   const merges = [];
+  const addedUnits = [];
+  const addedUnitKeys = new Set();
   const fromToMap = new Map();
   const mergedFromSet = new Set();
   const mergedToSet = new Set();
 
   for (const rev of revisions ?? []) {
     for (const rc of rev.routeChanges ?? []) {
+      if (rc.op === 'add-unit') {
+        const record = {
+          op: 'add-unit',
+          route: rc.route,
+          kind: rc.kind,
+          rationale: rc.rationale,
+          revisionId: rev.id,
+          date: rev.date,
+          sourceCommit: rev.sourceCommit ?? rev.id,
+        };
+        addedUnits.push(record);
+        addedUnitKeys.add(rc.route);
+        continue;
+      }
       if (rc.op !== 'merge') continue;
       const record = {
         op: 'merge',
@@ -174,7 +199,7 @@ export function extractRouteChanges(revisions) {
       }
     }
   }
-  return { merges, fromToMap, mergedFromSet, mergedToSet };
+  return { merges, addedUnits, addedUnitKeys, fromToMap, mergedFromSet, mergedToSet };
 }
 
 export function isRouteRevised(revisions, ...routes) {
@@ -182,9 +207,12 @@ export function isRouteRevised(revisions, ...routes) {
   for (const rev of revisions ?? []) {
     for (const r of rev.routes ?? []) revised.add(r);
     for (const rc of rev.routeChanges ?? []) {
-      if (rc.op !== 'merge') continue;
-      revised.add(rc.to);
-      for (const oldRoute of rc.from ?? []) revised.add(oldRoute);
+      if (rc.op === 'add-unit') {
+        revised.add(rc.route);
+      } else if (rc.op === 'merge') {
+        revised.add(rc.to);
+        for (const oldRoute of rc.from ?? []) revised.add(oldRoute);
+      }
     }
   }
   return routes.some(r => revised.has(r));
@@ -193,7 +221,12 @@ export function isRouteRevised(revisions, ...routes) {
 export function validateRouteChangesAgainstOutput(revisions, activeRoutes, anchorsByRoute = null) {
   const errors = [];
   const activeSet = new Set(activeRoutes);
-  const { merges } = extractRouteChanges(revisions);
+  const { merges, addedUnits } = extractRouteChanges(revisions);
+  for (const added of addedUnits) {
+    if (!activeSet.has(added.route)) {
+      errors.push(`Added unit route is absent from active routes: ${added.route} (${added.revisionId})`);
+    }
+  }
   for (const merge of merges) {
     if (!activeSet.has(merge.to)) {
       errors.push(`Route merge target is absent from active routes: ${merge.to} (${merge.revisionId})`);
