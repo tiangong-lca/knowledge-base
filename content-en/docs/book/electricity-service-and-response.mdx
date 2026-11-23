@@ -1,0 +1,57 @@
+---
+title: Electricity Systems
+description: How do the location and timing of electricity use shape resulting emissions? Distinguish annual accounts, operational dispatch, and capacity expansion before judging whether time-of-use signals can estimate the emission change of a specific load adjustment.
+---
+
+## Delivery Chain [#delivery-chain]
+
+<Prose ids="cl-power-opening cl-power-service cl-power-coordinates" />
+
+<ReaderSection id="how-delivery-points-bring-in-grid-activities" />
+
+<Prose ids="cl-power-voltage-path cl-power-grid-assets cl-power-loss-definition cl-power-norway-loss cl-power-segment-denominators cl-power-database-voltage cl-power-loss-proxy" />
+
+## Electricity Accounts [#electricity-accounts]
+
+<Prose ids="cl-power-egrid-scope cl-power-egrid-adjustments cl-power-egrid-rate cl-power-egrid-revision cl-power-egrid-loss cl-power-egrid-loss-conflict" />
+
+<ReaderSection id="how-hourly-balances-link-generation-and-demand" />
+
+<Prose ids="cl-power-eia-balance cl-power-eia-hours cl-power-eia-quality cl-power-eia-clock cl-power-region-membership cl-power-eia-emissions" />
+
+## Operational Response [#operational-response]
+
+<Prose ids="cl-power-average-response cl-power-nonbaseload cl-power-historical-generation cl-power-historical-consumption cl-power-empirical-limits cl-power-price-versus-energy" />
+
+<ReaderSection id="feeding-a-demand-change-into-the-native-model" />
+
+<Prose ids="cl-power-native-model cl-power-native-coordinate cl-power-native-scenario cl-power-native-loss cl-power-native-loss-document cl-power-native-interpolation cl-power-native-output cl-power-native-ratios cl-power-native-check-meaning cl-power-native-two-hours cl-power-native-pollutants cl-power-native-application" />
+
+<ReaderSection id="time-of-use-signals-and-shift-magnitude" />
+
+<Prose ids="cl-shift107-complete-action cl-shift107-observed-proxy cl-shift107-screening-and-rate cl-shift107-signal-comparison cl-shift107-model-range cl-shift107-joint-direction cl-shift107-service cl-shift107-supply cl-shift107-small cl-shift107-large cl-shift107-control cl-shift107-comparison-judgment" />
+
+## Capacity and Long-Run Response [#capacity-and-long-run-response]
+
+<Prose ids="cl-power-future-question cl-power-future-system cl-power-future-perturbation cl-power-future-postprocessing cl-power-future-storage-policy cl-power-future-balance cl-power-future-load-parts cl-power-future-distribution cl-power-future-direct-rates cl-power-future-three-questions cl-power-future-gases cl-power-future-gases-total cl-power-future-scenario cl-power-future-time cl-power-future-formula" />
+
+## Life Cycle Connections [#life-cycle-connections]
+
+<Prose ids="cl-power-alternative-lca cl-power-validation-objects" />
+
+Each of the four external electricity datasets below measures a distinct quantity; using any of them to estimate emissions still requires verifying the region, time period, and delivery point.
+
+| Dataset | Question Addressed Here |
+| --- | --- |
+| eGRID2023 Revision 2 | Annual average direct CO₂ emission rate of regional power plants, with annual net generation as the denominator. |
+| EIA-930 (2023) | Hourly average power (MW) for generation, demand, and interregional interchange, multiplied by one hour to obtain energy (MWh), stamped at hour-ending. |
+| AVERT 4.3.0 | Modeled operational response of existing generating units in the 2023 Texas (TE) region when end-use electricity demand changes. |
+| Cambium 2024 | Modeled long-run response when a demand perturbation allows both operation and generating capacity to adjust; the example here uses the 2025 simulation year. |
+
+Even when expressed per unit of the same electricity metric, annual emission attribution, hourly energy balance, unit-level operational response, and long-run scenarios answer different questions. Comparing emission rates across these datasets also requires checking whether each denominator reflects electricity generated at power plants or electricity delivered to end users.
+
+<Prose ids="cl-power-connection" />
+
+<ReaderSection id="calculation-materials" />
+
+[Reproduction notes for fixed-version AVERT calculations](https://github.com/tiangong-lca/knowledge-base/blob/main/_docs/reproduction/electricity/README-electricity-native.md)

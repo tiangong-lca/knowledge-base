@@ -12,6 +12,10 @@ const PUBLISHED_EN_CHAPTERS = [
   { label: 'Chapter 7', title: 'Process Networks', href: '/en/docs/book/inventory-calculation/' },
   { label: 'Chapter 8', title: 'Flows, Exchanges, and Boundaries', href: '/en/docs/book/exchange-semantics-and-conversion/' },
   { label: 'Chapter 9', title: 'Hybrid Inventory Analysis', href: '/en/docs/book/inventory-boundary-and-hybrid/' },
+  { label: 'Chapter 10', title: 'Joint Production (Interactive Case)', href: '/en/docs/book/joint-production/' },
+  { label: 'Chapter 11', title: 'Market Response', href: '/en/docs/book/market-boundaries-and-response/' },
+  { label: 'Chapter 12', title: 'Electricity Systems', href: '/en/docs/book/electricity-service-and-response/' },
+  { label: 'Chapter 13', title: 'Material Recycling Chains', href: '/en/docs/book/recycling-chains-and-accounting/' },
   { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
 ];
 
@@ -64,7 +68,7 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Published English Chapters (Parts I–II + Pilot)</h2>
+          <h2>Published English Chapters (Parts I–III + Pilot)</h2>
           <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
         <div className="chapter-grid">

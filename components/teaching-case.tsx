@@ -7,6 +7,7 @@ import { assertTeachingCaseIdentity, type TeachingCaseSpec } from '../lib/teachi
 import { TeachingCaseClient } from './teaching-case-client';
 import { EnWallCaseClient } from './en-wall-case-client';
 import { JointProductionCase } from './joint-production-case';
+import { EnJointProductionCase } from './en-joint-case';
 
 /** Raw records and Node publication helpers stay outside the client module graph. */
 export function TeachingCase({
@@ -24,6 +25,9 @@ export function TeachingCase({
 }) {
   if (id === 'CASE-JOINT-BATCH') {
     if (version !== '1.0.0') throw new TypeError(`Unsupported teaching case ${id}@${version}`);
+    if (lang === 'en') {
+      return <EnJointProductionCase />;
+    }
     return <JointProductionCase print={print} numbering={numbering} />;
   }
   const spec = publicTeachingCase(rawSpecification) as unknown as TeachingCaseSpec;
