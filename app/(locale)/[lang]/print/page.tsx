@@ -60,16 +60,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const appendices = units.filter(unit => unit.kind === 'appendix');
 
   if (lang === 'en') {
+    const enUnits = getPresentationUnits('web');
+    const enFrontMatter = enUnits.filter(unit => unit.kind === 'front-matter');
+    const enTopics = enUnits.filter(unit => unit.kind === 'topic');
+    const enAppendices = enUnits.filter(unit => unit.kind === 'appendix');
     const enPagesByKey = new Map<string, ReaderPage>(
       getSource('en').getPages().map(page => [logicalPageUrl(page.url), page as ReaderPage]),
     );
-    const enUnitLabel = (unit: typeof units[number], idx: number) => {
+    const enUnitLabel = (unit: typeof enUnits[number], idx: number) => {
       if (unit.kind === 'chapter') return `Chapter ${unit.ordinal}`;
       if (unit.kind === 'topic') return `Topic ${idx + 1}`;
       if (unit.kind === 'appendix') return `Appendix ${String.fromCharCode(65 + idx)}`;
       return undefined;
     };
-    const renderEnTocItems = (items: typeof units) =>
+    const renderEnTocItems = (items: typeof enUnits) =>
       items.map((unit, idx) => {
         const page = enPagesByKey.get(unit.key);
         if (!page) return null;
@@ -81,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </li>
         );
       });
-    const renderEnArticle = (unit: typeof units[number], idx: number) => {
+    const renderEnArticle = (unit: typeof enUnits[number], idx: number) => {
       const page = enPagesByKey.get(unit.key);
       if (!page) return null;
       const id = `en-${printUnitAnchor(unit.key)}`;
@@ -103,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         description="Complete continuous reading and print edition. Arranged by part and chapter, followed by topical essays, appendices, and primary references."
       >
         <div className="print-controls">
-          <PrintButton />
+          <PrintButton label="Print or Save as PDF" />
           <p>
             The English web chapters and continuous print edition follow the same 32-chapter numbering. See the{' '}
             <Link href="/en/coverage/">Book Guide</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
@@ -111,7 +115,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
         <nav aria-label="Book Contents" className="reader-book-contents">
           <h2>Contents</h2>
-          <ul>{renderEnTocItems(frontMatter)}</ul>
+          <ul>{renderEnTocItems(enFrontMatter)}</ul>
           {readerParts.map(part => {
             const enPart = EN_PARTS[part.number];
             return (
@@ -123,19 +127,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                     </NumberedTitle>
                   </a>
                 </h3>
-                <ul>{renderEnTocItems(units.filter(u => u.part === part.number))}</ul>
+                <ul>{renderEnTocItems(enUnits.filter(u => u.part === part.number))}</ul>
               </section>
             );
           })}
           <h3>Topical Essays</h3>
-          <ul>{renderEnTocItems(topics)}</ul>
+          <ul>{renderEnTocItems(enTopics)}</ul>
           <h3>Appendices</h3>
-          <ul>{renderEnTocItems(appendices)}</ul>
+          <ul>{renderEnTocItems(enAppendices)}</ul>
           <p><a href="#en-print-references">References</a></p>
         </nav>
 
         <div className="print-book">
-          {frontMatter.map((u, idx) => renderEnArticle(u, idx))}
+          {enFrontMatter.map((u, idx) => renderEnArticle(u, idx))}
           {readerParts.map(part => {
             const enPart = EN_PARTS[part.number];
             return (
@@ -145,17 +149,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                     {enPart?.title ?? part.title}
                   </NumberedTitle>
                 </h2>
-                {units.filter(u => u.part === part.number).map((u, idx) => renderEnArticle(u, idx))}
+                {enUnits.filter(u => u.part === part.number).map((u, idx) => renderEnArticle(u, idx))}
               </section>
             );
           })}
           <section className="print-part">
             <h2>Topical Essays</h2>
-            {topics.map((u, idx) => renderEnArticle(u, idx))}
+            {enTopics.map((u, idx) => renderEnArticle(u, idx))}
           </section>
           <section className="print-part">
             <h2>Appendices</h2>
-            {appendices.map((u, idx) => renderEnArticle(u, idx))}
+            {enAppendices.map((u, idx) => renderEnArticle(u, idx))}
           </section>
           <section className="print-chapter" id="en-print-references">
             <h2>References</h2>
