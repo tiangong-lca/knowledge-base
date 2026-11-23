@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { EnInPrepPage } from '@/components/en-in-prep-page';
 import { PublicationNote } from '@/components/publication-note';
 import { PublicationShell } from '@/components/publication-shell';
 import { getBuildIdentity } from '@/lib/build-identity';
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (lang === 'en') {
     return {
       title: 'Editions & Errata',
-      description: 'Online edition history, revisions, and errata for the English edition (in preparation).',
+      description: 'Online edition governance, source commit traceability, and errata reporting for the English edition.',
     };
   }
   return { title: '版本与勘误' };
@@ -25,18 +25,53 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isSupportedLocale(lang)) notFound();
+
+  const identity = getBuildIdentity();
+
   if (lang === 'en') {
     return (
-      <EnInPrepPage
+      <PublicationShell
+        lang="en"
         title="Editions & Errata"
-        description="The English edition is being authored in meaning-equivalent batches. Revision ledgers and errata for the published Chinese edition are currently available in Chinese."
-        zhHref="/zh/changes/"
-        zhLabel="View Chinese editions & errata"
-      />
+        description="Online text governance, bilingual alignment, and errata reporting for The Past and Present of Life Cycle Assessment."
+      >
+        <h2>Online Edition</h2>
+        <p>
+          When citing web chapters, please record the chapter title, URL, and access date; when citing primary research, refer to the exact
+          work and edition listed in the chapter notes. The publication year and version of a methodological guide are part of its validity scope.
+        </p>
+        <p>
+          <a href={identity.sourceUrl} rel="noreferrer">View source commit</a> ·{' '}
+          <Link href="/en/print/">Continuous Reading &amp; Print Edition</Link> ·{' '}
+          <Link href="/en/coverage/">Book Guide (44/44 units published)</Link>
+        </p>
+
+        <h2>Bilingual Alignment &amp; Completeness</h2>
+        <p>
+          The English edition is authored as a meaning-equivalent monograph rather than a literal sentence-by-sentence translation. All 32 main
+          chapters, 5 topical essays, 5 appendices, 2 interactive teaching cases, and 1,117 reviewed claims are published and cryptographically
+          aligned to the canonical Chinese edition via claim-level digests.
+        </p>
+        <p>
+          For the detailed historical Chinese revision and copyedit ledger prior to the bilingual release, see the{' '}
+          <Link href="/zh/changes/">Chinese Editions &amp; Errata ledger</Link>.
+        </p>
+
+        <h2>Errata &amp; Evidence Corrections</h2>
+        <p>
+          If you identify an error in a citation, equation, or claim, please provide the chapter title, relevant passage, and primary source
+          when <a href={identity.errataUrl} rel="noreferrer">submitting an erratum or supporting evidence</a>. Third-party errata must identify
+          both the original publication and the correction notice rather than silently altering a number without provenance.
+        </p>
+        <p>
+          Research and editorial records are maintained in the{' '}
+          <a href="https://github.com/tiangong-lca/knowledge-base/tree/main/_docs" rel="noreferrer">repository documentation</a> separately
+          from the monograph text. Original sources retain their respective rights.
+        </p>
+      </PublicationShell>
     );
   }
 
-  const identity = getBuildIdentity();
   const ledger = buildPublicChangesLedger();
   const iterations = ledger.iterations.filter((item): item is NonNullable<typeof item> => Boolean(item));
   const corrections = ledger.corrections;

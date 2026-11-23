@@ -60,18 +60,32 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <PublicationShell
         lang="en"
         title="Book Guide & Release Status"
-        description="The English edition is authored part by part as a meaning-equivalent monograph rather than a literal translation. Unpublished chapters remain linked to their Chinese counterparts."
+        description="Complete seven-part, 32-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the meaning-equivalent English edition."
       >
         <div className={styles.root} data-en-guide="">
           <section className={styles.sectionBlock} aria-labelledby="en-guide-status">
             <div className={styles.sectionHeader}>
-              <h2 id="en-guide-status">Progressive Release Schedule</h2>
+              <h2 id="en-guide-status">Edition Status</h2>
               <p className={styles.sectionMeta}>7 Parts · 32 Chapters · 5 Topics · 5 Appendices</p>
             </div>
             <p>
-              Published English units: <strong>{publishedEnUnits.size}</strong> / {webUnits.length}. Units marked{' '}
-              <em>In preparation</em> are not yet published in English and link directly to the Chinese edition.
+              Published English units: <strong>{publishedEnUnits.size}</strong> / {webUnits.length}. All main chapters,
+              topical essays, appendices, interactive cases, and global reference pages are published and aligned to the Chinese edition.
             </p>
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-front">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-front">Front Matter</h2>
+              <p className={styles.sectionMeta}>Orientation and editorial conventions</p>
+            </div>
+            <div className={styles.frontGrid}>
+              {frontMatter.map(unit => (
+                <Link key={unit.key} href={`/en${unit.key}/`} className={styles.frontCard}>
+                  <span className={styles.frontTitle}>{unitEntries[unit.key]?.enTitle ?? unit.title}</span>
+                </Link>
+              ))}
+            </div>
           </section>
 
           <section className={styles.sectionBlock} aria-labelledby="en-guide-chapters">
@@ -109,14 +123,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                               )}
                             </div>
                             <span className={styles.rangeTag}>
-                              {isPublished ? 'Published' : 'In preparation — available in the Chinese edition'}
+                              {isPublished ? 'Published' : 'In preparation'}
                             </span>
                           </div>
-                          {!isPublished && (
-                            <p className={styles.chapterDesc}>
-                              <Link href={`/zh${unit.key}/`}>Read Chinese edition →</Link>
-                            </p>
-                          )}
                         </li>
                       );
                     })}
@@ -124,6 +133,66 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 </section>
               );
             })}
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-topics">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-topics">Topical Essays</h2>
+              <p className={styles.sectionMeta}>5 standalone conceptual and methodological essays</p>
+            </div>
+            <ul className={styles.cardGrid}>
+              {topics.map((unit, idx) => (
+                <li key={unit.key} className={styles.unitCard}>
+                  <div className={styles.unitCardTop}>
+                    <span className={styles.unitLabel}>Topic {idx + 1}</span>
+                    <Link href={`/en${unit.key}/`} className={styles.unitLink}>
+                      {unitEntries[unit.key]?.enTitle ?? unit.title}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-appendices">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-appendices">Appendices</h2>
+              <p className={styles.sectionMeta}>Appendices A–E: Numerical reconstructions, factor checks, and LCA timeline</p>
+            </div>
+            <ol className={styles.cardGrid}>
+              {appendices.map((unit, idx) => (
+                <li key={unit.key} className={styles.unitCard}>
+                  <div className={styles.unitCardTop}>
+                    <span className={styles.unitLabel}>Appendix {String.fromCharCode(65 + idx)}</span>
+                    <Link href={`/en${unit.key}/`} className={styles.unitLink}>
+                      {unitEntries[unit.key]?.enTitle ?? unit.title}
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-tools">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-tools">Reference &amp; Publication Tools</h2>
+              <p className={styles.sectionMeta}>Trace claims, concepts, primary sources, timeline milestones, and print edition</p>
+            </div>
+            <ul className={styles.cardGrid}>
+              {[
+                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All 1,117 reviewed claims with evidence bindings, scopes, and caveats.' },
+                { href: '/en/concepts/', title: 'Concepts Index', desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
+                { href: '/en/research/', title: 'References & Sources', desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
+                { href: '/en/timeline/', title: 'LCA Historical Timeline', desc: '27 milestones (1969–2026) with primary-source verification status.' },
+                { href: '/en/print/', title: 'Continuous Reading & Print Edition', desc: 'Full monograph assembled in one printable document.' },
+                { href: '/en/changes/', title: 'Editions & Errata', desc: 'Source commit traceability, bilingual alignment, and errata submission.' },
+              ].map(tool => (
+                <li key={tool.href} className={styles.unitCard}>
+                  <Link href={tool.href} className={styles.unitLink}>{tool.title}</Link>
+                  <p className={styles.unitDesc}>{tool.desc}</p>
+                </li>
+              ))}
+            </ul>
           </section>
         </div>
       </PublicationShell>

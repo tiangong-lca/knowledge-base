@@ -50,17 +50,20 @@ export function EnHomePage() {
           </h1>
           <p className="home-lead">
             How does the world behind a product enter calculation and become an environmental judgment?
-            This meaning-equivalent English edition is authored progressively from primary standards, handbooks, and peer-reviewed studies.
+            This complete meaning-equivalent English edition spans all 7 parts, 32 chapters, 5 topical essays, 5 appendices, and 1,117 evidence-bound claims.
           </p>
           <div className="home-actions flex-wrap">
             <Link className="primary-link whitespace-nowrap" href="/en/docs/">
               Start Reading (Preface)
             </Link>
-            <Link className="secondary-link whitespace-nowrap" href="/en/docs/book/integrative-ambitions/">
-              Part I: Chapters 1–5
-            </Link>
             <Link className="secondary-link whitespace-nowrap" href="/en/coverage/">
-              Book Guide &amp; Release Status
+              Book Guide (44 Units)
+            </Link>
+            <Link className="secondary-link whitespace-nowrap" href="/en/timeline/">
+              Historical Timeline
+            </Link>
+            <Link className="secondary-link whitespace-nowrap" href="/en/print/">
+              Print Edition
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/">
               Chinese Edition

@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "eras": [
+    {
+      "id": "origins",
+      "span": "1969–1989",
+      "title": "Early Resource Ledgers",
+      "subtitle": "From beverage container energy and waste comparisons to full-chain accounting awareness"
+    },
+    {
+      "id": "framing",
+      "span": "1990–1999",
+      "title": "Framework Formation & Divergence",
+      "subtitle": "Establishing the four-phase structure alongside attributional vs. consequential and physical vs. economic boundary debates"
+    },
+    {
+      "id": "standardization",
+      "span": "2000–2009",
+      "title": "Standardization & Model Deepening",
+      "subtitle": "ISO 14040/14044 consolidation; rise of midpoint/endpoint routes, hybrid inventories, and consensus toxicity models"
+    },
+    {
+      "id": "consensus",
+      "span": "2010–2019",
+      "title": "Guidance Systems & Regionalization",
+      "subtitle": "Adoption of ILCD, GHG Protocol, ecoinvent v3, and spatially explicit characterization for water and particulate matter"
+    },
+    {
+      "id": "regulation",
+      "span": "2020–2026",
+      "title": "Mandatory Regulation & Prospective/Dynamic LCA",
+      "subtitle": "EU PEF, Batteries Regulation, and ESPR implementation alongside formalization of prospective and dynamic LCA"
+    }
+  ],
+  "tracks": [
+    { "id": "framework", "label": "Frameworks & Standards" },
+    { "id": "inventory", "label": "Inventories & Databases" },
+    { "id": "impact", "label": "Impact Assessment" },
+    { "id": "case-policy", "label": "Cases & Policy" }
+  ],
+  "milestones": [
+    {
+      "id": "m-1969-mri",
+      "year": "1969",
+      "era": "origins",
+      "track": "case-policy",
+      "title": "Midwest Research Institute (MRI) Beverage Container Resource & Environmental Profile Study",
+      "actor": "Midwest Research Institute (commissioned by The Coca-Cola Company)",
+      "summary": "First systematic cradle-to-grave tracking of energy, raw material, and waste ledgers across glass bottles, metal cans, and plastic beverage containers.",
+      "significance": "Widely recognized as the origin of modern life cycle inventory (LCI), shifting packaging debates from single stages to full-chain material and energy balances.",
+      "status": "pending",
+      "pendingNote": "The 1969 internal MRI report commissioned by Coca-Cola was never publicly released in full; this library has directly verified the same team's 1974 public report EPA SW-91c (see 1974 milestone), while details specific to the 1969 internal study remain marked Unverified.",
+      "chapters": [
+        { "label": "Beverage Container Ledgers", "href": "/en/docs/book/early-container-comparisons/" },
+        { "label": "The Life Cycle Perspective", "href": "/en/docs/book/integrative-ambitions/" }
+      ]
+    },
+    {
+      "id": "m-1972-rti",
+      "year": "1972",
+      "era": "origins",
+      "track": "case-policy",
+      "title": "Research Triangle Institute (RTI) Beverage Container Policy Report",
+      "actor": "Research Triangle Institute",
+      "summary": "Introduced systematic comparisons of refillable and single-use containers into energy and solid-waste policy debates, showing how trip rates, recycling rates, and transport distances overturn policy rankings.",
+      "significance": "First clear demonstration that identical physical ledgers can yield opposite policy conclusions under different use-behavior assumptions.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Container Comparisons and Policy Judgment", "href": "/en/docs/book/early-container-policy-and-systems/" },
+        { "label": "Revisable Judgment", "href": "/en/docs/book/revisable-judgment/" }
+      ]
+    },
+    {
+      "id": "m-1974-epa-repa",
+      "year": "1974",
+      "era": "origins",
+      "track": "framework",
+      "title": "US EPA Resource and Environmental Profile Analysis (REPA) Report",
+      "actor": "US EPA / Franklin Associates",
+      "summary": "Published the resource and environmental profile methodology and data boundaries for nine beverage container systems, establishing the early REPA inventory paradigm.",
+      "significance": "Moved life cycle accounting from proprietary corporate commissions into public government reports and auditable methodological texts.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Beverage Container Ledgers", "href": "/en/docs/book/early-container-comparisons/" },
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" }
+      ]
+    },
+    {
+      "id": "m-1984-bus",
+      "year": "1984",
+      "era": "origins",
+      "track": "impact",
+      "title": "Swiss Federal Office for Environmental Protection (BUS) Packaging Ecobalance & Critical Volume Method",
+      "actor": "Swiss Federal Office for Environmental Protection (BUS)",
+      "summary": "Systematically compiled European packaging inventory data and introduced 'critical volumes' scaled to regulatory emission limits, paving the way for the Ecological Scarcity (UBP) method.",
+      "significance": "Marked Europe's transition from pure mass-and-energy ledgers toward impact aggregation anchored in environmental carrying capacity and policy targets.",
+      "status": "pending",
+      "pendingNote": "The original 1984 German-language BUS Report No. 24 has not yet been directly verified in this library; see Chapter 20 (Ecological Scarcity Weighting) for verified subsequent literature on the method.",
+      "chapters": [
+        { "label": "Ecological Scarcity Weighting", "href": "/en/docs/book/ecological-scarcity-and-targets/" }
+      ]
+    },
+    {
+      "id": "m-1990-setac",
+      "year": "1990",
+      "era": "framing",
+      "track": "framework",
+      "title": "SETAC Vermont Workshop Establishes 'Life Cycle Assessment (LCA)' Terminology",
+      "actor": "Society of Environmental Toxicology and Chemistry (SETAC)",
+      "summary": "Convened European and North American researchers to standardize the name Life Cycle Assessment and define its three-component technical framework: inventory, impact assessment, and improvement analysis.",
+      "significance": "Elevated LCA from scattered packaging energy studies into an internationally coordinated methodological discipline.",
+      "status": "pending",
+      "pendingNote": "The original 1990 SETAC Vermont workshop report (Fava et al., 1991) has not yet been directly verified in this library; current references rely on 1992–1996 public guidance documents.",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" }
+      ]
+    },
+    {
+      "id": "m-1992-cml",
+      "year": "1992",
+      "era": "framing",
+      "track": "impact",
+      "title": "CML Guide to Environmental Life Cycle Assessment of Products (CML 1992)",
+      "actor": "Heijungs et al. (Centre of Environmental Science, Leiden University)",
+      "summary": "Constructed the classification–characterization–normalization–valuation midpoint LCIA sequence and formalized process inventory calculation via linear algebra matrices.",
+      "significance": "Laid the twin theoretical foundations of modern midpoint LCIA and matrix-based inventory solving.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" },
+        { "label": "Process Networks", "href": "/en/docs/book/inventory-calculation/" }
+      ]
+    },
+    {
+      "id": "m-1993-epa-setac-code",
+      "year": "1993",
+      "era": "framing",
+      "track": "framework",
+      "title": "US EPA Life-Cycle Assessment: Inventory Guidelines and Principles & Contemporary Codes",
+      "actor": "US EPA (parallel with SETAC 1993 Code of Practice)",
+      "summary": "Codified goal and scope definition, functional units, data quality documentation, boundary cut-off rules, peer review, and transparency requirements.",
+      "significance": "Translated the principle of 'define the service function before building the process ledger' into an operational engineering handbook.",
+      "status": "verified",
+      "verificationNote": "Directly verified against the original US EPA 1993 report (EPA/600/R-92/245); the contemporaneous SETAC 1993 Code of Practice is referenced via subsequent guidance rather than standalone primary reading.",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" },
+        { "label": "Functional Reference", "href": "/en/docs/book/service-and-reference/" }
+      ]
+    },
+    {
+      "id": "m-1997-iso14040",
+      "year": "1997",
+      "era": "framing",
+      "track": "framework",
+      "title": "First Edition of ISO 14040 Establishes the Modern Four-Phase Framework",
+      "actor": "International Organization for Standardization (ISO TC 207)",
+      "summary": "Replaced early 'improvement analysis' with iterative 'life cycle interpretation' spanning goal and scope definition, inventory analysis, impact assessment, and interpretation.",
+      "significance": "Became the first global international standard skeleton for LCA, followed by ISO 14041, 14042, and 14043.",
+      "status": "pending",
+      "pendingNote": "ISO 14040:1997 is a withdrawn paywalled standard not directly read in full in this library; historical evolution is currently cited via CML 2001 and US EPA 2006 public guides.",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" },
+        { "label": "LCA in Cleaner Production", "href": "/en/docs/book/cleaner-production-purpose-and-prospects/" }
+      ]
+    },
+    {
+      "id": "m-1998-psi-electricity",
+      "year": "1998",
+      "era": "framing",
+      "track": "inventory",
+      "title": "Paul Scherrer Institute (PSI) Electricity Trade Balance Models & Marginal Debate",
+      "actor": "Ménard, Frischknecht et al. (PSI)",
+      "summary": "Constructed M1–M4 physical electricity allocation models from 1995 Swiss customs and generation statistics while explicitly documenting the 'average mix vs. marginal supply' disagreement in footnotes.",
+      "significance": "First rigorous empirical demonstration that the same kilowatt-hour of purchased electricity maps to different generation sources depending on accounting boundaries.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Market Response", "href": "/en/docs/book/market-boundaries-and-response/" },
+        { "label": "Electricity Supply Systems", "href": "/en/docs/book/electricity-service-and-response/" }
+      ]
+    },
+    {
+      "id": "m-1999-weidema",
+      "year": "1999",
+      "era": "framing",
+      "track": "inventory",
+      "title": "Weidema Proposes Consequential System Expansion & Constrained-Market Identification",
+      "actor": "Bo Weidema et al.",
+      "summary": "Introduced a stepwise procedure using market boundaries, capacity trends, and supply constraints to identify marginal suppliers affected by demand changes, establishing consequential LCA.",
+      "significance": "Drew a sharp boundary between attributional accounting (who shares existing burdens) and consequential modeling (whose output changes in response to demand).",
+      "status": "verified",
+      "chapters": [
+        { "label": "Market Response", "href": "/en/docs/book/market-boundaries-and-response/" },
+        { "label": "Joint Production", "href": "/en/docs/book/joint-production/" }
+      ]
+    },
+    {
+      "id": "m-2001-cml2001",
+      "year": "2001",
+      "era": "standardization",
+      "track": "impact",
+      "title": "CML 2001/2002 Handbook on Life Cycle Assessment Published",
+      "actor": "Guinée et al. (Leiden University CML)",
+      "summary": "Organized midpoint characterization factors into simplified, baseline, and extended tiers, strongly recommended normalization, and reaffirmed the prohibition on weighting in comparative assertions disclosed to the public.",
+      "significance": "Established one of the most widely cited midpoint baseline characterization systems across academia and industry for two decades.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" },
+        { "label": "Midpoint and Endpoint", "href": "/en/docs/book/midpoint-endpoint-value-choices/" }
+      ]
+    },
+    {
+      "id": "m-2004-suh-hybrid",
+      "year": "2004",
+      "era": "standardization",
+      "track": "inventory",
+      "title": "Suh et al. Systematize Tiered, Input-Output-Based, and Integrated Hybrid LCI",
+      "actor": "Sangwon Suh et al.",
+      "summary": "Quantified system boundary truncation errors in pure process inventories, closed upstream gaps with environmentally extended input-output (EEIO) tables, and formulated double-counting subtraction rules.",
+      "significance": "Brought the fundamental trade-off between process truncation error and sector aggregation/price-conversion error to center stage.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Hybrid Inventories", "href": "/en/docs/book/inventory-boundary-and-hybrid/" }
+      ]
+    },
+    {
+      "id": "m-2005-lime",
+      "year": "2003–2005",
+      "era": "standardization",
+      "track": "impact",
+      "title": "Japan's LIME Damage-Oriented LCIA & Monetized Valuation Framework",
+      "actor": "Itsubo, Inaba et al. (AIST Japan)",
+      "summary": "Used conjoint analysis preference surveys to derive monetized weighting factors across four areas of protection: human health, social assets, biodiversity, and primary production.",
+      "significance": "Demonstrated how endpoint monetization translates environmental trade-offs into currency while exposing dependence on population demographics and willingness to pay.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Environmental Damage Valuation", "href": "/en/docs/book/lime-preferences-and-damage-weights/" }
+      ]
+    },
+    {
+      "id": "m-2006-iso14044",
+      "year": "2006",
+      "era": "standardization",
+      "track": "framework",
+      "title": "Consolidated ISO 14040:2006 and ISO 14044:2006 Published",
+      "actor": "International Organization for Standardization (ISO)",
+      "summary": "Merged ISO 14041–14043 into a single requirements and guidelines standard (ISO 14044), codifying mandatory critical review and the no-weighting rule for public comparative assertions.",
+      "significance": "Remains the foundational global governance benchmark for LCA principles, requirements, and critical review.",
+      "status": "verified",
+      "verificationNote": "Verified against official public preview clauses of ISO 14040:2006 and ISO 14044:2006 (terms and inventory boundary sections); public comparative assertion and no-weighting clauses are cross-referenced via verified public guides pending licensed full-text verification.",
+      "chapters": [
+        { "label": "Framework Responsibilities and Analytical Steps", "href": "/en/docs/book/framework-responsibilities/" },
+        { "label": "Wall Service Comparison", "href": "/en/docs/book/wall-service-to-comparison/" },
+        { "label": "Shopping Bag Studies", "href": "/en/docs/book/interpretation-and-limits/" }
+      ]
+    },
+    {
+      "id": "m-2008-usetox",
+      "year": "2008",
+      "era": "standardization",
+      "track": "impact",
+      "title": "UNEP/SETAC Consensus Toxicity Model USEtox Released",
+      "actor": "Rosenbaum, Hauschild, Jolliet et al.",
+      "summary": "Harmonized European and North American multimedia fate–exposure–effect models into unified comparative toxicity units (CTUh / CTUe) for human toxicity and freshwater ecotoxicity.",
+      "significance": "Narrowed multi-order-of-magnitude discrepancies across legacy toxicity models into a transparent, auditable scientific consensus.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Toxicity Pathways", "href": "/en/docs/book/usetox-pathways-and-boundaries/" }
+      ]
+    },
+    {
+      "id": "m-2009-recipe",
+      "year": "2009",
+      "era": "standardization",
+      "track": "impact",
+      "title": "ReCiPe 2008 Unifies Midpoint & Endpoint Routes with Cultural Theory Perspectives",
+      "actor": "Goedkoop, Huijbregts et al.",
+      "summary": "Integrated CML midpoint and Eco-indicator 99 endpoint routes, explicitly parameterizing time horizons and evidentiary thresholds under Individualist (I), Hierarchist (H), and Egalitarian (E) value perspectives.",
+      "significance": "Made explicit that endpoint aggregation combines physical cause-effect chains with normative value choices.",
+      "status": "pending",
+      "pendingNote": "This library has directly verified the ReCiPe 2016 journal article and RIVM report (see 2016 milestone), but has not yet directly read the original 2009 ReCiPe 2008 report in full.",
+      "chapters": [
+        { "label": "Midpoint and Endpoint", "href": "/en/docs/book/midpoint-endpoint-value-choices/" }
+      ]
+    },
+    {
+      "id": "m-2010-ilcd",
+      "year": "2010",
+      "era": "consensus",
+      "track": "framework",
+      "title": "European Commission JRC Publishes the ILCD Handbook",
+      "actor": "Joint Research Centre (JRC), European Commission",
+      "summary": "Classified decision contexts into Situations A (micro), B (meso/macro), and C1/C2 (purely descriptive accounting), detailing data quality ratings, compliance blocks, sensitivity checks, and multi-tier review.",
+      "significance": "Became Europe's most comprehensive public operational blueprint for life cycle data networks and product footprinting.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Data Applicability", "href": "/en/docs/book/data-applicability/" },
+        { "label": "Market Response", "href": "/en/docs/book/market-boundaries-and-response/" }
+      ]
+    },
+    {
+      "id": "m-2011-ghgp-ukbag",
+      "year": "2011",
+      "era": "consensus",
+      "track": "case-policy",
+      "title": "GHG Protocol Product Standard, UNEP/SETAC Database Guidance & UK Carrier Bag Study",
+      "actor": "WRI/WBCSD · UNEP/SETAC · UK Environment Agency",
+      "summary": "GHG Protocol codified corporate single-indicator product carbon footprinting and assurance; UNEP/SETAC issued global LCI database principles; the UK Environment Agency carrier bag study demonstrated how secondary reuse as bin liners governs breakeven thresholds.",
+      "significance": "Signaled simultaneous maturation across corporate carbon accounting, global inventory governance, and evidence-based public policy.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Shopping Bag Studies", "href": "/en/docs/book/interpretation-and-limits/" },
+        { "label": "Product Footprint Rules", "href": "/en/docs/book/product-footprint-rules-and-practice/" },
+        { "label": "Data Applicability", "href": "/en/docs/book/data-applicability/" }
+      ]
+    },
+    {
+      "id": "m-2012-ciroth-pedigree",
+      "year": "2012",
+      "era": "consensus",
+      "track": "inventory",
+      "title": "Ciroth et al. Empirical Calibration of Pedigree Matrix Uncertainty Factors",
+      "actor": "Andreas Ciroth, Muller et al.",
+      "summary": "Used empirical resampling of Berlin yogurt cup data to test the correspondence between qualitative pedigree scores and observed data dispersion, replacing purely expert-assigned variances.",
+      "significance": "First rigorous empirical challenge to whether qualitative data quality scores can reliably translate into probability variances.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Quality Scores and Probability", "href": "/en/docs/book/data-quality-and-probability/" }
+      ]
+    },
+    {
+      "id": "m-2013-ecoinvent3",
+      "year": "2013",
+      "era": "consensus",
+      "track": "inventory",
+      "title": "ecoinvent v3 Introduces Multi-System Models & GLO/RoW Residual Architecture",
+      "actor": "ecoinvent Centre (Weidema et al.)",
+      "summary": "Separated transforming activities from consumption-mix market activities, offered Cut-off, APOS, and Consequential system models in parallel, and automated GLO-to-RoW residual dataset generation.",
+      "significance": "Transformed how modern background databases link processes while making version migration and residual drift central audit concerns.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Data Applicability", "href": "/en/docs/book/data-applicability/" },
+        { "label": "Market Response", "href": "/en/docs/book/market-boundaries-and-response/" }
+      ]
+    },
+    {
+      "id": "m-2016-glam-aware-recipe",
+      "year": "2016",
+      "era": "consensus",
+      "track": "impact",
+      "title": "ReCiPe 2016, AWARE Water Scarcity & UNEP GLAM Particulate Matter Consensus",
+      "actor": "UNEP/SETAC GLAM · WULCA · RIVM",
+      "summary": "Brought watershed-level Available WAter REmaining (AWARE), urban/rural and indoor/outdoor PM2.5 health damage (DALY), and regionalized acidification/eutrophication pathways into mainstream LCIA.",
+      "significance": "Moved impact assessment from globally uniform factors to high-resolution, receptor-sensitive spatial characterization.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Water Consumption and Scarcity", "href": "/en/docs/book/water-scarcity-and-reference/" },
+        { "label": "Particulate Emissions and Health", "href": "/en/docs/book/particulate-emissions-and-health/" },
+        { "label": "Regionalized Impact Assessment", "href": "/en/docs/book/localization-evidence-and-denominators/" }
+      ]
+    },
+    {
+      "id": "m-2018-danish-bag",
+      "year": "2018",
+      "era": "consensus",
+      "track": "case-policy",
+      "title": "Danish EPA 15-Indicator Carrier Bag Study Exposes Cross-Category Trade-Offs",
+      "actor": "Danish Environmental Protection Agency (Miljøstyrelsen)",
+      "summary": "Evaluated unweighted minimum reuse thresholds across 15 indicators for a 22 L / 12 kg shopping trip: organic cotton bags require 149 reuses for climate change alone, but up to 20,000 reuses across all indicators.",
+      "significance": "Starkly illustrated how focusing solely on carbon footprint can mask burden shifting into water scarcity, ozone depletion, and land use.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Shopping Bag Studies", "href": "/en/docs/book/interpretation-and-limits/" }
+      ]
+    },
+    {
+      "id": "m-2020-method-critiques",
+      "year": "2020",
+      "era": "regulation",
+      "track": "impact",
+      "title": "Landmark Reviews Define Red Lines for Uncertainty, Ex-Ante Upscaling & Dynamic Time Horizons",
+      "actor": "Heijungs (2020) · Tsoy et al. (2020) · Lueddeckens et al. (2020)",
+      "summary": "Heijungs showed Monte Carlo run counts exceeding empirical sample sizes manufacture spurious significance; Tsoy documented a zero-validation gap in ex-ante upscaling; Lueddeckens distinguished assessment, inventory, and characterization time horizons.",
+      "significance": "Drew clear methodological boundaries for high-uncertainty comparisons, emerging technology upscaling, and dynamic emission modeling.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Variability and Uncertainty", "href": "/en/docs/book/uncertainty-and-variability/" },
+        { "label": "Future Technologies and Scenarios", "href": "/en/docs/book/future-technology-and-context/" },
+        { "label": "Climate Equivalence", "href": "/en/docs/book/climate-equivalence/" }
+      ]
+    },
+    {
+      "id": "m-2021-eu-pef-superstructure",
+      "year": "2021",
+      "era": "regulation",
+      "track": "framework",
+      "title": "EU PEF Recommendation (EU) 2021/2279 & Superstructure + IAM Prospective Architecture",
+      "actor": "European Commission · Steubing & de Koning",
+      "summary": "The EU formalized 16 mandatory EF impact categories, the Circular Footprint Formula (CFF), ordinal DQR thresholds, PEFCR-gated comparisons, and A–E performance classes; superstructure databases with scenario difference files (SDFs) streamlined IAM future-background coupling.",
+      "significance": "Simultaneously advanced highly standardized regulatory footprinting and resolved computational bottlenecks for 2030/2050 decarbonization scenarios.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Product Footprint Rules", "href": "/en/docs/book/product-footprint-rules-and-practice/" },
+        { "label": "Material Recycling", "href": "/en/docs/book/recycling-chains-and-accounting/" },
+        { "label": "Future Technologies and Scenarios", "href": "/en/docs/book/future-technology-and-context/" }
+      ]
+    },
+    {
+      "id": "m-2023-eu-batteries",
+      "year": "2023",
+      "era": "regulation",
+      "track": "case-policy",
+      "title": "EU Batteries Regulation (EU) 2023/1542 Embeds Carbon Footprint in Mandatory Market Access",
+      "actor": "European Parliament & Council of the European Union",
+      "summary": "Established a three-stage mandatory gate (declaration, performance class, maximum legal threshold) for EV, LMT, and >2 kWh industrial batteries, requiring plant-specific data for five core components verified by notified bodies.",
+      "significance": "Marked the first major industrial transition of carbon footprinting from voluntary disclosure to legally binding market-access enforcement.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Product Footprint Rules", "href": "/en/docs/book/product-footprint-rules-and-practice/" }
+      ]
+    },
+    {
+      "id": "m-2024-espr-arvidsson",
+      "year": "2024",
+      "era": "regulation",
+      "track": "framework",
+      "title": "EU Ecodesign for Sustainable Products Regulation (ESPR) & Prospective LCA Terminology",
+      "actor": "European Union · Arvidsson et al. (2024)",
+      "summary": "ESPR (EU) 2024/1781 extended environmental footprints and Digital Product Passports (DPPs) across physical goods; Arvidsson et al. unified prospective, ex-ante, anticipatory, and dynamic LCA terminology on a two-axis time-position × technology-maturity grid.",
+      "significance": "Institutionalized both regulatory compliance infrastructure (DPP) and shared terminology for evaluating emerging technologies.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Product Footprint Rules", "href": "/en/docs/book/product-footprint-rules-and-practice/" },
+        { "label": "Future Technologies and Scenarios", "href": "/en/docs/book/future-technology-and-context/" }
+      ]
+    },
+    {
+      "id": "m-2026-dpp-transition",
+      "year": "2026",
+      "era": "regulation",
+      "track": "case-policy",
+      "title": "EU Digital Product Passport Central Registry Milestone & EF 3.1 Secondary Data Transition",
+      "actor": "European Commission",
+      "summary": "ESPR sets July 2026 for launching the Digital Product Passport central registry, while the European Commission issued EF 3.1 secondary-data transition guidance (projected through 2028) confronting real-world database supply and cross-study comparability tensions.",
+      "significance": "Reminds practitioners and regulators that methodological implementation always co-evolves with data supply and version migration—conclusions must remain traceable and revisable.",
+      "status": "verified",
+      "chapters": [
+        { "label": "Data Applicability", "href": "/en/docs/book/data-applicability/" },
+        { "label": "Product Footprint Rules", "href": "/en/docs/book/product-footprint-rules-and-practice/" },
+        { "label": "Revisable Judgment", "href": "/en/docs/book/revisable-judgment/" }
+      ]
+    }
+  ]
+}
