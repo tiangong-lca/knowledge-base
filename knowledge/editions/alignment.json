@@ -1,5 +1,294 @@
 {
   "schemaVersion": 1,
   "description": "Bilingual unit slot alignment registry mapping shared claims, zh-only reader notes, and en-only reader notes per monograph unit.",
-  "units": {}
+  "units": {
+    "/docs": {
+      "enStatus": "published",
+      "enTitle": "Preface",
+      "slots": []
+    },
+    "/docs/book": {
+      "enStatus": "published",
+      "enTitle": "Reading Guide",
+      "slots": [
+        {
+          "kind": "en-only",
+          "id": "en-note-guide-bilingual-edition"
+        }
+      ]
+    },
+    "/docs/book/integrative-ambitions": {
+      "enStatus": "in-preparation",
+      "enTitle": "Life Cycle Perspective",
+      "slots": []
+    },
+    "/docs/book/early-container-comparisons": {
+      "enStatus": "in-preparation",
+      "enTitle": "Beverage Container Accounts",
+      "slots": []
+    },
+    "/docs/book/early-container-policy-and-systems": {
+      "enStatus": "in-preparation",
+      "enTitle": "Container Comparisons and Policy Judgment",
+      "slots": []
+    },
+    "/docs/book/framework-responsibilities": {
+      "enStatus": "in-preparation",
+      "enTitle": "Assessment Frameworks and Analytical Steps",
+      "slots": []
+    },
+    "/docs/book/cleaner-production-purpose-and-prospects": {
+      "enStatus": "in-preparation",
+      "enTitle": "Life Cycle Assessment in Cleaner Production",
+      "slots": []
+    },
+    "/docs/book/service-and-reference": {
+      "enStatus": "in-preparation",
+      "enTitle": "Functional Reference",
+      "slots": []
+    },
+    "/docs/book/inventory-calculation": {
+      "enStatus": "in-preparation",
+      "enTitle": "Process Networks",
+      "slots": []
+    },
+    "/docs/book/exchange-semantics-and-conversion": {
+      "enStatus": "in-preparation",
+      "enTitle": "Flows, Exchanges, and Boundaries",
+      "slots": []
+    },
+    "/docs/book/inventory-boundary-and-hybrid": {
+      "enStatus": "in-preparation",
+      "enTitle": "Hybrid Inventory Analysis",
+      "slots": []
+    },
+    "/docs/book/joint-production": {
+      "enStatus": "in-preparation",
+      "enTitle": "Joint Production",
+      "slots": []
+    },
+    "/docs/book/market-boundaries-and-response": {
+      "enStatus": "in-preparation",
+      "enTitle": "Market Response",
+      "slots": []
+    },
+    "/docs/book/electricity-service-and-response": {
+      "enStatus": "in-preparation",
+      "enTitle": "Electricity Systems",
+      "slots": []
+    },
+    "/docs/book/recycling-chains-and-accounting": {
+      "enStatus": "in-preparation",
+      "enTitle": "Material Recycling Chains",
+      "slots": []
+    },
+    "/docs/book/midpoint-endpoint-value-choices": {
+      "enStatus": "in-preparation",
+      "enTitle": "Midpoints and Endpoints",
+      "slots": []
+    },
+    "/docs/book/climate-equivalence": {
+      "enStatus": "in-preparation",
+      "enTitle": "Climate Equivalence",
+      "slots": []
+    },
+    "/docs/book/acidification-and-nutrient-pathways": {
+      "enStatus": "in-preparation",
+      "enTitle": "Acidification and Nutrient Enrichment",
+      "slots": []
+    },
+    "/docs/book/particulate-emissions-and-health": {
+      "enStatus": "in-preparation",
+      "enTitle": "Particulate Emissions and Health Damage",
+      "slots": []
+    },
+    "/docs/book/water-scarcity-and-reference": {
+      "enStatus": "in-preparation",
+      "enTitle": "Water Consumption and Scarcity Potential",
+      "slots": []
+    },
+    "/docs/book/usetox-pathways-and-boundaries": {
+      "enStatus": "in-preparation",
+      "enTitle": "Toxicity Pathways",
+      "slots": []
+    },
+    "/docs/book/ecological-scarcity-and-targets": {
+      "enStatus": "in-preparation",
+      "enTitle": "Ecological Scarcity Weighting",
+      "slots": []
+    },
+    "/docs/book/localization-evidence-and-denominators": {
+      "enStatus": "in-preparation",
+      "enTitle": "Regionalization of Impact Assessment",
+      "slots": []
+    },
+    "/docs/book/lime-preferences-and-damage-weights": {
+      "enStatus": "in-preparation",
+      "enTitle": "Monetary Valuation of Environmental Damage",
+      "slots": []
+    },
+    "/docs/book/social-assessment-objects-and-meaning": {
+      "enStatus": "in-preparation",
+      "enTitle": "Social Performance and Impacts",
+      "slots": []
+    },
+    "/docs/book/cost-perspectives-and-sustainability-combination": {
+      "enStatus": "in-preparation",
+      "enTitle": "Life Cycle Costing and Integrated Assessment",
+      "slots": []
+    },
+    "/docs/book/data-applicability": {
+      "enStatus": "in-preparation",
+      "enTitle": "Data Applicability",
+      "slots": []
+    },
+    "/docs/book/uncertainty-and-variability": {
+      "enStatus": "in-preparation",
+      "enTitle": "Variability and Uncertainty",
+      "slots": []
+    },
+    "/docs/book/data-quality-and-probability": {
+      "enStatus": "in-preparation",
+      "enTitle": "Data Quality Scores and Probability",
+      "slots": []
+    },
+    "/docs/book/product-footprint-rules-and-practice": {
+      "enStatus": "in-preparation",
+      "enTitle": "Product Footprint Rules and Practice",
+      "slots": []
+    },
+    "/docs/book/wall-service-to-comparison": {
+      "enStatus": "published",
+      "enTitle": "Wall Service Comparison",
+      "slots": [
+        {
+          "kind": "shared",
+          "id": "cl-wall-question"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-quantities"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-reference"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-same-mass"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-coordinates"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-demand"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-activities"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-balance-meaning"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-inventory"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-inventory-boundary"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-factor-choice"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-characterization"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-metric-meaning"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-time"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-unknown"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-paired-range"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-pairing"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-tolerance"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-rough-demand"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-rough-comparison"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-exercise"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wall-answer"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-equivalence-and-pairing"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-paired-vs-mc-fallacy"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-ilcd-comparative-assertion"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-pef-pefcr-and-classes"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-ghgp-and-paywalled-iso"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-wsc157-comparison-synthesis-bridge"
+        }
+      ]
+    },
+    "/docs/book/interpretation-and-limits": {
+      "enStatus": "in-preparation",
+      "enTitle": "Carrier-Bag Studies",
+      "slots": []
+    },
+    "/docs/book/future-technology-and-context": {
+      "enStatus": "in-preparation",
+      "enTitle": "Future Technologies and Scenarios",
+      "slots": []
+    },
+    "/docs/book/revisable-judgment": {
+      "enStatus": "in-preparation",
+      "enTitle": "Revisable Judgment",
+      "slots": []
+    }
+  }
 }

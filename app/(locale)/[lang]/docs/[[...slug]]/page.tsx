@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
 import { availableDocLocales, getSource } from '@/lib/source';
 import { currentReaderOrdinaryAttributes, ChapterContent } from '@/components/chapter-content';
+import { EnChapterContent } from '@/components/en-chapter-content';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { getNumberedToc, getUnitNumbering, getWebsitePagination } from '@/lib/reader-numbering';
 import { EN_PUBLIC_ENABLED, SUPPORTED_LOCALES, isSupportedLocale, type Locale } from '@/lib/i18n';
@@ -46,13 +47,12 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
   if (!page) notFound();
 
   if (locale === 'en') {
-    const MDX = page.data.body;
     return (
       <DocsPage toc={page.data.toc}>
         <DocsTitle id="main-content" tabIndex={-1}>{page.data.title}</DocsTitle>
         <DocsDescription>{page.data.description}</DocsDescription>
         <DocsBody>
-          <MDX components={getMDXComponents(undefined, 'en')} />
+          <EnChapterContent page={page} />
         </DocsBody>
       </DocsPage>
     );

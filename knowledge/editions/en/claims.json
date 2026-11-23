@@ -1,5 +1,255 @@
 {
   "schemaVersion": 1,
   "locale": "en",
-  "claims": []
+  "claims": [
+    {
+      "id": "cl-wall-question",
+      "status": "published",
+      "zhDigest": "f793b0142174b63ec6511be10bec6c06123bcb6350aca898ced27e8043200aad",
+      "text": "Begin by specifying the service the wall must deliver. Consider 100 m² of dry interior wall that must maintain a specified uniform color and at least 0.98 opacity continuously over the half-open interval [0, 10) years. Switching paints changes the coating schedule, material quantity, and upstream electricity demand. The identities, performance parameters, repainting schedules, inputs, emissions, substrate compatibility, electricity intensity range, and comparison tolerance for Paint A and Paint B are all pedagogical model assumptions. The inventory tracks fossil CO2 and fossil CH4, paired with published characterization factors. We first evaluate an intact smooth wall and then introduce a rough substrate.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-quantities",
+      "status": "published",
+      "zhDigest": "a64e1be6a98d1f08cb339c1eab420ec5689fde2a4cf4a17efa4aca3d66d2ef20",
+      "text": "Next, map material requirements across time. Paint A requires 0.05 kg/m² per coat and is assumed to last 5 years, requiring coats at year 0 and year 5; Paint B requires 0.06 kg/m² per coat and lasts 10 years. Over the full service window, Paint A therefore requires 100 m² × 0.05 kg/m²/coat × 2 coats = 10 kg, whereas Paint B requires 6 kg. Because the right endpoint at year 10 is excluded from [0, 10), no repainting is scheduled at year 10. The model also assumes zero application loss, instantaneous repainting with no downtime, no stripping of the prior coat before recoating Paint A, and constant product performance and manufacturing technology throughout the decade; these assumptions are what link each schedule to continuous service delivery.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-reference",
+      "status": "published",
+      "zhDigest": "8ec247c62d4f8be00a02c22318a0bce324f7fee0004ccf7f6fc2a16aa25321e5",
+      "text": "Either Paint A or Paint B can fulfill the same functional service: maintaining the required color and opacity across 100 m² of wall for the specified decade. To compute the process model, that shared service must be translated into reference flows of 10 kg of Paint A or 6 kg of Paint B. As discussed in Functional Reference, the CML 2001 §2.3.4 paint example expresses the reference flow in terms of covered wall area and stores the required paint volume inside process data, whereas the International Reference Life Cycle Data System (ILCD) Handbook (2010, §6.4.1) permits either service-linked or product-oriented reference formulations depending on study purpose. Here we keep the wall service explicit and derive mass demands for processes scaled per kilogram of paint. Converting kilograms to grams merely rescales the same mass; deriving paint mass from wall service requires performance and repainting assumptions. Defining process data directly per kilogram avoids converting volume figures from the handbook and does not imply that arbitrary databases are interchangeable.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-same-mass",
+      "status": "published",
+      "zhDigest": "f6f96b2c1f7bab6af82c8fa911276faaea44471813a7d910d3c80bab38ab2a31",
+      "text": "What happens if the comparison aligns purchased mass instead of delivered service? At an equal mass of 6 kg, Paint A—which must be applied twice over ten years—covers only 60 m², whereas Paint B covers the full 100 m². At a shared electricity intensity of θ = 0.1 kg CO2/kWh, supplying 6 kg yields 14.3802 kg CO2-eq for Paint A and 23.529 kg CO2-eq for Paint B, making Paint A appear lower. Once equal 100 m² ten-year service is restored, Paint A rises to 23.967 kg CO2-eq while Paint B stays at 23.529 kg CO2-eq, reversing the ranking in favor of Paint B. What changed first was the object of comparison: equal mass did not deliver equal wall area over ten years. Both outcomes belong strictly to this pedagogical model.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-coordinates",
+      "status": "published",
+      "zhDigest": "f750bee57e36e0f76e0eee2297d0fb49239a995ef4bab29652c7d7920ecd588a",
+      "text": "Before solving the process model, state what every row and column of the technology matrix represents. The four columns P-A, P-B, P-P, and P-E denote unit operations: supplying 1 kg of Paint A, supplying 1 kg of Paint B, preparing 1 m² of substrate, and supplying 1 kWh of electricity, respectively. The four rows carry units of kg A, kg B, m², and kWh. In matrix A, positive entries represent outputs and negative entries represent intermediate inputs consumed per unit operation, while vector s records the scaling factor (number of unit operations) for each process. For instance, the electricity entry in column P-B is -5 kWh/operation: the minus sign indicates electricity consumption during the production of 1 kg of Paint B, and its magnitude gives the electricity used per unit operation. Every matrix entry must be read in its row's physical unit rather than treated as a dimensionless number.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-demand",
+      "status": "published",
+      "zhDigest": "188255de227b9f87a7c1a33075f6350bb556dd6fbccd1a0745bb414b03ad37ff",
+      "text": "On a smooth substrate, no surface preparation is required. Placing the derived paint masses into their corresponding product rows gives the final demand vectors f_A = (10, 0, 0, 0)ᵀ and f_B = (0, 6, 0, 0)ᵀ in the row order defined above. The zero in the electricity coordinate means electricity is not delivered as a final external product; the electricity needed to manufacture paint is supplied internally between processes. How wall service maps into f_A and f_B is already fixed by coating performance, schedule, and substrate condition; solving the linear system simply scales the upstream activities needed to satisfy those demands.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-activities",
+      "status": "published",
+      "zhDigest": "a51193cf0ea638830c375acc30287f83cd4e38317cd1d7075e2031c03861261d",
+      "text": "Solving As = f row by row is straightforward. The first three rows fix the paint-supply and substrate-preparation scaling factors; in the fourth row, P-E must supply exactly enough electricity to offset intermediate electricity consumption across the first three columns. Paint A therefore activates 10 operations of P-A and 20 operations of P-E; Paint B activates 6 operations of P-B and 30 operations of P-E. For Paint B, the electricity balance reads (-5 kWh/operation × 6 operations) + (1 kWh/operation × 30 operations) = 0 kWh, while the Paint B row delivers 6 kg net. All generated electricity is consumed internally, leaving zero net external electricity demand. The calculation table records each step so s can be multiplied back into A to verify net delivery.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-balance-meaning",
+      "status": "published",
+      "zhDigest": "397319ab4a3c089d3a02d2d6f2678a2f4dbdd98e20ca6b5c5ae9eb71e20659f4",
+      "text": "The equation As = f verifies that the modeled products and services meet the specified final demand. Because it does not list every chemical element or waste stream, it does not test full elemental mass conservation. The four processes here form an acyclic chain with no mutual feedback, which keeps the link from wall service to process demand transparent. By contrast, Process Networks uses mutually dependent processes with illustrative products and hypothetical emissions to show how recursive internal demand is solved. Those hypothetical emissions cannot be relabeled as CO2 or CH4 to borrow the characterization factors used here. Both examples verify balance strictly against their declared products and operations: one emphasizes translating service into demand, and the other emphasizes resolving process feedback.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-inventory",
+      "status": "published",
+      "zhDigest": "7440cc59751907ec458d50165587944077e225d813006cfa67346a4a7e8e0f01",
+      "text": "Multiplying the activity vector by the intervention matrix yields the life cycle inventory: g = B(θ)s. Here θ denotes fossil CO2 emissions per kWh of electricity supply, whose uncertain range is examined below. At the display point θ = 0.3 kg CO2/kWh, Paint A generates 20 kg CO2 from paint production plus 6 kg from electricity, totaling 26 kg CO2, and 0.05 + 0.02 = 0.07 kg fossil CH4. Paint B totals 27 kg CO2 and 0.09 kg fossil CH4. Because each term equals emissions per unit operation times the number of operations, emissions sharing the same elementary flow identity sum directly.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-inventory-boundary",
+      "status": "published",
+      "zhDigest": "926c64e7ab42d100fbc3416494e51831d81a4424e85f9bd663a0d4e832e57758",
+      "text": "The paint-supply and substrate-preparation columns record only non-electricity burdens; electricity generation burdens appear exclusively in column P-E, preventing double counting of power supply. The inventory tracks airborne fossil CO2 and fossil CH4 separately so that fossil CH4 matches the fossil-methane characterization factor applied next. Application equipment, labor, waste treatment, disposal, and recycling, other emissions, and other impact categories lie outside this pedagogical boundary. Within these declared boundaries, both gas totals are fully reproducible; the next step asks how to express their combined climate impact potential using a transparent metric.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-factor-choice",
+      "status": "published",
+      "zhDigest": "44482e1f6849fa04eb76791fb3a4c68f8f6418b51586eb45cc433f4532b7e3c4",
+      "text": "100-year Global Warming Potential (GWP-100) factors are taken from the October 7, 2025 errata replacement of IPCC AR6 WGI Table 7.15 using central values: 1 for CO2 and 28.1 for fossil CH4. Because the fossil-methane factor already incorporates the climate contribution from methane oxidation to CO2, no separate CO2 entry is added to the inventory for that oxidation pathway. Factor version, chemical species, and accounting convention jointly determine what the characterization step means.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "caveats": [
+        "Citations retain the historical passage excerpts used when the case was authored alongside the corresponding sections of the primary report and errata table; the two records do not constitute independent scientific re-verification.",
+        "The selected factor version is not a universal default across all reporting frameworks, and the source table's factor uncertainty is not propagated in this single-parameter teaching model."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-characterization",
+      "status": "published",
+      "zhDigest": "79553f4c6c90b0c9ff0688809d43fb2e553b3f588c4faad96e75554862a831ae",
+      "text": "Keeping units explicit makes characterization transparent: I = g_CO2 × (1 kg CO2-eq / kg CO2) + g_CH4 × (28.1 kg CO2-eq / kg fossil CH4). Canceling each gas mass unit leaves both terms in kg CO2-eq before summation. At the display point θ = 0.3, Paint A contributes 26 kg CO2-eq from CO2 and 1.967 kg CO2-eq from fossil CH4, totaling 27.967 kg CO2-eq; Paint B totals 29.529 kg CO2-eq. The denominator remains the entire ten-year, 100 m² wall service delivered by f. Expressing the result in kg CO2-eq records a relative metric score while the underlying inventory retains distinct physical gases—methane is not physically transformed into CO2.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-metric-meaning",
+      "status": "published",
+      "zhDigest": "91216149fdbf12e03c18360b0c9b963c9b8727c6fc750df169d6fc70d559a641",
+      "text": "Global Warming Potential (GWP) compares the time-integrated radiative forcing from an idealized unit-mass pulse emission of a greenhouse gas against an equal-mass reference pulse of CO2 over the same time horizon. The ratio itself is dimensionless; writing kg CO2-eq/kg gas documents which gas is converted on a CO2-equivalent basis. The resulting score I represents climate impact potential on that specific scale. Actual physical CO2 emissions must be read directly from the inventory, whereas local damages, temperature change at year 100, or endpoint damages require distinct physical models and evidence.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-time",
+      "status": "published",
+      "zhDigest": "37367cc6bde1267ab569048f59a9deff3df275755b81cd35adb4d10af9c7a98c",
+      "text": "The ten-year wall service determines how many times Paint A must be applied, whereas the 100-year GWP horizon governs how each emission pulse is characterized. Assuming constant technology and grid intensity, this model aggregates activities over the decade and applies static pulse factors without tracking year-0 and year-5 emissions to a common calendar end date. Computing cumulative radiative forcing up to a fixed calendar year would require preserving emission timestamps and rebuilding the dynamic response model; simply dividing the static result by ten to report an annual average does not answer that dynamic question.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-unknown",
+      "status": "published",
+      "zhDigest": "c28d7028e56ba42c65c04993e2f87a4942032130da2012876054e4a2325f8216",
+      "text": "Next we examine how the comparison behaves as electricity emission intensity varies across its allowed domain. Let the grid CO2 intensity θ be fixed but unknown within [0.1, 0.5] kg CO2/kWh, with both Paint A and Paint B drawing from the same shared grid θ in every comparison. The quantity of interest is the paired difference Δ(θ) = I_B(θ) − I_A(θ) for delivering the complete service under identical substrate and electricity conditions; θ = 0.3 is merely a display point for inspecting the arithmetic. No probability distribution is assigned over [0.1, 0.5], nor does the interval arise from statistical sampling, so it is neither a confidence interval nor a representation of wall-to-wall variability. Characterization factors remain fixed at their central values, omitting the ±10.4 uncertainty reported for fossil CH4 in the source table. The calculation simply bounds Δ(θ) across all admissible values of the shared parameter θ.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-paired-range",
+      "status": "published",
+      "zhDigest": "53ed8d95128eb433be9ff54d2456f9b5f04f5548c3c2742c262566ec25af3997",
+      "text": "Subtracting Paint A from Paint B under the same shared grid yields the affine expression Δ(θ) = -1.438 + 10θ kg CO2-eq per specified service on a smooth substrate. Because the slope is positive, the extrema occur at the domain endpoints, giving the exact paired difference interval [-0.438, 3.562] kg CO2-eq. The difference crosses zero at θ = 0.1438: Paint B is lower below the crossover, while Paint A is lower above it. Because the display point θ = 0.3 sits on only one side of the crossover, it cannot establish a strict global ranking across the full domain.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-pairing",
+      "status": "published",
+      "zhDigest": "73539dbe6c2f8f42c2072b78353a2bf5305d7c170bce880c91b11180e9f800cc",
+      "text": "One can also compute each alternative's marginal range separately: [23.967, 31.967] kg CO2-eq for Paint A and [23.529, 35.529] kg CO2-eq for Paint B. Subtracting independent extremes (B's minimum minus A's maximum, and B's maximum minus A's minimum) yields [-8.438, 11.562] kg CO2-eq. While independent-extremes subtraction is a valid conservative outer envelope in interval arithmetic, here it breaks the shared-θ constraint by admitting impossible pairs in which one paint uses cleaner electricity while the other simultaneously uses dirtier electricity. Because the problem rules out such mismatched grids, the paired difference interval above tightens the bound substantially. Observing whether two marginal intervals overlap neither restores pairing nor tests any equivalence criterion.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-tolerance",
+      "status": "published",
+      "zhDigest": "56605249cd97e43a62fdd23f989992825418fb44fffd62cbdf0f599a84120221",
+      "text": "Testing for a strict global ranking examines the sign of Δ(θ), whereas testing for equivalence within a tolerance examines its magnitude. This pedagogical case specifies a tolerance of ±4 kg CO2-eq per service and checks whether |Δ(θ)| ≤ 4 across all allowed θ. That threshold is constructed solely for illustration and must not be mistaken for a stakeholder-validated decision criterion. On a smooth substrate, the entire paired interval [-0.438, 3.562] lies inside ±4, satisfying the tolerance criterion everywhere even though no strict global ranking holds. These two findings answer separate questions—magnitude versus sign. Failing to rank two options does not by itself prove equivalence, no statistical equivalence test is performed here, and tightening the tolerance requires re-checking the interval against the new bound.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "caveats": [
+        "The ±4 kg CO2-eq tolerance is constructed for pedagogical illustration and must not be treated as an independently validated empirical decision threshold."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-rough-demand",
+      "status": "published",
+      "zhDigest": "97b1a8d054981c47d2361635d6b9fc961ee0368ce59f8836c75d2f9c7f605e24",
+      "text": "Now change only the initial substrate from smooth to rough while keeping the wall intact. Paint A still delivers the service directly, whereas Paint B requires preparing all 100 m² first. Wall area, service duration, paint mass, durability assumptions, process coefficients, shared θ, characterization factor versions, and comparison tolerance all remain unchanged. The third coordinate of Paint B's final demand increases from 0 to 100 m², activating 100 operations of P-P and raising electricity demand from 30 to 50 kWh. The substrate-preparation column was already present in matrix A; changing the demand vector is what activates it. Merely rescaling smooth-wall results per square meter does not conjure preparation activities into existence.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-rough-comparison",
+      "status": "published",
+      "zhDigest": "f936634701fbe7bd2fae9e9751b32ab3fa1864534f34b6530999d26fa5c73872",
+      "text": "Recomputing along the same s → g → I pipeline at θ = 0.3 raises Paint B's inventory to 38 kg CO2 and 0.11 kg fossil CH4 and its climate score to 41.091 kg CO2-eq, while Paint A remains at 27.967 kg CO2-eq. The paired difference becomes Δ(θ) = 4.124 + 30θ, spanning [7.124, 19.124] kg CO2-eq across θ ∈ [0.1, 0.5]. Because this interval is strictly positive and lies wholly beyond +4, Paint A is strictly lower across the entire domain and the two options no longer satisfy equivalence within the tolerance under the rough-substrate model. This reversal has an explicit, traceable mechanism: Paint B triggers substrate preparation and additional electricity to deliver the same final service from a different starting condition. Even so, it remains a pedagogical model rather than a real-world procurement recommendation.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-exercise",
+      "status": "published",
+      "zhDigest": "5b18f8b8208079e41f607c4b3c23b1b756d7a582d7ed8bb7693f41f9f36c8ba8",
+      "text": "Consider three proposed recommendations: (1) \"Paint A is lower at the display point, so choose Paint A for smooth walls too\"; (2) \"Reporting rough-wall results per square meter allows merging them with the smooth-wall case\"; and (3) \"Subtracting the independent extremes of the two marginal ranges is sufficient to judge the difference.\" For each claim, identify the unstated premise it requires, formulate the judgment actually supported by the model, and verify the rough-substrate electricity balance and gas inventories starting from Paint B's added preparation demand.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wall-answer",
+      "status": "published",
+      "zhDigest": "d1824e88da98bc756911ab4ce688c5107e57155e70d2ee8384fb3d3b4af365d0",
+      "text": "On a smooth substrate, the comparison must span the full admissible domain of shared θ: a single display point cannot establish a strict global ranking, whereas the full paired interval satisfies the ±4 kg CO2-eq tolerance criterion. On a rough substrate, Paint B's electricity balance reads (-5)×6 + (-0.2)×100 + 50 = 0 kWh, and column-by-column inventory summation must include both substrate preparation and the extra electricity. Rescaling outputs per square meter changes only the reporting unit; the initial substrates remain distinct, and the smooth-wall model still contains no preparation activity. Subtracting independent marginal extremes gives a conservative outer envelope, but knowing that both options share the same θ justifies using the tighter exact Δ(θ) interval. Tracing from service and coating quantities through f, s, g, and I makes every comparison condition auditable; real-world paint comparisons still require empirical performance, activity, emission, and decision criteria.",
+      "scope": "Wall-coating pedagogical case: fixed service, activity, and emission assumptions paired with published characterization factors.",
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-equivalence-and-pairing",
+      "status": "published",
+      "zhDigest": "e07bafc765d1059e77983256cd1eb53582c421f59a420bf245a5263bcc07e92a",
+      "text": "Placing the wall-coating case alongside international guidance reveals two shared baselines that transcend any specific material. First, comparisons are governed by decision context and symmetric system boundaries: the ILCD Handbook (2010) §5.3 assigns product comparisons and public comparative assertions to Situation A (micro-level decision support), excluding pure accounting studies (Situation C) from superiority procurement or policy claims; §§6.10.3–6.10.7 require equivalent boundaries and modeling rules, permitting omission only of strictly identical components while retaining partially correlated components for explicit correlation analysis alongside reasonable best/worst-case scenarios and uncertainty calculations. Second, uncertainty comparisons cannot fall back on isolated marginal intervals: the Greenhouse Gas (GHG) Protocol Product Standard (2011, §10.3.4) explicitly advises against comparing the marginal uncertainty ranges of Option A and Option B side by side, calling instead for evaluating parameter and scenario uncertainty on the comparison metric itself (such as A/B)—precisely the rationale for paired differencing under shared grid intensity above.",
+      "scope": "Cross-framework comparison of ILCD 2010 Situation A/C classification, boundary symmetry, and partial-correlation rules with GHG Protocol Product Standard (2011) §10.3.4 comparison-metric uncertainty guidance.",
+      "caveats": [
+        "Boundary symmetry and paired evaluation eliminate methodological mismatch and shared-background noise, but do not substitute for verifying real-world use conditions, maintenance cycles, or unmodeled impact categories."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-paired-vs-mc-fallacy",
+      "status": "published",
+      "zhDigest": "c30df8e9326e46a72fc64424dadcba17bf28751d3709398a73f0477f9209088e",
+      "text": "Eliminating unpaired overlap does not mean running more random draws guarantees a valid statistical ranking. Building on the discussion of Monte Carlo sample size in Variability and Uncertainty, Heijungs (2020) draws two empirical samples of n = 16 each from the exact same parent distribution N(10, 1): a direct two-tailed t-test on the empirical samples gives p = 0.67—no evidence of a difference—yet feeding those noisy sample means with known standard deviations into a 100,000-run Monte Carlo simulation yields a spurious p ≈ 10⁻¹⁶. Increasing simulation runs shrinks only Monte Carlo standard error without correcting finite-sample bias in the inputs; simulation runs must therefore be bounded by the weakest empirical sample size (for example, at most 9 runs when input sample sizes are 16 and 9), and pedigree-matrix distributions lacking empirical sample counts cannot support large-sample significance tests. Using deterministic paired difference intervals and explicit tolerances in the wall case avoids masking input imprecision behind massive pseudo-sampling.",
+      "scope": "Connects Heijungs (2020) §§2.8–4 on Monte Carlo pseudo-significance with the deterministic paired-interval boundary used in the wall-coating case.",
+      "caveats": [
+        "Deterministic paired sensitivity cleanly exposes shared-background cancellation and crossover thresholds, but multi-parameter comparisons with complex non-shared correlations still require joint uncertainty analysis backed by real empirical sample sizes."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-ilcd-comparative-assertion",
+      "status": "published",
+      "zhDigest": "803dd72cc066d217ca6a9e3ba719f17dc61107583982cdf35864883534e02d3e",
+      "text": "Even when arithmetic pairing and uncertainty checks hold, disclosing a product comparison to the public crosses an institutional \"comparative assertion\" threshold where major frameworks diverge substantively. Under ILCD 2010 (§5.2.5 and §§6.10.1–6.10.2, Provisions I and VI, pp. 34–35, 140–141, 145–146), three hard guardrails apply: first, any comparison disclosed beyond the commissioner and a named restricted audience—even a \"non-assertive\" side-by-side table or chart that omits explicit superiority wording—still triggers full comparative-assertion rules to prevent circumvention; second, comparative assertions disclosed to the public may never rely on life cycle inventory (LCI) results alone and must complete impact assessment and interpretation; third, §8.4 Provision III (pp. 283–284) strictly prohibits weighting in public comparative assertions because weights embed value choices. In addition, §§5.2.5 and 6.11 require pre-verified background and foreground datasets for comparative assertions, or else mandatory escalation from a single independent reviewer to an external review panel.",
+      "scope": "Documents ILCD 2010 §§5.2.5, 6.10.1–6.10.2, 6.11, and 8.4 rules on non-assertive anti-circumvention, prohibition of LCI-only assertions, weighting ban, and external review panel requirements.",
+      "caveats": [
+        "Detailed review-scheme procedures reside in the companion ILCD document (Review schemes for LCA); this note verifies only the general admission thresholds in the main ILCD Handbook."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-pef-pefcr-and-classes",
+      "status": "published",
+      "zhDigest": "24b3873ecdae6bdf267ce6471c00b4cfa54c62282e0f60a3b925c0de0ea4f62e",
+      "text": "In direct contrast to ILCD 2010's ban on weighting in public comparative assertions, European Commission Recommendation (EU) 2021/2279 on Product Environmental Footprint (PEF) adopts a regime of category-rule exclusivity paired with harmonized weighted scoring. Annex I §1 stipulates that product comparisons and comparative assertions are permitted only when conducted under a valid Product Environmental Footprint Category Rule (PEFCR); absent a valid PEFCR, studies are restricted to internal management or non-comparative external communication. Under a valid PEFCR, Annex I §5.2 and Annex II require global per-capita normalization and weighting across all 16 Environmental Footprint impact categories into a single overall score, anchoring Class C at the representative product benchmark (BM) and linearly interpolating Classes A through E using 0.30 and 0.85 factors between BM and sensitivity-derived theoretical best and worst scores. As the institutional counterweight for allowing weighted grading, Annex I §8 mandates independent third-party verification and validation aligned with EN ISO/IEC 17020:2012 for all external communications: any category shift exceeding 5% constitutes a material discrepancy, verifiers must hold at least 6 qualification points, and verification statements remain valid for at most 3 years.",
+      "scope": "Verifies PEFCR-gated comparisons, 16-category weighted single-score A–E performance classes, and mandatory third-party verification thresholds in Commission Recommendation (EU) 2021/2279 Annex I §§1, 1.1, 5.2.1–5.2.2, 8.1–8.5 and Annex II Table NN-9.",
+      "caveats": [
+        "Commission Recommendation (EU) 2021/2279 is itself a non-binding recommendation; legally mandatory force arises only when incorporated into specific EU legislation such as the Batteries Regulation or Ecodesign delegated acts."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-ghgp-and-paywalled-iso",
+      "status": "published",
+      "zhDigest": "1d39bbe230053ca1aebb70ff9244b890c440c51feffc647df4e7192a3dd0e848",
+      "text": "A third boundary appears in single-indicator greenhouse gas accounting. The GHG Protocol Product Standard (2011) §§1.5, 5.3.2, 13.2, and Appendix A state clearly that, as written, the standard supports tracking a single product's carbon performance over time and assessing emission reductions, not making comparative assertions of overall environmental superiority against competing products. Any cross-product carbon comparison, label, or performance claim must additionally follow harmonized product rules that align the unit of analysis, system and temporal boundaries, and allocation methods, disclose data quality and uncertainty, and undergo third-party assurance. Every cross-framework clause in this section rests strictly on page-verified open-access primary sources (ILCD 2010, Commission Recommendation (EU) 2021/2279, GHG Protocol 2011, and Heijungs 2020); the book's uniform verification boundary for paywalled standards such as ISO 14044:2006 is documented in the Reading Guide.",
+      "scope": "Documents the GHG Protocol Product Standard (2011) §§1.5, 5.3.2, 13.2, and Appendix A boundary against comparative assertions and states the explicit verification boundary for paywalled ISO 14044:2006.",
+      "caveats": [
+        "Clause-by-clause citation of the paywalled ISO 14044:2006 full text remains outside the open-source verification boundary until licensed primary text is held."
+      ],
+      "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-wsc157-comparison-synthesis-bridge",
+      "status": "published",
+      "zhDigest": "d7a770f8b2eb03114ce63a7cef5892aace1a9b4857fb64a1c33e3937613735a6",
+      "text": "Taken together, the wall-coating model and the three international frameworks demonstrate that a defensible product comparison requires two independent, non-substitutable qualifications. At the computational level, the analyst must fix a shared functional service, align system boundaries and shared background parameters—eliminating both unpaired overlap and Monte Carlo pseudo-significance exceeding empirical sample counts—and test ranking stability against tolerances and substrate changes. At the governance level, the analyst must distinguish internal improvement from category-rule benchmark grading (such as EU PEFCR Classes A–E) and public comparative assertions (where ILCD prohibits weighting and mandates external review panels, while the GHG Protocol Product Standard declines support as written). Any defensible comparison therefore stands only after passing both computational and governance verification.",
+      "scope": "Synthesizes the dual computational and governance qualifications required for defensible product comparisons across the wall case and three international frameworks.",
+      "caveats": [
+        "The wall case illustrates pairing on a single climate indicator; real multi-indicator comparisons must additionally confront cross-category trade-offs, behavioral reuse rates, and review independence, examined next in Carrier-Bag Studies."
+      ],
+      "reviewedAt": "2026-11-23"
+    }
+  ]
 }

@@ -13,7 +13,7 @@ export function EnInPrepPage({
   zhLabel: string;
 }) {
   return (
-    <PublicationShell title={title} description={description}>
+    <PublicationShell title={title} description={description} lang="en">
       <section className="reading-section">
         <p className="home-lead">
           This English section is currently in preparation as part of the meaning-equivalent English edition rollout.
