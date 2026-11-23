@@ -1,0 +1,50 @@
+---
+title: Carrier-Bag Studies
+description: Recompute reuse thresholds for heavier carrier bags in the UK Environment Agency study, trace how bin-liner substitution shifts those thresholds, contrast the UK findings with the Danish EPA assessment, and examine what multi-indicator profiles and critical review can and cannot establish under ILCD 2010 and EU PEF rules.
+---
+
+## Grocery Transport Service [#grocery-transport-service]
+
+<Prose ids="cl-pack-question cl-pack-goal cl-pack-service cl-pack-capacity cl-pack-count cl-pack-provenance cl-pack-baseline-boundary" />
+
+## Substitution and Reuse Thresholds [#substitution-and-reuse-thresholds]
+
+<Prose ids="cl-pack-credit cl-pack-people cl-pack-mapping cl-pack-baseline cl-pack-uses cl-pack-shift cl-pack-three" />
+
+The table below compares usage conditions for lightweight high-density polyethylene (HDPE) bags to show which scenario produces the "five uses" threshold. When used only once, heavier low-density polyethylene (LDPE) bags generate 6.924 kg CO₂ eq for the same one-month grocery transport service; each row divides that figure by the total number of shopping uses.
+
+| HDPE Bag Usage Condition | HDPE Climate Indicator (kg CO₂ eq per one-month grocery transport service, 483 items) | Total Shopping Uses Required for LDPE to Achieve a Strictly Lower Climate Indicator |
+| --- | --- | --- |
+| Single shopping use, no bin-liner substitution | 2.082 | At least 4 uses |
+| Single shopping use, 40.28% of HDPE bags substituting for bin liners (report baseline) | 1.578 (tabulated) | At least 5 uses |
+| Single shopping use, 100% of HDPE bags substituting for bin liners | 0.830 | At least 9 uses |
+| Three shopping uses, followed by ~40% of HDPE bags reused as bin liners | 1.578 / 3 | At least 14 uses |
+
+Each row solves for the smallest integer n such that 6.924 / n is strictly less than the second-column value, counting the first shopping trip in n. The final row follows the condition stated in the report's main text. Table 8.1 of the original report lists 12 uses, whereas the main text reports approximately 14 uses; the unstated assumptions behind the tabulated figure remain unresolved.
+
+<Prose ids="cl-pack-rounding" />
+
+## Multi-Indicator Profiles and Study Boundaries [#multi-indicator-profiles-and-boundaries]
+
+<Prose ids="cl-pack-categories cl-pack-selection cl-pack-hotspot cl-book-consistency cl-pack-data cl-pack-missing cl-pack-litter cl-pack-environment" />
+
+<Prose ids="cl-int159-danish-epa-fu-eol cl-int159-danish-epa-multi-indicator cl-int159-ilcd-pef-interpretation-hotspots" />
+
+## Critical Review and Practical Recommendations [#critical-review-and-recommendations]
+
+<Prose ids="cl-book-interpret-iterate cl-pack-reviewers cl-pack-review-flow cl-pack-review-capacity cl-pack-review-residual cl-pack-acceptance cl-book-no-ranking cl-book-not-equivalent cl-pack-recommendation cl-pack-later cl-pack-iterate" />
+
+<Prose ids="cl-int159-critical-review-governance cl-int159-limitations-and-paywalled-iso cl-int159-interpretation-synthesis-bridge" />
+
+**Table: Comparison of the UK and Danish Government Carrier-Bag Assessments with ILCD 2010 and EU PEF Interpretation and Review Rules**
+
+The table below places two government carrier-bag assessments alongside two international interpretation and review frameworks under a common analytical lens, contrasting their functional units, hotspot and negative-credit rules, external review governance, and limitation disclosure requirements.
+
+| Assessment or Framework and Primary Source | Functional Unit and Baseline Convention | Hotspot Identification and Robustness Rules | Treatment of Negative Credits and Out-of-Scope Effects | External Review Governance and Limitation Boundaries |
+| --- | --- | --- | --- | --- |
+| UK Environment Agency Carrier-Bag Assessment (2011, Table 8.1 and critical review section) | One month of supermarket shopping (483 items); benchmarked against lightweight HDPE bags with 40.28% reused as bin liners, where the baseline substitution rate directly shifts reuse thresholds | Centers on climate change supplemented by multi-indicator sensitivity analyses testing how bag weight, carrying capacity, and bin-liner substitution affect reuse counts | Explicitly credits avoided bin-liner production; flags missing land-use and water indicators alongside littering and marine plastic risks as study limitations | Reviewed by a three-member external panel whose unresolved disagreements are retained in Appendix E and the main text; conclusions apply only to the specified UK scenario and do not establish a universal ranking |
+| Danish Environmental Protection Agency (Danish EPA, Miljøstyrelsen, 2018, Environmental Project no. 1985) | Single supermarket trip carrying 22 L and 12 kg; 6 bag types with insufficient volume or load capacity are rounded up to 2 bags; benchmarked dynamically against an LDPE bag reused as a waste bag before incineration (EOL3) | Unweighted minimum reuse counts across all 15 environmental indicators: conventional cotton requires 52 uses for climate change / 7,100 across all indicators; organic cotton requires 149 / 20,000; paper bags require 0–1 / 43 | Reusing the baseline LDPE bag for shopping scales all thresholds proportionally; domestic littering in Denmark is treated as negligible and unmodeled; reuse numbers are mathematical breakeven lower bounds only | Externally peer-reviewed by two experts from COWI; explicitly declares non-conformance with ISO 14044 public comparative-assertion procedures and restricts use to internal decision support |
+| EU International Reference Life Cycle Data System (ILCD) Detailed Guidance (2010, Sections 6.11–6.12, Chapter 9, and Chapter 11) | Functional unit and system boundary follow the defined goal and scope; conclusions must remain strictly bound to that scope | Identification of significant issues plus completeness, sensitivity, and consistency checks; stochastic uncertainty analysis cannot substitute for expert judgment on systematic bias | Unquantified effects outside LCA scope (such as littering) must be explicitly separated and never folded covertly into LCA rankings | Distinguishes internal, external, and panel review, promotes interactive concurrent review, and sets 5 assurance criteria; key limitations must appear in the summary, and failure to detect a significant difference never proves equivalence |
+| EU Commission Recommendation (EU) 2021/2279 (Product Environmental Footprint, PEF, OJ L 144, Annex I, Sections 6–8) | Functional unit and model follow the harmonized PEF method; publishing an aggregated Environmental Footprint (EF) dataset requires publishing the underlying report | Combines the three robustness checks with quantitative hotspot thresholds: impact categories ≥ 80% (at least 3 categories), life cycle stages and processes > 80% (recalculate without the use stage if it exceeds 50%), and elementary flows ≥ 80% | Section 6.3.5 requires recalculating 100% shares using absolute values when negative credits appear for processes or elementary flows (excluding life cycle stages); explicitly does not replace site-specific environmental impact assessment or chemical risk assessment | Standardizes 6 report components (including an optional confidential report for verifiers only); any error shifting a single impact category by > 5% or altering the hotspot list constitutes a major error |
+
+Comparing technologies that have not yet reached commercial operation likewise requires stating which real-world conditions a model's assumptions can represent. [Future Technology and Context](/en/docs/book/future-technology-and-context/) pursues that question further: if an emerging process is assumed to reach a specified scale in a future year, which contemporaneous benchmark technology should it be compared against, and what material and energy supply conditions should govern the comparison?

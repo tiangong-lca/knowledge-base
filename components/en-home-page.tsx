@@ -27,7 +27,14 @@ const PUBLISHED_EN_CHAPTERS = [
   { label: 'Chapter 22', title: 'Monetary Valuation of Environmental Damage', href: '/en/docs/book/lime-preferences-and-damage-weights/' },
   { label: 'Chapter 23', title: 'Social Performance and Impacts', href: '/en/docs/book/social-assessment-objects-and-meaning/' },
   { label: 'Chapter 24', title: 'Life Cycle Costing and Integrated Assessment', href: '/en/docs/book/cost-perspectives-and-sustainability-combination/' },
+  { label: 'Chapter 25', title: 'Data Applicability', href: '/en/docs/book/data-applicability/' },
+  { label: 'Chapter 26', title: 'Variability and Uncertainty', href: '/en/docs/book/uncertainty-and-variability/' },
+  { label: 'Chapter 27', title: 'Data Quality Scores and Probability', href: '/en/docs/book/data-quality-and-probability/' },
+  { label: 'Chapter 28', title: 'Product Footprint Rules and Practice', href: '/en/docs/book/product-footprint-rules-and-practice/' },
   { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
+  { label: 'Chapter 30', title: 'Carrier-Bag Studies', href: '/en/docs/book/interpretation-and-limits/' },
+  { label: 'Chapter 31', title: 'Future Technologies and Scenarios', href: '/en/docs/book/future-technology-and-context/' },
+  { label: 'Chapter 32', title: 'Revisable Judgment', href: '/en/docs/book/revisable-judgment/' },
 ];
 
 export function EnHomePage() {
@@ -79,7 +86,7 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Published English Chapters (Parts I–V + Pilot)</h2>
+          <h2>Complete English Edition (All 7 Parts · 32 Chapters)</h2>
           <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
         <div className="chapter-grid">

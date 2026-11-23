@@ -1,0 +1,48 @@
+---
+title: Data Quality Scores and Probability
+description: Use the Berlin yogurt-cup survey to distinguish mean estimation precision from population spread, trace how those data yield provisional completeness factors, and compare ecoinvent pedigree variances, EU Product Environmental Footprint (PEF) ordinal Data Quality Rating (DQR) thresholds, and Greenhouse Gas (GHG) Protocol qualitative disclosures.
+---
+
+## The Cup-Weight Survey and Estimation [#cup-weight-survey-and-estimation]
+
+<Prose ids="cl-ped-study-question cl-ped-population cl-ped-design cl-ped-weighted-mean cl-ped-design-variance" />
+
+## Spread versus Estimation Precision [#spread-and-estimation-precision]
+
+<Prose ids="cl-ped-cluster-arithmetic cl-ped-population-spread cl-ped-poststratification cl-ped-stratified-conflict" />
+
+Table 1. Comparison of cup-weight population spread and sampling estimation precision in the Berlin survey (means and variances taken from the original study; remaining figures recomputed using the formulas above).
+
+| Comparison Target | Reported Mean and Variance | Recomputed from Reported Values |
+| --- | --- | --- |
+| Mean precision under cluster sampling | Mean 5.6589 g; estimator variance 0.0072 g² | Standard error ≈ 0.0849 g; relative standard error ≈ 1.4995% |
+| Spread of population cup weights | Cup-weight variance 0.72 g²; denominator 5.6474 g | Standard deviation ≈ 0.8485 g; relative standard deviation ≈ 15.0251% |
+| Mean precision after post-stratification | Mean 5.7245 g; estimator variance 0.0014 g² | Standard error ≈ 0.0374 g; relative standard error ≈ 0.6536% |
+| Mean precision under stratified sampling | Mean 5.6474 g; estimator variance 0.0034 g² | Relative standard error ≈ 1.0325%; original discussion states 0.07% (unresolved discrepancy) |
+
+The "Spread of population cup weights" row describes how widely individual cup weights vary across the defined population; the other three rows describe how precisely each sampling design estimates the mean cup weight. Both relative standard deviation and relative standard error can be expressed as percentages, but they must remain distinct in interpretation.
+
+<Prose ids="cl-ped-estimate-boundary" />
+
+## Calibrating Completeness Scores [#calibrating-completeness-scores]
+
+<Prose ids="cl-unc-scores cl-unc-calibration cl-ped-subsets cl-ped-score-mapping cl-ped-gsd-definition cl-ped-completeness-ratio cl-ped-factor-values cl-ped-calibration-boundary cl-unc-calibration-limits" />
+
+## Probability Models and Parameters [#probability-models-and-parameters]
+
+<Prose ids="cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center cl-dqp-ecoinvent-v3-variance cl-dqp-pef-ordinal-dqr" />
+
+## Score Testing and Conditions of Use [#score-testing-and-conditions-of-use]
+
+<Prose ids="cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis cl-dqp-ghgp-qualitative-dqi" />
+
+Table 2. Structural comparison of four representative data quality frameworks across scoring scales, probability conversion, and eligibility or reporting obligations.
+
+| Framework and Primary Source | Evaluation Dimensions and Scale | Aggregation Rule and Probability Conversion | Eligibility Threshold or Reporting Obligation | Key Assumptions and Validity Boundaries |
+| --- | --- | --- | --- | --- |
+| ecoinvent v3 expert pedigree (Weidema et al. 2013, Tables 10.4–10.5) | 5 indicators (reliability, completeness, temporal, geographical, further technological); 1–5 scale | Converted to log-scale normal additional variances (σ²) and summed linearly with 1 basic variance (6 terms total) | Inputs for Monte Carlo sampling of inventory parameters; no single overall eligibility gate | Assumes zero-mean, mutually independent additional errors; 2013 table remains expert judgment and excludes model uncertainty and human error |
+| ecoinvent empirically calibrated pedigree (Ciroth et al. 2012/2016) | Same 5 pedigree dimensions (completeness and reliability calibrations analyzed here); 1–5 scale | Calibrates geometric standard deviations or variance factors from dispersion ratios between empirical subsets and reference groups | Intended to replace expert factors while still constructing lognormal probability distributions | Calibration is constrained by limited samples and grouping rules, still relies on independence and zero-bias assumptions, and cannot eliminate systematic bias |
+| EU PEF ordinal rating (Recommendation (EU) 2021/2279, Annex I Section 4.6.5) | 4 scored indicators (TeR, GeR, TiR, P on a 1–5 scale); completeness and methodological appropriateness are unscored prerequisites | Equal-weight arithmetic mean yields DQR (Equations 19–20) across 5 ordinal tiers; neither the 396-page 2021 OJ L 471 text nor the 384-page 2022 OJ L 144 corrigendum defines a probability conversion | Hard Data Needs Matrix gates: company-specific primary data DQR ≤ 1.5, secondary data DQR ≤ 3.0, proxy contribution ≤ 10% | Measures data-collection tier and regulatory eligibility rather than random parameter variance; cannot substitute for uncertainty analysis |
+| GHG Protocol Product Standard (2011, Section 8.3 & Chapter 10) and US EPA framework | 5 indicators (technological, temporal, geographical, completeness, reliability); 4 qualitative tiers (very good / good / fair / poor) | No unified numerical composite DQR and no mandatory conversion to probability distributions; separates representativeness metadata from quantitative error | Mandatory narrative disclosure of data quality for significant processes and qualitative uncertainty sources; Monte Carlo or Taylor expansion is optional | Prevents collapsing directional bias and multi-dimensional representativeness gaps into a single interval width, though purely qualitative descriptions are harder to compare automatically across reports |
+
+<Prose ids="cl-dqp-four-framework-synthesis cl-dqp-paywalled-iso-boundary cl-dqp-cross-chapter-bridge" />

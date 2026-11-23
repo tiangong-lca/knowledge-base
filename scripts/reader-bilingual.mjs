@@ -45,8 +45,8 @@ export function detectEnglishProcessProse(text, label = 'text') {
   return errors;
 }
 
-const EXTERNAL_EN_CHAPTER_CUE = /(?:IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|RIVM|LC-IMPACT|ISO\s+\d+|Handbook|Guide|Standard|Report|Manual|Volume|Part\s+\d[a-z]?|2010|2011|2013|2016|2019|2021)[^.!?;]{0,28}$/i;
-const EXTERNAL_EN_CHAPTER_AFTER_CUE = /^\s*(?:,?\s*(?:Table|Section|Figure|§)\s*[\d.]+\s*)?(?:of|in)\s+(?:the\s+)?(?:RIVM|LC-IMPACT|IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|ISO\s+\d+|PEF|EU\b)/i;
+const EXTERNAL_EN_CHAPTER_CUE = /(?:IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|RIVM|LC-IMPACT|ISO\s+\d+|Handbook|Guide|Standard|Report|Manual|Volume|Part\s+\d[a-z]?|Figure\s+[\d.]+|Sections?\s+[\d.–-]+|2010|2011|2013|2016|2019|2021)[^.!?;]{0,36}$/i;
+const EXTERNAL_EN_CHAPTER_AFTER_CUE = /^\s*(?:,?\s*(?:Table|Section|Figure|§)\s*[\d.]+\s*)?(?:of|in)\s+(?:the\s+)?(?:\d{4}\s+)?(?:RIVM|LC-IMPACT|IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|ISO\s+\d+|PEF|EU\b)/i;
 
 /**
  * Blocking check: detects internal draft "Chapter N" references inside English claim prose
