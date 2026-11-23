@@ -73,7 +73,7 @@ export function EnHomePage() {
         <div className="section-heading">
           <h2>All 32 Chapters Across 7 Parts</h2>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/en/coverage/">Book Guide &amp; Release Status</Link>
+            <Link href="/en/coverage/">Book Guide</Link>
             <Link href="/en/print/">Continuous Reading &amp; Print</Link>
           </div>
         </div>

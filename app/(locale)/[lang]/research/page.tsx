@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import catalog from '@/lib/catalog';
 import { PublicationShell } from '@/components/publication-shell';
 import { ReferencesTabs } from '@/components/references-tabs';
+import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
@@ -50,11 +51,11 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
           const firstWork = work && !seenWorks.has(work.id); if (work) seenWorks.add(work.id);
           const firstReading = reading && !seenReadings.has(reading.id); if (reading) seenReadings.add(reading.id);
           return (
-            <article className="source-record" key={source.id} id={source.id}>
+            <article className="source-record" key={source.id} id={source.id} style={{ overflowWrap: 'anywhere' }}>
               {firstWork && <span id={work.id} />}
               {firstReading && <span id={reading.id} />}
               <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
-              <p>{source.publisher}. {source.version}.</p>
+              <p>{formatEnBibliographicText(source.publisher)}. {formatEnBibliographicText(source.version)}.</p>
               <p><Link href={`/en/sources/#${source.id}`}>Citation locators &amp; linked claims</Link></p>
               {firstReading && (
                 <details>
@@ -62,8 +63,8 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
                   <ul>
                     {reading.passages.map(passage => (
                       <li key={passage.id} id={passage.id}>
-                        {passage.locator}
-                        {'printedPages' in passage && passage.printedPages && <>, {passage.printedPages}</>}
+                        {formatEnBibliographicText(passage.locator)}
+                        {'printedPages' in passage && passage.printedPages && <>, {formatEnBibliographicText(passage.printedPages)}</>}
                       </li>
                     ))}
                   </ul>

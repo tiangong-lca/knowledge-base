@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { EnChapterContent } from '@/components/en-chapter-content';
+import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { PublicationNote } from '@/components/publication-note';
 import catalog from '@/lib/catalog';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
@@ -166,7 +167,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {catalog.sources.map(item => (
               <div className="evidence-item" key={item.id}>
                 <strong>{item.title}</strong>
-                <p>{item.publisher}. {item.version}.</p>
+                <p>{formatEnBibliographicText(item.publisher)}. {formatEnBibliographicText(item.version)}.</p>
                 <a href={item.url} rel="noreferrer">Source link</a>
               </div>
             ))}

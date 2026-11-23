@@ -1,7 +1,17 @@
 import type { SearchEntry } from '@/components/site-header';
 import { getSource } from '@/lib/source';
 import catalog from '@/lib/catalog';
+import enClaimsFile from '@/knowledge/editions/en/claims.json';
+import { formatEnBibliographicText, formatEnConceptTitle } from '@/lib/en-citation-format';
 import type { Locale } from '@/lib/i18n';
+
+interface EnClaimSearchRow {
+  id: string;
+  text: string;
+  scope?: string;
+}
+
+const enClaimsList = (enClaimsFile.claims ?? []) as EnClaimSearchRow[];
 
 export function getSearchEntries(lang: Locale): SearchEntry[] {
   if (lang === 'en') {
@@ -9,7 +19,7 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
     return [
       {
         title: 'LCA Historical Timeline (1969–2026)',
-        text: 'Visual timeline of life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
+        text: 'Visual timeline of 27 life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
         url: '/en/timeline/',
         kind: 'Timeline',
       },
@@ -19,15 +29,21 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
         url: p.url.endsWith('/') ? p.url : `${p.url}/`,
         kind: 'Chapter',
       })),
+      ...enClaimsList.map((c) => ({
+        title: c.text,
+        text: c.scope ?? '',
+        url: `/en/claims/#${c.id}`,
+        kind: 'Claim',
+      })),
       ...catalog.concepts.map((c) => ({
-        title: c.english || c.label,
-        text: `${c.label} ${c.aliases.join(' ')}`,
+        title: formatEnConceptTitle(c.english || c.label),
+        text: formatEnConceptTitle(c.english || ''),
         url: `/en/concepts/#${c.id}`,
         kind: 'Concept',
       })),
       ...catalog.sources.map((s) => ({
         title: s.title,
-        text: `${s.publisher} ${s.version}`,
+        text: `${formatEnBibliographicText(s.publisher)} ${formatEnBibliographicText(s.version)}`.trim(),
         url: `/en/sources/#${s.id}`,
         kind: 'Source',
       })),
