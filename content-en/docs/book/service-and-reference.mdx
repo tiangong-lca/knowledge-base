@@ -1,0 +1,35 @@
+---
+title: Functional Reference
+description: Define the service to be delivered first, then determine how much product each alternative requires and what basis process records are scaled against.
+---
+
+## Service Requirements [#service-requirements]
+
+<Prose ids="cl-book-service cl-book-geometry cl-book-service-contract cl-book-soap cl-book-function-boundary cl-fu-distinction cl-fu-example" />
+
+## Reference Objects [#reference-objects]
+
+<Prose ids="cl-book-cml-reference cl-book-ilcd-reference cl-book-reference-reading cl-ilcd-quant-ref cl-ilcd-reference-flow cl-ilcd-fu" />
+
+Detailed field definitions appear in the *Quantitative reference* section of <SourceRef id="src-ilcd-process" />.
+
+## Comparison Conditions [#comparison-conditions]
+
+<Prose ids="cl-book-maintenance-condition" />
+
+[Wall Service Comparison](/en/docs/book/wall-service-to-comparison/) constructs a separate 100 m² wall maintained over ten years to show how performance, service life, and maintenance determine process quantities and shape impact indicators. Each worked example rests on its own explicit assumptions.
+
+<Prose ids="cl-book-record-model-limit cl-book-comparison-more cl-book-three-comparisons cl-fr173-shared-core cl-fr173-layer-split cl-fr173-intermediate-unit cl-fr173-conversion-and-attributes cl-fr173-comparability-gates" />
+
+**Table: Cross-Framework Comparison of Functional Units, Reference Flows, Intermediate Products, and Comparative-Assertion Boundaries**
+
+| Framework & Open-Access Source | Core Reference Layer & Elements | Handling of Intermediate Products | Conversion Rules & Non-Functional Attributes | Comparability & Comparative-Assertion Gates |
+| --- | --- | --- | --- | --- |
+| ILCD Handbook (2010, §§6.4, 6.10) | Study-level functional unit (what, how much, how well, how long) and reference flow | Uses a declared unit (e.g., 1 kg steel coil), explicitly stating it is not a functional unit | Distinguishes obligatory from positioning properties; Table 4 converts ten-year wall paint to 6.5 L vs 3.8 L | Comparative studies must also verify consistency in scenarios, service life, maintenance, data, and modeling |
+| EU PEF (Commission Recommendation (EU) 2021/2279, Annex I §§1, 3.2.1) | Study-level four-element functional unit (e.g., decorative paint: 1 m², 50 years, hiding power ≥ 98%) and reference flow | Intermediate products may use a declared unit (where reference flow may coincide with functional unit) | Number of products for specified service life rounded up in principle; mandatory disclosure and justification of uncovered attributes | Cross-product comparisons and public comparative assertions permitted only when strictly following an applicable PEFCR |
+| GHG Protocol Product Standard (2011, Ch. 6, §7.3.7, Appendix A) | Study-level overarching "unit of analysis" and reference flow; final products use a functional unit as unit of analysis | Does not use "declared unit"; uses reference flow directly as unit of analysis with cradle-to-gate disclosure | Allows setting functional unit or reference flow first; requires preventing fractional-product distortion | As written, supports same-product performance tracking over time only; does not support ISO 14044 comparative assertions |
+| ecoinvent v3 Data Quality Guideline (2013, Ch. 3, §4.1.2, §§14.1–14.3) | Unit-process activity-level determining reference product (waste-treatment services recorded as negative reference products) | Intermediate products link by default to local markets via unit-process reference products | Does not prescribe study-level service-life rounding or positioning properties; leaves these to downstream studies | Provides activity-level data linkage only; does not by itself establish service equivalence |
+
+<Prose ids="cl-fr173-epistemic-limits" />
+
+Formal definitions and primary sources for the two core terms appear under <ConceptRef id="cn-fu" /> and <ConceptRef id="cn-reference-flow" />.

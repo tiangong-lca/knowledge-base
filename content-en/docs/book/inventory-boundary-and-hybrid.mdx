@@ -1,0 +1,58 @@
+---
+title: Hybrid Inventory Analysis
+description: When a process-based inventory omits an input, what can economic data fill in? A toaster's two-way linkages, invoices from three suppliers, and steel use in a pump show which activities can be added and which risk being counted twice.
+---
+
+## Process Inventories and Economic Data [#process-economic-boundaries]
+
+<Prose ids="cl-inv-boundary-carrier cl-inv-small-cuts cl-hyb-question cl-inv-io-limits" />
+
+<Prose ids="cl-inv-hybrid-forms cl-inv-double-counting cl-hyb-object cl-hyb-sign" />
+
+## Two-Way Accounts [#two-way-accounts]
+
+<Prose ids="cl-hyb-upstream cl-hyb-downstream cl-hyb-balance cl-hyb-inventory" />
+
+<Prose ids="cl-hyb-toaster cl-hyb-downstream-dispute cl-hyb-downstream-test cl-hyb-downstream-zero" />
+
+<Prose ids="cl-hyb-accounts cl-hyb-evidence-boundary cl-hyb-service cl-hyb-ledger" />
+
+<Prose ids="cl-hyb-invoices cl-hyb-raw cl-hyb-naive cl-hyb-remove" />
+
+<Prose ids="cl-hyb-equations cl-hyb-corrected cl-hyb-naive-result cl-hyb-swap" />
+
+The table below lists annual transaction values for two hypothetical invoice sets in CU/year, where F and G are two electricity generators and S is a service supplier.
+
+| Seller → Buyer | Invoice Set 1 | Invoice Set 2 |
+| --- | --- | --- |
+| F → S (electricity) | 10 | 0 |
+| G → S (electricity) | 10 | 20 |
+| S → F (services) | 20 | 20 |
+| S → G (services) | 30 | 30 |
+| S → S (internal use) | 20 | 20 |
+
+When F and G are aggregated into a single electricity sector E, both ledgers show E selling 20 CU/year of electricity to S and S selling 50 CU/year of services to E. The sectoral table therefore cannot distinguish whether S bought its electricity from F or from G.
+
+<Prose ids="cl-hyb-swap-result" />
+
+## Sources of Error [#sources-of-error]
+
+<Prose ids="cl-hyb-pump cl-hyb-bpc cl-hyb-paths cl-hyb-popcorn" />
+
+<Prose ids="cl-hyb-response cl-hyb-database cl-hyb-denominator cl-hyb-limits" />
+
+<Prose ids="cl-hyb-audit cl-inv-judgement" />
+
+<Prose ids="cl-hyb175-shared-completeness-dilemma cl-hyb175-process-standards-cutoff-and-capital cl-hyb175-eeio-admission-and-hybrid-architectures cl-hyb175-double-counting-governance cl-hyb175-price-aggregation-and-denominator-comparability" />
+
+**Table: Comparison of Four Process-Based Frameworks and Hybrid Inventory Approaches across Cut-Offs, Capital Goods, Double-Counting Control, and Comparability**
+
+| Framework and Primary Source | Cut-Off and Completeness Rules | Capital Goods and Purchased Services Boundary | EEIO / Hybrid Gap-Filling and Double-Counting Control | Cross-Study Comparability Threshold |
+| --- | --- | --- | --- | --- |
+| ILCD Handbook (2010, §§6.6.2–6.6.3, Provisions 6.6) | Recognizes that 100% of total inventory is unobservable; sets impact-coverage cut-offs (e.g., 85% / 95%) with public exclusion lists | Includes capital goods and purchased services (cleaning, legal, marketing, office) in principle unless proven insignificant | No EEIO or hybrid gap-filling clauses; relies on iterative process-boundary closure | Must disclose exclusion lists and coverage baselines; large cut-offs restrict comparability |
+| EU PEF ((EU) 2021/2279, Annex I §§4.1, 4.4.4, 4.6.3–4.6.4) | No cut-off during screening; cumulative cut-off capped at 3.0% in full studies (mass, energy, and environmental significance) | Capital goods and their end-of-life excluded by default unless prior studies demonstrate significance | No EEIO pathway; ILCD-EL proxies capped at 10% of single overall score; missing data require verified exclusion | Highly standardized process scope, but omits capital goods and macroeconomic service tails by default |
+| GHG Protocol Product Standard (2011, Ch. 7, §8.3.4, Box 8.2) | Attributable processes may be excluded only when data are unavailable, no proxy exists, and estimates fall below disclosure thresholds | Capital goods, administrative energy, and R&D/administration/marketing are optional non-attributable processes; inclusion must be disclosed | Permits financial data paired with EEIO factors for screening and upstream estimates; manual checking of factor coverage to prevent overlap | Non-attributable items are optional and GHG-only; cross-study comparisons must align boundaries and factor types |
+| ecoinvent v3 Guidelines (2013, §4.11, §5.10, §§6.1–6.4) | Declares no strict quantitative cut-off and does not cut off recycling; fills gaps with reasonable estimates and a default 95% yield | Explicitly models capital goods by lifetime and capacity; aims to include physical causality even without direct monetary payment | Maintains unit-process monetary balances, but core network remains purely physical unit processes | No macroeconomic sector closure; bounded by modeled unit-process coverage |
+| Hybrid Inventory Frameworks (Suh 2004; Agez 2019/2020; Jakobs 2021) | Closes upstream truncation with economic IO tables, introducing sectoral aggregation and price-conversion errors | Naturally captures purchased services and capital-goods upstream via monetary purchases (subject to IO table scope) | Tiered / IO-based / integrated hybrid; requires explicit overlap removal (account subtraction, binary correction, BPC, STAM) | Must report price basis, sectoral resolution, subtraction rules, and denominator scope consistently |
+
+<Prose ids="cl-hyb175-epistemic-limits" />
