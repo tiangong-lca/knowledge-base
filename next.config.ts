@@ -9,7 +9,11 @@ const config: NextConfig = {
   trailingSlash: true,
   staticPageGenerationTimeout: 180,
   images: { unoptimized: true },
-  experimental: { useTypeScriptCli: true },
+  experimental: {
+    useTypeScriptCli: true,
+    cpus: 2,
+    memoryBasedWorkersCount: true,
+  },
 };
 const withMDX = createMDX();
 
