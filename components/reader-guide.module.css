@@ -1,0 +1,442 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-fd-border);
+  padding-bottom: 0.55rem;
+}
+
+.sectionHeader h2 {
+  margin: 0 !important;
+  font-size: 1.25rem !important;
+  font-weight: 650;
+}
+
+.sectionMeta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--kb-subtle);
+}
+
+/* 7-Part Roadmap */
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roadmapCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--color-fd-background);
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  transition: border-color 0.16s ease, background-color 0.16s ease, transform 0.14s ease;
+}
+
+.roadmapCard:hover {
+  border-color: var(--color-fd-primary);
+  background: var(--kb-surface);
+  transform: translateY(-1px);
+}
+
+.roadmapTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.partTag {
+  font-size: 0.74rem;
+  font-weight: 650;
+  color: var(--color-fd-primary);
+}
+
+.rangeTag {
+  font-size: 0.72rem;
+  color: var(--kb-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.roadmapTitle {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+  line-height: 1.35;
+}
+
+.roadmapQuestion {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--kb-subtle);
+}
+
+/* 3 Reading Modes */
+.modesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.modeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.05rem 1.15rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--kb-surface);
+}
+
+.modeBadge {
+  align-self: flex-start;
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--color-fd-accent);
+  color: var(--color-fd-primary);
+}
+
+.modeTitle {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 650;
+}
+
+.modeAudience {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--kb-subtle);
+}
+
+.modeDesc {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.modeAction {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-fd-primary);
+  text-decoration: none;
+}
+
+.modeAction:hover {
+  text-decoration: underline;
+}
+
+/* 6 Problem Entry Routes */
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.problemCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--color-fd-background);
+}
+
+.problemQuestion {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  font-weight: 650;
+  line-height: 1.45;
+  color: var(--color-fd-foreground);
+}
+
+.problemSummary {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--kb-subtle);
+}
+
+.problemLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.problemChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 4px;
+  background: var(--kb-surface);
+  font-size: 0.76rem;
+  color: var(--color-fd-primary);
+  text-decoration: none;
+}
+
+.problemChip:hover {
+  border-color: var(--color-fd-primary);
+  background: var(--color-fd-accent);
+  text-decoration: underline;
+}
+
+.problemChipWhy {
+  color: var(--kb-subtle);
+}
+
+/* Front matter */
+.frontGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.frontCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--kb-surface);
+  text-decoration: none;
+  color: inherit;
+}
+
+.frontCard:hover {
+  border-color: var(--color-fd-primary);
+}
+
+.frontTitle {
+  font-size: 0.98rem;
+  font-weight: 650;
+  color: var(--color-fd-primary);
+}
+
+.frontDesc {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--kb-subtle);
+}
+
+/* 7 Parts Chapter Groups */
+.partSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
+  scroll-margin-top: 5rem;
+}
+
+.partHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+.partHeading h3 {
+  margin: 0 !important;
+  font-size: 1.12rem !important;
+  font-weight: 650;
+}
+
+.partIntro {
+  margin: 0;
+  padding: 0.65rem 0.9rem;
+  border-left: 3px solid var(--color-fd-primary);
+  background: var(--kb-surface);
+  font-size: 0.84rem;
+  line-height: 1.72;
+  color: var(--color-fd-foreground);
+}
+
+.chapterList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapterItem {
+  padding: 0.85rem 1.05rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--color-fd-background);
+}
+
+.chapterRowTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.chapterTitleWrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.chapterNumber {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--color-fd-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.chapterLink {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+  text-decoration: none;
+}
+
+.chapterLink:hover {
+  color: var(--color-fd-primary);
+  text-decoration: underline;
+}
+
+.companionGroup {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.companionBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-fd-border);
+  background: var(--kb-surface);
+  font-size: 0.72rem;
+  color: var(--color-fd-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.companionBadge:hover {
+  border-color: var(--color-fd-primary);
+  background: var(--color-fd-accent);
+}
+
+.chapterDesc {
+  margin: 0;
+  font-size: 0.83rem;
+  line-height: 1.65;
+  color: var(--kb-subtle);
+}
+
+/* Topics, Appendices, Tools */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.unitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1.05rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 6px;
+  background: var(--color-fd-background);
+  height: 100%;
+}
+
+.unitCardTop {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.unitLabel {
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: var(--color-fd-primary);
+  white-space: nowrap;
+}
+
+.unitLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+  text-decoration: none;
+}
+
+.unitLink:hover {
+  color: var(--color-fd-primary);
+  text-decoration: underline;
+}
+
+.unitDesc {
+  margin: 0;
+  font-size: 0.81rem;
+  line-height: 1.62;
+  color: var(--kb-subtle);
+}
+
+@media (max-width: 820px) {
+  .modesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .problemGrid,
+  .frontGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .roadmapCard,
+  .modeCard,
+  .problemCard,
+  .chapterItem,
+  .unitCard {
+    break-inside: avoid;
+    border-color: #bbb;
+  }
+}

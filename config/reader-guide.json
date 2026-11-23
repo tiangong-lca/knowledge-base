@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "partQuestions": {
+    "1": "环境判断为何不能只看单个环节，早期案例与主流操作框架怎样分工？",
+    "2": "如何固定可比的功能参照、求解线性过程网络并处理混合清单边界？",
+    "3": "面对共产品、市场供给变化、电网尺度与循环再生，负担怎样分担或传递？",
+    "4": "排放与资源开采如何沿气候、酸化富营养化、颗粒物、水与毒性路径转化为环境后果？",
+    "5": "多指标权衡、空间本地化、货币估值、社会风险与生命周期成本的边界何在？",
+    "6": "背景数据适用性、不确定性传播、谱系评分与产品足迹法规怎样约束结论用途？",
+    "7": "回到墙面、购物袋与未来情景，怎样判断一份完整比较的依据并定向修订结论？"
+  },
+  "readingModes": [
+    {
+      "id": "sequential",
+      "badge": "路线 1",
+      "title": "系统通读（零基础／教学）",
+      "audience": "首次系统学习生命周期评价的读者与高校课程",
+      "description": "从《前言》与《阅读导论》出发，按第一部至第七部（第 1–32 章）顺序推进，从早期容器账本一路走到完整案例比较与结论修订。",
+      "startHref": "/docs/",
+      "startLabel": "从《前言》开始顺读"
+    },
+    {
+      "id": "problem-first",
+      "badge": "路线 2",
+      "title": "按问题速查（实践者／审稿人）",
+      "audience": "已有 LCA 建模或核算经验、需核对特定方法边界的读者",
+      "description": "直接从下方六条高频实务问题切入对应章节，结合「概念索引」与「参考文献与出处」核查跨体系分歧与一手来源。",
+      "startHref": "#problem-routes",
+      "startLabel": "查看 6 条问题入口"
+    },
+    {
+      "id": "case-reverse",
+      "badge": "路线 3",
+      "title": "从案例倒推（实证导向）",
+      "audience": "希望先看完整数值比较再回溯方法原理的读者",
+      "description": "先读第 29 章《墙面服务比较》与第 30 章《购物袋研究》，再沿章内链接与尾注回溯功能单位、过程网络、气候当量与评审门槛。",
+      "startHref": "/docs/book/wall-service-to-comparison/",
+      "startLabel": "直达第 29 章案例"
+    }
+  ],
+  "problemRoutes": [
+    {
+      "id": "prob-carbon-footprint",
+      "question": "我要做产品碳足迹或应对欧盟电池法规／ESPR，先看哪几章？",
+      "summary": "厘清功能单位与声明单位、碳账本与生物源规则、合规数据门槛与法定比较断言条件。",
+      "targets": [
+        { "route": "/docs/book/service-and-reference", "why": "功能单位与参考流" },
+        { "route": "/docs/book/climate-equivalence", "why": "气候当量与生物碳口径" },
+        { "route": "/docs/book/product-footprint-rules-and-practice", "why": "GHG Protocol、PEF 与欧盟法规" }
+      ]
+    },
+    {
+      "id": "prob-allocation",
+      "question": "共产品分配、系统扩展与回收循环（CFF）怎么选才不双计？",
+      "summary": "区分归因分担与后果式边际替代，核对电力尺度与回收链责任交接条件。",
+      "targets": [
+        { "route": "/docs/book/joint-production", "why": "份额分配与参照残余" },
+        { "route": "/docs/book/market-boundaries-and-response", "why": "受限市场与边际响应" },
+        { "route": "/docs/book/recycling-chains-and-accounting", "why": "循环足迹公式与负担交接" }
+      ]
+    },
+    {
+      "id": "prob-lcia-reversal",
+      "question": "为什么同一份清单换一套影响评价方法或权重就出现排名反转？",
+      "summary": "追查中点与终点截点、空间本地化分母、归一化稀释与加权估值立场的机制差异。",
+      "targets": [
+        { "route": "/docs/book/midpoint-endpoint-value-choices", "why": "中点与终点因果截点" },
+        { "route": "/docs/book/localization-evidence-and-denominators", "why": "空间粒度与归一化分母" },
+        { "route": "/docs/book/ecological-scarcity-and-targets", "why": "生态稀缺与中点加权边界" }
+      ]
+    },
+    {
+      "id": "prob-data-quality",
+      "question": "背景数据库换版、谱系矩阵打分与蒙特卡洛显著性怎样正确解读？",
+      "summary": "分清数据库残差联动、DQR 序数门槛与谱系方差的统计边界，避免模拟次数制造伪显著。",
+      "targets": [
+        { "route": "/docs/book/data-applicability", "why": "适用性、审查与换版红线" },
+        { "route": "/docs/book/uncertainty-and-variability", "why": "不确定性层次与模拟误区" },
+        { "route": "/docs/book/data-quality-and-probability", "why": "谱系评分与概率校准" }
+      ]
+    },
+    {
+      "id": "prob-prospective",
+      "question": "评估实验室新技术或 2030/2050 脱碳情景，前瞻性 LCA 有哪些陷阱？",
+      "summary": "掌握工艺放大、IAM 超结构背景耦合与动态时间边界的适用条件和验证局限。",
+      "targets": [
+        { "route": "/docs/book/electricity-service-and-response", "why": "电网边际与时间尺度" },
+        { "route": "/docs/book/future-technology-and-context", "why": "前瞻放大与超结构情景" },
+        { "route": "/docs/book/revisable-judgment", "why": "七类定向修订路由" }
+      ]
+    },
+    {
+      "id": "prob-review-judgment",
+      "question": "拿到一份公开 LCA 比较报告，怎样核查它的结论是否站得住脚？",
+      "summary": "从完整教学例与真实政府评估出发，检查比较断言资格、热点阈值与外部评审边界。",
+      "targets": [
+        { "route": "/docs/book/wall-service-to-comparison", "why": "服务等效与成对不确定性" },
+        { "route": "/docs/book/interpretation-and-limits", "why": "英丹购物袋与关键性审查" },
+        { "route": "/docs/book/cost-perspectives-and-sustainability-combination", "why": "环境、社会与成本消重" }
+      ]
+    }
+  ],
+  "chapterCompanions": {
+    "/docs/book/early-container-comparisons": [
+      { "route": "/docs/appendices/container-energy-check", "badge": "附录 A" },
+      { "route": "/docs/history", "badge": "专题" }
+    ],
+    "/docs/book/framework-responsibilities": [
+      { "route": "/docs/appendices/cml-framework-calculations", "badge": "附录 B" }
+    ],
+    "/docs/book/service-and-reference": [
+      { "route": "/docs/functional-unit", "badge": "专题" }
+    ],
+    "/docs/book/exchange-semantics-and-conversion": [
+      { "route": "/docs/flows", "badge": "专题" },
+      { "route": "/docs/characterization", "badge": "专题" }
+    ],
+    "/docs/book/joint-production": [
+      { "route": "/docs/allocation", "badge": "专题" }
+    ],
+    "/docs/book/climate-equivalence": [
+      { "route": "/docs/appendices/climate-numerical-reconstruction", "badge": "附录 C" }
+    ],
+    "/docs/book/particulate-emissions-and-health": [
+      { "route": "/docs/appendices/particulate-factor-calculations", "badge": "附录 D" }
+    ],
+    "/docs/book/revisable-judgment": [
+      { "route": "/docs/appendices/lca-timeline", "badge": "附录 E" }
+    ]
+  },
+  "tools": [
+    {
+      "href": "/research/",
+      "title": "参考文献与出处",
+      "description": "双标签查看全部原始书目核读记录与逐条引文位置。"
+    },
+    {
+      "href": "/concepts/",
+      "title": "概念索引",
+      "description": "核心专业术语、英文原词与跨体系语义关系对照。"
+    },
+    {
+      "href": "/claims/",
+      "title": "注释与论证",
+      "description": "全书规范论述清单、前提依赖与适用条件总览。"
+    },
+    {
+      "href": "/timeline/",
+      "title": "发展大事记",
+      "description": "1969–2026 年可视化历史时间线与一手来源核验状态。"
+    },
+    {
+      "href": "/print/",
+      "title": "连续阅读与打印",
+      "description": "按 32 章与五份附录顺序连续阅读或输出纸面打印版。"
+    },
+    {
+      "href": "/changes/",
+      "title": "版本与勘误",
+      "description": "历次修订留痕、章节合并记录与公开更正说明。"
+    }
+  ]
+}
