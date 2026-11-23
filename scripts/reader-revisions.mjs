@@ -91,8 +91,20 @@ export function validateRevisionSchema(revision, label = 'revision') {
       throw new Error(`${label}: routeChanges must be an array`);
     }
     for (const rc of revision.routeChanges) {
-      if (!rc || !['merge', 'add-unit'].includes(rc.op)) {
-        throw new Error(`${label}: routeChanges entry requires op: 'merge' or 'add-unit'`);
+      if (!rc || !['merge', 'add-unit', 'relocate-prefix'].includes(rc.op)) {
+        throw new Error(`${label}: routeChanges entry requires op: 'merge', 'add-unit', or 'relocate-prefix'`);
+      }
+      if (rc.op === 'relocate-prefix') {
+        if (typeof rc.fromPrefix !== 'string' || (rc.fromPrefix !== '' && !rc.fromPrefix.startsWith('/'))) {
+          throw new Error(`${label}: routeChanges relocate-prefix requires fromPrefix '' or starting with '/'`);
+        }
+        if (!nonempty(rc.toPrefix) || !rc.toPrefix.startsWith('/') || rc.toPrefix.endsWith('/') || rc.toPrefix === rc.fromPrefix) {
+          throw new Error(`${label}: routeChanges relocate-prefix requires distinct toPrefix starting with '/' and without trailing '/'`);
+        }
+        if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
+          throw new Error(`${label}: routeChanges relocate-prefix requires clean reader-facing rationale without internal claim IDs`);
+        }
+        continue;
       }
       if (rc.op === 'add-unit') {
         if (!nonempty(rc.route) || !rc.route.startsWith('/') || !['appendix', 'topic'].includes(rc.kind)) {
@@ -162,9 +174,25 @@ export function extractRouteChanges(revisions) {
   const fromToMap = new Map();
   const mergedFromSet = new Set();
   const mergedToSet = new Set();
+  const prefixRelocations = [];
+  let activePrefix = '';
 
   for (const rev of revisions ?? []) {
     for (const rc of rev.routeChanges ?? []) {
+      if (rc.op === 'relocate-prefix') {
+        const record = {
+          op: 'relocate-prefix',
+          fromPrefix: rc.fromPrefix,
+          toPrefix: rc.toPrefix,
+          rationale: rc.rationale,
+          revisionId: rev.id,
+          date: rev.date,
+          sourceCommit: rev.sourceCommit ?? rev.id,
+        };
+        prefixRelocations.push(record);
+        activePrefix = rc.toPrefix;
+        continue;
+      }
       if (rc.op === 'add-unit') {
         const record = {
           op: 'add-unit',
@@ -199,7 +227,7 @@ export function extractRouteChanges(revisions) {
       }
     }
   }
-  return { merges, addedUnits, addedUnitKeys, fromToMap, mergedFromSet, mergedToSet };
+  return { merges, addedUnits, addedUnitKeys, fromToMap, mergedFromSet, mergedToSet, prefixRelocations, activePrefix };
 }
 
 export function isRouteRevised(revisions, ...routes) {
