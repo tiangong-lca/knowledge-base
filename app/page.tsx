@@ -10,7 +10,7 @@ export default function Home() {
     <section className="home-intro"><div className="home-copy">
       <p className="publication-name">天工 LCA 知识库</p><h1>生命周期评价的<br/>前世今生</h1>
       <p className="home-lead">一件物品背后的世界，如何进入计算，又如何成为环境判断？从早期研究到方法分歧，沿着概念、模型与证据，理解生命周期评价。</p>
-      <div className="home-actions"><Link className="primary-link" href="/docs/">开始阅读</Link><Link className="secondary-link" href="/timeline/">发展大事记</Link><Link className="secondary-link" href="/print/">书籍目录与连续阅读</Link></div>
+      <div className="home-actions flex-wrap"><Link className="primary-link whitespace-nowrap" href="/docs/">开始阅读</Link><Link className="secondary-link whitespace-nowrap" href="/timeline/">发展大事记</Link><Link className="secondary-link whitespace-nowrap" href="/print/">书籍目录与连续阅读</Link></div>
     </div><div className="knowledge-figure" aria-label="阅读主线：现实问题经过概念、方法和模型，形成有依据的判断">
       <div className="figure-source">现实中的问题</div><div className="figure-branches"><span>概念的来历</span><span>方法的选择</span><span>模型的含义</span></div><div className="figure-line"/><div className="figure-center">沿着证据<br/><strong>理解判断</strong></div><div className="figure-foot">历史 · 方法 · 论证</div>
     </div></section>

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "wp1-case-and-ui-polish-228",
+  "date": "2026-11-22",
+  "task": "tiangong-lca/knowledge-base#228",
+  "title": "修正混合清单算例草稿章号残留与线上界面细节修复",
+  "rationale": "按算例绑定维护流程将混合清单算例说明中的“第29章完整墙面例”统一为正式篇名《墙面服务比较》，同时修复线上视觉核验检出的大事记重置按钮折行、搜索框占位符截断与移动端首页按钮挤压换行三处界面问题。",
+  "routes": [
+    "/docs/book/inventory-boundary-and-hybrid",
+    "/timeline"
+  ],
+  "claims": [
+    {
+      "id": "cl-hyb-service",
+      "op": "modify",
+      "from": {
+        "id": "cl-hyb-service",
+        "kind": "proposal",
+        "scope": "平整墙面采用涂料 A 的固定供电子需求",
+        "evidenceIds": [
+          "ev-hyb-suh-object"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-hyb-suh-object",
+            "relation": "context",
+            "rationale": "原文提供以固定功能需求连接两种系统的背景，墙面服务及供应账目来自本书案例。"
+          }
+        ],
+        "premiseIds": [
+          "cl-wall-demand",
+          "cl-hyb-balance"
+        ],
+        "conceptIds": [],
+        "mappingIds": [],
+        "caveats": [],
+        "reasoning": "从墙面服务的平整基底 A 路线提取电力需要，单独说明新增前景和核算对象。",
+        "text": "下面用一组同时记下买方和卖方的账，看看同一笔交易为何会被算两次。沿用第29章完整墙面例中平整基底的 A 方案，这里只算用电。平整的 100 m² 墙面在十年中分两次涂刷，每次用 A 涂料 5 kg。生产每千克涂料用电 2 kWh，合计 20 kWh。设 F 交付这批电，再用三家供应者的账目算这套供电系统的 CO₂ 清单。墙面计划只用于确定交付量，算出的排放也只包括这套模型所列的供电活动。下文的交易、技术、地区、价格和排放均为本书的设定。",
+        "status": "reviewed",
+        "reviewedAt": "2026-11-08",
+        "reviewKind": "agent-source-check",
+        "caseBinding": {
+          "caseId": "CASE-HYBRID-OVERLAP",
+          "version": "1.0.0",
+          "inputSha256": "449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e",
+          "inputFile": "hybrid-overlap-v1.json"
+        }
+      },
+      "rationale": "按算例绑定模板同步更新，将草稿章号“第29章完整墙面例”改为正式篇名《墙面服务比较》。"
+    }
+  ],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [
+    {
+      "path": "knowledge/cases/hybrid-overlap-v1.publication.json",
+      "fromSha256": "7512c0d0ce1e87a1781e664aa3a6015fdebd49b7cb74024183ef188eabcbef7f",
+      "toSha256": "ed9744888e6bc6883a0d39393f37fe619b924e042ca9c9819a9abbd8592363ee",
+      "previous": "{\n  \"schemaVersion\": 1,\n  \"caseId\": \"CASE-HYBRID-OVERLAP\",\n  \"version\": \"1.0.0\",\n  \"inputFile\": \"hybrid-overlap-v1.json\",\n  \"reviewedAt\": \"2026-11-08\",\n  \"reviewKind\": \"agent-source-check\",\n  \"approvedInputSha256\": \"449be3b1eff749a1b10d55f9717fec06fd2ddbf4d86b623a9a64e6db5a09137e\",\n  \"claims\": [\n    {\n      \"id\": \"cl-hyb-service\",\n      \"kind\": \"proposal\",\n      \"scope\": \"平整墙面采用涂料 A 的固定供电子需求\",\n      \"evidenceIds\": [\n        \"ev-hyb-suh-object\"\n      ],\n      \"evidenceLinks\": [\n        {\n          \"evidenceId\": \"ev-hyb-suh-object\",\n          \"relation\": \"context\",\n          \"rationale\": \"原文提供以固定功能需求连接两种系统的背景，墙面服务及供应账目来自本书案例。\"\n        }\n      ],\n      \"premiseIds\": [\n        \"cl-wall-demand\",\n        \"cl-hyb-balance\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"从墙面服务的平整基底 A 路线提取电力需要，单独说明新增前景和核算对象。\",\n      \"textTemplate\": \"下面用一组同时记下买方和卖方的账，看看同一笔交易为何会被算两次。沿用第29章完整墙面例中平整基底的 A 方案，这里只算用电。平整的 {{evaluated.linkedService.areaM2}} m² 墙面在十年中分两次涂刷，每次用 A 涂料 {{evaluated.linkedService.paintKgPerTreatment.exact}} kg。生产每千克涂料用电 2 kWh，合计 {{evaluated.linkedService.fixedElectricityDeliveryKWh.exact}} kWh。设 F 交付这批电，再用三家供应者的账目算这套供电系统的 CO₂ 清单。墙面计划只用于确定交付量，算出的排放也只包括这套模型所列的供电活动。下文的交易、技术、地区、价格和排放均为本书的设定。\"\n    },\n    {\n      \"id\": \"cl-hyb-ledger\",\n      \"kind\": \"proposal\",\n      \"scope\": \"虚构稳态年度的交付者、生产者价格及直接排放\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-service\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"明示用于归一化的年度、生产者价格、单位与简化边界。\",\n      \"textTemplate\": \"先把三家供应者放在同一稳态年度，假定该年的技术和相对价格适用于这项供电，币值单位记为 CU。同一地区两家发电方 F、G 各年发电 100 kWh，均以生产者价格 1 CU/kWh 交付。服务方 S 的年产出为 100 CU。F、G、S 年直接排放依次为 40、120、30 kg CO₂。年度账目提供投入与排放的每单位系数；十年墙面计划交给这个网络的需求合计仍为 20 kWh，不按年再乘十。模型按固定比例缩放，忽略税费、流通差价、进口、线损、资本和共产品。\"\n    },\n    {\n      \"id\": \"cl-hyb-invoices\",\n      \"kind\": \"proposal\",\n      \"scope\": \"谁卖给谁的五项年度中间交易\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-ledger\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"由年产出与所列中间销售逐行求最终销售余量，作为拆分前的核对。\",\n      \"textTemplate\": \"现在可以逐笔写出买方和卖方的发票。这个年度内，S 向 F 和 G 各买 10 CU 的电，并使用本部门 20 CU 的服务。F 向 S 采购 20 CU 服务，G 向 S 采购 30 CU 服务。其余中间交易均为零，产出余量售给最终用户。逐个供应者检查，F 与 G 各剩 90 CU，S 剩 30 CU。五笔中间交易保留了卖方和买方的身份；将来判断重复时，要找的就是同一笔交付在两套表示中的对应位置。\"\n    },\n    {\n      \"id\": \"cl-hyb-raw\",\n      \"kind\": \"calculation\",\n      \"scope\": \"把两家发电方汇成电力部门后的原始账户\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-invoices\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"合并 F、G 的年度记录，再分别按各部门产出归一化。\",\n      \"textTemplate\": \"把两家发电方合成电力部门 E 后，部门表就看不出每笔发票是谁开给谁的。表上只显示 E 产出 200 CU、S 产出 100 CU。使用表按卖方排列各行，按买方排列各列。S 买电合计 20，电力部门买服务合计 50，S 自用服务 20，均以 CU/年计。用每列买方的总产出作分母，得到 E 每元产出购入 0.25 CU 服务，S 每元产出购入 0.2 CU 电和 0.2 CU 服务。E 的直接 CO₂ 强度为 (40＋120)/200＝0.8 kg/CU，S 为 30/100＝0.3 kg/CU。稍后把 F 单列为过程时，要记住这张部门表已经包含 F 的生产、购销和排放。\"\n    },\n    {\n      \"id\": \"cl-hyb-naive\",\n      \"kind\": \"calculation\",\n      \"scope\": \"原表直接接回具名发电方造成的重叠\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-raw\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"把明确的下游连接和仍然包含该笔电的原表列并列，按同一价格还原到年度交易。\",\n      \"textTemplate\": \"先看看不拆部门账会发生什么。只算 F 的直接排放，这 20 kWh 对应 {{evaluated.processOnly.totalCO2Kg.exact}} kg CO₂。F 用的服务似乎可以用经济表补上。发票显示，F 每发 1 kWh 需要 0.2 CU 服务，S 每产出 1 CU 就需要 F 供 0.1 kWh。若接上这两笔交易又照用原表，生产 100 CU 服务便会同时要求原表中的 20 CU 电和单列的 10 kWh F 电。按同一价格相加是 {{evaluated.naive.servicePowerPurchasePer100CU.exact}} CU，发票合计却只有 {{evaluated.naive.actualLedgerPowerPurchasePer100CU.exact}} CU。多算的正是 F 卖给 S 的电，这笔交易既在 E 的账里，又被单列了一次。\"\n    },\n    {\n      \"id\": \"cl-hyb-remove\",\n      \"kind\": \"calculation\",\n      \"scope\": \"按交易双方拆出前景活动并重新计算剩余系数\",\n      \"evidenceIds\": [\n        \"ev-hyb-suh-overlap\"\n      ],\n      \"evidenceLinks\": [\n        {\n          \"evidenceId\": \"ev-hyb-suh-overlap\",\n          \"relation\": \"context\",\n          \"rationale\": \"原文给出先处理原始账户再归一化的思路。此处的简化交易和单价均由本书规定。\"\n        }\n      ],\n      \"premiseIds\": [\n        \"cl-hyb-naive\",\n        \"cl-hyb-accounts\"\n      ],\n      \"conceptIds\": [\n        \"cn-hyb-residual-background\"\n      ],\n      \"mappingIds\": [\n        \"map-hyb-residual-inventory\"\n      ],\n      \"caveats\": [],\n      \"reasoning\": \"逐项分开 F 的产出、排放、采购和销售，再对剩余供应者归一化。\",\n      \"textTemplate\": \"要免去这笔重复，从年度账户拆出F。先从 E 的供给与直接排放总量取出 F 的 100 CU 和 40 kg CO₂。此处拆出 F 的整项基准年活动，而非按墙面的 20 kWh 先扣掉年产出的五分之一。需求占用多少活动，要等系数形成以后求解。再按买卖双方处理两笔跨界交易。使用表中 S 卖给 E 的 50 CU 减去 F 所购的 20，留下 G 所购的 30。E 卖给 S 的 20 CU 减去 F 所售的 10，留下 G 所售的 10。S 自用的 20 保留。此时剩余电力部门只有 G，其 100 CU 产出对应 120 kg 排放，强度重算为 1.2 kg/CU。G 每元需服务 0.3 CU，S 每元需 G 电 0.1 CU 和服务 0.2 CU。移出的两笔交易并未消失：它们离开背景内部，改由跨界连接表示。\"\n    },\n    {\n      \"id\": \"cl-hyb-equations\",\n      \"kind\": \"calculation\",\n      \"scope\": \"三种活动坐标的供需平衡\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-remove\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"把两项跨界供需和剩余账户逐行放回各自单位的平衡式。\",\n      \"textTemplate\": \"有了分开的账，就能按三家供应者各写一行平衡。用 u 表示 F 的总发电量（kWh），v 表示剩余电力部门 G 的产出（CU），w 表示服务产出（CU）。对应的平衡依次为 u − 0.1w ＝ 20，v − 0.1w ＝ 0，w − 0.2u − 0.3v − 0.2w ＝ 0。第一行先满足服务方对 F 的用电，余量交付墙面；第二行安排 G 满足服务方的另一笔用电。两个 0.1 分别为 kWh/CU 与 CU/CU。第三行使服务产出足以承担 F、G 和 S 自身所需的服务。\"\n    },\n    {\n      \"id\": \"cl-hyb-corrected\",\n      \"kind\": \"calculation\",\n      \"scope\": \"有身份记录时三项正活动及供电清单\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-equations\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"精确解三个线性平衡并按三个供应者各自的直接强度累计，逐供应者对账。\",\n      \"textTemplate\": \"先用两条电力关系写出u、v，再代入服务平衡，得到 0.75w＝4，因此 w＝{{evaluated.identified.corrected.activities.2.exact}} CU，v＝{{evaluated.identified.corrected.activities.1.exact}} CU，u＝{{evaluated.identified.corrected.activities.0.exact}} kWh。F 比最终交付的 20 kWh 多发的部分，正好供给为了交付这批电而运行的服务活动。供电清单是 0.4u＋1.2v＋0.3w＝{{evaluated.identified.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.identified.corrected.totalCO2Kg.fixed6}} kg。回到未聚合的 F、G、S 账目直接求解，会得到相同活动与排放；在这个已知交易的例子里，拆分没有丢失供应关系。\"\n    },\n    {\n      \"id\": \"cl-hyb-naive-result\",\n      \"kind\": \"calculation\",\n      \"scope\": \"方程闭合与原始交易重复可以同时发生\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-naive\",\n        \"cl-hyb-corrected\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"对两套矩阵分别求解，区别可直接定位的发票重复量和整套模型的净排放差。\",\n      \"textTemplate\": \"现在回到没有拆账的算法，检验方程能否暴露重复。它的三行变为 u − 0.1w ＝ 20，v − 0.2w ＝ 0，w − 0.2u − 0.25v − 0.2w ＝ 0。这里 u 仍是单列的 F 发电量（kWh），v 是由原表平均系数算出的电力部门活动量（CU），w 是服务产出（CU）。这组表示让同一笔 F 向 S 的售电记录既进入第一行的 0.1 连接，又留在第二行的 0.2 系数里。解得 u＝{{evaluated.naive.activities.0.exact}}、v＝{{evaluated.naive.activities.1.exact}}、w＝{{evaluated.naive.activities.2.exact}}，三行都能平衡。按其中的强度计算为 0.4u＋0.8v＋0.3w＝{{evaluated.naive.totalCO2Kg.exact}} kg CO₂。它比逐笔拆分的结果高 {{evaluated.naive.excessOverCorrectedCO2Kg.fixed6}} kg。因此，三行都平衡并没有排除重复；发票才指出重复的是那 10 CU 交付。两套完整模型的排放差还包含平均强度与服务配方的变化，不能把这项差额直接命名为“一次重复排放”。\"\n    },\n    {\n      \"id\": \"cl-hyb-swap\",\n      \"kind\": \"proposal\",\n      \"scope\": \"固定部门总额后交换服务方的实际供电者\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-invoices\",\n        \"cl-hyb-raw\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [],\n      \"caveats\": [],\n      \"reasoning\": \"构造保持聚合表各格不变、具体供电关系不同的第二个供应者账本。\",\n      \"textTemplate\": \"如果发票已经丢失，能否从部门表找出原供应者？下面另设一份部门总表相同、逐笔供应关系不同的账：S 仍买 20 CU 电，现在全部购自 G。F、G 的年发电量、价格、排放和服务采购额照旧，因而 F 的最终销售余量增至 100 CU，G 的降至 80 CU。合并成 E 以后，两张表中的产出、部门间每一格使用额以及直接排放都相同。只凭部门总表，便无法确认其中哪一笔电由 F 供应；相同的总额容得下不同交易网络。\"\n    },\n    {\n      \"id\": \"cl-hyb-swap-result\",\n      \"kind\": \"calculation\",\n      \"scope\": \"同一项外部交付在另一种供应网络中的结果\",\n      \"evidenceIds\": [],\n      \"evidenceLinks\": [],\n      \"premiseIds\": [\n        \"cl-hyb-swap\",\n        \"cl-hyb-corrected\"\n      ],\n      \"conceptIds\": [],\n      \"mappingIds\": [\n        \"map-hyb-residual-inventory\"\n      ],\n      \"caveats\": [],\n      \"reasoning\": \"更换送电对象后重建连接项和剩余表，对比同一交付的结果及分供应者残差。\",\n      \"textTemplate\": \"按第二套发票重新算，F 仍采购服务，但不再向 S 供电；它在电力行中只需满足墙面所需的 20 kWh，因此 u＝20。G 要供应 S 的全部购电，故 v＝0.2w。再代入服务平衡得 w＝{{evaluated.sameAggregateCounterworld.corrected.activities.2.exact}}，v＝{{evaluated.sameAggregateCounterworld.corrected.activities.1.exact}}，供电清单为 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.exact}} kg CO₂，约 {{evaluated.sameAggregateCounterworld.corrected.totalCO2Kg.fixed6}} kg。若因部门总表相同而把第一组的计算结果用于这组实际采购关系，就会低估 {{evaluated.ambiguity.trueCounterworldCO2MinusIdentifiedWorldKg.fixed6}} kg。把第一组的活动量全部保持不变，包括 w＝16/3，再代入第二套供应者平衡式，F 的供给余量为 8/15 kWh，G 按货币产出行计的供给缺口为 8/15 CU。这里比较的是同一组活动量在第二套平衡式中的供需余缺，不是两组分别求解后的活动量之差。按本例统一电价 1 CU/kWh，把 F 的余量折成 8/15 CU 后，两个供给残差在合并电力行中恰好抵消，具体供应者却错了，而且两者排放强度不同。总表的一致性因此不能代替供应者身份的证据。\"\n    }\n  ]\n}\n"
+    }
+  ],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "ec5065c94ce197622a8deff8e88b5e51b5b7932d750d23671c67335fc1059d38"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "686548565c2a6b0d8bc3b68400921570dcf898f95682227265ea8fb9bef67f26"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "cddbeab3b6a328ace107e9a4d611c686aeb6571ed7f40699bf820bb2fdc35fb5"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "5be994cb31a7a77576597707dafb8cfa6e932c161d4e273bc9783eb1c0f7fa2a"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "d8107920176b68ea46e30878b262e40e3760d7556d41a9d7dc010d30d2485c13"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    },
+    {
+      "path": "asset:reader-css",
+      "sha256": "c3a56726b57c9dd85dfdd90a12c8894cc1b0e78cec06da2508b3a3868206ea0d"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "/docs/book/inventory-boundary-and-hybrid",
+      "claimId": "cl-hyb-service",
+      "scope": "清除全库最后一处指向本书内部的草稿章号，改为正式篇名《墙面服务比较》。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "case-binding-and-ui-polish",
+      "date": "2026-11-22",
+      "file": "_docs/editorial/review-evidence/wp1-case-and-ui-polish-228/review-record.json",
+      "sha256": "95534191dc481d4f6dac142c9c00e10ae42105b915f76c2b718df92942d54bec"
+    }
+  ]
+}
