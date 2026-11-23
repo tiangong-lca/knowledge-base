@@ -16,20 +16,55 @@ import enUi from '@/config/editions/en/ui.json';
 
 export type SearchEntry = { title: string; text: string; url: string; kind: string };
 const SearchContext = createContext<{ lang: Locale; entries: SearchEntry[] }>({ lang: 'zh', entries: [] });
+const searchIndexCache: Partial<Record<Locale, SearchEntry[]>> = {};
 
 // Retain local knowledge matching, with the same accessible search controls as Docs.
 function KnowledgeSearchDialog(props: SharedProps) {
-  const { lang, entries } = useContext(SearchContext);
+  const { lang, entries: initialEntries } = useContext(SearchContext);
+  const [loadedEntries, setLoadedEntries] = useState<SearchEntry[]>(() =>
+    initialEntries.length > 0 ? initialEntries : (searchIndexCache[lang] ?? []),
+  );
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState('');
   const previousFocus = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!props.open) return;
+    if (initialEntries.length > 0) {
+      setLoadedEntries(initialEntries);
+      return;
+    }
+    const cached = searchIndexCache[lang];
+    if (cached) {
+      setLoadedEntries(cached);
+      return;
+    }
+    let cancelled = false;
+    setLoading(true);
+    fetch(`/downloads/search-index-${lang}.json`)
+      .then(res => (res.ok ? res.json() : []))
+      .then((data: SearchEntry[]) => {
+        if (cancelled || !Array.isArray(data)) return;
+        searchIndexCache[lang] = data;
+        setLoadedEntries(data);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [props.open, lang, initialEntries]);
+
   const results = useMemo<SearchItemType[]>(() => {
     const needle = query.trim().toLocaleLowerCase();
     if (!needle) return [];
-    return entries.filter(entry => `${entry.title} ${entry.text}`.toLocaleLowerCase().includes(needle)).slice(0, 12).map((entry, index) => ({
+    return loadedEntries.filter(entry => `${entry.title} ${entry.text}`.toLocaleLowerCase().includes(needle)).slice(0, 12).map((entry, index) => ({
       id: `knowledge-result-${index}`, type: 'page', url: entry.url,
       content: <span className="flex min-w-0 flex-col gap-1"><span className="text-xs text-fd-muted-foreground">{entry.kind}</span><span className="font-medium">{entry.title}</span><span className="text-xs text-fd-muted-foreground">{entry.text.slice(0, 100)}</span></span>,
     }));
-  }, [entries, query]);
+  }, [loadedEntries, query]);
 
   const isEn = lang === 'en';
   return <SearchDialog {...props} search={query} onSearchChange={setQuery}>
@@ -51,9 +86,11 @@ function KnowledgeSearchDialog(props: SharedProps) {
         items={results}
         Empty={() => (
           <p role="status" className="px-4 py-10 text-center text-sm text-fd-muted-foreground">
-            {query.trim()
-              ? (isEn ? enUi.searchNoResults : '没有找到匹配内容。可换用英文原词或查看全书导览。')
-              : (isEn ? enUi.searchEmptyQuery : '试试「waste」「功能单位」或某个来源的名称。')}
+            {loading
+              ? (isEn ? 'Loading search index…' : '正在加载搜索索引…')
+              : query.trim()
+                ? (isEn ? enUi.searchNoResults : '没有找到匹配内容。可换用英文原词或查看全书导览。')
+                : (isEn ? enUi.searchEmptyQuery : '试试「waste」「功能单位」或某个来源的名称。')}
           </p>
         )}
       />
@@ -92,12 +129,12 @@ const localesList = [
 
 export function SiteProvider({
   lang = 'zh',
-  entries,
+  entries = [],
   publishedPaths,
   children,
 }: {
   lang?: Locale;
-  entries: SearchEntry[];
+  entries?: SearchEntry[];
   publishedPaths?: string[];
   children: ReactNode;
 }) {
