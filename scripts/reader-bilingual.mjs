@@ -46,11 +46,12 @@ export function detectEnglishProcessProse(text, label = 'text') {
 }
 
 const EXTERNAL_EN_CHAPTER_CUE = /(?:IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|RIVM|LC-IMPACT|ISO\s+\d+|Handbook|Guide|Standard|Report|Manual|Volume|Part\s+\d[a-z]?|2010|2011|2013|2016|2019|2021)[^.!?;]{0,28}$/i;
+const EXTERNAL_EN_CHAPTER_AFTER_CUE = /^\s*(?:,?\s*(?:Table|Section|Figure|§)\s*[\d.]+\s*)?(?:of|in)\s+(?:the\s+)?(?:RIVM|LC-IMPACT|IPCC|AR6|ILCD|ecoinvent|CML|ReCiPe|GHG Protocol|UNEP|SETAC|USEtox|ISO\s+\d+|PEF|EU\b)/i;
 
 /**
  * Blocking check: detects internal draft "Chapter N" references inside English claim prose
  * while permitting genuine external literature citations (e.g. "IPCC AR6 WGI Chapter 7",
- * "ecoinvent v3 Chapter 10", "ILCD 2010 Chapter 11").
+ * "ecoinvent v3 Chapter 10", "ILCD 2010 Chapter 11", "Chapter 8 of LC-IMPACT").
  */
 export function detectEnglishDraftChapterNumbers(text, label = 'text') {
   const errors = [];
@@ -58,7 +59,8 @@ export function detectEnglishDraftChapterNumbers(text, label = 'text') {
   for (const match of text.matchAll(/\bChapter\s+\d+\b/gi)) {
     const idx = match.index ?? 0;
     const before = text.slice(Math.max(0, idx - 48), idx);
-    if (EXTERNAL_EN_CHAPTER_CUE.test(before)) continue;
+    const after = text.slice(idx + match[0].length, idx + match[0].length + 48);
+    if (EXTERNAL_EN_CHAPTER_CUE.test(before) || EXTERNAL_EN_CHAPTER_AFTER_CUE.test(after)) continue;
     errors.push(`Internal draft English chapter number in ${label}: "${text.slice(Math.max(0, idx - 16), idx + match[0].length + 16)}"`);
   }
   return errors;

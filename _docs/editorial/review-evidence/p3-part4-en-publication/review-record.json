@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "p3-part4-en-publication",
+  "date": "2026-11-23",
+  "kind": "ui-revision",
+  "summary": "Publish Part IV (Chapters 14–19, 215 claims) of the meaning-equivalent English edition, bringing total published English claims to 722, add ReaderFigure support to EnChapterContent, and refresh compiled CSS fingerprint.",
+  "checks": [
+    "pnpm typecheck",
+    "pnpm validate",
+    "pnpm build",
+    "node --test scripts/reader-bilingual.test.mjs"
+  ]
+}

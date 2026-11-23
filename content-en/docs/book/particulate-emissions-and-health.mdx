@@ -1,0 +1,61 @@
+---
+title: Particulate Emissions and Health Damage
+description: Follow emissions from released mass to population intake, mortality or disease incidence counts, and potential health damage, clarifying how indicator cutpoints, precursor switches, epidemiological extrapolation, and release-package boundaries shape comparisons.
+---
+
+## Emissions and Health Metrics [#emissions-and-health-metrics]
+
+<Prose ids="cl-pm-opening cl-pm-particle-identity cl-pm-intake-definition cl-pm-intake-unit cl-pm-receptor-boundary cl-pm-effect-definition cl-pm-effect-default cl-pm-urban-health cl-pm-rural-health cl-pm-precursor-denominator cl-pm-precursor-health cl-particulate131-indicator-cutpoints" />
+
+Table 1. Particulate matter health indicator cutpoints and units across mainstream impact assessment frameworks.
+
+| Framework | Midpoint indicator and unit | Endpoint indicator and unit | Underlying model and key notes |
+| --- | --- | --- | --- |
+| ILCD 2011 | kg PM₂.₅ eq (Level I) | DALY (primary Level I / secondary Level II) | Combines European RiskPoll and US source–receptor models |
+| ReCiPe 2016 | kg PM₂.₅ eq (intake fraction ratio) | Global default ×6.29×10⁻⁴ DALY/kg PM₂.₅ eq | 56-region TM5-FASST + adult cohort aged 30+ |
+| LC-IMPACT | 0 midpoints | Regional DALY/kg (primary global mean 6.29×10⁻⁴) | Shared TM5-FASST + adult cohort, split into two robustness tiers |
+| EF 3.1 | Disease incidence (per-capita reference 5.95×10⁻⁴ cases/person, weight 8.96%) | 0 formal endpoints | UNEP/SETAC 2016 nonlinear model; textual renaming of premature deaths |
+
+<Prose ids="cl-particulate131-size-and-subcompartment" />
+
+Table 2. Representative primary particulate matter air-subcompartment characterization factors in EF 3.1 (disease incidence/kg).
+
+| Air subcompartment | PM₂.₅ (and PM₀.₂ / PM₀.₂–₂.₅) | PM₁₀ (scaled at 0.23×PM₂.₅) | Multiple relative to urban close-to-ground |
+| --- | --- | --- | --- |
+| Urban close-to-ground / unspecified air | 2.38497×10⁻⁴ | 5.48544×10⁻⁵ | 1× (baseline) |
+| Non-urban close-to-ground | 1.13763×10⁻⁵ | 2.61654×10⁻⁶ | 1/20.96 |
+| Non-urban high stack | 3.01757×10⁻⁶ | 6.94041×10⁻⁷ | 1/79.04 |
+| Non-urban very high stack | 1.62949×10⁻⁶ | 3.74783×10⁻⁷ | 1/146.36 |
+
+Note: Coarse particulate matter (PM₂.₅–₁₀ and particles > 10 µm) and the high-altitude air subcompartment are assigned zero in the EF 3.1 particulate matter method.
+
+## Exposure and Evidence [#exposure-and-evidence]
+
+<Prose ids="cl-pm-source-distribution cl-pm-evidence-levels cl-pm-cohort-design cl-pm-cohort-association cl-pm-effect-baseline cl-pm-indoor-location cl-pm-exposure-compatible cl-pm-compatible-population cl-pm-exposure-coverage" />
+
+For source-height-weighted calculations, see [Emission Archetypes and Weighting (Chinese edition)](/zh/docs/appendices/particulate-factor-calculations/). For compartment models and activity durations, see [Compartments and Activity Time (Chinese edition)](/zh/docs/appendices/particulate-factor-calculations/).
+
+## References and Response [#references-and-response]
+
+<Prose ids="cl-pm-nonlinear-response cl-pm-risk-reference cl-pm-slope-meaning cl-pm-finite-change cl-pm-ier-evidence cl-pm-gemm-alternative cl-particulate131-cohen-gbd2015-scope cl-particulate131-cohen-empirical-limits cl-pm-chemistry-background cl-pm-chemistry-perturbation" />
+
+For ecological references, atmospheric model comparisons, and workbook corrections, see [Reference and Model Verification (Chinese edition)](/zh/docs/appendices/particulate-factor-calculations/).
+
+## Factors and Comparisons [#factors-and-comparisons]
+
+<Prose ids="cl-pm-concentration-route cl-pm-regional-summary cl-pm-factor-order cl-pm-version-and-model cl-pm-matched-scope cl-pm-matched-scenario cl-pm-uncovered-pathways cl-particulate131-precursor-perspectives cl-particulate131-ef-ammonia-inversion" />
+
+Table 3. Relative weights of secondary inorganic precursors (SO₂, NH₃, NOₓ) across frameworks and air subcompartments.
+
+| Framework and scenario | Unit | SO₂ | NH₃ | NOₓ | 1 kg rural NH₃ vs 2 kg high-stack SO₂ |
+| --- | --- | --- | --- | --- | --- |
+| ReCiPe 2016 Individualist (I) | kg PM₂.₅ eq/kg | 0 | 0 | 0 | Both 0 |
+| ReCiPe 2016 Hierarchist (H, default) | kg PM₂.₅ eq/kg | 0.29 | 0 | 0 | 0 < 0.58 (SO₂ higher) |
+| ReCiPe 2016 Egalitarian (E, global) | kg PM₂.₅ eq/kg | 0.29 | 0.24 | 0.11 | 0.24 < 0.58 (SO₂ higher) |
+| LC-IMPACT all effects (global) | DALY/kg | 1.83×10⁻⁴ | 1.61×10⁻⁴ | 7.62×10⁻⁵ | 1.61×10⁻⁴ < 3.66×10⁻⁴ (SO₂ higher) |
+| EF 3.1 unspecified air | cases/kg | 8.0×10⁻⁶ | 2.1×10⁻⁵ | 1.6×10⁻⁶ | — |
+| EF 3.1 non-urban / high stack | cases/kg | 9.9×10⁻⁷ | 2.1×10⁻⁵ | 2.1×10⁻⁷ | 2.1×10⁻⁵ > 1.98×10⁻⁶ (NH₃ higher by 10.61×) |
+
+<Prose ids="cl-particulate131-regional-endpoint-reversal cl-particulate131-package-discrepancies cl-pm-population-meaning cl-pm-conclusion" />
+
+For numerical conversions and release scope of the four published Australian urban and rural primary PM₂.₅ factors in GLAM, see [Release Scope and Factor Tables (Chinese edition)](/zh/docs/appendices/particulate-factor-calculations/).
