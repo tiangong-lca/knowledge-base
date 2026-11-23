@@ -1,5 +1,5 @@
 lastReviewedAt: "2026-11-23"
-lastReviewedCommit: "41cf7450ddf227d872a31e83cd6b90c530e1f7c4"
+lastReviewedCommit: "317ead488e7605d57460e6e48ccb611810743a9c"
 version: 1
 layout: repo
 
@@ -123,8 +123,10 @@ rules:
         kind: publication-rights
       - path: .docpact/config.yaml
         kind: governance-config
-      - path: _docs/**
+      - path: _docs/*.md
         kind: publication-contract
+      - path: _docs/runbooks/**
+        kind: governance-runbook
     requiredDocs:
       - path: AGENTS.md
         mode: review_or_update
@@ -144,12 +146,20 @@ rules:
         kind: public-narrative
       - path: releases/**
         kind: immutable-publication-and-errata
+      - path: config/revisions/**
+        kind: post-checkpoint-revision-records
+      - path: _docs/editorial/**
+        kind: editorial-review-evidence
+      - path: _docs/research-waves/**
+        kind: editorial-research-records
+      - path: _docs/reproduction/**
+        kind: editorial-reproduction-records
     requiredDocs:
       - path: _docs/publication-contract.md
         mode: review_or_update
       - path: _docs/editorial-protocol.md
         mode: review_or_update
-    reason: Claims, concepts, mappings, evidence and releases require source-bound editorial review, explicit uncertainty and correction propagation; integrity checks do not prove scientific truth.
+    reason: Claims, concepts, mappings, evidence, post-checkpoint revisions and releases require source-bound editorial review, explicit uncertainty and correction propagation; integrity checks do not prove scientific truth.
 
   - id: publication-site
     scope: repo
@@ -161,7 +171,7 @@ rules:
         kind: knowledge-presentation
       - path: lib/**
         kind: knowledge-projection
-      - path: config/**
+      - path: config/*.json
         kind: publication-configuration
       - path: public/**
         kind: published-static-assets
@@ -226,6 +236,8 @@ rules:
         kind: finished-reader-prose
       - path: knowledge/**
         kind: canonical-reader-claims
+      - path: config/revisions/**
+        kind: post-checkpoint-revision-records
       - path: components/**
         kind: reader-presentation
       - path: app/**
