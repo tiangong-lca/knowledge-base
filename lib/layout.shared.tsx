@@ -19,14 +19,9 @@ export function baseOptions(): BaseLayoutProps {
             url: '/concepts/',
           },
           {
-            text: '参考文献',
-            description: '原始文献书目、版本信息与核读记录',
+            text: '参考文献与出处',
+            description: '原始文献书目、核读记录与逐条引文出处定位',
             url: '/research/',
-          },
-          {
-            text: '引文出处',
-            description: '逐条引文位置、页码与一手来源核验',
-            url: '/sources/',
           },
           {
             text: '注释与论证',

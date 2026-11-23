@@ -1,0 +1,79 @@
+.tabNav {
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--color-fd-border, #e5e7eb);
+}
+
+.tabList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabItem {
+  margin: 0;
+}
+
+.tabLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-bottom-width: 2px;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-fd-muted-foreground, #4b5563);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+
+.tabLink:hover {
+  color: var(--color-fd-foreground, #111827);
+  background-color: var(--color-fd-accent, rgba(0, 0, 0, 0.04));
+}
+
+.tabLink:focus-visible {
+  outline: 2px solid var(--color-fd-primary, #1f5f43);
+  outline-offset: 2px;
+}
+
+.tabActive {
+  color: var(--color-fd-primary, #1f5f43);
+  border-bottom-color: var(--color-fd-primary, #1f5f43);
+  font-weight: 600;
+}
+
+.tabBadge {
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  background-color: var(--color-fd-muted, rgba(0, 0, 0, 0.06));
+  color: var(--color-fd-muted-foreground, #4b5563);
+}
+
+.tabActive .tabBadge {
+  background-color: var(--color-fd-primary, #1f5f43);
+  color: var(--color-fd-primary-foreground, #ffffff);
+}
+
+.tabSummary {
+  margin: 0.65rem 0 0;
+  font-size: 0.875rem;
+  color: var(--color-fd-muted-foreground, #4b5563);
+}
+
+@media (max-width: 480px) {
+  .tabLink {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
