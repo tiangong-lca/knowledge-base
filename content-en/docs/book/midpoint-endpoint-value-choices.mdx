@@ -1,0 +1,85 @@
+---
+title: Midpoints and Endpoints
+description: Midpoints and endpoints sit at different positions along environmental causal pathways. What an indicator can answer also depends on how a model handles time, location, and effect evidence.
+---
+
+## Indicator Position on the Causal Pathway [#indicator-position]
+
+<Prose ids="cl-lcia-midpoint-pathway cl-lcia-endpoint-units cl-lcia-mid-end-conversion-limits" />
+
+<Prose ids="cl-ozrad121-emission-midpoint" />
+
+<Prose ids="cl-land111-midpoint cl-land111-conversion" />
+
+<Prose ids="cl-mineral115-adp cl-mineral115-sop cl-mineral115-rank" />
+
+<Prose ids="cl-fossil117-scarcity-energy cl-fossil117-heating-basis cl-fossil117-uranium-boundary" />
+
+Table 1. Accounting basis for energy carriers and natural uranium across two resource midpoint systems (ReCiPe 2016 fossil fuel potential and EF 3.1 fossil resource use).
+
+| Input | ecoinvent higher heating value (MJ-eq) | ReCiPe 2016 midpoint | EF 3.1 Resource use, fossils |
+| --- | --- | --- | --- |
+| Crude oil | 45.8 /kg | 1 kg oil-eq/kg | 1 MJ/MJ (net calorific value) |
+| Natural gas | 38.3 /Nm³ | 0.84 kg oil-eq/Nm³ | 1 MJ/MJ (net calorific value) |
+| Hard coal | 19.1 /kg | 0.42 kg oil-eq/kg (unrounded ≈ 0.4170) | 1 MJ/MJ (net calorific value) |
+| Brown coal | 9.9 /kg | 0.22 kg oil-eq/kg | 1 MJ/MJ (net calorific value) |
+| Peat | 9.9 /kg | 0.22 kg oil-eq/kg | 1 MJ/MJ (net calorific value) |
+| Natural uranium | — | Not in fossil table; mineral SOP 35.8 (economic reserves) and 25.2 (ultimate recoverable resources) kg Cu-eq/kg | 1 MJ/MJ, included under Resource use, fossils |
+
+Note: ReCiPe 2016 fossil midpoint factors are obtained by rounding the ratio of each fuel's higher heating value to that of crude oil; the Van Oers et al. (2020) supplementary workbook keeps natural uranium under elemental depletion, with a cumulative ADP of about 0.007823 kg Sb-eq/kg (rounded to 7.8 × 10⁻³ in the main paper table).
+
+## Scenarios, Evidence, and Location [#scenarios-and-location]
+
+<Prose ids="cl-lcia-scenarios-are-choices cl-lcia-global-is-not-site-specific" />
+
+<Prose ids="cl-ozrad121-odp-horizons cl-ozrad121-n2o-scope" />
+
+Table 2. Illustrative stratospheric ozone depletion midpoint factors (kg CFC-11-eq/kg).
+
+| Substance | Atmospheric lifetime | ReCiPe 2016 20 yr (Individualist) | 100 yr (Hierarchist) | Infinite (Egalitarian) | EF 3.1 steady-state |
+| --- | --- | --- | --- | --- | --- |
+| Halon-1211 | ≈ 16 yr | 15.053 | 8.777 | 7.900 | — |
+| Halon-1301 | ≈ 65 yr | 11.841 | 14.066 | 15.900 | 15.2 |
+| Halon-2402 | — | — | — | 13.000 | 15.7 |
+| Methyl bromide | < 1 yr | 1.649 | 0.734 | 0.660 | 0.57 |
+| CFC-115 | > 1,000 yr | 0.032 | 0.061 | 0.570 | — |
+| HCFC-22 | — | 0.085 | 0.045 | 0.040 | 0.034 |
+| Nitrous oxide (N₂O) | — | 0.007 | 0.011 | 0.017 | Not included |
+
+Note: ReCiPe 2016 values for nitrous oxide are flagged as preliminary in RIVM Report 2016-0104; an em dash ("—") indicates that the text comparison does not list that value, not that the release package omits the substance.
+
+<Prose ids="cl-ozrad121-reference-scope cl-ozrad121-ir-horizons" />
+
+Table 3. Illustrative ionizing radiation midpoint factors (EF 3.1 in kBq U-235-eq/kBq; ReCiPe 2016 in kBq Co-60 to air-eq/kBq).
+
+| Radionuclide and compartment | EF 3.1 | ReCiPe 2016 20 yr (Individualist) | 100 yr (Hierarchist) | 100,000 yr (Egalitarian) |
+| --- | --- | --- | --- | --- |
+| Carbon-14, air | 10.0 | 0.614 | 1.15 | 12.9 |
+| Cesium-137, air | 0.636 | 1.27 | 1.64 | 1.64 |
+| Iodine-129, air | — | — | 10.5 | 207 |
+| Iodine-129, freshwater | — | — | 0.287 | 155 |
+| Uranium-235, air | 1.0 | Blank | Blank | 1.27 |
+| Uranium-238, air | 0.386 | Blank | Blank | 0.491 |
+| Uranium-234, air | 4.57 | Blank | Blank | 5.82 |
+| Thorium-230, air | 2.14 | Blank | Blank | 2.73 |
+| Radium-226, air | 0.0429 | Blank | Blank | 0.0545 |
+
+Note: "Blank" denotes cells for which RIVM Report 2016-0104 provides no characterization factor; an em dash ("—") indicates that the text comparison does not display the native-unit table entry (see the text for EF 3.1 iodine-129 values converted by the 14/11 ratio).
+
+<Prose ids="cl-ozrad121-endpoint-choices cl-ozrad121-endpoint-limits" />
+
+<Prose ids="cl-land111-horizon cl-land111-integral cl-land111-aggregation" />
+
+<Prose ids="cl-mineral115-reserves cl-fossil117-scenario-proxy" />
+
+## Models, Input Data, and Factor Packages [#models-data-and-packages]
+
+<Prose ids="cl-lcia-model-data-factor-separation" />
+
+<Prose ids="cl-fossil117-equal-midpoint cl-fossil117-proxy-consequence" />
+
+<Prose ids="cl-mineral115-cost-proxy cl-mineral115-metal-cost cl-mineral115-calibration cl-mineral115-assumptions" />
+
+<Prose ids="cl-ozrad121-formula-table cl-ozrad121-package-discrepancies" />
+
+<Prose ids="cl-mineral115-judgment cl-b14-reading-checks" />

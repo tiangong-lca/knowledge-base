@@ -1,0 +1,87 @@
+---
+title: Climate Equivalence
+description: What does it mean when two emissions report the same CO₂-equivalent score? Trace the conditions behind climate equivalence from midpoint–endpoint architectures and non-CO₂ carbon feedbacks to biogenic and land-use sub-indicators, carbon-storage and emission-calendar rules, rate-based metrics, and official package discrepancies.
+---
+
+## Responses and Metrics [#responses-and-metrics]
+
+<Prose ids="cl-climate-opening cl-climate-inventory cl-climate-pulse cl-climate-reservoirs cl-climate-reference-illustration" />
+
+<ReaderFigure>
+  <img src="/book-figures/climate-response-and-integral.svg" alt="Two quantities derived from the same CO₂ impulse response: the top panel shows the fraction remaining in the atmosphere over time, and the bottom panel shows the cumulative area integrated up to each time point." width="700" height="800" />
+  <figcaption>Remaining airborne fraction and time integral of the same CO₂ impulse response</figcaption>
+</ReaderFigure>
+
+For the fitted parameters and term-by-term integrals, see [Numerical Reconstruction of Climate Metrics](/zh/docs/appendices/climate-numerical-reconstruction/#%E5%8F%82%E8%80%83%E5%93%8D%E5%BA%94) (Chinese edition).
+
+<Prose ids="cl-climate-reference-limits cl-climate-forcing cl-climate-agwp cl-climate-agtp cl-climate-endpoint" />
+
+<Prose ids="cl-bio127-midpoint-endpoint-genealogy" />
+
+Table 1. Comparison of climate change midpoint and endpoint architectures across major LCIA systems.
+
+| System | Midpoint indicator and time horizon | Endpoint treatment | Key boundaries or features |
+| --- | --- | --- | --- |
+| ILCD 2011 / EF 3.1 | GWP100 only (kg CO₂-eq; EF weight 21.06%, per-capita normalization reference 7,553.08 kg CO₂-eq/person) | None formally recommended (ILCD lists interim reference only) | Stops strictly at the 100-year radiative forcing midpoint |
+| ReCiPe 2016 | Three GWP sets: 20 yr (I), 100 yr (H), 1,000 yr (E) | Perspective-constant multipliers to human health (DALY), terrestrial and freshwater ecosystems (species·yr) | Strictly rank-preserving within a perspective; omits thermal inertia differences across gas lifetimes |
+| LC-IMPACT | None | Direct damage modeling at 100 yr and 1,000 yr / infinite horizons under "certain" and "all" evidence tiers | "Certain" tier includes only 3 health outcomes and leaves freshwater ecosystems blank |
+
+## Gases and Carbon Budgets [#gases-and-carbon-budgets]
+
+<Prose ids="cl-climate-feedback-consistency cl-climate-feedback-return" />
+
+<Prose ids="cl-bio127-feedback-perspective-asymmetry" />
+
+Table 2. Non-CO₂ climate–carbon feedback toggles and representative midpoint factors across the three ReCiPe 2016 perspectives (kg CO₂-eq/kg).
+
+| Cultural perspective (horizon) | Non-CO₂ carbon feedback | Non-fossil methane | Fossil methane | Nitrous oxide (N₂O) | 3.5 kg non-fossil CH₄ vs. 1 kg N₂O |
+| --- | --- | --- | --- | --- | --- |
+| Individualist (I, 20 yr) | Off | 84 | 85 | 264 | 294 > 264 (CH₄ higher) |
+| Hierarchist (H, 100 yr) | On | 34 | 36 | 298 | 119 < 298 (N₂O higher) |
+| Egalitarian (E, 1,000 yr) | Off | 4.8 | 4.9 | 78.8 | 16.8 < 78.8 (N₂O higher) |
+
+<Prose ids="cl-climate-methane-chemistry cl-climate-carbon-budget cl-climate-three-methane-rows cl-climate-biogenic-boundary" />
+
+<Prose ids="cl-bio127-ef31-subindicator-partition" />
+
+Table 3. Routing and representative factors for the three non-overlapping EF 3.1 climate change sub-indicators (1,099 factors total; kg CO₂-eq/kg).
+
+| Sub-indicator (factor count) | CO₂ uptake / emission | Methane (CH₄) | Other key assignments and rules |
+| --- | --- | --- | --- |
+| Fossil (1,074) | Emission +1.0 (air capture set to 0.0) | 29.8 | Includes peat, limestone calcination, and all 6 nitrous oxide flows (273.0) |
+| Biogenic (13) | Uptake 0.0 / emission 0.0 (0/0 convention) | 27.0 | Cradle-to-gate products must report physical biogenic carbon content separately |
+| Land use and land-use change (12) | Uptake −1.0 / emission +1.0 (5 air emission flows only) | 29.8 | Native-forest timber and soil carbon counted at +1.0 with photosynthetic uptake excluded |
+
+<Prose ids="cl-bio127-zero-zero-vs-minus-plus-one" />
+
+## Inventory Comparisons [#inventory-comparisons]
+
+<Prose ids="cl-climate-editions cl-climate-published-after cl-climate-equal-score" />
+
+The wall-coating inventory used in this section comes from the worked teaching example in [Wall Service Comparison](/en/docs/book/wall-service-to-comparison/). Performance, maintenance, activity, and cutoff conditions are defined there; here we hold one inventory vector fixed and examine only the effect of changing metrics and factor editions.
+
+<Prose ids="cl-climate-wall-fixed cl-climate-wall-reweighted cl-climate-comparison-criteria" />
+
+For a comparison of displayed and recalculated table values, see [Numerical Reconstruction of Climate Metrics](/zh/docs/appendices/climate-numerical-reconstruction/#%E6%98%BE%E7%A4%BA%E7%B2%BE%E5%BA%A6) (Chinese edition); the historical-code section of the same appendix provides programmatic recalculations.
+
+<Prose ids="cl-bio127-co-removal-and-methane-shift cl-bio127-package-and-report-discrepancies" />
+
+## Emission Calendars [#emission-calendars]
+
+<Prose ids="cl-time-emission-profile cl-time-elapsed-response cl-time-common-endpoint cl-time-combination cl-climate-calendar-sum cl-climate-timing-assumptions cl-climate-timing-result cl-climate-dynamic-application cl-time-horizon-choice cl-time-model-limits" />
+
+<Prose ids="cl-bio127-storage-abolition-and-dluc-window" />
+
+<Prose ids="cl-time-dynamic-not-forecast" />
+
+For technology and background assumptions in prospective inventories, see [Future Technology and Context](/zh/docs/book/future-technology-and-context/) (Chinese edition).
+
+## Emission History and Policy Use [#history-and-use]
+
+<Prose ids="cl-climate-step cl-climate-rate-formula cl-climate-rate-fit cl-climate-rate-histories cl-climate-rate-window cl-climate-rate-aggregate cl-climate-debate" />
+
+<Prose ids="cl-bio127-climate-diagnostic-synthesis" />
+
+<Prose ids="cl-climate-conclusion" />
+
+The next chapter turns to [Acidification and Nutrient Enrichment](/en/docs/book/acidification-and-nutrient-pathways/).

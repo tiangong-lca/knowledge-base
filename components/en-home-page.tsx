@@ -16,6 +16,12 @@ const PUBLISHED_EN_CHAPTERS = [
   { label: 'Chapter 11', title: 'Market Response', href: '/en/docs/book/market-boundaries-and-response/' },
   { label: 'Chapter 12', title: 'Electricity Systems', href: '/en/docs/book/electricity-service-and-response/' },
   { label: 'Chapter 13', title: 'Material Recycling Chains', href: '/en/docs/book/recycling-chains-and-accounting/' },
+  { label: 'Chapter 14', title: 'Midpoints and Endpoints', href: '/en/docs/book/midpoint-endpoint-value-choices/' },
+  { label: 'Chapter 15', title: 'Climate Equivalence', href: '/en/docs/book/climate-equivalence/' },
+  { label: 'Chapter 16', title: 'Acidification and Nutrient Enrichment', href: '/en/docs/book/acidification-and-nutrient-pathways/' },
+  { label: 'Chapter 17', title: 'Particulate Emissions and Health Damage', href: '/en/docs/book/particulate-emissions-and-health/' },
+  { label: 'Chapter 18', title: 'Water Consumption and Scarcity Potential', href: '/en/docs/book/water-scarcity-and-reference/' },
+  { label: 'Chapter 19', title: 'Toxicity Pathways', href: '/en/docs/book/usetox-pathways-and-boundaries/' },
   { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
 ];
 
@@ -68,7 +74,7 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Published English Chapters (Parts I–III + Pilot)</h2>
+          <h2>Published English Chapters (Parts I–IV + Pilot)</h2>
           <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
         <div className="chapter-grid">

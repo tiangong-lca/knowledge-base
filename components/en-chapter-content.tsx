@@ -99,6 +99,10 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
     return <span id={id} className="reader-section-target" />;
   }
 
+  function ReaderFigure(props: React.HTMLAttributes<HTMLElement>) {
+    return <figure {...props} />;
+  }
+
   function EditionNote({ id }: { id: string }) {
     const note = enNotesById.get(id);
     if (!note) throw new Error(`Unknown English edition note: ${id}`);
@@ -136,6 +140,7 @@ export async function EnChapterContent({ page }: { page: ReaderPage }) {
             Prose: ChapterProse,
             Claim: Paragraph,
             ReaderSection,
+            ReaderFigure,
             EditionNote,
             TeachingCase: EnTeachingCase,
           },
