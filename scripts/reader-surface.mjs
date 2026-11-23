@@ -1,7 +1,7 @@
 import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
 import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
-import { applyClaimRetirementsToCitations, applyRouteChangesToCitations, isRouteRevised } from './reader-revisions.mjs';
+import { applyClaimRetirementsToCitations, applyRouteChangesToCitations, extractRouteChanges, isRouteRevised } from './reader-revisions.mjs';
 import { functionalReferenceComparisonPreviousSurface, qualifyFunctionalReferenceComparisonHistory } from './reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonPreviousSurface, qualifyHybridInventoryComparisonHistory } from './reader-hybrid-inventory-comparison.mjs';
 import { part2RereadPreviousSurface, projectPart2RereadPrintParts, qualifyPart2RereadHistory } from './reader-part2-reread.mjs';
@@ -434,7 +434,9 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
     ...await validateArtifacts(root, book.current, book),
   ] : [];
+  const { mergedFromSet } = extractRouteChanges(activeRevisions);
   for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [...numbered.documents.keys(), pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
+    if (mergedFromSet.has(path)) continue;
     const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;

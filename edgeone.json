@@ -2,5 +2,107 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "out",
   "installCommand": "pnpm install --frozen-lockfile",
-  "nodeVersion": "24.18.0"
+  "nodeVersion": "24.18.0",
+  "redirects": [
+    {
+      "source": "/docs/book/framework-history",
+      "destination": "/docs/book/framework-responsibilities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/framework-history/",
+      "destination": "/docs/book/framework-responsibilities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/cml-computation-judgment-and-improvement",
+      "destination": "/docs/book/framework-responsibilities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/cml-computation-judgment-and-improvement/",
+      "destination": "/docs/book/framework-responsibilities/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/allocation-and-substitution",
+      "destination": "/docs/book/joint-production/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/allocation-and-substitution/",
+      "destination": "/docs/book/joint-production/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/allocation-judgment-and-corrections",
+      "destination": "/docs/book/joint-production/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/allocation-judgment-and-corrections/",
+      "destination": "/docs/book/joint-production/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/climate-response-and-metrics",
+      "destination": "/docs/book/climate-equivalence/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/climate-response-and-metrics/",
+      "destination": "/docs/book/climate-equivalence/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/emission-time-and-assessment",
+      "destination": "/docs/book/climate-equivalence/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/emission-time-and-assessment/",
+      "destination": "/docs/book/climate-equivalence/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/database-fitness-and-documentation",
+      "destination": "/docs/book/data-applicability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/database-fitness-and-documentation/",
+      "destination": "/docs/book/data-applicability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/review-support-and-version-boundaries",
+      "destination": "/docs/book/data-applicability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/review-support-and-version-boundaries/",
+      "destination": "/docs/book/data-applicability/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/connecting-objects-references-and-time",
+      "destination": "/docs/book/revisable-judgment/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/connecting-objects-references-and-time/",
+      "destination": "/docs/book/revisable-judgment/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/from-connected-results-to-conditional-judgment",
+      "destination": "/docs/book/revisable-judgment/",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/book/from-connected-results-to-conditional-judgment/",
+      "destination": "/docs/book/revisable-judgment/",
+      "statusCode": 301
+    }
+  ]
 }

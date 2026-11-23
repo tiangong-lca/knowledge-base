@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "wp4-merge-split-chapters-and-unify-numbering",
+  "task": "#234",
+  "date": "2026-11-23",
+  "baseCommit": "949a227acaa535b531b318cfc1ff897ad5453bc7",
+  "summary": "将原网页中与书籍拆分的 5 组共 10 篇页面合并为与书籍 1 对 1 对应的 5 个完整章节（全书 32 章单一数据源），退休重复书稿副本并统一全站使用“第 N 章”编号，同时保留全部旧网址 301 与静态跳转及节锚映射。",
+  "routes": [
+    "/docs/book",
+    "/docs/book/early-container-policy-and-systems",
+    "/docs/book/future-technology-and-context",
+    "/docs/allocation",
+    "/docs/appendices/climate-numerical-reconstruction",
+    "/docs/appendices/cml-framework-calculations",
+    "/docs/book/framework-responsibilities",
+    "/docs/book/joint-production",
+    "/docs/book/climate-equivalence",
+    "/docs/book/data-applicability",
+    "/docs/book/revisable-judgment"
+  ],
+  "updatedClaims": 7,
+  "retiredClaims": 0,
+  "addedClaims": 0,
+  "routeChanges": 5
+}

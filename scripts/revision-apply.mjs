@@ -279,7 +279,9 @@ export function applyCatalogAndMdxTransform({
     revisionFiles.push({
       path: fa.path,
       op: 'add',
+      fromSha256: null,
       toSha256: sha256(Buffer.from(fa.content, 'utf8')),
+      previous: null,
     });
   }
 
@@ -291,6 +293,7 @@ export function applyCatalogAndMdxTransform({
       path: delPath,
       op: 'delete',
       fromSha256: sha256(Buffer.from(origStr, 'utf8')),
+      toSha256: null,
       previous: origStr,
     });
   }

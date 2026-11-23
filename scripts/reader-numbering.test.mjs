@@ -48,15 +48,18 @@ test('current book retains 40 actual units, 32 chapters, 120 formal sections and
   assert.equal(getUnitNumbering('book','/docs').label,null);
 });
 
-test('website numbering retains 37 fine pages and five independent topic entries',()=>{
+test('website numbering unifies 32 chapters with book and keeps five unnumbered topic entries',()=>{
   const web=getPresentationUnits('web');
-  assert.equal(web.length,48);
-  assert.equal(web.filter(unit=>unit.kind==='chapter').length,37);
-  assert.equal(new Set(web.map(unit=>unit.key)).size,48);
-  assert.equal(getUnitNumbering('web',route).label,'第7篇');
-  assert.equal(getUnitNumbering('web','/docs/book/framework-history').label,'第4篇');
-  assert.equal(getUnitNumbering('web','/docs/book/cml-computation-judgment-and-improvement').label,'第5篇');
-  assert.equal(getUnitNumbering('web','/docs/allocation').label,'专题4');
+  assert.equal(web.length,43);
+  assert.equal(web.filter(unit=>unit.kind==='chapter').length,32);
+  assert.equal(new Set(web.map(unit=>unit.key)).size,43);
+  assert.equal(getUnitNumbering('web',route).label,'第6章');
+  assert.equal(getUnitNumbering('web','/docs/book/framework-responsibilities').label,'第4章');
+  assert.equal(getUnitNumbering('web','/docs/book/joint-production').label,'第10章');
+  assert.equal(getUnitNumbering('web','/docs/book/climate-equivalence').label,'第15章');
+  assert.equal(getUnitNumbering('web','/docs/book/data-applicability').label,'第25章');
+  assert.equal(getUnitNumbering('web','/docs/book/revisable-judgment').label,'第32章');
+  assert.equal(getUnitNumbering('web','/docs/allocation').label,'专题');
   assert.equal(getHeadingNumbering('web','/docs/allocation','系统模型规定了什么').number,'T4.1');
   assert.equal(getHeadingNumbering('book','/docs/allocation','系统模型规定了什么').number,'T2.1');
 });
@@ -152,10 +155,10 @@ test('manifest contains every actual source and does not silently hide authored 
 test('the three exact source-qualified continuations keep their own website and current book targets',()=>{
   const cases = [
     ['policy-to-framework','/docs/book/early-container-policy-and-systems','/docs/book/early-container-policy-and-systems',
-      '/docs/book/framework-history/','评价框架的形成','book-framework-responsibilities'],
-    ['emission-time-to-future','/docs/book/emission-time-and-assessment','book-climate-equivalence',
+      '/docs/book/framework-responsibilities/','评价框架与分析步骤','book-framework-responsibilities'],
+    ['emission-time-to-future','/docs/book/climate-equivalence','book-climate-equivalence',
       '/docs/book/future-technology-and-context/','未来技术与情景','/docs/book/future-technology-and-context'],
-    ['data-to-uncertainty','/docs/book/review-support-and-version-boundaries','book-data-applicability',
+    ['data-to-uncertainty','/docs/book/data-applicability','book-data-applicability',
       '/docs/book/uncertainty-and-variability','变异与不确定性','/docs/book/uncertainty-and-variability'],
   ];
   for (const [key, webSource, bookSource, href, webLabel, destination] of cases) {

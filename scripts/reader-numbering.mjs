@@ -13,7 +13,7 @@ import { projectPart4RereadNumbering } from './reader-part4-reread.mjs';
 import { projectServiceConstraintsNumbering } from './reader-service-constraints.mjs';
 import { flowBoundaryNumbering } from './reader-flow-boundary.mjs';
 import { currentBookLayout, currentBookPlan, currentFlowBoundary, currentPart4Reread, currentPart5Reread, currentPart6Reread, currentPart3Reread, currentPart2Reread, currentPart1Reread, currentWholeBookReread, currentPart7Reread, currentServiceConstraints } from './reader-current-expectations.mjs';
-import { currentRevisions } from './reader-checkpoint.mjs';
+import { currentRevisions, currentRouteChanges } from './reader-checkpoint.mjs';
 import { projectRevisionNumbering } from './reader-revisions.mjs';
 
 /** @typedef {{key:string,source:string,kind:string,title:string,part?:number,label:string|null,prefix:string|null,ordinal:number|null,partLabel:string|null,partTitle?:string|null}} NumberingUnit */
@@ -81,7 +81,7 @@ export function getPresentationUnits(view) {
     const ordinal = ++counts[unit.kind];
     if (!Number.isInteger(ordinal)) throw new TypeError(`Unknown reading unit kind: ${unit.kind}`);
     const prefix = unit.kind === 'chapter' ? String(ordinal) : unit.kind === 'topic' ? `T${ordinal}` : String.fromCharCode(64 + ordinal);
-    const label = unit.kind === 'chapter' ? `第${ordinal}${view === 'book' ? '章' : '篇'}` : unit.kind === 'topic' ? (view === 'book' ? `${bookTopicPresentation.labelPrefix}${bookTopicPresentation.keepPrefix ? prefix : ordinal}` : `专题${ordinal}`) : `附录 ${prefix}`;
+    const label = unit.kind === 'chapter' ? `第${ordinal}章` : unit.kind === 'topic' ? (view === 'book' ? `${bookTopicPresentation.labelPrefix}${bookTopicPresentation.keepPrefix ? prefix : ordinal}` : '专题') : `附录 ${prefix}`;
     return { ...unit, label, prefix, ordinal, partLabel: part?.label ?? null, partTitle: part?.title ?? null };
   });
 }
@@ -164,11 +164,31 @@ export const getUnitHeadingPlan = getHeadingNumberPlan;
 
 
 /** Source-qualified continuations; other old scopes keep their own meaning. */
-export const readerContinuationContracts = currentBookLayout('book:continuations', [
+const baseContinuationContracts = currentBookLayout('book:continuations', [
   { key: 'data-to-uncertainty', route: '/docs/book/review-support-and-version-boundaries', bookSource: '/monograph/data-applicability', bookSourceKey: 'book-data-applicability', sourceHref: '/docs/book/uncertainty-and-variability', sourceLabel: '不确定性', bookKey: '/docs/book/uncertainty-and-variability', bookLabel: '不确定性', webContext: '继续阅读：不确定性。', bookContext: '继续阅读：不确定性。' },
   { key: 'policy-to-framework', route: '/docs/book/early-container-policy-and-systems', sourceHref: '/docs/book/framework-history/', sourceLabel: '评价框架的形成', bookKey: 'book-framework-responsibilities', bookLabel: '框架职责', webContext: '沿着这些职责，下一章进入评价框架的形成。', bookContext: '沿着这些职责，下一章进入框架职责。' },
   { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', bookSource: '/monograph/climate-equivalence', bookSourceKey: 'book-climate-equivalence', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '未来清单的技术与背景设定，另见后面的未来技术置于怎样的世界。' },
 ]);
+
+export const readerContinuationContracts = currentRouteChanges.merges.length
+  ? baseContinuationContracts.map(row => {
+      const fromMerge = currentRouteChanges.fromToMap.get(row.route);
+      const hrefBase = row.sourceHref.replace(/\/$/, '');
+      const hrefMerge = currentRouteChanges.fromToMap.get(hrefBase);
+      let next = { ...row };
+      if (fromMerge) {
+        next.route = fromMerge.to;
+        if (next.bookSource) next.bookSource = fromMerge.to;
+        next.webContext = next.bookContext;
+      }
+      if (hrefMerge) {
+        next.sourceHref = `${hrefMerge.to}/`;
+        next.sourceLabel = next.bookLabel;
+        next.webContext = next.bookContext;
+      }
+      return next;
+    })
+  : baseContinuationContracts;
 
 export function getContinuationLink(view, route, href, label) {
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);
