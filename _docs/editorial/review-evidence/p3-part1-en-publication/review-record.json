@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "p3-part1-en-publication",
+  "date": "2026-11-23",
+  "kind": "ui-revision",
+  "summary": "Publish Part I (Chapters 1–5, 117 claims) of the meaning-equivalent English edition alongside Preface, Reading Guide, and Chapter 29, enable EN_PUBLIC_ENABLED = true for automatic non-Chinese browser entry and hreflang indexing, and refresh compiled CSS fingerprint.",
+  "checks": [
+    "pnpm typecheck",
+    "pnpm validate",
+    "pnpm build",
+    "pnpm test",
+    "node scripts/verify-checkpoint-history.mjs"
+  ]
+}

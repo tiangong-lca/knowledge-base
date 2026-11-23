@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "p3-part1-en-publication",
+  "date": "2026-11-23",
+  "task": "p3-part1",
+  "title": "公开英文版第一部（第 1–5 章，117 条论述）并启用非中文浏览器自动进入英文版",
+  "rationale": "完成英文版第一部《生命周期视角》《饮料容器账本》《容器比较与政策判断》《评价框架与分析步骤》《清洁生产中的生命周期评价》共 5 章 117 条规范论述的含义层面撰写与零上下文双语审读，正式开启 EN_PUBLIC_ENABLED = true（非中文浏览器访问根路径自动进入 /en/，已公开英文路由纳入 hreflang 与站点地图），并更新编译样式指纹。",
+  "routes": [
+    "/",
+    "/changes"
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "e734c30b98d69a09ce672c559a0c7ba703b981f832c63236448f466e1bc1260a"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "8f6771b1d6649479e07b29c303193392c148ec4d1ffa867598ec4d4cb84bb2ac"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "2550598668078fa31272e5cf242a43d2f3cdb431d8eee2c4c102cfb6ebd76e48"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "64ae30b96c30d6fbc7be1c3f958234d2216843ced251cc1a8828f277f8e88b3e"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "1998b69523f04d93206d20d38c286610a5d62ff4be76d4a1a992f17bc09a9bc3"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "8cebdede84f585697511f303700736de8f295c35a87ca6854b88d1a3f03f0845"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    },
+    {
+      "path": "asset:reader-css",
+      "sha256": "87da7639c95f123dba6026b2d497d5d798adb34e82215e2e8e5a2bf56eb4cfce"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "ui-revision",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/p3-part1-en-publication/review-record.json",
+      "sha256": "2545fa5b2a686137706996112ce0c3cab742afd7b4966793304569ddb50ae807"
+    }
+  ]
+}

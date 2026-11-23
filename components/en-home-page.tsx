@@ -1,5 +1,16 @@
 import Link from 'next/link';
 
+const PUBLISHED_EN_CHAPTERS = [
+  { label: 'Preface', title: 'Preface', href: '/en/docs/' },
+  { label: 'Guide', title: 'Reading Guide', href: '/en/docs/book/' },
+  { label: 'Chapter 1', title: 'Life Cycle Perspective', href: '/en/docs/book/integrative-ambitions/' },
+  { label: 'Chapter 2', title: 'Beverage Container Ledgers', href: '/en/docs/book/early-container-comparisons/' },
+  { label: 'Chapter 3', title: 'Container Comparisons and Policy Judgment', href: '/en/docs/book/early-container-policy-and-systems/' },
+  { label: 'Chapter 4', title: 'Assessment Frameworks and Analytical Steps', href: '/en/docs/book/framework-responsibilities/' },
+  { label: 'Chapter 5', title: 'Life Cycle Assessment in Cleaner Production', href: '/en/docs/book/cleaner-production-purpose-and-prospects/' },
+  { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
+];
+
 export function EnHomePage() {
   return (
     <main id="main-content">
@@ -7,23 +18,26 @@ export function EnHomePage() {
         <div className="home-copy">
           <p className="publication-name">TianGong LCA Knowledge Base</p>
           <h1>
-            The Evolution and Foundations of
+            The Past and Present of
             <br />
             Life Cycle Assessment
           </h1>
           <p className="home-lead">
             How does the world behind a product enter calculation and become an environmental judgment?
-            This meaning-equivalent English edition is being authored progressively from primary standards, handbooks, and peer-reviewed studies.
+            This meaning-equivalent English edition is authored progressively from primary standards, handbooks, and peer-reviewed studies.
           </p>
           <div className="home-actions flex-wrap">
             <Link className="primary-link whitespace-nowrap" href="/en/docs/">
-              About the English Edition
+              Start Reading (Preface)
+            </Link>
+            <Link className="secondary-link whitespace-nowrap" href="/en/docs/book/integrative-ambitions/">
+              Part I: Chapters 1–5
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/en/coverage/">
-              Book Guide &amp; Rollout Status
+              Book Guide &amp; Release Status
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/">
-              Read Complete Chinese Edition
+              Chinese Edition
             </Link>
           </div>
         </div>
@@ -46,12 +60,17 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Progressive Publication Status</h2>
-          <Link href="/en/coverage/">View 32-chapter roadmap</Link>
+          <h2>Published English Chapters (Part I + Pilot)</h2>
+          <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
-        <p className="home-lead">
-          All 32 chapters, 5 topical essays, and 5 appendices are currently live in the Chinese edition and share the same evidence, primary-source locators, and numerical calculation inputs. English chapters are being authored by part and published progressively as each batch completes bilingual meaning review and independent English reader audit.
-        </p>
+        <div className="chapter-grid">
+          {PUBLISHED_EN_CHAPTERS.map(item => (
+            <Link key={item.href} href={item.href} className="chapter-card">
+              <span className="chapter-kicker">{item.label}</span>
+              <h3>{item.title}</h3>
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
