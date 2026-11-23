@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-23
-lastReviewedCommit: 41cf7450ddf227d872a31e83cd6b90c530e1f7c4
+lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 ---
 
 # Editorial and living review protocol
@@ -349,3 +349,19 @@ repository-tracked scripts in `scripts/` (without modifying the pinned
 - `node scripts/reader-extract-text.mjs [--out-dir <dir>] <label:relRoute> [...]`:
   extracts clean rendered prose, tables, and notes from static HTML under `out/`
   for zero-context reader audits using the bundled HTML parser.
+
+## Bilingual meaning-equivalent authoring workflow (`#246`)
+
+Each English batch (pilot, Part I–VII, or global reference apparatus) executes the following loop without literal sentence-by-sentence translation:
+
+1. **Meaning card**: For every claim paragraph in the batch, extract propositions, quantities/units, comparison pairs, validity conditions, negation/modal strength, and primary source bindings (recorded privately in `_docs/editorial/en/`).
+2. **English authoring from primary sources**: Write natural English academic prose from the meaning card and original English primary sources (ISO, ILCD, PEF, GHG Protocol, IPCC, journal papers), rather than back-translating Chinese paraphrase.
+3. **Bilingual meaning audit**: An independent auditor compares Chinese and English paragraph-by-paragraph strictly on propositions and invariants (not wording).
+4. **Divergence classification**:
+   - *English omission/drift*: revise English prose.
+   - *Chinese ambiguity/error*: amend Chinese in the **same PR** using `scripts/revision-apply.mjs` + `scripts/revision-refresh.mjs`, refresh `zhDigest`, and re-verify English.
+   - *Audience-context need*: add a labeled edition-specific note (`zh-only` or `en-only`) registered in `knowledge/editions/alignment.json`, with shared evidence IDs for any factual claim.
+   - *Legitimate stylistic difference*: log rationale in the bilingual audit record.
+5. **Independent zero-context readers**: A zero-context English reader (persona: English-speaking LCA practitioner/researcher) reviews every English chapter continuously; whenever Chinese prose was modified or a `zh-only` note was added, a zero-context Chinese reader rereads the affected Chinese chapters.
+6. **Structured 3-commit PR layout**: Commit 1 = Chinese revision & checkpoint refresh (if any); Commit 2 = English layer (`knowledge/editions/en/**`, `content-en/docs/**`, `config/editions/en/**`, `knowledge/editions/alignment.json`); Commit 3 = bilingual audit records & review evidence.
+7. **Automated parity & output checks**: Run all Chinese validation/checkpoint gates plus English parity validators (coverage, structure, `zhDigest` staleness, numeric/unit multisets, evidence sets, `Unverified` parity, Han leakage, English process-prose/draft-chapter leaks, same-locale links, hreflang) before PR submission.

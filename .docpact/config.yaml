@@ -1,5 +1,5 @@
 lastReviewedAt: "2026-11-23"
-lastReviewedCommit: "317ead488e7605d57460e6e48ccb611810743a9c"
+lastReviewedCommit: "0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6"
 version: 1
 layout: repo
 
@@ -21,6 +21,7 @@ catalog:
         - _docs/editorial-protocol.md
         - _docs/reader-publication-contract.md
         - _docs/editorial/readable-writing-and-teaching.md
+        - _docs/editorial/en/readable-writing-and-teaching.md
         - _docs/editorial/concept-led-comparison.md
       workspaceIntegrationRequired: true
 
@@ -36,6 +37,7 @@ ownership:
           - _docs/**
           - knowledge/**
           - content/**
+          - content-en/**
           - releases/**
       ownerRepo: knowledge-base
     - id: publication-site-and-tooling
@@ -74,6 +76,7 @@ coverage:
     - _docs/**
     - knowledge/**
     - content/**
+    - content-en/**
     - releases/**
     - app/**
     - components/**
@@ -144,10 +147,14 @@ rules:
         kind: canonical-knowledge-records
       - path: content/**
         kind: public-narrative
+      - path: content-en/**
+        kind: english-public-narrative
       - path: releases/**
         kind: immutable-publication-and-errata
       - path: config/revisions/**
         kind: post-checkpoint-revision-records
+      - path: config/editions/**
+        kind: bilingual-edition-configuration
       - path: _docs/editorial/**
         kind: editorial-review-evidence
       - path: _docs/research-waves/**
@@ -234,10 +241,14 @@ rules:
     triggers:
       - path: content/**
         kind: finished-reader-prose
+      - path: content-en/**
+        kind: finished-english-reader-prose
       - path: knowledge/**
         kind: canonical-reader-claims
       - path: config/revisions/**
         kind: post-checkpoint-revision-records
+      - path: config/editions/**
+        kind: bilingual-edition-configuration
       - path: components/**
         kind: reader-presentation
       - path: app/**
