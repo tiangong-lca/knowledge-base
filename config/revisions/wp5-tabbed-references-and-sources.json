@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "wp5-tabbed-references-and-sources",
+  "date": "2026-11-23",
+  "task": "wp5",
+  "title": "合并参考文献与引文出处为双标签页视图",
+  "rationale": "将参考文献（/research/）与引文出处（/sources/）统一为共享标签切换视图“参考文献与出处”，保留双路由与全部既有脚注锚点，并将顶部导航下拉合并为单一入口。",
+  "routes": [
+    "/research",
+    "/sources"
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "research/index.html",
+      "sha256": "1294d0664c58faf364a7a6d20dd867fece654e4be7621121b0ebedb4408249c1"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "680a68f23a541d95736a394e509516bbe819fa090071fc20cd79fd7d4dda9bd9"
+    },
+    {
+      "path": "asset:reader-css",
+      "sha256": "f1875b1d8a9d91e284eb90c6be538835482d94f15b920e628d1b412865237ab3"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "ui-revision",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/wp5-tabbed-references-and-sources/review-record.json",
+      "sha256": "80f6be171aae78177429993ed2f13e6bfbad0695be23751e96f96b385707cf1f"
+    }
+  ]
+}
