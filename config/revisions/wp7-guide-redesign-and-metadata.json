@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "wp7-guide-redesign-and-metadata",
+  "date": "2026-11-23",
+  "task": "wp7",
+  "title": "重构全书导览页、精简首页导航并补齐站点元数据",
+  "rationale": "将 /coverage/ 重构为七部逻辑主线、三种阅读路径、六条按问题入口、七部 32 章分组目录（附带附录/专题徽章）、五篇专题与五份附录的清晰导览页，强化对应输出校验，精简首页入口并补齐 manifest、sitemap.xml、robots.txt 与 OpenGraph 元数据。",
+  "routes": [
+    "/coverage",
+    "/"
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "coverage/index.html",
+      "sha256": "3c8851f71df7fd10654d8362806031b00ac8e9a503ddd5019b6d20a902c9b254"
+    },
+    {
+      "path": "asset:reader-css",
+      "sha256": "9d6f7a335cba9aa57fe174b5f032b43fd93c655d51ce3c8b850218fe2da65e76"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "ui-revision",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/wp7-guide-redesign-and-metadata/review-record.json",
+      "sha256": "e641f93b6d1e6bed57b207d5539f9c09d5670166ce93430c535bab9e387b8067"
+    }
+  ]
+}

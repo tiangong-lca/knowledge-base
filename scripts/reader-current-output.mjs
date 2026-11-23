@@ -199,27 +199,49 @@ export function validateReaderGuideOutput(document, sources) {
   const main = document.querySelectorAll('main#main-content');
   if (main.length !== 1 || main[0].querySelector('h1')?.text !== '全书导览')
     return ['Flow boundary actual book guide lacks its reader landmark or title'];
-  const heading = label => main[0].querySelectorAll('h2').find(node => node.text === label);
-  const chapterList = heading('正文章节')?.nextElementSibling;
-  const topicList = heading('概念与实践专题')?.nextElementSibling;
   const web = getPresentationUnits('web');
-  const titles = (list, descriptions) => list?.querySelectorAll('li').map(node => {
-    const link = node.querySelector('a');
-    return [link?.getAttribute('href'), link?.text, ...(descriptions ? [node.querySelector('p')?.text] : [])];
-  });
   const description = route => {
     const raw = sources.get(route);
     const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(raw ?? '')?.[1] ?? '';
     return /^description:\s*(.+?)\s*$/m.exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
   };
-  const chapters = web.filter(unit => unit.key.startsWith('/docs/book/'))
+  const chapters = web.filter(unit => unit.kind === 'chapter')
     .map(unit => [unit.key + '/', unit.title, description(unit.key)]);
-  const topics = web.filter(unit => /^\/docs\/[^/]+$/.test(unit.key) && unit.key !== '/docs/book')
+  const topics = web.filter(unit => unit.kind === 'topic')
+    .map(unit => [unit.key + '/', unit.title, description(unit.key)]);
+  const appendices = web.filter(unit => unit.kind === 'appendix')
     .map(unit => [unit.key + '/', unit.title]);
-  if (chapterList?.tagName !== 'OL' || topicList?.tagName !== 'UL' || chapters.some(row => row[2] === undefined)
-      || JSON.stringify(titles(chapterList, true)) !== JSON.stringify(chapters)
-      || JSON.stringify(titles(topicList, false)) !== JSON.stringify(topics))
-    return ['Flow boundary actual book guide differs from the current titles, descriptions, or links'];
+
+  const partLists = main[0].querySelectorAll('ol[data-guide-part-chapters]');
+  if (partLists.length !== 7) {
+    return ['Redesigned book guide must render all seven part chapter lists'];
+  }
+  const actualChapters = partLists.flatMap(list =>
+    list.querySelectorAll('li').map(node => {
+      const link = node.querySelector('a[data-guide-chapter-link]');
+      return [link?.getAttribute('href'), link?.text, node.querySelector('[data-guide-chapter-desc]')?.text];
+    }),
+  );
+  const topicList = main[0].querySelector('ul[data-guide-topics-list]');
+  const actualTopics = topicList?.querySelectorAll('li').map(node => {
+    const link = node.querySelector('a[data-guide-topic-link]');
+    return [link?.getAttribute('href'), link?.text, node.querySelector('[data-guide-topic-desc]')?.text];
+  });
+  const appendixList = main[0].querySelector('ol[data-guide-appendices-list]');
+  const actualAppendices = appendixList?.querySelectorAll('li').map(node => {
+    const link = node.querySelector('a[data-guide-appendix-link]');
+    return [link?.getAttribute('href'), link?.text];
+  });
+  const modesCount = main[0].querySelectorAll('[data-guide-mode]').length;
+  const problemsCount = main[0].querySelectorAll('[data-guide-problem]').length;
+
+  if (chapters.some(row => row[2] === undefined) || topics.some(row => row[2] === undefined)
+      || JSON.stringify(actualChapters) !== JSON.stringify(chapters)
+      || JSON.stringify(actualTopics) !== JSON.stringify(topics)
+      || JSON.stringify(actualAppendices) !== JSON.stringify(appendices)
+      || modesCount !== 3 || problemsCount !== 6) {
+    return ['Flow boundary actual book guide differs from the current titles, descriptions, appendices, routes, or links'];
+  }
   return [];
 }
 

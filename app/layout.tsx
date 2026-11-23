@@ -5,6 +5,7 @@ import catalog from '@/lib/catalog';
 import './global.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prism.tiangong.earth'),
   title: { default: '生命周期评价的前世今生', template: '%s | 天工 LCA 知识库' },
   description: '从概念的来历到方法的含义，沿着证据理解生命周期评价。持续修订的 LCA 知识库与研究综述。',
   icons: {
@@ -13,6 +14,20 @@ export const metadata: Metadata = {
       { url: '/logo-light.svg', type: 'image/svg+xml' },
     ],
     apple: [{ url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' }],
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    siteName: '天工 LCA 知识库',
+    title: '生命周期评价的前世今生',
+    description: '从概念的来历到方法的含义，沿着证据理解生命周期评价。七部 32 章、五篇专题与五份附录的中文 LCA 知识库。',
+    images: [{ url: '/icon-512x512.png', width: 512, height: 512, alt: '天工 LCA 知识库' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: '生命周期评价的前世今生 | 天工 LCA 知识库',
+    description: '从概念的来历到方法的含义，沿着证据理解生命周期评价。',
+    images: ['/icon-512x512.png'],
   },
 };
 
