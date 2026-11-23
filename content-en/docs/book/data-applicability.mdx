@@ -1,0 +1,61 @@
+---
+title: Data Applicability
+description: Compare dataset representation roles, intrinsic versus study-context representativeness, multi-dimensional quality aggregation formulas, validation and independent review thresholds, five-aspect compliance declarations, and reference-package migration and proxy hierarchies across international guidance, EU Environmental Footprint (EF), ecoinvent, and the TianGong public specification.
+---
+
+## Processes Represented by Data [#represented-processes]
+
+<Prose ids="cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples" />
+
+<Prose ids="cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness" />
+
+## Data Quality Information [#data-quality-information]
+
+<Prose ids="cl-db2011-representativeness-and-precision cl-db2011-documenting-number" />
+
+<Prose ids="cl-dapp147-quality-architectures-and-prerequisite-split" />
+
+<Prose ids="cl-db2011-aggregation-information cl-db2011-missing-and-zero" />
+
+<Prose ids="cl-dapp147-weakest-link-vs-mean-and-80pct-masking" />
+
+Table 1. Structural comparison of five major data frameworks across quality dimensions, single-indicator caps, aggregation formulas, and eligibility roles.
+
+| Comparison Dimension | UNEP/SETAC (2011) | ILCD Detailed Guidance (2010) | ILCD Entry-Level (v1.1, 2012) | EU Recommendation (EU) 2021/2279 & EF Guide 2.0 | ecoinvent v3 (2013) |
+| --- | --- | --- | --- | --- | --- |
+| Level of evaluation | Unit process or aggregated process dataset documentation | Whole process dataset (distinguishing unit process, partly terminated system, and LCI result) | Whole process dataset (no quality tiering) | Company-specific datasets, secondary datasets, and most relevant processes in study context | Individual input/output exchanges other than the reference product |
+| Scored quality indicators | Table 4.1 qualitative documentation of precision, completeness, representativeness, consistency, and reproducibility | 6 indicators (1–5 scale): technological, geographical, and time-related representativeness, plus completeness, precision, and methodological appropriateness | Quality compliance fixed as "Not defined"; states quality per ISO criteria and documents the three representativeness dimensions | 4 indicators (1–5 scale): technological (TeR), geographical (GeR or GR), and time-related (TiR) representativeness, plus precision (P) | Basic uncertainty plus 5 pedigree scores (reliability, completeness, temporal, geographical, further technological correlation) |
+| Completeness and methodology | Reviewed qualitatively alongside representativeness and precision | Included among the 6 scored indicators entering Equation 3 | Follows ISO process rules and documents modeling and allocation without mandating full Handbook methodology | Removed from the formula as binary minimum entry prerequisites; XML fields fixed as "Not applicable" | Methodology governed centrally by database editorial rules; completeness is the 2nd pedigree variance indicator |
+| Unknown values and single-indicator caps | Requires distinguishing true zeros from missing values and documenting gaps in prose | Unassessed or unknown items scored 5; not applicable scored 0 and subtracted from the active indicator count; no separate hard cap per indicator | No quantitative overall score or per-indicator cap | Supply-side secondary datasets: each weighted indicator ≤ 3.0; company-specific datasets: P ≤ 3 and each representativeness indicator ≤ 2 | Unassessed exchanges default to the worst pedigree score (5); no dataset-level rejection cap |
+| Aggregation formula or mapping | No scalar aggregation formula | Equation 3 weakest-link 5× weight: (sum of 6 indicators + 4 × weakest score) / (active indicators + 4) | No overall data quality rating calculated (recalculation in studies is also prohibited) | Equations 19 and 20 arithmetic mean of 4 indicators; company-specific data apply an 80% cutoff separately to activity data and direct flows; secondary data rescale weights over the top 80% of the single overall score | Direct sum of 6 underlying normal variances on the lognormal scale (sum of the 5 worst-score pedigree variances = 0.21) |
+| Tier thresholds and intended use | Supports manual fitness-for-purpose judgment by the user against goal and scope | Table 7 three tiers: ≤ 1.6 high quality, > 1.6 to ≤ 3 basic quality, > 3 to ≤ 4 data estimate | Starter entry gate for data-network nodes; allowed in EU studies as proxies up to ≤ 10% of the single overall score | Table 22 five tiers (≤ 1.5 excellent, > 1.5 to ≤ 2.0 very good, > 2.0 to ≤ 3.0 good, > 3 to ≤ 4.0 fair, > 4 poor); Data Needs Matrix requires company-specific data ≤ 1.5 and compliant secondary data ≤ 3.0 | Static inventory uses the median; variances serve exclusively for Monte Carlo inventory uncertainty propagation |
+
+## Scope of Data Review [#scope-of-review]
+
+<Prose ids="cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context" />
+
+<Prose ids="cl-dapp147-validation-vs-review-and-team-thresholds" />
+
+<Prose ids="cl-db2011-recommendation-strength cl-db2011-review-of-guidance" />
+
+<Prose ids="cl-dapp147-five-aspect-compliance-and-uuid-semantics" />
+
+## Version Changes and Gap Filling [#version-changes-and-gap-filling]
+
+<Prose ids="cl-db2011-versioned-confidence" />
+
+<Prose ids="cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge" />
+
+Table 2. Institutional rule comparison of five frameworks across validation and review thresholds, compliance-declaration architecture, regional residuals, version migration, and secondary gap filling.
+
+| Institutional Dimension | UNEP/SETAC (2011) | ILCD 2010 & Entry-Level v1.1 | EU Recommendation (EU) 2021/2279 & EF Guide (2.0 & 3.1 Addendum) | ecoinvent v3 (2013) | TianGong Public Specification (TIDAS v0.3.0) |
+| --- | --- | --- | --- | --- | --- |
+| Automated validation vs. human review | Chapters 2 and 4 distinguish manual or automated validation from independent, systematic human review | General guide Chapter 11 delegates deliverable review matrices to a dedicated volume; Entry-Level allows 1 external reviewer without report or 1 internal reviewer with report | Secondary dataset entry permits only ≥ 2 reviewers including an external expert (barring solo external review); study verification requires ≥ 6 qualification points, mandatory on-site primary-data audit, and Look@LCI deviation ≤ 1% | Online ecoEditor automated validation written to field 3340; transforming activities target ≥ 3 experts (including 4 cross-cutting editor roles), with v3.0 transparently disclosing incomplete coverage | Process schema supports a single review object or an array of review histories, a 6-value enum including "Not reviewed", and optional report references |
+| Compliance-declaration matrix | Distinguishes strongly recommended ("shall"), recommended, and suggested; preserves substantiated minority views | Table 9 establishes 5 aspects (quality, method, nomenclature, review, documentation); full compliance defines 12 situation × quality UUIDs, plus a separate Entry-Level UUID | Table 1 mandates 6 parallel UUID blocks (5 without category rules); ISO and flow-list aspects mark out-of-scope dimensions precisely as "Not defined" | Managed centrally via activity naming, geographic parent-child inheritance, and system-model rules rather than parallel multi-system UUID blocks | Public rules define semantic and format predicates while intentionally excluding severity, phase assignment, and default blocking policies |
+| Regional residuals and mix naming | Recommends documenting aggregation scope, underlying data availability, and allocation method | Distinguishes single-operation or black-box unit processes, partly terminated systems, and LCI results | Central dataset marked partly terminated system; minor supporting subprocesses marked single-operation unit processes and barred from standalone reuse outside the parent | Requires creating the global parent (GLO) first and computing Rest-of-World (RoW) by production-volume subtraction; strictly separates transforming activities from consumption-mix market activities | Production mixes require documented weighting bases; grid-loss or 1:1 transformer nodes do not automatically become consumption mixes; green certificates cannot rewrite physical generation technology |
+| Version evolution and invalidation red lines | Recommends reporting updates to technology, source data, or elementary flows and stating the actual review scope of the new version | Compliant source datasets use baseline version 01.02.000 (or higher available); network-building transition period capped at 3 years | Converted legacy datasets are downgraded to proxies; JRC130796 tests of 2,752 datasets show top-3 impact-category rank shifts in 6%, 10%, and 13%; verification reports valid ≤ 3 years, with mandatory update if any category worsens > 10.0% or single score worsens > 5.0% | Adding new local data cascades into recalculated RoW residuals and market shares; v3.0 documents zeroing negative exchanges or copying GLO when GLO was not updated in sync | Mandates fixed-length version numbers (`NN.NN` or `NN.NN.NNN`) that increase strictly monotonically with content changes |
+| Gap filling and cutoff caps | Table 2.1 final row allows sufficiently consistent data to fill gaps when no better source exists, with item-by-item justification | Entry-Level allows selected aggregated elementary flows such as volatile organic compounds (VOCs) as a starter transition | Four-tier secondary ladder (EF-compliant, EF proxy, ILCD-EL proxy ≤ 10% single score, exclusion as data gap); cumulative cutoffs for mass, energy, and every impact category each < 3.0%; May 2026 transition guidance projected through 2028 | Unspecified sub-compartments used only when specific information is absent; apart from explicit water-sum exceptions, group emissions must deduct individually reported substances to prevent double counting | Consuming products may configure business waivers and phase gates, but may never rewrite a record failing a public rule definition as passing |
+
+<Prose ids="cl-db2011-conditional-use" />
+
+Continue reading: [Variability and Uncertainty](/en/docs/book/uncertainty-and-variability/).

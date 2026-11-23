@@ -1,0 +1,42 @@
+---
+title: Variability and Uncertainty
+description: Distinguish inherent variability, epistemic uncertainty, and methodological choices; compare International Reference Life Cycle Data System (ILCD) and EU Product Environmental Footprint (PEF) uncertainty and hotspot rules, first-order Taylor versus stochastic global sensitivity boundaries, Monte Carlo run-count pitfalls, and numerical solver stability.
+---
+
+## Distributions and Target Estimands [#target-estimands]
+
+<Prose ids="cl-unc-types cl-unc-target cl-unc-sd-sem cl-unc149-variability-vs-epistemic" />
+
+## Parameters, Models, and Methodological Choices [#sources-of-uncertainty]
+
+<Prose ids="cl-unc-parameters cl-unc-model cl-unc-choices cl-book-unc-separate cl-unc149-framework-comparison" />
+
+Table 1. Mathematical expression and institutional treatment of five layers of error and variation across ILCD 2010 and EU Recommendation (EU) 2021/2279 (PEF).
+
+| Error or Variation Layer | Nature and Reducibility | Appropriate Mathematical or Procedural Expression | ILCD 2010 Handbook Treatment | EU Recommendation (EU) 2021/2279 (PEF) Treatment | Common Misuse Pitfall |
+| --- | --- | --- | --- | --- | --- |
+| Inherent variability (plant-to-plant, spatial, temporal) | Real dispersion intrinsic to the system; cannot be eliminated by larger samples and must be modeled by region, technology, or period | Population distribution, standard deviation (SD), and subpopulation stratification | Distinguishes source variability from mean estimation; defines representativeness by goal | Reflected via technological, geographical, and time-related representativeness scores and disaggregated activity data | Masking extreme individual plants or watersheds behind the standard error of the mean |
+| Epistemic parameter uncertainty | Limited measurement precision or data gaps; reducible through additional measurement and literature verification | Standard error of the mean (SEM), probability density functions (PDFs), and correlations | Allows Monte Carlo propagation at life cycle inventory (LCI) and LCIA layers, prioritizing improvements per Figure 26 | Contains no mandatory Monte Carlo clause; folds parameter uncertainty into the DQR precision score (P) | Substituting repeated simulations for missing observations or treating simulation runs as sample size |
+| Model structural uncertainty | Spatial aggregation, mechanistic simplification, or omitted pathways; cannot be fixed by narrowing parameter distributions and requires structural improvement | Mechanistic comparison, higher-resolution models, or structural residual analysis | Provision I.a explicitly warns that calculated uncertainty often omits systematic bias | Section 6.2 completeness and consistency robustness checks paired with boundary rules | Reporting narrow parameter error bars while omitting watershed identity or missing emission pathways |
+| Methodological and normative choice uncertainty | Functional unit, allocation, characterization, and weighting conventions; study settings not reducible by sampling | Discrete scenario analysis and conditional comparison without assuming equal probabilities | Evaluates goal and scope, multifunctionality, and alternative LCIA methods as parallel scenarios | Locked by uniform category rules and mandatory hotspot cutoffs, checked via Section 6.2 sensitivity analysis | Treating two normative scenarios as random draws or pooling them into a single mean and variance |
+| Numerical solver instability | Matrix conditioning, rounding, and algorithmic error; independent of data sampling and diagnosed via numerical analysis | Matrix ill-conditioning (condition-number) analysis, algorithmic stability, and convergence diagnostics | Treated as a separate layer from inventory data uncertainty | Relies on standardized reference packages and compliance checks, which do not replace algorithmic diagnostics | Attributing solver jumps caused by an ill-conditioned matrix to raw plant data |
+
+## Numerical Stability of Solving [#numerical-reliability]
+
+Before examining the numerical stability of matrix inversion itself, check global sensitivity analysis, the failure boundaries of first-order linear approximations, and Monte Carlo run-count pitfalls in turn so that propagation or sampling distortions are not misdiagnosed as data or solver errors.
+
+<Prose ids="cl-unc149-local-vs-global-sa cl-unc149-taylor-vs-sampling cl-unc149-gsa-outliers-nonlinearity cl-unc149-mc-runs-precision-vs-accuracy cl-unc149-comparative-paired-and-pvalue cl-unc149-pedigree-mc-boundary" />
+
+Table 2. Comparison of local and global uncertainty propagation and sensitivity analysis methods by input requirements, high-dispersion behavior, and legitimate scope of inference.
+
+| Method Category | Required Inputs | Computational Cost | High-Dispersion (CV = 30%) and Skewness Behavior | Interactions, Outliers, and Correlation Handling | Legitimate Scope of Inference |
+| --- | --- | --- | --- | --- | --- |
+| Local one-at-a-time sensitivity (OAT / partial derivatives) | Baseline point estimates only | Low (single-parameter perturbations) | Ignores true parameter dispersion spans; misses right-skewed mean shifts | Cannot capture multi-parameter interaction effects | Preliminary identification of marginal slopes near the baseline point only |
+| First-order Taylor key issue analysis (KIA) | Central values and dispersions (no full PDF required) | 1 analytical calculation (Groen et al. 2017 Table 3, fastest) | Underestimates variance by ~33% in electricity and ~20% in whitefish; misses upward mean shift | First-order linear expansion only; does not produce a full output distribution | Rapid screening of approximately linear models with low dispersion (e.g., CV = 5%) |
+| Squared standardized regression coefficients (SRC) | Full probability density functions and random sample | N sampling runs (Groen et al. 2017 Table 3) | Mean and variance remain close to benchmark, but explained variance drops to 81.7% in electricity | Sensitive to right-tail outliers; standard form assumes uncorrelated inputs | Approximately linear models with low-to-moderate dispersion and limited outlier influence |
+| Random balance design (RBD) | Full probability density functions and stratified sample | N sampling runs (Groen et al. 2017 Table 3; faster post-processing than SRC) | Explained variance drops to 79.7% in electricity; 94.0% in the 115-parameter whitefish case | Sensitive to high-dispersion right tails and may overestimate minor parameters; assumes uncorrelated inputs | Exploratory frequency-domain screening in models with many parameters |
+| Squared Spearman rank correlation (SCC) | Full probability density functions and random sample | N sampling runs (Groen et al. 2017 Table 3; shares sample with SRC) | Explains 94.0% in electricity and 94.5% in the 115-parameter whitefish case | Rank transformation strongly dampens right-tail outliers; still assumes uncorrelated inputs | Robust ranking of dominant drivers in monotonic nonlinear models with high dispersion |
+| Sobol first-order and total-effect indices (SME / STE) | Full probability density functions and dual sample matrices | Table 3 counts 2N base matrices (plus mixed-matrix evaluations, slowest) | Electricity SME = 91.6%, STE = 110%, cleanly exposing the 18.4 percentage-point interaction gap | Explicitly separates main effects from interactions and nonlinear characterization effects | In-depth diagnosis of high-dispersion, strongly interactive, or nonlinear midpoint/endpoint pathways |
+| Difference-covariance Monte Carlo + sample-size cap | Shared process structure and empirical sample size n | Scales linearly with N_run (Heijungs 2020 Section 1: 1 second to 5 minutes per run) | Preserves full distribution shape, but large N_run shrinks simulation SEM to a spurious near-zero value | Should incorporate shared-process covariance on system differences; pedigree distributions lack an empirical n | Comparative inference only when simulation error is separated from empirical sample size and non-significance is not equated with equality |
+
+<Prose ids="cl-unc-numerical cl-book-unc-bridge" />
