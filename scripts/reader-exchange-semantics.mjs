@@ -278,7 +278,8 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     if(sourceItems.length!==evidence.length)fail('evidence source occurrences missing or repeated');
     evidence.forEach(({evidence:item,relation},index)=>{
       const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active,uncActive):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
-      if(!source||!li||link?.getAttribute('href')!==`/sources/#${item.id}`||link.text!==displayTitle||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
+      const sourceHref = link?.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, '');
+      if(!source||!li||sourceHref!==`/sources/#${item.id}`||link.text!==displayTitle||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
       const artifact=expectedPassageArtifact(catalog,item,readings),carriers=li.querySelectorAll('.source-reading');
       if(carriers.length!==(artifact?1:0)){fail(`actual carrier context missing or changed (${item.id})`);return;}
       if(artifact){const derived=artifact.kind==='derived-text',carrier=carriers[0],links=carrier.querySelectorAll('a'),
@@ -293,7 +294,7 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     const premiseItems=details[0]?.querySelectorAll('li')??[];
     if(premiseItems.length!==premises.length)fail('premise occurrences missing or repeated');
     premises.forEach((premise,index)=>{
-      const links=premiseItems[index]?.querySelectorAll('a')??[],link=links[0],href=link?.getAttribute('href'),linked=byId.get(premise),local=ids.indexOf(premise);
+      const links=premiseItems[index]?.querySelectorAll('a')??[],link=links[0],href=link?.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, ''),linked=byId.get(premise),local=ids.indexOf(premise);
       if(!linked||links.length!==1){fail(`premise link missing or changed (${premise})`);return;}
       const exact=local>=0?{href:`#${prefix}-claim-${premise}`,label:`本章注 ${local+1}`}:references.get(premise)?.[0];
       if(exact) {if(href!==exact.href||normalize(link.text)!==normalize(exact.label))fail(`premise destination or label changed (${premise})`);}
@@ -332,9 +333,10 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
 /** Decode only the fragment: path and query retain their exact authored identity. */
 function ordinaryHrefMeaning(href) {
   if(typeof href!=='string')return null;
-  const index=href.indexOf('#');
-  if(index<0)return {resource:href,fragment:null};
-  try{return {resource:href.slice(0,index),fragment:decodeURIComponent(href.slice(index+1))};}
+  const normalized = href.replace(/^\/(zh|en)(?=\/)/, '');
+  const index=normalized.indexOf('#');
+  if(index<0)return {resource:normalized,fragment:null};
+  try{return {resource:normalized.slice(0,index),fragment:decodeURIComponent(normalized.slice(index+1))};}
   catch{return null;}
 }
 
@@ -406,7 +408,7 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
       for(const block of currentBookLayout('S01:ordinary', partial.ordinary)){
         const found=bodyParagraphs.filter(node=>normalize(node.text)===normalize(plain(block.text))),expectedLinks=[...block.text.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)].map(match=>({text:match[1],href:print?frameworkBookHref(match[2],historyRoute):currentPrintReadingHref(match[2])}));
         if(found.length!==1||paragraphSections.get(found[0])!==block.sourceHeading)errors.push(`${path}: S01 retained ordinary content missing, repeated or misplaced: ${block.block}`);
-        else if(!same(found[0].querySelectorAll('a').map(node=>({text:node.text,href:node.getAttribute('href')})),expectedLinks))errors.push(`${path}: S01 retained ordinary navigation label or target missing or changed: ${block.block}`);
+        else if(!same(found[0].querySelectorAll('a').map(node=>({text:node.text,href:node.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, '')})),expectedLinks))errors.push(`${path}: S01 retained ordinary navigation label or target missing or changed: ${block.block}`);
       }
       errors.push(...validateExchangeAnnotationOutput(document,unit,historyRoute,catalog,{print}));
       if(print) {

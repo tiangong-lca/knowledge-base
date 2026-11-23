@@ -53,12 +53,14 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
   const rev = JSON.parse(await readFile(revPath, 'utf8'));
 
   const outDir = join(repo, 'out');
+  const prefixDir = (await fileExists(join(outDir, 'zh', 'changes', 'index.html'))) ? 'zh' : '';
+  const resolveHtmlRel = rel => prefixDir && rel.endsWith('.html') ? join(prefixDir, rel) : rel;
   const outputs = [];
   const seenOutputs = new Set();
   const addOutputReceipt = async (pathKey, routeKey, htmlRel) => {
     const dedup = `${pathKey}#${routeKey}`;
     if (seenOutputs.has(dedup)) return;
-    const full = join(outDir, htmlRel);
+    const full = join(outDir, resolveHtmlRel(htmlRel));
     if (!(await fileExists(full))) return;
     const doc = htmlParser.parse(await readFile(full, 'utf8'));
     const article = doc.querySelectorAll('article[data-reader-route]').find(n => n.getAttribute('data-reader-route') === routeKey);
@@ -83,7 +85,7 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
 
   const publicArtifacts = [];
   for (const rel of targets) {
-    const full = join(outDir, rel);
+    const full = join(outDir, resolveHtmlRel(rel));
     if (!(await fileExists(full))) continue;
     const bytes = await readFile(full);
     publicArtifacts.push({

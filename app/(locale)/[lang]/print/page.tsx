@@ -1,8 +1,11 @@
-import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
-import { PublicationNote } from '@/components/publication-note';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
+import { EnInPrepPage } from '@/components/en-in-prep-page';
+import { PublicationNote } from '@/components/publication-note';
 import catalog from '@/lib/catalog';
-import { getLegacyCitations, getPrintPages } from '@/lib/reader-book';
+import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { getLegacyCitations, getPrintPages, logicalPageUrl } from '@/lib/reader-book';
 import { currentReaderOrdinaryAttributes, ChapterContent, LegacyCitationAliases } from '@/components/chapter-content';
 import { NumberedHeading, NumberedTitle } from '@/components/numbered-heading';
 import { PrintButton } from '@/components/print-button';
@@ -21,12 +24,38 @@ import { part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
 import { wholeBookRereadSource } from '@/scripts/reader-whole-book-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 
-export const metadata = { title: '书籍目录、连续阅读与打印' };
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map(lang => ({ lang }));
+}
 
-export default function Page() {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (lang === 'en') {
+    return {
+      title: 'Continuous Reading & Print Edition',
+      description: 'Continuous reading and printable English edition (in preparation).',
+    };
+  }
+  return { title: '书籍目录、连续阅读与打印' };
+}
+
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isSupportedLocale(lang)) notFound();
+  if (lang === 'en') {
+    return (
+      <EnInPrepPage
+        title="Continuous Reading & Print Edition"
+        description="The continuous reading and print edition in English will assemble published parts progressively as each batch is audited and released."
+        zhHref="/zh/print/"
+        zhLabel="Open Chinese print edition"
+      />
+    );
+  }
+
   const pages = getPrintPages();
   const units = getPresentationUnits('book');
-  const byKey = new Map(pages.map(page=>[page.url,page]));
+  const byKey = new Map(pages.map(page=>[logicalPageUrl(page.url),page]));
   const frontMatter = units.filter(unit=>unit.kind==='front-matter');
   const topics = units.filter(unit=>unit.kind==='topic');
   const appendices = units.filter(unit=>unit.kind==='appendix');
@@ -40,7 +69,7 @@ export default function Page() {
     const id = printUnitAnchor(unit.key);
     const entry = printReadingEntryAnchor(unit.key);
     return <article className="print-chapter prose" key={unit.key} id={id} data-reader-route={unit.key} data-reader-title={page.data.title}>
-      <LegacyCitationAliases ids={getLegacyCitations(page.url,true).aliases.get(id)} target={id} />
+      <LegacyCitationAliases ids={getLegacyCitations(unit.key,true).aliases.get(id)} target={id} />
       <NumberedHeading level={unit.kind==='front-matter'?2:3} number={unit.label} id={entry === id ? undefined : entry} tabIndex={entry === id ? undefined : -1} data-reader-heading-key="@unit">{page.data.title}</NumberedHeading>
       {unit.kind!=='front-matter' && <p {...currentReaderOrdinaryAttributes(unit.key, true, 0)}>{page.data.description}</p>}
       <ChapterContent page={page} print />

@@ -10,7 +10,8 @@ if ((!rel.startsWith('..') && !isAbsolute(rel)) || existsSync(target)) throw new
 if (!existsSync('out/downloads/manifest.json')) throw new Error('Run pnpm build first.');
 const identity = JSON.parse(readFileSync('out/downloads/manifest.json', 'utf8'));
 if (identity.schemaVersion !== 1 || identity.status !== 'source-build' || !/^[a-f0-9]{64}$/.test(identity.catalogSha256 ?? '')) throw new Error('Invalid build identity manifest.');
-for (const route of ['', 'docs', 'sources', 'claims', 'concepts', 'coverage', 'changes', 'print']) {
+const prefix = existsSync('out/zh/docs/index.html') ? 'zh/' : '';
+for (const route of ['', `${prefix}docs`, `${prefix}sources`, `${prefix}claims`, `${prefix}concepts`, `${prefix}coverage`, `${prefix}changes`, `${prefix}print`]) {
   if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
 }
 const catalog = JSON.parse(readFileSync('out/downloads/catalog.json','utf8'));

@@ -66,6 +66,7 @@ import { assertExchangeSemanticsOriginal, assertExchangeSemanticsHeadingHistory,
 import { assertProcessNetworkProseAccepted, processNetworkHeadingEntries, remapProcessNetworkCitations, validateProcessNetworkCoverage, validateRenderedProcessNetwork } from './reader-process-network.mjs';
 import { assertFunctionalReferenceProseAccepted, functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage, validateRenderedFunctionalReference } from './reader-functional-reference.mjs';
 import { cleanerProductionHeadingEntries, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
+import { existsSync } from 'node:fs';
 import { access, readdir, readFile } from 'node:fs/promises';
 import { basename, join, relative, resolve } from 'node:path';
 import { chapterAnchorPrefix, chapterNoteAnchor, printUnitAnchor } from './reader-book.mjs';
@@ -434,10 +435,12 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
     ...await validateArtifacts(root, book.current, book),
   ] : [];
-  const { mergedFromSet } = extractRouteChanges(activeRevisions);
+  const { mergedFromSet, activePrefix } = extractRouteChanges(activeRevisions);
+  const prefixDir = activePrefix ? activePrefix.replace(/^\//, '') : '';
   for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [...numbered.documents.keys(), pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
     if (mergedFromSet.has(path)) continue;
-    const html = await readFile(join(root, path.slice(1), 'index.html'), 'utf8').catch(error => {
+    const htmlFile = path === '/' ? join(root, 'index.html') : join(root, prefixDir, path.slice(1), 'index.html');
+    const html = await readFile(htmlFile, 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
     });
@@ -705,7 +708,10 @@ export async function validateCleanDeliveryOutput(root, documents, ledger = buil
       }
     }
   }
-  const changesHtml = await readFile(join(root, 'changes/index.html'), 'utf8').catch(error => {
+  const { activePrefix: cleanPrefix } = extractRouteChanges(currentRevisions);
+  const prefixedChanges = cleanPrefix ? join(root, cleanPrefix.replace(/^\//, ''), 'changes/index.html') : null;
+  const changesFile = prefixedChanges && existsSync(prefixedChanges) ? prefixedChanges : join(root, 'changes/index.html');
+  const changesHtml = await readFile(changesFile, 'utf8').catch(error => {
     if (error.code === 'ENOENT') return null;
     throw error;
   });
@@ -763,8 +769,8 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       if (entry.isDirectory()) await visit(path);
       else if (entry.isFile() && entry.name.endsWith('.html')) {
         const html = await readFile(path, 'utf8');
-        if (label.startsWith('docs/book/') || (label === 'print/index.html' && /<article[^>]+class="print-chapter\b/.test(html))) bookOutput = true;
-        errors.push(...validateReaderHtml(html, { label, knownIds, allowAIStatement: label === 'changes/index.html' || label === 'print/index.html' }));
+        if (label.startsWith('docs/book/') || label.startsWith('zh/docs/book/') || ((label === 'print/index.html' || label === 'zh/print/index.html') && /<article[^>]+class="print-chapter\b/.test(html))) bookOutput = true;
+        errors.push(...validateReaderHtml(html, { label, knownIds, allowAIStatement: label === 'changes/index.html' || label === 'print/index.html' || label === 'zh/changes/index.html' || label === 'zh/print/index.html' }));
       }
       else if (entry.isFile() && entry.name === 'llms.txt') errors.push(...validateReaderIndex(await readFile(path, 'utf8')));
       else if (!entry.isFile()) errors.push(`${label}: unexpected public output entry`);

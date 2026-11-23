@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
@@ -159,7 +160,7 @@ function validateConceptOutput(document, published) {
       return [compact(mapping.querySelector('strong')?.text),
         paragraphs[0]?.querySelectorAll('a').map(link => [link.getAttribute('href'), compact(link.text)]),
         compact(paragraphs[1]?.text),
-        paragraphs[2]?.querySelectorAll('a').map(link => [link.getAttribute('href'), compact(link.text)])];
+        paragraphs[2]?.querySelectorAll('a').map(link => [link.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, ''), compact(link.text)])];
     }),
   ]);
   const expected = published.concepts.map(concept => [
@@ -195,7 +196,7 @@ function validatePublicRecordOutput(path, document, published) {
   return JSON.stringify(actual) === JSON.stringify(expected) ? [] : ['Readable book actual source/evidence index differs from the current public catalog'];
 }
 
-export function validateReaderGuideOutput(document, sources) {
+export function validateReaderGuideOutput(document, sources, { prefix = '' } = {}) {
   const main = document.querySelectorAll('main#main-content');
   if (main.length !== 1 || main[0].querySelector('h1')?.text !== '全书导览')
     return ['Flow boundary actual book guide lacks its reader landmark or title'];
@@ -206,11 +207,11 @@ export function validateReaderGuideOutput(document, sources) {
     return /^description:\s*(.+?)\s*$/m.exec(front)?.[1]?.replace(/^(['"])(.*)\1$/, '$2');
   };
   const chapters = web.filter(unit => unit.kind === 'chapter')
-    .map(unit => [unit.key + '/', unit.title, description(unit.key)]);
+    .map(unit => [`${prefix}${unit.key}/`, unit.title, description(unit.key)]);
   const topics = web.filter(unit => unit.kind === 'topic')
-    .map(unit => [unit.key + '/', unit.title, description(unit.key)]);
+    .map(unit => [`${prefix}${unit.key}/`, unit.title, description(unit.key)]);
   const appendices = web.filter(unit => unit.kind === 'appendix')
-    .map(unit => [unit.key + '/', unit.title]);
+    .map(unit => [`${prefix}${unit.key}/`, unit.title]);
 
   const partLists = main[0].querySelectorAll('ol[data-guide-part-chapters]');
   if (partLists.length !== 7) {
@@ -264,11 +265,15 @@ export async function fingerprintReaderCss(root) {
 export async function validateReadableBookPublicArtifacts(root, current, source) {
   if (!current) return [];
   const errors = [];
+  const { activePrefix: declaredPrefix } = extractRouteChanges(current.revisions ?? []);
+  const activePrefix = declaredPrefix || (existsSync(join(root, 'zh', 'changes', 'index.html')) ? '/zh' : '');
+  const prefixDir = activePrefix.replace(/^\//, '');
+  const resolveHtml = rel => prefixDir ? join(root, prefixDir, rel) : join(root, rel);
   const published = source ? publicCatalog(source.catalog) : null;
   const expectedDownloads = source ? readerPublicDownloads(source.catalog, source.literature, source.readings, published) : null;
   if (current.changes.record.size && !source) errors.push('Readable book changed records require actual source projections to validate public output');
   if (source?.sourceCommit) {
-    const changes = await readFile(join(root, 'changes/index.html'), 'utf8');
+    const changes = await readFile(resolveHtml('changes/index.html'), 'utf8');
     const actual = htmlParser.parse(changes).querySelectorAll('main#main-content a').filter(link => link.text === '查看本版文本');
     const expected = 'https://github.com/tiangong-lca/knowledge-base/commit/' + source.sourceCommit;
     if (actual.length !== 1 || actual[0].getAttribute('href') !== expected)
@@ -293,7 +298,8 @@ export async function validateReadableBookPublicArtifacts(root, current, source)
       errors.push(`Readable book public artifact receipt has an unknown path: ${path}`);
       continue;
     }
-    const bytes = await readFile(join(root, path)).catch(error => {
+    const diskPath = path.endsWith('.html') ? resolveHtml(path) : join(root, path);
+    const bytes = await readFile(diskPath).catch(error => {
       if (error.code !== 'ENOENT') throw error;
       return null;
     });
@@ -303,7 +309,7 @@ export async function validateReadableBookPublicArtifacts(root, current, source)
       if (bytes.toString() !== expectedDownloads.get(path)) errors.push(`Readable book public download disagrees with the current source projection: ${path}`);
     } else {
       const document = htmlParser.parse(bytes.toString());
-      if (path === flowBoundaryGuide) errors.push(...validateReaderGuideOutput(document, source.sources));
+      if (path === flowBoundaryGuide) errors.push(...validateReaderGuideOutput(document, source.sources, { prefix: activePrefix }));
       else if (path === 'research/index.html') errors.push(...validateReadableBookResearchOutput(document, published, source.literature, source.readings));
       else errors.push(...validatePublicRecordOutput(path, document, published));
     }

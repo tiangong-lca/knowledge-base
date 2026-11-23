@@ -1,12 +1,41 @@
+import { notFound } from 'next/navigation';
+import { EnInPrepPage } from '@/components/en-in-prep-page';
 import { PublicationNote } from '@/components/publication-note';
 import { PublicationShell } from '@/components/publication-shell';
 import { getBuildIdentity } from '@/lib/build-identity';
+import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { buildPublicChangesLedger } from '@/scripts/reader-changes-ledger.mjs';
 
-export const metadata = { title: '版本与勘误' };
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map(lang => ({ lang }));
+}
 
-export default function Page() {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (lang === 'en') {
+    return {
+      title: 'Editions & Errata',
+      description: 'Online edition history, revisions, and errata for the English edition (in preparation).',
+    };
+  }
+  return { title: '版本与勘误' };
+}
+
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isSupportedLocale(lang)) notFound();
+  if (lang === 'en') {
+    return (
+      <EnInPrepPage
+        title="Editions & Errata"
+        description="The English edition is being authored in meaning-equivalent batches. Revision ledgers and errata for the published Chinese edition are currently available in Chinese."
+        zhHref="/zh/changes/"
+        zhLabel="View Chinese editions & errata"
+      />
+    );
+  }
+
   const identity = getBuildIdentity();
   const ledger = buildPublicChangesLedger();
   const iterations = ledger.iterations.filter((item): item is NonNullable<typeof item> => Boolean(item));
@@ -18,7 +47,7 @@ export default function Page() {
   return <PublicationShell title="版本与勘误" description="《生命周期评价的前世今生》的在线文本、修订清单与勘误入口。">
     <h2>在线文本</h2>
     <p>引用网页时，请记录篇名、网址和访问日期；引用原始研究时，以章末注释列明的作品与版本为准。历史指南的年份与方法版本，是其解释范围的一部分。为保持正文与打印版连续洁净，各轮修订说明与历史版本追踪统一汇总于本页，不再嵌入正文章节阅读流。</p>
-    <p><a href={identity.sourceUrl}>查看本版文本</a> · <a href="/print/">连续阅读与打印</a></p>
+    <p><a href={identity.sourceUrl}>查看本版文本</a> · <a href="/zh/print/">连续阅读与打印</a></p>
     <h2>勘误</h2>
     <p>如发现引文、算式或论述存在问题，可提供篇名、相关段落与原始出处，<a href={identity.errataUrl}>提出勘误或补充证据</a>。第三方文献的更正需要同时辨认原版和更正版本；不能只改一个数字而丢失它的来源。</p>
     <PublicationNote />
@@ -42,7 +71,7 @@ export default function Page() {
         <ul>
           {merges.map(m => <li key={`${m.revisionId}-${m.to}`} data-changes-merge={m.to}>
             <p>
-              <strong><time dateTime={m.date}>{m.date}</time> · {m.fromLabels.join('、')} → <a href={`${m.to}/`}>{m.toLabel}</a></strong>
+              <strong><time dateTime={m.date}>{m.date}</time> · {m.fromLabels.join('、')} → <a href={`/zh${m.to}/`}>{m.toLabel}</a></strong>
             </p>
             <p>{m.rationale}</p>
           </li>)}
@@ -82,8 +111,8 @@ export default function Page() {
           <strong><time dateTime={row.date}>{row.date}</time></strong>
           {' · '}
           {row.chapter.startsWith('/')
-            ? <a href={`${row.chapter}/`}>{row.chapterTitle}</a>
-            : <a href={`/print/#${printUnitAnchor(row.chapter)}`}>{row.chapterTitle}</a>}
+            ? <a href={`/zh${row.chapter}/`}>{row.chapterTitle}</a>
+            : <a href={`/zh/print/#${printUnitAnchor(row.chapter)}`}>{row.chapterTitle}</a>}
           {'：'}
           {row.scope}
           {row.sourceHref && <> <a href={row.sourceHref}>查看前版源文件</a></>}

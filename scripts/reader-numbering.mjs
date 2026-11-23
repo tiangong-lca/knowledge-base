@@ -19,7 +19,7 @@ import { projectRevisionNumbering } from './reader-revisions.mjs';
 /** @typedef {{key:string,source:string,kind:string,title:string,part?:number,label:string|null,prefix:string|null,ordinal:number|null,partLabel:string|null,partTitle?:string|null}} NumberingUnit */
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
 
-const routeKey = value => typeof value === 'string' ? value.replace(/\/+$/, '') || '/' : value;
+const routeKey = value => typeof value === 'string' ? value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/' : value;
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */

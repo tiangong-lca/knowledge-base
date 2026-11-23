@@ -50,7 +50,7 @@ import { projectExchangeSemanticsRaw, historyPrintCrossReference, historyPrintDe
 import Link from 'next/link';
 import { createElement, type AnchorHTMLAttributes, type HTMLAttributes } from 'react';
 import catalog from '@/lib/catalog';
-import { getChapterReferenceIndex, getCitationLabel, getLegacyCitations, type ReaderPage } from '@/lib/reader-book';
+import { getChapterReferenceIndex, getCitationLabel, getLegacyCitations, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
 import { getMDXComponents } from '@/mdx-components';
 import { ClaimAnnotation } from '@/components/evidence';
 import { chapterAnchorPrefix, createChapterAnnotationPlan, createChapterNotePlan, printUnitAnchor, splitReferenceTail } from '@/scripts/reader-book.mjs';
@@ -214,11 +214,12 @@ function historyAt(path: string, id: string) {
 /** One renderer for a website page and its corresponding continuous print unit. */
 export async function ChapterContent({ page, print = false }: { page: ReaderPage; print?: boolean }) {
   const view = print ? 'book' : 'web';
-  assertNumberingToc(view, page.url, page.data.toc);
-  const prefix = print ? printUnitAnchor(page.url) : chapterAnchorPrefix(page.url);
-  const plan = createChapterNotePlan(projectExchangeSemanticsRaw(page.url, await page.data.getText('raw'), print), prefix);
-  const legacy = getLegacyCitations(page.url, print);
-  const historyPath = print ? '/print' : page.url.replace(/\/$/, '');
+  const cleanRoute = logicalPageUrl(page.url);
+  assertNumberingToc(view, cleanRoute, page.data.toc);
+  const prefix = print ? printUnitAnchor(cleanRoute) : chapterAnchorPrefix(cleanRoute);
+  const plan = createChapterNotePlan(projectExchangeSemanticsRaw(cleanRoute, await page.data.getText('raw'), print), prefix);
+  const legacy = getLegacyCitations(cleanRoute, print);
+  const historyPath = print ? '/print' : cleanRoute;
   const claims = new Map(catalog.claims.map(claim => [claim.id, claim]));
   // Check even before rendering: an authored reference must never silently lose
   // its canonical paragraph or note because a record was removed/withdrawn.
@@ -226,7 +227,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   const annotations = createChapterAnnotationPlan(plan, catalog.claims, await getChapterReferenceIndex(print), { print });
 
   function Paragraph({ id }: { id: string }) {
-    const crossReference = historyPrintCrossReference(page.url, id, print);
+    const crossReference = historyPrintCrossReference(cleanRoute, id, print);
     if (crossReference) return <p data-reader-partial-claim={id}><a href={`#${historyPrintDestination(crossReference).id}`}>{crossReference.text}</a></p>;
     const note = plan.byClaimId.get(id), claim = claims.get(id);
     if (!note || !claim || claim.status !== 'reviewed') throw new Error(`Chapter claim is absent from its note map: ${id}`);
@@ -241,20 +242,23 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     return <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />
       <span id={id} data-reader-section={id} className="reader-section-target" /><RetainedScope entry={legacy.scopes.get(id)} />{historyAt(historyPath, id)}</>;
   }
-  function ChapterTeachingCase(props: Parameters<typeof TeachingCase>[0]) { return <TeachingCase {...props} print={print} numbering={getUnitHeadingPlan(view, page.url).filter(heading=>heading.type==='case')} />; }
+  function ChapterTeachingCase(props: Parameters<typeof TeachingCase>[0]) { return <TeachingCase {...props} print={print} numbering={getUnitHeadingPlan(view, cleanRoute).filter(heading=>heading.type==='case')} />; }
   const MDX = page.data.body;
   function ReaderLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
-    const continuation = typeof props.children==='string' ? getContinuationLink(view, page.url, props.href, props.children) : null;
-    return <a {...props} href={continuation?.href ?? (print ? frameworkBookHref(props.href, page.url) : currentPrintReadingHref(props.href))}>{continuation?.label ?? props.children}</a>;
+    const continuation = typeof props.children==='string' ? getContinuationLink(view, cleanRoute, props.href, props.children) : null;
+    const rawHref = continuation?.href ?? (print ? frameworkBookHref(props.href, cleanRoute) : currentPrintReadingHref(props.href));
+    const href = rawHref && /^\/(docs|print|sources|research|coverage|timeline|concepts|claims|changes)(?:\/|#|\?|$)/.test(rawHref)
+      ? `/zh${rawHref}`
+      : rawHref;
+    return <a {...props} href={href}>{continuation?.label ?? props.children}</a>;
   }
   const defaults = getMDXComponents();
   let ordinaryIndex = 0;
   function ReaderParagraph(props: HTMLAttributes<HTMLParagraphElement>) {
-    const target = currentReaderOrdinaryAttributes(page.url.replace(/\/$/, ''), print, ++ordinaryIndex);
+    const target = currentReaderOrdinaryAttributes(cleanRoute, print, ++ordinaryIndex);
     return createElement(defaults.p ?? 'p', { ...props, id: target.id,
       ...(target.style && { style: { ...props.style, ...target.style } }) });
   }
-  const cleanRoute = page.url.replace(/\/$/, '');
   const tableId = loadShiftOrdinaryId(currentLoadShift, cleanRoute, print, 'table')
     || weightingValuationOrdinaryId(currentWeightingValuation, cleanRoute, print, 'table')
     || dataQualityComparisonOrdinaryId(currentDataQualityComparison, cleanRoute, print, 'table')
@@ -337,12 +341,12 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     const name = `h${level}` as const;
     return [name, (props: HTMLAttributes<HTMLHeadingElement>) => {
       const id = print && props.id ? `${prefix}-${props.id}` : props.id;
-      const numbered = props.id ? getHeadingNumbering(view, page.url, props.id) : null;
+      const numbered = props.id ? getHeadingNumbering(view, cleanRoute, props.id) : null;
       if (!numbered) throw new Error(`Actual content heading has no numbering slot: ${page.url} ${props.id}`);
       const headingProps: HTMLAttributes<HTMLHeadingElement> & {'data-reader-heading-key': string} = { ...props, id, 'data-reader-heading-key': numbered.key };
       if (print && level+2>6) throw new Error(`Book heading exceeds the available HTML hierarchy: ${page.url} ${props.id}`);
       const heading = createElement(print ? `h${level + 2}` : defaults[name] ?? name, headingProps, <NumberedTitle number={numbered.number}>{props.children}</NumberedTitle>);
-      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /><CopyeditHistoricalTitle path={print ? '/print' : page.url} id={id} />{historyAt(historyPath, id)}</> : heading;
+      return id ? <><LegacyCitationAliases ids={legacy.aliases.get(id)} target={id} />{heading}<RetainedScope entry={legacy.scopes.get(id)} /><CopyeditHistoricalTitle path={print ? '/print' : cleanRoute} id={id} />{historyAt(historyPath, id)}</> : heading;
     }];
   }));
   async function RetainedScope({ entry, readingTitle }: { entry?: LegacyEntry; readingTitle?: string }) {
@@ -364,9 +368,9 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   })));
 
   return <>
-    <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(page.url) : undefined} />
+    <RetainedScope entry={legacy.scopes.get(prefix)} readingTitle={print ? printReadingEntryAnchor(cleanRoute) : undefined} />
     {historyAt(historyPath, print ? prefix : 'nd-page')}
-    {historyAt(historyPath, print ? printReadingEntryAnchor(page.url) : 'main-content')}
+    {historyAt(historyPath, print ? printReadingEntryAnchor(cleanRoute) : 'main-content')}
     <MDX components={getMDXComponents({ Prose: ChapterProse, Claim: Paragraph, ReaderSection, ReaderFigure, LcaTimeline, TeachingCase: ChapterTeachingCase, a: ReaderLink, ...(currentReaderOrdinaryId(cleanRoute, print, 0) ? { p: ReaderParagraph } : {}), ...((tableId || hasLocalizationTables || hasSocialTables || hasCostTables || hasDataApplicabilityTables || hasUncertaintyTables || hasProductFootprintTables || hasDataQualityTables || hasHybridInventoryTables) ? { table: ReaderTable } : {}), ...headings })} />
     {plan.notes.length > 0 && <section className="chapter-notes not-prose" aria-labelledby={plan.headingId}>
       <LegacyCitationAliases ids={legacy.aliases.get(plan.headingId)} target={plan.headingId} />
