@@ -8,6 +8,10 @@ const PUBLISHED_EN_CHAPTERS = [
   { label: 'Chapter 3', title: 'Container Comparisons and Policy Judgment', href: '/en/docs/book/early-container-policy-and-systems/' },
   { label: 'Chapter 4', title: 'Assessment Frameworks and Analytical Steps', href: '/en/docs/book/framework-responsibilities/' },
   { label: 'Chapter 5', title: 'Life Cycle Assessment in Cleaner Production', href: '/en/docs/book/cleaner-production-purpose-and-prospects/' },
+  { label: 'Chapter 6', title: 'Functional Reference', href: '/en/docs/book/service-and-reference/' },
+  { label: 'Chapter 7', title: 'Process Networks', href: '/en/docs/book/inventory-calculation/' },
+  { label: 'Chapter 8', title: 'Flows, Exchanges, and Boundaries', href: '/en/docs/book/exchange-semantics-and-conversion/' },
+  { label: 'Chapter 9', title: 'Hybrid Inventory Analysis', href: '/en/docs/book/inventory-boundary-and-hybrid/' },
   { label: 'Chapter 29', title: 'Wall Service Comparison (Interactive Case)', href: '/en/docs/book/wall-service-to-comparison/' },
 ];
 
@@ -60,7 +64,7 @@ export function EnHomePage() {
 
       <section className="reading-section">
         <div className="section-heading">
-          <h2>Published English Chapters (Part I + Pilot)</h2>
+          <h2>Published English Chapters (Parts I–II + Pilot)</h2>
           <Link href="/en/coverage/">View full 32-chapter roadmap</Link>
         </div>
         <div className="chapter-grid">
