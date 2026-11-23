@@ -7,7 +7,7 @@ import { copyeditSourceStructure } from './reader-copyedit.mjs';
 import { editionDigest, inspectReadableBookEdition, validReadableBookReviewFile } from './reader-current-edition.mjs';
 import { readableBookBaselineDigest } from './reader-current-edition-pins.mjs';
 import { readLoadShiftCaseFiles, selectLoadShift } from './reader-load-shift.mjs';
-import { applyRevisionsInverse, applyRevisionsToPlan, extractClaimRetirements, loadRevisions, loadRevisionsSyncFromDisk } from './reader-revisions.mjs';
+import { applyRevisionsInverse, applyRevisionsToPlan, extractClaimRetirements, extractRouteChanges, loadRevisions, loadRevisionsSyncFromDisk } from './reader-revisions.mjs';
 import { readServiceConstraintsFiles, selectServiceConstraints } from './reader-service-constraints.mjs';
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
@@ -49,6 +49,7 @@ export const currentCheckpoint = checkpointConfig ? selectCheckpoint(checkpointC
 const loadedSync = revisionsIndex ? loadRevisionsSync(repoRoot, revisionsIndex, revisionsIndexPin) : { revisions: [], retirements: [] };
 export const currentRevisions = loadedSync.revisions;
 export const currentRetirements = loadedSync.retirements;
+export const currentRouteChanges = extractRouteChanges(currentRevisions);
 
 export async function qualifyCheckpointSources(root, catalog, readings, literature, readHistoryFiles) {
   const readJson = async rel => JSON.parse(await readFile(join(root, rel), 'utf8'));

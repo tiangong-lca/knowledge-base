@@ -15,7 +15,7 @@
  */
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { editionDigest } from './reader-current-edition.mjs';
@@ -274,6 +274,32 @@ export function applyCatalogAndMdxTransform({
     revisionFiles.push(entry);
   }
 
+  for (const fa of spec.fileAdditions ?? []) {
+    filesToWrite.push({ path: fa.path, content: fa.content });
+    revisionFiles.push({
+      path: fa.path,
+      op: 'add',
+      toSha256: sha256(Buffer.from(fa.content, 'utf8')),
+    });
+  }
+
+  const filesToDelete = [];
+  for (const delPath of spec.fileDeletions ?? []) {
+    const origStr = readBaselineFile(delPath);
+    filesToDelete.push(delPath);
+    revisionFiles.push({
+      path: delPath,
+      op: 'delete',
+      fromSha256: sha256(Buffer.from(origStr, 'utf8')),
+      previous: origStr,
+    });
+  }
+
+  const routeChanges = (spec.routeChanges ?? []).map(rc => {
+    assertNoInternalIds(`routeChange.rationale(${rc.to})`, rc.rationale);
+    return rc;
+  });
+
   const corrections = [
     ...Object.entries(spec.updates ?? {}).map(([id, u]) => ({
       chapter: u.chapter,
@@ -287,7 +313,7 @@ export function applyCatalogAndMdxTransform({
     })),
   ];
 
-  return { newCatalog, revisionClaims, revisionFiles, filesToWrite, corrections };
+  return { newCatalog, revisionClaims, revisionFiles, filesToWrite, filesToDelete, routeChanges, corrections };
 }
 
 export async function applyRevisionSpec(spec, { repo = defaultRepoRoot, allowCaseBinding = false } = {}) {
@@ -300,7 +326,7 @@ export async function applyRevisionSpec(spec, { repo = defaultRepoRoot, allowCas
   const headCommit = execFileSync('git', ['-C', repo, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
   const origCatalog = JSON.parse(readGitHead('knowledge/catalog.json'));
 
-  const { newCatalog, revisionClaims, revisionFiles, filesToWrite, corrections } =
+  const { newCatalog, revisionClaims, revisionFiles, filesToWrite, filesToDelete, routeChanges, corrections } =
     applyCatalogAndMdxTransform({
       spec,
       origCatalog,
@@ -309,7 +335,14 @@ export async function applyRevisionSpec(spec, { repo = defaultRepoRoot, allowCas
     });
 
   for (const f of filesToWrite) {
-    await writeFile(join(repo, f.path), f.content);
+    const fullPath = join(repo, f.path);
+    await mkdir(dirname(fullPath), { recursive: true });
+    await writeFile(fullPath, f.content);
+  }
+  for (const delPath of filesToDelete) {
+    await unlink(join(repo, delPath)).catch(err => {
+      if (err?.code !== 'ENOENT') throw err;
+    });
   }
   await writeFile(join(repo, 'knowledge/catalog.json'), JSON.stringify(newCatalog, null, 2) + '\n');
 
@@ -327,6 +360,7 @@ export async function applyRevisionSpec(spec, { repo = defaultRepoRoot, allowCas
     updatedClaims: Object.keys(spec.updates ?? {}).length,
     retiredClaims: (spec.retireSpecs ?? []).length,
     addedClaims: (spec.newClaims ?? []).length,
+    routeChanges: routeChanges.length,
   };
   const evBytes = Buffer.from(JSON.stringify(evObj, null, 2) + '\n', 'utf8');
   await writeFile(join(repo, evRelPath), evBytes);
@@ -345,6 +379,7 @@ export async function applyRevisionSpec(spec, { repo = defaultRepoRoot, allowCas
     sources: [],
     mappings: [],
     files: revisionFiles,
+    ...(routeChanges.length ? { routeChanges } : {}),
     outputs: [],
     publicArtifacts: [],
     corrections,

@@ -1,5 +1,5 @@
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
-import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
+import { currentRetirements, currentRevisions, currentRouteChanges } from './reader-checkpoint.mjs';
 import { printUnitAnchor } from './reader-book.mjs';
 import { citationSourceHref } from './reader-citations.mjs';
 import {
@@ -365,5 +365,16 @@ function buildPublicChangesLedgerWith(numberingManifest) {
     }
   }
 
-  return { iterations: orderedUnits, corrections, partIntroductions, revisions, retirements };
+  const merges = (currentRouteChanges?.merges ?? []).map(m => ({
+    revisionId: m.revisionId,
+    date: m.date,
+    from: m.from,
+    fromLabels: m.from.map(routeTitle),
+    to: m.to,
+    toLabel: routeTitle(m.to),
+    rationale: sanitizeReaderSummary(m.rationale),
+    sourceHref: m.sourceCommit ? citationSourceHref(m.sourceCommit) : null,
+  }));
+
+  return { iterations: orderedUnits, corrections, partIntroductions, revisions, retirements, merges };
 }

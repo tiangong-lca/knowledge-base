@@ -14,6 +14,7 @@ export default function Page() {
   const partIntroductions = ledger.partIntroductions.filter((item): item is NonNullable<typeof item> => Boolean(item));
   const revisions = ledger.revisions ?? [];
   const retirements = ledger.retirements ?? [];
+  const merges = ledger.merges ?? [];
   return <PublicationShell title="版本与勘误" description="《生命周期评价的前世今生》的在线文本、修订清单与勘误入口。">
     <h2>在线文本</h2>
     <p>引用网页时，请记录篇名、网址和访问日期；引用原始研究时，以章末注释列明的作品与版本为准。历史指南的年份与方法版本，是其解释范围的一部分。为保持正文与打印版连续洁净，各轮修订说明与历史版本追踪统一汇总于本页，不再嵌入正文章节阅读流。</p>
@@ -32,6 +33,18 @@ export default function Page() {
               {rev.sourceHref && <> · <a href={rev.sourceHref}>查看前版源文件</a></>}
             </p>
             <p>{rev.rationale}</p>
+          </li>)}
+        </ul>
+      </>}
+
+      {merges.length > 0 && <>
+        <h2>章节合并记录（共 {merges.length} 项）</h2>
+        <ul>
+          {merges.map(m => <li key={`${m.revisionId}-${m.to}`} data-changes-merge={m.to}>
+            <p>
+              <strong><time dateTime={m.date}>{m.date}</time> · {m.fromLabels.join('、')} → <a href={`${m.to}/`}>{m.toLabel}</a></strong>
+            </p>
+            <p>{m.rationale}</p>
           </li>)}
         </ul>
       </>}
