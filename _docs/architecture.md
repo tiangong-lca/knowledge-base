@@ -17,7 +17,7 @@ checkPaths:
   - "package.json"
   - ".github/**"
 lastReviewedAt: 2026-11-23
-lastReviewedCommit: 41cf7450ddf227d872a31e83cd6b90c530e1f7c4
+lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 ---
 
 # Publication architecture
@@ -1102,7 +1102,13 @@ history guards. The original scientific baselines and reviewed receipts retain
 their identities. Builds execute the actual installed patched framework, and
 exported source identity continues to describe the actual Git state.
 
-Next.js App Router, Fumadocs MDX/UI, React, TypeScript and Tailwind produce a static site. Chinese is the initial publication language; English labels preserve terminology. Exact compatible dependencies and the pnpm lockfile are authoritative. The architecture follows the workspace docs site; its product routes, four-locale editorial policy and hosted search identity are not imported.
+Next.js App Router, Fumadocs MDX/UI, React, TypeScript and Tailwind produce a static site. Chinese was the initial publication language; on 2026-11-23 (`#246`) the user authorized a meaning-equivalent English edition adopting the workspace `docs`/`tidas` bilingual routing pattern (`/zh/**` and `/en/**` full prefixes, `/` as Chinese `x-default` home, `/zh/` canonical to `/`, client-side language negotiation on `/` using `tiangong.manual-language`, hreflang restricted to published counterparts, and no edge language redirects), while retaining client-side per-language static search (no external hosted search service) and keeping `/downloads/manifest.json` intact for EdgeOne verification. Exact compatible dependencies and the pnpm lockfile are authoritative.
+
+### Bilingual parallel layer and prefix migration (`#246`)
+
+- **Checkpoint isolation**: Chinese canonical records (`knowledge/catalog.json`, `content/docs/**`, `knowledge/cases/*.publication.json`, `config/reader-numbering.json`, `config/book-edition.json`, `components/teaching-case-client.tsx`, `components/joint-production-case.tsx`) remain inside the checkpoint/revision integrity boundary. English prose, case templates (`approvedInputSha256`-bound), reference apparatus, termbase, edition-specific notes and alignment live outside that boundary under `knowledge/editions/en/**`, `knowledge/editions/alignment.json`, `content-en/docs/**` and `config/editions/en/**`.
+- **Stable internal keys vs public paths**: Internal unit keys (e.g. `/docs/book/joint-production`) and print anchors remain stable; public URLs prepend the locale prefix (`/zh/...`, `/en/...`). Legacy unprefixed Chinese URLs keep 301 redirects in `edgeone.json` plus static HTML redirect pages with anchor maps in `scripts/export.mjs`.
+- **Drift & parity guards**: English claims record `zhDigest` (SHA-256 of the Chinese public projection) and fail validation on drift unless explicitly marked `pendingSync` (rendered publicly as an update notice). Separate parity validators verify coverage, structure, numeric/unit multisets, evidence sets, `Unverified` parity for `待核` items, Han-character leakage, English process-prose/draft-chapter leaks, same-locale links, and hreflang accuracy.
 
 MDX carries authored prose and renders canonical claims by stable IDs. knowledge/catalog.json owns source/evidence/claim/concept/mapping records and coverage. lib/catalog.ts applies the same public projection used by scripts/export.mjs. Reviewed status records editorial source checking, not expert certification. Draft, needs-review and withdrawn claims do not enter public claim statements. Unresolved topics remain visible in coverage and explicit caveats.
 

@@ -1,6 +1,6 @@
 ---
 lastReviewedAt: 2026-11-23
-lastReviewedCommit: 41cf7450ddf227d872a31e83cd6b90c530e1f7c4
+lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 title: Reader publication and layout contract
 docType: contract
 scope: repo
@@ -435,3 +435,9 @@ a36597d源码重建的8／14及实际Main862载体分别有身份；旧网页节
 “质量评分与概率”按五节形成37条共享规范正文及一次连续37注，保留14项同输入数值模板。本章单独交付时，全书有39单元、32章与157个正式章内节。与颗粒物稿接合后为40单元、32章与152节，仍未达到120节终稿要求。杯重总体、估计精度、组间散布、因子建议与假定分布须保持各自意义；原文数值冲突和未披露程序留在对应判断附近。来源未披露舍入程序时，只称显示值，不把未证的精度身份写入正文或注释。
 
 本章新目录入口使用可原生聚焦的章标题，旧篇章地址保留原37注顺序和题名范围。八个实际Main打印节题补充原库存，全部178项本章历史入口仍可独立核验；其余38单元的当前入口不因这项修复改变。网页、当前连续阅读、旧引用、无脚本与打印各有真实检查；这些检查不宣称真人学习效果或全书完成。
+
+## 2026-11-23 双语阅读形态、语言前缀与逐批公开（`#246`）
+
+- **全前缀地址与兼容跳转**：参照 workspace `docs` / `tidas` 实践，正式启用 `/zh/**` 与 `/en/**` 双语前缀（`/` 为中文 `x-default` 首页，`/zh/` canonical 指向 `/` 且托管层不重定向 `/zh/` 回 `/`）；原无前缀中文路径（`/docs/**`、`/coverage/` 等）保留 301 与静态跳转页并延续锚点映射，`/downloads/manifest.json` 原路径不变以维系 EdgeOne 上线校验。
+- **语言切换与首页协商**：采用 Fumadocs 自带语言下拉并覆写 `onLocaleChange`，切换时停留在对应章节并按节标题键映射中英锚点；未发布的英文页不生成路由、不进入 `hreflang` 或英文侧边栏，英文导览清晰标注 “In preparation — available in the Chinese edition”。首页 `/` 对非中文浏览器自动进入 `/en/`（共享 `tiangong.manual-language` 记忆键，仅手动切换写入）。
+- **独立审读与版本说明**：英文版按 `_docs/editorial/en/readable-writing-and-teaching.md` 接受独立零上下文英语读者审读；双方独有读者说明带可见标签（“For English readers” / “中文读者说明”）；两语版本均保持工作预览版（`scientificApproval: false`）。

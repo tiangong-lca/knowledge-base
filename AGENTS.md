@@ -14,7 +14,7 @@ checkPaths:
   - ".docpact/config.yaml"
   - "_docs/**"
 lastReviewedAt: 2026-11-23
-lastReviewedCommit: 317ead488e7605d57460e6e48ccb611810743a9c
+lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 ---
 
 # Knowledge Base contributor contract
@@ -29,7 +29,9 @@ The user resumed again on2026-11-08, prioritizing whole-book argument, material 
 
 The 2026-11-14 user clarification makes concept/principle-led comparison of standards, guidance, scholarly methods, data and software the book's central research purpose. Apply [concept-led comparative writing](_docs/editorial/concept-led-comparison.md) for source selection, chapter design and acceptance. State the common question and actual comparative result; a completed language edit or publication check does not fill missing research. Historical/source-specific topics may retain named titles when their role and scope are explicit.
 
-For Chinese manuscript drafting, revision and reader review, apply [the writing and teaching guide](_docs/editorial/readable-writing-and-teaching.md) adopted on 2026-11-11. Follow the reader publication contract for independent review.
+For Chinese manuscript drafting, revision and reader review, apply [the writing and teaching guide](_docs/editorial/readable-writing-and-teaching.md) adopted on 2026-11-11. For English manuscript drafting, meaning-level alignment, terminology and independent English reader review, apply [the English writing and teaching guide](_docs/editorial/en/readable-writing-and-teaching.md) adopted on 2026-11-23 (`#246`). Follow the reader publication contract for independent review.
+
+On 2026-11-23 the user authorized a meaning-equivalent English edition (`#246`, `english-edition-plan-v2`) alongside the Chinese monograph under Programme `#9`. The English edition is independently authored at the meaning level from primary sources rather than literally translated; mutual refinement of Chinese clarity/errors discovered during English authoring is permitted in the same PR (using a structured 3-commit layout: Chinese revision via `revision-apply.mjs`, English layer addition, and bilingual review evidence). Chinese canonical files (`knowledge/catalog.json`, `content/docs/**`, `knowledge/cases/*.publication.json`, `config/reader-numbering.json`) remain checkpoint-protected; English prose, case templates, reference apparatus, termbase and alignment live in parallel layers (`knowledge/editions/en/**`, `knowledge/editions/alignment.json`, `content-en/docs/**`, `config/editions/en/**`) keyed by shared claim/evidence/case IDs with `zhDigest` drift detection. Both editions may add labeled edition-specific reader notes (`zh-only` / `en-only`) for audience context (factual statements require evidence; no asymmetric conclusions). Public URLs adopt full locale prefixes (`/zh/**` and `/en/**`, with `/` as Chinese `x-default` home, `/zh/` canonical to `/`, legacy Chinese 301 + static redirects, client-side auto-entry to `/en/` for non-Chinese browsers using `tiangong.manual-language`, and `/downloads/manifest.json` preserved for EdgeOne verification). Batch-by-part progressive publication applies; `scientificApproval` remains `false` in both languages.
 
 On 2026-11-15 the user endorsed the completed flow pilot and explicitly authorized
 an active continuing GOAL to apply its retrospective corrections to every later

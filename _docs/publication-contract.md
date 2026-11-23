@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-23
-lastReviewedCommit: 317ead488e7605d57460e6e48ccb611810743a9c
+lastReviewedCommit: 0e6e7240b1c5ad94e21afb8e4ed41eff32fe74e6
 ---
 
 # Publication contract
@@ -812,3 +812,13 @@ actual 8148 web and print captures establish the preserved destination scope;
 current output verifies the source paragraph and native target. The amendment
 changes the reading view of two links while preserving scientific records,
 authored web links and earlier citation scopes.
+
+## Bilingual meaning-equivalent edition (2026-11-23, `#246`)
+
+The user-authorized English edition is authored at the **meaning level** rather than by sentence-by-sentence translation, sharing the canonical evidence, premise, concept, mapping and numerical case-input skeleton with the Chinese edition while storing English text in parallel layers (`knowledge/editions/en/**`, `content-en/docs/**`, `config/editions/en/**`) aligned through `knowledge/editions/alignment.json`.
+
+- **Semantic invariants**: Every shared claim paragraph must preserve the same eight semantic invariants established in `#95` (subjects/objects, quantities/units, comparison pairs, validity conditions/boundaries, source attribution, negation/modal strength, `待核`/`Unverified` epistemic status, and table column semantics). Where primary sources are originally in English (ISO, ILCD, PEF, GHG Protocol, IPCC, etc.), English prose verifies and cites original wording directly rather than back-translating Chinese paraphrase.
+- **Edition-specific reader notes**: Both editions may introduce labeled audience-context notes (`zh-only` registered via canonical Chinese revision; `en-only` in `knowledge/editions/en/notes.json`), registered in `knowledge/editions/alignment.json`. Factual statements in edition-specific notes must carry shared evidence IDs and must not introduce substantive conclusions absent from the other edition.
+- **Mutual refinement & drift control**: Chinese ambiguities or errors uncovered during English authoring are corrected in the Chinese canonical layer via the post-checkpoint revision tooling (permitted in the same PR using a structured 3-commit layout). Every English claim pins `zhDigest`; drift fails validation unless explicitly marked `pendingSync` with a visible reader notice.
+- **Terminology & Chinese sources**: `knowledge/editions/en/termbase.json` records every canonical English term with `basis: official` (citing authoritative standards/glossaries) or `basis: contextual` (rationale within the monograph). Chinese standards and policy sources use official English titles where published, or contextual translations retaining the original Chinese title.
+- **Epistemic status**: Passing bilingual parity, build and zero-context reader checks does not establish scientific or human expert approval. Both editions retain `scientificApproval: false` until separately certified.
