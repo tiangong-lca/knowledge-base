@@ -47,9 +47,35 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
   if (!page) notFound();
 
   if (locale === 'en') {
+    const logicalEnUrl = page.url.replace(/^\/en(?=\/|$)/, '') || '/';
+    const enUnit = getUnitNumbering('web', logicalEnUrl);
+    const enPartLabels: Record<number, string> = {
+      1: 'Part I · Origins, Questions, and Methodological Framework',
+      2: 'Part II · Functional Unit, Process Networks, and Life Cycle Inventory',
+      3: 'Part III · Multifunctionality, Allocation, and System Boundaries',
+      4: 'Part IV · Life Cycle Impact Assessment Pathways and Models',
+      5: 'Part V · Normalization, Weighting, Regionalization, and Sustainability Extensions',
+      6: 'Part VI · Data Quality, Uncertainty, Footprints, and Databases',
+      7: 'Part VII · Case Synthesis, Interpretation, and Revisable Judgment',
+    };
+    const enLabel =
+      enUnit?.kind === 'chapter'
+        ? `Chapter ${enUnit.ordinal}`
+        : enUnit?.kind === 'topic'
+          ? 'Topical Essay'
+          : enUnit?.kind === 'appendix'
+            ? `Appendix ${String.fromCharCode(64 + (enUnit.ordinal ?? 1))}`
+            : undefined;
     return (
       <DocsPage toc={page.data.toc}>
-        <DocsTitle id="main-content" tabIndex={-1}>{page.data.title}</DocsTitle>
+        <p className="reader-view-label">
+          English Edition
+          {enUnit?.part && enPartLabels[enUnit.part] ? ` · ${enPartLabels[enUnit.part]}` : ''} ·{' '}
+          <Link href="/en/print/">Continuous Reading &amp; Print</Link>
+        </p>
+        <DocsTitle id="main-content" tabIndex={-1}>
+          <NumberedTitle number={enLabel}>{page.data.title}</NumberedTitle>
+        </DocsTitle>
         <DocsDescription>{page.data.description}</DocsDescription>
         <DocsBody>
           <EnChapterContent page={page} />

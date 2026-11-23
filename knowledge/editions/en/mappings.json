@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "mappings": {
+    "map-fu-reference": [
+      "Indicates only the relationship between a functional requirement and the physical flows that fulfill it; the two are not synonyms.",
+      "Conversion requires explicit performance, service life, use conditions, and quantitative basis."
+    ],
+    "map-water-withdrawal-consumption": [
+      "Identified by named definitions within the same source watershed, period, and return-flow destination; withdrawal and consumption are not synonymous volumes.",
+      "A simple withdrawal-minus-return ledger requires a single consistent accounting basis and does not supply storage, transfer, or local impact modeling."
+    ],
+    "map-water-inventory-background": [
+      "Product-inventory water consumption and the background water state used to generate characterization factors belong to different layers; sharing a volumetric unit does not make them interchangeable.",
+      "Use named variable definitions and retain the marginal validity conditions of the factor."
+    ],
+    "map-average-marginal-ecosystem": [
+      "In the cited guidance, one expresses average response relative to a chosen target while the other takes the local slope at an operating point.",
+      "Comparison requires stating the same response function, target, and operating point; identical units or numerical values do not establish conceptual equivalence."
+    ],
+    "map-marginality-contexts": [
+      "Respectively bound an inventory perturbation to a water background and the local slope of an ecological response curve.",
+      "Sharing the word 'marginal' does not imply the same model, target, or operating point; any mathematical link must be shown within a specific model."
+    ],
+    "map-hist-service-trippage": [
+      "Applies only to the same filling/beverage-delivery service reference in the 1974 report.",
+      "Trippage N links new-bottle makeup to repeated fillings; it cannot scale all processes uniformly and does not equal a recycling rate or guaranteed individual bottle lifetime."
+    ],
+    "map-hist-two-trippages": [
+      "Compares repeated use of two distinct objects within the cited historical container system.",
+      "The two count different objects; the original report can hold bottle trippage fixed while varying secondary-packaging trips, so they are not interchangeable parameters."
+    ],
+    "map-ped-precision-variability": [
+      "Requires fixing the same population and estimation target first.",
+      "Population dispersion of cup weights enters mean-precision calculations, but the two describe different objects and cannot be substituted merely because they share units."
+    ],
+    "map-ped-gsd-squared": [
+      "Squaring or taking square roots converts representations only when U = g² is explicitly defined and all inputs/outputs follow the same statistical convention.",
+      "A representation transform does not make the two quantities numerically equal, nor does it guarantee database field semantics or distributional fit."
+    ],
+    "map-market-average-response": [
+      "An average mix describes a defined period/boundary and trade attribution; marginal technology describes activity changes under a specified perturbation.",
+      "Approximating change by an average mix requires separate evidence that actual response matches the average; this relation does not authorize general equivalence or numerical substitution."
+    ],
+    "map-hyb-bridge-directions": [
+      "The first takes unit process operation as its denominator; the second takes monetary economic-sector output. Each rests on actual purchase or sales records."
+    ],
+    "map-hyb-residual-inventory": [
+      "In a construction where named processes and the economic system are bidirectionally linked and original transactions are separable, the residual table describes the background after subtracting already-modeled activities. Other hybrid forms have their own linking and correction rules."
+    ],
+    "map-es-references": [
+      "The two annual flows supply the normalization reference and the target denominator for the weighting ratio respectively. Region, year, substance, and mass basis must be verified before comparison."
+    ],
+    "map-lime-wtp-share": [
+      "When unit damage valuations, same-edition annual damage references, compatible areas of protection, and units are all aligned within the same study, each category's share of total annual monetary damage can be computed."
+    ],
+    "map-lime-policy": [
+      "Both aggregate across distinct burdens: the former estimates damage valuation via survey trade-offs and monetary attributes, whereas the latter derives eco-points per unit flow from current flows and policy targets."
+    ],
+    "map-lime-decision": [
+      "Hypothetical damage valuations expressed in Japanese yen and an organization's actual cost accounting have different actors, payment contexts, and decision purposes."
+    ],
+    "map-cn-reference-localization": [
+      "Within the reviewed Chinese normalization literature, regional per-capita reference totals are one component of localization and are not equivalent to localized inventory or damage models."
+    ],
+    "map-cn-adoption-localization": [
+      "A project's adoption of one reference set does not carry over to adopting its weights, all underlying models, or all editions."
+    ],
+    "map-cycle-quality-flow": [
+      "Functional performance equivalence, processing yield, and market response cannot be collapsed into a single factor without a common denominator."
+    ],
+    "map-cycle-handoff-flow": [
+      "Burden-sharing sums across fixed processes and responses of activities outside the system must be verified separately; transferring accounting credit does not alter physical material routes."
+    ],
+    "map-rule-function": [
+      "Methodological conformity is judged only after fixing document edition, product category, intended use, and service; identical volume or name cannot replace functional and comparative conditions."
+    ],
+    "map-rp-data-fitness": [
+      "A representative product is a real or virtual object built under the stated category and dataset; it does not automatically represent a specific company, current market, or every product."
+    ],
+    "map-model-layer-review": [
+      "Distinguish activities, published outputs, native models, category reviews, and company-study verifications; treat only materials actually inspected as evidence for their respective layer."
+    ],
+    "map-pm-intake-toxic-pathway": [
+      "A shared pathway decomposition supports stage-by-stage questioning only; substance, medium, intake definition, and health coverage remain method-specific and factors are not directly interchangeable."
+    ],
+    "map-pm-ecosystem-slopes": [
+      "Conditional mathematical relations between local and interval slopes do not transfer response objects, policy targets, or health counterfactuals; each operating point and endpoint requires separate evidence."
+    ],
+    "map-pm-health-endpoint": [
+      "Verify first whether a factor already incorporates severity and its unit; effect metrics defined per case, per inhaled mass, or per ambient concentration cannot be chained by name alone."
+    ],
+    "map-pm-factor-model-evidence": [
+      "Distinguish journal equations, published summaries, operational spreadsheets, and software mappings; local numerical checks do not prove an entire native generation chain or real-world intervention outcome."
+    ],
+    "map-power-delivery-reference": [
+      "Delivered electricity must first match function, performance, timing, and voltage level; identical energy quantity does not automatically establish identical end-use service."
+    ],
+    "map-power-generation-consumption": [
+      "Keep the same region, year, and carrier while explicitly treating trade, storage, and losses; a generation average cannot become a consumption mix merely by changing the denominator."
+    ],
+    "map-power-response-production": [
+      "Procedural supplier identification, historical statistical estimation, and native model evaluation each carry distinct conditions; the label 'marginal' does not equate short-run fixed-capital response with long-run supply technology."
+    ],
+    "map-power-future-scenarios": [
+      "State capital, weather, technology, policy, hourly weighting, and impact-method assumptions explicitly; intra-model comparisons do not prove future reality or cross-model equivalence."
+    ],
+    "map-native-provider-waste": [
+      "Restricted to named flow types, directions, reference amounts, and stored links; a record's parseability does not prove that required treatment activities enter the solver."
+    ],
+    "map-native-preservation-reference": [
+      "Check reference exchanges, independent system goals, and parameter evaluation separately; equal mass cannot substitute for item count, performance, or service equivalence."
+    ],
+    "map-cml-evaluation-improvement": [
+      "The 1992 environmental trade-offs, reliability/validity checks, and design analysis are linked, but full technical-financial judgment and real implementation are not covered by evaluation of the same name."
+    ],
+    "map-cml-diagnosis-decision": [
+      "Local response holds other inputs fixed; feasibility must be checked and all coupled changes reconstructed before comparing with the original design—parameter sensitivity alone does not prove actual net benefit."
+    ],
+    "map-cml-uptake-conditions": [
+      "US EPA (1994) selected named factors and applied its own tiering, modifications, and aggregation; numerical or bibliographic links do not imply adoption of all CML valuation procedures, weights, or checks."
+    ],
+    "map-climate-gwp-gtp": [
+      "Sharing the same gas and nominal time horizon does not erase the difference between integrated radiative forcing and endpoint temperature change; each metric also carries its own reference denominator."
+    ],
+    "map-climate-pulse-time": [
+      "Under a linear fixed background, mass pulses are evaluated at their respective elapsed times; a common calendar endpoint and a fixed post-emission horizon are defined separately."
+    ],
+    "map-climate-rate-pulse": [
+      "The 2019 rate-based expression takes prescribed GWP values and historical emission rates as inputs; it does not yield a history-free static factor per unit product, nor does it determine allocation rules."
+    ]
+  }
+}

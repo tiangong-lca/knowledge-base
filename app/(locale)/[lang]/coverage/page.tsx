@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   if (lang === 'en') {
     return {
-      title: 'Book Guide & Release Status',
-      description: 'Seven-part, 32-chapter roadmap and batch publication status for the meaning-equivalent English edition.',
+      title: 'Book Guide',
+      description: 'Complete seven-part, 32-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the English edition.',
     };
   }
   return {
@@ -59,7 +59,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
-        title="Book Guide & Release Status"
+        title="Book Guide"
         description="Complete seven-part, 32-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the meaning-equivalent English edition."
       >
         <div className={styles.root} data-en-guide="">

@@ -3,8 +3,12 @@ import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { Claim } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
+import enMappingsFile from '@/knowledge/editions/en/mappings.json';
+import { formatEnConceptTitle } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import catalog from '@/lib/catalog';
+
+const enMappingConditions = (enMappingsFile.mappings ?? {}) as Record<string, string[]>;
 
 const EN_RELATIONS: Record<string, string> = {
   related: 'Related',
@@ -52,13 +56,13 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
       >
         <div className="concept-jump">
           {catalog.concepts.map(c => (
-            <a key={c.id} href={`#${c.id}`}>{c.english || c.label}</a>
+            <a key={c.id} href={`#${c.id}`}>{formatEnConceptTitle(c.english || c.label)}</a>
           ))}
         </div>
         {catalog.concepts.map(c => (
           <article className="concept-record" id={c.id} key={c.id}>
             <h2>
-              {c.english || c.label}
+              {formatEnConceptTitle(c.english || c.label)}
               <span className="english-term">{c.label}</span>
             </h2>
             {c.definitionClaimIds.map(id => {
@@ -78,13 +82,17 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
             {(mappingsByConcept.get(c.id) ?? []).map(m => {
               const fromConcept = conceptsById.get(m.from);
               const toConcept = conceptsById.get(m.to);
+              const conditions = enMappingConditions[m.id];
               return (
                 <aside className="mapping-record" key={m.id}>
                   <strong>Concept relation: {EN_RELATIONS[m.relation] ?? m.relation}</strong>
                   <p>
-                    <a href={`#${m.from}`}>{fromConcept?.english || fromConcept?.label}</a> /{' '}
-                    <a href={`#${m.to}`}>{toConcept?.english || toConcept?.label}</a>
+                    <a href={`#${m.from}`}>{formatEnConceptTitle(fromConcept?.english || fromConcept?.label)}</a> /{' '}
+                    <a href={`#${m.to}`}>{formatEnConceptTitle(toConcept?.english || toConcept?.label)}</a>
                   </p>
+                  {conditions && conditions.length > 0 && (
+                    <p>{conditions.join(' ')}</p>
+                  )}
                   <p>
                     {m.claimIds.map(id => (
                       <Link key={id} href={`/en/claims/#${id}`}>

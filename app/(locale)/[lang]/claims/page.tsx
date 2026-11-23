@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { Claim } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
+import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 import type { ClaimKind, EvidenceRelation } from '@/lib/catalog';
@@ -69,7 +70,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
                       return (
                         <li key={item.id}>
                           <Link href={`/en/sources/#${item.id}`}>{source.title}</Link>
-                          {source.version ? ` (${source.version})` : ''} — {item.locator}
+                          {source.version ? ` (${formatEnBibliographicText(source.version)})` : ''} — {formatEnBibliographicText(item.locator)}
                           {relation !== 'supports' && <span> ({EN_RELATIONS[relation]})</span>}
                         </li>
                       );

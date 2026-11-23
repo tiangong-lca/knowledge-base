@@ -4,6 +4,7 @@ import { PublicationShell } from '@/components/publication-shell';
 import { ReferencesTabs } from '@/components/references-tabs';
 import { EvidencePassage, SourceReading } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
+import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 
@@ -52,15 +53,15 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
           Historical reports, methodological papers, standards, and software documentation serve distinct roles. Citations retain their original
           publication year and context; different editions or reprint texts of the same work cannot be substituted for one another by title alone.
         </p>
-        <div className="record-list">
+        <div className="record-list" style={{ overflowWrap: 'anywhere' }}>
           {catalog.sources.map(source => (
             <article className="source-record" id={source.id} key={source.id}>
               <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
-              <p>{source.publisher}. {source.version}.</p>
+              <p>{formatEnBibliographicText(source.publisher)}. {formatEnBibliographicText(source.version)}.</p>
               <p className="subtle">Accessed: {source.accessedAt}</p>
               {(evidenceBySource.get(source.id) ?? []).map(evidence => (
                 <section className="evidence-item" id={evidence.id} key={evidence.id}>
-                  <h3>{evidence.locator}</h3>
+                  <h3>{formatEnBibliographicText(evidence.locator)}</h3>
                   <details>
                     <summary>Related claims ({(claimsByEvidence.get(evidence.id) ?? []).length})</summary>
                     <ul>

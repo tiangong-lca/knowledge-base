@@ -5,6 +5,7 @@ import enNotesFile from '@/knowledge/editions/en/notes.json';
 import { getMDXComponents } from '@/mdx-components';
 import { TeachingCase } from '@/components/teaching-case';
 import { LcaTimeline } from '@/components/lca-timeline';
+import { formatEnBibliographicText, formatEnConceptTitle } from '@/lib/en-citation-format';
 import type { ReaderPage } from '@/lib/reader-book';
 
 export interface EnClaimEntry {
@@ -115,7 +116,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
   function EnConceptRef({ id }: { id: string }) {
     const concept = catalogConcepts.get(id);
     if (!concept) throw new Error(`Unknown concept: ${id}`);
-    return <Link href={`/en/concepts/#${id}`}>{concept.english || concept.label}</Link>;
+    return <Link href={`/en/concepts/#${id}`}>{formatEnConceptTitle(concept.english || concept.label)}</Link>;
   }
 
   function EnLcaTimeline(props: Omit<Parameters<typeof LcaTimeline>[0], 'lang'>) {
@@ -189,7 +190,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
                         return (
                           <li key={evId}>
                             <Link href={`/en/sources/#${evId}`}>{src.title}</Link>
-                            {src.version ? ` (${src.version})` : ''} — {ev.locator}
+                            {src.version ? ` (${formatEnBibliographicText(src.version)})` : ''} — {formatEnBibliographicText(ev.locator)}
                           </li>
                         );
                       })}
