@@ -13,6 +13,7 @@ import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } 
 import { createHash } from 'node:crypto';
 import { assertCleanerProductionRegistration } from './reader-cleaner-production.mjs';
 import { collectChapterClaimOccurrences, printUnitAnchor, readSourceHeading } from './reader-book.mjs';
+import { currentRouteChanges } from './reader-checkpoint.mjs';
 
 // Main sets this current-roster pin after independently qualifying the actual edition.
 /** @type {string|null} */
@@ -31,25 +32,44 @@ export function assertFrameworkHeadingHistory(history) {
 }
 
 /** Actual source discovery is independent of the mutable edition registration. */
-export function currentEditionKeys(edition, availableSources, baseline, placements) {
+export function currentEditionKeys(edition, availableSources, baseline, placements, routeChanges = currentRouteChanges.merges) {
   const units = edition.units;
   if (!Array.isArray(units) || new Set(units.map(unit => unit.key)).size !== units.length)
     throw new Error('Book edition has missing or duplicate units');
+  const mergeList = Array.isArray(routeChanges) ? routeChanges : (routeChanges?.merges ?? []);
+  const mergeByBookUnit = new Map(
+    mergeList.filter(rc => rc.op === 'merge' && rc.bookUnit).map(rc => [rc.bookUnit, rc]),
+  );
+  const assertMergedUnit = (key, label) => {
+    const rc = mergeByBookUnit.get(key);
+    const unit = units.find(u => u.key === key);
+    if (!unit || unit.source !== rc.to || unit.kind !== 'chapter' || (unit.coverage && unit.coverage.length > 0)) {
+      throw new Error(`Merged ${label} registration must point directly to ${rc.to} with no split coverage`);
+    }
+  };
   assertPmSelectionRegistration(edition);
-  assertDataApplicabilityRegistration(edition);
-  assertClimateAssemblyRegistration(edition);
-  assertJointProductionRegistration(edition);
-  assertClosingSynthesisRegistration(edition);
+  if (mergeByBookUnit.has(dataApplicabilityKey)) assertMergedUnit(dataApplicabilityKey, 'B25');
+  else assertDataApplicabilityRegistration(edition);
+  if (mergeByBookUnit.has(climateAssemblyKey)) assertMergedUnit(climateAssemblyKey, 'B15');
+  else assertClimateAssemblyRegistration(edition);
+  if (mergeByBookUnit.has(jointProductionKey)) assertMergedUnit(jointProductionKey, 'B10');
+  else assertJointProductionRegistration(edition);
+  if (mergeByBookUnit.has(closingSynthesisKey)) assertMergedUnit(closingSynthesisKey, 'B32');
+  else assertClosingSynthesisRegistration(edition);
   assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
   assertHybridInventoryRegistration(edition);
   assertExchangeSemanticsRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
-  if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');
+  if (mergeByBookUnit.has(frameworkUnitKey)) {
+    assertMergedUnit(frameworkUnitKey, 'B04');
+  } else {
+    if (!assembly || assembly.source !== frameworkManuscript || assembly.kind !== 'chapter') throw new Error('Missing accepted B04 manuscript registration');
+  }
   if (!units.some(unit => unit.key === frameworkAppendix && unit.source === frameworkAppendix && unit.kind === 'appendix')) throw new Error('Missing accepted X02 appendix registration');
   const expectedCoverage = ['/docs/book/framework-history', '/docs/book/cml-computation-judgment-and-improvement'];
-  if (JSON.stringify(assembly.coverage) !== JSON.stringify(expectedCoverage)) throw new Error('Book framework source coverage differs from accepted pair');
+  if (!mergeByBookUnit.has(frameworkUnitKey) && JSON.stringify(assembly.coverage) !== JSON.stringify(expectedCoverage)) throw new Error('Book framework source coverage differs from accepted pair');
   const available = new Set(availableSources), covered = new Set();
   for (const unit of units) {
     if (!available.has(unit.source)) throw new Error(`Missing book source: ${unit.source}`);
@@ -76,7 +96,19 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     const { source, kind } = currentBookLayout(`book:unit-kind:${unit.key}`, { source: unit.key, kind: legacyKind });
     if (unit.source !== source || unit.kind !== kind) throw new Error(`Book unit has incorrect source or kind: ${unit.key}`);
   }
-  const roster = units.map(({key,source,kind})=>({key,source,kind}));
+  const preMergeMonographSource = key => {
+    if (key === frameworkUnitKey) return frameworkManuscript;
+    if (key === jointProductionKey) return '/monograph/joint-production';
+    if (key === climateAssemblyKey) return '/monograph/climate-equivalence';
+    if (key === dataApplicabilityKey) return '/monograph/data-applicability';
+    if (key === closingSynthesisKey) return '/monograph/revisable-judgment';
+    return null;
+  };
+  const roster = units.map(({key,source,kind})=>({
+    key,
+    source: mergeByBookUnit.has(key) ? (preMergeMonographSource(key) ?? source) : source,
+    kind,
+  }));
   if (digest(roster) !== currentBookLayout('book:roster-pin', currentEditionRosterDigest))
     throw new Error('Current reading roster differs from the independently pinned 40-unit/32-chapter edition');
   return units.map(unit => unit.key);

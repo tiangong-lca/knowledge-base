@@ -65,11 +65,60 @@ export function validateRevisionSchema(revision, label = 'revision') {
     }
   }
   for (const fileRow of revision.files ?? []) {
-    if (!fileRow || !nonempty(fileRow.path) || !isSha(fileRow.fromSha256) || !isSha(fileRow.toSha256) || typeof fileRow.previous !== 'string') {
+    const op = fileRow?.op ?? 'modify';
+    if (!fileRow || !nonempty(fileRow.path) || !['modify', 'add', 'delete'].includes(op)) {
       throw new Error(`${label}: invalid file transition entry`);
+    }
+    if (op === 'modify') {
+      if (!isSha(fileRow.fromSha256) || !isSha(fileRow.toSha256) || typeof fileRow.previous !== 'string') {
+        throw new Error(`${label}: invalid modify file transition entry: ${fileRow.path}`);
+      }
+    } else if (op === 'add') {
+      if (fileRow.fromSha256 !== null || fileRow.previous !== null || !isSha(fileRow.toSha256)) {
+        throw new Error(`${label}: invalid add file transition entry: ${fileRow.path}`);
+      }
+    } else if (op === 'delete') {
+      if (!isSha(fileRow.fromSha256) || typeof fileRow.previous !== 'string' || fileRow.toSha256 !== null) {
+        throw new Error(`${label}: invalid delete file transition entry: ${fileRow.path}`);
+      }
     }
     if (fileRow.path === 'config/reader-numbering.json' && !isSha(fileRow.toDigest)) {
       throw new Error(`${label}: config/reader-numbering.json file transition requires toDigest`);
+    }
+  }
+  if (revision.routeChanges !== undefined) {
+    if (!Array.isArray(revision.routeChanges)) {
+      throw new Error(`${label}: routeChanges must be an array`);
+    }
+    for (const rc of revision.routeChanges) {
+      if (!rc || rc.op !== 'merge') {
+        throw new Error(`${label}: routeChanges entry requires op: 'merge'`);
+      }
+      if (!Array.isArray(rc.from) || rc.from.length < 2 || !rc.from.every(r => nonempty(r) && r.startsWith('/'))) {
+        throw new Error(`${label}: routeChanges merge requires at least two '/' routes in from`);
+      }
+      if (new Set(rc.from).size !== rc.from.length) {
+        throw new Error(`${label}: routeChanges merge contains duplicate route in from`);
+      }
+      if (!nonempty(rc.to) || !rc.to.startsWith('/') || rc.from.includes(rc.to)) {
+        throw new Error(`${label}: routeChanges merge requires distinct '/' route in to`);
+      }
+      if (rc.bookUnit !== undefined && !nonempty(rc.bookUnit)) {
+        throw new Error(`${label}: routeChanges merge bookUnit must be non-empty when present`);
+      }
+      if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
+        throw new Error(`${label}: routeChanges merge requires clean reader-facing rationale without internal claim IDs`);
+      }
+      if (rc.anchors !== undefined) {
+        if (!rc.anchors || typeof rc.anchors !== 'object' || Array.isArray(rc.anchors)) {
+          throw new Error(`${label}: routeChanges merge anchors must be a plain object`);
+        }
+        for (const [k, v] of Object.entries(rc.anchors)) {
+          if (!nonempty(k) || !nonempty(v) || !v.startsWith('#')) {
+            throw new Error(`${label}: routeChanges merge anchor mapping must map non-empty key to '#anchor': ${k} -> ${v}`);
+          }
+        }
+      }
     }
   }
   for (const outRow of revision.outputs ?? []) {
@@ -95,6 +144,76 @@ export function validateRevisionSchema(revision, label = 'revision') {
       throw new Error(`${label}: reviewEvidence file outside allowed directory: ${ev.file}`);
     }
   }
+}
+
+export function extractRouteChanges(revisions) {
+  const merges = [];
+  const fromToMap = new Map();
+  const mergedFromSet = new Set();
+  const mergedToSet = new Set();
+
+  for (const rev of revisions ?? []) {
+    for (const rc of rev.routeChanges ?? []) {
+      if (rc.op !== 'merge') continue;
+      const record = {
+        op: 'merge',
+        from: [...rc.from],
+        to: rc.to,
+        bookUnit: rc.bookUnit ?? null,
+        anchors: rc.anchors ? { ...rc.anchors } : {},
+        rationale: rc.rationale,
+        revisionId: rev.id,
+        date: rev.date,
+        sourceCommit: rev.sourceCommit ?? rev.id,
+      };
+      merges.push(record);
+      mergedToSet.add(rc.to);
+      for (const oldRoute of rc.from) {
+        mergedFromSet.add(oldRoute);
+        fromToMap.set(oldRoute, record);
+      }
+    }
+  }
+  return { merges, fromToMap, mergedFromSet, mergedToSet };
+}
+
+export function isRouteRevised(revisions, ...routes) {
+  const revised = new Set();
+  for (const rev of revisions ?? []) {
+    for (const r of rev.routes ?? []) revised.add(r);
+    for (const rc of rev.routeChanges ?? []) {
+      if (rc.op !== 'merge') continue;
+      revised.add(rc.to);
+      for (const oldRoute of rc.from ?? []) revised.add(oldRoute);
+    }
+  }
+  return routes.some(r => revised.has(r));
+}
+
+export function validateRouteChangesAgainstOutput(revisions, activeRoutes, anchorsByRoute = null) {
+  const errors = [];
+  const activeSet = new Set(activeRoutes);
+  const { merges } = extractRouteChanges(revisions);
+  for (const merge of merges) {
+    if (!activeSet.has(merge.to)) {
+      errors.push(`Route merge target is absent from active routes: ${merge.to} (${merge.revisionId})`);
+    }
+    for (const oldRoute of merge.from) {
+      if (activeSet.has(oldRoute)) {
+        errors.push(`Merged legacy route still appears in active routes: ${oldRoute} -> ${merge.to} (${merge.revisionId})`);
+      }
+    }
+    if (anchorsByRoute && merge.anchors) {
+      const targetAnchors = anchorsByRoute.get(merge.to);
+      for (const [oldKey, newHash] of Object.entries(merge.anchors)) {
+        const anchorId = newHash.slice(1);
+        if (!targetAnchors || !targetAnchors.has(anchorId)) {
+          errors.push(`Route merge anchor mapping points to missing heading on ${merge.to}: ${oldKey} -> ${newHash} (${merge.revisionId})`);
+        }
+      }
+    }
+  }
+  return errors;
 }
 
 export function extractClaimRetirements(revisions) {
@@ -212,24 +331,45 @@ export async function applyRevisionsInverse(input, revisions, root = null) {
     }
 
     for (const fileRow of rev.files ?? []) {
-      const currentBytes = previousFiles.get(fileRow.path);
-      if (!currentBytes) {
-        throw new Error(`Revision ${rev.id} references missing file: ${fileRow.path}`);
-      }
-      if (sha256(currentBytes) !== fileRow.toSha256) {
-        throw new Error(`Revision ${rev.id} file digest differs from declared toSha256: ${fileRow.path}`);
-      }
-      if (fileRow.path === 'config/reader-numbering.json') {
-        const parsedCurrent = JSON.parse(currentBytes.toString('utf8'));
-        if (editionDigest(parsedCurrent) !== fileRow.toDigest) {
-          throw new Error(`Revision ${rev.id} reader-numbering.json digest differs from declared toDigest`);
+      const op = fileRow.op ?? 'modify';
+      if (op === 'add') {
+        const currentBytes = previousFiles.get(fileRow.path);
+        if (!currentBytes) {
+          throw new Error(`Revision ${rev.id} references missing added file: ${fileRow.path}`);
         }
+        if (sha256(currentBytes) !== fileRow.toSha256) {
+          throw new Error(`Revision ${rev.id} added file digest differs from declared toSha256: ${fileRow.path}`);
+        }
+        previousFiles.delete(fileRow.path);
+      } else if (op === 'delete') {
+        if (previousFiles.has(fileRow.path)) {
+          throw new Error(`Revision ${rev.id} declared deleted file still present: ${fileRow.path}`);
+        }
+        const prevBytes = Buffer.from(fileRow.previous, 'utf8');
+        if (sha256(prevBytes) !== fileRow.fromSha256) {
+          throw new Error(`Revision ${rev.id} deleted file previous text differs from declared fromSha256: ${fileRow.path}`);
+        }
+        previousFiles.set(fileRow.path, prevBytes);
+      } else {
+        const currentBytes = previousFiles.get(fileRow.path);
+        if (!currentBytes) {
+          throw new Error(`Revision ${rev.id} references missing file: ${fileRow.path}`);
+        }
+        if (sha256(currentBytes) !== fileRow.toSha256) {
+          throw new Error(`Revision ${rev.id} file digest differs from declared toSha256: ${fileRow.path}`);
+        }
+        if (fileRow.path === 'config/reader-numbering.json') {
+          const parsedCurrent = JSON.parse(currentBytes.toString('utf8'));
+          if (editionDigest(parsedCurrent) !== fileRow.toDigest) {
+            throw new Error(`Revision ${rev.id} reader-numbering.json digest differs from declared toDigest`);
+          }
+        }
+        const prevBytes = Buffer.from(fileRow.previous, 'utf8');
+        if (sha256(prevBytes) !== fileRow.fromSha256) {
+          throw new Error(`Revision ${rev.id} previous file text differs from declared fromSha256: ${fileRow.path}`);
+        }
+        previousFiles.set(fileRow.path, prevBytes);
       }
-      const prevBytes = Buffer.from(fileRow.previous, 'utf8');
-      if (sha256(prevBytes) !== fileRow.fromSha256) {
-        throw new Error(`Revision ${rev.id} previous file text differs from declared fromSha256: ${fileRow.path}`);
-      }
-      previousFiles.set(fileRow.path, prevBytes);
     }
 
     for (const family of RECORD_FAMILIES) {
@@ -310,13 +450,19 @@ export function applyRevisionsToPlan(basePlan, revisions, currentInput, previous
       }
     }
     for (const fileRow of rev.files ?? []) {
+      const op = fileRow.op ?? 'modify';
       const existing = fileMap.get(fileRow.path);
+      const fromHash = op === 'add' ? null : fileRow.fromSha256;
+      const toHash = op === 'delete' ? null : fileRow.toSha256;
       fileMap.set(fileRow.path, {
         kind: 'file',
         key: fileRow.path,
-        from: existing ? existing.from : fileRow.fromSha256,
-        to: fileRow.toSha256,
-        predecessors: existing ? [...(existing.predecessors ?? []), existing.from, existing.to].filter(Boolean) : [fileRow.fromSha256],
+        op,
+        from: existing ? existing.from : fromHash,
+        to: toHash,
+        predecessors: existing
+          ? [...(existing.predecessors ?? []), existing.from, existing.to].filter(Boolean)
+          : fromHash ? [fromHash] : [],
         rationale: rev.rationale,
       });
     }
@@ -402,13 +548,19 @@ export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog) 
       }
     }
     for (const fileRow of rev.files ?? []) {
+      const op = fileRow.op ?? 'modify';
       const existing = fileMap.get(fileRow.path);
+      const fromHash = op === 'add' ? null : fileRow.fromSha256;
+      const toHash = op === 'delete' ? null : fileRow.toSha256;
       fileMap.set(fileRow.path, {
         kind: 'file',
         key: fileRow.path,
-        from: existing ? existing.from : fileRow.fromSha256,
-        to: fileRow.toSha256,
-        predecessors: existing ? [...(existing.predecessors ?? []), existing.from, existing.to].filter(Boolean) : [fileRow.fromSha256],
+        op,
+        from: existing ? existing.from : fromHash,
+        to: toHash,
+        predecessors: existing
+          ? [...(existing.predecessors ?? []), existing.from, existing.to].filter(Boolean)
+          : fromHash ? [fromHash] : [],
         rationale: rev.rationale,
       });
     }
@@ -619,4 +771,59 @@ export function applyClaimRetirementsToCitations(entries, retirements) {
   }
 
   return result;
+}
+
+/**
+ * Shared citation-address retargeting for merged routes (post-checkpoint routeChanges).
+ * Remaps targets pointing at merged legacy routes to their merged destination route and anchor,
+ * while preserving /print book-unit anchors unchanged.
+ */
+export function applyRouteChangesToCitations(entries, revisions) {
+  const { fromToMap } = extractRouteChanges(revisions);
+  if (!fromToMap.size) return entries;
+
+  const remapAnchorId = (oldRoute, oldId, merge, kind, claimId) => {
+    if (kind === 'note' && claimId) {
+      return chapterNoteAnchor(chapterAnchorPrefix(merge.to), claimId);
+    }
+    const explicit = merge.anchors[`${oldRoute}#${oldId}`] ?? merge.anchors[`#${oldId}`];
+    if (explicit) return explicit.slice(1);
+    return oldId;
+  };
+
+  const remapTarget = target => {
+    if (!target || target.path === '/print') return target;
+    const merge = fromToMap.get(target.route) ?? fromToMap.get(target.path);
+    if (!merge) return target;
+    return {
+      ...target,
+      route: merge.to,
+      path: merge.to,
+      id: remapAnchorId(target.route, target.id, merge, target.kind, target.claimId),
+    };
+  };
+
+  return entries.map(entry => {
+    let changed = false;
+    const nextTargets = entry.targets?.map(t => {
+      const remapped = remapTarget(t);
+      if (remapped !== t) changed = true;
+      return remapped;
+    });
+    let nextScope = entry.scope;
+    if (entry.scope?.targets) {
+      const remappedScopeTargets = entry.scope.targets.map(t => {
+        const remapped = remapTarget(t);
+        if (remapped !== t) changed = true;
+        return remapped;
+      });
+      if (changed) nextScope = { ...entry.scope, targets: remappedScopeTargets };
+    }
+    if (!changed) return entry;
+    return {
+      ...entry,
+      targets: nextTargets,
+      scope: nextScope,
+    };
+  });
 }

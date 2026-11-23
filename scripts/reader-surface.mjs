@@ -1,7 +1,7 @@
 import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
 import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
-import { applyClaimRetirementsToCitations } from './reader-revisions.mjs';
+import { applyClaimRetirementsToCitations, applyRouteChangesToCitations, isRouteRevised } from './reader-revisions.mjs';
 import { functionalReferenceComparisonPreviousSurface, qualifyFunctionalReferenceComparisonHistory } from './reader-functional-reference-comparison.mjs';
 import { hybridInventoryComparisonPreviousSurface, qualifyHybridInventoryComparisonHistory } from './reader-hybrid-inventory-comparison.mjs';
 import { part2RereadPreviousSurface, projectPart2RereadPrintParts, qualifyPart2RereadHistory } from './reader-part2-reread.mjs';
@@ -419,9 +419,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   const wholeBookReread = book?.current?.wholeBookReread;
   const part7Reread = book?.current?.part7Reread;
   const revisableJudgment = book?.current?.revisableJudgment;
-  const entries = applyClaimRetirementsToCitations(relabelHistoricalTargets(flowBoundaryCitationEntries(
+  const activeRevisions = book ? (book.current?.revisions ?? currentRevisions) : [];
+  const entries = applyRouteChangesToCitations(applyClaimRetirementsToCitations(relabelHistoricalTargets(flowBoundaryCitationEntries(
     copyeditHistoryEntries(getHistoricalCitationEntries(sourceBaseline, locations, history, historicPrintRoutes, book), copyedit),
-    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? [], ...dataApplicabilityComparison?.routes ?? [], ...uncertaintyComparison?.routes ?? [], ...productFootprintComparison?.routes ?? [], ...dataQualityComparison?.routes ?? [], ...part6Reread?.routes ?? [], ...wallServiceComparison?.routes ?? [], ...interpretationBags?.routes ?? [], ...futureScenarios?.routes ?? [], ...revisableJudgment?.routes ?? [], ...part7Reread?.routes ?? [], ...marketResponseComparison?.routes ?? [], ...part3Reread?.routes ?? [], ...functionalReferenceComparison?.routes ?? [], ...hybridInventoryComparison?.routes ?? [], ...part2Reread?.routes ?? [], ...frameworkComparison?.routes ?? [], ...part1Reread?.routes ?? [], ...wholeBookReread?.routes ?? []]), book ? (book.current?.retirements ?? currentRetirements) : []);
+    book?.current?.flowBoundary), [...serviceConstraints?.routes ?? [], ...substitutionRules?.routes ?? [], ...loadShift?.routes ?? [], ...footprint?.routes ?? [], ...land?.routes ?? [], ...acid?.routes ?? [], ...minerals?.routes ?? [], ...fossils?.routes ?? [], ...photochemicalOzone?.routes ?? [], ...ozoneRadiation?.routes ?? [], ...toxicityComparison?.routes ?? [], ...waterScarcity?.routes ?? [], ...biogenicCarbon?.routes ?? [], ...eutrophicationPathways?.routes ?? [], ...particulateComparison?.routes ?? [], ...part4Reread?.routes ?? [], ...weightingValuation?.routes ?? [], ...localizationComparison?.routes ?? [], ...socialComparison?.routes ?? [], ...costSustainability?.routes ?? [], ...part5Reread?.routes ?? [], ...dataApplicabilityComparison?.routes ?? [], ...uncertaintyComparison?.routes ?? [], ...productFootprintComparison?.routes ?? [], ...dataQualityComparison?.routes ?? [], ...part6Reread?.routes ?? [], ...wallServiceComparison?.routes ?? [], ...interpretationBags?.routes ?? [], ...futureScenarios?.routes ?? [], ...revisableJudgment?.routes ?? [], ...part7Reread?.routes ?? [], ...marketResponseComparison?.routes ?? [], ...part3Reread?.routes ?? [], ...functionalReferenceComparison?.routes ?? [], ...hybridInventoryComparison?.routes ?? [], ...part2Reread?.routes ?? [], ...frameworkComparison?.routes ?? [], ...part1Reread?.routes ?? [], ...wholeBookReread?.routes ?? []]), book ? (book.current?.retirements ?? currentRetirements) : []), activeRevisions);
   const addresses = new Set();
   for (const entry of entries) {
     const address = `${entry.path}#${entry.id}`;
@@ -557,8 +558,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       for (const notice of document.querySelectorAll('[data-copyedit-history],[data-flow-boundary-history],[data-service-constraints-history],[data-substitution-rules-history],[data-load-shift-history],[data-circular-footprint-history],[data-land-recovery-history],[data-acid-equivalents-history],[data-mineral-resources-history],[data-fossil-resources-history],[data-photochemical-ozone-history],[data-ozone-radiation-history],[data-toxicity-comparison-history],[data-water-scarcity-history],[data-biogenic-carbon-history],[data-eutrophication-pathways-history],[data-particulate-comparison-history],[data-part4-reread-history],[data-part4-reread-part],[data-part4-reread-correction],[data-weighting-valuation-history],[data-weighting-valuation-correction],[data-localization-comparison-history],[data-localization-comparison-correction],[data-social-comparison-history],[data-social-comparison-correction],[data-cost-sustainability-history],[data-cost-sustainability-correction],[data-part5-reread-history],[data-part5-reread-part],[data-part5-reread-correction],[data-data-applicability-comparison-history],[data-data-applicability-comparison-correction],[data-uncertainty-comparison-history],[data-uncertainty-comparison-correction],[data-product-footprint-comparison-history],[data-data-quality-comparison-history],[data-part6-reread-history],[data-part6-reread-part],[data-part6-reread-correction],[data-wall-service-comparison-history],[data-interpretation-bags-history],[data-future-scenarios-history],[data-revisable-judgment-history],[data-part7-reread-history],[data-part7-reread-part],[data-part7-reread-correction],[data-market-response-comparison-history],[data-part3-reread-history],[data-part3-reread-part],[data-part3-reread-correction],[data-functional-reference-comparison-history],[data-hybrid-inventory-comparison-history],[data-part2-reread-history],[data-part2-reread-part],[data-part2-reread-correction],[data-framework-comparison-history],[data-part1-reread-history],[data-part1-reread-part],[data-part1-reread-correction],[data-whole-book-reread-history],[data-whole-book-reread-part],[data-whole-book-reread-correction]')) notice.remove();
     }
   }
-  const revisedRoutes = new Set((book ? (book.current?.revisions ?? currentRevisions) : []).flatMap(r => r.routes ?? []));
-  const isRevised = (...routes) => routes.some(r => revisedRoutes.has(r));
+  const isRevised = (...routes) => isRouteRevised(activeRevisions, ...routes);
   for (const [path, document] of documents) {
     qualifyCurrentHistoricalDocument(document, entries, book?.current?.migrations, pages);
     if (book?.current?.migrations?.length)
@@ -572,7 +572,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         errors.push(...validateRenderedClosingSynthesis(document,path,book.catalog,book.closingProse,book.closingHistory));
       if (!isRevised('/docs/book/wall-service-to-comparison'))
         errors.push(...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted));
-      if (!isRevised('/docs/book/joint-production-and-allocation'))
+      if (!isRevised('/docs/book/joint-production-and-allocation', '/docs/book/allocation-and-substitution', '/docs/book/allocation-judgment-and-corrections', '/docs/monograph/joint-production', '/docs/book/joint-production'))
         errors.push(...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse));
       if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
         errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
@@ -658,7 +658,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       errors.push(...validateClosingSynthesisCoverage(book.edition,book.sources,book.catalog,book.closingProse,undefined,'raw',undefined,undefined,book.toxicityAccepted,undefined,book.pedigreeAccepted));
     if (!isRevised('/docs/book/wall-service-to-comparison'))
       errors.push(...validateWallSelectionCoverage(book.edition,book.sources,book.wallOriginal,book.catalog,book.wallAccepted));
-    if (!isRevised('/docs/book/joint-production-and-allocation'))
+    if (!isRevised('/docs/book/joint-production-and-allocation', '/docs/book/allocation-and-substitution', '/docs/book/allocation-judgment-and-corrections', '/docs/monograph/joint-production', '/docs/book/joint-production'))
       errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
     if (!isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities'))
       errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
@@ -846,7 +846,7 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       }
       await discoverRaw(sourceDirectory,'/docs');
       const manuscriptDirectory=resolve(root,'..','content','monograph');
-      await discoverRaw(manuscriptDirectory,'/monograph');
+      await access(manuscriptDirectory).then(() => discoverRaw(manuscriptDirectory,'/monograph'), () => {});
       const catalog = JSON.parse(await readFile(resolve(root,'..','knowledge','catalog.json'),'utf8'));
       assertFunctionalReferenceProseAccepted(functionalProse);
       assertProcessNetworkProseAccepted(processProse);

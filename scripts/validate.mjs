@@ -20,6 +20,7 @@ import { validateResearch } from './research.mjs';
 import { loadCasePublications, validateCasePublications } from './case-publication.mjs';
 import { validateReadableBookCurrent } from './reader-current-edition-files.mjs';
 import { currentRevisions } from './reader-checkpoint.mjs';
+import { isRouteRevised, validateRouteChangesAgainstOutput } from './reader-revisions.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -131,8 +132,17 @@ async function validatePublication(root, requireCurrent) {
       const route=`/${path.replace(/\.mdx?$/,'').replace(/(?:^|\/)index$/,'')}`;
       sources.set(route,await readFile(file,'utf8'));
     }
-    const revisedRoutes = new Set((requireCurrent ? currentRevisions : []).flatMap(r => r.routes ?? []));
-    const isRevised = (...routes) => routes.some(r => revisedRoutes.has(r));
+    const activeRevisions = requireCurrent ? currentRevisions : [];
+    const isRevised = (...routes) => isRouteRevised(activeRevisions, ...routes);
+    if (activeRevisions.length) {
+      const anchorsByRoute = new Map();
+      for (const [route, raw] of sources) {
+        const anchors = new Set();
+        for (const m of raw.matchAll(/^#{2,6}\s+.*?\[#([^\]]+)\]/gm)) anchors.add(m[1]);
+        anchorsByRoute.set(route, anchors);
+      }
+      errors.push(...validateRouteChangesAgainstOutput(activeRevisions, [...sources.keys()], anchorsByRoute));
+    }
     try {
       if (!isRevised('/docs/book/particulate-emissions-and-health'))
         errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));
@@ -170,7 +180,7 @@ async function validatePublication(root, requireCurrent) {
       const missingJoint = [['original',jointOriginal],['heading-history',jointHeadings],['prose-accepted',jointProse]].filter(([,value])=>!value).map(([name])=>`joint-production-${name}.json`);
       if (missingJoint.length) throw new Error(`Book edition requires its independent B10 original, actual capture and final-prose inventories; missing: ${missingJoint.join(', ')}`);
       assertJointProductionOriginal(jointOriginal); assertJointProductionHeadingHistory(jointHeadings);
-      if (!isRevised('/docs/book/joint-production-and-allocation'))
+      if (!isRevised('/docs/book/joint-production-and-allocation', '/docs/book/allocation-and-substitution', '/docs/book/allocation-judgment-and-corrections', '/docs/monograph/joint-production', '/docs/book/joint-production'))
         errors.push(...validateJointProductionCoverage(edition,sources,jointOriginal,data,jointProse));
       const [component, input] = await Promise.all([
         readFile(resolve(root, 'components/joint-production-case.tsx')),
