@@ -11,6 +11,7 @@ import { execFileSync } from 'node:child_process';
 import { access, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { editionDigest } from './reader-current-edition.mjs';
 import {
   fingerprintReadableBookPublicArtifact,
@@ -52,6 +53,30 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
   const rev = JSON.parse(await readFile(revPath, 'utf8'));
 
   const outDir = join(repo, 'out');
+  const outputs = [];
+  const seenOutputs = new Set();
+  const addOutputReceipt = async (pathKey, routeKey, htmlRel) => {
+    const dedup = `${pathKey}#${routeKey}`;
+    if (seenOutputs.has(dedup)) return;
+    const full = join(outDir, htmlRel);
+    if (!(await fileExists(full))) return;
+    const doc = htmlParser.parse(await readFile(full, 'utf8'));
+    const article = doc.querySelectorAll('article[data-reader-route]').find(n => n.getAttribute('data-reader-route') === routeKey);
+    if (!article) return;
+    seenOutputs.add(dedup);
+    outputs.push({ path: pathKey, route: routeKey, sha256: sha256(Buffer.from(article.outerHTML, 'utf8')) });
+  };
+  for (const rc of rev.routeChanges ?? []) {
+    if (rc.op !== 'merge') continue;
+    await addOutputReceipt(rc.to, rc.to, `${rc.to.slice(1)}/index.html`);
+    if (rc.bookUnit) {
+      await addOutputReceipt('/print', rc.bookUnit, 'print/index.html');
+    }
+  }
+  if (outputs.length) {
+    rev.outputs = outputs;
+  }
+
   const publicArtifacts = [];
   for (const rel of targets) {
     const full = join(outDir, rel);

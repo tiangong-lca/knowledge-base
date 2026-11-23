@@ -317,7 +317,10 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     }
     throw new Error(`Invalid, unauthorized or duplicate ReaderTable on ${page.url}`);
   }
-  const figureId = biogenicCarbonOrdinaryId(currentBiogenicCarbon, page.url.replace(/\/$/, ''), print, 'figure');
+  const figureId = biogenicCarbonOrdinaryId(currentBiogenicCarbon, cleanRoute, print, 'figure')
+    ?? (cleanRoute === '/docs/book/climate-equivalence'
+      ? biogenicCarbonOrdinaryId(currentBiogenicCarbon, '/docs/book/climate-response-and-metrics', print, 'figure')
+      : undefined);
   let figureCount = 0;
   function ReaderFigure(props: HTMLAttributes<HTMLElement>) {
     if (!figureId || ++figureCount > 1 || Object.hasOwn(props, 'id')) {

@@ -96,7 +96,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     significance: '首次清晰暴露“相同实物账本在不同使用行为假设下会得出相反政策结论”。',
     chapters: [
       { label: '容器比较与政策判断', href: '/docs/book/early-container-policy-and-systems/' },
-      { label: '判断依据与修订', href: '/docs/book/from-connected-results-to-conditional-judgment/' },
+      { label: '可修订的判断', href: '/docs/book/revisable-judgment/' },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     significance: '让企业内部委托研究走向公开政府报告与可复核方法文本。',
     chapters: [
       { label: '饮料容器账本', href: '/docs/book/early-container-comparisons/' },
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
     ],
   },
   {
@@ -136,7 +136,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '汇聚欧美研究者统一术语为 Life Cycle Assessment，并提出清单分析、影响评价与改进分析三组件技术框架。',
     significance: 'LCA 正式从零散的包装能耗研究升格为跨国学术共同体共建的方法学科。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
     ],
   },
   {
@@ -149,8 +149,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '系统构建“分类—表征—归一化—评价”中点影响评价流程，并引入线性代数矩阵表述将过程清单计算形式化。',
     significance: '奠定现代中点影响评价（Midpoint LCIA）与矩阵化清单求解的双重理论支柱。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
-      { label: 'CML指南中的评价与改进', href: '/docs/book/cml-computation-judgment-and-improvement/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
       { label: '过程网络', href: '/docs/book/inventory-calculation/' },
     ],
   },
@@ -164,7 +163,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '细化目标与范围界定、功能单位、数据质量记录与系统边界截断原则，强化同行评议与透明度要求。',
     significance: '把“先定服务功能、再建过程账本”的规范要求写入可操作的工程手册。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
       { label: '功能参照', href: '/docs/book/service-and-reference/' },
     ],
   },
@@ -178,7 +177,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '将早期“改进分析”重塑为贯穿全程的“生命周期解释”，确立目标与范围、清单分析、影响评价、解释四阶段迭代结构。',
     significance: '成为全球首个跨国界 LCA 国际标准骨架，后续 14041/14042/14043 随之展开。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
       { label: '清洁生产中的生命周期评价', href: '/docs/book/cleaner-production-purpose-and-prospects/' },
     ],
   },
@@ -207,7 +206,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     significance: '清晰划开“归因记账（谁分担既有排放）”与“后果建模（需求变化让谁多生产）”的分水岭。',
     chapters: [
       { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
-      { label: '共产品的分配与替代', href: '/docs/book/allocation-and-substitution/' },
+      { label: '共同生产', href: '/docs/book/joint-production/' },
     ],
   },
   {
@@ -220,7 +219,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '按简化级、基线级与扩展级系统整理中点表征因子，强推荐归一化并严格重申公开比较断言禁用加权。',
     significance: '确立近二十年国际学界与工业界最广泛引用的中点基线表征体系之一。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
       { label: '中点与终点', href: '/docs/book/midpoint-endpoint-value-choices/' },
     ],
   },
@@ -260,7 +259,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '将原 14041–14043 合并为单一要求与指南标准 ISO 14044，明确公开比较断言的强制关键性审查与禁加权底线。',
     significance: '构成至今仍居全球核心地位的 LCA 原则、要求与评审治理基准。',
     chapters: [
-      { label: '评价框架的形成', href: '/docs/book/framework-history/' },
+      { label: '评价框架与分析步骤', href: '/docs/book/framework-responsibilities/' },
       { label: '墙面服务比较', href: '/docs/book/wall-service-to-comparison/' },
       { label: '购物袋研究', href: '/docs/book/interpretation-and-limits/' },
     ],
@@ -301,8 +300,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '按决策语境划分情景 A（微观）、B（中宏观）与 C1/C2（纯描述核算），系统细化数据质量评分、五维合规块、灵敏度三查与多级审查程序。',
     significance: '成为欧洲生命周期数据网络与产品足迹体系最详尽的公开操作蓝本。',
     chapters: [
-      { label: '过程数据的用途', href: '/docs/book/database-fitness-and-documentation/' },
-      { label: '数据审查与版本', href: '/docs/book/review-support-and-version-boundaries/' },
+      { label: '数据适用性', href: '/docs/book/data-applicability/' },
       { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
     ],
   },
@@ -318,7 +316,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     chapters: [
       { label: '购物袋研究', href: '/docs/book/interpretation-and-limits/' },
       { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '过程数据的用途', href: '/docs/book/database-fitness-and-documentation/' },
+      { label: '数据适用性', href: '/docs/book/data-applicability/' },
     ],
   },
   {
@@ -344,7 +342,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: '拆分转换活动与消费组合市场活动，提供截断（Cut-off）、分配（APOS）与后果（Consequential）三套并行系统模型，并引入 GLO→RoW 自动残差生成机制。',
     significance: '彻底改变现代背景数据库的链接方式，也使数据库版本迁移与残差漂移成为核心审计议题。',
     chapters: [
-      { label: '过程数据的用途', href: '/docs/book/database-fitness-and-documentation/' },
+      { label: '数据适用性', href: '/docs/book/data-applicability/' },
       { label: '市场响应', href: '/docs/book/market-boundaries-and-response/' },
     ],
   },
@@ -388,7 +386,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     chapters: [
       { label: '变异与不确定性', href: '/docs/book/uncertainty-and-variability/' },
       { label: '未来技术与情景', href: '/docs/book/future-technology-and-context/' },
-      { label: '排放时间与评价', href: '/docs/book/emission-time-and-assessment/' },
+      { label: '气候当量', href: '/docs/book/climate-equivalence/' },
     ],
   },
   {
@@ -443,9 +441,9 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     summary: 'ESPR 设定 2026 年 7 月建成数字产品护照中央注册库；欧盟委员会亦发布 EF 3.1 次级数据过渡指导（预计延用至 2028 年），直面合规数据库建设与跨研究可比性之间的现实张力。',
     significance: '提醒研究者与监管者：方法规范落地永远伴随数据供给演进与版本迁移，结论必须保持可追溯、可修订。',
     chapters: [
-      { label: '数据审查与版本', href: '/docs/book/review-support-and-version-boundaries/' },
+      { label: '数据适用性', href: '/docs/book/data-applicability/' },
       { label: '产品足迹规则', href: '/docs/book/product-footprint-rules-and-practice/' },
-      { label: '判断依据与修订', href: '/docs/book/from-connected-results-to-conditional-judgment/' },
+      { label: '可修订的判断', href: '/docs/book/revisable-judgment/' },
     ],
   },
 ];

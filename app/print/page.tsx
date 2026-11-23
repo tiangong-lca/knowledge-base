@@ -47,7 +47,7 @@ export default function Page() {
     </article>;
   };
   return <PublicationShell title="生命周期评价的前世今生" description="书籍目录与连续阅读。正文按部、章、节展开，补充篇目与附录分别列后，注释随章。">
-    <div className="print-controls"><PrintButton /><p>书籍按连续章次编排；<Link href="/#web-contents">网页细读目录</Link>保留细分篇章。引用时请记录篇名、网址、版本和访问日期。</p></div>
+    <div className="print-controls"><PrintButton /><p>书籍与网页正文统一按连续章次编排；<Link href="/#web-contents">网页目录</Link>与连续阅读版逐章对应。引用时请记录章名、网址、版本和访问日期。</p></div>
     <PublicationNote />
     <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">
       <h2>书籍目录</h2>

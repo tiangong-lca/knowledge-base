@@ -42,7 +42,6 @@ import functionalHeadings from '@/config/functional-reference-heading-history.js
 import { functionalReferenceHeadingEntries, remapFunctionalReferenceCitations, validateFunctionalReferenceCoverage } from '@/scripts/reader-functional-reference.mjs';
 import catalog from '@/lib/catalog';
 import { source } from '@/lib/source';
-import { monographSource } from '@/lib/monograph-source';
 import { cache } from 'react';
 import baseline from '@/config/citation-baseline.json';
 import hostedHistory from '@/config/readable-book-hosted-history.json';
@@ -77,7 +76,7 @@ export function getOrderedPages(): ReaderPage[] {
 }
 export function getBookPages(): ReaderPage[] { return bookChapters(getOrderedPages()); }
 export function getPrintPages(): PrintPage[] {
-  const pages = new Map([...source.getPages(), ...monographSource.getPages()].map(page => [page.url, page]));
+  const pages = new Map(source.getPages().map(page => [page.url, page]));
   currentEditionKeys(edition, [...pages.keys()], baseline, placements);
   return edition.units.map(unit => ({ ...pages.get(unit.source)!, url: unit.key, kind: unit.kind,
     sections: 'sections' in unit ? unit.sections : undefined, part: 'part' in unit ? unit.part : undefined }));
@@ -127,7 +126,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
     const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
     if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   }
-  const rawSources = new Map(await Promise.all([...source.getPages(),...monographSource.getPages()].map(async page=>[page.url,await page.data.getText('raw')] as const)));
+  const rawSources = new Map(await Promise.all(source.getPages().map(async page=>[page.url,await page.data.getText('raw')] as const)));
   if (!isRevised('/docs/book/particulate-emissions-and-health')) {
     const pmErrors = validatePmSelectionCoverage(edition, rawSources, catalog, pmAccepted, undefined, { projection: 'public', readings, literature });
     if (pmErrors.length) throw new Error(pmErrors.join('\n'));

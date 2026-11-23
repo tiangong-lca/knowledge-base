@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 1,
+  "id": "wp4-merge-split-chapters-and-unify-numbering",
+  "date": "2026-11-23",
+  "task": "#234",
+  "title": "合并 5 组网页拆分章并统一全站章次编号（第 N 章）",
+  "rationale": "将原网页中与书籍拆分的 5 组共 10 篇页面合并为与书籍 1 对 1 对应的 5 个完整章节（全书 32 章单一数据源），退休重复书稿副本并统一全站使用“第 N 章”编号，同时保留全部旧网址 301 与静态跳转及节锚映射。",
+  "routes": [
+    "/docs/book",
+    "/docs/book/early-container-policy-and-systems",
+    "/docs/book/future-technology-and-context",
+    "/docs/allocation",
+    "/docs/appendices/climate-numerical-reconstruction",
+    "/docs/appendices/cml-framework-calculations",
+    "/docs/book/framework-responsibilities",
+    "/docs/book/joint-production",
+    "/docs/book/climate-equivalence",
+    "/docs/book/data-applicability",
+    "/docs/book/revisable-judgment"
+  ],
+  "claims": [
+    {
+      "id": "cl-db2011-conditional-use",
+      "op": "modify",
+      "from": {
+        "id": "cl-db2011-conditional-use",
+        "text": "综合过程数据的表示角色、语境代表性与质量聚合算式（详见《过程数据的用途》）以及本章的审查合规、换版补缺边界：资料不足时，唯有数据与研究的目标和范围足够一致且别无更合适资料，指南才允许有条件补缺，并要求使用者逐项说明采用理由、记录不一致或缺失之处会影响哪些类别。同一份煤电数据因此可能在明确条件下适用于一项计算，却因技术失配、语境越界或缺少重金属等关键输入而不适用于另一项。选择数据时，应能说明它代表什么、为什么仍可采用或需要另选，以及更好的资料会改变哪一步。后文《变异与不确定性》将继续区分现有观测能把数值估到多准与模型是否包含所需过程，《质量评分与概率》专门检验经验谱系矩阵（Pedigree Matrix）方差同实测分布的校准，《产品足迹规则》再讨论类别规则如何约束公开比较声明。",
+        "kind": "synthesis",
+        "scope": "由数据表示对象、质量聚合边界、审查准则与换版补缺阶梯共同形成的章末条件使用综合",
+        "evidenceIds": [
+          "ev-db2011-conditional-consistency",
+          "ev-db2011-review-purpose",
+          "ev-db2011-change"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-conditional-consistency",
+            "relation": "supports",
+            "rationale": "Table2.1允许最后选择中足够一致的数据补缺并逐项论证；p64要求记载不一致的作用，支持有条件而非全有全无的使用判断。"
+          },
+          {
+            "evidenceId": "ev-db2011-review-purpose",
+            "relation": "supports",
+            "rationale": "数据集审查为具体目标范围的适用性评价提供信息，并不替代用户判断。"
+          },
+          {
+            "evidenceId": "ev-db2011-change",
+            "relation": "supports",
+            "rationale": "对更新和关联影响的记录为后来修订提供具体连接。"
+          }
+        ],
+        "premiseIds": [
+          "cl-db2011-represented-object",
+          "cl-db2011-documenting-number",
+          "cl-db2011-missing-and-zero",
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-versioned-confidence",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"
+        ],
+        "caveats": [
+          "允许逐项论证不等于所有不一致或遗漏都可接受，也不替代特定研究的适用规则、敏感性或不确定性分析。",
+          "本段综合各公开指南与方法规范的适用性边界，不代替针对具体现实数据集的现场核验或付费国际标准条文审阅。"
+        ],
+        "reasoning": "目标范围给出判断对象，文档与审查提供已知条件，允许有理由的有限补缺避免把完美数据作为唯一选项；变更记录保留修订入口。此连接是作者综合，不由来源名望或审查标签自动成立。",
+        "conceptIds": [],
+        "status": "reviewed",
+        "reviewedAt": "2026-11-22",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "合并第 25 章后去除指向原前半篇《过程数据的用途》的悬空自指，改为自然承接本章前两节与后两节。"
+    },
+    {
+      "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-quality-architectures-and-prerequisite-split",
+        "status": "reviewed",
+        "text": "把代表性、完整性与精密度写成可核查记录，不同体系分出四条路径（表 1）。UNEP/SETAC（2011）并列定性维度而不设合成公式。ILCD 2010 将技术、地域、时间代表性与完整性（C）、精密度（P）、方法学一致性（M）共 6 项纳入 1–5 分标度（未知项赋 5 分，不适用项赋 0 分并扣减有效项数）。欧盟建议书 (EU) 2021/2279 与 EF 指南 2.0 则将完整性与方法学一致性剥离为不可拿高精密度抵消的二元准入前提（XML 字段固定标“不适用”），仅对 TeR、GeR、TiR、P 四项打分。瑞士 ecoinvent v3 第 10 章走上另一条路：不算数据集级标量分，而针对每条输入输出交换流，把基本不确定度与 5 项谱系矩阵指标相加为对数正态底层正态方差（5 分最差档五项附加方差合计 0.21），专供蒙特卡洛模拟传播；其经验校准将在后篇《质量评分与概率》专门检验。",
+        "scope": "UNEP/SETAC 2011、ILCD 2010、欧盟环境足迹体系与 ecoinvent v3 四类数据质量记录架构及前置条件拆分的横向比较",
+        "caveats": [
+          "ecoinvent v3 的 0.21 仅为五项谱系指标在 5 分档下的底层正态附加方差之和，实际交换流总方差还须加上按物质与交换类别查表所得的基本不确定度方差。",
+          "ecoinvent v3 五项谱系指标在 5 分档下的底层正态附加方差依次为：可靠性 0.04、完整性 0.008、时间相关性 0.04、地域相关性 0.002、进一步技术相关性 0.12（合计 0.21）。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-intrinsic-vs-context-representativeness",
+          "cl-db2011-representativeness-and-precision",
+          "cl-db2011-documenting-number"
+        ],
+        "evidenceIds": [
+          "ev-db2011-quality-dimensions",
+          "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "ev-dapp147-ec2021-dqr-equations-and-dnm",
+          "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+          "ev-dapp147-ecoinvent2013-pedigree-variance"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-quality-dimensions",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 表 4.1 提供定性质量维度基准，与标量 DQR 及交换级谱系方差对照。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.3—12.4 节给出六项指标、式 3 最弱项五倍权重、表 7 三档上限及表 9 五维合规架构。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-dqr-equations-and-dnm",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.5—4.6.5.8 节给出四项指标式 19—20、表 22 五档、数据需求矩阵三情境与情境 2 选项 2 地域分下调 30%。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-provider-dqr-and-ceiling",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.2.17 节规定前 80% 单分贡献重标定、单项加权上限 3.0 及方法学与完整性标 Not applicable。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-pedigree-variance",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 第 10 章规定交换流级基本不确定度加 5 项谱系方差的对数正态六项和（5 分谱系附加方差和为 0.21）。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "统一跨章引称，将“后篇《质量评分与概率》”改为“后文《质量评分与概率》”。"
+    },
+    {
+      "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-validation-vs-review-and-team-thresholds",
+        "status": "reviewed",
+        "text": "把“自动程序校验”与“独立专家审查”放回各体系细则，可见四级递进门槛（表 1）。ecoinvent v3 以在线 ecoEditor 自动例程作验证（缺全球父过程 GLO 等硬阻断，物质异常发警告），人工审查要求转换活动入库前经至少 3 名专家并行审阅（3.0 版坦承当时自动检查与三审尚未全覆盖）。欧盟国际参考生命周期数据系统（ILCD）2010 入门级（ILCD-EL）允许 1 名独立外部评审员（免单独报告）或 1 名内部评审员附报告。欧盟环境足迹（EF）合规数据集指南 2.0 版则否决单人外审与双人内审，仅准许至少 2 名含外部专家联合评审，强制签署共识报告并用 Look@LCI 复算内嵌结果（偏差超 1% 即不合规）；研究对外沟通时，欧盟建议书 (EU) 2021/2279 要求验证员三项资质至少达 6 分，公司特定初级数据必须现场核查。天工公开规范（TIDAS v0.3.0）在审查枚举中保留“未经审查”并把阻断权交予下游消费方——通过公开模式校验只代表记录诚实合式，不等于跨过专家评审门槛。",
+        "scope": "ecoinvent v3、ILCD 2010 与入门级 1.1 版、EF 合规数据集指南 2.0 版、欧盟建议书 (EU) 2021/2279 及 TIDAS v0.3.0 在程序验证、专家人数、现场核查与模式边界上的对照",
+        "caveats": [
+          "EF 合规数据集指南第 8 章针对次级数据集入库评审，欧盟建议书第 8 章针对面向外部沟通的环境足迹研究验证，二者在单人外部验证员能否达标及资格计分方式上各有专属规定，不可混用。",
+          "ecoinvent v3 验证结果写入第 3340 字段，3 名专家含至少 1 名经济活动编辑加至少 2 名地理、清单指标、元数据、语言横向编辑；EF 指南 2.0 表 4 批准类型 1（≥3 名含 ≥1 外部）与类型 2（2 名含 ≥1 外部），要求两位有效数字 DQR；欧盟建议书第 8.3.1–8.4.1 节三项准则每项至少 1 分、总分至少 6 分。"
+        ],
+        "premiseIds": [
+          "cl-db2011-review-relative-to-criteria",
+          "cl-db2011-review-questions",
+          "cl-db2011-validation-context"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+          "ev-dapp147-ilcd2010-dataset-types-and-review",
+          "ev-dapp147-ilcd2012-entry-level-rules",
+          "ev-dapp147-efguide2020-review-types-and-looklci",
+          "ev-dapp147-ec2021-verification-and-surveillance",
+          "ev-dapp147-tidas-process-review-schema",
+          "ev-dapp147-tidas-adjudication-boundary"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-ecoeditor-and-editorial-review",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 第 12 章区分写入第 3340 字段的自动验证与目标至少 3 名专家（含 4 类横向编辑）审查，并披露 3.0 版缺口。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dataset-types-and-review",
+            "relation": "supports",
+            "rationale": "ILCD 2010 界定三类过程数据集、情景 A/B/C1/C2 合规边界及第 11 章关键评审委派规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-entry-level-rules",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 7 规定入门级将质量合规标为 Not defined，并允许单名合格外审或内审方案。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-review-types-and-looklci",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 8 章仅批准类型 1 与类型 2 含外部专家联合评审并设 Look@LCI 1% 偏差红线。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-verification-and-surveillance",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 8 章规定验证员至少 6 分资格、初级数据强制现场核查、Look@LCI 1% 偏差及 3 年有效期内 10.0% / 5.0% 重审阈值。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-process-review-schema",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 过程模式支持单条或数组审查历史，含 Not reviewed 六值枚举与可选完整报告引用。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-adjudication-boundary",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 公开裁决说明把公开规则真假定义同下游消费方严重度、阶段及阻断策略严格分离。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "合并第 25 章后将第 3 节正文内指向后表（表 2）的旧表号“表 1”更正为“表 2”，并精简合并缝处的重复缩写展开。"
+    },
+    {
+      "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+        "status": "reviewed",
+        "text": "读官方数据集元数据时，常会见到多项“完全合规”（Fully compliant）与多项“未定义”（Not defined）并列；不了解五维合规块编码，极易将正常声明误判为质量缺陷（表 1）。ILCD 2010 将合规拆成质量、方法、命名、审查与文档五维；2012 年入门级规则（1.1 版）为完整手册合规设 12 套情景×质量通用唯一标识符（UUID），为入门级另设标识并将质量合规固定填为“Not defined”。EF 3.1 增补说明（Valente 等 2022）规定官方 EF 数据集须并列声明 6 组合规系统（无类别规则时 5 组）：建议书与类别规则全填完全合规，ILCD 入门级仅质量填“Not defined”，ISO 14040/14044 分别将各自未界定的命名、文档、审查或质量填“Not defined”，而 EF 参考包流列表一组仅命名填完全合规。可见“Not defined”精确标识上游标准本身未界定的维度，绝非漏审；核验机器规则时还须注意增补说明第 5 页红字标题将原指南第 5.4.2 节支撑子过程条款误标为第 5.4.1 节。",
+        "scope": "ILCD 2010 表 9 五维合规架构、ILCD 数据网络合规规则（1.1 版）12 套完整合规加入门级标识矩阵与 EF 3.1 增补说明表 1 六组合规声明及原件节号勘误",
+        "caveats": [
+          "合规系统标识仅反映数据集发布者与评审组按当时参考包签认的制度状态；数据集跨版本迁移或跨语境复用时仍须重新核对参考包版本与数据需求矩阵。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-validation-vs-review-and-team-thresholds",
+          "cl-db2011-recommendation-strength",
+          "cl-db2011-review-of-guidance"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+          "ev-dapp147-ilcd2012-twelve-compliance-uuids",
+          "ev-dapp147-ilcd2012-entry-level-rules",
+          "ev-dapp147-efguide2020-supporting-subprocesses",
+          "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ilcd2010-dqr-formula-and-five-aspects",
+            "relation": "supports",
+            "rationale": "ILCD 2010 第 12.3—12.4 节给出六项指标、式 3 最弱项五倍权重、表 7 三档上限及表 9 五维合规架构。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-twelve-compliance-uuids",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 2—4 给出完整 ILCD 合规 12 套过程源数据集 UUID、3 年建设期与入门级 UUID。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ilcd2012-entry-level-rules",
+            "relation": "supports",
+            "rationale": "EUR 24380 EN 表 7 规定入门级将质量合规标为 Not defined，并允许单名合格外审或内审方案。"
+          },
+          {
+            "evidenceId": "ev-dapp147-efguide2020-supporting-subprocesses",
+            "relation": "supports",
+            "rationale": "EF 合规数据集指南 2.0 版第 5.4.1—5.4.2 节界定部分终止系统中心数据集与禁止独立复用的非主要支撑子过程。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+            "relation": "supports",
+            "rationale": "EF 3.1 增补说明表 1 规定固定 6 组（或 5 组）合规系统声明与 Not defined 填法，且第 5 页标题误印第 5.4.1 节。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "合并第 25 章后将第 3 节正文内指向表 2 的旧表号“表 1”更正为“表 2”。"
+    },
+    {
+      "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-package-migration-inheritance-and-surveillance",
+        "status": "reviewed",
+        "text": "当背景库、参考包或工厂运行随时间演进，旧版适用理由与验证声明能否沿用受制于三层联动（表 1）。一是背景库残差重算：ecoinvent v3 新增他国同类活动会联动改写世界其余地区残差（RoW）与下游市场份额。二是参考包换版漂移与代理降格：欧盟联合研究中心报告（JRC130796）对 2,752 份官方 EF 节点数据集的实测表明，底层物质能量交换分毫未动，仅由 EF 3.0 升至 3.1 就使前三位最相关影响类别分别在 6%（171）、10%（280）与 13%（358）份数据集中易位；欧盟建议书附件一第 4.6.3 节亦规定，旧版转换而未经新版重审的数据集一律降格为代理数据。天工公开规范（TIDAS v0.3.0）则强制定长版本号（NN.NN 或 NN.NN.NNN）随内容变更严格递增。三是验证有效期与恶化红线：欧盟建议书第 8.5.3 节规定验证声明最长有效 3 年，且监督期内任一对外沟通影响类别恶化超 10.0% 或单一总分恶化超 5.0% 即强制更新重验。",
+        "scope": "ecoinvent v3 残差联动、EF 3.0 至 3.1 官方 2,752 份数据集主类易位与旧版转换降格、TIDAS 版本递增规则及欧盟建议书 3 年有效期与 10.0% / 5.0% 重审阈值的贯通分析",
+        "caveats": [
+          "JRC130796 报告的 6%、10% 与 13% 顺位易位统计基于 2,752 份官方 EF 节点数据集的单一总分测试，具体产品模型的主导过程是否易位仍取决于前台配方权重。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+          "cl-db2011-versioned-confidence"
+        ],
+        "evidenceIds": [
+          "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+          "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+          "ev-weight135-jrc130796-nf-drift-and-rankings",
+          "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "ev-dapp147-ec2021-verification-and-surveillance",
+          "ev-dapp147-tidas-public-rules"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-dapp147-ecoinvent2013-glo-row-and-markets",
+            "relation": "supports",
+            "rationale": "ecoinvent v3 指南界定转换活动与消费组合市场活动拆分、强制 GLO 父过程与动态 RoW 残差及 3.0 版负残差置零规则。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ef31addendum-six-uuid-matrix-and-erratum",
+            "relation": "supports",
+            "rationale": "EF 3.1 增补说明表 1 规定固定 6 组（或 5 组）合规系统声明与 Not defined 填法，且第 5 页标题误印第 5.4.1 节。"
+          },
+          {
+            "evidenceId": "ev-weight135-jrc130796-nf-drift-and-rankings",
+            "relation": "supports",
+            "rationale": "JRC130796 实测 2,752 份官方 EF 数据集在底层清单未变时升至 EF 3.1 后有 6%、10%、13% 发生前三主类易位。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.3—4.6.4 节规定次级数据四级优先序、旧版转换降为代理、10% 入门级上限与 3.0% 累计截断。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-verification-and-surveillance",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 8 章规定验证员至少 6 分资格、初级数据强制现场核查、Look@LCI 1% 偏差及 3 年有效期内 10.0% / 5.0% 重审阈值。"
+          },
+          {
+            "evidenceId": "ev-dapp147-tidas-public-rules",
+            "relation": "supports",
+            "rationale": "TIDAS v0.3.0 公开规则限定生产组合与消费组合权重基础、分离绿证与物理发电并要求 NN.NN / NN.NN.NNN 版本递增。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "合并第 25 章后将第 4 节正文内指向表 2 的旧表号“表 1”更正为“表 2”。"
+    },
+    {
+      "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+      "op": "modify",
+      "from": {
+        "id": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+        "status": "reviewed",
+        "text": "若首选合规库缺匹配次级数据，制度规范并非任由拼凑，而是排成刚性补缺阶梯（表 1）。欧盟建议书附件一第 4.6.3–4.6.4 节定下四级阶梯与三重截断红线：首选 EF 合规次级数据；其次用 EF 合规代理并记入局限性；再次用流命名对齐的 ILCD 入门级代理，但累计对单一总分贡献不得超 10% 且禁重算数据质量评级（DQR）；仍不可得则必须剔除并作数据缺口交验证员确认。唯有被排除过程在物料、能量及每一项影响类别（含单一总分）累计占比均低于 3.0% 且论证不显著时，方可截断免除。针对 EF 3.1 次级数据阶段性紧缺，欧盟委员会 2026 年 5 月过渡指导允许在下一代数据库到位前（预计至 2028 年）先用技术秘书组选定的 ILCD 入门级数据，仍缺失时再择用其他次级数据并接受核查，同时直言这可能降低跨研究可比性。表 1 横向对照了五套体系的审查、合规、换版与补缺制度边界。",
+        "scope": "UNEP/SETAC 2011 末位补缺、欧盟建议书 (EU) 2021/2279 四级次级阶梯与 3.0% 截断边界及欧盟 2026 过渡指导比较",
+        "caveats": [
+          "欧盟 2026 年 5 月过渡期指导文件中的 2028 年系该文件对下一版官方环境足迹数据库到位时间的预期表述，实际切换日期取决于欧盟后续正式发布进程。",
+          "过渡期放宽次级数据来源旨在维持规则可执行性，并不免除局限性披露或自动赋予跨研究严格可比资格。"
+        ],
+        "premiseIds": [
+          "cl-dapp147-weakest-link-vs-mean-and-80pct-masking",
+          "cl-dapp147-package-migration-inheritance-and-surveillance"
+        ],
+        "evidenceIds": [
+          "ev-db2011-conditional-consistency",
+          "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+          "ev-kb44-ec-transition2026-scope",
+          "ev-kb44-ec-transition2026-hierarchy"
+        ],
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-db2011-conditional-consistency",
+            "relation": "supports",
+            "rationale": "UNEP/SETAC 2011 表 2.1 末行与第 2.3.4 节界定无更佳资料时的条件性补缺与逐项论证要求。"
+          },
+          {
+            "evidenceId": "ev-dapp147-ec2021-secondary-hierarchy-and-cutoff",
+            "relation": "supports",
+            "rationale": "欧盟建议书第 4.6.3—4.6.4 节规定次级数据四级优先序、旧版转换降为代理、10% 入门级上限与 3.0% 累计截断。"
+          },
+          {
+            "evidenceId": "ev-kb44-ec-transition2026-scope",
+            "relation": "supports",
+            "rationale": "欧盟 2026 年 5 月过渡指导将次级数据过渡安排延至预计 2028 年下一版 EF 数据库到位，并提示可比性影响。"
+          },
+          {
+            "evidenceId": "ev-kb44-ec-transition2026-hierarchy",
+            "relation": "supports",
+            "rationale": "欧盟 2026 年 5 月过渡指导第 2.2 节规定缺失 EF 合规数据时依次采用技术秘书组选定入门级数据与用户披露自选数据。"
+          }
+        ],
+        "reasoning": "基于已固定哈希值的一手规范原件与精确有理数验算，区分各体系共同要求、条件对应与算式或门槛反转。"
+      },
+      "rationale": "合并第 25 章后将第 4 节两处指向表 2 的旧表号“表 1”更正为“表 2”，并精简重复 DQR 展开。"
+    },
+    {
+      "id": "cl-bio127-climate-diagnostic-synthesis",
+      "op": "modify",
+      "from": {
+        "id": "cl-bio127-climate-diagnostic-synthesis",
+        "status": "reviewed",
+        "kind": "synthesis",
+        "reviewKind": "agent-source-check",
+        "reviewedAt": "2026-11-22",
+        "conceptIds": [],
+        "mappingIds": [],
+        "premiseIds": [
+          "cl-bio127-midpoint-endpoint-genealogy",
+          "cl-bio127-feedback-perspective-asymmetry",
+          "cl-bio127-ef31-subindicator-partition",
+          "cl-bio127-zero-zero-vs-minus-plus-one",
+          "cl-bio127-co-removal-and-methane-shift",
+          "cl-bio127-package-and-report-discrepancies",
+          "cl-bio127-storage-abolition-and-dluc-window",
+          "cl-climate-debate"
+        ],
+        "evidenceIds": [
+          "ev-bio127-ec2021-climate-rules",
+          "ev-bio127-ef31-climate-xmls",
+          "ev-bio127-ef31-nf-workbook",
+          "ev-bio127-jrc130796-climate",
+          "ev-bio127-rivm-ch2-midpoints",
+          "ev-bio127-lcimpact2020-climate"
+        ],
+        "evidenceLinks": [
+          {
+            "evidenceId": "ev-bio127-ec2021-climate-rules",
+            "relation": "supports",
+            "rationale": "提供PEF三子指标5%报告门槛、原生林归LULUC、0/0加出厂生物碳元数据、零碳储存抵扣与20年dLUC均摊规则。"
+          },
+          {
+            "evidenceId": "ev-bio127-ef31-climate-xmls",
+            "relation": "supports",
+            "rationale": "提供1099=1074+13+12互不重叠划分、全部6条N₂O=273.0归Fossil、CO与biogenic-100yr清零及14af9ca7.xml输出CO₂仅5个子区室的机读依据。"
+          },
+          {
+            "evidenceId": "ev-bio127-ef31-nf-workbook",
+            "relation": "supports",
+            "rationale": "提供全球人均气候基准7553.08 kg CO₂ 当量/人、权重21.06%及K1161遗留FGD值27.2的复核依据。"
+          },
+          {
+            "evidenceId": "ev-bio127-jrc130796-climate",
+            "relation": "supports",
+            "rationale": "提供CO因子移除、NF下降6.7%及2752个数据集中-58%至+302%分化变动的实证边界。"
+          },
+          {
+            "evidenceId": "ev-bio127-rivm-ch2-midpoints",
+            "relation": "supports",
+            "rationale": "提供ReCiPe 2016仅H视角开启非CO₂碳反馈（N₂O呈264→298→78.8）的跨视角对照。"
+          },
+          {
+            "evidenceId": "ev-bio127-lcimpact2020-climate",
+            "relation": "supports",
+            "rationale": "提供LC-IMPACT零中点及“确定性影响”（健康3病种、淡水0因子）对“全部影响”（健康6病种）的分级对照。"
+          }
+        ],
+        "scope": "跨标准、数据库与方法包核查“kg CO₂ 当量”或气候损害分数的五步实操诊断准则。",
+        "text": "在实务中对照不同来源的“kg CO₂ 当量”或气候损害数据集，上述方法差异可拆成五道核查：一查因果链层级与反馈配对（百年中点、三视角恒定终点还是无中点损害，以及 ReCiPe 仅百年开启非 CO₂ 反馈造成的折线）；二查子指标路由（确认 EF 3.1 原生林归土地利用、氧化亚氮归化石且三项子指标无独立归一化权重）；三核摇篮到大门生物碳账本（杜绝 −1/+1 与 0/0 混接制造虚假负碳，并核验物理生物碳含量）；四分静态制度窗口与动态日历积分（区分 EU 2021/2279 零碳储存抵扣与 20 年历史土地转换均摊窗口，与保留真实经过时长的动态核）；五查数据包与印本异文（如一氧化碳清零、归一化工作簿 27.2 缓存值与高空子区室缺失）。把这五层外部方法差异剥离清楚，再回头看本篇的算例与指标比较，每一步成立的条件便一目了然。",
+        "reasoning": "在全章结语前整合跨体系中终点架构、非对称碳反馈、EF 3.1子指标与0/0账本、时间窗口及工具包异文，形成五步结构化核查链。",
+        "caveats": [
+          "完成上述五步核算与版本对齐只能保证气候指标内部逻辑一致，仍不能替代未来能源与工艺情景设定，也无法单独裁决跨世代排放责任分配。"
+        ]
+      },
+      "rationale": "合并第 15 章后去除残留拆篇措辞（“外部方法差异”“本篇”），统一为单章自然衔接。"
+    }
+  ],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [
+    {
+      "path": "content/docs/book/index.mdx",
+      "fromSha256": "9d95d8a3d77e3ad296191f990b045ab2963a6ee9ae1375c14ac93e45b9111945",
+      "toSha256": "807dc7faf71c901b33755ff11a13fa8cc6a68d5f5804a38a785dca0a161ec11e",
+      "previous": "---\ntitle: 阅读导论\ndescription: 按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。\n---\n\n本书围绕一个问题展开：一项环境判断需要哪些依据？先明确所比较的服务，再把提供服务所需的活动组织为系统，据此计算排放和资源需求。环境模型进一步估计这些量可能造成的后果。使用结果时，还须回到原来的问题，判断数据和分析能够支持什么结论。\n\n<ReaderSection id=\"问题与历史\" />\n<ReaderSection id=\"用途与地区语境\" />\n\n第一部沿[生命周期视角](/docs/book/integrative-ambitions/)、[饮料容器账本](/docs/book/early-container-comparisons/)、[容器比较与政策判断](/docs/book/early-container-policy-and-systems/)、[评价框架的形成](/docs/book/framework-history/)、[CML指南中的评价与改进](/docs/book/cml-computation-judgment-and-improvement/)与[清洁生产中的生命周期评价](/docs/book/cleaner-production-purpose-and-prospects/)展开：先从早期饮料容器核算与政策分析辨明两类问题所需的不同证据，再系统对照 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段组织、比较断言门槛、影响加权与审验鉴证上的共同核心与分歧，最后考察清洁生产中的应用条件。\n\n<ReaderSection id=\"比较对象与方法选择\" />\n<ReaderSection id=\"从系统关系到计算结果\" />\n\n第二部沿[功能参照](/docs/book/service-and-reference/)、[过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)与[混合清单](/docs/book/inventory-boundary-and-hybrid/)展开，说明系统如何建立与闭合：从功能单位、声明单位与活动层参考产品的四体系对照出发，经线性过程配平、流与交换边界及零/缺项分辨，到过程截断阈值、资本品边界与混合清单防重叠的跨体系比较。第三部沿[共产品的分配与替代](/docs/book/allocation-and-substitution/)、[分配规则与修订](/docs/book/allocation-judgment-and-corrections/)、[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)展开，区分如何分担已有负担与一项选择会改变哪些供给活动，并对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）在替代边界、市场约束、电力尺度与循环足迹公式（CFF）上的条件与分歧。\n\n清单记录资源采掘、土地利用、取耗水与物质排放。第四部沿[中点与终点](/docs/book/midpoint-endpoint-value-choices/)、[气候响应与当量](/docs/book/climate-response-and-metrics/)、[排放时间与评价](/docs/book/emission-time-and-assessment/)、[酸化与营养富集](/docs/book/acidification-and-nutrient-pathways/)、[颗粒物排放与健康损害](/docs/book/particulate-emissions-and-health/)、[耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)与[毒性路径](/docs/book/usetox-pathways-and-boundaries/)展开，系统对照 ReCiPe 2016、欧盟环境足迹（EF 3.1）、GLAM、IPCC AR6、AWARE 与 USEtox，解释清单量如何经由不同环境机制转化为中点与终点指标。阅读时可以选取一个表征因子，追查它所对应的干预对象、空间背景、时间窗口与证据边界。第五部沿[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)与[环境损害估值](/docs/book/lime-preferences-and-damage-weights/)考察跨类别取舍，辨析政策目标距离、混合稳健度权重、空间表征与归一化分母耦合、保护领域截停以及陈述偏好货币估值如何改变方案排序与公开比较边界。\n\n<ReaderSection id=\"时间未来与相邻评价\" />\n\n不同章节中的“时间”也可能表示不同对象。气候计算关心排放发生的时刻和响应的计算终点，[未来技术与情景](/docs/book/future-technology-and-context/)则需要设定工艺规模及其供给背景。第五部后两章通过[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)和[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)进一步区分产品与组织参照、风险工时量表与不可抵消的基本权利底线，以及主体成本账本、异质货币消重、多准则否决阈值与地球边界配额分配；合并使用前，仍须明确某个量表示谁的经历、权利或支出。\n\n<ReaderSection id=\"数据与审查\" />\n<ReaderSection id=\"数据质量与不确定性\" />\n\n第六部考察结果所依据的数据、模型和规则。取得数据并不意味着它就适合当前对象，[过程数据的用途](/docs/book/database-fitness-and-documentation/)与[数据审查与版本](/docs/book/review-support-and-version-boundaries/)分别说明背景数据集的适用性、区域化覆盖与审查边界；[变异与不确定性](/docs/book/uncertainty-and-variability/)辨明五类误差层次及全局灵敏度与蒙特卡洛次数的失效边界；[质量评分与概率](/docs/book/data-quality-and-probability/)借柏林杯重调查与跨体系对照区分谱系方差、序数评级门槛与定性披露；[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)则说明自愿与法定规则如何把服务定义、活动量、合格评定与比较条件连成一体。\n\n<ReaderSection id=\"解释与使用\" />\n<ReaderSection id=\"完整做一遍\" />\n\n第七部先用[墙面服务比较](/docs/book/wall-service-to-comparison/)复算假想条件并对照国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的比较断言与成对不确定性门槛；再通过[购物袋研究](/docs/book/interpretation-and-limits/)对照英国环境署与丹麦环保署评估及国际解释审查规则，区分实际资料能解释的差异与需另行佐证的建议；随后借[未来技术与情景](/docs/book/future-technology-and-context/)辨析前瞻性、事前与动态评价中的工艺放大、情景背景与时间边界。\n\n<ReaderSection id=\"把各章接起来\" />\n\n收束章结合容器、墙面和购物袋案例，将全书的服务界定、系统边界、背景数据、影响路径、价值取舍、不确定性与审查体制收束为七类定向修订路由。把研究对象、数量关系、适用边界与证据来历说明白，后续研究才知道出现新资料时应重算哪一步、保留哪些既有依据，以及哪些推论不得越界。\n\n初次系统学习可以顺读七部。有清单计算基础的读者，也可以从过程网络或环境路径开始，遇到定义和历史身份问题时再查前文。若想先看一次完整比较，可以从墙面和购物袋案例入手，沿注释及章内链接查阅服务、矩阵或气候指标。三条阅读路线采用同一套案例条件和文献依据。\n"
+    },
+    {
+      "path": "content/docs/book/early-container-policy-and-systems.mdx",
+      "fromSha256": "ac0b725f58c003f8932c4a4c72dfed1748a010eb8ef7843c1e1f35a0d83482ee",
+      "toSha256": "d4fd70b7bdc3f4f5bfff4085c19ce83d7cacedcb3bf67e7fb43c18a323126626",
+      "previous": "---\ntitle: 容器比较与政策判断\ndescription: 重读1972年的政策报告，区分容器比较、其他消费与全国政策判断，并核对同期能源问题的历史依据。\n---\n\n## 政策干预的理由 [#政策理由与数量对象]\n\n<Prose ids=\"cl-early-policy-question-version cl-early-policy-counting-objects\" />\n\n## 其他消费与能源需求 [#从容器链走向其他消费]\n\n<Prose ids=\"cl-early-policy-other-spending cl-early-policy-io-unit cl-early-policy-resource-comparison cl-early-policy-priority cl-early-policy-judgment\" />\n\n## 能源危机与研究重点 [#能源危机与研究问题的变化]\n\n<Prose ids=\"cl-early-crisis-importance cl-early-research-plural-paths\" />\n\n接下来的[评价框架的形成](/docs/book/framework-history/)进一步考察各项分析任务如何组织为研究步骤。\n"
+    },
+    {
+      "path": "content/docs/book/future-technology-and-context.mdx",
+      "fromSha256": "430ca2e83a093f92aa6ad49248860f53358651ab23baa44338c55ba8f6c63048",
+      "toSha256": "1eaac03268b6599c55c4981358b0f30da2ba1d87f16dbf4b93fc1e2fd543c802",
+      "previous": "---\ntitle: 未来技术与情景\ndescription: 评价尚在开发的工艺时，怎样设定它未来的生产规模、同期竞争方案和供给条件？本章说明这些设定如何影响比较。\n---\n\n## 工艺放大与比较对象 [#技术规模与功能]\n\n<Prose ids=\"cl-future-definition cl-future-scale-up cl-future-incumbent\" />\n\n<Prose ids=\"cl-fut161-terminology-axes cl-fut161-upscaling-methods\" />\n\n## 情景与供给背景 [#情景与供给背景]\n\n<Prose ids=\"cl-future-scenarios cl-future-background cl-book-future-scenario-matrix\" />\n\n<Prose ids=\"cl-fut161-superstructure-iam cl-fut161-superstructure-limits\" />\n\n## 前瞻比较的适用条件 [#前瞻判断条件]\n\n<Prose ids=\"cl-future-impact-limits cl-future-comparison-conditions cl-book-future-decision\" />\n\n<Prose ids=\"cl-fut161-dynamic-time-horizons cl-fut161-temporal-barriers-values\" />\n\n**表：五类面向未来与时间解析 LCA 方法定位与适用边界对照**\n\n下表把五类常见的面向未来与时间解析 LCA 方法放在同一口径下对照，呈现它们在时间定位、技术成熟度、背景与影响评价处理以及主要局限上的差异。\n\n| 方法类别与代表文献 | 时间定位与解析度 | 技术成熟度与放大焦点 | 背景系统与影响评价处理 | 主要适用边界与局限 |\n| --- | --- | --- | --- | --- |\n| 前瞻性 LCA（推荐总称；Arvidsson 等 2024；Steubing 与 de Koning 2021） | 面向未来特定年份或时段，多数按单一时点聚合求解 | 可评估新兴技术，也可在未来背景下评估已成熟技术 | 需用综合评估模型（IAM）耦合未来背景数据库（如超结构＋情景差异文件），避免前景—背景时间错位 | 超结构架构仅解决软件工程瓶颈、不担保情景质量；存在幽灵过程、不确定度与许可局限 |\n| 事前 LCA（Arvidsson 等 2024；Tsoy 等 2020） | 面向技术商业化与大规模投产之前的未来时点 | 必含技术成熟度由实验室／中试向工业规模的放大推演 | 依三步放大框架与流程模拟、手工计算、分子结构模型或代理数据估算工业清单，再耦合未来背景 | 综述 18 项案例中 0 篇报告技术就绪度（TRL）、0 篇完成投产后实测回验，专家参与与流程图披露不足 |\n| 预期式 LCA（Arvidsson 等 2024） | 面向新兴技术未来发展路径 | 与事前 LCA 同样关注早期技术放大 | 在前景与背景建模之外，着重引入利益相关方参与系统边界、功能单位、影响类别与权重选择 | 结果高度依赖参与方价值偏好与治理框架，不可直接替代技术实测 |\n| 实验室尺度 LCA（Arvidsson 等 2024；Tsoy 等 2020） | 当下或近期实验室研究阶段 | 保持低成熟度现状，不做工业规模放大 | 直接使用实验室实测或近似代理数据，通常配以现行背景数据库 | 仅宜用于早期研发热点诊断，不能直接拿去与成熟商业工业技术比拼优劣 |\n| 动态 LCA（Lueddeckens 等 2020；Arvidsson 等 2024） | 按时间点解析排放发生时刻与影响响应（区分评估、清单与表征三类时间范围） | 不限于新兴技术，重点追踪全生命周期排放时序 | 仅动态清单属半动态；同时耦合动态清单与动态表征因子才构成全动态 LCA | 绝大多数类别缺乏动态表征因子，供应链时序数据与软件受限；时间范围、贴现率与动态归一化暗含价值选择 |\n\n无论是当下产品比较还是面向未来的情景推演，单个章节的结论都仍需放回整本书的证据链条中检验。最后两篇[《服务、系统与时间》](/docs/book/connecting-objects-references-and-time/)与[《判断依据与修订》](/docs/book/from-connected-results-to-conditional-judgment/)将回到容器、墙面与购物袋三组案例，说明当新证据或新规则出现时，应如何定向修订结论。\n"
+    },
+    {
+      "path": "content/docs/allocation.mdx",
+      "fromSha256": "e484f2021bba9b579a50b7cb7b31667acc2f0f528ea2cf659dd4a323ad40b4f4",
+      "toSha256": "8e38eb42454eefe8908156cd5da05d04a4da0d72765d6ae4252db98c49baba0c",
+      "previous": "---\ntitle: 系统模型辨读\ndescription: 通过 ecoinvent 的几种系统模型，说明哪些过程向谁供给，以及废物处理和再生生产的负担分别由谁承担。\n---\n\n回收材料的数据可能同时记着废物怎样处理、处理后怎样得到再生材料。先查采用的是哪种系统模型，再顺着材料的去向看，上下游各记了哪些活动，在哪一步交接负担。\n\n## 系统模型的选择 [#系统模型规定了什么]\n\n<Prose ids=\"cl-system-model\" />\n\n以下几种规则依据<SourceRef id=\"src-ecoinvent-models\" />对 ecoinvent 系统模型的介绍。使用其他 LCA 数据库时，要另查所用模型的规定。\n\n## 回收链与负担 [#回收链的负担如何解释]\n\n<Prose ids=\"cl-cutoff\" />\n\n说明里写着“burden-free”时，先找交接点，查看再生材料从哪里开始计负担、此前哪些负担没有一同转入。交接后的收集、运输和处理，要按具体记录查。\n\n<Prose ids=\"cl-apos\" />\n\n比较这两种做法时，可以把各自纳入的处理和再生路线摆在一起，再看哪些产物算作有用产出。两张结果表为何不同，可以从所计的活动和产物查起。\n\n<Prose ids=\"cl-conseq\" />\n\n读这个模型时，要查它选了什么作为替代供给、哪些供应受到约束，以及研究覆盖哪段时间。两份文件都写着 substitution 时，仍要核对这些条件，才能判断它们采用的办法是否相同。\n\n## 名称与版本 [#名称与版本]\n\n<Prose ids=\"cl-apos-history\" />\n\n改名可以由版本说明核实。若要追踪方法有没有变，要比较相应版本实际采用的规则。若要解释使用者受到什么影响，还需查看使用记录或其他证据。\n\n## 格式与方法 [#把格式连接与方法放在一起比较]\n\n<Prose ids=\"cl-model-not-format\" />\n\n要查两次计算为何不同，先固定它们交付的服务，再把各模型所列的输入、输出、处理活动和分担规则摆在一起。找到从哪项活动或规则开始有差别，并说明这一比较适用的条件。\n\n[流与交换](/docs/flows/)解释数据怎样表达，[功能单位与参考流](/docs/functional-unit/)帮助固定要提供的服务；[共产品的分配与替代](/docs/book/allocation-and-substitution/)与[分配规则与修订](/docs/book/allocation-judgment-and-corrections/)进一步比较共同生产的分担理由与替代边界，[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)则依次检验供应响应、电力尺度与回收交接。\n"
+    },
+    {
+      "path": "content/docs/appendices/climate-numerical-reconstruction.mdx",
+      "fromSha256": "4503871c87193ec3aad4d0e58888688360905f11ed389607af700268b5d10a34",
+      "toSha256": "475d9359e77e66aceac1a59f0b61ffae4e76469d3bfb5e312169b9a05fe4e060",
+      "previous": "---\ntitle: 气候数值的重建\ndescription: 重算二氧化碳响应及其积分，并与论文表值对照。附录还复算历史程序的选定结果，考察结果对时间步长的敏感性。\n---\n\n## 参考响应 [#参考响应]\n\n<Prose ids=\"cl-climate-joos-design cl-climate-fit cl-climate-integral cl-climate-fit-reference\" />\n\n响应与积分的图示见[气候指标正文](/docs/book/climate-response-and-metrics/#响应与指标)。\n\n## 显示精度 [#显示精度]\n\n<Prose ids=\"cl-climate-reported-precision cl-climate-rounded-ratio\" />\n\n## 历史程序 [#历史程序]\n\n<Prose ids=\"cl-climate-native-scope cl-climate-grid\" />\n\n不同版本的指标及其比较用途见[气候指标正文](/docs/book/climate-response-and-metrics/#清单比较)。\n"
+    },
+    {
+      "path": "content/docs/appendices/cml-framework-calculations.mdx",
+      "fromSha256": "c466cc6643f09e4b1e159ee882abf869f3138f27c9cede17d547236cc638fc46",
+      "toSha256": "4892c3074e398a0cca9bf3acc29b793ac8a6cacd6124b80f942d58070cb101f2",
+      "previous": "---\ntitle: 指南算例复核\ndescription: 核对CML铝箔假想模型的原表与方程，区分局部和有限响应，再检查表征因子转为筛查分数后保留的信息。\n---\n\n本附录对应“评价框架与分析步骤”一章中的“清单计算”和“指南的实际采用”两节。阅读方程时，可先查阅[铝箔模型的活动记录和平衡关系](/docs/book/cml-computation-judgment-and-improvement/#从活动平衡到废物贡献)；阅读分档时，可对照[Guide因子与EPA筛查的用途](/docs/book/cml-computation-judgment-and-improvement/#另一个研究怎样使用这份指南)。\n\n## 方程与原表 [#方程与原表]\n\n<Prose ids=\"cl-cml-toy-determinant\" />\n\n## 参数响应 [#参数响应]\n\n<Prose ids=\"cl-cml-relative-response cl-cml-finite-response\" />\n\n关于技术可行性和设计重建，正文的[改进与解释](/print/#print-unit-626f6f6b2d6672616d65776f726b2d726573706f6e736962696c6974696573-改进与解释)继续展开讨论。\n\n## 因子范围与评分档位 [#来源范围与分档]\n\n<Prose ids=\"cl-cml-range-bins\" />\n\n正文的[指南的实际采用](/print/#print-unit-626f6f6b2d6672616d65776f726b2d726573706f6e736962696c6974696573-外部采用)将这项对照与点值匹配、不同示例的差异和筛查限制一并解释。\n"
+    },
+    {
+      "path": "content/docs/book/meta.json",
+      "fromSha256": "63d5051adfe6fd0cee51fe2642f18e338832058259337ca38aa07cf9d1067c1a",
+      "toSha256": "fd18efda56a42d4fba90190efeb265e38586c7ac7fe54e3afd95badab20bfc6d",
+      "previous": "{\n  \"title\": \"生命周期评价的前世今生\",\n  \"pages\": [\n    \"index\",\n    \"integrative-ambitions\",\n    \"early-container-comparisons\",\n    \"early-container-policy-and-systems\",\n    \"framework-history\",\n    \"cml-computation-judgment-and-improvement\",\n    \"cleaner-production-purpose-and-prospects\",\n    \"localization-evidence-and-denominators\",\n    \"service-and-reference\",\n    \"allocation-and-substitution\",\n    \"allocation-judgment-and-corrections\",\n    \"market-boundaries-and-response\",\n    \"electricity-service-and-response\",\n    \"recycling-chains-and-accounting\",\n    \"database-fitness-and-documentation\",\n    \"review-support-and-version-boundaries\",\n    \"product-footprint-rules-and-practice\",\n    \"inventory-calculation\",\n    \"exchange-semantics-and-conversion\",\n    \"inventory-boundary-and-hybrid\",\n    \"midpoint-endpoint-value-choices\",\n    \"ecological-scarcity-and-targets\",\n    \"lime-preferences-and-damage-weights\",\n    \"climate-response-and-metrics\",\n    \"acidification-and-nutrient-pathways\",\n    \"particulate-emissions-and-health\",\n    \"water-scarcity-and-reference\",\n    \"usetox-pathways-and-boundaries\",\n    \"emission-time-and-assessment\",\n    \"future-technology-and-context\",\n    \"social-assessment-objects-and-meaning\",\n    \"cost-perspectives-and-sustainability-combination\",\n    \"uncertainty-and-variability\",\n    \"data-quality-and-probability\",\n    \"interpretation-and-limits\",\n    \"connecting-objects-references-and-time\",\n    \"from-connected-results-to-conditional-judgment\",\n    \"wall-service-to-comparison\"\n  ]\n}\n"
+    },
+    {
+      "path": "config/book-edition.json",
+      "fromSha256": "051aa81263d59c182b73928cd5f0d2a49067c0d5e39f023a2b7b30d287c7aeb4",
+      "toSha256": "329cfe0de28f55a067497701e40e279f6f121bf6751ad8aa4d328cdd30b07f53",
+      "previous": "{\n  \"version\": 1,\n  \"units\": [\n    {\n      \"key\": \"/docs\",\n      \"source\": \"/docs\",\n      \"kind\": \"front-matter\"\n    },\n    {\n      \"key\": \"/docs/book\",\n      \"source\": \"/docs/book\",\n      \"kind\": \"front-matter\"\n    },\n    {\n      \"key\": \"/docs/book/integrative-ambitions\",\n      \"source\": \"/docs/book/integrative-ambitions\",\n      \"kind\": \"chapter\",\n      \"part\": \"问题的来源\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-comparisons\",\n      \"source\": \"/docs/book/early-container-comparisons\",\n      \"kind\": \"chapter\",\n      \"part\": \"问题的来源\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-policy-and-systems\",\n      \"source\": \"/docs/book/early-container-policy-and-systems\",\n      \"kind\": \"chapter\",\n      \"part\": \"问题的来源\"\n    },\n    {\n      \"key\": \"book-framework-responsibilities\",\n      \"source\": \"/monograph/framework-responsibilities\",\n      \"kind\": \"chapter\",\n      \"part\": \"问题的来源\",\n      \"sections\": [\n        {\n          \"id\": \"史料与职责\",\n          \"title\": \"史料与分析任务\"\n        },\n        {\n          \"id\": \"清单计算\",\n          \"title\": \"清单计算\"\n        },\n        {\n          \"id\": \"评价取舍\",\n          \"title\": \"评价取舍\"\n        },\n        {\n          \"id\": \"改进与解释\",\n          \"title\": \"改进与解释\"\n        },\n        {\n          \"id\": \"外部采用\",\n          \"title\": \"指南的实际采用\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/book/framework-history\",\n        \"/docs/book/cml-computation-judgment-and-improvement\"\n      ]\n    },\n    {\n      \"key\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"source\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"kind\": \"chapter\",\n      \"part\": \"问题的来源\",\n      \"sections\": [\n        {\n          \"id\": \"预防目的\",\n          \"title\": \"清洁生产的预防目标\"\n        },\n        {\n          \"id\": \"应用设想\",\n          \"title\": \"生命周期评价的应用\"\n        },\n        {\n          \"id\": \"发展条件\",\n          \"title\": \"本地应用的研究条件\"\n        }\n      ]\n    },\n    {\n      \"key\": \"/docs/book/service-and-reference\",\n      \"source\": \"/docs/book/service-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": \"服务与清单\",\n      \"sections\": [\n        {\n          \"id\": \"服务要求\",\n          \"title\": \"服务要求\"\n        },\n        {\n          \"id\": \"参考对象\",\n          \"title\": \"参考对象\"\n        },\n        {\n          \"id\": \"比较条件\",\n          \"title\": \"比较条件\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/functional-unit\"\n      ]\n    },\n    {\n      \"key\": \"/docs/book/inventory-calculation\",\n      \"source\": \"/docs/book/inventory-calculation\",\n      \"kind\": \"chapter\",\n      \"part\": \"服务与清单\",\n      \"sections\": [\n        {\n          \"id\": \"数量坐标\",\n          \"title\": \"数量坐标\"\n        },\n        {\n          \"id\": \"需求平衡\",\n          \"title\": \"需求平衡\"\n        },\n        {\n          \"id\": \"反馈边界\",\n          \"title\": \"反馈边界\"\n        }\n      ]\n    },\n    {\n      \"key\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"source\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"kind\": \"chapter\",\n      \"part\": \"服务与清单\",\n      \"sections\": [\n        {\n          \"id\": \"对象与交换\",\n          \"title\": \"系统边界与流的身份\"\n        },\n        {\n          \"id\": \"计算活动\",\n          \"title\": \"物质方向与处理活动\"\n        },\n        {\n          \"id\": \"转换边界\",\n          \"title\": \"模型转换与参照\"\n        },\n        {\n          \"id\": \"表征状态\",\n          \"title\": \"清单表征与零值\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/flows\",\n        \"/docs/characterization\"\n      ]\n    },\n    {\n      \"key\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"source\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"kind\": \"chapter\",\n      \"part\": \"服务与清单\",\n      \"sections\": [\n        {\n          \"id\": \"过程经济边界\",\n          \"title\": \"过程清单与经济数据\"\n        },\n        {\n          \"id\": \"双向账户\",\n          \"title\": \"双向账户\"\n        },\n        {\n          \"id\": \"误差来源\",\n          \"title\": \"误差来源\"\n        }\n      ]\n    },\n    {\n      \"key\": \"book-joint-production\",\n      \"source\": \"/monograph/joint-production\",\n      \"kind\": \"chapter\",\n      \"part\": \"负担分配与供给变化\",\n      \"sections\": [\n        {\n          \"id\": \"信息目的\",\n          \"title\": \"信息目的\"\n        },\n        {\n          \"id\": \"负担份额\",\n          \"title\": \"负担份额\"\n        },\n        {\n          \"id\": \"参照供给\",\n          \"title\": \"参照供给\"\n        },\n        {\n          \"id\": \"规则边界\",\n          \"title\": \"规则边界\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/book/allocation-and-substitution\",\n        \"/docs/book/allocation-judgment-and-corrections\"\n      ]\n    },\n    {\n      \"key\": \"/docs/book/market-boundaries-and-response\",\n      \"source\": \"/docs/book/market-boundaries-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": \"负担分配与供给变化\"\n    },\n    {\n      \"key\": \"/docs/book/electricity-service-and-response\",\n      \"source\": \"/docs/book/electricity-service-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": \"负担分配与供给变化\"\n    },\n    {\n      \"key\": \"/docs/book/recycling-chains-and-accounting\",\n      \"source\": \"/docs/book/recycling-chains-and-accounting\",\n      \"kind\": \"chapter\",\n      \"part\": \"负担分配与供给变化\"\n    },\n    {\n      \"key\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"source\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\"\n    },\n    {\n      \"key\": \"book-climate-equivalence\",\n      \"source\": \"/monograph/climate-equivalence\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\",\n      \"sections\": [\n        {\n          \"id\": \"响应与指标\",\n          \"title\": \"响应与指标\"\n        },\n        {\n          \"id\": \"气体与碳收支\",\n          \"title\": \"气体与碳收支\"\n        },\n        {\n          \"id\": \"清单比较\",\n          \"title\": \"清单比较\"\n        },\n        {\n          \"id\": \"排放日历\",\n          \"title\": \"排放日历\"\n        },\n        {\n          \"id\": \"历史与用途\",\n          \"title\": \"历史与用途\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/book/climate-response-and-metrics\",\n        \"/docs/book/emission-time-and-assessment\"\n      ]\n    },\n    {\n      \"key\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"source\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\"\n    },\n    {\n      \"key\": \"/docs/book/particulate-emissions-and-health\",\n      \"source\": \"/docs/book/particulate-emissions-and-health\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\",\n      \"sections\": [\n        {\n          \"id\": \"排放与健康量\",\n          \"title\": \"排放与健康量\"\n        },\n        {\n          \"id\": \"暴露与证据\",\n          \"title\": \"暴露与证据\"\n        },\n        {\n          \"id\": \"参照与响应\",\n          \"title\": \"参照与响应\"\n        },\n        {\n          \"id\": \"因子与比较\",\n          \"title\": \"因子与比较\"\n        }\n      ]\n    },\n    {\n      \"key\": \"/docs/book/water-scarcity-and-reference\",\n      \"source\": \"/docs/book/water-scarcity-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\"\n    },\n    {\n      \"key\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"source\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": \"环境后果\"\n    },\n    {\n      \"key\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"source\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"kind\": \"chapter\",\n      \"part\": \"尺度与取舍\"\n    },\n    {\n      \"key\": \"/docs/book/localization-evidence-and-denominators\",\n      \"source\": \"/docs/book/localization-evidence-and-denominators\",\n      \"kind\": \"chapter\",\n      \"part\": \"尺度与取舍\"\n    },\n    {\n      \"key\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"source\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"kind\": \"chapter\",\n      \"part\": \"尺度与取舍\"\n    },\n    {\n      \"key\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"source\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"kind\": \"chapter\",\n      \"part\": \"尺度与取舍\"\n    },\n    {\n      \"key\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"source\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"kind\": \"chapter\",\n      \"part\": \"尺度与取舍\"\n    },\n    {\n      \"key\": \"book-data-applicability\",\n      \"source\": \"/monograph/data-applicability\",\n      \"kind\": \"chapter\",\n      \"part\": \"数据与证据\",\n      \"coverage\": [\n        \"/docs/book/database-fitness-and-documentation\",\n        \"/docs/book/review-support-and-version-boundaries\"\n      ],\n      \"sections\": [\n        {\n          \"id\": \"表示对象\",\n          \"title\": \"数据所代表的过程\"\n        },\n        {\n          \"id\": \"质量信息\",\n          \"title\": \"数据的质量信息\"\n        },\n        {\n          \"id\": \"审查范围\",\n          \"title\": \"数据的审查范围\"\n        },\n        {\n          \"id\": \"版本变化\",\n          \"title\": \"数据换版与补缺\"\n        }\n      ]\n    },\n    {\n      \"key\": \"/docs/book/uncertainty-and-variability\",\n      \"source\": \"/docs/book/uncertainty-and-variability\",\n      \"kind\": \"chapter\",\n      \"part\": \"数据与证据\"\n    },\n    {\n      \"key\": \"/docs/book/data-quality-and-probability\",\n      \"source\": \"/docs/book/data-quality-and-probability\",\n      \"kind\": \"chapter\",\n      \"part\": \"数据与证据\"\n    },\n    {\n      \"key\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"source\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"kind\": \"chapter\",\n      \"part\": \"数据与证据\"\n    },\n    {\n      \"key\": \"/docs/book/wall-service-to-comparison\",\n      \"source\": \"/docs/book/wall-service-to-comparison\",\n      \"kind\": \"chapter\",\n      \"part\": \"比较与判断\"\n    },\n    {\n      \"key\": \"/docs/book/interpretation-and-limits\",\n      \"source\": \"/docs/book/interpretation-and-limits\",\n      \"kind\": \"chapter\",\n      \"part\": \"比较与判断\"\n    },\n    {\n      \"key\": \"/docs/book/future-technology-and-context\",\n      \"source\": \"/docs/book/future-technology-and-context\",\n      \"kind\": \"chapter\",\n      \"part\": \"比较与判断\"\n    },\n    {\n      \"key\": \"book-revisable-judgment\",\n      \"source\": \"/monograph/revisable-judgment\",\n      \"kind\": \"chapter\",\n      \"part\": \"比较与判断\",\n      \"sections\": [\n        {\n          \"id\": \"对象连接\",\n          \"title\": \"服务与系统\"\n        },\n        {\n          \"id\": \"覆盖状态\",\n          \"title\": \"模型与证据覆盖\"\n        },\n        {\n          \"id\": \"判断理由\",\n          \"title\": \"取舍与结论强度\"\n        },\n        {\n          \"id\": \"历史与修订\",\n          \"title\": \"结论修订的依据\"\n        }\n      ],\n      \"coverage\": [\n        \"/docs/book/connecting-objects-references-and-time\",\n        \"/docs/book/from-connected-results-to-conditional-judgment\"\n      ]\n    },\n    {\n      \"key\": \"/docs/history\",\n      \"source\": \"/docs/history\",\n      \"kind\": \"topic\"\n    },\n    {\n      \"key\": \"/docs/allocation\",\n      \"source\": \"/docs/allocation\",\n      \"kind\": \"topic\"\n    },\n    {\n      \"key\": \"/docs/appendices/container-energy-check\",\n      \"source\": \"/docs/appendices/container-energy-check\",\n      \"kind\": \"appendix\"\n    },\n    {\n      \"key\": \"/docs/appendices/cml-framework-calculations\",\n      \"source\": \"/docs/appendices/cml-framework-calculations\",\n      \"kind\": \"appendix\"\n    },\n    {\n      \"key\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"source\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"kind\": \"appendix\"\n    },\n    {\n      \"key\": \"/docs/appendices/particulate-factor-calculations\",\n      \"source\": \"/docs/appendices/particulate-factor-calculations\",\n      \"kind\": \"appendix\",\n      \"sections\": [\n        {\n          \"id\": \"排放原型与加权\",\n          \"title\": \"排放原型与加权\"\n        },\n        {\n          \"id\": \"区室与活动时间\",\n          \"title\": \"区室与活动时间\"\n        },\n        {\n          \"id\": \"参照与模型核验\",\n          \"title\": \"参照与模型核验\"\n        },\n        {\n          \"id\": \"发行范围与因子表\",\n          \"title\": \"发行范围与因子表\"\n        }\n      ]\n    }\n  ],\n  \"acceptedFramework\": \"framework-accepted.json\"\n}\n"
+    },
+    {
+      "path": "config/reader-numbering.json",
+      "fromSha256": "c780b9e89309341428c0e5464ca6da57e74c47f10925f17bd0a3620c372a4c00",
+      "toSha256": "ec7719ddabd136161721727d0d4869e1b1eff36f3359e4655f25d1929358163c",
+      "previous": "{\n  \"version\": 1,\n  \"scope\": \"current-40-unit-32-chapter-book-and-48-unit-37-chapter-website-presentation\",\n  \"parts\": [\n    {\n      \"number\": 1,\n      \"title\": \"问题的来源\",\n      \"introduction\": \"比较一件产品的环境表现，为什么不能只盯住单个环节，而必须沿生产、使用与处置展开？本部先从生命周期视角界定比较的起点、系统简化与迭代逻辑，再回到早期饮料容器账本与政策分析，辨析能源核算、周转假设与政府干预理由各自依赖的证据；随后通过《评价框架与分析步骤》梳理历史指南并对照 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段迭代、决策情景与比较断言门槛、影响类别与加权以及审验鉴证上的共同核心与真实分歧；最后考察清洁生产中的生命周期评价用途与本地应用条件，引出第二部的问题：不同方案须满足哪些共同的功能参照与清单边界，才能建立可比账本。\"\n    },\n    {\n      \"number\": 2,\n      \"title\": \"服务与清单\",\n      \"introduction\": \"要比较两种方案，先要固定它们共同交付的功能参照，并看清国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）、温室气体核算体系（GHG Protocol）与 ecoinvent 第三版在功能单位、声明单位、参考产品与可比性门槛上的分工。确定产品需求之后，再通过线性过程网络求解各项供给活动，并辨认配平方程背后的截断、零价与多余约束边界。进入软件与数据交换层面，还须分清技术界面与环境界面、基本流与产品/废物流以及零值与缺因子的区别。最后，当过程网络存在截断而借助经济投入产出数据闭合上游时，要对照主流过程标准与混合清单架构在截断阈值、资本品边界、重复计算扣除、价格与分母口径上的真实差异；厘清清单如何建立与闭合以后，第三部将进一步转向共产品分配与供给变化。\"\n    },\n    {\n      \"number\": 3,\n      \"title\": \"负担分配与供给变化\",\n      \"introduction\": \"一次生产同时产出多种产品时，既可以问已有排放该怎样按物理或经济依据分担，也可以问改换供给在何种条件下会引发哪些供应者增产、减产或退出。本部依次沿共同生产、市场响应、供电系统与材料循环展开这两种判断：先辨析共产品份额、参照残余与规则边界；再对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版后果模型、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）在决策尺度、合同追踪与受约束供给上的条件与分歧；继而沿输配网段、电量账户与短长期边际响应检验电力尺度；最后在瓦楞纸回收链中辨明负担交接、质量折算与循环足迹公式（CFF）的外部替代边界。查清活动和排放怎样变化之后，下一部将进一步追查这些排放与资源开采会沿着怎样的环境路径转化为中点与终点指标。\"\n    },\n    {\n      \"number\": 4,\n      \"title\": \"环境后果\",\n      \"introduction\": \"清单给出了资源采掘、土地利用、取耗水和污染物排放等数量。要知道这些活动可能带来什么后果，还要沿着环境机制追查：本部从中点与终点的因果截点出发，依次考察土地恢复与矿产、化石资源，气候响应、排放时间与生物碳，酸化、富营养化、光化学臭氧、平流层臭氧与电离辐射，以及颗粒物健康损害、耗水缺水与多介质化学毒性；并跨体系对照 ReCiPe 2016、欧盟环境足迹（EF 3.1）、全球生命周期影响评价指南（GLAM）、政府间气候变化专门委员会第六次评估报告（IPCC AR6）、剩余可用水模型（AWARE）与 USEtox 在空间背景、时间窗口、暴露路径与不确定性边界上的真实分歧，为第五部《尺度与取舍》讨论跨类别权衡打下基础。\"\n    },\n    {\n      \"number\": 5,\n      \"title\": \"尺度与取舍\",\n      \"introduction\": \"一种方案可能在某项环境指标上较低，在另一项上较高。本部依次检验跨类别与跨维度取舍的五重边界：先比较法定政策目标距离同公众—专家重要性乘科学稳健度的中点加权及公开比较规则，再追查基本流空间粒度与归一化人均分母在同权重组合时的约消或放大，继而对照保护领域终点主动截停与陈述偏好货币估值的次序反转；随后将视野扩展到产品与组织参照下的社会风险量表、职业健康损害及不可抵消的基本权利底线，最后辨析三类生命周期成本主体账本、五类异质货币消重、多准则补偿与否决规则以及地球边界配额分配。即使算式清晰，结论仍取决于底层资料能代表哪里的工厂、人群与时期；下一部由此进入数据适用性、不确定性与合规审查。\"\n    },\n    {\n      \"number\": 6,\n      \"title\": \"数据与证据\",\n      \"introduction\": \"一个结果即使能够精确复算，所用资料仍未必代表研究所需的过程。本部依次考察数据与证据链条的四重边界：先比较国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）、ecoinvent 第三版与天工规范（TIDAS）对背景数据适用性、区域化父子数据集与多角色审查的治理路径；再辨析固有变异、参数认识不确定性、模型结构、方法选择与数值求解五类误差层次，并检验一阶泰勒与随机全局灵敏度及蒙特卡洛运行次数的失效边界；继而从柏林杯重调查出发，对照 ecoinvent 专家与实证谱系方差、欧盟 PEF 序数数据质量评级（DQR）门槛与温室气体核算体系（GHG Protocol）定性披露对同一套质量词项的截然不同用法；最后对照欧盟建议书、GHG Protocol、欧盟电池法规与生态设计法规（ESPR），说明类别规则、活动数据、合格评定与比较断言门槛如何决定足迹结果的合法用途。下一部将把这些数据、模型与规则边界放回完整的产品方案比较与全书收束判断中。\"\n    },\n    {\n      \"number\": 7,\n      \"title\": \"比较与判断\",\n      \"introduction\": \"比较两个方案的环境负担，不能只看单一指标或单一场景。本部先通过墙面服务比较复算假想条件，辨明功能单位、参考流、系统边界与国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）对比较断言与成对不确定性的门槛；再借助英国环境署（2011）与丹麦环保署（2018）购物袋评估，对照 ILCD 与 PEF 的热点阈值、负信用重算及关键性审查体制；继而区分前瞻性、事前、预期式、实验室尺度与动态评价，说明工艺放大、综合评估模型（IAM）超结构情景耦合与动态时间边界如何影响未来比较；最后回到全书开篇的容器研究，结合墙面与购物袋案例收束七类修订路由，辨认哪些结论已有依据、哪些应随新证据定向修订。\"\n    }\n  ],\n  \"book\": [\n    {\n      \"key\": \"/docs\",\n      \"source\": \"/docs\",\n      \"kind\": \"front-matter\",\n      \"title\": \"前言\"\n    },\n    {\n      \"key\": \"/docs/book\",\n      \"source\": \"/docs/book\",\n      \"kind\": \"front-matter\",\n      \"title\": \"阅读导论\"\n    },\n    {\n      \"key\": \"/docs/book/integrative-ambitions\",\n      \"source\": \"/docs/book/integrative-ambitions\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"生命周期视角\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-comparisons\",\n      \"source\": \"/docs/book/early-container-comparisons\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"饮料容器账本\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-policy-and-systems\",\n      \"source\": \"/docs/book/early-container-policy-and-systems\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"容器比较与政策判断\"\n    },\n    {\n      \"key\": \"book-framework-responsibilities\",\n      \"source\": \"/monograph/framework-responsibilities\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"评价框架与分析步骤\"\n    },\n    {\n      \"key\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"source\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"清洁生产中的生命周期评价\"\n    },\n    {\n      \"key\": \"/docs/book/service-and-reference\",\n      \"source\": \"/docs/book/service-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"功能参照\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-calculation\",\n      \"source\": \"/docs/book/inventory-calculation\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"过程网络\"\n    },\n    {\n      \"key\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"source\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"流、交换与边界\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"source\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"混合清单\"\n    },\n    {\n      \"key\": \"book-joint-production\",\n      \"source\": \"/monograph/joint-production\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"共同生产\"\n    },\n    {\n      \"key\": \"/docs/book/market-boundaries-and-response\",\n      \"source\": \"/docs/book/market-boundaries-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"市场响应\"\n    },\n    {\n      \"key\": \"/docs/book/electricity-service-and-response\",\n      \"source\": \"/docs/book/electricity-service-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"供电系统\"\n    },\n    {\n      \"key\": \"/docs/book/recycling-chains-and-accounting\",\n      \"source\": \"/docs/book/recycling-chains-and-accounting\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"材料循环\"\n    },\n    {\n      \"key\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"source\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"中点与终点\"\n    },\n    {\n      \"key\": \"book-climate-equivalence\",\n      \"source\": \"/monograph/climate-equivalence\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"气候当量\"\n    },\n    {\n      \"key\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"source\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"酸化与营养富集\"\n    },\n    {\n      \"key\": \"/docs/book/particulate-emissions-and-health\",\n      \"source\": \"/docs/book/particulate-emissions-and-health\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"颗粒物排放与健康损害\"\n    },\n    {\n      \"key\": \"/docs/book/water-scarcity-and-reference\",\n      \"source\": \"/docs/book/water-scarcity-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"耗水与缺水潜势\"\n    },\n    {\n      \"key\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"source\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"毒性路径\"\n    },\n    {\n      \"key\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"source\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生态稀缺赋权\"\n    },\n    {\n      \"key\": \"/docs/book/localization-evidence-and-denominators\",\n      \"source\": \"/docs/book/localization-evidence-and-denominators\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"影响评价本地化\"\n    },\n    {\n      \"key\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"source\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"环境损害估值\"\n    },\n    {\n      \"key\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"source\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"社会表现与影响\"\n    },\n    {\n      \"key\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"source\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生命周期成本与综合评价\"\n    },\n    {\n      \"key\": \"book-data-applicability\",\n      \"source\": \"/monograph/data-applicability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"数据适用性\"\n    },\n    {\n      \"key\": \"/docs/book/uncertainty-and-variability\",\n      \"source\": \"/docs/book/uncertainty-and-variability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"变异与不确定性\"\n    },\n    {\n      \"key\": \"/docs/book/data-quality-and-probability\",\n      \"source\": \"/docs/book/data-quality-and-probability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"质量评分与概率\"\n    },\n    {\n      \"key\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"source\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"产品足迹规则\"\n    },\n    {\n      \"key\": \"/docs/book/wall-service-to-comparison\",\n      \"source\": \"/docs/book/wall-service-to-comparison\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"墙面服务比较\"\n    },\n    {\n      \"key\": \"/docs/book/interpretation-and-limits\",\n      \"source\": \"/docs/book/interpretation-and-limits\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"购物袋研究\"\n    },\n    {\n      \"key\": \"/docs/book/future-technology-and-context\",\n      \"source\": \"/docs/book/future-technology-and-context\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"未来技术与情景\"\n    },\n    {\n      \"key\": \"book-revisable-judgment\",\n      \"source\": \"/monograph/revisable-judgment\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"可修订的判断\"\n    },\n    {\n      \"key\": \"/docs/history\",\n      \"source\": \"/docs/history\",\n      \"kind\": \"topic\",\n      \"title\": \"史料辨读\"\n    },\n    {\n      \"key\": \"/docs/allocation\",\n      \"source\": \"/docs/allocation\",\n      \"kind\": \"topic\",\n      \"title\": \"系统模型辨读\"\n    },\n    {\n      \"key\": \"/docs/appendices/container-energy-check\",\n      \"source\": \"/docs/appendices/container-energy-check\",\n      \"kind\": \"appendix\",\n      \"title\": \"容器能源复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/cml-framework-calculations\",\n      \"source\": \"/docs/appendices/cml-framework-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"指南算例复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"source\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"kind\": \"appendix\",\n      \"title\": \"气候数值的重建\"\n    },\n    {\n      \"key\": \"/docs/appendices/particulate-factor-calculations\",\n      \"source\": \"/docs/appendices/particulate-factor-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"颗粒物因子的复算\"\n    }\n  ],\n  \"web\": [\n    {\n      \"key\": \"/docs\",\n      \"source\": \"/docs\",\n      \"kind\": \"front-matter\",\n      \"title\": \"前言\"\n    },\n    {\n      \"key\": \"/docs/book\",\n      \"source\": \"/docs/book\",\n      \"kind\": \"front-matter\",\n      \"title\": \"阅读导论\"\n    },\n    {\n      \"key\": \"/docs/book/integrative-ambitions\",\n      \"source\": \"/docs/book/integrative-ambitions\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"生命周期视角\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-comparisons\",\n      \"source\": \"/docs/book/early-container-comparisons\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"饮料容器账本\"\n    },\n    {\n      \"key\": \"/docs/book/early-container-policy-and-systems\",\n      \"source\": \"/docs/book/early-container-policy-and-systems\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"容器比较与政策判断\"\n    },\n    {\n      \"key\": \"/docs/book/framework-history\",\n      \"source\": \"/docs/book/framework-history\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"评价框架的形成\"\n    },\n    {\n      \"key\": \"/docs/book/cml-computation-judgment-and-improvement\",\n      \"source\": \"/docs/book/cml-computation-judgment-and-improvement\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"CML指南中的评价与改进\"\n    },\n    {\n      \"key\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"source\": \"/docs/book/cleaner-production-purpose-and-prospects\",\n      \"kind\": \"chapter\",\n      \"part\": 1,\n      \"title\": \"清洁生产中的生命周期评价\"\n    },\n    {\n      \"key\": \"/docs/book/service-and-reference\",\n      \"source\": \"/docs/book/service-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"功能参照\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-calculation\",\n      \"source\": \"/docs/book/inventory-calculation\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"过程网络\"\n    },\n    {\n      \"key\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"source\": \"/docs/book/exchange-semantics-and-conversion\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"流、交换与边界\"\n    },\n    {\n      \"key\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"source\": \"/docs/book/inventory-boundary-and-hybrid\",\n      \"kind\": \"chapter\",\n      \"part\": 2,\n      \"title\": \"混合清单\"\n    },\n    {\n      \"key\": \"/docs/book/allocation-and-substitution\",\n      \"source\": \"/docs/book/allocation-and-substitution\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"共产品的分配与替代\"\n    },\n    {\n      \"key\": \"/docs/book/allocation-judgment-and-corrections\",\n      \"source\": \"/docs/book/allocation-judgment-and-corrections\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"分配规则与修订\"\n    },\n    {\n      \"key\": \"/docs/book/market-boundaries-and-response\",\n      \"source\": \"/docs/book/market-boundaries-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"市场响应\"\n    },\n    {\n      \"key\": \"/docs/book/electricity-service-and-response\",\n      \"source\": \"/docs/book/electricity-service-and-response\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"供电系统\"\n    },\n    {\n      \"key\": \"/docs/book/recycling-chains-and-accounting\",\n      \"source\": \"/docs/book/recycling-chains-and-accounting\",\n      \"kind\": \"chapter\",\n      \"part\": 3,\n      \"title\": \"材料循环\"\n    },\n    {\n      \"key\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"source\": \"/docs/book/midpoint-endpoint-value-choices\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"中点与终点\"\n    },\n    {\n      \"key\": \"/docs/book/climate-response-and-metrics\",\n      \"source\": \"/docs/book/climate-response-and-metrics\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"气候响应与当量\"\n    },\n    {\n      \"key\": \"/docs/book/emission-time-and-assessment\",\n      \"source\": \"/docs/book/emission-time-and-assessment\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"排放时间与评价\"\n    },\n    {\n      \"key\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"source\": \"/docs/book/acidification-and-nutrient-pathways\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"酸化与营养富集\"\n    },\n    {\n      \"key\": \"/docs/book/particulate-emissions-and-health\",\n      \"source\": \"/docs/book/particulate-emissions-and-health\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"颗粒物排放与健康损害\"\n    },\n    {\n      \"key\": \"/docs/book/water-scarcity-and-reference\",\n      \"source\": \"/docs/book/water-scarcity-and-reference\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"耗水与缺水潜势\"\n    },\n    {\n      \"key\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"source\": \"/docs/book/usetox-pathways-and-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 4,\n      \"title\": \"毒性路径\"\n    },\n    {\n      \"key\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"source\": \"/docs/book/ecological-scarcity-and-targets\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生态稀缺赋权\"\n    },\n    {\n      \"key\": \"/docs/book/localization-evidence-and-denominators\",\n      \"source\": \"/docs/book/localization-evidence-and-denominators\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"影响评价本地化\"\n    },\n    {\n      \"key\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"source\": \"/docs/book/lime-preferences-and-damage-weights\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"环境损害估值\"\n    },\n    {\n      \"key\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"source\": \"/docs/book/social-assessment-objects-and-meaning\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"社会表现与影响\"\n    },\n    {\n      \"key\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"source\": \"/docs/book/cost-perspectives-and-sustainability-combination\",\n      \"kind\": \"chapter\",\n      \"part\": 5,\n      \"title\": \"生命周期成本与综合评价\"\n    },\n    {\n      \"key\": \"/docs/book/database-fitness-and-documentation\",\n      \"source\": \"/docs/book/database-fitness-and-documentation\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"过程数据的用途\"\n    },\n    {\n      \"key\": \"/docs/book/review-support-and-version-boundaries\",\n      \"source\": \"/docs/book/review-support-and-version-boundaries\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"数据审查与版本\"\n    },\n    {\n      \"key\": \"/docs/book/uncertainty-and-variability\",\n      \"source\": \"/docs/book/uncertainty-and-variability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"变异与不确定性\"\n    },\n    {\n      \"key\": \"/docs/book/data-quality-and-probability\",\n      \"source\": \"/docs/book/data-quality-and-probability\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"质量评分与概率\"\n    },\n    {\n      \"key\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"source\": \"/docs/book/product-footprint-rules-and-practice\",\n      \"kind\": \"chapter\",\n      \"part\": 6,\n      \"title\": \"产品足迹规则\"\n    },\n    {\n      \"key\": \"/docs/book/wall-service-to-comparison\",\n      \"source\": \"/docs/book/wall-service-to-comparison\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"墙面服务比较\"\n    },\n    {\n      \"key\": \"/docs/book/interpretation-and-limits\",\n      \"source\": \"/docs/book/interpretation-and-limits\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"购物袋研究\"\n    },\n    {\n      \"key\": \"/docs/book/future-technology-and-context\",\n      \"source\": \"/docs/book/future-technology-and-context\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"未来技术与情景\"\n    },\n    {\n      \"key\": \"/docs/book/connecting-objects-references-and-time\",\n      \"source\": \"/docs/book/connecting-objects-references-and-time\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"服务、系统与时间\"\n    },\n    {\n      \"key\": \"/docs/book/from-connected-results-to-conditional-judgment\",\n      \"source\": \"/docs/book/from-connected-results-to-conditional-judgment\",\n      \"kind\": \"chapter\",\n      \"part\": 7,\n      \"title\": \"判断依据与修订\"\n    },\n    {\n      \"key\": \"/docs/history\",\n      \"source\": \"/docs/history\",\n      \"kind\": \"topic\",\n      \"title\": \"史料辨读\"\n    },\n    {\n      \"key\": \"/docs/flows\",\n      \"source\": \"/docs/flows\",\n      \"kind\": \"topic\",\n      \"title\": \"流的身份与过程交换\"\n    },\n    {\n      \"key\": \"/docs/functional-unit\",\n      \"source\": \"/docs/functional-unit\",\n      \"kind\": \"topic\",\n      \"title\": \"功能单位与参考流\"\n    },\n    {\n      \"key\": \"/docs/allocation\",\n      \"source\": \"/docs/allocation\",\n      \"kind\": \"topic\",\n      \"title\": \"系统模型辨读\"\n    },\n    {\n      \"key\": \"/docs/characterization\",\n      \"source\": \"/docs/characterization\",\n      \"kind\": \"topic\",\n      \"title\": \"缺少表征因子不等于因子为零\"\n    },\n    {\n      \"key\": \"/docs/appendices/container-energy-check\",\n      \"source\": \"/docs/appendices/container-energy-check\",\n      \"kind\": \"appendix\",\n      \"title\": \"容器能源复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/cml-framework-calculations\",\n      \"source\": \"/docs/appendices/cml-framework-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"指南算例复核\"\n    },\n    {\n      \"key\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"source\": \"/docs/appendices/climate-numerical-reconstruction\",\n      \"kind\": \"appendix\",\n      \"title\": \"气候数值的重建\"\n    },\n    {\n      \"key\": \"/docs/appendices/particulate-factor-calculations\",\n      \"source\": \"/docs/appendices/particulate-factor-calculations\",\n      \"kind\": \"appendix\",\n      \"title\": \"颗粒物因子的复算\"\n    }\n  ],\n  \"headings\": {\n    \"/docs\": [],\n    \"/docs/book\": [],\n    \"/docs/book/integrative-ambitions\": [\n      {\n        \"key\": \"把问题沿系统展开\",\n        \"id\": \"把问题沿系统展开\",\n        \"title\": \"比较的起点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"综合范围怎样遇到遗漏和简化\",\n        \"id\": \"综合范围怎样遇到遗漏和简化\",\n        \"title\": \"系统范围与模型简化\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从影响结果到可支持的判断\",\n        \"id\": \"从影响结果到可支持的判断\",\n        \"title\": \"决策依据与研究迭代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/early-container-comparisons\": [\n      {\n        \"key\": \"从产品名称到可比任务\",\n        \"id\": \"从产品名称到可比任务\",\n        \"title\": \"饮料供应与比较基准\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"灌装新瓶与返回各自计数\",\n        \"id\": \"灌装新瓶与返回各自计数\",\n        \"title\": \"周转次数与过程核算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从百万次灌装到一千升\",\n        \"id\": \"从百万次灌装到一千升\",\n        \"title\": \"能源汇总与换算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"明细表能否重新组装总量\",\n        \"id\": \"明细表能否重新组装总量\",\n        \"title\": \"系统重建的限度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/early-container-policy-and-systems\": [\n      {\n        \"key\": \"政策理由与数量对象\",\n        \"id\": \"政策理由与数量对象\",\n        \"title\": \"政策干预的理由\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从容器链走向其他消费\",\n        \"id\": \"从容器链走向其他消费\",\n        \"title\": \"其他消费与能源需求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"能源危机与研究问题的变化\",\n        \"id\": \"能源危机与研究问题的变化\",\n        \"title\": \"能源危机与研究重点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/framework-responsibilities\": [\n      {\n        \"key\": \"史料与职责\",\n        \"id\": \"史料与职责\",\n        \"title\": \"史料与分析任务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单计算\",\n        \"id\": \"清单计算\",\n        \"title\": \"清单计算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"评价取舍\",\n        \"id\": \"评价取舍\",\n        \"title\": \"评价取舍\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"改进与解释\",\n        \"id\": \"改进与解释\",\n        \"title\": \"改进与解释\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"外部采用\",\n        \"id\": \"外部采用\",\n        \"title\": \"指南的实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cleaner-production-purpose-and-prospects\": [\n      {\n        \"key\": \"预防目的\",\n        \"id\": \"预防目的\",\n        \"title\": \"清洁生产的预防目标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"应用设想\",\n        \"id\": \"应用设想\",\n        \"title\": \"生命周期评价的应用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发展条件\",\n        \"id\": \"发展条件\",\n        \"title\": \"本地应用的研究条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/service-and-reference\": [\n      {\n        \"key\": \"服务要求\",\n        \"id\": \"服务要求\",\n        \"title\": \"服务要求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参考对象\",\n        \"id\": \"参考对象\",\n        \"title\": \"参考对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"比较条件\",\n        \"id\": \"比较条件\",\n        \"title\": \"比较条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/inventory-calculation\": [\n      {\n        \"key\": \"数量坐标\",\n        \"id\": \"数量坐标\",\n        \"title\": \"数量坐标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"需求平衡\",\n        \"id\": \"需求平衡\",\n        \"title\": \"需求平衡\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"反馈边界\",\n        \"id\": \"反馈边界\",\n        \"title\": \"反馈边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/exchange-semantics-and-conversion\": [\n      {\n        \"key\": \"对象与交换\",\n        \"id\": \"对象与交换\",\n        \"title\": \"系统边界与流的身份\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"填埋与农地的不同分界\",\n        \"id\": \"填埋与农地的不同分界\",\n        \"title\": \"填埋与农地的不同分界\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"对象定义与过程记录\",\n        \"id\": \"对象定义与过程记录\",\n        \"title\": \"对象定义与过程记录\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"计算活动\",\n        \"id\": \"计算活动\",\n        \"title\": \"物质方向与处理活动\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一处理的两种记法\",\n        \"id\": \"同一处理的两种记法\",\n        \"title\": \"处理活动的不同表示\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"活动清单与类别结果\",\n        \"id\": \"活动清单与类别结果\",\n        \"title\": \"活动、清单与类别结果\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"连接保存以后仍可能漏算\",\n        \"id\": \"连接保存以后仍可能漏算\",\n        \"title\": \"连接保存以后仍可能漏算\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"转换边界\",\n        \"id\": \"转换边界\",\n        \"title\": \"模型转换与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"表征状态\",\n        \"id\": \"表征状态\",\n        \"title\": \"清单表征与零值\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"环境迁移由哪一侧计算\",\n        \"id\": \"环境迁移由哪一侧计算\",\n        \"title\": \"环境迁移由哪一侧计算\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"数值为零以后还要辨明什么\",\n        \"id\": \"数值为零以后还要辨明什么\",\n        \"title\": \"数值为零以后还要辨明什么\",\n        \"depth\": 3,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/inventory-boundary-and-hybrid\": [\n      {\n        \"key\": \"过程经济边界\",\n        \"id\": \"过程经济边界\",\n        \"title\": \"过程清单与经济数据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"双向账户\",\n        \"id\": \"双向账户\",\n        \"title\": \"双向账户\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"误差来源\",\n        \"id\": \"误差来源\",\n        \"title\": \"误差来源\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/joint-production\": [\n      {\n        \"key\": \"信息目的\",\n        \"id\": \"信息目的\",\n        \"title\": \"信息目的\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"负担份额\",\n        \"id\": \"负担份额\",\n        \"title\": \"负担份额\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照供给\",\n        \"id\": \"参照供给\",\n        \"title\": \"参照供给\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:joint:title\",\n        \"title\": \"同一批共产品：份额、路线与比较残余\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:partition\",\n        \"title\": \"问题一：怎样把既有一批的清单分派给产品标签？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:routes\",\n        \"title\": \"问题二：保持两项服务，改变供给路线会怎样？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"规则边界\",\n        \"id\": \"规则边界\",\n        \"title\": \"规则边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/market-boundaries-and-response\": [\n      {\n        \"key\": \"从能相减到确实会改变\",\n        \"id\": \"从能相减到确实会改变\",\n        \"title\": \"响应对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"批评改变了哪一道边界\",\n        \"id\": \"批评改变了哪一道边界\",\n        \"title\": \"市场边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"平均供电也需要一个模型\",\n        \"id\": \"平均供电也需要一个模型\",\n        \"title\": \"平均组合\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一次新增需求两种电力响应\",\n        \"id\": \"同一次新增需求两种电力响应\",\n        \"title\": \"条件供给\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/electricity-service-and-response\": [\n      {\n        \"key\": \"同一度电先问在哪里交付\",\n        \"id\": \"同一度电先问在哪里交付\",\n        \"title\": \"交付链条\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"年度发电账包含什么\",\n        \"id\": \"年度发电账包含什么\",\n        \"title\": \"电量账户\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"平均与响应为何不是同一个估计\",\n        \"id\": \"平均与响应为何不是同一个估计\",\n        \"title\": \"运行响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"未来需求还会改变哪些资产\",\n        \"id\": \"未来需求还会改变哪些资产\",\n        \"title\": \"容量与长期响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把响应接回生命周期问题\",\n        \"id\": \"把响应接回生命周期问题\",\n        \"title\": \"生命周期连接\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/recycling-chains-and-accounting\": [\n      {\n        \"key\": \"从处理一千克纸开始\",\n        \"id\": \"从处理一千克纸开始\",\n        \"title\": \"纸料去向\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一条链不同的负担分担\",\n        \"id\": \"同一条链不同的负担分担\",\n        \"title\": \"负担交接\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量折算发生在哪里\",\n        \"id\": \"质量折算发生在哪里\",\n        \"title\": \"质量折算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"替代能源时热和电分别相等\",\n        \"id\": \"替代能源时热和电分别相等\",\n        \"title\": \"外部替代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/midpoint-endpoint-value-choices\": [\n      {\n        \"key\": \"指标停在因果路径的哪里\",\n        \"id\": \"指标停在因果路径的哪里\",\n        \"title\": \"指标的位置\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"时间证据和地点怎样进入结果\",\n        \"id\": \"时间证据和地点怎样进入结果\",\n        \"title\": \"情景与地点\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型输入数据与因子发行包\",\n        \"id\": \"模型输入数据与因子发行包\",\n        \"title\": \"模型与资料\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/climate-equivalence\": [\n      {\n        \"key\": \"响应与指标\",\n        \"id\": \"响应与指标\",\n        \"title\": \"响应与指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"气体与碳收支\",\n        \"id\": \"气体与碳收支\",\n        \"title\": \"气体与碳收支\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单比较\",\n        \"id\": \"清单比较\",\n        \"title\": \"清单比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"排放日历\",\n        \"id\": \"排放日历\",\n        \"title\": \"排放日历\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与用途\",\n        \"id\": \"历史与用途\",\n        \"title\": \"历史与用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/acidification-and-nutrient-pathways\": [\n      {\n        \"key\": \"从排放找到接收系统\",\n        \"id\": \"从排放找到接收系统\",\n        \"title\": \"酸输入与土壤\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"营养进入淡水与近岸海洋\",\n        \"id\": \"营养进入淡水与近岸海洋\",\n        \"title\": \"营养与接收环境\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"响应曲线回答哪一种变化\",\n        \"id\": \"响应曲线回答哪一种变化\",\n        \"title\": \"背景与响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从施用量走到净排放和指标\",\n        \"id\": \"从施用量走到净排放和指标\",\n        \"title\": \"清单与类别指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/particulate-emissions-and-health\": [\n      {\n        \"key\": \"排放与健康量\",\n        \"id\": \"排放与健康量\",\n        \"title\": \"排放与健康量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"暴露与证据\",\n        \"id\": \"暴露与证据\",\n        \"title\": \"暴露与证据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照与响应\",\n        \"id\": \"参照与响应\",\n        \"title\": \"参照与响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因子与比较\",\n        \"id\": \"因子与比较\",\n        \"title\": \"因子与比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/water-scarcity-and-reference\": [\n      {\n        \"key\": \"体积记录了什么\",\n        \"id\": \"体积记录了什么\",\n        \"title\": \"水量与剩余量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"月份参照与背景\",\n        \"id\": \"月份参照与背景\",\n        \"title\": \"时空与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把两处耗水接到同一产品\",\n        \"id\": \"把两处耗水接到同一产品\",\n        \"title\": \"两处耗水的比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"更换情境与更换运算次序\",\n        \"id\": \"更换情境与更换运算次序\",\n        \"title\": \"情境与加总\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/usetox-pathways-and-boundaries\": [\n      {\n        \"key\": \"排放与受体\",\n        \"id\": \"排放与受体\",\n        \"title\": \"排放与受体\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型与范围\",\n        \"id\": \"模型与范围\",\n        \"title\": \"模型与范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"比较的依据\",\n        \"id\": \"比较的依据\",\n        \"title\": \"比较的依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/ecological-scarcity-and-targets\": [\n      {\n        \"key\": \"排放目标与计分\",\n        \"id\": \"排放目标与计分\",\n        \"title\": \"排放目标与计分\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因子来源与版本\",\n        \"id\": \"因子来源与版本\",\n        \"title\": \"因子来源与版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"服务比较与分界\",\n        \"id\": \"服务比较与分界\",\n        \"title\": \"服务比较与分界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"赋权的地域参照\",\n        \"id\": \"赋权的地域参照\",\n        \"title\": \"赋权的地域参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/localization-evidence-and-denominators\": [\n      {\n        \"key\": \"类别与人均参照\",\n        \"id\": \"类别与人均参照\",\n        \"title\": \"类别与人均参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"权重与资源耗竭\",\n        \"id\": \"权重与资源耗竭\",\n        \"title\": \"权重与资源耗竭\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"政策参照与采用\",\n        \"id\": \"政策参照与采用\",\n        \"title\": \"政策参照与采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"制度与统计覆盖\",\n        \"id\": \"制度与统计覆盖\",\n        \"title\": \"制度与统计覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/lime-preferences-and-damage-weights\": [\n      {\n        \"key\": \"问卷与损害参照\",\n        \"id\": \"问卷与损害参照\",\n        \"title\": \"问卷与损害参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"选择与权重换算\",\n        \"id\": \"选择与权重换算\",\n        \"title\": \"选择与权重换算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发表表值与排序\",\n        \"id\": \"发表表值与排序\",\n        \"title\": \"发表表值与排序\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"行为效度与迁移\",\n        \"id\": \"行为效度与迁移\",\n        \"title\": \"行为效度与迁移\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/social-assessment-objects-and-meaning\": [\n      {\n        \"key\": \"社会评价对象\",\n        \"id\": \"社会评价对象\",\n        \"title\": \"社会评价对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"社会评价证据\",\n        \"id\": \"社会评价证据\",\n        \"title\": \"活动与社会表现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"社会量表解释\",\n        \"id\": \"社会量表解释\",\n        \"title\": \"量表与抵消\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cost-perspectives-and-sustainability-combination\": [\n      {\n        \"key\": \"成本主体\",\n        \"id\": \"成本主体\",\n        \"title\": \"成本主体与范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"三类结果\",\n        \"id\": \"三类结果\",\n        \"title\": \"三类结果与重叠\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"取舍呈现\",\n        \"id\": \"取舍呈现\",\n        \"title\": \"权重与结果呈现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/data-applicability\": [\n      {\n        \"key\": \"表示对象\",\n        \"id\": \"表示对象\",\n        \"title\": \"数据所代表的过程\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量信息\",\n        \"id\": \"质量信息\",\n        \"title\": \"数据的质量信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"审查范围\",\n        \"id\": \"审查范围\",\n        \"title\": \"数据的审查范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本变化\",\n        \"id\": \"版本变化\",\n        \"title\": \"数据换版与补缺\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/uncertainty-and-variability\": [\n      {\n        \"key\": \"估计对象\",\n        \"id\": \"估计对象\",\n        \"title\": \"分布与估计对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"不确定性来源\",\n        \"id\": \"不确定性来源\",\n        \"title\": \"参数与模型选择\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"数值可靠性\",\n        \"id\": \"数值可靠性\",\n        \"title\": \"求解的数值稳定性\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/data-quality-and-probability\": [\n      {\n        \"key\": \"杯重调查与估计\",\n        \"id\": \"杯重调查与估计\",\n        \"title\": \"杯重调查与估计\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"散布与估计精度\",\n        \"id\": \"散布与估计精度\",\n        \"title\": \"散布与估计精度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"完整性评分的校准\",\n        \"id\": \"完整性评分的校准\",\n        \"title\": \"完整性评分的校准\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"概率模型与参数\",\n        \"id\": \"概率模型与参数\",\n        \"title\": \"概率模型与参数\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"评分的检验与适用\",\n        \"id\": \"评分的检验与适用\",\n        \"title\": \"评分检验与使用条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/product-footprint-rules-and-practice\": [\n      {\n        \"key\": \"规则与规定服务\",\n        \"id\": \"规则与规定服务\",\n        \"title\": \"类别规则与默认服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"活动量与报表\",\n        \"id\": \"活动量与报表\",\n        \"title\": \"使用阶段的活动与结果\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"模型与审查范围\",\n        \"id\": \"模型与审查范围\",\n        \"title\": \"模型与审查范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"算法响应与比较\",\n        \"id\": \"算法响应与比较\",\n        \"title\": \"甲烷算法与比较条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/wall-service-to-comparison\": [\n      {\n        \"key\": \"功能实现\",\n        \"id\": \"功能实现\",\n        \"title\": \"功能实现\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单形成\",\n        \"id\": \"清单形成\",\n        \"title\": \"清单形成\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指标含义\",\n        \"id\": \"指标含义\",\n        \"title\": \"指标含义\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"配对判断\",\n        \"id\": \"配对判断\",\n        \"title\": \"配对判断\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:wall:title\",\n        \"title\": \"计算表与参数\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:current\",\n        \"title\": \"计算示例：平整基底 smooth · θ=0.3\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:paintA\",\n        \"title\": \"涂料 A：f → s → g → I\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:paintB\",\n        \"title\": \"涂料 B：f → s → g → I\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:wall:baseline\",\n        \"title\": \"固定结果与全域判断\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      }\n    ],\n    \"/docs/book/interpretation-and-limits\": [\n      {\n        \"key\": \"购物运输服务\",\n        \"id\": \"购物运输服务\",\n        \"title\": \"购物运输服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"替代与复用门槛\",\n        \"id\": \"替代与复用门槛\",\n        \"title\": \"替代与复用门槛\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"多指标与研究边界\",\n        \"id\": \"多指标与研究边界\",\n        \"title\": \"多指标与研究边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"审查与实际建议\",\n        \"id\": \"审查与实际建议\",\n        \"title\": \"审查与实际建议\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/future-technology-and-context\": [\n      {\n        \"key\": \"技术规模与功能\",\n        \"id\": \"技术规模与功能\",\n        \"title\": \"工艺放大与比较对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"情景与供给背景\",\n        \"id\": \"情景与供给背景\",\n        \"title\": \"情景与供给背景\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"前瞻判断条件\",\n        \"id\": \"前瞻判断条件\",\n        \"title\": \"前瞻比较的适用条件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/monograph/revisable-judgment\": [\n      {\n        \"key\": \"对象连接\",\n        \"id\": \"对象连接\",\n        \"title\": \"服务与系统\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"覆盖状态\",\n        \"id\": \"覆盖状态\",\n        \"title\": \"模型与证据覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"判断理由\",\n        \"id\": \"判断理由\",\n        \"title\": \"取舍与结论强度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与修订\",\n        \"id\": \"历史与修订\",\n        \"title\": \"结论修订的依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/history\": [\n      {\n        \"key\": \"容器比较与政策问题\",\n        \"id\": \"容器比较与政策问题\",\n        \"title\": \"报告与出版日期\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"框架中的组件与研究活动\",\n        \"id\": \"框架中的组件与研究活动\",\n        \"title\": \"会议与框架活动\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指南承担怎样的任务\",\n        \"id\": \"指南承担怎样的任务\",\n        \"title\": \"指南与实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"软件和数据库的版本节点\",\n        \"id\": \"软件和数据库的版本节点\",\n        \"title\": \"软件与数据库版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"时间线不能代替因果\",\n        \"id\": \"时间线不能代替因果\",\n        \"title\": \"先后与因果\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/allocation\": [\n      {\n        \"key\": \"系统模型规定了什么\",\n        \"id\": \"系统模型规定了什么\",\n        \"title\": \"系统模型的选择\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"回收链的负担如何解释\",\n        \"id\": \"回收链的负担如何解释\",\n        \"title\": \"回收链与负担\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"名称与版本\",\n        \"id\": \"名称与版本\",\n        \"title\": \"名称与版本\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把格式连接与方法放在一起比较\",\n        \"id\": \"把格式连接与方法放在一起比较\",\n        \"title\": \"格式与方法\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/container-energy-check\": [\n      {\n        \"key\": \"工序输入\",\n        \"id\": \"工序输入\",\n        \"title\": \"工序输入\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"玻璃支路\",\n        \"id\": \"玻璃支路\",\n        \"title\": \"玻璃制造与原料供应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"舍入界限\",\n        \"id\": \"舍入界限\",\n        \"title\": \"显示舍入的误差界限\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/cml-framework-calculations\": [\n      {\n        \"key\": \"方程与原表\",\n        \"id\": \"方程与原表\",\n        \"title\": \"方程与原表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参数响应\",\n        \"id\": \"参数响应\",\n        \"title\": \"参数响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"来源范围与分档\",\n        \"id\": \"来源范围与分档\",\n        \"title\": \"因子范围与评分档位\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/climate-numerical-reconstruction\": [\n      {\n        \"key\": \"参考响应\",\n        \"id\": \"参考响应\",\n        \"title\": \"参考响应\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"显示精度\",\n        \"id\": \"显示精度\",\n        \"title\": \"显示精度\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史程序\",\n        \"id\": \"历史程序\",\n        \"title\": \"历史程序\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/appendices/particulate-factor-calculations\": [\n      {\n        \"key\": \"排放原型与加权\",\n        \"id\": \"排放原型与加权\",\n        \"title\": \"排放原型与加权\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"区室与活动时间\",\n        \"id\": \"区室与活动时间\",\n        \"title\": \"区室与活动时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"参照与模型核验\",\n        \"id\": \"参照与模型核验\",\n        \"title\": \"参照与模型核验\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"发行范围与因子表\",\n        \"id\": \"发行范围与因子表\",\n        \"title\": \"发行范围与因子表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/framework-history\": [\n      {\n        \"key\": \"先辨认史料描述的对象\",\n        \"id\": \"先辨认史料描述的对象\",\n        \"title\": \"史料与事件\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"组件和步骤怎样组织研究\",\n        \"id\": \"组件和步骤怎样组织研究\",\n        \"title\": \"组成部分与步骤\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"每个环节究竟交付什么\",\n        \"id\": \"每个环节究竟交付什么\",\n        \"title\": \"清单与影响\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"诊断如何走向设计改变\",\n        \"id\": \"诊断如何走向设计改变\",\n        \"title\": \"诊断与改进\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"解释如何形成有根据的建议\",\n        \"id\": \"解释如何形成有根据的建议\",\n        \"title\": \"解释与建议\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"职责的展开与重新安排\",\n        \"id\": \"职责的展开与重新安排\",\n        \"title\": \"分析任务的变化\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/cml-computation-judgment-and-improvement\": [\n      {\n        \"key\": \"一个建议怎样获得根据\",\n        \"id\": \"一个建议怎样获得根据\",\n        \"title\": \"研究用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从活动平衡到废物贡献\",\n        \"id\": \"从活动平衡到废物贡献\",\n        \"title\": \"计算与改进\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一张环境剖面仍需要取舍\",\n        \"id\": \"同一张环境剖面仍需要取舍\",\n        \"title\": \"取舍与检查\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"2001年重新安排了哪些工作\",\n        \"id\": \"2001年重新安排了哪些工作\",\n        \"title\": \"指南修订\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"分析结果怎样进入参与者的决定\",\n        \"id\": \"分析结果怎样进入参与者的决定\",\n        \"title\": \"分析与决策\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"另一个研究怎样使用这份指南\",\n        \"id\": \"另一个研究怎样使用这份指南\",\n        \"title\": \"指南的实际采用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/allocation-and-substitution\": [\n      {\n        \"key\": \"先固定分担对象和系统层级\",\n        \"id\": \"先固定分担对象和系统层级\",\n        \"title\": \"分担对象\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"因果方向与替代供给\",\n        \"id\": \"因果方向与替代供给\",\n        \"title\": \"因果与替代\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"联合生产中的决策情境\",\n        \"id\": \"联合生产中的决策情境\",\n        \"title\": \"决策情境\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"同一批产品先问份额归给谁\",\n        \"id\": \"同一批产品先问份额归给谁\",\n        \"title\": \"批次份额\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把两项原文的评价标准放到一起\",\n        \"id\": \"把两项原文的评价标准放到一起\",\n        \"title\": \"文献判断\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"先保留两项服务再看替代减项\",\n        \"id\": \"先保留两项服务再看替代减项\",\n        \"title\": \"同一组服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"部分利用时重新交代活动与去向\",\n        \"id\": \"部分利用时重新交代活动与去向\",\n        \"title\": \"部分利用\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"案例计算总览\",\n        \"id\": \"案例计算总览\",\n        \"title\": \"案例总表\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"@case:joint:title\",\n        \"title\": \"同一批共产品：份额、路线与比较残余\",\n        \"depth\": 3,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:partition\",\n        \"title\": \"问题一：怎样把既有一批的清单分派给产品标签？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"@case:joint:routes\",\n        \"title\": \"问题二：保持两项服务，改变供给路线会怎样？\",\n        \"depth\": 4,\n        \"type\": \"case\"\n      },\n      {\n        \"key\": \"从路线开始复核\",\n        \"id\": \"从路线开始复核\",\n        \"title\": \"路线复核\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/allocation-judgment-and-corrections\": [\n      {\n        \"key\": \"公平可接受性和可操作性\",\n        \"id\": \"公平可接受性和可操作性\",\n        \"title\": \"责任与可行性\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"方法选择索取怎样的信息\",\n        \"id\": \"方法选择索取怎样的信息\",\n        \"title\": \"所需信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"修订怎样改变规则的适用范围\",\n        \"id\": \"修订怎样改变规则的适用范围\",\n        \"title\": \"增补与适用范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/climate-response-and-metrics\": [\n      {\n        \"key\": \"响应与指标\",\n        \"id\": \"响应与指标\",\n        \"title\": \"响应与指标\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"气体与碳收支\",\n        \"id\": \"气体与碳收支\",\n        \"title\": \"气体与碳收支\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"清单比较\",\n        \"id\": \"清单比较\",\n        \"title\": \"清单比较\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"排放日历\",\n        \"id\": \"排放日历\",\n        \"title\": \"排放日历\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"历史与用途\",\n        \"id\": \"历史与用途\",\n        \"title\": \"历史与用途\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/emission-time-and-assessment\": [\n      {\n        \"key\": \"先把三种时间分开\",\n        \"id\": \"先把三种时间分开\",\n        \"title\": \"三种时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"响应怎样进入计算\",\n        \"id\": \"响应怎样进入计算\",\n        \"title\": \"响应计算\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"动态方法的范围\",\n        \"id\": \"动态方法的范围\",\n        \"title\": \"动态方法的范围\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/database-fitness-and-documentation\": [\n      {\n        \"key\": \"表示对象\",\n        \"id\": \"表示对象\",\n        \"title\": \"数据所代表的过程\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"质量信息\",\n        \"id\": \"质量信息\",\n        \"title\": \"数据的质量信息\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"聚合与覆盖\",\n        \"id\": \"聚合与覆盖\",\n        \"title\": \"数据聚合与覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/review-support-and-version-boundaries\": [\n      {\n        \"key\": \"准则与记录\",\n        \"id\": \"准则与记录\",\n        \"title\": \"审查准则与记录\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"指导的支持程度\",\n        \"id\": \"指导的支持程度\",\n        \"title\": \"指南建议及其依据\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本变化\",\n        \"id\": \"版本变化\",\n        \"title\": \"数据换版与补缺\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/connecting-objects-references-and-time\": [\n      {\n        \"key\": \"先让连接两端各有所指\",\n        \"id\": \"先让连接两端各有所指\",\n        \"title\": \"比较对象与参照\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"再说明数量时间和用途的关系\",\n        \"id\": \"再说明数量时间和用途的关系\",\n        \"title\": \"数量与时间\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/book/from-connected-results-to-conditional-judgment\": [\n      {\n        \"key\": \"先保留数值的来历与覆盖\",\n        \"id\": \"先保留数值的来历与覆盖\",\n        \"title\": \"数值来源与证据覆盖\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"让判断审查和后续证据各有边界\",\n        \"id\": \"让判断审查和后续证据各有边界\",\n        \"title\": \"判断与审查\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"history-and-revision\",\n        \"id\": \"history-and-revision\",\n        \"title\": \"案例与结论修订\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/flows\": [\n      {\n        \"key\": \"一个对象与一次交换\",\n        \"id\": \"一个对象与一次交换\",\n        \"title\": \"一个对象与一次交换\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"两种废物表达\",\n        \"id\": \"两种废物表达\",\n        \"title\": \"废物与处置服务\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"版本怎样影响表达\",\n        \"id\": \"版本怎样影响表达\",\n        \"title\": \"版本怎样影响表达\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"对应关系的边界\",\n        \"id\": \"对应关系的边界\",\n        \"title\": \"对应关系的边界\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/functional-unit\": [\n      {\n        \"key\": \"先找到数据集相对于什么计量\",\n        \"id\": \"先找到数据集相对于什么计量\",\n        \"title\": \"先找到数据集相对于什么计量\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"从功能要求到产品需求\",\n        \"id\": \"从功能要求到产品需求\",\n        \"title\": \"从功能要求到产品需求\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"性能或计划改变时\",\n        \"id\": \"性能或计划改变时\",\n        \"title\": \"性能或计划改变时\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"概念记录与模型\",\n        \"id\": \"概念记录与模型\",\n        \"title\": \"概念、记录与模型\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ],\n    \"/docs/characterization\": [\n      {\n        \"key\": \"一个因子需要什么上下文\",\n        \"id\": \"一个因子需要什么上下文\",\n        \"title\": \"一个因子需要什么上下文\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"把信息状态明确留下来\",\n        \"id\": \"把信息状态明确留下来\",\n        \"title\": \"把信息状态明确留下来\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"一个可以手算的例子\",\n        \"id\": \"一个可以手算的例子\",\n        \"title\": \"一个可以手算的例子\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"在原生模型中区分零与缺失\",\n        \"id\": \"在原生模型中区分零与缺失\",\n        \"title\": \"在原生模型中区分零与缺失\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      },\n      {\n        \"key\": \"检查报告保留了什么\",\n        \"id\": \"检查报告保留了什么\",\n        \"title\": \"检查报告保留了什么\",\n        \"depth\": 2,\n        \"type\": \"mdx\"\n      }\n    ]\n  }\n}\n",
+      "toDigest": "31556cebdd6ce96dc4640914bef272475351a9b948a02635ce6ad36b2f515dcd"
+    },
+    {
+      "path": "content/docs/book/framework-responsibilities.mdx",
+      "op": "add",
+      "fromSha256": null,
+      "toSha256": "18b63120f0d5a3c2a8f08eaab114e6c88667726310d4db7ee7bd9632f81cb61d",
+      "previous": null
+    },
+    {
+      "path": "content/docs/book/joint-production.mdx",
+      "op": "add",
+      "fromSha256": null,
+      "toSha256": "319a67c6e21f2bd500de4a6660c24b39d0b633f4231b0a509a81c924b14edc04",
+      "previous": null
+    },
+    {
+      "path": "content/docs/book/climate-equivalence.mdx",
+      "op": "add",
+      "fromSha256": null,
+      "toSha256": "84985b3ebaee8e63ffd729c5d53c03f4069dfea05de8f72c2f4d847206300862",
+      "previous": null
+    },
+    {
+      "path": "content/docs/book/data-applicability.mdx",
+      "op": "add",
+      "fromSha256": null,
+      "toSha256": "f413fd2dfef8abc27fbe7c5e3095a0e49c3f1776248189162095255b8f195a5c",
+      "previous": null
+    },
+    {
+      "path": "content/docs/book/revisable-judgment.mdx",
+      "op": "add",
+      "fromSha256": null,
+      "toSha256": "dc1f483e429c19f3866ba953e4b7ed901a2bae6b7e001dec198a44d7863fdab8",
+      "previous": null
+    },
+    {
+      "path": "content/docs/book/framework-history.mdx",
+      "op": "delete",
+      "fromSha256": "82b8764c9c8aaddc9547e280c966a1fa6277ddc01e72ad0e0f4664385f56a30e",
+      "toSha256": null,
+      "previous": "---\ntitle: 评价框架的形成\ndescription: 比较会议记录与不同指南，辨认清单、评价、改进和解释的分析任务及其历史安排。\n---\n\n## 史料与事件 [#先辨认史料描述的对象]\n\n<Prose ids=\"cl-book-framework-records cl-book-framework-project\" />\n\n<ReaderSection id=\"事件与文献的身份\" />\n\n<Prose ids=\"cl-book-framework-event-gap cl-book-framework-method\" />\n\n## 组成部分与步骤 [#组件和步骤怎样组织研究]\n\n<Prose ids=\"cl-book-framework-epa1993 cl-book-framework-unep\" />\n\n<ReaderSection id=\"同一框架中的不同表达任务\" />\n\n<Prose ids=\"cl-book-framework-epa2006 cl-book-framework-guide\" />\n\n## 清单与影响 [#每个环节究竟交付什么]\n\n<Prose ids=\"cl-framework-work-before-boxes cl-framework-early-division cl-framework-early-feedback\" />\n\n<ReaderSection id=\"从清单到影响评价\" />\n\n<Prose ids=\"cl-framework-inventory-return cl-framework-profile-return\" />\n\n## 诊断与改进 [#诊断如何走向设计改变]\n\n<Prose ids=\"cl-framework-design-return cl-framework-design-sideeffects\" />\n\n## 解释与建议 [#解释如何形成有根据的建议]\n\n<Prose ids=\"cl-framework-cml-information cl-framework-cml-two-outputs cl-framework-epa-checks cl-framework-epa-recommendations\" />\n\n## 分析任务的变化 [#职责的展开与重新安排]\n\n<Prose ids=\"cl-framework-comparison-not-replacement cl-framework-reader-work-product\" />\n\n<Prose ids=\"cl-fw179-shared-phases cl-fw179-decision-gates cl-fw179-impact-weighting cl-fw179-review-assurance cl-fw179-method-choice-effects cl-fw179-epistemic-limits\" />\n\n**表：四套主流 LCA 操作指南的阶段组织、比较门槛、加权规则与审验治理对照**\n\n| 对比维度 | CML 2001/2002（Part 2a 指南） | ILCD 2010（详细指南） | 欧盟 PEF 2021（2021/2279 附件一） | GHG Protocol 产品标准（2011） |\n| --- | --- | --- | --- | --- |\n| 阶段与流程组织 | 4 阶段（目标与范围、清单、影响评价、解释）+ 第 1 章项目程序管理（共 5 章）；分简化级、详细基线级与可选扩展级 | 4 阶段多轮迭代回路（由完整性、敏感性与一致性检查驱动精化） | 遵循 PEF/PEFCR 标准化流程；报告含/不含使用阶段全生命周期结果 | 企业商业目标→原则→范围→边界→数据质量→分配→不确定性→结果→鉴证→报告与减排目标 |\n| 决策情景与比较断言门槛 | 详细级兼容 ISO；公开比较断言受限，不含品类强制统一规则 | 按决策情景前置分流为 Situation A（微观）、B（中宏观）与 C1/C2（描述性核算） | 区分一般比较与比较断言；两者仅在遵循对应 PEFCR 时允许 | 定位为单一产品纵向减排追踪；明确不支持 ISO 14044 比较断言（对比须另加产品规则） |\n| 影响类别与加权规则 | 多类别中点问题导向；强推荐归一化，分组与加权可选无基线法；转述 ISO 14042 禁止公开比较断言加权 | 多类别影响评价；按情景与目标匹配表征与可选归一化/加权 | 强制采用全部 16 项 EF 影响类别（不得排除）；分类表征后强制归一化与加权并可汇总单一总分 | 仅核算温室气体（GHG）单一影响类别，不涉及多类别权衡与加权 |\n| 解释检查与审验/鉴证治理 | 第 5 章开展一致性、完整性与敏感性/不确定性评估，报告结果带宽与局限 | 第 11 章要求按范围确定审验，核查一致性与有效性；细则出台前以 ISO 14040/14044 为底线 | 第 8.1 节规定凡用于任何形式对外沟通，均强制执行独立核查与验证 | 第 12.2 节界定三方结构，要求产品碳清单经由第一方或第三方鉴证 |\n\n要沿同一项服务核对清单、指标和比较准则，可读[墙面服务比较](/docs/book/wall-service-to-comparison/)。\n\n关于具体计算如何用于评价和改进，可接着读[CML指南中的评价与改进](/docs/book/cml-computation-judgment-and-improvement/)。合订本将这两篇的相关内容编入[评价框架与分析步骤](/print/#print-unit-626f6f6b2d6672616d65776f726b2d726573706f6e736962696c6974696573)一章。\n"
+    },
+    {
+      "path": "content/docs/book/cml-computation-judgment-and-improvement.mdx",
+      "op": "delete",
+      "fromSha256": "bef0ac4d548091c210e12d4f6a019b2d651e1ad98a7930847e1440c29b35de89",
+      "toSha256": null,
+      "previous": "---\ntitle: CML指南中的评价与改进\ndescription: 通过CML指南中的铝箔、椅子和包装算例，理解计算、取舍、改进建议与实际采用之间的关系。\n---\n\n早期指南已尝试利用清单计算支持设计建议。CML的铝箔算例先计算活动量，查明废物来源并考察参数响应，再讨论这些结果如何支持后续判断。有关评价框架形成的机构史料，另见[评价框架的形成](/docs/book/framework-history/)。\n\n## 研究用途 [#一个建议怎样获得根据]\n\n<Prose ids=\"cl-cml-opening cl-cml-edition cl-cml-components\" />\n\n<ReaderSection id=\"先确定哪一种选择需要解释\" />\n\n<Prose ids=\"cl-cml-goal-service cl-cml-conditional-path cl-cml-target-before-improvement\" />\n\n## 计算与改进 [#从活动平衡到废物贡献]\n\n<Prose ids=\"cl-cml-toy-records cl-cml-toy-balance cl-cml-toy-waste cl-cml-toy-dominance cl-cml-balance-caution\" />\n\n按两条平衡式可重算活动量；印值与重算结果的对照见附录[方程与原表](/docs/appendices/cml-framework-calculations/#方程与原表)。\n\n<ReaderSection id=\"最大的贡献与最敏感的参数\" />\n\n<Prose ids=\"cl-cml-response-question cl-cml-response-scale cl-cml-feasibility cl-cml-soot cl-cml-design-loop\" />\n\n附录[参数响应](/docs/appendices/cml-framework-calculations/#参数响应)给出同一假想模型中的固体废物质量计算，并对照局部近似与铝产出系数提高1%后的重算结果。\n\n## 取舍与检查 [#同一张环境剖面仍需要取舍]\n\n<Prose ids=\"cl-cml-chairs cl-cml-normalization cl-cml-panel cl-cml-weight-description\" />\n\n<ReaderSection id=\"不需要权重时也要检查结论\" />\n\n<Prose ids=\"cl-cml-checks cl-cml-crockery cl-cml-checks-preference\" />\n\n## 指南修订 [#2001年重新安排了哪些工作]\n\n<Prose ids=\"cl-cml-rewrite cl-cml-guide-genres cl-cml-scope-choices cl-cml-check-order cl-cml-operational-availability cl-cml-rearrangement cl-cml-weights-2001 cl-cml-recommendation\" />\n\n## 分析与决策 [#分析结果怎样进入参与者的决定]\n\n<Prose ids=\"cl-cml-decision-levels cl-cml-covenant cl-cml-decision-procedure\" />\n\n## 指南的实际采用 [#另一个研究怎样使用这份指南]\n\n<Prose ids=\"cl-cml-reception-question cl-cml-factor-meaning cl-cml-solvent-bins cl-cml-screening-range-limit cl-cml-methane-counter cl-cml-screening-boundaries cl-cml-reception-lineage\" />\n\n甲苯取范围的两端时会落在哪一档，可在附录[因子范围与评分档位](/docs/appendices/cml-framework-calculations/#来源范围与分档)核对。\n\n<ReaderSection id=\"把历史比较落实到职责\" />\n\n<Prose ids=\"cl-cml-historical-crosswalk cl-cml-ending\" />\n"
+    },
+    {
+      "path": "content/docs/book/allocation-and-substitution.mdx",
+      "op": "delete",
+      "fromSha256": "75c21e8b57706065ce5ec49197afc29186b46677d6d21946863df5a5c59a9bc2",
+      "toSha256": null,
+      "previous": "---\ntitle: 共产品的分配与替代\ndescription: 用同一批假想共产品说明怎样分担排放，以及换一种供给路线后排放怎样变化。\n---\n\n同一次生产提供两种材料时，可以问已有的排放怎样记到产品名下，也可以问改换供给会怎样改变排放。下面用同一批假想产品做两道计算。分担排放时，生产照旧；比较供给时，两种路线要交付同样的材料服务。\n\n## 分担对象 [#先固定分担对象和系统层级]\n\n<Prose ids=\"cl-allocation-problem-and-procedure cl-allocation-cascade-level\" />\n\n## 因果与替代 [#因果方向与替代供给]\n\n<Prose ids=\"cl-allocation-causal-directions cl-allocation-alternative-supply\" />\n\n## 决策情境 [#联合生产中的决策情境]\n\n<Prose ids=\"cl-allocation-fixed-proportions cl-allocation-market-and-agents cl-allocation-three-responsibilities\" />\n\n## 批次份额 [#同一批产品先问份额归给谁]\n\n<Prose ids=\"cl-joint-question cl-joint-typed-inventory cl-joint-boundary cl-joint-mass-partition cl-joint-sales-partition cl-joint-what-additivity-proves\" />\n\n## 文献判断 [#把两项原文的评价标准放到一起]\n\n<Prose ids=\"cl-allocation-2005-sales-purpose cl-allocation-1998-sales-criterion cl-joint-rival-criteria\" />\n\n## 同一组服务 [#先保留两项服务再看替代减项]\n\n<Prose ids=\"cl-joint-fixed-basket cl-joint-positive-routes cl-joint-residual-derivation cl-joint-negative-meaning cl-joint-different-questions cl-joint-double-credit\" />\n\n## 部分利用 [#部分利用时重新交代活动与去向]\n\n<Prose ids=\"cl-joint-partial-use cl-joint-partial-balances cl-joint-partial-inventory cl-joint-cancellation cl-joint-version-boundary\" />\n\n## 案例总表 [#案例计算总览]\n\n<TeachingCase id=\"CASE-JOINT-BATCH\" version=\"1.0.0\" />\n\n## 路线复核 [#从路线开始复核]\n\n<Prose ids=\"cl-joint-exercise cl-joint-answer\" />\n\n若要选用文献中的具体规则，还须了解它为何这样分担、适用于什么情况，以及后来有没有修订。参见[分配规则与修订](/docs/book/allocation-judgment-and-corrections/)。\n"
+    },
+    {
+      "path": "content/docs/book/allocation-judgment-and-corrections.mdx",
+      "op": "delete",
+      "fromSha256": "b31195af5bdf1b6970351776b6eb885eb3e5200bdaf34f75aaaa285a8a5d5986",
+      "toSha256": null,
+      "previous": "---\ntitle: 分配规则与修订\ndescription: 比较共同生产的分担理由、替代证据和报告对象，并辨认规则修订改变了哪些条件。\n---\n\n按质量或按收入，都能把同一笔排放分完，却可能给同一产品记下不同的份额。要读懂结果，先看各条规则凭什么让这些产品承担负担。若规则经过修订，还要查计算时实际用了哪一版。\n\n## 责任与可行性 [#公平可接受性和可操作性]\n\n<Prose ids=\"cl-allocation-fairness-interpretations cl-allocation-feasibility-tradeoff\" />\n\n## 所需信息 [#方法选择索取怎样的信息]\n\n<Prose ids=\"cl-allocation-information-and-ethics cl-allocation-limits-on-both-sides cl-joint-conference-feedback\" />\n\n## 增补与适用范围 [#修订怎样改变规则的适用范围]\n\n<Prose ids=\"cl-allocation-addendum-substantive cl-allocation-addendum-substitution-duty cl-sub105-two-uses cl-sub105-pef-report cl-sub105-ilcd-market cl-sub105-ilcd-absorption cl-sub105-pef-direct cl-sub105-evidence-example cl-sub105-fallbacks cl-sub105-conditional-results cl-allocation-reading-a-rule cl-sub105-reporting-objects\" />\n\n[共产品的分配与替代](/docs/book/allocation-and-substitution/)给出了两条供给路线、比较残余和共产品只用掉一部分时的计算。两页的论证在合订本的[共同生产](/print/#print-unit-626f6f6b2d6a6f696e742d70726f64756374696f6e)一章中接续展开。\n"
+    },
+    {
+      "path": "content/docs/book/climate-response-and-metrics.mdx",
+      "op": "delete",
+      "fromSha256": "f47d6091da54ace9f96227133bdc95a4991959ee385b07c2e9a0f74902bfd5b8",
+      "toSha256": null,
+      "previous": "---\ntitle: 气候响应与当量\ndescription: 从辐射强迫与温度响应出发，对比气候中点—终点体系、非 CO₂ 碳反馈开关、EF 生物源与土地利用碳子指标、一氧化碳与甲烷版本更替、变化率指标及跨体系五步核查准则。\n---\n\n## 响应与指标 [#响应与指标]\n\n<Prose ids=\"cl-climate-opening cl-climate-inventory cl-climate-pulse cl-climate-reservoirs cl-climate-reference-illustration\" />\n\n<ReaderFigure>\n  <img src=\"/book-figures/climate-response-and-integral.svg\" alt=\"相同CO₂响应的两种量：上图显示大气中剩余的比例，下图显示到各时点的累计面积。\" width=\"700\" height=\"800\" />\n  <figcaption>同一响应的剩余比例与时间积分</figcaption>\n</ReaderFigure>\n\n拟合参数与积分的逐项重建见[气候数值的重建](/docs/appendices/climate-numerical-reconstruction/#参考响应)。\n\n<Prose ids=\"cl-climate-reference-limits cl-climate-forcing cl-climate-agwp cl-climate-agtp cl-climate-endpoint\" />\n\n<Prose ids=\"cl-bio127-midpoint-endpoint-genealogy\" />\n\n表 1 主流影响评价体系的气候变化中点与终点架构对照。\n\n| 体系 | 中点指标与时间窗 | 终点处理 | 关键边界或特点 |\n| --- | --- | --- | --- |\n| ILCD 2011 / EF 3.1 | 仅 GWP100（kg CO₂ 当量；EF 权重 21.06%，人均基准 7553.08 kg CO₂ 当量/人） | 0 项正式推荐（ILCD 仅列临时参考） | 严格停在百年辐射强迫中点 |\n| ReCiPe 2016 | 20 年（I）、100 年（H）、1000 年（E）三套 GWP | 乘视角恒定常数转健康（DALY）、陆地与淡水生态（species·yr） | 同视角内严格保序，忽略不同寿命气体的热惯性差异 |\n| LC-IMPACT | 0 项中点 | 100 年与 1000 年/无限期分“确定性”与“全部”两档直算损害 | 确定性档仅含 3 类健康病种且淡水生态置空 |\n\n## 气体与碳收支 [#气体与碳收支]\n\n<Prose ids=\"cl-climate-feedback-consistency cl-climate-feedback-return\" />\n\n<Prose ids=\"cl-bio127-feedback-perspective-asymmetry\" />\n\n表 2 ReCiPe 2016 三视角非 CO₂ 气候—碳反馈开关与典型气体中点因子（kg CO₂ 当量/kg）。\n\n| 文化视角（时间窗） | 非 CO₂ 碳反馈 | 非化石甲烷 | 化石甲烷 | 氧化亚氮（N₂O） | 3.5 kg 非化石甲烷 vs 1 kg N₂O |\n| --- | --- | --- | --- | --- | --- |\n| 个人主义（I，20 年） | 关闭 | 84 | 85 | 264 | 294 > 264（甲烷更高） |\n| 等级主义（H，100 年） | 开启 | 34 | 36 | 298 | 119 < 298（N₂O 更高） |\n| 平等主义（E，1000 年） | 关闭 | 4.8 | 4.9 | 78.8 | 16.8 < 78.8（N₂O 更高） |\n\n<Prose ids=\"cl-climate-methane-chemistry cl-climate-carbon-budget cl-climate-three-methane-rows cl-climate-biogenic-boundary\" />\n\n<Prose ids=\"cl-bio127-ef31-subindicator-partition\" />\n\n表 3 EF 3.1 气候变化三项零重叠子指标（合计 1099 条因子）的路由与代表因子（kg CO₂ 当量/kg）。\n\n| 子指标（条数） | CO₂ 吸收 / 排放 | 甲烷（CH₄） | 其他关键归属与规则 |\n| --- | --- | --- | --- |\n| 化石（1074 条） | 排放 +1.0（空气捕获置 0.0） | 29.8 | 含泥炭、石灰石煅烧及全部 6 条氧化亚氮（273.0） |\n| 生物源（13 条） | 吸收 0.0 / 排放 0.0（0/0 约定） | 27.0 | 摇篮到大门产品须另报物理生物碳含量 |\n| 土地利用（12 条） | 吸收 −1.0 / 排放 +1.0（仅 5 条大气排放流） | 29.8 | 原生林木材及土壤碳按 +1.0 计且排除光合吸收 |\n\n<Prose ids=\"cl-bio127-zero-zero-vs-minus-plus-one\" />\n\n## 清单比较 [#清单比较]\n\n<Prose ids=\"cl-climate-editions cl-climate-published-after cl-climate-equal-score\" />\n\n本节的墙面清单来自[墙面服务比较](/docs/book/wall-service-to-comparison/)的完整教学例。性能、维护、活动和截断条件见该例；这里固定其中一组清单，只比较指标和版本的作用。\n\n<Prose ids=\"cl-climate-wall-fixed cl-climate-wall-reweighted cl-climate-comparison-criteria\" />\n\n表中显示值与重算值的对照见[气候数值的重建](/docs/appendices/climate-numerical-reconstruction/#显示精度)。同一附录的“历史程序”一节另有程序复算。\n\n<Prose ids=\"cl-bio127-co-removal-and-methane-shift cl-bio127-package-and-report-discrepancies\" />\n\n## 排放日历 [#排放日历]\n\n<Prose ids=\"cl-climate-calendar-sum cl-climate-timing-assumptions cl-climate-timing-result cl-climate-dynamic-application\" />\n\n排放时间与评价边界的解释，见[排放时间与评价](/docs/book/emission-time-and-assessment/)。\n\n## 历史与用途 [#历史与用途]\n\n<Prose ids=\"cl-climate-step cl-climate-rate-formula cl-climate-rate-fit cl-climate-rate-histories cl-climate-rate-window cl-climate-rate-aggregate cl-climate-debate\" />\n\n<Prose ids=\"cl-bio127-climate-diagnostic-synthesis\" />\n\n<Prose ids=\"cl-climate-conclusion\" />\n"
+    },
+    {
+      "path": "content/docs/book/emission-time-and-assessment.mdx",
+      "op": "delete",
+      "fromSha256": "08628068b4aa3195d61c9560daf495593085abbf2b09a509ee7db91841029e20",
+      "toSha256": null,
+      "previous": "---\ntitle: 排放时间与评价\ndescription: 区分固定时间窗与共同日历终点，对照碳储存抵扣禁令、二十年土地利用转换均摊规则与动态积分各自的评价边界。\n---\n\n## 三种时间 [#先把三种时间分开]\n\n<Prose ids=\"cl-time-emission-profile cl-time-elapsed-response cl-time-common-endpoint\" />\n\n## 响应计算 [#响应怎样进入计算]\n\n<Prose ids=\"cl-time-combination cl-time-horizon-choice\" />\n\n<Prose ids=\"cl-bio127-storage-abolition-and-dluc-window\" />\n\n## 动态方法的范围 [#动态方法的范围]\n\n<Prose ids=\"cl-time-model-limits cl-time-dynamic-not-forecast\" />\n\n前瞻技术的情景设定，见[未来技术与情景](/docs/book/future-technology-and-context/)。\n"
+    },
+    {
+      "path": "content/docs/book/database-fitness-and-documentation.mdx",
+      "op": "delete",
+      "fromSha256": "16962796ec22dcd32375880dd4d2117b6913e6f79af2942446c188128b6cdcf6",
+      "toSha256": null,
+      "previous": "---\ntitle: 过程数据的用途\ndescription: 从一份供电或原材料过程数据出发，比较单元过程、市场活动与支撑子过程的衔接边界，辨析固有代表性与研究语境重评，并验算最弱项五倍惩罚、四维算术均值与前 80% 单一总分加权带来的判定差异。\n---\n\n## 数据所代表的过程 [#表示对象]\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples\" />\n\n<Prose ids=\"cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness\" />\n\n## 数据的质量信息 [#质量信息]\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-documenting-number\" />\n\n<Prose ids=\"cl-dapp147-quality-architectures-and-prerequisite-split\" />\n\n## 数据聚合与覆盖 [#聚合与覆盖]\n\n<Prose ids=\"cl-db2011-aggregation-information cl-db2011-missing-and-zero\" />\n\n<Prose ids=\"cl-dapp147-weakest-link-vs-mean-and-80pct-masking\" />\n\n表 1 五套主要数据体系在质量维度、单维缺省上限、聚合算式及准入用途上的结构分工。\n\n| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |\n| --- | --- | --- | --- | --- | --- |\n| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |\n| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |\n| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |\n| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |\n| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |\n| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |\n"
+    },
+    {
+      "path": "content/docs/book/review-support-and-version-boundaries.mdx",
+      "op": "delete",
+      "fromSha256": "5fbb77172c0f2639150029b774a1923e41179c03968f06c8df79f791ff4579cd",
+      "toSha256": null,
+      "previous": "---\ntitle: 数据审查与版本\ndescription: 对比自动平衡验证、多角色编辑审查与独立外部评审团队门槛，解析五维合规块中“未定义”字段的真实制度含义，并追踪参考包换版漂移、三年期恶化重审红线与次级代理补缺阶梯。\n---\n\n## 审查准则与记录 [#准则与记录]\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context\" />\n\n<Prose ids=\"cl-dapp147-validation-vs-review-and-team-thresholds\" />\n\n## 指南建议及其依据 [#指导的支持程度]\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n<Prose ids=\"cl-dapp147-five-aspect-compliance-and-uuid-semantics\" />\n\n## 数据换版与补缺 [#版本变化]\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n\n<Prose ids=\"cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge\" />\n\n表 1 五套体系在校验评审门槛、合规声明结构、区域残差、换版重审与次级补缺上的制度规则对照。\n\n| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |\n| --- | --- | --- | --- | --- | --- |\n| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |\n| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |\n| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |\n| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |\n| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许挥发性有机物（VOC）等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |\n\n<Prose ids=\"cl-db2011-conditional-use\" />\n\n继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。\n"
+    },
+    {
+      "path": "content/docs/book/connecting-objects-references-and-time.mdx",
+      "op": "delete",
+      "fromSha256": "53a8e82da39da0b8c358073aa652695941f8b2a6cbf2e491aa55a79bfdcb0378",
+      "toSha256": null,
+      "previous": "---\ntitle: 服务、系统与时间\ndescription: 围绕服务要求、资料用途和时间设置，说明清单与模型能够比较、连接和复用的条件。\n---\n\n## 比较对象与参照 [#先让连接两端各有所指]\n\n<Prose ids=\"cl-connect-object-before-unit cl-connect-service-changes-system cl-connect-target-and-distribution cl-connect-money-has-roles cl-rev163-lcia-pathway-and-packet-drift\" />\n\n## 数量与时间 [#再说明数量时间和用途的关系]\n\n<Prose ids=\"cl-connect-three-scalings cl-connect-time-relations cl-connect-prospective-two-questions cl-connect-reuse-keeps-relation cl-rev163-circular-and-prospective-coupling\" />\n"
+    },
+    {
+      "path": "content/docs/book/from-connected-results-to-conditional-judgment.mdx",
+      "op": "delete",
+      "fromSha256": "91162aca5f7d739a5d947f683663825db5428a0ed3ab40528689c5a7fbb79f7b",
+      "toSha256": null,
+      "previous": "---\ntitle: 判断依据与修订\ndescription: 通过饮料容器、墙面和购物袋三个案例，辨认证据支持哪一项判断、新资料会改变哪一步。\n---\n\n判断是否适用，要看数值怎样得出、证据覆盖哪些后果。与[服务、系统与时间](/docs/book/connecting-objects-references-and-time/)合读，可以看到本书末章的完整论证。下文提到的开篇与案例均指本书相应章节。\n\n## 数值来源与证据覆盖 [#先保留数值的来历与覆盖]\n\n<Prose ids=\"cl-connect-zero-needs-origin cl-connect-proxy-and-outcome cl-connect-evidence-to-probability cl-connect-coverage-and-overlap cl-rev163-pedigree-dqr-and-sampling-limits\" />\n\n## 判断与审查 [#让判断审查和后续证据各有边界]\n\n<Prose ids=\"cl-connect-values-stay-specific cl-connect-useful-without-winner cl-connect-review-does-not-transfer cl-book-conclusion-conditions cl-rev163-valuation-denominator-and-veto-limits cl-rev163-comparative-assertion-three-regimes\" />\n\n## 案例与结论修订 [#history-and-revision]\n\n<Prose ids=\"cl-closing-container-comparison-and-policy cl-closing-wall-substrate cl-closing-pack-threshold-and-review cl-pack-limits cl-connect-next-evidence-at-link cl-closing-historical-return\" />\n\n<Prose ids=\"cl-rev163-targeted-revision-routing\" />\n\n**表：全书七类新增证据或规则变更的定向修订路由**\n\n下表把全书七部最常遇到的七类新增证据或规则变更收束到同一张修订路由表中，便于在出现新数据时快速定位应重算的环节、保持不变的依据与不得越界的推论。\n\n| 新增证据或变更类型 | 受影响环节与主要主题 | 应修订的结论项 | 保持不变的既有依据 | 不得由此直接推论 |\n| --- | --- | --- | --- | --- |\n| 服务性能、次级功能或真实使用行为变化（如基底准备、复用次数与内衬替代） | 功能单位、参考流与案例比较（服务与清单、墙面与购物袋案例） | 服务等效性、参考流数量、复用门槛与多指标优劣结论 | 上游单品工艺物料平衡与各影响因子本身 | 仅凭质量相等即等效，或假定消费者实际复用次数必然达标 |\n| 工艺放大系数、前景—背景年份错位或循环分账参数变更 | 系统边界、多功能分配与前瞻情景（循环足迹、未来技术与情景） | 工业放大清单、再生料归属方向与未来情景包络区间 | 既有实测基准年清单与历史回望记录 | 实验室热点等同商业化表现，或超结构软件即担保情景合理 |\n| 背景数据库换版、剩余地区（RoW）市场重算或缺失流补全 | 清单链接与数据适用性（流与交换、数据库适用性与版本边界） | 背景上游贡献、区域代表性偏差与缺失流补齐说明 | 前景实测工艺输入输出与既定功能单位 | 数据库换版导致的数值变化等同企业现场节能或增排 |\n| 影响评价方法换版、因果截点调整或官方数据包勘误 | 表征模型与影响路径（矿产、化石、生物碳、酸化、富营养化、颗粒物、水、臭氧与毒性） | 类别归属、空间与时间窗因子值及受勘误影响的类别排序 | 物理排放与资源开采清单（以自然单位计） | 影响分值变化源于物理排放变动，或旧版数据包勘误可忽略 |\n| 归一化分母漂移、权重与货币估值立场或地球边界配额改变 | 跨类汇总与价值判断（归一化与加权、本地化、社会评价、成本与地球边界） | 综合单分排序、补偿限度、社会底线否决与绝对合规判定 | 归一化前的中点／终点物理与生态指标结果 | 综合加权分值属于纯自然科学事实，或现金流成本可与生态损害直接相抵 |\n| 实测抽样方差更新、谱系矩阵替代或数据质量等级变化 | 不确定度与质量表征（变异与不确定性、质量评分与概率） | 置信区间、成对比较稳健性判定与数据质量评级披露 | 确定性点估计公式结构与物理守恒关系 | 谱系蒙特卡洛区间等同实测统计方差，或高 DQR 消除系统边界截断 |\n| 产品足迹类别规则、法定核查要求或关键性审查范围变更 | 制度边界与外部审查（产品足迹规则、墙面与购物袋审查体制） | 面向公众的比较断言资格、性能分级与法定披露格式 | 内部热点诊断、灵敏度结构与物理改进方向 | 某法域或导则审查通过即自动满足另一法域或国际标准原文要求 |\n\n<Prose ids=\"cl-rev163-monograph-closing-boundary\" />\n"
+    },
+    {
+      "path": "content/monograph/framework-responsibilities.mdx",
+      "op": "delete",
+      "fromSha256": "341839e650b0671b0748a8a97d75abf53f88d0f8e3bcf366299e00f677fd4db2",
+      "toSha256": null,
+      "previous": "---\ntitle: 评价框架与分析步骤\ndescription: 比较清单、评价、改进和解释的任务，考察各阶段结果如何支持判断，以及指南如何被其他研究采用。\n---\n\n## 史料与分析任务 [#史料与职责]\n\n<Prose ids=\"cl-framework-work-before-boxes cl-book-framework-records\" />\n\n下面通过铝箔、椅子和包装的例子，考察这些分析任务，再看一份印刷筛查报告如何使用指南中的表征数据。\n\n<Prose ids=\"cl-book-framework-project\" />\n\n<Prose ids=\"cl-book-framework-epa1993 cl-framework-early-division cl-framework-early-feedback cl-book-framework-unep cl-book-framework-epa2006\" />\n\n<Prose ids=\"cl-cml-opening cl-cml-edition cl-cml-components cl-book-framework-guide cl-book-framework-event-gap\" />\n\n<Prose ids=\"cl-cml-goal-service cl-cml-conditional-path cl-cml-target-before-improvement cl-book-framework-method\" />\n\n## 清单计算 [#清单计算]\n\n<Prose ids=\"cl-framework-inventory-return cl-cml-toy-records cl-cml-toy-balance cl-cml-toy-waste cl-cml-balance-caution\" />\n\n行列式的逐项对照见附录[指南算例复核：方程与原表](/docs/appendices/cml-framework-calculations/#方程与原表)。\n\n<Prose ids=\"cl-cml-toy-dominance cl-cml-response-question cl-cml-response-scale\" />\n\n局部与有限改动的计算分别列在附录[参数响应](/docs/appendices/cml-framework-calculations/#参数响应)。\n\n## 评价取舍 [#评价取舍]\n\n<Prose ids=\"cl-framework-profile-return cl-cml-chairs cl-cml-normalization cl-cml-panel cl-cml-weight-description\" />\n\n<Prose ids=\"cl-cml-checks cl-cml-crockery cl-cml-checks-preference\" />\n\n## 改进与解释 [#改进与解释]\n\n<Prose ids=\"cl-framework-design-return cl-cml-feasibility cl-cml-soot cl-framework-design-sideeffects cl-cml-design-loop\" />\n\n<Prose ids=\"cl-cml-rewrite cl-cml-guide-genres cl-cml-scope-choices cl-framework-cml-information cl-cml-check-order cl-cml-operational-availability cl-cml-weights-2001 cl-cml-rearrangement\" />\n\n<Prose ids=\"cl-framework-cml-two-outputs cl-framework-epa-checks cl-framework-epa-recommendations cl-cml-recommendation\" />\n\n<Prose ids=\"cl-cml-decision-levels cl-cml-covenant cl-cml-decision-procedure cl-framework-comparison-not-replacement cl-framework-reader-work-product\" />\n\n<Prose ids=\"cl-fw179-shared-phases cl-fw179-decision-gates cl-fw179-impact-weighting cl-fw179-review-assurance cl-fw179-method-choice-effects cl-fw179-epistemic-limits\" />\n\n**表：四套主流 LCA 操作指南的阶段组织、比较门槛、加权规则与审验治理对照**\n\n| 对比维度 | CML 2001/2002（Part 2a 指南） | ILCD 2010（详细指南） | 欧盟 PEF 2021（2021/2279 附件一） | GHG Protocol 产品标准（2011） |\n| --- | --- | --- | --- | --- |\n| 阶段与流程组织 | 4 阶段（目标与范围、清单、影响评价、解释）+ 第 1 章项目程序管理（共 5 章）；分简化级、详细基线级与可选扩展级 | 4 阶段多轮迭代回路（由完整性、敏感性与一致性检查驱动精化） | 遵循 PEF/PEFCR 标准化流程；报告含/不含使用阶段全生命周期结果 | 企业商业目标→原则→范围→边界→数据质量→分配→不确定性→结果→鉴证→报告与减排目标 |\n| 决策情景与比较断言门槛 | 详细级兼容 ISO；公开比较断言受限，不含品类强制统一规则 | 按决策情景前置分流为 Situation A（微观）、B（中宏观）与 C1/C2（描述性核算） | 区分一般比较与比较断言；两者仅在遵循对应 PEFCR 时允许 | 定位为单一产品纵向减排追踪；明确不支持 ISO 14044 比较断言（对比须另加产品规则） |\n| 影响类别与加权规则 | 多类别中点问题导向；强推荐归一化，分组与加权可选无基线法；转述 ISO 14042 禁止公开比较断言加权 | 多类别影响评价；按情景与目标匹配表征与可选归一化/加权 | 强制采用全部 16 项 EF 影响类别（不得排除）；分类表征后强制归一化与加权并可汇总单一总分 | 仅核算温室气体（GHG）单一影响类别，不涉及多类别权衡与加权 |\n| 解释检查与审验/鉴证治理 | 第 5 章开展一致性、完整性与敏感性/不确定性评估，报告结果带宽与局限 | 第 11 章要求按范围确定审验，核查一致性与有效性；细则出台前以 ISO 14040/14044 为底线 | 第 8.1 节规定凡用于任何形式对外沟通，均强制执行独立核查与验证 | 第 12.2 节界定三方结构，要求产品碳清单经由第一方或第三方鉴证 |\n\n服务、清单、指标与比较准则的完整教学例，见[墙面服务比较](/print/#print-unit-2f646f63732f626f6f6b2f77616c6c2d736572766963652d746f2d636f6d70617269736f6e)。\n\n## 指南的实际采用 [#外部采用]\n\n<Prose ids=\"cl-cml-reception-question cl-cml-factor-meaning cl-cml-solvent-bins cl-cml-screening-range-limit\" />\n\n甲苯范围与档位的对照见附录[因子范围与评分档位](/docs/appendices/cml-framework-calculations/#来源范围与分档)。\n\n<Prose ids=\"cl-cml-methane-counter cl-cml-screening-boundaries cl-cml-reception-lineage cl-cml-historical-crosswalk cl-cml-ending\" />\n"
+    },
+    {
+      "path": "content/monograph/joint-production.mdx",
+      "op": "delete",
+      "fromSha256": "319a67c6e21f2bd500de4a6660c24b39d0b633f4231b0a509a81c924b14edc04",
+      "toSha256": null,
+      "previous": "---\ntitle: 共同生产\ndescription: 一批共产品怎样分担排放？改用另一条路线供给同样的产品，又会怎样改变排放？两道问题各有条件。\n---\n\n## 信息目的 [#信息目的]\n\n<Prose ids=\"cl-allocation-problem-and-procedure cl-allocation-information-and-ethics cl-allocation-causal-directions cl-allocation-cascade-level cl-allocation-alternative-supply cl-allocation-fixed-proportions cl-allocation-three-responsibilities\" />\n\n## 负担份额 [#负担份额]\n\n<Prose ids=\"cl-joint-question cl-joint-typed-inventory cl-joint-boundary cl-joint-mass-partition cl-joint-sales-partition cl-joint-what-additivity-proves cl-allocation-market-and-agents cl-allocation-2005-sales-purpose cl-allocation-1998-sales-criterion cl-joint-rival-criteria\" />\n\n## 参照供给 [#参照供给]\n\n<Prose ids=\"cl-joint-fixed-basket cl-joint-positive-routes cl-joint-residual-derivation cl-joint-negative-meaning cl-joint-different-questions cl-joint-double-credit cl-joint-partial-use cl-joint-partial-balances cl-joint-partial-inventory cl-joint-cancellation\" />\n\n<TeachingCase id=\"CASE-JOINT-BATCH\" version=\"1.0.0\" />\n\n## 规则边界 [#规则边界]\n\n<Prose ids=\"cl-allocation-fairness-interpretations cl-allocation-feasibility-tradeoff cl-allocation-limits-on-both-sides cl-joint-conference-feedback cl-allocation-addendum-substantive cl-allocation-addendum-substitution-duty cl-joint-version-boundary cl-sub105-two-uses cl-sub105-pef-report cl-sub105-ilcd-market cl-sub105-ilcd-absorption cl-sub105-pef-direct cl-sub105-evidence-example cl-sub105-fallbacks cl-sub105-conditional-results cl-joint-exercise cl-joint-answer cl-allocation-reading-a-rule cl-sub105-reporting-objects\" />\n\n下一章[市场响应](/docs/book/market-boundaries-and-response/)进一步追问，怎样判断哪些供应者真的会调整产量。\n"
+    },
+    {
+      "path": "content/monograph/climate-equivalence.mdx",
+      "op": "delete",
+      "fromSha256": "84985b3ebaee8e63ffd729c5d53c03f4069dfea05de8f72c2f4d847206300862",
+      "toSha256": null,
+      "previous": "---\ntitle: 气候当量\ndescription: 两项排放的 CO₂ 当量相同意味着什么？从中点—终点架构与非 CO₂ 碳反馈，到生物源与土地利用碳子指标、碳储存与排放日历规则，再到变化率指标与官方发行包异文，逐层辨析气候当量的成立条件。\n---\n\n## 响应与指标 [#响应与指标]\n\n<Prose ids=\"cl-climate-opening cl-climate-inventory cl-climate-pulse cl-climate-reservoirs cl-climate-reference-illustration\" />\n\n<ReaderFigure>\n  <img src=\"/book-figures/climate-response-and-integral.svg\" alt=\"相同CO₂响应的两种量：上图显示大气中剩余的比例，下图显示到各时点的累计面积。\" width=\"700\" height=\"800\" />\n  <figcaption>同一响应的剩余比例与时间积分</figcaption>\n</ReaderFigure>\n\n拟合参数与积分的逐项重建见[气候数值的重建](/docs/appendices/climate-numerical-reconstruction/#参考响应)。\n\n<Prose ids=\"cl-climate-reference-limits cl-climate-forcing cl-climate-agwp cl-climate-agtp cl-climate-endpoint\" />\n\n<Prose ids=\"cl-bio127-midpoint-endpoint-genealogy\" />\n\n表 1 主流影响评价体系的气候变化中点与终点架构对照。\n\n| 体系 | 中点指标与时间窗 | 终点处理 | 关键边界或特点 |\n| --- | --- | --- | --- |\n| ILCD 2011 / EF 3.1 | 仅 GWP100（kg CO₂ 当量；EF 权重 21.06%，人均基准 7553.08 kg CO₂ 当量/人） | 0 项正式推荐（ILCD 仅列临时参考） | 严格停在百年辐射强迫中点 |\n| ReCiPe 2016 | 20 年（I）、100 年（H）、1000 年（E）三套 GWP | 乘视角恒定常数转健康（DALY）、陆地与淡水生态（species·yr） | 同视角内严格保序，忽略不同寿命气体的热惯性差异 |\n| LC-IMPACT | 0 项中点 | 100 年与 1000 年/无限期分“确定性”与“全部”两档直算损害 | 确定性档仅含 3 类健康病种且淡水生态置空 |\n\n## 气体与碳收支 [#气体与碳收支]\n\n<Prose ids=\"cl-climate-feedback-consistency cl-climate-feedback-return\" />\n\n<Prose ids=\"cl-bio127-feedback-perspective-asymmetry\" />\n\n表 2 ReCiPe 2016 三视角非 CO₂ 气候—碳反馈开关与典型气体中点因子（kg CO₂ 当量/kg）。\n\n| 文化视角（时间窗） | 非 CO₂ 碳反馈 | 非化石甲烷 | 化石甲烷 | 氧化亚氮（N₂O） | 3.5 kg 非化石甲烷 vs 1 kg N₂O |\n| --- | --- | --- | --- | --- | --- |\n| 个人主义（I，20 年） | 关闭 | 84 | 85 | 264 | 294 > 264（甲烷更高） |\n| 等级主义（H，100 年） | 开启 | 34 | 36 | 298 | 119 < 298（N₂O 更高） |\n| 平等主义（E，1000 年） | 关闭 | 4.8 | 4.9 | 78.8 | 16.8 < 78.8（N₂O 更高） |\n\n<Prose ids=\"cl-climate-methane-chemistry cl-climate-carbon-budget cl-climate-three-methane-rows cl-climate-biogenic-boundary\" />\n\n<Prose ids=\"cl-bio127-ef31-subindicator-partition\" />\n\n表 3 EF 3.1 气候变化三项零重叠子指标（合计 1099 条因子）的路由与代表因子（kg CO₂ 当量/kg）。\n\n| 子指标（条数） | CO₂ 吸收 / 排放 | 甲烷（CH₄） | 其他关键归属与规则 |\n| --- | --- | --- | --- |\n| 化石（1074 条） | 排放 +1.0（空气捕获置 0.0） | 29.8 | 含泥炭、石灰石煅烧及全部 6 条氧化亚氮（273.0） |\n| 生物源（13 条） | 吸收 0.0 / 排放 0.0（0/0 约定） | 27.0 | 摇篮到大门产品须另报物理生物碳含量 |\n| 土地利用（12 条） | 吸收 −1.0 / 排放 +1.0（仅 5 条大气排放流） | 29.8 | 原生林木材及土壤碳按 +1.0 计且排除光合吸收 |\n\n<Prose ids=\"cl-bio127-zero-zero-vs-minus-plus-one\" />\n\n## 清单比较 [#清单比较]\n\n<Prose ids=\"cl-climate-editions cl-climate-published-after cl-climate-equal-score\" />\n\n本节的墙面清单来自[墙面服务比较](/docs/book/wall-service-to-comparison/)的完整教学例。性能、维护、活动和截断条件见该例；这里固定其中一组清单，只比较指标和版本的作用。\n\n<Prose ids=\"cl-climate-wall-fixed cl-climate-wall-reweighted cl-climate-comparison-criteria\" />\n\n表中显示值与重算值的对照见[气候数值的重建](/docs/appendices/climate-numerical-reconstruction/#显示精度)。同一附录的“历史程序”一节另有程序复算。\n\n<Prose ids=\"cl-bio127-co-removal-and-methane-shift cl-bio127-package-and-report-discrepancies\" />\n\n## 排放日历 [#排放日历]\n\n<Prose ids=\"cl-time-emission-profile cl-time-elapsed-response cl-time-common-endpoint cl-time-combination cl-climate-calendar-sum cl-climate-timing-assumptions cl-climate-timing-result cl-climate-dynamic-application cl-time-horizon-choice cl-time-model-limits\" />\n\n<Prose ids=\"cl-bio127-storage-abolition-and-dluc-window\" />\n\n<Prose ids=\"cl-time-dynamic-not-forecast\" />\n\n未来清单的技术与背景设定，另见后面的[未来技术与情景](/docs/book/future-technology-and-context/)。\n\n## 历史与用途 [#历史与用途]\n\n<Prose ids=\"cl-climate-step cl-climate-rate-formula cl-climate-rate-fit cl-climate-rate-histories cl-climate-rate-window cl-climate-rate-aggregate cl-climate-debate\" />\n\n<Prose ids=\"cl-bio127-climate-diagnostic-synthesis\" />\n\n<Prose ids=\"cl-climate-conclusion\" />\n\n下一章转向[酸化与营养富集](/docs/book/acidification-and-nutrient-pathways/)。\n"
+    },
+    {
+      "path": "content/monograph/data-applicability.mdx",
+      "op": "delete",
+      "fromSha256": "f413fd2dfef8abc27fbe7c5e3095a0e49c3f1776248189162095255b8f195a5c",
+      "toSha256": null,
+      "previous": "---\ntitle: 数据适用性\ndescription: 围绕过程数据的表示角色、固有与研究语境代表性、多维质量聚合算式、验证与独立评审门槛、五维合规声明及参考包换版补缺规则，系统比较国际指南、欧盟环境足迹、瑞士 ecoinvent 数据库与天工公开规范的共同条件与结论反转。\n---\n\n## 数据所代表的过程 [#表示对象]\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples\" />\n\n<Prose ids=\"cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness\" />\n\n## 数据的质量信息 [#质量信息]\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-documenting-number\" />\n\n<Prose ids=\"cl-dapp147-quality-architectures-and-prerequisite-split\" />\n\n<Prose ids=\"cl-db2011-aggregation-information cl-db2011-missing-and-zero\" />\n\n<Prose ids=\"cl-dapp147-weakest-link-vs-mean-and-80pct-masking\" />\n\n表 1 五套主要数据体系在质量维度、单维缺省上限、聚合算式及准入用途上的结构分工。\n\n| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |\n| --- | --- | --- | --- | --- | --- |\n| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |\n| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |\n| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |\n| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |\n| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |\n| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |\n\n## 数据的审查范围 [#审查范围]\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context\" />\n\n<Prose ids=\"cl-dapp147-validation-vs-review-and-team-thresholds\" />\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n<Prose ids=\"cl-dapp147-five-aspect-compliance-and-uuid-semantics\" />\n\n## 数据换版与补缺 [#版本变化]\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n\n<Prose ids=\"cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge\" />\n\n表 2 五套体系在校验评审门槛、合规声明结构、区域残差、换版重审与次级补缺上的制度规则对照。\n\n| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |\n| --- | --- | --- | --- | --- | --- |\n| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |\n| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |\n| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |\n| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |\n| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许挥发性有机物（VOC）等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |\n\n<Prose ids=\"cl-db2011-conditional-use\" />\n\n继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。\n"
+    },
+    {
+      "path": "content/monograph/revisable-judgment.mdx",
+      "op": "delete",
+      "fromSha256": "dc1f483e429c19f3866ba953e4b7ed901a2bae6b7e001dec198a44d7863fdab8",
+      "toSha256": null,
+      "previous": "---\ntitle: 可修订的判断\ndescription: 回到饮料容器、墙面和购物袋，说明比较结果可以支持什么判断，又该根据什么新证据修订结论。\n---\n\n## 服务与系统 [#对象连接]\n\n<Prose ids=\"cl-connect-object-before-unit cl-closing-container-comparison-and-policy cl-connect-service-changes-system cl-connect-three-scalings cl-connect-prospective-two-questions cl-connect-time-relations cl-rev163-circular-and-prospective-coupling\" />\n\n## 模型与证据覆盖 [#覆盖状态]\n\n<Prose ids=\"cl-closing-wall-substrate cl-connect-reuse-keeps-relation cl-connect-zero-needs-origin cl-connect-proxy-and-outcome cl-connect-target-and-distribution cl-connect-evidence-to-probability cl-connect-coverage-and-overlap cl-rev163-lcia-pathway-and-packet-drift cl-rev163-pedigree-dqr-and-sampling-limits\" />\n\n## 取舍与结论强度 [#判断理由]\n\n<Prose ids=\"cl-connect-values-stay-specific cl-connect-money-has-roles cl-connect-review-does-not-transfer cl-connect-useful-without-winner cl-book-conclusion-conditions cl-rev163-valuation-denominator-and-veto-limits cl-rev163-comparative-assertion-three-regimes\" />\n\n## 结论修订的依据 [#历史与修订]\n\n<Prose ids=\"cl-closing-pack-threshold-and-review cl-pack-limits cl-connect-next-evidence-at-link cl-closing-historical-return\" />\n\n<Prose ids=\"cl-rev163-targeted-revision-routing\" />\n\n**表：全书七类新增证据或规则变更的定向修订路由**\n\n下表把全书七部最常遇到的七类新增证据或规则变更收束到同一张修订路由表中，便于在出现新数据时快速定位应重算的环节、保持不变的依据与不得越界的推论。\n\n| 新增证据或变更类型 | 受影响环节与主要主题 | 应修订的结论项 | 保持不变的既有依据 | 不得由此直接推论 |\n| --- | --- | --- | --- | --- |\n| 服务性能、次级功能或真实使用行为变化（如基底准备、复用次数与内衬替代） | 功能单位、参考流与案例比较（服务与清单、墙面与购物袋案例） | 服务等效性、参考流数量、复用门槛与多指标优劣结论 | 上游单品工艺物料平衡与各影响因子本身 | 仅凭质量相等即等效，或假定消费者实际复用次数必然达标 |\n| 工艺放大系数、前景—背景年份错位或循环分账参数变更 | 系统边界、多功能分配与前瞻情景（循环足迹、未来技术与情景） | 工业放大清单、再生料归属方向与未来情景包络区间 | 既有实测基准年清单与历史回望记录 | 实验室热点等同商业化表现，或超结构软件即担保情景合理 |\n| 背景数据库换版、剩余地区（RoW）市场重算或缺失流补全 | 清单链接与数据适用性（流与交换、数据库适用性与版本边界） | 背景上游贡献、区域代表性偏差与缺失流补齐说明 | 前景实测工艺输入输出与既定功能单位 | 数据库换版导致的数值变化等同企业现场节能或增排 |\n| 影响评价方法换版、因果截点调整或官方数据包勘误 | 表征模型与影响路径（矿产、化石、生物碳、酸化、富营养化、颗粒物、水、臭氧与毒性） | 类别归属、空间与时间窗因子值及受勘误影响的类别排序 | 物理排放与资源开采清单（以自然单位计） | 影响分值变化源于物理排放变动，或旧版数据包勘误可忽略 |\n| 归一化分母漂移、权重与货币估值立场或地球边界配额改变 | 跨类汇总与价值判断（归一化与加权、本地化、社会评价、成本与地球边界） | 综合单分排序、补偿限度、社会底线否决与绝对合规判定 | 归一化前的中点／终点物理与生态指标结果 | 综合加权分值属于纯自然科学事实，或现金流成本可与生态损害直接相抵 |\n| 实测抽样方差更新、谱系矩阵替代或数据质量等级变化 | 不确定度与质量表征（变异与不确定性、质量评分与概率） | 置信区间、成对比较稳健性判定与数据质量评级披露 | 确定性点估计公式结构与物理守恒关系 | 谱系蒙特卡洛区间等同实测统计方差，或高 DQR 消除系统边界截断 |\n| 产品足迹类别规则、法定核查要求或关键性审查范围变更 | 制度边界与外部审查（产品足迹规则、墙面与购物袋审查体制） | 面向公众的比较断言资格、性能分级与法定披露格式 | 内部热点诊断、灵敏度结构与物理改进方向 | 某法域或导则审查通过即自动满足另一法域或国际标准原文要求 |\n\n<Prose ids=\"cl-rev163-monograph-closing-boundary\" />\n"
+    }
+  ],
+  "routeChanges": [
+    {
+      "op": "merge",
+      "from": [
+        "/docs/book/framework-history",
+        "/docs/book/cml-computation-judgment-and-improvement"
+      ],
+      "to": "/docs/book/framework-responsibilities",
+      "bookUnit": "book-framework-responsibilities",
+      "anchors": {
+        "/docs/book/framework-history#先辨认史料描述的对象": "#史料与职责",
+        "/docs/book/framework-history#组件和步骤怎样组织研究": "#史料与职责",
+        "/docs/book/framework-history#每个环节究竟交付什么": "#史料与职责",
+        "/docs/book/framework-history#诊断如何走向设计改变": "#改进与解释",
+        "/docs/book/framework-history#解释如何形成有根据的建议": "#改进与解释",
+        "/docs/book/framework-history#职责的展开与重新安排": "#改进与解释",
+        "/docs/book/cml-computation-judgment-and-improvement#一个建议怎样获得根据": "#史料与职责",
+        "/docs/book/cml-computation-judgment-and-improvement#从活动平衡到废物贡献": "#清单计算",
+        "/docs/book/cml-computation-judgment-and-improvement#同一张环境剖面仍需要取舍": "#评价取舍",
+        "/docs/book/cml-computation-judgment-and-improvement#2001年重新安排了哪些工作": "#改进与解释",
+        "/docs/book/cml-computation-judgment-and-improvement#分析结果怎样进入参与者的决定": "#改进与解释",
+        "/docs/book/cml-computation-judgment-and-improvement#另一个研究怎样使用这份指南": "#外部采用"
+      },
+      "rationale": "将第 4 章原网页两篇分页（《评价框架的形成》《CML指南中的评价与改进》）合并为统一单章《评价框架与分析步骤》，与书籍第 4 章逐章对齐。"
+    },
+    {
+      "op": "merge",
+      "from": [
+        "/docs/book/allocation-and-substitution",
+        "/docs/book/allocation-judgment-and-corrections"
+      ],
+      "to": "/docs/book/joint-production",
+      "bookUnit": "book-joint-production",
+      "anchors": {
+        "/docs/book/allocation-and-substitution#先固定分担对象和系统层级": "#信息目的",
+        "/docs/book/allocation-and-substitution#因果方向与替代供给": "#信息目的",
+        "/docs/book/allocation-and-substitution#联合生产中的决策情境": "#信息目的",
+        "/docs/book/allocation-and-substitution#同一批产品先问份额归给谁": "#负担份额",
+        "/docs/book/allocation-and-substitution#把两项原文的评价标准放到一起": "#负担份额",
+        "/docs/book/allocation-and-substitution#先保留两项服务再看替代减项": "#参照供给",
+        "/docs/book/allocation-and-substitution#部分利用时重新交代活动与去向": "#参照供给",
+        "/docs/book/allocation-and-substitution#案例计算总览": "#参照供给",
+        "/docs/book/allocation-and-substitution#从路线开始复核": "#参照供给",
+        "/docs/book/allocation-judgment-and-corrections#公平可接受性和可操作性": "#规则边界",
+        "/docs/book/allocation-judgment-and-corrections#方法选择索取怎样的信息": "#规则边界",
+        "/docs/book/allocation-judgment-and-corrections#修订怎样改变规则的适用范围": "#规则边界"
+      },
+      "rationale": "将第 10 章原网页两篇分页（《共产品的分配与替代》《分配规则与修订》）合并为统一单章《共同生产》，与书籍第 10 章逐章对齐。"
+    },
+    {
+      "op": "merge",
+      "from": [
+        "/docs/book/climate-response-and-metrics",
+        "/docs/book/emission-time-and-assessment"
+      ],
+      "to": "/docs/book/climate-equivalence",
+      "bookUnit": "book-climate-equivalence",
+      "anchors": {
+        "/docs/book/climate-response-and-metrics#响应与指标": "#响应与指标",
+        "/docs/book/climate-response-and-metrics#气体与碳收支": "#气体与碳收支",
+        "/docs/book/climate-response-and-metrics#清单比较": "#清单比较",
+        "/docs/book/climate-response-and-metrics#排放日历": "#排放日历",
+        "/docs/book/climate-response-and-metrics#历史与用途": "#历史与用途",
+        "/docs/book/emission-time-and-assessment#先把三种时间分开": "#排放日历",
+        "/docs/book/emission-time-and-assessment#响应计算": "#排放日历",
+        "/docs/book/emission-time-and-assessment#动态方法的范围": "#排放日历"
+      },
+      "rationale": "将第 15 章原网页两篇分页（《气候响应与当量》《排放时间与评价》）合并为统一单章《气候当量》，与书籍第 15 章逐章对齐。"
+    },
+    {
+      "op": "merge",
+      "from": [
+        "/docs/book/database-fitness-and-documentation",
+        "/docs/book/review-support-and-version-boundaries"
+      ],
+      "to": "/docs/book/data-applicability",
+      "bookUnit": "book-data-applicability",
+      "anchors": {
+        "/docs/book/database-fitness-and-documentation#表示对象": "#表示对象",
+        "/docs/book/database-fitness-and-documentation#质量信息": "#质量信息",
+        "/docs/book/database-fitness-and-documentation#聚合与覆盖": "#质量信息",
+        "/docs/book/review-support-and-version-boundaries#准则与记录": "#审查范围",
+        "/docs/book/review-support-and-version-boundaries#指导的支持程度": "#审查范围",
+        "/docs/book/review-support-and-version-boundaries#版本变化": "#版本变化"
+      },
+      "rationale": "将第 25 章原网页两篇分页（《过程数据的用途》《数据审查与版本》）合并为统一单章《数据适用性》，与书籍第 25 章逐章对齐。"
+    },
+    {
+      "op": "merge",
+      "from": [
+        "/docs/book/connecting-objects-references-and-time",
+        "/docs/book/from-connected-results-to-conditional-judgment"
+      ],
+      "to": "/docs/book/revisable-judgment",
+      "bookUnit": "book-revisable-judgment",
+      "anchors": {
+        "/docs/book/connecting-objects-references-and-time#先让连接两端各有所指": "#对象连接",
+        "/docs/book/connecting-objects-references-and-time#再说明数量时间和用途的关系": "#对象连接",
+        "/docs/book/from-connected-results-to-conditional-judgment#先保留数值的来历与覆盖": "#覆盖状态",
+        "/docs/book/from-connected-results-to-conditional-judgment#让判断审查和后续证据各有边界": "#判断理由",
+        "/docs/book/from-connected-results-to-conditional-judgment#history-and-revision": "#历史与修订"
+      },
+      "rationale": "将第 32 章原网页两篇分页（《服务、系统与时间》《判断依据与修订》）合并为统一单章《可修订的判断》，与书籍第 32 章逐章对齐。"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/docs/book/framework-responsibilities",
+      "route": "/docs/book/framework-responsibilities",
+      "sha256": "acacf334631570790d58db5f4e548dcf3518a29ae8683c64640102059e360d80"
+    },
+    {
+      "path": "/print",
+      "route": "book-framework-responsibilities",
+      "sha256": "5a7482b31ad61730b1999f24fca47a99a8a1bc4e1c0e760da49c47720fcf9598"
+    },
+    {
+      "path": "/docs/book/joint-production",
+      "route": "/docs/book/joint-production",
+      "sha256": "e8d2b2c4eaac4340a45001407b25c92581e6c40b044fd32269ff7abdf5d08ab6"
+    },
+    {
+      "path": "/print",
+      "route": "book-joint-production",
+      "sha256": "b5eb1dbfc4d84f94a15e3d863459393645c05e06c283a1aa0ea3bdb2b51908df"
+    },
+    {
+      "path": "/docs/book/climate-equivalence",
+      "route": "/docs/book/climate-equivalence",
+      "sha256": "b5d5a22d2e792350263149452017e55f2f53185acd432673c4119001aaeaf4ac"
+    },
+    {
+      "path": "/print",
+      "route": "book-climate-equivalence",
+      "sha256": "2311f6fce65be73c4e2a2d8e47e44522e52557206dab055dcf699ea34cb9b311"
+    },
+    {
+      "path": "/docs/book/data-applicability",
+      "route": "/docs/book/data-applicability",
+      "sha256": "fb8f85d06f0b0e20bd02b39c427d4ea6f5657a4d1c6e8304b7f52f0e71c49ade"
+    },
+    {
+      "path": "/print",
+      "route": "book-data-applicability",
+      "sha256": "caf3d5eaeb4ef62b311b164c26342b476b50d81388e6b0411df8fb40f87d2667"
+    },
+    {
+      "path": "/docs/book/revisable-judgment",
+      "route": "/docs/book/revisable-judgment",
+      "sha256": "bd0fcb8ee1b84f8ff34f26f535f0e8ec4778a57d3a03073c04ee854bdc344e98"
+    },
+    {
+      "path": "/print",
+      "route": "book-revisable-judgment",
+      "sha256": "dc691353251a6bea26bcf6c77eb86048fec7e8b716a27a3728b0b93b247c757d"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "8965001eca143ed06afb6c8990151dcf39d5aa41a0ff7c43ab1579a0c8c1200c"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "c9d8fbae65fe8e490366ecbbdbaaa51c09a801883a49e7d9d2b5980c8ff1dd39"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "cddbeab3b6a328ace107e9a4d611c686aeb6571ed7f40699bf820bb2fdc35fb5"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "b7a0ca2f5fa30c1eb2e9fc07cc2dd18274e47f4d91c87226279026d8f19d6d5c"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "5abc2ff7bb6880305959f78611b9044d21f64155b8c4308fa6f28cff8cee55fa"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "f2b426bfb429e639b31ddbea37a37b65d1c61b9d5a76ce4e8296a24cb853b8b8"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "455a10ee593c62d142db01eee90587f5b097fa7f815b8fe3f589ead119def018"
+    }
+  ],
+  "corrections": [
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-db2011-conditional-use",
+      "scope": "合并第 25 章后去除指向原前半篇《过程数据的用途》的悬空自指，改为自然承接本章前两节与后两节。"
+    },
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-dapp147-quality-architectures-and-prerequisite-split",
+      "scope": "统一跨章引称，将“后篇《质量评分与概率》”改为“后文《质量评分与概率》”。"
+    },
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-dapp147-validation-vs-review-and-team-thresholds",
+      "scope": "合并第 25 章后将第 3 节正文内指向后表（表 2）的旧表号“表 1”更正为“表 2”，并精简合并缝处的重复缩写展开。"
+    },
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-dapp147-five-aspect-compliance-and-uuid-semantics",
+      "scope": "合并第 25 章后将第 3 节正文内指向表 2 的旧表号“表 1”更正为“表 2”。"
+    },
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-dapp147-package-migration-inheritance-and-surveillance",
+      "scope": "合并第 25 章后将第 4 节正文内指向表 2 的旧表号“表 1”更正为“表 2”。"
+    },
+    {
+      "chapter": "第 25 章《数据适用性》",
+      "claimId": "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge",
+      "scope": "合并第 25 章后将第 4 节两处指向表 2 的旧表号“表 1”更正为“表 2”，并精简重复 DQR 展开。"
+    },
+    {
+      "chapter": "第 15 章《气候当量》",
+      "claimId": "cl-bio127-climate-diagnostic-synthesis",
+      "scope": "合并第 15 章后去除残留拆篇措辞（“外部方法差异”“本篇”），统一为单章自然衔接。"
+    }
+  ],
+  "reviewEvidence": [
+    {
+      "kind": "editorial-integration",
+      "date": "2026-11-23",
+      "file": "_docs/editorial/review-evidence/wp4-merge-split-chapters-and-unify-numbering/review-record.json",
+      "sha256": "6da440825eff2f57cf571cbc059b7744ae73d4300bdd3e9a619fc918620aa54a"
+    }
+  ]
+}

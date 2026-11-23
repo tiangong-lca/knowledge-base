@@ -591,7 +591,7 @@ export function projectRevisionNumbering(revisions, value) {
     const fileRow = (revisions[i].files ?? []).find(row => row.path === 'config/reader-numbering.json');
     if (fileRow) {
       if (editionDigest(current) !== fileRow.toDigest) {
-        throw new Error(`Reader numbering differs from revision ${revisions[i].id} declared toDigest`);
+        throw new Error(`Reader numbering differs from independently pinned revision ${revisions[i].id} declared toDigest`);
       }
       current = JSON.parse(fileRow.previous);
     }
