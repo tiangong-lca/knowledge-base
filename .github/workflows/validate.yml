@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: knowledge-base-validate-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -40,7 +43,18 @@ jobs:
             pnpm build
           fi
       - uses: dtolnay/rust-toolchain@4360b52568e2003a75bf9bc1d59f33a8e3fc893c # stable
-      - run: cargo install docpact --version 0.1.9 --locked
+      - name: Restore Docpact binary cache
+        id: docpact-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cargo/bin/docpact
+          key: docpact-bin-${{ runner.os }}-${{ runner.arch }}-0.1.9
+      - name: Install and verify pinned Docpact
+        run: |
+          if [ ! -x "$HOME/.cargo/bin/docpact" ] || [ "$("$HOME/.cargo/bin/docpact" --version)" != "docpact 0.1.9" ]; then
+            cargo install docpact --version 0.1.9 --locked
+          fi
+          "$HOME/.cargo/bin/docpact" --version
       - run: docpact validate-config --root "$GITHUB_WORKSPACE" --strict
       - name: Check governed change
         env:
@@ -51,7 +65,3 @@ jobs:
           else
             docpact lint --root "$GITHUB_WORKSPACE" --merge-base origin/main --format json
           fi
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: knowledge-base-static
-          path: out/
