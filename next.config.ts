@@ -1,8 +1,12 @@
 import { execFileSync } from 'node:child_process';
+import { totalmem } from 'node:os';
 import { resolve } from 'node:path';
 import type { NextConfig } from 'next';
 import { PHASE_PRODUCTION_BUILD } from 'next/constants';
 import { createMDX } from 'fumadocs-mdx/next';
+
+const SSG_CPUS = totalmem() >= 10 * 1024 * 1024 * 1024 ? 4 : 2;
+
 const config: NextConfig = {
   agentRules: false,
   output: 'export',
@@ -11,7 +15,7 @@ const config: NextConfig = {
   images: { unoptimized: true },
   experimental: {
     useTypeScriptCli: true,
-    cpus: 2,
+    cpus: SSG_CPUS,
     memoryBasedWorkersCount: true,
   },
 };
