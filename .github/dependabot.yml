@@ -1,0 +1,67 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: "06:00"
+      timezone: Asia/Shanghai
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 2
+    ignore:
+      - dependency-name: "@types/node"
+        versions: [">=25.0.0"]
+    groups:
+      fumadocs-minor-patch:
+        patterns:
+          - "fumadocs-*"
+          - "@fumadocs/*"
+        update-types:
+          - minor
+          - patch
+      react-minor-patch:
+        patterns:
+          - react
+          - react-dom
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - minor
+          - patch
+      styling-minor-patch:
+        patterns:
+          - tailwindcss
+          - "@tailwindcss/*"
+          - postcss
+        update-types:
+          - minor
+          - patch
+      development-minor-patch:
+        dependency-type: development
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "@types/react"
+          - "@types/react-dom"
+          - tailwindcss
+          - "@tailwindcss/*"
+          - postcss
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: wednesday
+      time: "06:20"
+      timezone: Asia/Shanghai
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 1
+    groups:
+      github-actions:
+        patterns:
+          - "*"
