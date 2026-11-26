@@ -1,0 +1,34 @@
+---
+title: "Elementary Flows and Underlying LCIA Coupling: Why Flows Resist Lossless Mapping"
+description: Explain why elementary-flow lists are shaped backwards by underlying LCIA models, dissect four major mismatch zones (water, carbon, land, and metals/particulates), analyze non-bijective collapse, aggregate-flow double-counting, and stoichiometric/unit/sign traps, and expose silent zero-characterization failures.
+---
+
+## How Underlying LCIA Models Shape Elementary Flow Lists [#how-underlying-lcia-models-shape-elementary-flow-lists]
+
+<Prose ids="cl-db28-lcia-shapes-elementary-flows cl-db28-three-nomenclature-architectures" />
+
+## Water, Carbon, Land, and Metals: Four Structural Mismatch Zones [#water-carbon-land-and-metals-four-structural-mismatch-zones]
+
+<Prose ids="cl-db28-water-and-carbon-mismatch cl-db28-land-metals-pm-mismatch" />
+
+## One-to-Many, Many-to-One, and Reference-Substance/Unit Traps [#one-to-many-many-to-one-and-reference-substance-unit-traps]
+
+<Prose ids="cl-db28-many-to-one-and-one-to-many cl-db28-aggregate-flows-and-double-counting cl-db28-stoichiometry-unit-sign-traps" />
+
+## Silent Unmapped Flows and Zero-Characterization Failures [#silent-unmapped-flows-and-zero-characterization-failures]
+
+<Prose ids="cl-db28-silent-unmapped-zero-failure cl-db28-software-handling-and-co-validation" />
+
+Table 1. Five structural failure modes in cross-database elementary-flow mapping, high-frequency trigger flows, LCIA consequences, and engineering audit defenses.
+
+| Failure Mode | Underlying Mechanism | High-Frequency Trigger Flows | Consequence for LCIA Results | Engineering Audit Defense |
+| --- | --- | --- | --- | --- |
+| LCIA accounting-logic clash | Incompatible water-netting or biogenic-carbon sign conventions between source and target LCIA | EF 3.1 7-positive / 4-negative water flows; fossil/biogenic/dLUC carbon (0/0 vs. −1/+1) | Non-consumptive cooling water counted as consumption (order-of-magnitude inflation); spurious negative carbon | Audit water exchange direction and return netting; enforce uniform biogenic-carbon accounting |
+| Many-to-one collapse / one-to-many fabricated precision | Non-bijective match between fine sub-compartments (urban/rural/stack height) and unspecified | PM2.5, PM2.5–10, PM10; Cr(III)/Cr(VI); indoor vs. outdoor air | Permanent loss of exposure detail, or multiplied health/toxicity distortion from wrong proxies | Preserve source sub-compartment metadata; disclose proxy choices and run sensitivity checks |
+| Aggregate group-flow overlap | Speciated compounds and aggregate group totals coexist in one process; row-level mapping lacks balance context | NMVOC, VOC, total PAHs, unspecified pesticides | Double-counting or omission in photochemical ozone and toxicity categories | Screen processes for coexisting speciated and group flows; verify net-of-speciated subtraction |
+| Reference-substance, unit & sign traps | Same element expressed as different chemical species, heating-value/dry-wet bases, or sign conventions | Elemental P vs. P₂O₅ (0.436); N vs. NO₃⁻; LHV vs. HHV; Nm³ vs. kg | Missing stoichiometric or energy multipliers cause >2× systematic bias or sign inversion | Require explicit FlowPropertyFactor and conversion factors in flow maps; ban name-only swaps |
+| Silent unmapped drop-to-zero | Solver assigns zero impact without error when flow UUID, spelling, or context fails to match | Cross-imported methane, heavy metals, pesticides, regionalized water flows | Disguises mapping failure as zero environmental burden, severely underestimating impacts | Co-validate LCIA methods with native flow lists; run zero-characterization audits on top 95%+ flows |
+
+<Prose ids="cl-db28-elementary-to-technosphere-bridge" />
+
+Continue reading: [Data Applicability](/en/docs/book/data-applicability/).

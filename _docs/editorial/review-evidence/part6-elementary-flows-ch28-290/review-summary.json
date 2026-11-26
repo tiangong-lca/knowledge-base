@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "unit": "part6-elementary-flows-ch28-290",
+  "date": "2026-11-26",
+  "scope": "Part VI Chapter 28 (Elementary Flows and Underlying LCIA Coupling, ZH + EN).",
+  "reviews": [
+    {
+      "kind": "primary-source-and-premise-dag",
+      "initialVerdict": "FAIL (2 blocking, 4 non-blocking)",
+      "resolutions": [
+        "Re-anchored ev-db28-ef31-eutro-stoichiometry to src-fossil117-jrc109369 (JRC109369 §4.8 Table 7 note*: P2O5 lacks an ILCD elementary flow in EF 3.1, requiring 0.436 elemental-P conversion).",
+        "Changed cl-db28-silent-unmapped-zero-failure kind from source-statement to synthesis with explicit reasoning separating ILCD 2010 §8.2 from modern cross-database illustrations.",
+        "Tightened fedelemflowlist wording to verified README.md scope (FlowList & FlowMapping) and removed 'indoor' from the EF 3.1 PM list."
+      ],
+      "finalVerdict": "PASS"
+    },
+    {
+      "kind": "zero-context-bilingual-reader",
+      "initialVerdict": "FAIL (1 blocking, 2 non-blocking)",
+      "resolutions": [
+        "Aligned cl-db28-elementary-to-technosphere-bridge symmetrically in ZH and EN to bridge cleanly to Data Applicability without promising unwritten chapters.",
+        "Corrected EN chapter title reference to 'Water Consumption and Scarcity Potential' and recast Data Applicability reference prospectively."
+      ],
+      "finalVerdict": "PASS"
+    }
+  ]
+}
