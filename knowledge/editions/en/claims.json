@@ -11344,6 +11344,116 @@
         "This diagnostic framework governs process-based and hybrid LCA workflows and does not replace specialist toxicological review of site-specific hazardous substance inventories."
       ],
       "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-classification-non-bijective",
+      "status": "published",
+      "zhDigest": "50c085ccc4d84eb53de528b92e020d75fd21d5acf48c2abea5b63d46068c02ce",
+      "text": "Economic and product classification schemes across background LCA databases are inherently non-bijective: ecoinvent pairs ISIC activity classes with CPC product classes, EEIO models such as USEEIO follow BEA/NAICS economic-account sectors, trade statistics use HS codes, and legacy tools such as SimaPro rely heavily on free-text names, making cross-database process correspondence intrinsically many-to-many rather than one-to-one.",
+      "scope": "Non-bijective classification axes for processes and product flows",
+      "caveats": [
+        "Even within a single classification standard, version transitions (such as ISIC Rev. 3 to Rev. 4 or CPC v2 to v2.1) introduce splits and mergers of their own."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-attribute-linking-fragility",
+      "status": "published",
+      "zhDigest": "1a88f84f72229b6b58e9ecd5621dcba9acf3daadba1a7363ffff02a7d2035ea8",
+      "text": "Because heterogeneous LCA databases and software platforms rarely share universal persistent process identifiers, migration tools must fall back on matching attributes such as name, reference product, location, and unit; minor naming drift, case changes, or legacy export constraints break exact linking and cannot be losslessly reverse-engineered from strings alone.",
+      "scope": "Fragility of cross-platform attribute-based linking",
+      "caveats": [
+        "Even when UUIDs are used internally, UUIDs generated independently by different database publishers are not mutually interoperable without an explicit binding table."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-four-tuple-identity",
+      "status": "published",
+      "zhDigest": "d769b1384c621c4108d7c2ad961af926dba62a9d9c836910d2cb914e5894e3c0",
+      "text": "A technosphere process is never identified by product name alone, but by a four-tuple of reference product and technical specification, technology route, geography and supply-chain boundary, and market versus transforming role; changing any one dimension turns an identically named product into a materially different system node.",
+      "scope": "Four-dimensional identity criteria for technosphere processes",
+      "caveats": [
+        "For time-sensitive or multi-output sectors such as agriculture, electricity, and metals, temporal representativeness and co-product allocation rules add further implicit dimensions."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-version-split-disaggregation",
+      "status": "published",
+      "zhDigest": "2e726851ed9c53c0560853c0ab4598c9b6cc82ca1a39cf99c9d765ae73a3d70c",
+      "text": "Even between consecutive releases of the same database family, a single technosphere activity can split into multiple routes: the randonneur migration rule from ecoinvent 3.9.1 to 3.10 disaggregates European xylene production into two distinct BTX routes (0.1176 from pyrolysis gas and 0.8824 from reformate), proving that even intra-database version updates are frequently one-to-many rather than simple renames.",
+      "scope": "Empirical one-to-many disaggregation in intra-database version migration",
+      "caveats": [
+        "The 0.1176/0.8824 split reflects a specific version transition and European market backdrop and must not be transferred blindly to other regions or facility-specific routes."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-market-vs-transforming-boundary",
+      "status": "published",
+      "zhDigest": "b79adaa1cda462c67dacde1bfd73840ec6b3cbfefb7be0f50aff95b3bf4faea7",
+      "text": "Substituting a gate-to-gate transforming activity directly for a market activity that embeds average transport, trade mixes, and losses—or swapping a dynamic Rest-of-World (RoW) residual for a national average process—silently alters transport boundaries, trade structure, and upstream electricity without triggering any software error.",
+      "scope": "Silent boundary shifts from market/transforming and RoW residual mismatches",
+      "caveats": [
+        "If a foreground model already accounts for inbound raw-material transport, linking to a market activity that also includes average delivery double-counts transport."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-transport-and-capital-stitch-traps",
+      "status": "published",
+      "zhDigest": "fe586d559399994aaa6c67a065fcdabb10929f027cb517a79738d0369ee807e9",
+      "text": "When unit processes from different databases are stitched into one product system, the two most common silent boundary distortions are double-counted or omitted transport and asymmetric capital-goods coverage—such as linking infrastructure-inclusive ecoinvent background modules into a sectoral or regulatory foreground that excludes capital goods.",
+      "scope": "Transport and capital-goods boundary traps in cross-database stitching",
+      "caveats": [
+        "While capital goods may contribute modestly to energy-intensive primary smelting, they can substantially alter totals in solar PV, wind power, agriculture, and services."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-system-model-and-carbon-breaks",
+      "status": "published",
+      "zhDigest": "00ab15829895fbb7ed4719b7c6c314fa84934c982dc8d78f1e460eb83fac7186",
+      "text": "Stitching datasets built under incompatible system models (such as Cut-off recycled-content modules with Consequential marginal-substitution modules) or incompatible biogenic-carbon conventions (−1/+1 uptake-and-release tracking versus 0/0 carbon-neutral rules) violates mass, energy, and carbon conservation across the seam, manufacturing artificial credits or phantom emissions that exist in no real supply chain.",
+      "scope": "System-model clashes and biogenic-carbon conservation breaks across seams",
+      "caveats": [
+        "In cradle-to-gate models combining biobased materials with fossil-based downstream steps, inconsistent biogenic-carbon conventions are especially deceptive and require an explicit elemental carbon balance check."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-aggregation-blocks-relinking",
+      "status": "published",
+      "zhDigest": "312888221a4228f406fc6ad579de1ac02269e158df1195f50531f47654ec97bb",
+      "text": "When an upstream database supplies pre-aggregated cradle-to-gate system processes rather than transparent unit processes, downstream modelers cannot open and re-link embedded electricity grids, transport legs, co-product allocations, or elementary-flow versions to match the target background—permanently locking hidden methodological contradictions inside the hybrid result.",
+      "scope": "How pre-aggregated system processes block cross-database re-linking",
+      "caveats": [
+        "Under commercial confidentiality or statutory single-package mandates, aggregated datasets may be legally required, but they must not be presented as transparently re-linkable unit processes."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-semantic-matching-and-llm-limits",
+      "status": "published",
+      "zhDigest": "0769c3c376d7e28068c41bd2a0bb27e9622e0d100d5f6514f8194e5fd5a195f4",
+      "text": "String similarity, vector semantic retrieval, and large language model assistants can dramatically accelerate candidate screening across tens of thousands of multilingual process names, but lexical or semantic proximity does not verify physical mass balance, technical grade, system-model compatibility, or hidden boundary assumptions; unsupervised auto-mapping merely dresses structural mismatches in plausible-looking numbers.",
+      "scope": "Real operational limits of automated semantic matching and LLM-assisted mapping",
+      "caveats": [
+        "A defensible workflow restricts automated tools to candidate recall and metadata-diff highlighting, requiring human verification of the four-tuple identity, system model, and reference-flow unit before linking."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-technosphere-to-formats-bridge",
+      "status": "published",
+      "zhDigest": "b83d1b51174f23126de59c83ad06b62faab0754bdd7d253623a08dca9c6c29f8",
+      "text": "Because neither elementary flows nor technosphere processes admit lossless universal auto-mapping, credible cross-database interoperability cannot rely on black-box converters; it requires explicit data-exchange schemas, auditable declarative migration recipes, and clear governance redlines.",
+      "scope": "Transition from technosphere mapping limits to exchange formats and governance redlines",
+      "caveats": [
+        "Specific exchange-format capabilities, mapping infrastructure, and interoperability redlines are examined next in Part VI and in Part VII Data Applicability."
+      ],
+      "reviewedAt": "2026-11-26"
     }
   ]
 }
