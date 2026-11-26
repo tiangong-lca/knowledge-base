@@ -11454,6 +11454,116 @@
         "Specific exchange-format capabilities, mapping infrastructure, and interoperability redlines are examined next in Part VI and in Part VII Data Applicability."
       ],
       "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-exchange-formats-encode-worldviews",
+      "status": "published",
+      "zhDigest": "bde62feb9d761063a6ec8d8a655da8f8722260354e97b5e36f73f4ff4eec951f",
+      "text": "LCA data exchange formats are never neutral file wrappers; each embeds the data model of a particular era and software worldview—from parameter-less EcoSpold 1 and ecoinvent-coupled EcoSpold 2, to multi-file web-API-oriented ILCD/eILCD, name-linked proprietary SimaPro CSV, and typed entity trees in openLCA JSON-LD—making round-trip conversion across formats structurally lossy.",
+      "scope": "Underlying data models and structural lossiness across major LCA exchange formats",
+      "caveats": [
+        "Lossless exchange holds only when source and target share the complete entity semantics, such as native openLCA exchanges in olca-schema."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-simapro-and-eilcd-structural-limits",
+      "status": "published",
+      "zhDigest": "82b89b0282e2e42bc0b4a3b9934fd73b4329f7d00d04e3f18812680b4d4c1f83",
+      "text": "As documented in the openLCA schema specification, SimaPro CSV has no formal public specification and no independent product-system entity (hard-linking processes by name, which invites clashes in collaborative work), while ILCD lacks stand-alone global parameters and eILCD models product systems via process instances whose exchange linking cannot separate two exchanges of the same flow unless their locations differ.",
+      "scope": "Documented structural constraints of SimaPro CSV and ILCD/eILCD",
+      "caveats": [
+        "These structural limits characterize the exchange formats rather than denying the ability of those platforms to execute standard models inside their native ecosystems."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-olca-jsonld-and-tidas-open-schemas",
+      "status": "published",
+      "zhDigest": "bf8c599e0a242f7aa48c5f479a232fa72200f41f9765446fbec331237f438c37",
+      "text": "Modern open specifications—such as openLCA JSON-LD (olca-schema, pairing an Entity/RefEntity/RootEntity inheritance tree with JSON-LD @type/@id and an RDF ontology) and the TianGong LCA Data System specification (tidas-spec)—bring persistent references, parameterized formulas, multi-method allocation factors, results, and EPDs into machine-validatable schemas, moving away from fragile free-text names.",
+      "scope": "Design trajectory of modern open schemas such as openLCA JSON-LD and TianGong TIDAS",
+      "caveats": [
+        "Open schemas eliminate syntactic and reference ambiguity, but cannot replace scientific judgment or erase underlying system-model conflicts."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-glad-and-fedefl-mapping-hubs",
+      "status": "published",
+      "zhDigest": "d72ccb5717189fa4edb692878254f0d764599af6615ab761b96acd6191014faf",
+      "text": "Public mapping infrastructures are emerging to curb duplicated manual reconciliation: UNEP GLAD (launched June 2020) hosts cross-system elementary flow lists and mapping files through Working Group 1 (WG1), while the U.S. Federal LCA Commons fedelemflowlist standardizes FlowList and FlowMapping tables with direct export to openLCA JSON-LD archives.",
+      "scope": "Public mapping infrastructures including UNEP GLAD and Federal LCA Commons",
+      "caveats": [
+        "Public mapping hubs cut repetitive labor, yet practitioners must still audit many-to-one collapse, unmapped gaps, and LCIA method alignment as established in Chapter 28."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-declarative-vs-imperative-migrations",
+      "status": "published",
+      "zhDigest": "9c63147bd287452341ec2d6e65fc00c1769e0c511b88cc15ed193ba501949996",
+      "text": "For cross-version and cross-software migrations, declarative JSON transformation recipes such as randonneur (providing create, replace, update, delete, and disaggregate verbs, explicit conversion_factor values such as 0.599 from TiO₂ to elemental Titanium, and Brightcon 2022 release IDs) contrast sharply with imperative code tools such as wurst by turning every substitution and split into an auditable, versioned data artifact.",
+      "scope": "Governance contrast between declarative JSON migration recipes and imperative scripts",
+      "caveats": [
+        "Declarative recipes can still carry non-conservative weights (randonneur explicitly notes disaggregation allocations need not sum to 1), so human review and validation tests remain mandatory."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-three-tier-interoperability-redlines",
+      "status": "published",
+      "zhDigest": "335ed0f1c698507b6ce632eea0e72a1416366690ca41ab3d69dfa88e792487b2",
+      "text": "Sound cross-database engineering requires a three-tier interoperability boundary: Tier 1 permits automated lossless syntactic normalization (units, letter casing, verified persistent IDs); Tier 2 allows conditional proxy or disaggregation mapping only with explicit conversion factors, shares, and sensitivity disclosure; Tier 3 prohibits silent mixing of conflicting system models, incompatible biogenic-carbon conventions, or mismatched LCIA flow lists.",
+      "scope": "Three-tier governance boundary for cross-database interoperability",
+      "caveats": [
+        "When statutory rules or client mandates force two disparate sources into one project, Tier 3 does not always forbid calculation outright, but strictly forbids silent mixing—requiring harmonized recomputation or explicit incomparability warnings."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-mandatory-mapping-audit-disclosure",
+      "status": "published",
+      "zhDigest": "a18a8ab648a790648f388fa58b6f859d62810119548993239042878aeb003e58",
+      "text": "Any cross-database study claiming auditability should disclose at minimum four mapping records: exact source and target release identifiers (<database>-<version>-<modifier>), the mapping file version and unmapped-flow drop rate, every stoichiometric conversion or disaggregation factor applied, and whether pre-aggregated system processes blocked upstream re-linking.",
+      "scope": "Minimum transparent disclosure checklist for cross-database modeling",
+      "caveats": [
+        "Even under commercial confidentiality agreements where raw unit-process matrices cannot be published, database versions, mapping provenance, and uncharacterized-flow shares can and should still be disclosed."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-epistemic-boundary-on-proprietary-schemas",
+      "status": "published",
+      "zhDigest": "485e97124ddfe7ab70fb5dc658abec1e326aaf45102dbe086ac0744ba3fe1b46",
+      "text": "Because proprietary formats (such as SimaPro CSV) and internal commercial database schemas lack formal open specifications, third-party converters and researchers can verify behavior only on inspected public specifications and export samples, and must treat undocumented proprietary edge cases as an explicit epistemic boundary rather than assuming round-trip fidelity.",
+      "scope": "Epistemic boundary regarding proprietary formats and internal commercial schemas",
+      "caveats": [
+        "This same boundary governs this monograph: every format comparison is strictly confined to verified public technical documentation without speculating on undocumented proprietary internals."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-verifiable-metadata-over-static-translation",
+      "status": "published",
+      "zhDigest": "6b77954ef0cf3e55f1b232f111324fc7bffe1a71601c6c5b7b37e2cb06c24f14",
+      "text": "Long-term LCA interoperability will not be achieved by endlessly expanding static manual lookup tables; it requires moving governance upstream through versioned persistent identifiers, machine-readable system-model and boundary declarations, and schema-validated open specifications so incompatibilities are flagged automatically before matrix inversion.",
+      "scope": "Long-term interoperability trajectory from static translation to verifiable metadata",
+      "caveats": [
+        "Widespread adoption of open schemas requires sustained coordination across industry, regulators, and open-source communities; in the interim, auditable declarative mapping tables remain vital bridging infrastructure."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db30-part6-to-part7-bridge",
+      "status": "published",
+      "zhDigest": "a7011cf9cd0b125e1d90a8bc764015fbcc06c2d31988b3a54e632f7794228c3f",
+      "text": "With this chapter, Part VI completes its examination of the global background database landscape, core methodological divergences, why elementary flows and technosphere processes resist lossless mapping, and the exchange schemas and governance redlines that bound interoperability; the monograph now turns to Part VII Data Quality, Uncertainty, and Product Footprint Rules to evaluate dataset applicability, uncertainty propagation, pedigree ratings, and statutory compliance boundaries.",
+      "scope": "Closing of Part VI and transition into Part VII Data Quality, Uncertainty, and Product Footprint Rules",
+      "caveats": [
+        "Readers should carry Part VI insights on database versioning, system models, and mapping loss directly into Part VII assessments of data quality ratings and version-upgrade redlines."
+      ],
+      "reviewedAt": "2026-11-26"
     }
   ]
 }
