@@ -43929,6 +43929,48 @@
       "locator": "ILCD Format 1.1 Documentation — Process data set (quantitative reference, technology, geography, LCI method principle)",
       "summary": "ILCD 过程数据集规范要求把定量参照、工艺技术代表性、地理范围与清单建模原则一并写入元数据，表明过程能否复用于另一系统取决于多维技术与方法条件而非产品字面名称。",
       "relation": "supports"
+    },
+    {
+      "id": "ev-db30-olca-format-comparison",
+      "sourceId": "src-db28-olca-schema",
+      "locator": "olca-schema Introduction — Why another LCA data exchange format? (EcoSpold 1, ISO/TS 14048, SimaPro CSV, ILCD/eILCD, EcoSpold II) & Format concepts / JSON-LD / Zip packages",
+      "summary": "openLCA 模式文档逐项对比既有交换格式：EcoSpold 1 缺少参数与公式；ISO/TS 14048 确立过程文档通用要求；SimaPro CSV 无正式规范、靠名称硬链接且无产品系统概念；ILCD 缺少独立全局参数且 eILCD 过程实例链接受限；EcoSpold 2 深度绑定 ecoinvent 父子活动结构；olca-schema 则以 Entity/RefEntity/RootEntity 类型树与 JSON-LD @type/@id 及分类文件夹压缩包实现无损交换。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db30-tidas-open-spec",
+      "sourceId": "src-dapp147-tidas-spec-v030",
+      "locator": "TianGong LCA Data System Public Specification (@tiangong-lca/tidas-spec)",
+      "summary": "天工 TIDAS 公开规范以开放、机器可校验的数据结构与字段语义界定生命周期数据实体，旨在通过标准化模式与可验证元数据提升跨系统互操作能力。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db30-glad-wg1-infrastructure",
+      "sourceId": "src-db28-glad-ef-readme",
+      "locator": "UNEP GLAD Elementary Flow Resources README (launched June 2020; Working Group on Nomenclature WG1)",
+      "summary": "UNEP 生命周期倡议通过 GLAD 网络及其命名工作组（WG1）公开托管跨体系基本流列表与映射文件，构建全球公共映射基础设施。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db30-fedefl-flowmapping-export",
+      "sourceId": "src-db28-fedefl-readme",
+      "locator": "fedelemflowlist README (FlowList & FlowMapping pandas formats; openLCA JSON-LD zip export; DOI: 10.3390/app12199687)",
+      "summary": "美国联邦 LCA 共享库 fedelemflowlist 将基本流列表与映射规则标准化为可编程表格，并支持导出为符合 openLCA schema 的 JSON-LD 压缩包供软件直接载入。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db30-randonneur-declarative-recipes",
+      "sourceId": "src-db29-randonneur-readme",
+      "locator": "randonneur README — Data format (5 verbs, conversion_factor TiO2->Titanium 0.599, contrast with wurst) & Brightcon 2022 Common database release identifier standard",
+      "summary": "randonneur 将 LCI 变换声明为独立 JSON 配方（区分于 wurst 将变换写在代码中的命令式做法），支持五类动词、化学计量换算系数（如 TiO2 至 Titanium 系数 0.599）及 Brightcon 2022 统一发行标识符（<database>-<version>-<modifier>）。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db30-ilcd-transparency-rules",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "ILCD Handbook (2010) — General guide for LCA: methodological consistency, documentation, and transparent reporting of data sources and assumptions",
+      "summary": "ILCD 2010 导则要求任何跨来源数据集成均须保持方法学一致性并透明披露数据来源、版本与建模假设，不得在未披露前提下隐蔽混用不相容规则。",
+      "relation": "supports"
     }
   ],
   "claims": [
@@ -86183,6 +86225,219 @@
       ],
       "conceptIds": [],
       "reasoning": "收束第 28 章（基本流）与本章（技术圈过程）的共同结论，自然引出交换格式架构、映射基础设施与互操作治理的制度需求。"
+    },
+    {
+      "id": "cl-db30-exchange-formats-encode-worldviews",
+      "kind": "synthesis",
+      "text": "生命周期数据交换格式并非中立的文件外壳，每种格式都内嵌了特定时代与软件的数据模型：从缺少参数公式的 EcoSpold 1、深度绑定 ecoinvent 父子活动结构的 EcoSpold 2、面向网络接口分文件引用的 ILCD／eILCD，到按名称硬链接的 SimaPro CSV 与类型化实体树 openLCA JSON-LD，跨格式往返转换天然存在结构性信息损耗。",
+      "scope": "主流 LCA 交换格式的底层数据模型与有损转换本质",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "所谓“无损交换”仅在源软件与目标格式共享完整实体语义（例如 openLCA 内部使用 olca-schema）时成立。"
+      ],
+      "evidenceIds": [
+        "ev-db30-olca-format-comparison"
+      ],
+      "premiseIds": [
+        "cl-db29-attribute-linking-fragility"
+      ],
+      "conceptIds": [],
+      "reasoning": "综合 openLCA 模式文档对五类既有格式的技术对比，可知字段缺失与实体模型差异使跨格式转换必然发生有损投影。"
+    },
+    {
+      "id": "cl-db30-simapro-and-eilcd-structural-limits",
+      "kind": "source-statement",
+      "text": "根据 openLCA 模式文档的记录，SimaPro CSV 既无公开正式规范、也缺少独立的产品系统实体（全部过程按名称硬链接，在多方协作时易发同名冲突）；而 ILCD 格式缺少独立全局参数、其扩展版 eILCD 虽引入产品系统但依赖过程实例副本，且在同一过程包含两条相同流时无法脱离地点差异直接为两条交换分别指定不同供应方。",
+      "scope": "SimaPro CSV 与 ILCD／eILCD 的具体结构局限",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "这些局限反映的是格式架构特征，而非否定相关软件在各自生态内完成常规建模的能力。"
+      ],
+      "evidenceIds": [
+        "ev-db30-olca-format-comparison"
+      ],
+      "premiseIds": [],
+      "conceptIds": []
+    },
+    {
+      "id": "cl-db30-olca-jsonld-and-tidas-open-schemas",
+      "kind": "synthesis",
+      "text": "新一代开放规范——例如以 Entity／RefEntity／RootEntity 继承树结合 JSON-LD（@type、@id）与 RDF 本体构建的 openLCA JSON-LD（olca-schema），以及面向公开字段语义与机器校验的天工 TIDAS 规范（tidas-spec）——致力于把持久引用、参数公式、多方法分配系数、结果与环境产品声明（EPD）都纳入可验证的模式中，摆脱对脆弱自由文本命名的依赖。",
+      "scope": "openLCA JSON-LD 与天工 TIDAS 等现代开放模式的设计方向",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "开放模式能消除语法与引用层面的歧义，但仍不能替代理性的科学判断或自动弥合底层系统模型分歧。"
+      ],
+      "evidenceIds": [
+        "ev-db30-olca-format-comparison",
+        "ev-db30-tidas-open-spec"
+      ],
+      "premiseIds": [
+        "cl-db30-exchange-formats-encode-worldviews",
+        "cl-db26-asia-pacific-national-dbs"
+      ],
+      "conceptIds": [],
+      "reasoning": "将 olca-schema 的类型化引用树与 tidas-spec 的开放校验规范并置，展现交换格式从文本拼贴走向强类型与机器可验证元数据的演进逻辑。"
+    },
+    {
+      "id": "cl-db30-glad-and-fedefl-mapping-hubs",
+      "kind": "synthesis",
+      "text": "为避免全球研究者重复手工清洗基本流，公共映射基础设施正在成形：联合国环境规划署于 2020 年 6 月启动的 GLAD 网络依托命名工作组（WG1）公开维护跨体系基本流列表与官方映射文件，而美国联邦 LCA 共享库的 fedelemflowlist 将 FlowList 与 FlowMapping 标准化并支持导出为 openLCA JSON-LD 包供软件直接调用。",
+      "scope": "GLAD 与 Federal LCA Commons 等公共映射基础设施",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "公共映射表能大幅降低重复劳动，但使用者仍须按第 28 章原则核查多对一折损、未映射缺口与 LCIA 方法版本一致性。"
+      ],
+      "evidenceIds": [
+        "ev-db30-glad-wg1-infrastructure",
+        "ev-db30-fedefl-flowmapping-export"
+      ],
+      "premiseIds": [
+        "cl-db28-three-nomenclature-architectures"
+      ],
+      "conceptIds": [],
+      "reasoning": "结合 GLAD WG1 与 fedelemflowlist 的官方架构文档，说明公共映射基础设施在标准化基本流词表与分发格式中的核心作用。"
+    },
+    {
+      "id": "cl-db30-declarative-vs-imperative-migrations",
+      "kind": "synthesis",
+      "text": "在技术圈与生物圈的跨版本或跨软件迁移中，以 randonneur 为代表的声明式 JSON 迁移配方（通过 create、replace、update、delete、disaggregate 五类动词、显式 conversion_factor 如 TiO₂ 转纯钛 0.599，以及 Brightcon 2022 统一发行标识符）与将改写逻辑埋在 Python 代码中的命令式工具（如 wurst）形成鲜明分野：前者把每一条替换与拆分沉淀为可审查、可复现、可版本化的公开数据资产。",
+      "scope": "声明式 JSON 迁移配方与命令式脚本的治理差异",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "声明式配方同样可能包含不守恒的拆分权重（例如 randonneur 明确允许 disaggregate 份额之和不为 1），因此仍须人工审查与测试校验。"
+      ],
+      "evidenceIds": [
+        "ev-db30-randonneur-declarative-recipes"
+      ],
+      "premiseIds": [
+        "cl-db29-version-split-disaggregation"
+      ],
+      "conceptIds": [],
+      "reasoning": "依据 randonneur 官方文档对声明式格式与 wurst 命令式实现的对比及具体换算示例，提炼迁移规则透明化与可审计性的工程价值。"
+    },
+    {
+      "id": "cl-db30-three-tier-interoperability-redlines",
+      "kind": "interpretation",
+      "text": "稳健的跨库工程必须坚持三级互操作红线：第一级为可自动化的无损语法归一化（单位缩写统一、大小写标准化、已验证持久标识绑定）；第二级为须显式标注与灵敏度校验的有条件代理或拆分映射（带化学计量系数或市场份额）；第三级为严禁静默执行的红线区（混用冲突的系统模型、不兼容生物源碳口径或失配的 LCIA 基本流表）。",
+      "scope": "跨库互操作的三级治理边界",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "当外部法规或客户指定必须混合某两个数据源时，第三级红线并不一定意味着绝对不能计算，而是意味着禁止静默混接——必须在统一口径重算或在局限中明确警示不可比性。"
+      ],
+      "evidenceIds": [
+        "ev-db30-randonneur-declarative-recipes",
+        "ev-db30-ilcd-transparency-rules"
+      ],
+      "premiseIds": [
+        "cl-db28-software-handling-and-co-validation",
+        "cl-db29-system-model-and-carbon-breaks",
+        "cl-db30-declarative-vs-imperative-migrations"
+      ],
+      "conceptIds": [],
+      "reasoning": "综合第 28 章基本流共验、第 29 章技术圈守恒红线与本章声明式迁移机制，建立可直接落地的三级互操作分级框架。"
+    },
+    {
+      "id": "cl-db30-mandatory-mapping-audit-disclosure",
+      "kind": "interpretation",
+      "text": "任何跨数据库组合建模的结果要具备可审验性，至少应随报告公开四项映射审计记录：源库与目标库的精确发行标识符（如 <database>-<version>-<modifier>）、所采用的映射文件版本与未映射流丢弃率、全部施加的化学计量换算或一对多拆分系数，以及是否存在无法重连上游的预汇总系统过程。",
+      "scope": "跨库建模的最低透明披露清单",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "在商业保密协议限制下，即便不能公开原始单元过程矩阵，也仍可且应当公开数据库版本、映射规则来源与未表征流占比。"
+      ],
+      "evidenceIds": [
+        "ev-db30-randonneur-declarative-recipes",
+        "ev-db30-ilcd-transparency-rules"
+      ],
+      "premiseIds": [
+        "cl-db30-three-tier-interoperability-redlines",
+        "cl-db29-aggregation-blocks-relinking"
+      ],
+      "conceptIds": [],
+      "reasoning": "把 ILCD 2010 透明披露原则具体化为面向跨库映射的四项最小可检查证据，防止黑箱转换掩盖结构误差。"
+    },
+    {
+      "id": "cl-db30-epistemic-boundary-on-proprietary-schemas",
+      "kind": "interpretation",
+      "text": "由于部分专有商业格式（如 SimaPro CSV）及商业数据库内部存储结构缺少公开的正式模式规范，第三方转换器与研究者只能基于已公开的规范文档和实测导出样本验证其行为，对未文档化的专有边缘特性必须将其标明为明确的知识边界，而不得假定跨软件往返导入导出完全保真。",
+      "scope": "专有格式与商业库内部模式的认知边界",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "本边界同样适用于本书自身的跨格式比较：一切结论均以已核验的公开技术规范为限，不臆测未公开商业内部实现。"
+      ],
+      "evidenceIds": [
+        "ev-db30-olca-format-comparison"
+      ],
+      "premiseIds": [
+        "cl-db30-simapro-and-eilcd-structural-limits"
+      ],
+      "conceptIds": [],
+      "reasoning": "既然 SimaPro CSV 等专有格式本身没有正式公开规范，任何对其转换保真度的断言都必须限定于已实测的公开样本范围内。"
+    },
+    {
+      "id": "cl-db30-verifiable-metadata-over-static-translation",
+      "kind": "synthesis",
+      "text": "生命周期数据互操作的长期出路不在于无限扩张静态手工对照表，而在于把治理关口前移：通过版本化持久标识符、机器可读的系统模型与边界声明、以及严格模式校验的开放数据规范，让不兼容的前提在矩阵求逆之前就被自动拦截而非事后修补。",
+      "scope": "从静态翻译表转向可验证元数据与开放规范的演进路径",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "标准和模式的普及需要产业、监管与开源社区的长期协同，短期内声明式映射表仍是不可或缺的过渡基础设施。"
+      ],
+      "evidenceIds": [
+        "ev-db30-olca-format-comparison",
+        "ev-db30-tidas-open-spec",
+        "ev-db30-glad-wg1-infrastructure"
+      ],
+      "premiseIds": [
+        "cl-db30-olca-jsonld-and-tidas-open-schemas",
+        "cl-db30-glad-and-fedefl-mapping-hubs",
+        "cl-db30-three-tier-interoperability-redlines"
+      ],
+      "conceptIds": [],
+      "reasoning": "整合开放模式、公共映射枢纽与三级红线的经验，指明前置可验证元数据是解决跨库互操作瓶颈的根本方向。"
+    },
+    {
+      "id": "cl-db30-part6-to-part7-bridge",
+      "kind": "synthesis",
+      "text": "至此，第六部完整梳理了全球背景数据库的演进版图、核心方法学分歧、基本流与技术圈过程难以无损映射的深层机制，以及交换格式与互操作治理红线；但选对数据库并管好映射只是前提，数据究竟适不适合当前研究对象、不确定性如何传播、以及法规如何约束结论用途，构成第七部《数据与证据》的核心问题。",
+      "scope": "第六部收束与向第七部《数据与证据》的承接",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "阅读第七部各章时，应始终结合第六部揭示的数据库版本、系统模型与映射损耗来理解数据质量评分与换版红线。"
+      ],
+      "evidenceIds": [
+        "ev-db30-ilcd-transparency-rules"
+      ],
+      "premiseIds": [
+        "cl-db26-landscape-selection-bridge",
+        "cl-db27-method-divergence-bridge",
+        "cl-db28-elementary-to-technosphere-bridge",
+        "cl-db29-technosphere-to-formats-bridge",
+        "cl-db30-verifiable-metadata-over-static-translation"
+      ],
+      "conceptIds": [],
+      "reasoning": "完成第六部五章论证闭环，自然衔接第七部首章《数据适用性》及后续不确定性、质量评分与产品足迹规则讨论。"
     }
   ],
   "concepts": [
