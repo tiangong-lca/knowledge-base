@@ -73,7 +73,7 @@ test('B27 uses a focusable title for its current print entry and retains its his
   assert.equal(toc.getAttribute('href'), '#' + current);
   assert.deepEqual(check(html, '/print'), []);
 
-  const otherRoutes = book.map(unit => unit.key).filter(key => key !== route && !key.includes('particulate') && key !== '/docs/appendices/lca-timeline' && key !== '/docs/book/lca-database-landscape-and-history' && key !== '/docs/book/database-methodological-divergences' && key !== '/docs/book/elementary-flows-and-lcia-coupling');
+  const otherRoutes = book.map(unit => unit.key).filter(key => key !== route && !key.includes('particulate') && key !== '/docs/appendices/lca-timeline' && key !== '/docs/book/lca-database-landscape-and-history' && key !== '/docs/book/database-methodological-divergences' && key !== '/docs/book/elementary-flows-and-lcia-coupling' && key !== '/docs/book/process-and-technosphere-mapping-limits');
   assert.equal(otherRoutes.length, 37);
   for (const key of otherRoutes) {
     const owner = document.querySelector(`article[data-reader-route="${key}"]`);
@@ -123,7 +123,7 @@ test('current PM chapter and appendix entries use owned focusable titles while h
   for(const changed of mutations){assert.notEqual(changed,html);assert(check(changed,'/print').length);assert.equal(prepareNumberedReaderDocument(htmlParser.parse(changed),'/print',{sources}).document,null);}
   const normalized=prepareNumberedReaderDocument(htmlParser.parse(html),'/print',{sources});assert.deepEqual(normalized.errors,[]);const kept=normalized.document.querySelector(`article[data-reader-route="${route}"]`);assert.equal(kept.id,historical);assert.equal(kept.querySelector('[data-reader-heading-key="@unit"]').id,entry);
  }
- for(const record of book.filter(record=>!record.key.includes('particulate') && record.key !== '/docs/book/data-quality-and-probability' && record.key !== '/docs/appendices/lca-timeline' && record.key !== '/docs/book/lca-database-landscape-and-history' && record.key !== '/docs/book/database-methodological-divergences' && record.key !== '/docs/book/elementary-flows-and-lcia-coupling')) {
+ for(const record of book.filter(record=>!record.key.includes('particulate') && record.key !== '/docs/book/data-quality-and-probability' && record.key !== '/docs/appendices/lca-timeline' && record.key !== '/docs/book/lca-database-landscape-and-history' && record.key !== '/docs/book/database-methodological-divergences' && record.key !== '/docs/book/elementary-flows-and-lcia-coupling' && record.key !== '/docs/book/process-and-technosphere-mapping-limits')) {
   const owner=doc.querySelector(`article[data-reader-route="${record.key}"]`), current=printReadingEntryAnchor(record.key);
   assert.equal(owner.id,printUnitAnchor(record.key));
   assert.notEqual(current,owner.id);

@@ -7345,6 +7345,22 @@
         "sha256": "d8681fa096be1cf3e31980e04d0afc1caf32647909c8358363d9e990165f03c7",
         "resolvedUrl": "https://greendelta.github.io/olca-schema/"
       }
+    },
+    {
+      "id": "src-db29-randonneur-readme",
+      "title": "randonneur — Declarative Life Cycle Inventory Data Transformation Format and Reference Implementation",
+      "url": "https://raw.githubusercontent.com/brightway-lca/randonneur/main/README.md",
+      "version": "Brightway LCA / Chris Mutel (MIT License; accessed 2026-11-26)",
+      "publisher": "Brightway LCA Open-Source Project",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "MIT 开源许可公共技术文档。",
+      "preservation": "核对 randonneur 官方 README 原文（SHA-256 校验通过），确认其声明式 JSON 转换格式（create/replace/update/delete/disaggregate）、SimaPro 至 ecoinvent 命名映射示例，以及 ecoinvent 3.9.1 至 3.10 中 xylene production 拆分为两条 BTX 工艺路径（0.117575 与 0.882425）的一对多迁移实证。",
+      "artifact": {
+        "mediaType": "text/plain",
+        "sha256": "d4f4c5e796abd3874c7b42052471dc11f916490961208b3fad8dcfa91feed9ff",
+        "resolvedUrl": "https://raw.githubusercontent.com/brightway-lca/randonneur/main/README.md"
+      }
     }
   ],
   "evidence": [
@@ -43863,6 +43879,55 @@
       "sourceId": "src-db28-olca-schema",
       "locator": "openLCA JSON-LD Schema (Flow, FlowPropertyFactor, FlowMap, FlowMapEntry, FlowMapRef, ImpactFactor)",
       "summary": "openLCA 模式将 FlowMap、FlowMapEntry 与 FlowPropertyFactor 设为独立一等实体，说明跨库转换必须显式声明源流、目标流、转换系数与参照属性，不能仅靠名称字符串自动匹配。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-ecoinvent-isic-cpc-identity",
+      "sourceId": "src-dapp147-ecoinvent-v3-2013",
+      "locator": "Weidema et al. (2013), ecoinvent v3 Data Quality Guideline: ISIC Rev. 4 activity classification, CPC product classification, and transforming vs. market activities",
+      "summary": "ecoinvent 第三版同时以 ISIC 划分生产活动、以 CPC 划分参考产品，并严格区分转化活动（transforming activity）与含运输贸易混合的市场活动（market activity），说明过程身份由多维属性共同定义而非单一名称。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-useeio-naics-sectors",
+      "sourceId": "src-db26-useeio-2022",
+      "locator": "Ingwersen et al. (2022), USEEIO v2.0 (Scientific Data 9:194): BEA/NAICS-based commodity-by-industry structure",
+      "summary": "USEEIO v2.0 依美国经济分析局（BEA）与北美行业分类体系（NAICS）按货币单位组织行业与商品矩阵，与工程过程库按物理规格划分的单元过程在粒度与分类轴上均非一一对应。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-randonneur-attribute-and-disagg",
+      "sourceId": "src-db29-randonneur-readme",
+      "locator": "randonneur README — Theory (attribute-based linking across heterogeneous systems) & Usage (ecoinvent 3.9.1 xylene production -> 3.10 BTX pyrolysis gas 0.117575 + reformate 0.882425)",
+      "summary": "randonneur 文档指出跨系统缺乏统一持久标识时只能退回名称、地点与单位等属性匹配，且旧软件限制会造成难以逆向还原的变换；即使同一数据库从 ecoinvent 3.9.1 升级到 3.10，单一二甲苯生产过程也须一对多拆分为裂解汽油（0.1176）与重整油（0.8824）两条 BTX 路径。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-olca-linking-vs-simapro-eilcd",
+      "sourceId": "src-db28-olca-schema",
+      "locator": "olca-schema Introduction — SimaPro CSV name-based hard linking vs. eILCD process instances vs. openLCA ProductSystem/ProcessLink",
+      "summary": "openLCA 模式文档记录：SimaPro CSV 依赖名称硬链接且缺少独立产品系统概念，在协作环境中易发生同名冲突；eILCD 虽支持连接产品系统，但采用过程实例副本且在同一过程含两条相同流时无法仅靠直接交换链接指向不同供应方（除非地点不同）。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-sysmodels-geographies-clash",
+      "sourceId": "src-db27-ecoinvent-sysmodels",
+      "locator": "ecoinvent Knowledge Base — System Models (Cut-off, APOS, Consequential, EN15804) & linking rules",
+      "summary": "不同系统模型在回收负担交接、副产品分配与边际替代上采用互不相容的链接规则，跨库或跨系统模型直接拼接上游过程会破坏边界闭合与负担守恒。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-geographies-row-mismatch",
+      "sourceId": "src-db27-ecoinvent-geographies",
+      "locator": "ecoinvent Knowledge Base — Geographies (GLO, RoW dynamic residual, sub-national grids)",
+      "summary": "ecoinvent 的世界其余地区（RoW）是排除特定国家或区域数据集后的动态残差，将其与另一数据库的国家或全球平均过程直接互换，会悄然改变上游电网结构与供应链地理边界。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db29-ilcd-process-metadata",
+      "sourceId": "src-ilcd-process",
+      "locator": "ILCD Format 1.1 Documentation — Process data set (quantitative reference, technology, geography, LCI method principle)",
+      "summary": "ILCD 过程数据集规范要求把定量参照、工艺技术代表性、地理范围与清单建模原则一并写入元数据，表明过程能否复用于另一系统取决于多维技术与方法条件而非产品字面名称。",
       "relation": "supports"
     }
   ],
@@ -85901,6 +85966,223 @@
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db29-classification-non-bijective",
+      "kind": "synthesis",
+      "text": "不同背景数据库采用的经济与产品分类体系本质上是非双射的：ecoinvent 并行使用 ISIC 活动分类与 CPC 产品分类，USEEIO 等投入产出模型依循 BEA／NAICS 国民经济部门，贸易与海关统计采用 HS 编码，而 SimaPro 等传统软件长期依赖自由文本命名，因此跨库过程对照天然是多对多而非一一映射。",
+      "scope": "过程与产品流的分类轴差异",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "同一分类代码在不同版本（如 ISIC Rev. 3 与 Rev. 4、CPC v2 与 v2.1）之间本身亦存在拆分与合并。"
+      ],
+      "evidenceIds": [
+        "ev-db29-ecoinvent-isic-cpc-identity",
+        "ev-db29-useeio-naics-sectors",
+        "ev-db29-olca-linking-vs-simapro-eilcd"
+      ],
+      "premiseIds": [
+        "cl-db26-ecoinvent-architecture",
+        "cl-db26-eeio-and-social-dbs"
+      ],
+      "conceptIds": [],
+      "reasoning": "把 ecoinvent 的 ISIC／CPC 双分类、USEEIO 的 BEA／NAICS 经济部门与 SimaPro 的文本命名结构并置，即可证明不同数据库的分类颗粒度与切分逻辑并不重合，无法建立全局一一对应的双射字典。"
+    },
+    {
+      "id": "cl-db29-attribute-linking-fragility",
+      "kind": "synthesis",
+      "text": "由于不同 LCA 数据库与软件之间缺乏跨平台通用的持久过程标识，迁移工具只能退回名称、参考产品、地点与单位等属性组合来尝试链接；一旦命名大小写、后缀约定或旧软件导出限制发生微小漂移，精确匹配即会断裂且无法从字符串单向逆推原意。",
+      "scope": "跨平台属性链接的脆弱性",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "即使在同一软件内部使用 UUID，不同数据库发行商各自生成的 UUID 亦不互通，除非经过显式映射表绑定。"
+      ],
+      "evidenceIds": [
+        "ev-db29-randonneur-attribute-and-disagg",
+        "ev-db29-olca-linking-vs-simapro-eilcd"
+      ],
+      "premiseIds": [
+        "cl-db29-classification-non-bijective"
+      ],
+      "conceptIds": [],
+      "reasoning": "综合 randonneur 关于异构系统属性匹配与遗留软件不可逆变换的说明，以及 openLCA 对 SimaPro 名称硬链接冲突的记录，可知仅凭文本属性无法保障跨库链接的稳定性和可逆性。"
+    },
+    {
+      "id": "cl-db29-four-tuple-identity",
+      "kind": "synthesis",
+      "text": "技术圈中一个过程的真实身份绝不只是产品名称，而是由“参考产品与技术规格、工艺路径、地理与供应链边界、市场活动抑或转化活动”构成的四元组；只要四元组中任意一维发生变化，字面相同的产品就对应着排放强度与上游结构截然不同的系统节点。",
+      "scope": "过程身份的四维判定条件",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "对农产品、电力与金属等高空间或高工艺敏感品，时间代表性与副产品归因规则还会构成额外的隐含维度。"
+      ],
+      "evidenceIds": [
+        "ev-db29-ecoinvent-isic-cpc-identity",
+        "ev-db29-ilcd-process-metadata"
+      ],
+      "premiseIds": [
+        "cl-db27-geography-and-row-residuals",
+        "cl-db27-market-electricity-transport-modeling"
+      ],
+      "conceptIds": [],
+      "reasoning": "结合 ecoinvent v3 对活动／产品／地点／市场角色的四维切分与 ILCD 过程元数据要求，可把看似零散的过程失配归纳为四元组身份错配框架。"
+    },
+    {
+      "id": "cl-db29-version-split-disaggregation",
+      "kind": "source-statement",
+      "text": "即便在同一数据库家族的相邻版本之间，技术圈过程也常因工艺细化而发生一对多拆分：randonneur 记录的 ecoinvent 3.9.1 至 3.10 迁移规则显示，原先单一的欧洲二甲苯生产活动须按 0.1176 与 0.8824 的份额拆分为裂解汽油制 BTX 与重整油制 BTX 两条不同路径，说明连库内换版也往往不是简单的一对一更名。",
+      "scope": "同库跨版本迁移中的一对多拆分实证",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "该 0.1176／0.8824 份额反映的是特定版本与欧洲市场背景下的迁移分配，不可直接套用于其他地区或特定工厂的一手工艺选择。"
+      ],
+      "evidenceIds": [
+        "ev-db29-randonneur-attribute-and-disagg"
+      ],
+      "premiseIds": [
+        "cl-db29-four-tuple-identity"
+      ],
+      "conceptIds": []
+    },
+    {
+      "id": "cl-db29-market-vs-transforming-boundary",
+      "kind": "synthesis",
+      "text": "将只包含厂内生产的转化活动（transforming activity）与包含平均运输、贸易混合与损耗的市场活动（market activity）直接互换，或把动态残差地区（RoW）与特定国家平均过程直接替换，会在不触发任何软件报错的情况下悄然改写运输边界、贸易结构与上游电网。",
+      "scope": "市场／转化角色与动态残差地理错配",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "若前景模型已经单独填写了原料到厂运输，再接入含平均运输的市场活动就会引发运输双计。"
+      ],
+      "evidenceIds": [
+        "ev-db29-ecoinvent-isic-cpc-identity",
+        "ev-db29-geographies-row-mismatch"
+      ],
+      "premiseIds": [
+        "cl-db29-four-tuple-identity",
+        "cl-db27-geography-and-row-residuals"
+      ],
+      "conceptIds": [],
+      "reasoning": "综合 ecoinvent 市场活动定义与 RoW 动态残差机制，说明角色边界与地理残差错配属于静默型结构误差，软件矩阵求解器本身无法察觉。"
+    },
+    {
+      "id": "cl-db29-transport-and-capital-stitch-traps",
+      "kind": "synthesis",
+      "text": "把来自不同数据库的单元过程拼接到同一产品系统时，最常见的两类静默边界失真分别是运输环节的重算或漏算，以及资本品与基础设施的对称性破坏：例如把默认包含厂房设备折旧的 ecoinvent 背景模块接入不计资本品的行业或监管数据库前景，会使不同环节站在不一致的系统边界上。",
+      "scope": "跨库拼接中的运输与资本品边界陷阱",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "在能源密集型初级冶炼中资本品占比可能较低，但在光伏、风电、农业与服务业中资本品边界差异足以显著改变结果。"
+      ],
+      "evidenceIds": [
+        "ev-db29-ecoinvent-isic-cpc-identity",
+        "ev-db29-ilcd-process-metadata"
+      ],
+      "premiseIds": [
+        "cl-db27-capital-goods-asymmetry",
+        "cl-db29-market-vs-transforming-boundary"
+      ],
+      "conceptIds": [],
+      "reasoning": "将第 27 章已确立的资本品边界不对称性与本章的市场／转化运输边界结合，即可定位跨库拼接时最易发生的双计与漏算机制。"
+    },
+    {
+      "id": "cl-db29-system-model-and-carbon-breaks",
+      "kind": "synthesis",
+      "text": "将不同系统模型生成的过程（如截断法再生料模块与后果式边际替代模块）或不同生物源碳记账口径（如 −1／+1 吸收释放追踪与 0／0 碳中性约定）直接拼接在同一供应链中，会破坏跨边界的物质、能量与碳质量守恒，凭空制造出物理世界中并不存在的负排放抵扣或幽灵排放。",
+      "scope": "系统模型冲突与生物源碳拼接断裂",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "在摇篮到大门边界内拼接生物基材料与化石基下游时，生物源碳口径不统一尤为隐蔽，必须显式核对进出边界的碳元素平衡。"
+      ],
+      "evidenceIds": [
+        "ev-db29-sysmodels-geographies-clash",
+        "ev-db29-ilcd-process-metadata"
+      ],
+      "premiseIds": [
+        "cl-db27-ecoinvent-four-system-models",
+        "cl-db28-water-and-carbon-mismatch"
+      ],
+      "conceptIds": [],
+      "reasoning": "结合第 27 章系统模型分歧与第 28 章生物源碳基本流记账口径差异，跨库拼接相当于在供应链中间强行切换记账规则，必然破坏边界守恒。"
+    },
+    {
+      "id": "cl-db29-aggregation-blocks-relinking",
+      "kind": "interpretation",
+      "text": "当上游数据库仅提供预先汇总的摇篮到大门系统过程而非透明单元过程时，下游建模者无法拆开其内部嵌死的电网结构、运输距离、副产品分配或基本流版本来与目标背景库对齐；因此跨库拼接一旦引入黑箱系统过程，隐藏的方法学矛盾就会被永久锁死在结果内部。",
+      "scope": "预汇总系统过程对跨库重连的阻断效应",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "在商业保密或法定单一参考包要求下，使用汇总数据集有时是合规前提，但此时不得将其伪装成可任意局部替换的透明单元过程。"
+      ],
+      "evidenceIds": [
+        "ev-db29-olca-linking-vs-simapro-eilcd",
+        "ev-db29-ilcd-process-metadata"
+      ],
+      "premiseIds": [
+        "cl-db27-unit-vs-aggregated-processes",
+        "cl-db27-aggregation-locks-assumptions"
+      ],
+      "conceptIds": [],
+      "reasoning": "基于第 27 章关于单元过程与汇总过程的结构差异，进一步推论在跨库拼接场景下，汇总过程剥夺了重连上游供应方的技术可能，使局部对齐在工程上不可行。"
+    },
+    {
+      "id": "cl-db29-semantic-matching-and-llm-limits",
+      "kind": "interpretation",
+      "text": "字符串相似度、向量语义检索与大语言模型辅助可以大幅加速从数万条跨语种过程名中筛选候选替代项，但词面与语义相近并不代表物理质量守恒、工艺纯度一致、系统模型兼容或隐含边界相同；将此类工具用于无人工核验的全自动映射，只会把结构性误配包装成看似合理的计算结果。",
+      "scope": "自动语义匹配与大语言模型辅助的能力边界",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "合理的工作流是将其作为“候选召回与元数据差异提示器”，并强制要求人工复核四元组身份、系统模型与参考流单位后方可入库。"
+      ],
+      "evidenceIds": [
+        "ev-db29-randonneur-attribute-and-disagg",
+        "ev-db29-ilcd-process-metadata"
+      ],
+      "premiseIds": [
+        "cl-db29-four-tuple-identity",
+        "cl-db29-system-model-and-carbon-breaks"
+      ],
+      "conceptIds": [],
+      "reasoning": "既然跨库过程映射的障碍来自四元组身份、系统模型与隐含边界等非词面条件，任何只依赖文本或嵌入相似度的自动匹配都只能解决候选检索问题，而不能替代物理与方法一致性审查。"
+    },
+    {
+      "id": "cl-db29-technosphere-to-formats-bridge",
+      "kind": "synthesis",
+      "text": "基本流与技术圈过程均不存在通用的无损自动映射，这一双重现实决定了跨库互操作不能寄希望于黑箱转换器，而必须建立在清晰的数据交换模式、可审计的声明式迁移配方与明确的不可混用治理红线之上。",
+      "scope": "从过程映射限度向数据交换格式与治理边界的过渡",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26",
+      "caveats": [
+        "具体交换格式的表达能力、映射基础设施以及互操作红线将在第六部后文及第七部《数据适用性》中继续展开。"
+      ],
+      "evidenceIds": [
+        "ev-db29-randonneur-attribute-and-disagg",
+        "ev-db29-olca-linking-vs-simapro-eilcd"
+      ],
+      "premiseIds": [
+        "cl-db28-elementary-to-technosphere-bridge",
+        "cl-db29-semantic-matching-and-llm-limits"
+      ],
+      "conceptIds": [],
+      "reasoning": "收束第 28 章（基本流）与本章（技术圈过程）的共同结论，自然引出交换格式架构、映射基础设施与互操作治理的制度需求。"
     }
   ],
   "concepts": [
