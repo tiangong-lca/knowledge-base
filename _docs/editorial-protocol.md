@@ -13,8 +13,8 @@ checkPaths:
   - "content/**"
   - "knowledge/**"
   - "releases/**"
-lastReviewedAt: 2026-11-24
-lastReviewedCommit: b80ee5935a8e71d831c936ac9edea9d5b067181d
+lastReviewedAt: 2026-11-26
+lastReviewedCommit: e9cfbec8eab862485b0e3c19b1b1254e285beb4f
 ---
 
 # Editorial and living review protocol
