@@ -8,7 +8,7 @@ import { collectChapterClaimOccurrences } from './reader-book.mjs';
 import { projectExchangeSemanticsRaw, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
 import { editionDigest, sha256 } from './reader-current-edition.mjs';
 import { flowBoundaryGuide } from './reader-flow-boundary.mjs';
-import { getPresentationUnits } from './reader-numbering.mjs';
+import { getPresentationUnits, readerParts } from './reader-numbering.mjs';
 import { readerParagraphText } from './reader-publication-text.mjs';
 import { showEditorialHistoryInProse } from './reader-editorial-mode.mjs';
 import { extractRouteChanges } from './reader-revisions.mjs';
@@ -214,8 +214,8 @@ export function validateReaderGuideOutput(document, sources, { prefix = '' } = {
     .map(unit => [`${prefix}${unit.key}/`, unit.title]);
 
   const partLists = main[0].querySelectorAll('ol[data-guide-part-chapters]');
-  if (partLists.length !== 7) {
-    return ['Redesigned book guide must render all seven part chapter lists'];
+  if (partLists.length !== readerParts.length) {
+    return [`Redesigned book guide must render all ${readerParts.length} part chapter lists`];
   }
   const actualChapters = partLists.flatMap(list =>
     list.querySelectorAll('li').map(node => {

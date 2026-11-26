@@ -8,6 +8,7 @@ const logicalKey = (url: string) => url.replace(/^\/(zh|en)(?=\/|$)/, '').replac
 export function ZhHomePage() {
   const pages = new Map(getOrderedPages().map(page => [logicalKey(page.url), page]));
   const units = getPresentationUnits('web');
+  const chapters = units.filter(unit => unit.kind === 'chapter');
   const topics = units.filter(unit => unit.kind === 'topic');
   return (
     <main id="main-content">
@@ -56,7 +57,7 @@ export function ZhHomePage() {
 
       <section className="reading-section reader-web-contents" id="web-contents" data-reader-contents="web">
         <div className="section-heading">
-          <h2>全书 32 章目录</h2>
+          <h2>全书 {chapters.length} 章目录</h2>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/zh/coverage/">按问题速查与阅读路径</Link>
             <Link href="/zh/print/">书籍目录与连续阅读</Link>
@@ -125,7 +126,7 @@ export function ZhHomePage() {
         </div>
         <div className="overview-links">
           <Link href="/zh/coverage/">
-            全书导览<span>七部主线、三种路径与六条问题入口</span>
+            全书导览<span>八部主线、三种路径与六条问题入口</span>
           </Link>
           <Link href="/zh/timeline/">
             发展大事记<span>1969–2026 可视化时间线与一手来源核验</span>

@@ -49,7 +49,7 @@ test('original B05 identity and actual hosted capture are independently fixed', 
 
 test('B05 stays one shared source with explicit metadata in the current39 mixed roster', () => {
   const available = edition.units.flatMap(unit => [unit.source, ...unit.coverage ?? []]);
-  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, 41);
+  assert.equal(currentEditionKeys(edition, available, baseline, placements).length, edition.units.length);
   for (const change of [
     copy => copy.units = copy.units.filter(unit => unit.key !== route),
     copy => copy.units.find(unit => unit.key === route).source = '/monograph/empty-b05',

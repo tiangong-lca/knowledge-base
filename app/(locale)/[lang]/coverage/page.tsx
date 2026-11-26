@@ -14,15 +14,16 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const chCount = getPresentationUnits('web').filter(u => u.kind === 'chapter').length;
   if (lang === 'en') {
     return {
       title: 'Book Guide',
-      description: 'Complete seven-part, 32-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the English edition.',
+      description: `Complete ${readerParts.length}-part, ${chCount}-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the English edition.`,
     };
   }
   return {
     title: '全书导览',
-    description: '七部 32 章逻辑主线、三种阅读路径、六条按问题入口、五篇专题与五份附录的完整阅读地图。',
+    description: `八部 ${chCount} 章逻辑主线、三种阅读路径、六条按问题入口、五篇专题与五份附录的完整阅读地图。`,
   };
 }
 
@@ -32,8 +33,9 @@ const EN_PART_TITLES: Record<number, { label: string; title: string }> = {
   3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
   4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
   5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
-  6: { label: 'Part VI', title: 'Data Quality, Uncertainty, Footprints, and Databases' },
-  7: { label: 'Part VII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
+  6: { label: 'Part VI', title: 'Background Databases and Interoperability' },
+  7: { label: 'Part VII', title: 'Data Quality, Uncertainty, and Product Footprint Rules' },
+  8: { label: 'Part VIII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
 };
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
@@ -60,13 +62,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <PublicationShell
         lang="en"
         title="Book Guide"
-        description="Complete seven-part, 32-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the meaning-equivalent English edition."
+        description={`Complete ${readerParts.length}-part, ${chapters.length}-chapter roadmap, ${topics.length} topical essays, ${appendices.length} appendices, and reference apparatus for the meaning-equivalent English edition.`}
       >
         <div className={styles.root} data-en-guide="">
           <section className={styles.sectionBlock} aria-labelledby="en-guide-status">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-status">Edition Status</h2>
-              <p className={styles.sectionMeta}>7 Parts · 32 Chapters · 5 Topics · 5 Appendices</p>
+              <p className={styles.sectionMeta}>{readerParts.length} Parts · {chapters.length} Chapters · {topics.length} Topics · {appendices.length} Appendices</p>
             </div>
             <p>
               Published English units: <strong>{publishedEnUnits.size}</strong> / {webUnits.length}. All main chapters,
@@ -91,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <section className={styles.sectionBlock} aria-labelledby="en-guide-chapters">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-chapters">Parts and Chapters</h2>
-              <p className={styles.sectionMeta}>Full 32-chapter structure shared with the Chinese edition</p>
+              <p className={styles.sectionMeta}>Full {chapters.length}-chapter structure shared with the Chinese edition</p>
             </div>
             {readerParts.map(part => {
               const partChapters = chapters.filter(u => u.part === part.number);
@@ -180,7 +182,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
             <ul className={styles.cardGrid}>
               {[
-                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All 1,117 reviewed claims with evidence bindings, scopes, and caveats.' },
+                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All reviewed claims with evidence bindings, scopes, and caveats.' },
                 { href: '/en/concepts/', title: 'Concepts Index', desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
                 { href: '/en/research/', title: 'References & Sources', desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
                 { href: '/en/timeline/', title: 'LCA Historical Timeline', desc: '27 milestones (1969–2026) with primary-source verification status.' },
@@ -217,14 +219,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   return (
     <PublicationShell
       title="全书导览"
-      description="按七部 32 章、五篇概念与实践专题、五份复核与大事记附录梳理全书结构，支持顺读、按问题速查或从经典案例倒推。"
+      description={`按八部 ${chapters.length} 章、五篇概念与实践专题、五份复核与大事记附录梳理全书结构，支持顺读、按问题速查或从经典案例倒推。`}
     >
       <div className={styles.root}>
-        {/* A. 7-Part Roadmap */}
+        {/* A. 8-Part Roadmap */}
         <section className={styles.sectionBlock} aria-labelledby="guide-roadmap">
           <div className={styles.sectionHeader}>
-            <h2 id="guide-roadmap">七部逻辑主线</h2>
-            <p className={styles.sectionMeta}>全书 32 章 · 5 篇专题 · 5 份附录</p>
+            <h2 id="guide-roadmap">八部逻辑主线</h2>
+            <p className={styles.sectionMeta}>全书 {chapters.length} 章 · 5 篇专题 · 5 份附录</p>
           </div>
           <ol className={styles.roadmapGrid}>
             {partGroups.map(({ part, rangeLabel, coreQuestion }) => (
@@ -315,11 +317,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </section>
 
-        {/* D. 7 Parts / 32 Chapters */}
+        {/* D. 8 Parts / Chapters */}
         <section className={styles.sectionBlock} aria-labelledby="guide-chapters" data-guide-section="chapters">
           <div className={styles.sectionHeader}>
             <h2 id="guide-chapters">正文章节</h2>
-            <p className={styles.sectionMeta}>七部 32 章，网页与书籍打印版逐章对应</p>
+            <p className={styles.sectionMeta}>八部 {chapters.length} 章，网页与书籍打印版逐章对应</p>
           </div>
           {partGroups.map(({ part, chapters: partChapters, rangeLabel }) => (
             <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>

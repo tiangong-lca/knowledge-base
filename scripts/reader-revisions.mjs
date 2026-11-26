@@ -107,8 +107,8 @@ export function validateRevisionSchema(revision, label = 'revision') {
         continue;
       }
       if (rc.op === 'add-unit') {
-        if (!nonempty(rc.route) || !rc.route.startsWith('/') || !['appendix', 'topic'].includes(rc.kind)) {
-          throw new Error(`${label}: routeChanges add-unit requires '/' route and kind ('appendix' | 'topic')`);
+        if (!nonempty(rc.route) || !rc.route.startsWith('/') || !['chapter', 'appendix', 'topic'].includes(rc.kind)) {
+          throw new Error(`${label}: routeChanges add-unit requires '/' route and kind ('chapter' | 'appendix' | 'topic')`);
         }
         if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
           throw new Error(`${label}: routeChanges add-unit requires clean reader-facing rationale without internal claim IDs`);

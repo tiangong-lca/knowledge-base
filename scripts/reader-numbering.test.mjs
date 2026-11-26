@@ -4,6 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { assertNumberingToc, assertReaderNumbering, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, printReadingEntryAnchor, readNumberedHeading, readerNumberingManifest } from './reader-numbering.mjs';
+import { currentRouteChanges } from './reader-checkpoint.mjs';
 import { printUnitAnchor } from './reader-book.mjs';
 
 const route = '/docs/book/service-and-reference';
@@ -19,25 +20,26 @@ test('authored full-unit links use current reading entries without changing scop
 });
 const html = (number='6.1',title='服务要求') => `<h2 data-reader-heading-key="服务要求"><a href="#服务要求"><span data-reader-number="">${number}</span> <span data-reader-heading-title="">${title}</span></a><button>复制章节链接</button></h2>`;
 
-test('current book retains 41 actual units, 32 chapters, 120 formal sections, five appendices and seven real parts', () => {
+test('current book retains 42 actual units, 33 chapters, 124 formal sections, five appendices and eight real parts', () => {
   const units=getPresentationUnits('book');
-  assert.equal(units.length,41);
-  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,32,2,5]);
-  assert.deepEqual([1,2,3,4,5,6,7].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,4,4]);
+  assert.equal(units.length,42);
+  assert.deepEqual(['front-matter','chapter','topic','appendix'].map(kind=>units.filter(unit=>unit.kind===kind).length),[2,33,2,5]);
+  assert.deepEqual([1,2,3,4,5,6,7,8].map(part=>units.filter(unit=>unit.part===part).length),[5,4,4,6,5,1,4,4]);
   assert.equal(getUnitNumbering('book',route).label,'第6章');
   assert.equal(getUnitNumbering('book','/docs/book/inventory-calculation').label,'第7章');
   assert.equal(getUnitNumbering('book','book-joint-production').label,'第10章');
   assert.equal(getUnitNumbering('book','/docs/book/emission-time-and-assessment'),null);
   assert.equal(getUnitNumbering('book','book-climate-equivalence').label,'第15章');
-  assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第29章');
-  assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第32章');
+  assert.equal(getUnitNumbering('book','/docs/book/lca-database-landscape-and-history').label,'第25章');
+  assert.equal(getUnitNumbering('book','/docs/book/wall-service-to-comparison').label,'第30章');
+  assert.equal(getUnitNumbering('book','book-revisable-judgment').label,'第33章');
   assert.equal(getUnitNumbering('book','/docs/history').label,'附记 T1');
   assert.equal(getUnitNumbering('book','/docs/allocation').label,'附记 T2');
   const sections = units.filter(unit=>unit.kind==='chapter')
     .map(unit=>getUnitHeadingPlan('book',unit.key).filter(row=>row.type==='mdx'&&row.depth===2).length);
-  assert.equal(sections.reduce((sum,count)=>sum+count,0),120);
+  assert.equal(sections.reduce((sum,count)=>sum+count,0),124);
   assert(sections.every(count=>count>=3&&count<=5));
-  for (const {key} of units.filter(u => u.key !== '/docs/appendices/lca-timeline')) {
+  for (const {key} of units.filter(u => !currentRouteChanges.addedUnitKeys.has(u.key))) {
     const historical = printUnitAnchor(key);
     assert.equal(printReadingEntryAnchor(key),historical.replace('print-unit-','print-reading-unit-'));
   }
@@ -49,17 +51,18 @@ test('current book retains 41 actual units, 32 chapters, 120 formal sections, fi
   assert.equal(getUnitNumbering('book','/docs').label,null);
 });
 
-test('website numbering unifies 32 chapters with book and keeps five unnumbered topic entries',()=>{
+test('website numbering unifies 33 chapters with book and keeps five unnumbered topic entries',()=>{
   const web=getPresentationUnits('web');
-  assert.equal(web.length,44);
-  assert.equal(web.filter(unit=>unit.kind==='chapter').length,32);
-  assert.equal(new Set(web.map(unit=>unit.key)).size,44);
+  assert.equal(web.length,45);
+  assert.equal(web.filter(unit=>unit.kind==='chapter').length,33);
+  assert.equal(new Set(web.map(unit=>unit.key)).size,45);
   assert.equal(getUnitNumbering('web',route).label,'第6章');
   assert.equal(getUnitNumbering('web','/docs/book/framework-responsibilities').label,'第4章');
   assert.equal(getUnitNumbering('web','/docs/book/joint-production').label,'第10章');
   assert.equal(getUnitNumbering('web','/docs/book/climate-equivalence').label,'第15章');
-  assert.equal(getUnitNumbering('web','/docs/book/data-applicability').label,'第25章');
-  assert.equal(getUnitNumbering('web','/docs/book/revisable-judgment').label,'第32章');
+  assert.equal(getUnitNumbering('web','/docs/book/lca-database-landscape-and-history').label,'第25章');
+  assert.equal(getUnitNumbering('web','/docs/book/data-applicability').label,'第26章');
+  assert.equal(getUnitNumbering('web','/docs/book/revisable-judgment').label,'第33章');
   assert.equal(getUnitNumbering('web','/docs/allocation').label,'专题');
   assert.equal(getHeadingNumbering('web','/docs/allocation','系统模型规定了什么').number,'T4.1');
   assert.equal(getHeadingNumbering('book','/docs/allocation','系统模型规定了什么').number,'T2.1');
@@ -72,10 +75,10 @@ test('actual case detail keeps its source sibling hierarchy and stays outside fo
   ]);
   assert.equal(joint.filter(row=>row.type==='mdx').length,4);
   const wall=getUnitHeadingPlan('book','/docs/book/wall-service-to-comparison');
-  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'29.4.1'],[4,'29.4.1.1'],[4,'29.4.1.2'],[4,'29.4.1.3'],[4,'29.4.1.4']]);
+  assert.deepEqual(wall.filter(row=>row.type==='case').map(row=>[row.depth,row.number]),[[3,'30.4.1'],[4,'30.4.1.1'],[4,'30.4.1.2'],[4,'30.4.1.3'],[4,'30.4.1.4']]);
   assert.equal(wall.find(row=>row.key==='@case:wall:current').title,'计算示例：平整基底 smooth · θ=0.3');
-  assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'29.3');
-  assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','29.1'],['清单形成','29.2'],['指标含义','29.3'],['配对判断','29.4']]);
+  assert.equal(wall.filter(row=>row.type==='mdx')[2].number,'30.3');
+  assert.deepEqual(wall.filter(row=>row.type==='mdx').map(row=>[row.title,row.number]),[['功能实现','30.1'],['清单形成','30.2'],['指标含义','30.3'],['配对判断','30.4']]);
   assert.equal(getUnitNumbering('web','/docs/book/wall-service-to-comparison').title,'墙面服务比较');
   assert.equal(getHeadingNumbering('book','/docs/appendices/container-energy-check','工序输入').number,'A.1');
 });

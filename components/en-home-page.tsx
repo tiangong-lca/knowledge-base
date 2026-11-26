@@ -11,14 +11,17 @@ const EN_PARTS: Record<number, { label: string; title: string }> = {
   3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
   4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
   5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
-  6: { label: 'Part VI', title: 'Data Quality, Uncertainty, Footprints, and Databases' },
-  7: { label: 'Part VII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
+  6: { label: 'Part VI', title: 'Background Databases and Interoperability' },
+  7: { label: 'Part VII', title: 'Data Quality, Uncertainty, and Product Footprint Rules' },
+  8: { label: 'Part VIII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
 };
 
 export function EnHomePage() {
   const enPages = new Map(getSource('en').getPages().map(page => [logicalKey(page.url), page]));
   const units = getPresentationUnits('web');
+  const chapters = units.filter(unit => unit.kind === 'chapter');
   const topics = units.filter(unit => unit.kind === 'topic');
+  const appendices = units.filter(unit => unit.kind === 'appendix');
 
   return (
     <main id="main-content">
@@ -32,7 +35,7 @@ export function EnHomePage() {
           </h1>
           <p className="home-lead">
             How does the world behind a product enter calculation and become an environmental judgment?
-            This complete meaning-equivalent English edition spans all 7 parts, 32 chapters, 5 topical essays, 5 appendices, and 1,117 evidence-bound claims.
+            This complete meaning-equivalent English edition spans all {readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices.
           </p>
           <div className="home-actions flex-wrap">
             <Link className="primary-link whitespace-nowrap" href="/en/docs/">
@@ -71,7 +74,7 @@ export function EnHomePage() {
 
       <section className="reading-section reader-web-contents" id="web-contents">
         <div className="section-heading">
-          <h2>All 32 Chapters Across 7 Parts</h2>
+          <h2>All {chapters.length} Chapters Across {readerParts.length} Parts</h2>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/en/coverage/">Book Guide</Link>
             <Link href="/en/print/">Continuous Reading &amp; Print</Link>
@@ -144,7 +147,7 @@ export function EnHomePage() {
         </div>
         <div className="overview-links">
           <Link href="/en/coverage/">
-            Book Guide<span>7 parts, 32 chapters, 5 topical essays, and 5 appendices</span>
+            Book Guide<span>{readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices</span>
           </Link>
           <Link href="/en/timeline/">
             LCA Historical Timeline<span>27 milestones (1969–2026) with primary-source verification</span>
@@ -156,7 +159,7 @@ export function EnHomePage() {
             Concepts Index<span>Core LCA terminology and cross-framework mappings</span>
           </Link>
           <Link href="/en/claims/">
-            Notes &amp; Claims<span>All 1,117 reviewed claims with scopes and caveats</span>
+            Notes &amp; Claims<span>All reviewed claims with scopes and caveats</span>
           </Link>
           <Link href="/en/changes/">
             Editions &amp; Errata<span>Source commit traceability and errata reporting</span>

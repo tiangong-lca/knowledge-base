@@ -1,0 +1,45 @@
+---
+title: 背景数据库的发展历程与全谱系版图
+description: 梳理背景数据库从 1970 年代手工清单表到链接与联邦互操作时代的四代演进，系统对照 ecoinvent、Sphera MLC（原 GaBi）、欧盟 EF 3.1、USLCI、日本 IDEA、中国 CLCD 与天工 TIDAS、法国 AGRIBALYSE、行业协会、农业食品化工专库及 EXIOBASE/USEEIO 等十六类代表数据库的定位与边界。
+---
+
+## 从手工清单表到链接数据库 [#从手工清单表到链接数据库]
+
+<Prose ids="cl-db26-why-background-db cl-db26-early-tables-to-ecoinvent-v1 cl-db26-linked-to-federated-era" />
+
+## 综合通用商业与半公开数据库 [#综合通用商业与半公开数据库]
+
+<Prose ids="cl-db26-ecoinvent-architecture cl-db26-sphera-mlc-gabi cl-db26-ef-and-elcd" />
+
+## 国家与区域公共生命周期清单库 [#国家与区域公共生命周期清单库]
+
+<Prose ids="cl-db26-uslci-flcac cl-db26-asia-pacific-national-dbs cl-db26-agribalyse-national-food" />
+
+## 行业专属、农业食品、投入产出与社会数据库 [#行业专属农业食品投入产出与社会数据库]
+
+<Prose ids="cl-db26-industry-and-sectoral-dbs cl-db26-eeio-and-social-dbs" />
+
+表 1 全球主要 LCA 背景数据库在维护机构、覆盖范式、数据形态、系统模型与开放许可边界上的全景对照。
+
+| 数据库名称 | 维护机构与核心定位 | 覆盖范围与范式 | 主要交付形态 | 典型系统模型／分配特征 | 开放与许可边界 |
+| --- | --- | --- | --- | --- | --- |
+| ecoinvent（v1–v3.11+） | 瑞士 ecoinvent 协会；全球综合透明单元过程标杆库 | 全球多部门过程 LCI（能源、材料、化工、农业、运输、废物等） | 透明单元过程（UPR）与聚合结果（LCI）并行 | 原始库与系统模型分离：Cut-off、APOS、Consequential、EN 15804 | 文档公开；机读库按商业／学术分级付费许可 |
+| Sphera MLC（原 GaBi） | Sphera；工程建模驱动的综合工业背景库 | 全球多部门工业链（联合多家行业协会，含第三方核查） | 大量纵向／横向聚合 LCI，配部分单元过程 | 单一工程团队按行业工艺规则统一建模与分配 | 商业闭源许可；内部过程表不可公开逐行检视 |
+| 欧盟 EF 3.0 / 3.1 次级库 | 欧盟委员会联合研究中心（JRC）及授权节点 | 面向欧盟 PEF/OEF 法规合规的欧洲与全球供应链 | ILCD-EF XML 部分终止系统为主 | 强制绑定循环足迹公式（CFF）与欧盟推荐规则 | 面向 PEF/OEF 合规研究提供专享授权，限制二次商用分发 |
+| ELCD（历史库） | 欧盟 JRC（2018 年 6 月正式停服） | 历史欧洲基础能源、材料与运输参考清单 | 聚合 LCI 与部分单元过程存档 | 历史归因规则，已不再更新 | 历史存档公开可查，不适用于现行合规研究 |
+| USLCI / Federal LCA Commons | 美国 NREL 及 USDA/DOE/EPA/FHWA/USFS/NIST 联合仓储 | 美国本土能源、运输、建材、林业与基础工业 | 开放单元过程与机构专题仓储（配 FedEFL） | 以归因过程为主；单库部分上游链条存在未闭合缺口 | 公有领域免费开放，提供公开 API |
+| IDEA（日本） | 日本产综研（AIST）IDEA 开发研究组／SuMPO | 覆盖按 JSCC 分类的日本全产业商品与服务 | 过程与投入产出结合的混合结构清单 | 面向日本碳足迹与企业核算的归因口径 | 机构介绍公开；商业发行版须付费许可 |
+| CLCD（中国） | 亿科环境／四川大学团队 | 中国本土能源、电网、运输与基础工业原材料 | 与 eFootprint/eBalance 配套的本土背景清单 | 面向中国工业链的归因建模口径 | 商业许可库；内部过程表未在无授权下公开检视 |
+| 天工规范（TIDAS） | 天工开源协作生态（@tiangong-lca/tidas-spec） | 面向中国与国际数据交换的开放数据结构与语义规则 | 公开 JSON-Schema／ILCD 对齐规范与校验规则 | 公开规则与消费端业务策略分离，定长单调版本号 | 开源公开规范；配套数据生态持续演进 |
+| AGRIBALYSE（法国） | 法国生态转型署（ADEME）与 INRAE 等研究联合体 | 法国农业初级产品至成品食品（“从农场到餐桌”） | 汇总结果公开；单元过程链接 ecoinvent 与 WFLDB | 农业／食品归因口径，工业与进口背景嵌套商业母库 | 公共免费开放；拆解单元过程须配套母库许可 |
+| AusLCI / SICV / MY-LCID | 澳（ALCAS）、巴（IBICT）、马（SIRIM）等国家机构 | 各国本土电网、运输、矿产与代表性产业 | 国家公共过程仓储或区域适配包 | 本土归因基准，跨境上游常衔接全球通用库 | 公共或注册开放，覆盖深度因国而异 |
+| 行业协会 LCI（PlasticsEurope、worldsteel、IAI 等） | 国际及欧洲塑料、钢铁、铝业、水泥、造纸行业协会 | 特定基础材料（高炉／电弧钢、聚合物、原铝与再生铝等） | 摇篮到大门聚合清单（保护成员商业机密） | 协会专属回收与副产物惯例（如金属闭环／价值校正） | 公开申请或会员获取；内部工厂明细不公开 |
+| Agri-footprint & WFLDB | Blonk Consultants；Agroscope & Quantis | 全球农作物、饲料、畜牧与食品加工供应链 | 农业食品专用过程单元与汇总清单 | Agri-footprint 提供经济／质量／能量多套分配变体 | 商业或联盟许可，广泛集成于主流 LCA 软件 |
+| Carbon Minds（cm.chemicals） | 德国 Carbon Minds | 细分国别与工艺路线的全球基础及精细化学品 | 区域化化工单元与供应链数据集 | 支持归因与多区域工艺路线对比 | 商业许可专库 |
+| EXIOBASE 3 & USEEIO v2.0 | EXIOBASE 联盟；美国环保署（EPA） | 全球高分辨 MR-EEIO（EXIOBASE）；美国商品 EEIO（USEEIO） | 经济投入产出表＋环境卫星账户矩阵 | 行业技术／商品技术假设，零上游截断、按货币价格映射 | 高度开放（USEEIO 开源可复现；EXIOBASE 科研开放） |
+| Eora / GLORIA / BONSAI | 悉尼大学 IELab（UN IRP）；BONSAI 开源社区 | 极广国别 MRIO（Eora/GLORIA）；开源全球混合数据网络 | 全球多区域投入产出矩阵或开放知识图谱 | 宏观消费足迹与全球物质流核算口径 | Eora 学术免费／商用付费；GLORIA 与 BONSAI 开放导向 |
+| PSILCA & SHDB | GreenDelta；New Earth | 基于 MRIO 贸易矩阵的全球国家—部门社会风险评价 | 货币流耦合工时与社会风险等级数据库 | 部门产值反推工时＋风险加权（见第五部《社会表现与影响》） | 商业许可库（配套公开方法文档） |
+
+<Prose ids="cl-db26-landscape-selection-bridge" />
+
+继续阅读：[数据适用性](/docs/book/data-applicability)。

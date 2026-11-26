@@ -20,7 +20,7 @@ import { projectRevisionNumbering } from './reader-revisions.mjs';
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
 
 const routeKey = value => typeof value === 'string' ? value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/' : value;
-const chinese = ['', '一', '二', '三', '四', '五', '六', '七'];
+const chinese = ['', '一', '二', '三', '四', '五', '六', '七', '八'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
 export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
@@ -31,9 +31,10 @@ export function assertReaderNumbering(value = numbering, independentDigest = cur
   if (currentBookLayout('book:formal-section-budget', false)) {
     const counts = value.book.filter(unit => unit.kind === 'chapter').map(unit =>
       value.headings[unit.source]?.filter(slot => slot.type === 'mdx' && slot.depth === 2).length ?? 0);
-    if (counts.length !== 32 || counts.some(count => count < 3 || count > 5)
-        || counts.reduce((sum, count) => sum + count, 0) > 120)
-      throw new Error('Final book requires 32 chapters with three to five formal sections each and at most 120 in total');
+    const maxSections = counts.length <= 32 ? 120 : 120 + (counts.length - 32) * 5;
+    if (counts.length < 32 || counts.some(count => count < 3 || count > 5)
+        || counts.reduce((sum, count) => sum + count, 0) > maxSections)
+      throw new Error(`Final book requires at least 32 chapters with three to five formal sections each and at most ${maxSections} in total`);
   }
 }
 export const readerNumberingManifest = numbering;

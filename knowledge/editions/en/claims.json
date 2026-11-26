@@ -10992,6 +10992,138 @@
         "This calculation does not propagate parameter, structural, or input uncertainty from the underlying models; displayed decimal places reflect arithmetic on the tabulated inputs rather than empirical precision."
       ],
       "reviewedAt": "2026-11-23"
+    },
+    {
+      "id": "cl-db26-why-background-db",
+      "status": "published",
+      "zhDigest": "dea3bbeebfb8039acf5f69252dc02a6d24902e3b57f953fe69f6d2677b0cef5f",
+      "text": "A single product life cycle assessment typically traces hundreds or thousands of upstream operations—electricity generation, steelmaking, basic chemicals, freight transport, and waste treatment—far beyond what any individual study team can measure directly on site. Practitioners therefore partition a product system into a foreground system populated with primary activity data and a background system supplied by established generic databases. Yet a background database is never a neutral table of physical constants: it embeds system boundaries, allocation rules, geographic aggregation, capital-goods conventions, and underlying impact-assessment flow lists inside thousands of datasets. Choosing a background database often shapes the magnitude and sensitivity of results before calculation even begins.",
+      "scope": "Division of labor between foreground and background systems and the methodological choices embedded inside background databases.",
+      "caveats": [
+        "The boundary between foreground and background depends on decision control and data availability rather than a fixed industrial dividing line."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-early-tables-to-ecoinvent-v1",
+      "status": "published",
+      "zhDigest": "a0f671dd17b15ac422a7a885d5c80fff4a80e9a128d0bb4499bc19914d6c682f",
+      "text": "Background databases evolved across four structural generations. In the 1970s and 1980s, early energy and packaging inventories compiled by the Midwest Research Institute (MRI), Franklin Associates, and the Boustead model existed as printed tables or closed spreadsheets with mutually incompatible units, boundaries, and flow names. During the 1990s, institutional inventories reusable across studies emerged in Europe—such as the Swiss BUWAL 132/250 series, ETH-ESU 96, and the Dutch IDEMAT and IVAM datasets—alongside engineering-oriented commercial libraries pioneered by PE International (later GaBi). In 2000, Swiss federal offices and research institutes of the ETH domain launched a harmonization effort that released ecoinvent v1 in 2003 (reaching more than 2,500 consistent, unit-process-transparent datasets by v1.1 in 2005). Over the same decade, NREL launched USLCI in the United States, the European Commission Joint Research Centre (JRC) released ELCD, Japan’s AIST initiated IDEA, and IKE and Sichuan University developed CLCD in China, marking the transition to systematic LCI databases.",
+      "scope": "Historical progression from 1970s hand-compiled inventory tables to the first systematic 2000s LCI databases.",
+      "caveats": [
+        "Several 1970s–1990s archival print reports (such as original BUWAL and ETH-ESU volumes) were not inspected page by page; this summary captures recognized architectural milestones."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-linked-to-federated-era",
+      "status": "published",
+      "zhDigest": "d4dfe51de75192481b9a184f3288453954515afb9b7ed93a8328be5fc0152783",
+      "text": "ecoinvent version 3 (2013) inaugurated a third generation built on decoupled linking: instead of shipping one hard-wired static matrix, it separated unlinked raw unit-process datasets from system-model linking rules so the same underlying records could generate cut-off attributional, point-of-substitution, and long-term consequential databases while adding flow properties to support mass and elemental balance checks. In parallel, the European Union developed regulatory EF 2.0/3.0/3.1 reference packages and secondary datasets; specialized agri-food (AGRIBALYSE, Agri-footprint, WFLDB) and chemical (Carbon Minds) databases expanded; and multi-regional input-output models such as EXIOBASE 3 and USEEIO addressed process-level truncation gaps. In the 2020s, confronted with fragmented, mutually incompatible libraries, initiatives such as UNEP’s Global LCA Data Access network (GLAD), the U.S. Federal LCA Commons, the open-source BONSAI community, and the TianGong LCA Data System specification (TIDAS) shifted the frontier from sheer dataset volume toward metadata discovery, open schemas, and auditable mapping.",
+      "scope": "Decoupled multi-system-model linking and sectoral specialization in the 2010s, followed by federated discovery and open-schema interoperability in the 2020s.",
+      "caveats": [
+        "Federated discovery networks such as GLAD improve metadata search and selected elementary-flow mappings, but do not automatically resolve underlying methodological conflicts across databases."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-ecoinvent-architecture",
+      "status": "published",
+      "zhDigest": "5ca87ae0d35cd6630ed1a8b70870e9e54e9a185b2e70ad2b1b5c820ab182937d",
+      "text": "Among comprehensive multi-sector databases, ecoinvent—maintained by the Swiss non-profit ecoinvent Association—stands as the flagship transparent unit-process library in academic and cross-industry LCA. Three design features define it: first, nearly all datasets are documented at the unit-process level, enabling users to inspect upstream supply chains, substitute local electricity grids, and propagate Monte Carlo uncertainty; second, since version 3 it strictly separates transforming activities from market activities (consumption mixes including average transport and losses) and derives multiple coherent system models—Cut-off by classification, Allocation at the Point of Substitution (APOS), and long-term Consequential substitution—from one unlinked master layer; third, it follows rolling annual sector updates. For example, version 3.11 (November 2024) added 136 Swiss agricultural datasets with Agroscope across mountain, hill, and plain subregions and introduced NMC532 and NMC622 lithium-ion battery chemistries for China and global geographies. While methodology documentation is public, full machine-readable access requires a tiered commercial or academic license.",
+      "scope": "Unit-process architecture, multiple system models, rolling updates, and licensing boundaries of ecoinvent.",
+      "caveats": [
+        "This account rests on public methodology papers and the official v3.11 release page; machine-readable EcoSpold2 dataset values inside licensed ecoinvent v3.11 distributions were not inspected directly."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-sphera-mlc-gabi",
+      "status": "published",
+      "zhDigest": "1edfad0c31928f0dd7466c5c6aef9e9fc5ebf043ca28e7d619ad435b6fd55781",
+      "text": "A sharp structural contrast is provided by Sphera Managed LCA Content (MLC, formerly the GaBi databases, paired with Sphera LCA for Experts). According to public institutional documentation and literature overviews, MLC is built through top-down industrial engineering modeling in collaboration with global industry associations across energy, metals, chemicals, plastics, electronics, and automotive manufacturing, with core modeling principles and content undergoing regular third-party verification (such as by DEKRA) and annual updates to electricity grids and road-transport emissions. To protect industrial confidentiality, MLC delivers a large share of its background library as vertically or horizontally aggregated LCI results rather than open unit-process trees. Internal consistency within the library is high because one engineering team governs modeling conventions, but external analysts generally cannot unpack or swap embedded upstream electricity or sub-processes as transparently as in unit-process databases.",
+      "scope": "Engineering-led modeling, aggregated LCI delivery, third-party review, and proprietary access boundary of Sphera MLC (formerly GaBi).",
+      "caveats": [
+        "Sphera MLC is a proprietary, license-restricted database; this assessment rests strictly on public institutional documentation and peer-reviewed metadata without inspecting internal commercial process tables."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-ef-and-elcd",
+      "status": "published",
+      "zhDigest": "140ba4eaf737190a8fb8d96d783ace7cf77479b3eed794527400d5642844fe67",
+      "text": "A third comprehensive category consists of policy- and regulator-mandated reference libraries, exemplified by the European Commission JRC’s historical European Reference Life Cycle Database (ELCD) and its successor Environmental Footprint (EF 3.0/3.1) reference packages and compliant secondary datasets. ELCD formerly offered free European baseline data for energy, transport, and core materials, but is no longer maintained and survives only as a historical archive rather than a current compliance baseline. The succeeding EF 2.0, 3.0, and 3.1 architecture is tightly bound to Commission Recommendation (EU) 2021/2279 for Product and Organisation Environmental Footprints (PEF/OEF): datasets use the ILCD-EF XML format with strict UUID identities, are typically released as partly terminated systems embedding Circular Footprint Formula (CFF) conventions and formal review rules, and carry use-restricted licenses tailored to PEF/OEF compliance rather than unrestricted redistribution. As the European Commission’s 2026 transition guidance notes regarding limited availability of EF-compliant datasets in certain sectors, regulatory databases prioritize uniform comparability under statutory rules over exhaustive coverage for exploratory research.",
+      "scope": "Historical archive status of ELCD and the statutory-compliance design, licensing limits, and availability constraints of EU EF 3.0/3.1 secondary datasets.",
+      "caveats": [
+        "Exact free-access terms for EF secondary datasets evolve with European Commission data-node tenders and license agreements; statutory filings must check current European Platform on LCA (EPLCA) notices."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-uslci-flcac",
+      "status": "published",
+      "zhDigest": "389cf114881d1c20a37eaa9741d994a661d8ba7767aaaf39057b719e70572d7a",
+      "text": "Alongside global commercial libraries and EU regulatory packages, major economies have built national and regional public LCI databases anchored in domestic energy mixes, industrial practices, and national emissions statistics. In North America, the centerpiece is the U.S. Federal LCA Commons and its flagship U.S. Life Cycle Inventory (USLCI) database, long maintained by the National Renewable Energy Laboratory (NREL). Bringing together public-domain repositories from USDA, DOE, EPA, FHWA, the U.S. Forest Service, and NIST, the Federal LCA Commons offers open access, a unified API, and a standardized Federal Elementary Flow List, lowering barriers for policy analysis and education. Yet decentralized multi-agency stewardship also creates a structural limitation: standalone USLCI datasets historically left many upstream chemicals, capital goods, and imported supply chains unlinked (“dummy” or unclosed inputs), meaning that cradle-to-grave comparisons can systematically underestimate upstream burdens unless analysts explicitly close supply-chain gaps or document truncation.",
+      "scope": "Public-domain multi-agency stewardship and supply-chain closure boundaries of USLCI and the U.S. Federal LCA Commons.",
+      "caveats": [
+        "The Federal LCA Commons continually adds agency repositories (such as construction materials and forestry); actual supply-chain closure must be verified for the specific release snapshot used."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-asia-pacific-national-dbs",
+      "status": "published",
+      "zhDigest": "4acc7fc3ed06004dbf392f756faf981f653ff230775c14bcd99356edcbac2642",
+      "text": "Across the Asia-Pacific and emerging economies, national background data combine state-backed statistical frameworks, commercial platforms, and open-specification initiatives. In Japan, the National Institute of Advanced Industrial Science and Technology (AIST) maintains dedicated IDEA development groups to produce the Inventory Database for Environmental Analysis (IDEA), organized under the Japan Standard Commodity Classification (JSCC) and combining process data with input-output structure to achieve broad domestic industrial coverage (commercial distribution requires a license). In China, the Chinese Life Cycle Database (CLCD)—initiated around 2010 by IKE Environmental Technology and Sichuan University—has supplied localized Chinese energy, transport, and basic-material background data within commercial tools such as eFootprint and eBalance, while open data-ecosystem efforts have produced the TianGong LCA Data System specification (TIDAS), which separates open semantic schemas and fixed-length monotonic versioning from downstream application policies. National databases such as Australia’s AusLCI (ALCAS), Brazil’s SICV (IBICT), Malaysia’s MY-LCID (SIRIM), and Korea’s LCI likewise provide vital local electricity, transport, and resource baselines, though globalized manufacturing chains still require linking to international background libraries.",
+      "scope": "Institutional positioning and access boundaries of Japan’s IDEA, China’s CLCD and TianGong TIDAS, and national libraries including AusLCI, SICV, and MY-LCID.",
+      "caveats": [
+        "Internal process tables of licensed commercial releases (IDEA, CLCD) and current exact process counts of AusLCI, SICV, and MY-LCID were not inspected directly; this section compares their documented institutional scope and architecture."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-agribalyse-national-food",
+      "status": "published",
+      "zhDigest": "3843441a989efc2f7a88bae792ea4dd341ae00ca4baab6395c7de4c0875cef2a",
+      "text": "France’s AGRIBALYSE database—coordinated by ADEME (the French Agency for Ecological Transition) together with agricultural research institutes such as INRAE—illustrates a common hybrid pattern in which a national public database is structurally nested inside global commercial libraries. Since version 3.0, AGRIBALYSE has expanded from farm-gate agricultural commodities to thousands of finished French food products (“farm to fork”) with open public access supporting eco-design and consumer environmental labeling. Crucially, its official documentation highlights the architectural link with ecoinvent and the World Food LCA Database (WFLDB): French research partners govern domestic farming and food-processing inventories, while industrial chemicals, packaging, energy, transport, and imported tropical ingredients rely on ecoinvent and WFLDB background processes. This nesting demonstrates a general principle: most national or sectoral public libraries are not self-contained islands, and evaluating their methodological consistency requires auditing the parent background databases they inherit.",
+      "scope": "Public farm-to-fork scope of France’s AGRIBALYSE and its nested background dependence on ecoinvent and WFLDB.",
+      "caveats": [
+        "Working with disaggregated AGRIBALYSE unit-process models in software such as SimaPro or openLCA typically still requires an ecoinvent license or reliance on published aggregated results."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-industry-and-sectoral-dbs",
+      "status": "published",
+      "zhDigest": "938e89473f91335a6a31803bbc199899e81efba5f54e13ff12b8c08d1f7fe3b5",
+      "text": "Beyond general-purpose and national libraries, two specialized tiers play a major role in applied LCA. The first comprises industry-association inventories—including PlasticsEurope Eco-profiles for European polymers, the World Steel Association (worldsteel) LCI datasets for blast-furnace and electric-arc steel routes, the International Aluminium Institute (IAI) inventories from bauxite mining to smelting and recycling, and European sector profiles from CEPI (paper), CEMBUREAU (cement), and Eurofer. Because associations gather recent operational data directly from member plants, their technological representativeness often surpasses older academic studies; however, antitrust and confidentiality rules mean datasets are typically released as aggregated cradle-to-gate inventories with association-specific recycling and co-product conventions. The second tier consists of specialized commercial or consortium libraries: in agri-food, Blonk Consultants’ Agri-footprint (offering economic, mass, and energy allocation variants) and Agroscope/Quantis’s World Food LCA Database (WFLDB) provide deep agricultural coverage; in chemicals, Carbon Minds (cm.chemicals) delivers regionalized chemical supply chains. Their sectoral granularity exceeds general libraries, but integrating them into broader product systems creates interface alignment challenges.",
+      "scope": "Industry-association LCI programs (PlasticsEurope, worldsteel, IAI) and specialized agri-food and chemical databases (Agri-footprint, WFLDB, Carbon Minds).",
+      "caveats": [
+        "Application-gated industry datasets and commercial sectoral libraries were not inspected at the raw process-table level; practitioners must verify capital-goods inclusion and recycling rules before combining them with other libraries."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-eeio-and-social-dbs",
+      "status": "published",
+      "zhDigest": "62d474db5aa4d3078a8cbad82ccf08cfbc262e62d184998cc452ed790c7fefcc",
+      "text": "Outside process-based inventory compilation lies the complementary family of Environmentally-Extended Input-Output (EEIO) and Multi-Regional Input-Output (MRIO) databases, along with the social LCA libraries built on top of them. Leading models include EXIOBASE 3 (Stadler et al., 2018), notable for high-resolution global trade with detailed energy, material, and agricultural sectors; the U.S. EPA’s open-source USEEIO v2.0 (Ingwersen et al., 2022), which adds waste-sector disaggregation, domestic-versus-foreign impact separation, and purchaser-price conversion matrices reproducible with open-source packages; the University of Sydney’s broad-coverage Eora (Lenzen et al., 2013) and the IELab/UN IRP GLORIA database (Lenzen et al., 2022); plus trade-oriented GTAP and WIOD and the open community initiative BONSAI. As examined earlier in Social Performance and Impacts, PSILCA and SHDB likewise rest on multi-regional input-output trade matrices linking monetary flows to country-sector labor hours and social risk levels. Consistent with Hybrid Inventories, process and EEIO libraries trade off opposite errors: process databases offer physical and technological specificity at the cost of upstream truncation, whereas EEIO/MRIO models eliminate truncation across the entire economy at the cost of coarse sector aggregation and price-homogeneity assumptions.",
+      "scope": "EEIO/MRIO databases (EXIOBASE 3, USEEIO v2.0, Eora, GLORIA) and MRIO-backed social libraries (PSILCA, SHDB) contrasted with process LCI databases.",
+      "caveats": [
+        "Exact sector counts and base years for EXIOBASE 3, Eora, and GLORIA vary across minor releases; analysts should verify the classification table and satellite-account coverage of the specific release used."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db26-landscape-selection-bridge",
+      "status": "published",
+      "zhDigest": "66275cd76f7b2c504dc20b73349b071363ec664940f1ee0fdbbd7b1f500fef87",
+      "text": "Surveying these four historical generations and sixteen representative database and specification families makes clear that LCA has no single universal background database. Every library reflects deliberate trade-offs among geographic coverage, technological granularity, commercial confidentiality versus unit-process transparency, regulatory uniformity, and modeling flexibility. Selecting ecoinvent, Sphera MLC, EF 3.1, USLCI, IDEA, CLCD, AGRIBALYSE, or EXIOBASE for the same product study is never a neutral swap of data files: each embeds distinct system models, aggregation depths, regional residual algorithms, and capital-goods boundaries, while its elementary-flow and process taxonomies are tightly coupled to specific impact-assessment methods. Subsequent chapters examine these methodological divergences, cross-database mapping limits, and the resulting rules for data applicability, uncertainty, and compliance.",
+      "scope": "Selection trade-offs across the global LCA database landscape and transition to methodological divergences, mapping limits, and data governance.",
+      "caveats": [
+        "This overview and comparison table map institutional and architectural roles rather than ranking databases or conferring regulatory approval on any commercial or public product."
+      ],
+      "reviewedAt": "2026-11-26"
     }
   ]
 }
