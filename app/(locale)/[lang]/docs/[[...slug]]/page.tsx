@@ -55,8 +55,9 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
       3: 'Part III · Multifunctionality, Allocation, and System Boundaries',
       4: 'Part IV · Life Cycle Impact Assessment Pathways and Models',
       5: 'Part V · Normalization, Weighting, Regionalization, and Sustainability Extensions',
-      6: 'Part VI · Data Quality, Uncertainty, Footprints, and Databases',
-      7: 'Part VII · Case Synthesis, Interpretation, and Revisable Judgment',
+      6: 'Part VI · Background Databases and Interoperability',
+      7: 'Part VII · Data Quality, Uncertainty, and Product Footprint Rules',
+      8: 'Part VIII · Case Synthesis, Interpretation, and Revisable Judgment',
     };
     const enLabel =
       enUnit?.kind === 'chapter'

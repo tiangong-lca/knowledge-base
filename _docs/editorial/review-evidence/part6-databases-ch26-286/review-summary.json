@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "unit": "part6-databases-ch26-286",
+  "date": "2026-11-26",
+  "scope": "7->8 Part structural expansion (Part VI Background Databases and Interoperability) and Chapter 26 (lca-database-landscape-and-history, ZH + EN).",
+  "reviews": [
+    {
+      "kind": "primary-source-and-premise-dag",
+      "initialVerdict": "FAIL (3 blocking, 3 non-blocking)",
+      "resolutions": [
+        "Replaced forward premise cl-db2011-user-and-manager (Ch. 27) with backward premise cl-inv-hybrid-forms (Ch. 9).",
+        "Split ev-db26-elcd-ef-transition into ev-db26-elcd-archive (src-kb50-elcd-nexus-terms), ev-db26-ef-pef-2021 (src-kb44-ec2021), and ev-db26-ef-transition-2026 (src-kb44-ec-transition2026).",
+        "Removed unverified v3.10.1/EN 15804 and 60+/HBEFA specifics; split ev-db26-shdb-ref (src-soc139-shdb-2012); set cl-db26-uslci-flcac kind to synthesis."
+      ],
+      "finalVerdict": "PASS"
+    },
+    {
+      "kind": "zero-context-bilingual-reader",
+      "initialVerdict": "FAIL (2 blocking, 3 non-blocking)",
+      "resolutions": [
+        "Removed HTTP 403 / automated retrieval process prose from cl-db26-sphera-mlc-gabi caveats.",
+        "Replaced dangling 'next four chapters' bridge in cl-db26-landscape-selection-bridge with accurate forward scope.",
+        "Fixed 'energy transport' -> 'energy, transport', standardized AGRIBALYSE casing, and refined 'sixteen representative database and specification families'."
+      ],
+      "finalVerdict": "PASS"
+    },
+    {
+      "kind": "adversarial-publication-engineering",
+      "initialVerdict": "FAIL (stale UI/MDX counts & shifted part bindings)",
+      "resolutions": [
+        "Removed stale 44/44 and 1,117 counts in changes/page.tsx, coverage/page.tsx, and en-home-page.tsx.",
+        "Updated content/docs/book/revisable-judgment.mdx ('全书各部') and content-en/docs/index.mdx (removed shifted Chapter 30 ordinal).",
+        "Updated archival editorial-history part numbers (6->7, 7->8) in print/page.tsx."
+      ],
+      "finalVerdict": "PASS"
+    }
+  ]
+}

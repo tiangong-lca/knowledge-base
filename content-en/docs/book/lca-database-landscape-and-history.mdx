@@ -1,0 +1,45 @@
+---
+title: Evolution and Global Landscape of Background LCA Databases
+description: Trace four generations of LCA background databases from 1970s hand-compiled tables to linked and federated ecosystems, comparing 16 major database families including ecoinvent, Sphera MLC (GaBi), EU EF 3.1, USLCI, IDEA, CLCD, TianGong TIDAS, AGRIBALYSE, industry LCI, agri-food/chemical libraries, and EEIO/MRIO models.
+---
+
+## From Printed Tables to Linked Databases [#from-printed-tables-to-linked-databases]
+
+<Prose ids="cl-db26-why-background-db cl-db26-early-tables-to-ecoinvent-v1 cl-db26-linked-to-federated-era" />
+
+## Comprehensive Multi-Sector Databases [#comprehensive-multi-sector-databases]
+
+<Prose ids="cl-db26-ecoinvent-architecture cl-db26-sphera-mlc-gabi cl-db26-ef-and-elcd" />
+
+## National and Regional Public LCI Databases [#national-and-regional-public-lci-databases]
+
+<Prose ids="cl-db26-uslci-flcac cl-db26-asia-pacific-national-dbs cl-db26-agribalyse-national-food" />
+
+## Sectoral, Agri-Food, EEIO, and Social Databases [#sectoral-agri-food-eeio-and-social-databases]
+
+<Prose ids="cl-db26-industry-and-sectoral-dbs cl-db26-eeio-and-social-dbs" />
+
+Table 1. Comparative landscape of sixteen major LCA background database families across governance, modeling paradigm, delivery form, system models, and licensing boundaries.
+
+| Database | Maintainer & Institutional Role | Scope & Paradigm | Primary Delivery Form | System Models / Allocation Conventions | Access & Licensing Boundary |
+| --- | --- | --- | --- | --- | --- |
+| ecoinvent (v1–v3.11+) | ecoinvent Association (Switzerland); flagship transparent unit-process library | Global multi-sector process LCI (energy, materials, chemicals, agriculture, transport, waste) | Transparent unit processes (UPR) and aggregated LCI results | Raw data decoupled from linking: Cut-off, APOS, Consequential, EN 15804 | Public methodology docs; tiered commercial/academic license for machine-readable data |
+| Sphera MLC (formerly GaBi) | Sphera; engineering-led industrial background library | Global multi-sector industrial chains (industry-association collaboration; third-party verification) | Largely vertically/horizontally aggregated LCI plus selected unit processes | Centrally governed engineering modeling and sector-specific allocation | Proprietary commercial license; internal process tables not publicly inspectable |
+| EU EF 3.0 / 3.1 Secondary Data | European Commission JRC and contracted data nodes | European and global supply chains bound to EU PEF/OEF compliance | ILCD-EF XML partly terminated systems | Mandatory Circular Footprint Formula (CFF) and EU Recommendation rules | Use-restricted access for PEF/OEF compliance; redistribution restricted |
+| ELCD (Historical) | European Commission JRC (discontinued June 2018) | Historical European baseline energy, materials, and transport | Archived aggregated LCI and selected unit processes | Legacy attributional conventions; no longer maintained | Public historical archive; unsuitable as a current compliance baseline |
+| USLCI / Federal LCA Commons | U.S. NREL with USDA, DOE, EPA, FHWA, USFS, and NIST | U.S. domestic energy, transport, construction, forestry, and core industry | Open unit-process repositories paired with FedEFL | Attributional process focus; standalone USLCI has unclosed upstream gaps | Public domain, free open access and public API |
+| IDEA (Japan) | AIST IDEA Development Group / SuMPO (Japan) | Comprehensive Japanese industrial sectors under JSCC classification | Hybrid process and input-output inventory structure | Attributional conventions supporting Japanese carbon footprinting | Public institutional overview; commercial distribution requires license |
+| CLCD (China) | IKE Environmental Technology / Sichuan University | Chinese domestic energy, grids, transport, and basic materials | Localized background library paired with eFootprint/eBalance | Attributional modeling tailored to Chinese industrial chains | Commercial license; internal process tables not publicly inspectable |
+| TianGong Specification (TIDAS) | TianGong open-source ecosystem (@tiangong-lca/tidas-spec) | Open data contracts and semantic rules for Chinese and international LCA exchange | Open JSON-Schema / ILCD-aligned schemas and validation rules | Separates public semantic predicates from downstream policy gates; monotonic versioning | Open-source public specification; companion data ecosystem evolving |
+| AGRIBALYSE (France) | ADEME and INRAE-led research consortium | French agricultural commodities to finished food products ("farm to fork") | Open aggregated results; unit processes linked to ecoinvent & WFLDB | Attributional agri-food modeling nested on commercial global backbones | Free public access; full unit-process editing requires parent-library licenses |
+| AusLCI / SICV / MY-LCID | ALCAS (Australia), IBICT (Brazil), SIRIM (Malaysia) | Domestic electricity, transport, mining, and representative national industries | National public repositories or regional adaptation packs | Domestic attributional baselines; imported chains often link to global libraries | Public or registration-based access; coverage depth varies by country |
+| Industry LCI (PlasticsEurope, worldsteel, IAI, etc.) | Global/European plastics, steel, aluminium, cement, and paper associations | Core material routes (polymers, BF-BOF/EAF steel, primary/recycled aluminium) | Aggregated cradle-to-gate LCI protecting plant confidentiality | Association-specific recycling and co-product rules (e.g., closed-loop/value correction) | Request-based or member access; plant-level unit processes confidential |
+| Agri-footprint & WFLDB | Blonk Consultants; Agroscope & Quantis | Global crops, feed, livestock, and food-processing value chains | Specialized agri-food unit and aggregated inventories | Agri-footprint ships economic, mass, and energy allocation variants | Commercial or consortium license; integrated in major LCA software |
+| Carbon Minds (cm.chemicals) | Carbon Minds (Germany) | Country- and route-specific global basic and specialty chemicals | Regionalized chemical process and supply-chain datasets | Supports attributional and regional technology-route comparisons | Commercial specialty license |
+| EXIOBASE 3 & USEEIO v2.0 | EXIOBASE Consortium; U.S. EPA | High-resolution global MR-EEIO (EXIOBASE); U.S. commodity EEIO (USEEIO) | Economic input-output tables + environmental satellite matrices | Industry/commodity technology assumptions; zero truncation; monetary mapping | Open-access (USEEIO reproducible with open-source packages; EXIOBASE open for research) |
+| Eora / GLORIA / BONSAI | University of Sydney IELab (UN IRP); BONSAI community | Broad-country MRIO (Eora/GLORIA); open global hybrid data network | Global multi-region IO matrices or open knowledge graph | Macro consumption footprints and global material-flow accounting | Eora free for academia / commercial license; GLORIA and BONSAI open-oriented |
+| PSILCA & SHDB | GreenDelta; New Earth | Global country-sector social risk assessment over MRIO trade matrices | Monetary flows coupled with labor hours and risk tiers | Output-to-hours scaling + risk weighting (see Social Performance and Impacts) | Commercial license (accompanied by public methodology documentation) |
+
+<Prose ids="cl-db26-landscape-selection-bridge" />
+
+Continue reading: [Data Applicability](/en/docs/book/data-applicability/).

@@ -43,13 +43,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p>
           <a href={identity.sourceUrl} rel="noreferrer">View source commit</a> ·{' '}
           <Link href="/en/print/">Continuous Reading &amp; Print Edition</Link> ·{' '}
-          <Link href="/en/coverage/">Book Guide (44/44 units published)</Link>
+          <Link href="/en/coverage/">Book Guide</Link>
         </p>
 
         <h2>Bilingual Alignment &amp; Completeness</h2>
         <p>
-          The English edition is authored as a meaning-equivalent monograph rather than a literal sentence-by-sentence translation. All 32 main
-          chapters, 5 topical essays, 5 appendices, 2 interactive teaching cases, and 1,117 reviewed claims are published and cryptographically
+          The English edition is authored as a meaning-equivalent monograph rather than a literal sentence-by-sentence translation. All main
+          chapters, 5 topical essays, 5 appendices, 2 interactive teaching cases, and reviewed claims are published and cryptographically
           aligned to the canonical Chinese edition via claim-level digests.
         </p>
         <p>

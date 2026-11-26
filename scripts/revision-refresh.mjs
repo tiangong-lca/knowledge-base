@@ -31,6 +31,8 @@ export const STANDARD_PUBLIC_ARTIFACTS = [
   'research/index.html',
   'downloads/catalog.json',
   'downloads/dependencies.json',
+  'downloads/bibliography.json',
+  'downloads/research.json',
 ];
 
 async function fileExists(p) {

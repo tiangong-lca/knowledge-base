@@ -32,8 +32,9 @@ const EN_PARTS: Record<number, { label: string; title: string }> = {
   3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
   4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
   5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
-  6: { label: 'Part VI', title: 'Data Quality, Uncertainty, Footprints, and Databases' },
-  7: { label: 'Part VII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
+  6: { label: 'Part VI', title: 'Background Databases and Interoperability' },
+  7: { label: 'Part VII', title: 'Data Quality, Uncertainty, and Product Footprint Rules' },
+  8: { label: 'Part VIII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
 };
 
 export function generateStaticParams() {
@@ -43,9 +44,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (lang === 'en') {
+    const chCount = getPresentationUnits('web').filter(u => u.kind === 'chapter').length;
     return {
       title: 'Continuous Reading & Print Edition',
-      description: 'Complete continuous reading and printable English edition covering all 7 parts, 32 chapters, 5 topical essays, 5 appendices, and references.',
+      description: `Complete continuous reading and printable English edition covering all ${readerParts.length} parts, ${chCount} chapters, 5 topical essays, 5 appendices, and references.`,
     };
   }
   return { title: '书籍目录、连续阅读与打印' };
@@ -110,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="print-controls">
           <PrintButton label="Print or Save as PDF" />
           <p>
-            The English web chapters and continuous print edition follow the same 32-chapter numbering. See the{' '}
+            The English web chapters and continuous print edition follow the same {enUnits.filter(u => u.kind === 'chapter').length}-chapter numbering. See the{' '}
             <Link href="/en/coverage/">Book Guide</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
           </p>
         </div>
@@ -236,12 +238,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <summary><time dateTime={part5RereadSource.date}>{part5RereadSource.date}</time> 版第五部导言范围</summary>
           <p>{'前版导言：“'}{currentPart5Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part5RereadSource.commit)} data-part5-reread-part-source="">查看该版源文件</a></p>
         </details>}
-        {showEditorialHistoryInProse() && currentPart6Reread && part.number === 6 && <details className="legacy-citation-context" data-part6-reread-part="6">
-          <summary><time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time> 版第六部导言范围</summary>
+        {showEditorialHistoryInProse() && currentPart6Reread && part.number === 7 && <details className="legacy-citation-context" data-part6-reread-part="6">
+          <summary><time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time> 版原第六部导言范围</summary>
           <p>{'前版导言：“'}{currentPart6Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part6RereadSource.commit)} data-part6-reread-part-source="">查看该版源文件</a></p>
         </details>}
-        {showEditorialHistoryInProse() && currentPart7Reread && part.number === 7 && <details className="legacy-citation-context" data-part7-reread-part="7">
-          <summary><time dateTime={part7RereadSource.date}>{part7RereadSource.date}</time> 版第七部导言范围</summary>
+        {showEditorialHistoryInProse() && currentPart7Reread && part.number === 8 && <details className="legacy-citation-context" data-part7-reread-part="7">
+          <summary><time dateTime={part7RereadSource.date}>{part7RereadSource.date}</time> 版原第七部导言范围</summary>
           <p>{'前版导言：“'}{currentPart7Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part7RereadSource.commit)} data-part7-reread-part-source="">查看该版源文件</a></p>
         </details>}
         {units.filter(unit=>unit.part===part.number).map(article)}

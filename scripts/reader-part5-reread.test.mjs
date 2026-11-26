@@ -1,4 +1,6 @@
 import { checkpointInput, checkpointInputSync } from './reader-checkpoint-input.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { projectRevisionNumbering } from './reader-revisions.mjs';
 const { catalog, readings, literature } = checkpointInputSync();
 import assert from 'node:assert/strict';
 import test from 'node:test';
@@ -149,9 +151,10 @@ test('Part V continuous reread ordinary IDs, numbering/printParts projection, 4-
   assert.equal(part5RereadOrdinaryId(config.unit, part5RereadB23Route, true, 'table-2'), `${printUnitAnchor(part5RereadB23Route)}-part5-145-ordinary-table-2`);
   assert.equal(part5RereadOrdinaryId(config.unit, part5RereadB23Route, false, 'table-3'), undefined);
 
-  const projectedNum = projectPart5RereadNumbering(config.unit, numbering);
+  const checkpointNumbering = projectRevisionNumbering(currentRevisions, numbering);
+  const projectedNum = projectPart5RereadNumbering(config.unit, checkpointNumbering);
   assert.equal(projectedNum.parts.find(p => p.number === 5).introduction, config.unit.partIntroduction.from);
-  const badNum = structuredClone(numbering);
+  const badNum = structuredClone(checkpointNumbering);
   badNum.parts.find(p => p.number === 5).introduction = '篡改第五部导言';
   assert.throws(() => projectPart5RereadNumbering(config.unit, badNum), /differs from the reviewed Part 5 introduction/);
 
