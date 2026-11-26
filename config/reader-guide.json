@@ -99,24 +99,24 @@
     },
     {
       "id": "prob-data-quality",
-      "question": "背景数据库换版、谱系矩阵打分与蒙特卡洛显著性怎样正确解读？",
-      "summary": "分清数据库残差联动、数据质量评级（DQR）序数门槛与谱系方差的统计边界，避免模拟次数制造伪显著。",
+      "question": "如何选择背景数据库、应对跨库映射限度，并正确解读数据质量与不确定性？",
+      "summary": "厘清全球背景数据库谱系、方法分歧与流／过程映射红线，衔接数据适用性、谱系评分与蒙特卡洛不确定性边界。",
       "targets": [
         {
           "route": "/docs/book/lca-database-landscape-and-history",
-          "why": "背景数据库全谱系与选型边界"
+          "why": "背景数据库全谱系与选型"
+        },
+        {
+          "route": "/docs/book/elementary-flows-and-lcia-coupling",
+          "why": "基本流与底层 LCIA 耦合"
+        },
+        {
+          "route": "/docs/book/exchange-formats-and-interoperability-governance",
+          "why": "交换格式与三级互操作红线"
         },
         {
           "route": "/docs/book/data-applicability",
           "why": "适用性、审查与换版红线"
-        },
-        {
-          "route": "/docs/book/uncertainty-and-variability",
-          "why": "不确定性层次与模拟误区"
-        },
-        {
-          "route": "/docs/book/data-quality-and-probability",
-          "why": "谱系评分与概率校准"
         }
       ]
     },

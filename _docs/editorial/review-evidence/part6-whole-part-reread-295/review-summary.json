@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "unit": "part6-whole-part-reread-295",
+  "date": "2026-11-26",
+  "scientificApproval": false,
+  "status": "reviewed-all-findings-resolved",
+  "reviewers": [
+    {
+      "role": "Whole-Part VI Continuous Bilingual Reread Reviewer",
+      "verdict": "PASS after fix",
+      "blockingFindings": [
+        "Fixed off-by-one hardcoded chapter cross-references in rendered Ch. 28 (process-and-technosphere-mapping-limits, ZH+EN) and Ch. 29 (exchange-formats-and-interoperability-governance, ZH+EN) so Part VI consistently reflects exact Chapters 25-29 and Part VII begins at Chapter 30."
+      ],
+      "nonBlockingFindingsResolved": [
+        "Standardized APOS ZH rendering to 替代点分配（APOS）, lowercase ecoinvent, and aluminium spelling across Part VI.",
+        "Updated ZH and EN Reading Guide (content/docs/book/index.mdx & content-en/docs/book/index.mdx) to summarize all five Part VI chapters (Chapters 25-29) and added prob-databases-mapping route in config/reader-guide.json."
+      ]
+    }
+  ]
+}
