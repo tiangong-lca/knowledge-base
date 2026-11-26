@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "unit": "part6-method-divergences-ch27-288",
+  "date": "2026-11-26",
+  "scope": "Part VI Chapter 27 (Methodological Divergences Across Major LCA Databases, ZH + EN).",
+  "reviews": [
+    {
+      "kind": "primary-source-and-premise-dag",
+      "initialVerdict": "PASS (0 blocking, 2 non-blocking)",
+      "resolutions": [
+        "Aligned ZH '基础化工' -> '精细化工' to match EN 'specialty chemicals' and caveat wording."
+      ],
+      "finalVerdict": "PASS"
+    },
+    {
+      "kind": "zero-context-bilingual-reader",
+      "initialVerdict": "FAIL (1 blocking, 2 non-blocking)",
+      "resolutions": [
+        "Fixed ZH typo '量级级差异' -> '数量级差异' in cl-db27-same-product-different-scores.",
+        "Replaced dangling '下一章' / 'The next chapter' and hardcoded '第 28 章' in cl-db27-method-divergence-bridge with '后文' / 'Subsequent chapters'.",
+        "Aligned ZH caveat '本表与本章总结' -> '上述总结' for standalone claim portability."
+      ],
+      "finalVerdict": "PASS"
+    }
+  ]
+}

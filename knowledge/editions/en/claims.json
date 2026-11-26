@@ -11124,6 +11124,116 @@
         "This overview and comparison table map institutional and architectural roles rather than ranking databases or conferring regulatory approval on any commercial or public product."
       ],
       "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-same-product-different-scores",
+      "status": "published",
+      "zhDigest": "dcdf6d61005255565690364e5222b1b78db129bb3f0f94e606c4d6e1f1303c7c",
+      "text": "In applied LCA, evaluating the exact same product—such as 1 kg of packaging polymer, 1 kg of low-alloy steel, or 1 kWh of industrial electricity—with identical foreground activity data and the same impact-assessment method can still yield order-of-magnitude shifts or even rank reversals once the background library switches among ecoinvent, Sphera MLC (formerly GaBi), EU EF 3.1, USLCI, IDEA, CLCD, or EEIO models. Such divergences rarely reflect arithmetic mistakes; rather, major databases embed incompatible methodological choices across four foundational axes: system models, aggregation depth, geographic residual and market modeling, and capital-goods and cut-off conventions.",
+      "scope": "Four foundational methodological axes explaining why identical products yield systematically different results across background databases.",
+      "caveats": [
+        "Database divergences often intertwine with software-implementation differences; diagnosing discrepancies requires first verifying identical LCIA methods and elementary-flow mappings."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-ecoinvent-four-system-models",
+      "status": "published",
+      "zhDigest": "150df9c0af6297326d9a329fbf87967d2b8ab4147116d2e91e58ef2015fab45b",
+      "text": "The first structural divergence lies in system models and multifunctionality. ecoinvent version 3 separates unlinked raw unit processes (UPR) from linking rules to generate four official system models from one underlying dataset layer: Allocation, cut-off by classification (continuing v1/v2 conventions so primary producers bear their own waste treatment while recycled inputs enter the next life cycle burden-free), Allocation, cut-off, EN 15804 (tailored to construction EPDs), Allocation at the Point of Substitution (APOS, expanding and allocating waste/recyclable chains at the substitution point), and Substitution, consequential, long-term (substituting co-products via unconstrained marginal suppliers). Official documentation notes that physical subdivision precedes allocation or substitution across all models, and that Cut-off and APOS differ solely in how they treat waste and recyclable materials. Paired comparisons across functionally equivalent datasets by Steubing et al. (2016) demonstrate that switching among Cut-off, APOS, and Consequential alone produces systematic differences across GWP100a, ReCiPe Endpoint, and Ecological Scarcity.",
+      "scope": "Structural roles of ecoinvent v3’s four official system models and documented multi-indicator divergences among them.",
+      "caveats": [
+        "Analysts must never mix datasets from different system models within one product system (such as linking a Cut-off recycled input to a Consequential electricity grid), which violates mass/system consistency and attributional/consequential coherence."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-cross-db-multifunctionality-split",
+      "status": "published",
+      "zhDigest": "80869ddcc6e25f0e6d7787cfc7f9e0c5caef771913032cfdfd18c165000c50f1",
+      "text": "Across the broader database ecosystem, divergences on multifunctionality and end-of-life recycling run even deeper. EU EF 3.0/3.1 secondary datasets are bound by Commission Recommendation (EU) 2021/2279 to the Circular Footprint Formula (CFF), partitioning burdens between primary and recycled life cycles via material-specific allocation factors (A-factors), quality ratios, and energy-recovery terms—distinct from both ecoinvent Cut-off’s 100/0 split and consequential marginal substitution. Sphera MLC (formerly GaBi) and industry-association inventories (such as steel and aluminium LCI programs) rely on engineering modeling teams to assign sector-specific physical allocation, closed-loop value correction, or system expansion rather than letting users toggle a database-wide system model. National libraries (USLCI, IDEA, CLCD) generally fix a single attributional convention, whereas EEIO/MRIO databases such as EXIOBASE 3 and USEEIO project multi-product national supply-use tables into symmetric matrices via industry- or commodity-technology assumptions. Divergent footprints for the same recycled metal or refinery co-product therefore frequently reflect competing allocation philosophies rather than plant-level measurement errors.",
+      "scope": "Cross-database divergences in multifunctionality and recycling rules across EU EF CFF, Sphera MLC, industry associations, national LCI libraries, and EEIO models.",
+      "caveats": [
+        "Because Sphera MLC, CLCD, and several industry-association libraries are proprietary or request-gated, the exact physical or economic allocation rule for a given process must be verified in its accompanying dataset documentation."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-unit-vs-aggregated-processes",
+      "status": "published",
+      "zhDigest": "9e27e520e195c30b60dfd3ec4624da22398b57586e16eee72993515e358ad953",
+      "text": "The second structural divergence concerns delivery granularity: transparent unit processes (UPR) versus aggregated LCI results or partly terminated systems. The ILCD Handbook strictly distinguishes single-operation unit processes, black-box unit processes, partly terminated systems, and aggregated LCI results. Transparent unit-process libraries (such as ecoinvent and core USLCI repositories) expose every direct material, energy input, and direct emission at each stage, enabling analysts to trace which upstream step drives an impact, substitute a regional average grid with site-specific renewable electricity, and propagate parameter uncertainty through the full matrix. By contrast, aggregated LCI results and partly terminated systems—predominant in Sphera MLC, EU EF 3.1 secondary datasets, and PlasticsEurope, worldsteel, and IAI profiles—pre-solve dozens or hundreds of upstream steps into a single cradle-to-gate exchange table.",
+      "scope": "Structural contrast between transparent unit processes (UPR) and aggregated LCI or partly terminated systems in auditability, grid substitution, and uncertainty propagation.",
+      "caveats": [
+        "Some databases (including ecoinvent) distribute both unit-process (UPR) and pre-solved system-process (LCI) versions; selecting the pre-solved distribution likewise forfeits supply-chain disassembly and parameter uncertainty propagation."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-aggregation-locks-assumptions",
+      "status": "published",
+      "zhDigest": "158e310277ea18c7d1df5dc791200ba1a6790ab6bf1e428dc56d21d71c312e9d",
+      "text": "Aggregating a dataset is never mere file compression; it permanently freezes upstream modeling choices inside a black box. Once a steel or polymer profile is delivered as an aggregated LCI result, its embedded electricity reference year, upstream fuel leakage rates, co-product allocation shares, and emission sub-compartments are locked in: downstream analysts can neither verify whether internal energy assumptions conflict with foreground green-power contracts nor disaggregate total water consumption back to specific watersheds for regionalized scarcity assessment (such as AWARE). Yet vertical aggregation also serves a real institutional purpose: by shielding plant-level recipes and energy intensities, it persuades industry associations and companies to contribute recent operational averages that are often fresher than aging academic literature. Recognizing this trade-off between auditability and confidentiality-backed data freshness is essential when comparing libraries.",
+      "scope": "Trade-off between locked-in upstream assumptions (blocking grid swaps and regionalization) and confidentiality-enabled industrial representativeness in aggregated datasets.",
+      "caveats": [
+        "When relying on aggregated datasets, analysts should inspect accompanying metadata reports to confirm embedded electricity mixes, geographic scope, and reference years rather than treating them as current local measurements."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-geography-and-row-residuals",
+      "status": "published",
+      "zhDigest": "131a83726d2ce2c1f22744ca4909cb8138ff7a9a2fc121214bec4c2117fdc7de",
+      "text": "The third structural divergence lies in geographic aggregation, residual construction, and market modeling. ecoinvent version 3 enforces a strict non-overlapping geography rule for the same activity: when both Switzerland (CH) and Europe (RER) datasets exist, they cannot overlap spatially, so the database constructs “Europe without Switzerland” to prevent double representation; for large countries such as the United States, Brazil, China, and India, electricity systems are disaggregated into sub-national regional grids rather than collapsed into a single national average. Where a global (GLO) dataset coexists with country-specific datasets, all remaining geographies fall into a Rest-of-the-World (RoW) residual. Consequently, whenever a new release adds data for a major producing nation, the RoW residual automatically shifts—even though no new primary sampling occurred in the remaining countries.",
+      "scope": "Non-overlapping geography constraints, sub-national grid disaggregation, and dynamic GLO/RoW residual coupling in ecoinvent v3.",
+      "caveats": [
+        "Using a RoW dataset as a proxy for a specific developing country can introduce substantial geographic bias because residual composition shifts across database versions."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-market-electricity-transport-modeling",
+      "status": "published",
+      "zhDigest": "5f66ab9021fef9985a2c144d12b882f95c7bf0c6c7b254453a3ad352cfe7286b",
+      "text": "Databases also diverge sharply in how they model freight transport and electricity boundaries. ecoinvent separates transforming activities (factory-gate production) from market activities (consumption mixes that automatically embed average freight distances, import shares, and distribution losses); selecting a market activity therefore already includes transport and grid losses. By contrast, many engineering libraries and industry-association profiles deliver factory-gate production datasets that require modelers to add road, rail, or maritime transport explicitly in the foreground. On the electricity side, libraries differ on production versus consumption mixes (including cross-border imports), high-/medium-/low-voltage transformer losses, and residual grid mixes required under EU PEF after removing tracked renewable certificates. Switching databases without checking whether transport and transmission losses are already embedded readily causes transport double-counting or grid-loss omission.",
+      "scope": "Divergences between market-embedded transport/losses versus explicit gate-to-gate transport, and incompatible electricity mix/voltage boundaries.",
+      "caveats": [
+        "Within the same country and reference year, busbar generation emission factors and low-voltage consumption-mix factors can differ appreciably due to transmission losses and inter-regional power trade; cross-database electricity comparisons must first align voltage and trade boundaries."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-capital-goods-asymmetry",
+      "status": "published",
+      "zhDigest": "effadef982ffcb2bb007e72d7b9e2be22201a889f3fd26d1f6348dc9622336b2",
+      "text": "The fourth structural divergence involves capital goods (infrastructure and equipment), cut-off rules, and temporal baselines. ecoinvent systematically includes factories, machinery, roads, ports, power-plant construction, and decommissioning across most unit processes, whereas many industrial engineering libraries, industry-association inventories, and product-carbon-footprint rules omit or selectively exclude capital goods based on the traditional assumption that amortized infrastructure contributes little. While that omission has limited leverage on fuel-dominated fossil generation or energy-intensive smelting, it is decisive for wind power, solar photovoltaics, hydropower, nuclear energy, and low-energy services whose burdens concentrate in equipment manufacturing and civil construction. Comparing wind power from a capital-goods-inclusive database against natural-gas power from a capital-goods-exclusive library introduces severe structural bias.",
+      "scope": "Asymmetric bias introduced by including versus excluding capital goods when comparing renewable energy and low-energy services against fossil systems.",
+      "caveats": [
+        "Some Product Category Rules (PCRs) or carbon-footprint standards explicitly allow excluding capital goods; cross-database or cross-standard comparisons must verify that capital-goods switches match."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-cutoffs-and-temporal-lag",
+      "status": "published",
+      "zhDigest": "9a674e1bf8c3be320492b85707c44049d694d44e2014e9364850e001e5d106ca",
+      "text": "Closely coupled to capital goods are cut-off thresholds and temporal lag. Process-based libraries inevitably face upstream truncation: Commission Recommendation (EU) 2021/2279 caps cumulative cut-offs below 3.0% for mass, energy, and every impact category, while other process libraries apply varying mass, energy, or expert-judgment thresholds. By contrast, EEIO/MRIO models such as USEEIO v2.0 and EXIOBASE 3 capture infinite upstream tiers across the economy with zero truncation, at the cost of coarse sector aggregation and reliance on purchaser-price conversion matrices. Moreover, update cadences vary unevenly across sectors inside any database: even when a release carries a recent version number, electricity mixes may reflect data from two or three years ago while niche minerals, specialty chemicals, or auxiliary materials still rely on decade-old literature. Ignoring cut-offs and temporal lag risks mistaking uneven data aging for genuine technological superiority.",
+      "scope": "Process cut-off thresholds versus EEIO zero-truncation, and uneven intra-database temporal lag across sectors.",
+      "caveats": [
+        "Assessing data currency requires checking each process’s valid-time metadata and primary sampling year rather than relying on the overall database release year."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-method-divergence-bridge",
+      "status": "published",
+      "zhDigest": "51ada5db040d8a06e02ddd79fe7fee0c3667abc9fc17d90560c94aacff39b32a",
+      "text": "Taken together, these four divergences show why switching background databases amounts to an implicit system-wide methodological reset: system models alter co-product and recycling ownership, aggregation depth sets the ceiling for auditability and regionalization, geographic residuals and market activities reshape electricity and transport boundaries, and capital-goods and cut-off rules shift the balance between clean technologies and conventional industry. Yet even after an analyst reconciles these methodological choices, attempting to combine two libraries inside one model—such as linking local or sectoral processes to a global background database—immediately hits an even deeper technical barrier: each database’s elementary-flow list is shaped by its underlying LCIA methods and resists lossless cross-database mapping. Subsequent chapters examine this coupling and the resulting data-governance boundaries in detail.",
+      "scope": "Synthesis of the four methodological divergences and transition to elementary-flow and LCIA coupling limits.",
+      "caveats": [
+        "The structural divergences summarized here govern cross-database comparability; actual numerical sensitivity always depends on the product’s process structure and dominant impact categories."
+      ],
+      "reviewedAt": "2026-11-26"
     }
   ]
 }

@@ -7238,6 +7238,65 @@
       "accessStatus": "metadata-only",
       "rights": "受商业许可或出版商访问壁垒限制，此处仅登记已核对的公开书目元数据与制度定位，不宣称检视商业库内部过程表或付费全文。",
       "preservation": "公开书目索引与官方简介核对；商业数据库（Sphera MLC、CLCD、Agri-footprint、Carbon Minds、WFLDB）及受 403 阻断的 Wiley/Sphera/GLAD 网页明确标为 metadata-only。"
+    },
+    {
+      "id": "src-db27-steubing-2016",
+      "title": "The ecoinvent database version 3 (part II): analyzing LCA results and comparison to version 2",
+      "url": "https://link.springer.com/article/10.1007/s11367-016-1109-6",
+      "version": "International Journal of Life Cycle Assessment 21: 1269–1281 (2016; DOI: 10.1007/s11367-016-1109-6; Steubing, Wernet, Reinhard, Bauer & Moreno-Ruiz)",
+      "publisher": "Springer (International Journal of Life Cycle Assessment)",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "开放获取期刊论文网页核对；公开记录仅含原刊定位与原创中文比较分析。",
+      "preservation": "核对 Springer 官方论文页（SHA-256 校验通过）摘要，记录 ecoinvent v3.1 Cut-off 与 v2.2、APOS 及 Consequential 系统模型在 GWP100a、ReCiPe 终点（H/A）与生态稀缺 2006 下的系统差异对比。",
+      "artifact": {
+        "mediaType": "text/html",
+        "sha256": "65c504aec14990dc51961a8c71d4ad706af7cc27c9378794d99870ec46649788",
+        "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-016-1109-6"
+      }
+    },
+    {
+      "id": "src-db27-ecoinvent-sysmodels",
+      "title": "ecoinvent Knowledge Base — System Models (Version 3)",
+      "url": "https://support.ecoinvent.org/system-models",
+      "version": "ecoinvent Association Knowledge Base (updated Feb 14, 2024; accessed 2026-11-26)",
+      "publisher": "ecoinvent Association",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "官方公开知识库文档页。",
+      "preservation": "核对 ecoinvent 官方 System Models 页面（SHA-256 校验通过），确认四套系统模型（Cut-off、Cut-off EN15804、APOS、Consequential）、细分为共同前置步骤以及 Cut-off 与 APOS 仅在废物与可回收物处理上存在结构差异。",
+      "artifact": {
+        "mediaType": "text/html",
+        "sha256": "773bbb5027a6a12bb2dc8cae050bfd85f275c6ff55d99ba2bfaf57c45beaee99",
+        "resolvedUrl": "https://support.ecoinvent.org/system-models"
+      }
+    },
+    {
+      "id": "src-db27-ecoinvent-geographies",
+      "title": "ecoinvent Knowledge Base — Geographies (Version 3)",
+      "url": "https://support.ecoinvent.org/geographies",
+      "version": "ecoinvent Association Knowledge Base (accessed 2026-11-26)",
+      "publisher": "ecoinvent Association",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "官方公开知识库文档页。",
+      "preservation": "核对 ecoinvent 官方 Geographies 页面（SHA-256 校验通过），确认同活动地理非重叠约束（如 Europe without Switzerland）、大国分电网（美、巴、中、印）及 GLO 与 RoW 的产量加权／残差机制。",
+      "artifact": {
+        "mediaType": "text/html",
+        "sha256": "d99b09a9f44b7bf3bbb61d42e02ab5da873f0026503582a0bcd4bc401675e95e",
+        "resolvedUrl": "https://support.ecoinvent.org/geographies"
+      }
+    },
+    {
+      "id": "src-db27-comparative-lit-metadata",
+      "title": "Comparative LCA Database Divergence Literature Registry (Herrmann & Moltesen 2015; Pauer et al. 2020; Frischknecht et al. 2007)",
+      "url": "https://doi.org/10.3390/su12239948",
+      "version": "Metadata-only registry (Herrmann & Moltesen 2015, J Clean Prod 86:163–169; Pauer, Wohner & Tacker 2020, Sustainability 12(23):9948; Frischknecht et al. 2007, Int J LCA 12:7–17)",
+      "publisher": "Elsevier / MDPI / Springer",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "metadata-only",
+      "rights": "受出版商访问限制，此处仅登记公开书目元数据，不宣称逐页核读三篇论文全文中的具体数值表格。",
+      "preservation": "书目索引与 DOI 核对；仅作背景文献定位（context），不替代已核读一手来源。"
     }
   ],
   "evidence": [
@@ -43651,6 +43710,55 @@
       "sourceId": "src-db26-secondary-metadata-registry",
       "locator": "Bibliographic metadata registry: Sphera MLC (GaBi/DEKRA), CLCD (Liu et al. 2010), Agri-footprint (Durlinger et al. 2014), WFLDB (Nemecek et al. 2019), Carbon Minds, EXIOBASE 3 (Stadler et al. 2018), Eora (Lenzen et al. 2013), GLORIA (Lenzen et al. 2022), AusLCI, SICV, MY-LCID, PlasticsEurope, IAI, UNEP GLAD, BONSAI",
       "summary": "依据公开同行评议论文书目与官方建制元数据，商业工程库（Sphera MLC/原 GaBi、Carbon Minds、Agri-footprint、WFLDB、CLCD）、国家公共库（AusLCI、SICV、MY-LCID）、行业协会库（PlasticsEurope、IAI）、全球多区域投入产出库（EXIOBASE 3、Eora、GLORIA）与开放互操作倡议（UNEP GLAD、BONSAI）共同构成现代 LCA 背景数据库全谱系；其中商业与申请制数据集的内部过程表未在无授权条件下直接检视。",
+      "relation": "context"
+    },
+    {
+      "id": "ev-db27-ecoinvent-four-models",
+      "sourceId": "src-db27-ecoinvent-sysmodels",
+      "locator": "ecoinvent Knowledge Base — System Models (Feb 14, 2024), Opening & Key Concepts (Subdivision, Allocation, Substitution)",
+      "summary": "ecoinvent v3 从同一套未链接单元过程（UPR）衍生出四套官方系统模型：按分类截断（Cut-off）、EN 15804 截断、替代点分配（APOS）与长期后果替代（Consequential）；所有模型在分配或替代前均优先执行过程细分，而 Cut-off 与 APOS 的结构差异仅体现在废物与可回收材料的负担归属上。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-steubing-2016-model-diff",
+      "sourceId": "src-db27-steubing-2016",
+      "locator": "Steubing et al. (2016), Int J LCA 21: 1269–1281, Abstract (Purpose, Methods, Results and discussion)",
+      "summary": "Steubing 等（2016）将功能等效数据集在 ecoinvent v2.2 与 v3.1 的 Cut-off、APOS 及 Consequential 系统模型之间逐一配对，在 GWP100a、ReCiPe 终点（H/A）与生态稀缺 2006 下均观察到系统性分歧，证明数据更新与系统模型规则变更均可显著改写同一产品的评价结果。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-ecoinvent-geo-nonoverlap",
+      "sourceId": "src-db27-ecoinvent-geographies",
+      "locator": "ecoinvent Knowledge Base — Geographies, Geographical Resolution & Global and Rest-of-the-World Activities",
+      "summary": "ecoinvent 规定同一活动的地理范围不得重叠（例如瑞士数据集与欧洲 RER 并存时须构造“不含瑞士的欧洲”），并对美国、巴西、中国、印度等大国的电力系统按子区域电网拆分；全球（GLO）数据集反映全球平均生产，缺省时按产量加权合成，RoW 则覆盖其余地区。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-ilcd-aggregation-types",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "ILCD Handbook (2010), §6.6 & Chapter 7 (Unit process, partly terminated system, LCI result)",
+      "summary": "ILCD 手册严格区分单工序单元过程、黑箱单元过程、部分终止系统与聚合生命周期清单结果（LCI result），指出聚合过程虽保护商业机密却固化了上游电网、分配与截断假设。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-ef-cff-cutoff",
+      "sourceId": "src-kb44-ec2021",
+      "locator": "Commission Recommendation (EU) 2021/2279, Annex I (Circular Footprint Formula & <3.0% cumulative cut-off)",
+      "summary": "欧盟建议书 (EU) 2021/2279 在环境足迹次级数据与研究中强制采用循环足迹公式（CFF）统一处理报废回收，并规定物料、能量与各环境影响类别的累计截断均须低于 3.0%。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-useeio-io-vs-process",
+      "sourceId": "src-db26-useeio-2022",
+      "locator": "Ingwersen et al. (2022), Scientific Data 9:194, Abstract (USEEIO v2.0 domestic/foreign & purchaser-price matrices)",
+      "summary": "USEEIO v2.0 等环境扩展投入产出模型以国民经济核算矩阵为基础，天然避免过程法的上游截断，但必须依赖购买者价格换算矩阵与行业聚合假设。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db27-comparative-lit-context",
+      "sourceId": "src-db27-comparative-lit-metadata",
+      "locator": "Herrmann & Moltesen (2015); Pauer et al. (2020); Frischknecht et al. (2007) — metadata-only registry",
+      "summary": "既有跨库对比实证文献（SimaPro/ecoinvent 对比 GaBi/EF 包装与工业案例，以及资本品环境相关性专题研究）指出，背景库切换可在同一产品上引发显著结果偏移；此处仅作文献背景提示，未直接转引未核读全文的具体百分比。",
       "relation": "context"
     }
   ],
@@ -84965,6 +85073,378 @@
         "本表与本章概括聚焦各数据库的架构与制度分工，不构成对任何单一商业或公共数据库的优劣排名或合规推荐。"
       ],
       "reasoning": "收束全章四类数据库范式的结构权衡，自然引出后文对底层方法分歧与跨库映射失效机制的深入分析。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-same-product-different-scores",
+      "text": "在实务中，同一件产品的生命周期评价——例如 1 kg 包装塑料、1 kg 低合金钢或 1 kWh 工业用电——即便采用完全相同的前景活动数据与同一套影响评价方法，只要把背景数据库从 ecoinvent 换成 Sphera MLC（原 GaBi）、欧盟 EF 3.1、USLCI、IDEA、CLCD 或投入产出模型，算出的碳足迹与毒理、酸化、水足迹指标仍可能出现数量级差异甚至方案排序反转。这种分歧通常并非源于某一方“算错了加减法”，而是因为各大数据库在系统模型、聚合形态、地理残差与资本品截断四条底层规则上作出了互不兼容的方法学选择。",
+      "kind": "synthesis",
+      "scope": "同一产品在不同背景数据库下产生系统性结果分歧的四大方法学根源",
+      "evidenceIds": [
+        "ev-db27-steubing-2016-model-diff",
+        "ev-db27-ecoinvent-four-models",
+        "ev-db27-comparative-lit-context"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-steubing-2016-model-diff",
+          "relation": "supports",
+          "rationale": "一手核对 Steubing 等（2016）证明仅切换系统模型或版本即可在多类影响方法下引发系统差异。"
+        },
+        {
+          "evidenceId": "ev-db27-ecoinvent-four-models",
+          "relation": "supports",
+          "rationale": "说明系统模型规则直接决定上游链接与负担归属。"
+        },
+        {
+          "evidenceId": "ev-db27-comparative-lit-context",
+          "relation": "context",
+          "rationale": "提供跨数据库实证对比文献背景。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db26-landscape-selection-bridge"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "背景数据库差异与软件实现差异常交织出现，排查结果偏移时须先确认双方是否使用了相同影响评价方法与相同基本流映射。"
+      ],
+      "reasoning": "承接上一章数据库全谱系，基于 Steubing 等（2016）实证对比与系统模型规则，提出本章四维方法论分歧框架。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-ecoinvent-four-system-models",
+      "text": "第一重底层分叉在于系统模型与多功能性处理。ecoinvent 第 3 版将未链接的原始单元过程（UPR）与链接规则分离，由同一套底层数据衍生出四套官方系统模型：按分类截断（Allocation, cut-off by classification，延续 v1/v2 传统，让原生生产者承担自身废物处置，而再生料以“零上游历史负担”进入下一生命周期）、面向建筑环境产品声明的 EN 15804 截断模型、替代点分配（APOS，将废物处理与副产品回溯至共同分配点分担负担），以及长期后果替代（Substitution, consequential, long-term，以不受约束的边际供应者替代副产品）。官方方法明确指出，所有模型在分配或替代前均优先采用物理细分，而 Cut-off 与 APOS 的结构差异仅体现在废物与可回收材料的处理上；Steubing 等（2016）对功能等效数据集的配对检验表明，仅在 Cut-off、APOS 与 Consequential 之间切换，就会在 GWP100a、ReCiPe 终点与生态稀缺指标上产生显著分歧。",
+      "kind": "source-statement",
+      "scope": "ecoinvent v3 四套官方系统模型的结构分工及其引发的多指标分歧",
+      "evidenceIds": [
+        "ev-db27-ecoinvent-four-models",
+        "ev-db27-steubing-2016-model-diff"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ecoinvent-four-models",
+          "relation": "supports",
+          "rationale": "一手核对四套官方系统模型、物理细分前置规则及 Cut-off 与 APOS 的精确分界。"
+        },
+        {
+          "evidenceId": "ev-db27-steubing-2016-model-diff",
+          "relation": "supports",
+          "rationale": "一手核对 v3.1 三套模型在 GWP100a、ReCiPe 终点与生态稀缺下的系统性分歧。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-same-product-different-scores"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "同一研究内部不得混用不同系统模型下的背景数据集（例如将 Cut-off 再生材料接入 Consequential 电网），否则会直接破坏系统守恒与归因／后果口径。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-cross-db-multifunctionality-split",
+      "text": "将视野扩至其他主流数据库，多功能性与报废回收的分叉更为尖锐。欧盟 EF 3.0/3.1 次级数据集强制绑定《欧盟建议书》(EU) 2021/2279 的循环足迹公式（CFF），通过材料专属分配因子（A 值）、质量比与能量回收参数在原生与再生周期之间按政策约定切分负担，既不同于 ecoinvent Cut-off 的 100/0 截断，也不同于后果模型的边际替代。Sphera MLC（原 GaBi）与行业协会清单（如钢铁、铝业协会）则倾向于由工程建模团队按工艺物理机制（如热值、质量、金属闭环价值校正或系统扩展）逐行业设定默认分配，用户往往不能像在 ecoinvent 中那样一键切换整库系统模型。国家库（USLCI、IDEA、CLCD）多固化在单一归因口径，而 EXIOBASE 3 与 USEEIO 等投入产出库则依托国民经济供给—使用表中的行业技术或商品技术假设把多产出部门投影为对称方阵。因此，两座数据库对同一再生金属或炼油副产品给出迥异碳排，本质上往往是分配与回收哲学之争。",
+      "kind": "synthesis",
+      "scope": "EF CFF、Sphera MLC、行业协会、国家库与 EEIO 在多功能性与回收处理上的底层分歧",
+      "evidenceIds": [
+        "ev-db27-ef-cff-cutoff",
+        "ev-db27-ecoinvent-four-models",
+        "ev-db27-useeio-io-vs-process",
+        "ev-db27-comparative-lit-context"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ef-cff-cutoff",
+          "relation": "supports",
+          "rationale": "支撑欧盟 EF 次级数据集强制绑定循环足迹公式（CFF）。"
+        },
+        {
+          "evidenceId": "ev-db27-ecoinvent-four-models",
+          "relation": "supports",
+          "rationale": "提供 ecoinvent Cut-off/APOS/Consequential 对照基准。"
+        },
+        {
+          "evidenceId": "ev-db27-useeio-io-vs-process",
+          "relation": "supports",
+          "rationale": "说明 EEIO 模型基于经济供给—使用表矩阵构建而非逐工序规则切换。"
+        },
+        {
+          "evidenceId": "ev-db27-comparative-lit-context",
+          "relation": "context",
+          "rationale": "提供跨库对比文献背景。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-ecoinvent-four-system-models"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "由于 Sphera MLC、CLCD 与部分行业协会数据集属闭源或申请制，具体单一工序采用的物理还是经济分配比例须查阅对应数据集的官方文档或过程元数据。"
+      ],
+      "reasoning": "横向对照欧盟建议书 CFF、ecoinvent 四模型、投入产出矩阵假设及工程商业库定位，揭示跨库分配不可通约的根源。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-unit-vs-aggregated-processes",
+      "text": "第二重底层分叉在于数据的交付颗粒度：透明单元过程（unit process, UPR）与聚合生命周期清单结果（aggregated LCI / 部分终止系统）。ILCD 手册明确区分了单工序单元过程、黑箱单元过程、部分终止系统与汇总清单结果。透明单元过程库（如 ecoinvent、USLCI 主体）将每一道工序的直接物料、能源输入与直接排放逐项列出，研究者既可以追溯某一排放究竟来自上游煤炭开采还是冶炼烟囱，也可以将背景中的欧洲平均电网精准替换为本地光伏直供，并在矩阵求解时完整传播各环节的参数不确定性。相反，聚合过程或部分终止系统（常见于 Sphera MLC 主体、EF 3.1 次级数据集及 PlasticsEurope、worldsteel、IAI 等行业协会清单）把数十乃至上百道上游环节预先求解并折叠成单一“摇篮到大门”输入输出表。",
+      "kind": "synthesis",
+      "scope": "透明单元过程（UPR）与聚合清单／部分终止系统在可审计性、可替换性与不确定性传播上的区别",
+      "evidenceIds": [
+        "ev-db27-ilcd-aggregation-types",
+        "ev-db26-wernet-2016-v3",
+        "ev-db27-ef-cff-cutoff"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ilcd-aggregation-types",
+          "relation": "supports",
+          "rationale": "一手核对 ILCD 2010 对单元过程、部分终止系统与聚合清单结果的严格区分。"
+        },
+        {
+          "evidenceId": "ev-db26-wernet-2016-v3",
+          "relation": "supports",
+          "rationale": "支撑透明单元过程库支持上游拆解与模型分离的特征。"
+        },
+        {
+          "evidenceId": "ev-db27-ef-cff-cutoff",
+          "relation": "context",
+          "rationale": "衔接欧盟 EF 合规数据集以部分终止系统交付的制度实践。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-cross-db-multifunctionality-split"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "部分数据库（如 ecoinvent）同时提供单元过程（UPR）与预先求解的系统过程（LCI）两个发行版本，选用后者同样会丧失上游拆解与不确定性传播能力。"
+      ],
+      "reasoning": "基于 ILCD 2010 过程分类框架与 ecoinvent/EF 实践，阐明单元过程与聚合过程的结构性功能差异。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-aggregation-locks-assumptions",
+      "text": "聚合交付并非单纯的“压缩文件体积”，而是把一系列隐性建模决定永久锁死在黑箱内部。一旦某条钢铁或塑料数据集以聚合 LCI 形态发布，其内部所用的电网基准年、化石燃料上游泄漏率、副产品分配比例以及水体／空气排放子区室就已经固化：下游研究者既无法核实它是否与前景系统的电价或绿电假设冲突，也无法在开展区域化影响评价（例如按流域计算 AWARE 缺水潜势）时把总耗水量拆回具体的开采地与冶炼地。另一方面，垂直聚合也并非一无是处——它能保护成员工厂的敏感能耗与配方机密，从而换取行业协会与企业愿意提交比公开文献更新、更具代表性的实测平均值。理解“透明可拆解”与“保密换鲜度”之间的权衡，是解读背景库差异的关键。",
+      "kind": "interpretation",
+      "scope": "聚合清单固化上游假设、阻断区域化拆分与换取工业实测代表性之间的结构权衡",
+      "evidenceIds": [
+        "ev-db27-ilcd-aggregation-types",
+        "ev-db26-worldsteel-lci"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ilcd-aggregation-types",
+          "relation": "supports",
+          "rationale": "支撑聚合清单固化上游电力、分配与空间信息的技术后果。"
+        },
+        {
+          "evidenceId": "ev-db26-worldsteel-lci",
+          "relation": "context",
+          "rationale": "说明行业协会通过聚合发布兼顾成员商业机密与行业平均实测代表性。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-unit-vs-aggregated-processes"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "即便使用聚合数据集，也应尽量查阅其附带的元数据报告，核对所含电力结构、地理范围与参考年份，避免将其误作本地实时数据。"
+      ],
+      "reasoning": "从 ILCD 聚合过程定义出发，推演其在空间区域化、电网替换与工业保密机制之间的正反两面后果。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-geography-and-row-residuals",
+      "text": "第三重底层分叉在于地理聚合、残差计算与市场运输建模。ecoinvent 第 3 版确立了严格的“同活动地理非重叠”规则：如果同一产品同时存在瑞士（CH）与欧洲（RER）数据集，系统不允许二者空间重叠，而必须自动构造“不含瑞士的欧洲（Europe without Switzerland）”以防重复代表；同时，对美国、巴西、中国、印度等领土广袤的经济体，电力系统按区域电网拆分而非压缩为单一国家均值。当全球（GLO）数据集与若干国别数据集并存时，其余未单列地区自动归入“世界其余地区（RoW）”残差。这意味着每当新版本补充某一大国的新数据时，RoW 的排放因子也会随之联动改写，即便该过程本身并未在 RoW 现场重新采样。",
+      "kind": "source-statement",
+      "scope": "ecoinvent 的地理非重叠原则、大国分区域电网与 GLO/RoW 动态残差联动机制",
+      "evidenceIds": [
+        "ev-db27-ecoinvent-geo-nonoverlap"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ecoinvent-geo-nonoverlap",
+          "relation": "supports",
+          "rationale": "一手核对 ecoinvent 官方 Geographies 文档的地理非重叠约束、四国分电网与 GLO/RoW 机制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-same-product-different-scores"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "将 RoW 数据集直接当作某一特定发展中国家的本土数据使用，可能因残差构成随版本波动而引入较大地理代表性误差。"
+      ],
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-market-electricity-transport-modeling",
+      "text": "围绕电力与运输的建模习惯，不同数据库也存在显著分野。ecoinvent 将“转化活动”（工厂大门产出）与“市场活动”（消费组合，自动内嵌平均干线运输距离、贸易进口份额与输配损耗）严格拆开；调用一条市场活动时，运输与网损已自动计入。相比之下，许多工程库与行业协会清单交付的是“工厂大门（gate）”生产过程，要求建模者在前景系统中显式外加公路、铁路或海运模块；在电力端，不同数据库对“生产组合”与“消费组合（含跨境净进口）”、高／中／低压变电损耗、以及欧盟 PEF 要求的“残余电网组合（扣除已追踪绿电后剩余电量）”的处理口径各不相同。若研究者在切换数据库时未核对活动是否已内嵌运输与输配损，极易引发运输双计或网损遗漏。",
+      "kind": "synthesis",
+      "scope": "市场活动内置运输网损与工厂大门显式外加运输、以及不同电网口径带来的跨库分歧",
+      "evidenceIds": [
+        "ev-db26-wernet-2016-v3",
+        "ev-db27-ecoinvent-geo-nonoverlap",
+        "ev-db26-tidas-open-spec"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db26-wernet-2016-v3",
+          "relation": "supports",
+          "rationale": "支撑 ecoinvent v3 市场活动内嵌贸易与平均运输的架构设计。"
+        },
+        {
+          "evidenceId": "ev-db27-ecoinvent-geo-nonoverlap",
+          "relation": "supports",
+          "rationale": "支撑区域电网拆分与消费地理边界定义。"
+        },
+        {
+          "evidenceId": "ev-db26-tidas-open-spec",
+          "relation": "context",
+          "rationale": "衔接天工规范对生产组合、消费组合与输配损耗节点的严格区分。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-geography-and-row-residuals"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "同一国家在同一基准年下，发电厂出厂排放因子与低压用户端消费组合排放因子因输配损耗与跨区调电可相差可观比例，跨库对比电力强度时必须先对齐电压等级与贸易边界。"
+      ],
+      "reasoning": "综合 ecoinvent 市场活动机制、地理文档与 TIDAS 电网组合语义，阐明运输内嵌与电网口径如何造成跨库数值错位。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-capital-goods-asymmetry",
+      "text": "第四重底层分叉在于资本品（基础设施与设备制造）、截断准则与时间基准。ecoinvent 体系默认在绝大多数单元过程中纳入厂房、机器、道路、港口、电站建设与退役等资本品折旧；而不少工业工程库、行业协会 LCI 与产品碳足迹规则出于传统“资本品占比小”的经验假定，经常默认排除或仅选择性纳入资本品。这一差异对化石燃料发电或高能耗冶炼的影响往往相对有限（因为运行期燃料燃烧占主导），但对风电、太阳能光伏、水电、核电以及低能耗服务业却具有决定性影响——后者的主要环境负担恰恰集中在设备制造与土木工程建设阶段。如果在同一项能源转型比较中，用包含资本品的数据库算风电、却用不含资本品的数据库算火电或燃气，就会制造出严重的结构性失衡。",
+      "kind": "synthesis",
+      "scope": "资本品纳入与排除对可再生能源、低能耗服务与化石能源比较造成的非对称偏置",
+      "evidenceIds": [
+        "ev-db26-frischknecht-2005-v1",
+        "ev-db27-comparative-lit-context"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db26-frischknecht-2005-v1",
+          "relation": "supports",
+          "rationale": "支撑 ecoinvent 在全库统一方法框架下系统涵盖基础设施与资本品的建模传统。"
+        },
+        {
+          "evidenceId": "ev-db27-comparative-lit-context",
+          "relation": "context",
+          "rationale": "提供 Frischknecht 等（2007）关于资本品环境相关性的经典专题文献背景。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-same-product-different-scores"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "部分产品类别规则（PCR）或碳足迹标准明确允许排除资本品，跨标准或跨库对比前必须先核实资本品开关是否一致。"
+      ],
+      "reasoning": "基于 ecoinvent 基础设施纳入原则与能源技术生命周期负担分布机制，推导资本品非对称截断对清洁能源与化石能源比较的系统性影响。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-cutoffs-and-temporal-lag",
+      "text": "与资本品紧密相连的是截断准则与时间基准滞后。过程数据库不可避免地面临上游截断：欧盟建议书 (EU) 2021/2279 规定物料、能量与各环境影响类别的累计截断均须低于 3.0%，其他过程库则按质量、能量或专家经验设定不同阈值；而 USEEIO v2.0、EXIOBASE 3 等投入产出模型依托宏观国民经济矩阵，原则上实现全经济体零上游截断，代价是把多样工艺合并为粗颗粒部门并依赖价格换算矩阵。此外，背景数据库各部门的更新节奏高度不均：即便整库版本号标为最新年份，其中电力组合可能已更新至近两三年，而某些小众矿产、精细化工或辅助材料的底层实测数据仍可能沿用十余年前的文献。忽视截断差异与时间滞后，容易把“数据老化程度不同”误判为“真实技术优劣”。",
+      "kind": "synthesis",
+      "scope": "过程库截断阈值与 EEIO 零截断的差异，以及数据库内部不同部门的时间基准滞后",
+      "evidenceIds": [
+        "ev-db27-ef-cff-cutoff",
+        "ev-db27-useeio-io-vs-process",
+        "ev-db26-ecoinvent-v311-updates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ef-cff-cutoff",
+          "relation": "supports",
+          "rationale": "一手核对欧盟建议书对物料、能量与各影响类别累计截断低于 3.0% 的明确上限。"
+        },
+        {
+          "evidenceId": "ev-db27-useeio-io-vs-process",
+          "relation": "supports",
+          "rationale": "支撑 USEEIO v2.0 通过经济矩阵避免上游截断并依赖价格换算矩阵的机制。"
+        },
+        {
+          "evidenceId": "ev-db26-ecoinvent-v311-updates",
+          "relation": "supports",
+          "rationale": "说明综合数据库按部门滚动更新，不同行业在同版次下的基准年份并不齐平。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-capital-goods-asymmetry"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "检查数据库时效性时，应查看具体过程元数据中的“有效时间范围（validFrom/validUntil）”与原始采样年份，而不能只看数据库整体发行年份。"
+      ],
+      "reasoning": "整合欧盟 3.0% 截断红线、USEEIO 矩阵闭合特征与 ecoinvent 分部门滚动更新事实，揭示截断与时间滞后如何共同放大跨库偏差。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db27-method-divergence-bridge",
+      "text": "把上述四重分叉合起来看，就能明白为何“更换背景数据库”本质上是一次隐性的全系统方法学重设：系统模型改变了副产品与回收的归属，聚合形态决定了黑箱可审计性与区域化上限，地理残差与市场活动重塑了电力与运输的边界，资本品与截断规则则直接改写清洁技术与传统工业的相对位置。然而，即便研究者已经理清这些方法论分歧，试图把两座数据库的数据合并到同一个模型里（例如把本土或行业数据接到全球背景库上）时，还会立刻撞上一道更底层、更隐蔽的工程高墙：不同数据库的基本流（elementary flows）由各自底层的 LCIA 影响评价方法反向塑造，根本无法在跨库之间无损映射。后文将进一步剖析这一核心机制以及数据适用性与合规审查边界。",
+      "kind": "synthesis",
+      "scope": "总结四大底层方法分歧并自然引出基本流与底层 LCIA 耦合导致的映射失效机制",
+      "evidenceIds": [
+        "ev-db27-ecoinvent-four-models",
+        "ev-db27-ilcd-aggregation-types",
+        "ev-db27-ecoinvent-geo-nonoverlap",
+        "ev-db27-ef-cff-cutoff"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db27-ecoinvent-four-models",
+          "relation": "supports",
+          "rationale": "概括系统模型与多功能性分叉。"
+        },
+        {
+          "evidenceId": "ev-db27-ilcd-aggregation-types",
+          "relation": "supports",
+          "rationale": "概括单元过程与聚合过程分叉。"
+        },
+        {
+          "evidenceId": "ev-db27-ecoinvent-geo-nonoverlap",
+          "relation": "supports",
+          "rationale": "概括地理非重叠与残差市场分叉。"
+        },
+        {
+          "evidenceId": "ev-db27-ef-cff-cutoff",
+          "relation": "supports",
+          "rationale": "概括截断与法规回收公式分叉。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-aggregation-locks-assumptions",
+        "cl-db27-market-electricity-transport-modeling",
+        "cl-db27-cutoffs-and-temporal-lag"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "上述总结的方法论分歧适用于评估数据库间的结构可比性，具体数值差异幅度始终取决于目标产品的工艺结构与主导影响类别。"
+      ],
+      "reasoning": "收束全章四重方法论分歧并桥接至基本流与底层 LCIA 耦合机制分析。",
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-26"
