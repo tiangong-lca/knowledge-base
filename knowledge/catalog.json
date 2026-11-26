@@ -7297,6 +7297,54 @@
       "accessStatus": "metadata-only",
       "rights": "受出版商访问限制，此处仅登记公开书目元数据，不宣称逐页核读三篇论文全文中的具体数值表格。",
       "preservation": "书目索引与 DOI 核对；仅作背景文献定位（context），不替代已核读一手来源。"
+    },
+    {
+      "id": "src-db28-fedefl-readme",
+      "title": "Federal LCA Commons Elementary Flow List (fedelemflowlist) — Official Repository Specification",
+      "url": "https://raw.githubusercontent.com/FLCAC-admin/fedelemflowlist/master/README.md",
+      "version": "U.S. EPA / Federal LCA Commons (DOI: 10.3390/app12199687; Zenodo: 10.5281/zenodo.6604309; accessed 2026-11-26)",
+      "publisher": "U.S. Environmental Protection Agency / Federal LCA Commons",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "MIT 开源许可公共仓储文档。",
+      "preservation": "核对 fedelemflowlist 官方 README 原文（SHA-256 校验通过），确认其为美国联邦 LCA 共享库提供标准化基本流列表格式（FlowList）与跨库基本流映射格式（FlowMapping）。",
+      "artifact": {
+        "mediaType": "text/plain",
+        "sha256": "3806e94eb9a42a7089c41255167a2f946339fd12ea331fd322efdeef1fdb5b6d",
+        "resolvedUrl": "https://raw.githubusercontent.com/FLCAC-admin/fedelemflowlist/master/README.md"
+      }
+    },
+    {
+      "id": "src-db28-glad-ef-readme",
+      "title": "UNEP GLAD Elementary Flow Resources — Working Group on Nomenclature (WG1)",
+      "url": "https://raw.githubusercontent.com/UNEP-Economy-Division/GLAD-ElementaryFlowResources/master/README.md",
+      "version": "UN Environment Programme Life Cycle Initiative (launched June 2020; accessed 2026-11-26)",
+      "publisher": "UN Environment Programme (Life Cycle Initiative)",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "联合国环境规划署生命周期倡议公开技术工作组仓储文档。",
+      "preservation": "核对 UNEP GLAD-ElementaryFlowResources 官方 README（SHA-256 校验通过），确认 GLAD 于 2020 年 6 月启动，其命名工作组（WG1）负责维护跨体系基本流列表与官方映射文件。",
+      "artifact": {
+        "mediaType": "text/plain",
+        "sha256": "9df695c190c02ce5cfdd7b18632b526504863844c3e2199ed7835f66808e2557",
+        "resolvedUrl": "https://raw.githubusercontent.com/UNEP-Economy-Division/GLAD-ElementaryFlowResources/master/README.md"
+      }
+    },
+    {
+      "id": "src-db28-olca-schema",
+      "title": "openLCA JSON-LD Schema Specification (olca-schema)",
+      "url": "https://greendelta.github.io/olca-schema/",
+      "version": "GreenDelta openLCA JSON-LD schema documentation (accessed 2026-11-26)",
+      "publisher": "GreenDelta",
+      "accessedAt": "2026-11-26",
+      "accessStatus": "public-html-inspected",
+      "rights": "公开技术模式文档。",
+      "preservation": "核对 olca-schema 官方首页（SHA-256 校验通过），确认 Flow、FlowPropertyFactor、FlowMap、FlowMapEntry、FlowMapRef、ImpactFactor 与 Location 等核心实体架构。",
+      "artifact": {
+        "mediaType": "text/html",
+        "sha256": "d8681fa096be1cf3e31980e04d0afc1caf32647909c8358363d9e990165f03c7",
+        "resolvedUrl": "https://greendelta.github.io/olca-schema/"
+      }
     }
   ],
   "evidence": [
@@ -43760,6 +43808,62 @@
       "locator": "Herrmann & Moltesen (2015); Pauer et al. (2020); Frischknecht et al. (2007) — metadata-only registry",
       "summary": "既有跨库对比实证文献（SimaPro/ecoinvent 对比 GaBi/EF 包装与工业案例，以及资本品环境相关性专题研究）指出，背景库切换可在同一产品上引发显著结果偏移；此处仅作文献背景提示，未直接转引未核读全文的具体百分比。",
       "relation": "context"
+    },
+    {
+      "id": "ev-db28-fedefl-glad-nomenclature",
+      "sourceId": "src-db28-fedefl-readme",
+      "locator": "fedelemflowlist README (FlowList & FlowMapping specifications)",
+      "summary": "美国联邦 LCA 共享库专门开发 fedelemflowlist 以定义标准化基本流列表（FlowList）及跨来源流映射格式（FlowMapping），印证不同数据库原生的基本流命名与上下文结构无法直接通约。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-glad-wg1-mapping",
+      "sourceId": "src-db28-glad-ef-readme",
+      "locator": "UNEP GLAD Elementary Flow Resources README (GLAD launch June 2020; Working Group on Nomenclature WG1)",
+      "summary": "UNEP 生命周期倡议于 2020 年 6 月启动 GLAD 网络，并专设命名工作组（WG1）托管跨库基本流列表与映射文件，致力于桥接全球不同数据库的基本流分类体系。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-ef31-water-flows",
+      "sourceId": "src-water125-ef31-selected-members",
+      "locator": "EF-v3.1.zip Water use (AWARE 100) LCIA method XML & 11 elementary water flows (7 positive + 4 negative, 209 country codes)",
+      "summary": "欧盟 EF 3.1 水资源消耗方法通过 7 条正因子取水流与 4 条负因子退水流相抵计算净耗水，并绑定 209 个国家／区域位置码，直接规定了清单层水流的拆分与正负号结构。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-ef31-carbon-flows",
+      "sourceId": "src-bio127-ef31-selected-members",
+      "locator": "EF-v3.1.zip Climate change total & Fossil/Biogenic/LULUC sub-indicator XMLs (1,099 = 1,074 + 13 + 12 flows)",
+      "summary": "欧盟 EF 3.1 气候变化方法将 1,099 条基本流按化石（1,074）、生物源（13）与土地利用变化（12）分设独立子指标流，一旦跨库映射混用 0/0 与 −1/+1 生物碳口径就会引发结构性碳账本失真。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-ef31-pm-and-tox-flows",
+      "sourceId": "src-particulate131-ef31-selected-members",
+      "locator": "EF-v3.1.zip Particulate matter XML (PM2.5, PM2.5–10 zero CF, total PM10 0.23, unspecified air proxy)",
+      "summary": "欧盟 EF 3.1 颗粒物方法对细颗粒物 PM2.5、粗颗粒物 PM2.5–10（因子为零）与总 PM10（按 0.23 折算）及未指明空气子区室赋予截然不同的表征因子，粒径或子区室折叠会直接改写结果。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-ef31-eutro-stoichiometry",
+      "sourceId": "src-fossil117-jrc109369",
+      "locator": "JRC109369 §4.8 Table 7 note* (P2O5 lacks an ILCD elementary flow in EF 3.1; elemental P vs P2O5 0.436 stoichiometry)",
+      "summary": "JRC109369 第 4.8 节表 7 注明确说明五氧化二磷在欧盟 EF 基本流体系中无独立 ILCD 基本流，须按化学计量折算为元素磷（0.436）等对应磷形态，否则单位或参照物质转换疏漏会成倍扭曲富营养化得分。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-ilcd-missing-factor-zero",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "ILCD Handbook (2010), §8.2 (pp. 276–281, Ensure a correct link & Missing factor)",
+      "summary": "ILCD 手册明确警示，清单基本流与影响评价表征因子之间若发生匹配失败或缺失因子，软件默认按零计入影响结果而不报错，将“未映射”静默伪装成“无环境影响”。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-db28-olca-flowmap-schema",
+      "sourceId": "src-db28-olca-schema",
+      "locator": "openLCA JSON-LD Schema (Flow, FlowPropertyFactor, FlowMap, FlowMapEntry, FlowMapRef, ImpactFactor)",
+      "summary": "openLCA 模式将 FlowMap、FlowMapEntry 与 FlowPropertyFactor 设为独立一等实体，说明跨库转换必须显式声明源流、目标流、转换系数与参照属性，不能仅靠名称字符串自动匹配。",
+      "relation": "supports"
     }
   ],
   "claims": [
@@ -85445,6 +85549,355 @@
         "上述总结的方法论分歧适用于评估数据库间的结构可比性，具体数值差异幅度始终取决于目标产品的工艺结构与主导影响类别。"
       ],
       "reasoning": "收束全章四重方法论分歧并桥接至基本流与底层 LCIA 耦合机制分析。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-lcia-shapes-elementary-flows",
+      "text": "许多初次接触跨数据库建模的实践者会假设：既然二氧化碳、二氧化硫、铬和淡水都是客观物理化学物质，那么只要按化学名称或 CAS 号建一张对照表，就能把不同数据库的基本流（elementary flows）无损互转。这一直觉错在把基本流列表当成了中性的化学词典。事实上，每一套主流基本流体系都是由其服务的底层 LCIA（生命周期影响评价）模型反向塑造的：LCIA 需要什么接收介质、排放高度、人口密度子区室、水体类型、化学价态或空间位置码，清单数据库就必须按这套颗粒度来切分基本流。",
+      "kind": "synthesis",
+      "scope": "基本流列表并非中性化学词典，而是由底层 LCIA 模型需求反向塑造的核心原理",
+      "evidenceIds": [
+        "ev-db28-fedefl-glad-nomenclature",
+        "ev-db28-glad-wg1-mapping",
+        "ev-db28-ef31-water-flows"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-fedefl-glad-nomenclature",
+          "relation": "supports",
+          "rationale": "说明联邦共享库须专门维护独立基本流列表与映射规范以应对不同体系分叉。"
+        },
+        {
+          "evidenceId": "ev-db28-glad-wg1-mapping",
+          "relation": "supports",
+          "rationale": "说明 UNEP GLAD 须专设命名工作组长期维护跨体系映射文件。"
+        },
+        {
+          "evidenceId": "ev-db28-ef31-water-flows",
+          "relation": "supports",
+          "rationale": "以 EF 3.1 AWARE 水流结构印证 LCIA 模型如何直接规定清单流分类。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db27-method-divergence-bridge",
+        "cl-flow-exchange-distinction"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "对于全球充分混合且单一形态的长寿命温室气体（如化石来源 CO₂），跨库基本流确实接近无损对应；映射失效主要集中在具有区室、价态、空间或碳源区分的流上。"
+      ],
+      "reasoning": "综合联邦流表、GLAD 命名工作组实践与 EF 3.1 水流实例，提炼“LCIA 反向塑造基本流”的核心机制。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-three-nomenclature-architectures",
+      "text": "正因底层 LCIA 目标不同，全球三大主流基本流命名架构在数据结构上便分道扬镳。ecoinvent 采用“流名＋大区室＋子区室”（如 air / urban air close to ground、water / surface water）的三层组合，并在区域化版本中叠加活动地理信息；欧盟 EF 3.0/3.1 参考包则给每条基本流赋予严格 UUID，并在 LCIA 方法 XML 中直接按 `<location>` 标签绑定国别或流域因子；美国联邦 LCA 共享库则通过开源 `fedelemflowlist` 定义标准化的基本流列表（FlowList）与跨来源流映射格式（FlowMapping），专门支撑联邦多机构数据互通与软件导出。正是因为这三套架构在“什么算一条独立基本流”上定义不同，UNEP 才不得不在 2020 年 6 月启动 GLAD 网络并专设命名工作组（WG1）长期维护跨体系映射表。",
+      "kind": "synthesis",
+      "scope": "ecoinvent、欧盟 EF 3.1 与美国联邦 fedelemflowlist 三大基本流命名架构的结构差异",
+      "evidenceIds": [
+        "ev-db28-fedefl-glad-nomenclature",
+        "ev-db28-glad-wg1-mapping",
+        "ev-db28-ef31-water-flows"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-fedefl-glad-nomenclature",
+          "relation": "supports",
+          "rationale": "支撑 fedelemflowlist 的标准化 FlowList 与 FlowMapping 设计。"
+        },
+        {
+          "evidenceId": "ev-db28-glad-wg1-mapping",
+          "relation": "supports",
+          "rationale": "一手核对 UNEP GLAD 于 2020 年 6 月启动及 WG1 命名工作组职责。"
+        },
+        {
+          "evidenceId": "ev-db28-ef31-water-flows",
+          "relation": "supports",
+          "rationale": "支撑 EF 3.1 按流 UUID 与位置码绑定 LCIA 因子的架构。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-lcia-shapes-elementary-flows"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "同一软件（如 openLCA）内置的参考流列表往往混合了多种历史命名传统，导入外部数据库前须核对目标软件当前的参考流版本。"
+      ],
+      "reasoning": "横向对照三大主流基本流架构的标识方式，解释为何跨库映射成为国际组织长期维护的专门工程问题。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-water-and-carbon-mismatch",
+      "text": "在实际跨库映射中，水资源与碳排放是最先触发结构性错位的两大重灾区。在水流方面，正如第四部《耗水与缺水潜势》所核验，欧盟 EF 3.1 的 AWARE 方法依赖 7 条正因子取水流与 4 条负因子退水流相抵来算出净耗水，并附带 209 个国家／区域位置码；而其他数据库或把取水、冷却退水与涡轮过水混记为总取水量，或使用质量（kg）而非体积（m³）计量，或缺失流域与国别标签——跨库硬映射极易把“借道冷却后排回原河道的 10 立方米水”误算成“永久消耗 10 立方米水”，使水足迹膨胀一个数量级。在碳流方面，EF 3.1 将 1,099 条气候基本流细分为化石（1,074）、生物源（13）与土地利用变化（12）三条独立轨道；若把采用 `−1/+1` 生物碳吸收与排放记账的数据库过程，直接映射到采用 `0/0` 生物碳中性的目标库或 LCIA 方法上，就会在摇篮到大门边界制造出虚假的负碳信用或双倍排放。",
+      "kind": "synthesis",
+      "scope": "水流（取耗退水与空间标签）与碳流（化石／生物源／dLUC 及 0/0 对 −1/+1）跨库映射的结构性失配",
+      "evidenceIds": [
+        "ev-db28-ef31-water-flows",
+        "ev-db28-ef31-carbon-flows"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ef31-water-flows",
+          "relation": "supports",
+          "rationale": "一手核对 EF 3.1 水资源方法 7 正 4 负基本流与 209 个位置码结构。"
+        },
+        {
+          "evidenceId": "ev-db28-ef31-carbon-flows",
+          "relation": "supports",
+          "rationale": "一手核对 EF 3.1 气候变化 1,099 = 1,074 + 13 + 12 三轨碳流划分。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-three-nomenclature-architectures"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "水流映射不仅要核对物质名称与单位（m³ 与 kg），还必须核对交换方向（输入资源还是输出排放）以及是否为非消耗性冷却水或水电过水。"
+      ],
+      "reasoning": "复用第四部已逐文件核验的 EF 3.1 水与碳 XML 证据，揭示跨库映射中取退水相抵与生物碳记账错位的具体机理。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-land-metals-pm-mismatch",
+      "text": "土地利用、重金属价态与颗粒物粒径构成了另外两大高频失配区。土地流必须同时区分“占用”（面积乘时间，如 m²·a）与“转化”（发生土地类型转换的面积，m²，且区分转化前与转化后地类），而不同数据库采用的土地分类树（如 CORINE 土地覆盖、生物群系或耕作集约度）粒度迥异，导致土地质量与生物多样性模型难以跨库对齐。在重金属与颗粒物方面，毒理模型（USEtox、USES-LCA）对三价铬与六价铬、无机汞与甲基汞赋予悬殊的毒性因子，若源库只记录笼统的“铬（Chromium）”，映射表就无法无损还原其真实价态；颗粒物同样如此——EF 3.1 对细颗粒物 `PM2.5`、粗颗粒物 `PM2.5–10`（表征因子为零）与总 `PM10`（按 0.23 折算）以及城市近地面、农村、高烟囱与未指明空气赋予迥异因子，一旦跨库转换把 `PM2.5–10` 误归入 `PM10` 或把高烟囱排放退化为未指明空气，健康损害结果便会成倍失真。",
+      "kind": "synthesis",
+      "scope": "土地占用／转化分类、重金属价态与颗粒物粒径／子区室在跨库映射中的信息丢失与扭曲",
+      "evidenceIds": [
+        "ev-db28-ef31-pm-and-tox-flows",
+        "ev-db28-fedefl-glad-nomenclature"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ef31-pm-and-tox-flows",
+          "relation": "supports",
+          "rationale": "一手核对 EF 3.1 颗粒物粒径分层（PM2.5–10 因子为零、总 PM10 为 0.23）与空气子区室代理机制。"
+        },
+        {
+          "evidenceId": "ev-db28-fedefl-glad-nomenclature",
+          "relation": "context",
+          "rationale": "说明跨体系基本流上下文（Context）与物质（Flowable）拆分正是为了控制此类失配。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-water-and-carbon-mismatch"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "当源库缺乏价态或排放高度信息时，任何自动映射表都只能在“保守代理”与“置零忽略”之间二选一，而这一选择本质上是方法学假设，不能伪装成物理观测。"
+      ],
+      "reasoning": "结合第四部颗粒物与毒理机制，系统说明土地、价态与粒径维度为何无法通过纯字符串映射无损转换。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-many-to-one-and-one-to-many",
+      "text": "从集合映射的数学结构看，跨库基本流转换几乎从未构成“一对一双射”，而是充斥着“多对一语义坍缩”与“一对多伪造精度”。当细颗粒源库（例如区分城市近地面、低烟囱、高烟囱的空气排放）映射到粗颗粒目标库（仅设单一 `air, unspecified`）时，发生多对一坍缩：原有空间暴露信息永久丢失，虽可勉强计算却削弱了区域化辨别力。反过来，当粗颗粒源库（仅记录笼统的 `water, unspecified` 或 `Chromium`）试图映射至细颗粒目标 LCIA 方法时，就陷入一对多困境：若强行指定某一条细分子区室（例如全部按城市近地面或淡水处理），等于凭空捏造源数据并不存在的精度；若保留为 `unspecified`，某些未给未指明流赋值的 LCIA 方法则会直接将其忽略。",
+      "kind": "interpretation",
+      "scope": "多对一语义坍缩与一对多伪造精度的非双射映射困境",
+      "evidenceIds": [
+        "ev-db28-ef31-pm-and-tox-flows",
+        "ev-db28-olca-flowmap-schema"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ef31-pm-and-tox-flows",
+          "relation": "supports",
+          "rationale": "以未指明空气子区室代理导致的放大效应印证粗细颗粒不对等的后果。"
+        },
+        {
+          "evidenceId": "ev-db28-olca-flowmap-schema",
+          "relation": "context",
+          "rationale": "说明软件流映射表（FlowMapEntry）必须显式处理源流与目标流之间的非双射对应。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-land-metals-pm-mismatch"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "多对一映射在反向导出时不可逆：一旦过程数据在格式转换中被坍缩为未指明子区室，即使再转回原格式也无法恢复丢失的空间与排放高度信息。"
+      ],
+      "reasoning": "将具体物质失配抽象为多对一与一对多两类非双射结构，阐明信息不可逆损失与伪造精度的根源。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-aggregate-flows-and-double-counting",
+      "text": "另一类棘手的多对一陷阱来自“组团聚合流”（aggregate group flows），例如 `NMVOC（非甲烷挥发性有机物）`、`VOC`、多环芳烃总量（PAHs）或泛指农药。在部分老旧或入门级清单中，同一道涂装或燃烧工序既可能单列了甲苯、二甲苯、苯乙烯等具体化合物，又同时保留了一条笼统的 `NMVOC` 汇总流。正如后文第七部《数据适用性》在梳理 ecoinvent 与 ILCD 规则时所详述，规范的数据库要求从总和流中扣除已单独报告的物质；但跨库映射往往只按单条流逐行替换，既不知道总和流里是否已扣除单列组分，也无法阻止单列 VOC 与笼统 NMVOC 在光化学臭氧或毒性评价中被双重计分。",
+      "kind": "synthesis",
+      "scope": "NMVOC、VOC 等组团聚合流在跨库逐行映射中诱发的双重计分或遗漏风险",
+      "evidenceIds": [
+        "ev-db28-fedefl-glad-nomenclature",
+        "ev-db28-olca-flowmap-schema"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-fedefl-glad-nomenclature",
+          "relation": "context",
+          "rationale": "支撑标准化流表对规范物质与组团流边界的治理需求。"
+        },
+        {
+          "evidenceId": "ev-db28-olca-flowmap-schema",
+          "relation": "supports",
+          "rationale": "说明逐条流映射（FlowMapEntry）缺乏过程级组分扣除上下文，难以自动消除组团流双计。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-many-to-one-and-one-to-many"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "审查化工、涂装、印刷与农业施药过程时，应专门检索清单中是否同时出现具体物质流与对应的总和组团流。"
+      ],
+      "reasoning": "结合逐行映射机制与组团流定义，解释为何跨库转换无法自动识别过程内总和流与单列流的重叠。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-stoichiometry-unit-sign-traps",
+      "text": "即使物质与区室完全匹配，跨库基本流映射仍潜伏着参照物化学计量、计量单位与正负方向三大数值陷阱。第一，同一元素在不同库中可能按不同化学参照物计重：例如富营养化清单里的磷可能以元素磷（P）、磷酸根（PO₄³⁻）或五氧化二磷（P₂O₅，折算为元素磷的系数为 0.436）记录，氮则分列为元素氮（N）、硝酸根（NO₃⁻）或铵离子（NH₄⁺）；若映射表只改流名而漏乘化学计量转换系数，结果立刻偏差两倍以上。第二，能源与生物质流常在净热值（LHV）与高位热值（HHV）、干基质量与湿基质量、标准立方米（Nm³）与千克之间切换。第三，部分软件或格式（如 SimaPro 废物处理与某些水资源流）采用不同的正负号与输入／输出方向约定，openLCA 模式因此将 `FlowPropertyFactor` 与显式转换系数写入 `FlowMapEntry`——任何忽略方向与换算系数的“纯名称映射”都会直接污染结果。",
+      "kind": "synthesis",
+      "scope": "化学计量参照物（如 P 与 P₂O₅ 0.436）、热值／干湿单位及正负方向约定在流映射中的数值陷阱",
+      "evidenceIds": [
+        "ev-db28-ef31-eutro-stoichiometry",
+        "ev-db28-olca-flowmap-schema"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ef31-eutro-stoichiometry",
+          "relation": "supports",
+          "rationale": "一手核对五氧化二磷折算元素磷系数 0.436 及氮磷化学参照物差异。"
+        },
+        {
+          "evidenceId": "ev-db28-olca-flowmap-schema",
+          "relation": "supports",
+          "rationale": "一手核对 openLCA Schema 将 FlowPropertyFactor 与 FlowMapEntry 设为显式转换结构。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-aggregate-flows-and-double-counting"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "在转换气体体积（m³ 或 Nm³）与质量（kg）时，须核对温度、压力与气体组成基准，避免套用错误密度常数。"
+      ],
+      "reasoning": "以已核验的磷化学计量系数与 openLCA 模式为据，系统归类名称相同背后潜藏的参照物、单位与方向错误。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-silent-unmapped-zero-failure",
+      "text": "在所有跨库计算错误中，最隐蔽也最具破坏力的并非软件崩溃，而是“静默丢流与表征归零”。ILCD 手册第 8.2 节专门确立了清单与影响方法链接核查规则：当清单中的某条基本流在所选 LCIA 方法中缺少匹配的特征化因子时，不得将缺失因子视作零影响。然而在实际跨库建模中，一旦因流 UUID、拼写或子区室不一致导致匹配落空，许多求解器并不会中断运行，而是静默地将该条流的贡献按零计入总分。于是，把使用一套基本流命名的数据集直接导入搭载另一套 LCIA 方法的项目运行时，软件仍会输出看似精密的结果，却可能已经静默漏掉了关键的甲烷、重金属、农药或耗水流——把“映射失败”伪装成了“零环境影响”。",
+      "kind": "synthesis",
+      "scope": "ILCD 缺失因子核查原则与未映射基本流在求解器中静默归零的隐蔽失效机制",
+      "evidenceIds": [
+        "ev-db28-ilcd-missing-factor-zero"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ilcd-missing-factor-zero",
+          "relation": "supports",
+          "rationale": "一手核对 ILCD 2010 第 8.2 节对清单与影响方法链接核查及缺失因子不得视作零的明确规定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-stoichiometry-unit-sign-traps"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "部分软件界面仅在次级日志或“未表征流”标签页中列出零因子条目，若不主动核查，静默丢流极难从最终汇总柱状图中察觉。"
+      ],
+      "reasoning": "以 ILCD 2010 第 8.2 节链接核查原则为据，分析现代跨库导入场景中未映射基本流静默归零的工程后果。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-software-handling-and-co-validation",
+      "text": "不同 LCA 软件对未映射基本流的暴露程度各异：openLCA 允许在导入数据或运行计算时配置显式 `FlowMap` 并在结果视图中检查未覆盖流；Brightway 在导入外部数据库时强制要求先解析所有未链接的生物圈交换流（unlinked biosphere exchanges），否则拒绝写入数据库，迫使建模者显式编写迁移规则；SimaPro 则依赖其内置物质词典与方法包同步维护。归根结底，一条工程铁律适用于所有平台：**任何 LCIA 影响评价方法都必须与其原生配套的基本流列表联合验证**。在跨库使用某套 LCIA 方法之前，必须对主要贡献流（特别是占总质量与主导毒理、水、碳指标前 95% 以上的流）逐一执行“零表征流审计”，确认每一条零贡献究竟是“科学上确实不参与该环境路径”，还是“因跨库命名失配而被静默丢弃”。",
+      "kind": "synthesis",
+      "scope": "主流软件对未映射流的处理差异，以及 LCIA 方法与原生基本流列表联合验证的工程铁律",
+      "evidenceIds": [
+        "ev-db28-olca-flowmap-schema",
+        "ev-db28-ilcd-missing-factor-zero",
+        "ev-db28-glad-wg1-mapping"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-olca-flowmap-schema",
+          "relation": "supports",
+          "rationale": "支撑 openLCA 显式 FlowMap 结构。"
+        },
+        {
+          "evidenceId": "ev-db28-ilcd-missing-factor-zero",
+          "relation": "supports",
+          "rationale": "支撑逐流核对链接完整性与排查缺失因子的审计要求。"
+        },
+        {
+          "evidenceId": "ev-db28-glad-wg1-mapping",
+          "relation": "context",
+          "rationale": "衔接 GLAD 官方映射资源作为标准化核查起点。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-silent-unmapped-zero-failure"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "即使采用官方发布的跨库映射文件（如 GLAD 或 openLCA 映射包），在数据库或 LCIA 方法升级小版本后仍可能产生新增未映射流，每次换版都须重新执行零表征流审计。"
+      ],
+      "reasoning": "整合软件流映射机制与 ILCD 审计原则，提炼跨库计算前必须执行的联合验证与零表征流排查规则。",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-elementary-to-technosphere-bridge",
+      "text": "至此可以看到，基本流之所以无法在数据库之间无损映射，是因为基本流直接承载了底层 LCIA 模型的空间、区室、价态与记账逻辑——任何脱离 LCIA 语义的纯名称替换都会触发语义坍缩、单位错位或静默归零。跨库互操作的难题并未止步于生物圈界面：在技术圈层面，过程与产品流同样面临分类体系非双射、过程身份错配与边界重算漏算等壁垒，而这些数据与治理边界将在后文的跨库治理与《数据适用性》等章节中继续展开。",
+      "kind": "synthesis",
+      "scope": "总结基本流映射失效根源并衔接技术圈过程边界与数据适用性审查",
+      "evidenceIds": [
+        "ev-db28-ilcd-missing-factor-zero",
+        "ev-db28-ef31-water-flows",
+        "ev-db28-ef31-carbon-flows"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-db28-ilcd-missing-factor-zero",
+          "relation": "supports",
+          "rationale": "收束静默归零核心风险。"
+        },
+        {
+          "evidenceId": "ev-db28-ef31-water-flows",
+          "relation": "supports",
+          "rationale": "呼应水流与 LCIA 耦合机制。"
+        },
+        {
+          "evidenceId": "ev-db28-ef31-carbon-flows",
+          "relation": "supports",
+          "rationale": "呼应碳流与记账口径耦合机制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-db28-software-handling-and-co-validation"
+      ],
+      "conceptIds": [],
+      "caveats": [
+        "此处总结的基本流映射诊断框架适用于过程型与混合型 LCA 软件工作流，不能替代针对特定行业有毒有害物质清单的毒理专家复核。"
+      ],
+      "reasoning": "收束生物圈基本流映射的全部失效机制，自然衔接后续技术圈边界与数据适用性治理。",
       "status": "reviewed",
       "reviewKind": "agent-source-check",
       "reviewedAt": "2026-11-26"

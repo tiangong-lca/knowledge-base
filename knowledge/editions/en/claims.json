@@ -11234,6 +11234,116 @@
         "The structural divergences summarized here govern cross-database comparability; actual numerical sensitivity always depends on the product’s process structure and dominant impact categories."
       ],
       "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-lcia-shapes-elementary-flows",
+      "status": "published",
+      "zhDigest": "61ae2d256f3b73600f6c02112f7105f33328a243a59d53cfffe21370d761e31d",
+      "text": "Practitioners new to cross-database modeling often assume that because carbon dioxide, sulfur dioxide, chromium, and freshwater are objective physical substances, a simple lookup table keyed by chemical name or CAS number should translate elementary flows losslessly between databases. That intuition mistakes an elementary-flow list for a neutral chemistry dictionary. In reality, every major elementary-flow system is shaped backwards by the underlying Life Cycle Impact Assessment (LCIA) models it serves: whatever receiving compartments, emission heights, population-density sub-compartments, water types, oxidation states, or spatial location codes those LCIA methods require dictate how the inventory database partitions its elementary flows.",
+      "scope": "Core principle that elementary-flow lists are not neutral chemical dictionaries, but are structurally shaped by underlying LCIA model requirements.",
+      "caveats": [
+        "For globally well-mixed, single-species long-lived greenhouse gases such as fossil CO₂, cross-database mapping is nearly lossless; mapping failures concentrate in flows carrying compartment, speciation, spatial, or carbon-origin distinctions."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-three-nomenclature-architectures",
+      "status": "published",
+      "zhDigest": "3d1d5dae23558d5f9fbc6749e9928c8e4c91014fd23856955209af9dffc890a2",
+      "text": "Because their target LCIA methods differ, the three dominant elementary-flow nomenclature systems diverge in data architecture. ecoinvent organizes flows by a three-part tuple of name, category, and sub-category (such as air / urban air close to ground or water / surface water), supplemented by activity geography in regionalized workflows; the EU EF 3.0/3.1 reference package assigns strict UUIDs to each flow and binds country- or watershed-level factors directly via `<location>` tags inside LCIA method XMLs; and the U.S. Federal LCA Commons defines standardized FlowList and FlowMapping specifications through the open-source `fedelemflowlist` package to support interagency interoperability and software export. Precisely because these systems disagree on what constitutes a distinct elementary flow, UNEP launched the Global LCA Data Access (GLAD) network in June 2020 with a dedicated Working Group on Nomenclature (WG1) to maintain official cross-system mapping files.",
+      "scope": "Structural differences among ecoinvent, EU EF 3.1, and U.S. Federal LCA Commons (fedelemflowlist) elementary-flow architectures and the role of UNEP GLAD WG1.",
+      "caveats": [
+        "Reference flow lists bundled inside software tools such as openLCA often blend multiple historical naming traditions; analysts should verify the active reference-list version before importing external databases."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-water-and-carbon-mismatch",
+      "status": "published",
+      "zhDigest": "e42d9822e450bf818f7a4ff1e08a698b7af910c0821515cad8c4e3ff55f84a5d",
+      "text": "In practice, water and carbon flows are the first two structural mismatch zones to break cross-database mapping. For water—as verified earlier in Water Consumption and Scarcity Potential—EU EF 3.1’s AWARE method computes net water consumption by netting 7 positive-factor withdrawal flows against 4 negative-factor return flows across 209 country/regional location codes. Other databases may lump withdrawal, cooling return, and turbine water together, report mass (kg) instead of volume (m³), or omit watershed/country tags; naive mapping can turn 10 m³ of non-consumptive cooling water returned to the same river into 10 m³ of permanent water consumption, inflating water scarcity scores by an order of magnitude. For carbon, EF 3.1 splits 1,099 climate flows into separate fossil (1,074), biogenic (13), and land-use-change (12) tracks; mapping a dataset using `−1/+1` biogenic uptake-and-release accounting onto a `0/0` biogenic-neutral target method creates spurious negative-carbon credits or double-counted emissions at the cradle-to-gate boundary.",
+      "scope": "Structural cross-database mismatches in water accounting (withdrawal/return netting and spatial tags) and carbon accounting (fossil/biogenic/dLUC and 0/0 vs. −1/+1).",
+      "caveats": [
+        "Water-flow mapping must check not only substance identity and units (m³ vs. kg), but also exchange direction (resource input vs. emission output) and non-consumptive cooling or hydropower flows."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-land-metals-pm-mismatch",
+      "status": "published",
+      "zhDigest": "63679998a495fa2847c39b36b95e3beb59a5954bbc888799c82bfd7e8bb8b523",
+      "text": "Land use, heavy-metal speciation, and particulate size fractions form two further high-frequency mismatch zones. Land flows must separate occupation (area × time, m²·a) from transformation (converted area, m², distinguishing both “from” and “to” land classes), yet databases use incompatible land taxonomies (CORINE classes, biomes, or management intensities) that resist direct translation. For metals and particulates, toxicity models (USEtox, USES-LCA) assign vastly different characterization factors to trivalent versus hexavalent chromium or inorganic versus methyl mercury—information a mapping table cannot recover if the source library records only generic “Chromium.” Likewise, EF 3.1 assigns sharply different factors to fine `PM2.5`, coarse `PM2.5–10` (zero characterization factor), total `PM10` (0.23 factor), and urban ground-level, rural, high-stack, or unspecified air; collapsing `PM2.5–10` into `PM10` or degrading high-stack emissions into unspecified air multiplies health-damage distortion.",
+      "scope": "Information loss and distortion in cross-database mapping of land occupation/transformation, metal oxidation states, and particulate size/compartment splits.",
+      "caveats": [
+        "When source inventories lack valence or stack-height data, any automated mapping table must choose between conservative proxies and zeroing out—a methodological assumption that must never be mistaken for physical measurement."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-many-to-one-and-one-to-many",
+      "status": "published",
+      "zhDigest": "fc5c7aacb190b14c988695cfe6bd102ab9b8ce5602ff4ac900909a510b65444c",
+      "text": "Mathematically, cross-database elementary-flow conversion almost never forms a one-to-one bijection; instead, it oscillates between many-to-one semantic collapse and one-to-many fabricated precision. Mapping a fine-grained source library (distinguishing urban ground-level, low-stack, and high-stack air emissions) into a coarse target library (holding only `air, unspecified`) causes many-to-one collapse: spatial exposure information is permanently erased. Conversely, mapping a coarse source flow (such as `water, unspecified` or generic `Chromium`) into a fine-grained LCIA method triggers a one-to-many dilemma: forcing it into a specific sub-compartment (such as urban air or freshwater) invents precision absent from the source data, whereas leaving it as `unspecified` causes LCIA methods lacking generic fallback factors to drop it altogether.",
+      "scope": "Non-bijective mapping dilemmas: many-to-one semantic collapse versus one-to-many fabricated precision.",
+      "caveats": [
+        "Many-to-one mapping is irreversible on round-trip export: once sub-compartment or emission-height detail collapses to unspecified during conversion, exporting back to the original format cannot restore it."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-aggregate-flows-and-double-counting",
+      "status": "published",
+      "zhDigest": "f828624214d3ca08775eec0c5e584e819ae6e49c14d182a040de5fe5d5950384",
+      "text": "A closely related many-to-one hazard involves aggregate group flows such as `NMVOC` (non-methane volatile organic compounds), `VOC`, total PAHs, or generic pesticides. In older or entry-level inventories, a single coating or combustion process may list specific compounds (toluene, xylene, styrene) alongside an aggregate `NMVOC` flow. As examined in Part VII (Data Applicability) for ecoinvent and ILCD rules, rigorous libraries require subtracting individually reported substances from group totals. Row-by-row cross-database mapping tables, however, lack process-level mass-balance context: they cannot verify whether a group flow was already net of speciated compounds and therefore cannot prevent double-counting in photochemical ozone or toxicity scores.",
+      "scope": "Double-counting and omission risks created by aggregate group flows (NMVOC, VOC, generic pesticides) under row-by-row flow mapping.",
+      "caveats": [
+        "When auditing chemical, coating, printing, or agricultural pesticide processes, analysts should explicitly check whether speciated compounds and aggregate group flows coexist in the same exchange table."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-stoichiometry-unit-sign-traps",
+      "status": "published",
+      "zhDigest": "454db087aed6e5b20ea7a897f09b5e68ac1a89443612982109e26fb894d6b643",
+      "text": "Even when substance and compartment align, three quantitative traps lurk in flow mapping: stoichiometric reference substances, unit bases, and sign/direction conventions. First, the same nutrient may be inventoried under different chemical reference species—phosphorus as elemental `P`, phosphate (`PO₄³⁻`), or phosphorus pentoxide (`P₂O₅`, whose elemental-P conversion factor is 0.436), and nitrogen as elemental `N`, nitrate (`NO₃⁻`), or ammonium (`NH₄⁺`); renaming a flow without applying the stoichiometric multiplier skews scores by more than a factor of two. Second, energy and biomass flows switch between lower and higher heating values (LHV vs. HHV), dry versus wet mass, and normal cubic meters (`Nm³`) versus kilograms. Third, software formats differ in waste and water sign/direction conventions—which is why the openLCA schema encodes `FlowPropertyFactor` and explicit conversion factors inside `FlowMapEntry`. Pure name-based mapping without unit, stoichiometric, and sign verification corrupts calculations directly.",
+      "scope": "Quantitative mapping traps: stoichiometric reference substances (e.g., P vs. P₂O₅ 0.436), heating-value/dry-wet units, and sign/direction conventions.",
+      "caveats": [
+        "Converting gas volumes (`m³` or `Nm³`) to mass (`kg`) requires verifying temperature, pressure, and gas-composition baselines rather than applying an arbitrary density constant."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-silent-unmapped-zero-failure",
+      "status": "published",
+      "zhDigest": "724df83d610d9259d759989f43d015d9fbdd54e3fac7b31ec9a1d5f0f91296b9",
+      "text": "Among all cross-database calculation failures, the most insidious is not a software crash, but silent unmapped-flow drop-to-zero. The ILCD Handbook (§8.2) establishes a core linking rule: analysts must verify LCI-to-LCIA links and must never treat missing characterization factors as zero impact. In applied cross-database workflows, however, when mismatched flow UUIDs, spellings, or sub-compartments break that link, many solvers do not halt—they silently assign zero impact. Importing a dataset named under one nomenclature into a project running another LCIA method can therefore produce neat totals even after silently dropping key methane, heavy-metal, pesticide, or water flows—disguising a mapping failure as zero environmental burden.",
+      "scope": "ILCD missing-factor verification rule and silent zero-characterization failure when unmapped elementary flows receive zero impact without error.",
+      "caveats": [
+        "Because many tools relegate uncharacterized flows to secondary log tabs, silent flow drops are rarely visible from headline bar charts unless audited proactively."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-software-handling-and-co-validation",
+      "status": "published",
+      "zhDigest": "76b2dd4a2d5e948a16c0d476b1978286819934f69acb2af6faf8b225f86074fb",
+      "text": "Major LCA software platforms expose unmapped flows differently: openLCA supports explicit `FlowMap` configurations during import/calculation and reports uncharacterized flows in result views; Brightway refuses to write an imported database until every unlinked biosphere exchange is explicitly resolved via migration rules; SimaPro maintains synchronized internal substance dictionaries tied to its bundled LCIA packages. Regardless of software, one engineering rule is universal: **every LCIA method must be co-validated with its native elementary-flow list**. Before trusting any cross-database score, analysts must run a zero-characterization audit across dominant mass and impact flows (covering at least the top 95% of relevant inventory flows) to distinguish true scientific non-relevance from silent nomenclature drop-out.",
+      "scope": "Platform differences in handling unmapped flows and the mandatory engineering rule of co-validating LCIA methods with their native elementary-flow lists.",
+      "caveats": [
+        "Even official mapping tables (such as GLAD or openLCA mapping packs) can acquire new unmapped flows after minor database or LCIA version updates; zero-characterization audits must be rerun on every version bump."
+      ],
+      "reviewedAt": "2026-11-26"
+    },
+    {
+      "id": "cl-db28-elementary-to-technosphere-bridge",
+      "status": "published",
+      "zhDigest": "a9c2c15a78bf1e26fbea58bf7b3f80768df5964dc01586aa21c4ef695dae7228",
+      "text": "Elementary flows thus resist lossless cross-database mapping because they directly encode the spatial, compartment, speciation, and accounting logic of underlying LCIA methods—meaning any LCIA-blind string substitution triggers semantic collapse, unit distortion, or silent drop-to-zero. Interoperability barriers do not stop at the biosphere boundary: at the technosphere layer, processes and product flows likewise face non-bijective classifications, process-identity mismatches, and boundary double-counting or omission risks—governance challenges that carry directly into Data Applicability and subsequent cross-database practice.",
+      "scope": "Summary of elementary-flow mapping limits and transition to technosphere boundaries and Data Applicability.",
+      "caveats": [
+        "This diagnostic framework governs process-based and hybrid LCA workflows and does not replace specialist toxicological review of site-specific hazardous substance inventories."
+      ],
+      "reviewedAt": "2026-11-26"
     }
   ]
 }

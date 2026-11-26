@@ -1,0 +1,34 @@
+---
+title: 基本流与底层 LCIA 耦合：为何 Flows 无法无损映射
+description: 剖析基本流分类树如何由底层 LCIA 模型反向塑造，结合水、碳、土地、重金属与颗粒物四大失配重灾区，拆解多对一语义坍缩、一对多伪造精度、组团流双计、化学计量／单位／方向陷阱以及静默归零这一最隐蔽的跨库计算错误。
+---
+
+## 基本流分类树由底层 LCIA 反向塑造 [#基本流分类树由底层LCIA反向塑造]
+
+<Prose ids="cl-db28-lcia-shapes-elementary-flows cl-db28-three-nomenclature-architectures" />
+
+## 水、碳、土地与金属：四大高频失配重灾区 [#水碳土地与金属四大高频失配重灾区]
+
+<Prose ids="cl-db28-water-and-carbon-mismatch cl-db28-land-metals-pm-mismatch" />
+
+## 一对多、多对一与参照物／单位陷阱 [#一对多多对一与参照物单位陷阱]
+
+<Prose ids="cl-db28-many-to-one-and-one-to-many cl-db28-aggregate-flows-and-double-counting cl-db28-stoichiometry-unit-sign-traps" />
+
+## 静默丢流与表征归零：跨库计算最隐蔽的错误 [#静默丢流与表征归零跨库计算最隐蔽的错误]
+
+<Prose ids="cl-db28-silent-unmapped-zero-failure cl-db28-software-handling-and-co-validation" />
+
+表 1 跨数据库基本流映射的五类典型失效机制、高频触发流、对 LCIA 结果的具体后果与工程核查防线。
+
+| 失效类型 | 底层机制 | 高频触发流示例 | 对 LCIA 结果的后果 | 工程核查防线 |
+| --- | --- | --- | --- | --- |
+| LCIA 记账口径错位 | 源库与目标 LCIA 对净耗水相抵或生物碳正负记账假设不兼容 | EF 3.1 7 正 4 负水流；化石／生物源／dLUC 碳流（0/0 对 −1/+1） | 冷却退水误算为净耗水（膨胀量级）；摇篮到大门出现虚假负碳 | 核对水流输入／输出方向与退水抵扣；统一生物碳记账规则 |
+| 多对一坍缩／一对多伪精度 | 细颗粒子区室（城市／农村／高烟囱）与粗颗粒 unspecified 非双射 | PM2.5、PM2.5–10、PM10；三价铬／六价铬；室内／室外空气 | 暴露差异永久丢失，或错赋粗颗粒／未指明代理导致健康与毒性成倍扭曲 | 保留原始子区室元数据；对缺失价态或高度的代理显式披露并作灵敏度检验 |
+| 组团聚合流重叠 | 过程内同时存在具体单列物质与笼统总和流，逐行映射缺乏扣除上下文 | NMVOC、VOC、PAHs 总量、泛指农药 | 光化学臭氧与毒性指标被重复计分或遗漏 | 在过程级检索单列物质与总和流并存情况，核对是否已执行组分扣除 |
+| 参照物、单位与方向陷阱 | 同元素采用不同化学参照物或热值／干湿基与正负号约定不同 | 元素 P 对 P₂O₅（0.436）；N 对 NO₃⁻；LHV 对 HHV；Nm³ 对 kg | 漏乘化学计量系数或热值换算系数引发 2 倍以上固定偏差或正负反转 | 使用显式声明 FlowPropertyFactor 与转换系数的映射表，禁用纯名称替换 |
+| 静默丢流与表征归零 | 流 UUID、拼写或上下文不匹配时，求解器默认赋零影响而不报错 | 跨库导入的甲烷、重金属、农药、区域化水流 | 把“映射失败”伪装成“零环境影响”，严重低估实际负担 | 坚持 LCIA 方法与原生流表联合验证；逐项执行前 95%+ 关键流零表征审计 |
+
+<Prose ids="cl-db28-elementary-to-technosphere-bridge" />
+
+继续阅读：[数据适用性](/docs/book/data-applicability)。
