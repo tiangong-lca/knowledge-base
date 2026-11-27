@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-6-temporal-scope-and-future-scenarios-332",
+  "issue": "tiangong-lca/knowledge-base#332",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "reviewType": "dual-independent-subagent-audit",
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor",
+      "subagentId": "c1fe804f-2f7a-4d2c-9a31-a1fcc66cecf3",
+      "initialVerdict": "PASS (0 blocking findings; 3 polish suggestions)",
+      "finalDisposition": "ALL_RESOLVED"
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "subagentId": "f374e948-b99f-4303-bfd1-b31cd75fc1c8",
+      "initialVerdict": "BLOCKED (2 blocking findings; 4 polish suggestions)",
+      "finalDisposition": "ALL_RESOLVED"
+    }
+  ],
+  "blockingFindingsResolved": [
+    {
+      "id": "P26-B1",
+      "source": "f374e948-b99f-4303-bfd1-b31cd75fc1c8 & c1fe804f-2f7a-4d2c-9a31-a1fcc66cecf3",
+      "summary": "Stale chapter title ('未来技术与情景' / 'Future Technologies and Scenarios') persisted in three milestone cards in knowledge/timeline.json and knowledge/editions/en/timeline.json (plus two historical '中点与终点' / 'Midpoints and Endpoints' labels).",
+      "resolution": "Updated all three timeline milestone chapter labels in both ZH and EN to '时间尺度与未来情景' / 'Temporal Scope and Future Scenarios' and cleaned the two pre-existing '影响评价的结构' / 'The Structure of Impact Assessment' labels."
+    },
+    {
+      "id": "P26-B2",
+      "source": "f374e948-b99f-4303-bfd1-b31cd75fc1c8 & c1fe804f-2f7a-4d2c-9a31-a1fcc66cecf3",
+      "summary": "ZH/EN meaning drift ('不改用' vs 'does not alter') and pre-relocation Part VII wall-case holdover in cl-book-future-scenario-matrix scope, caveats, and reasoning.",
+      "resolution": "Aligned cl-book-future-scenario-matrix scope, caveats[0], and reasoning across ZH and EN to anchor cleanly on Part III Electricity Systems long-run scenarios without implying prior Part VII wall-case figures; also tightened cl-time-dynamic-not-forecast, localization-to-temporal bridge, Table 1 lead-in, EN IAM expansion, publicSummary.summary.en, and reader-edition.mjs move.toPart verification."
+    }
+  ],
+  "notes": "Editorial, premise-DAG, and primary-source verification only; does not establish independent domain-expert scientific endorsement."
+}

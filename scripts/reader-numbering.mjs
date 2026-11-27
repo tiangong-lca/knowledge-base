@@ -210,25 +210,34 @@ const baseContinuationContracts = currentBookLayout('book:continuations', [
   { key: 'emission-time-to-future', route: '/docs/book/emission-time-and-assessment', bookSource: '/monograph/climate-equivalence', bookSourceKey: 'book-climate-equivalence', sourceHref: '/docs/book/future-technology-and-context/', sourceLabel: '未来技术置于怎样的世界', bookKey: '/docs/book/future-technology-and-context', bookLabel: '未来技术置于怎样的世界', webContext: '前瞻技术的情景设定，见未来技术置于怎样的世界。', bookContext: '未来清单的技术与背景设定，另见后面的未来技术置于怎样的世界。' },
 ]);
 
-export const readerContinuationContracts = currentRouteChanges.merges.length
-  ? baseContinuationContracts.map(row => {
-      const fromMerge = currentRouteChanges.fromToMap.get(row.route);
-      const hrefBase = row.sourceHref.replace(/\/$/, '');
-      const hrefMerge = currentRouteChanges.fromToMap.get(hrefBase);
-      let next = { ...row };
-      if (fromMerge) {
-        next.route = fromMerge.to;
-        if (next.bookSource) next.bookSource = fromMerge.to;
-        next.webContext = next.bookContext;
-      }
-      if (hrefMerge) {
-        next.sourceHref = `${hrefMerge.to}/`;
-        next.sourceLabel = next.bookLabel;
-        next.webContext = next.bookContext;
-      }
-      return next;
-    })
-  : baseContinuationContracts;
+const bookTitleByKey = new Map(readerNumberingManifest.book.map(unit => [unit.key, unit.title]));
+
+export const readerContinuationContracts = baseContinuationContracts.map(row => {
+  const fromMerge = currentRouteChanges.fromToMap.get(row.route);
+  const hrefBase = row.sourceHref.replace(/\/$/, '');
+  const hrefMerge = currentRouteChanges.fromToMap.get(hrefBase);
+  let next = { ...row };
+  if (fromMerge) {
+    next.route = fromMerge.to;
+    if (next.bookSource) next.bookSource = fromMerge.to;
+    next.webContext = next.bookContext;
+  }
+  if (hrefMerge) {
+    next.sourceHref = `${hrefMerge.to}/`;
+    next.sourceLabel = next.bookLabel;
+    next.webContext = next.bookContext;
+  }
+  const currentDestTitle = bookTitleByKey.get(next.bookKey);
+  if (currentDestTitle && currentDestTitle !== next.bookLabel) {
+    const oldBookLabel = next.bookLabel;
+    const oldSourceLabel = next.sourceLabel;
+    next.webContext = next.webContext.replaceAll(oldSourceLabel, currentDestTitle).replaceAll(oldBookLabel, currentDestTitle);
+    next.bookContext = next.bookContext.replaceAll(oldSourceLabel, currentDestTitle).replaceAll(oldBookLabel, currentDestTitle);
+    next.sourceLabel = currentDestTitle;
+    next.bookLabel = currentDestTitle;
+  }
+  return next;
+});
 
 export function getContinuationLink(view, route, href, label) {
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);

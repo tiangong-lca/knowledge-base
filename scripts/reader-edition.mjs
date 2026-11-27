@@ -44,6 +44,10 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const removedRouteSet = Array.isArray(routeChanges)
     ? new Set()
     : (routeChanges?.removedRouteSet ?? new Set());
+  const movesList = Array.isArray(routeChanges)
+    ? []
+    : (routeChanges?.moves ?? []);
+  const movedKeys = new Set(movesList.map(m => m.bookUnit ?? m.to));
   for (const added of addedList) {
     if (removedRouteSet.has(added.route)) continue;
     const found = units.find(u => u.key === added.route);
@@ -98,8 +102,10 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   for (const source of available) if (!navigation.has(source) && !covered.has(source)) throw new Error(`Reader source has no current book registration: ${source}`);
   const retained = [...placements.frontMatter, ...baseline.pages.filter(page => page.printOrdinal !== undefined).sort((a,b) => a.printOrdinal-b.printOrdinal).map(page => page.route), ...(placements.printAdditions ?? []).map(unit => unit.route), pmSelectionAppendix];
   const expected = retained.filter(route => route !== dataApplicabilityRoutes[1] && route !== climateAssemblyRoutes[1] && route !== closingSynthesisRoutes[1] && route !== jointProductionRoutes[1] && route !== expectedCoverage[1] && route !== functionalReferenceSupplement && route !== '/docs/flows' && route !== '/docs/characterization').map(route => route === dataApplicabilityRoutes[0] ? dataApplicabilityKey : route === climateAssemblyRoutes[0] ? climateAssemblyKey : route === closingSynthesisRoutes[0] ? closingSynthesisKey : route === expectedCoverage[0] ? frameworkUnitKey : route === jointProductionRoutes[0] ? jointProductionKey : route);
+  const expectedBase = [...currentBookLayout('book:unit-keys', expected)].filter(key => !removedRouteSet.has(key));
+  const retiredPreCheckpoint = expectedBase.length !== currentBookLayout('book:unit-keys', expected).length;
   const baseUnits = units.filter(unit => !addedUnitKeys.has(unit.key));
-  if (JSON.stringify(baseUnits.map(unit => unit.key).sort()) !== JSON.stringify([...currentBookLayout('book:unit-keys', expected)].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
+  if (JSON.stringify(baseUnits.map(unit => unit.key).sort()) !== JSON.stringify([...expectedBase].sort())) throw new Error('Book edition omitted or misclassified an accepted retained unit');
   const presentation = getPresentationUnits('book');
   if (JSON.stringify(units.map(({key,source,kind})=>({key,source,kind}))) !== JSON.stringify(presentation.map(({key,source,kind})=>({key,source,kind})))) throw new Error('Book edition differs from the explicit current seven-part numbered order');
   for (const unit of units) {
@@ -124,8 +130,23 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     source: mergeByBookUnit.has(key) ? (preMergeMonographSource(key) ?? source) : source,
     kind,
   }));
-  if (digest(roster) !== currentBookLayout('book:roster-pin', currentEditionRosterDigest))
-    throw new Error('Current reading roster differs from the independently pinned 40-unit/32-chapter edition');
+  if (movedKeys.size === 0 && !retiredPreCheckpoint) {
+    if (digest(roster) !== currentBookLayout('book:roster-pin', currentEditionRosterDigest))
+      throw new Error('Current reading roster differs from the independently pinned 40-unit/32-chapter edition');
+  } else {
+    const latestMoveByKey = new Map();
+    for (const move of movesList) latestMoveByKey.set(move.bookUnit ?? move.to, move);
+    for (const [targetKey, move] of latestMoveByKey) {
+      if (removedRouteSet.has(targetKey)) continue;
+      const declared = presentation.find(row => row.key === targetKey);
+      if (!declared || !units.some(unit => unit.key === targetKey)) {
+        throw new Error(`Moved unit missing from book edition: ${targetKey}`);
+      }
+      if (move.toPart != null && declared.part !== move.toPart) {
+        throw new Error(`Moved unit ${targetKey} is in part ${declared.part}, expected declared toPart ${move.toPart}`);
+      }
+    }
+  }
   return units.map(unit => unit.key);
 }
 

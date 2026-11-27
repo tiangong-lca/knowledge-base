@@ -594,3 +594,13 @@ test('validateReadableBookReviewedOutput skips retired /print receipts recorded 
   const errors = validateReadableBookReviewedOutput(current, new Map(), new Map(), { units: [] }, { claims: [] }, null);
   assert.deepEqual(errors, []);
 });
+
+test('readerContinuationContracts dynamically tracks renamed destination chapter titles', async () => {
+  const { readerContinuationContracts, getUnitNumbering } = await import('./reader-numbering.mjs');
+  const cont = readerContinuationContracts.find(c => c.key === 'emission-time-to-future');
+  const destTitle = getUnitNumbering('book', '/docs/book/future-technology-and-context').title;
+  assert.equal(cont.sourceLabel, destTitle);
+  assert.equal(cont.bookLabel, destTitle);
+  assert.ok(cont.webContext.includes(destTitle));
+  assert.ok(cont.bookContext.includes(destTitle));
+});

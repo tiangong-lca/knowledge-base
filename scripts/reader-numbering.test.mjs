@@ -225,7 +225,7 @@ test('the three exact source-qualified continuations keep their own website and 
     ['policy-to-framework','/docs/book/early-container-policy-and-systems','/docs/book/early-container-policy-and-systems',
       '/docs/book/framework-responsibilities/','评价框架与分析步骤','book-framework-responsibilities'],
     ['emission-time-to-future','/docs/book/climate-equivalence','book-climate-equivalence',
-      '/docs/book/future-technology-and-context/','未来技术与情景','/docs/book/future-technology-and-context'],
+      '/docs/book/future-technology-and-context/',getUnitNumbering('book','/docs/book/future-technology-and-context').title,'/docs/book/future-technology-and-context'],
     ['data-to-uncertainty','/docs/book/data-applicability','book-data-applicability',
       '/docs/book/uncertainty-and-variability','变异与不确定性','/docs/book/uncertainty-and-variability'],
   ];
