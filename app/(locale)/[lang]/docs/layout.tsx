@@ -17,7 +17,7 @@ export default async function LocalizedDocsLayout({
   if (!isSupportedLocale(lang)) notFound();
   const locale: Locale = lang;
   const rawTree = getSource(locale).getPageTree();
-  const tree = locale === 'zh' ? getWebsiteTree(rawTree) : rawTree;
+  const tree = getWebsiteTree(rawTree, locale);
   return (
     <DocsLayout {...baseOptions(locale)} tree={tree}>
       <SidebarKeyboard />

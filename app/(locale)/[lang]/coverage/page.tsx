@@ -4,6 +4,9 @@ import { PublicationShell } from '@/components/publication-shell';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
 import { getOrderedPages, logicalPageUrl } from '@/lib/reader-book';
 import { readerGuideConfig } from '@/lib/reader-guide';
+import enReaderGuide from '@/config/editions/en/reader-guide.json';
+import { getSource } from '@/lib/source';
+import { EN_PARTS } from '@/lib/reader-numbering';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 import alignment from '@/knowledge/editions/alignment.json';
 import styles from '@/components/reader-guide.module.css';
@@ -27,17 +30,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-const EN_PART_TITLES: Record<number, { label: string; title: string }> = {
-  1: { label: 'Part I', title: 'Origins, Questions, and Methodological Framework' },
-  2: { label: 'Part II', title: 'Functional Unit, Process Networks, and Life Cycle Inventory' },
-  3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
-  4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
-  5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
-  6: { label: 'Part VI', title: 'Background Databases and Interoperability' },
-  7: { label: 'Part VII', title: 'Data Quality, Uncertainty, and Product Footprint Rules' },
-  8: { label: 'Part VIII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
-};
-
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isSupportedLocale(lang)) notFound();
@@ -53,128 +45,206 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   if (lang === 'en') {
     const unitEntries = alignment.units as Record<string, { enStatus?: string; enTitle?: string }>;
-    const publishedEnUnits = new Set(
-      Object.entries(unitEntries)
-        .filter(([, meta]) => meta?.enStatus === 'published')
-        .map(([unitId]) => unitId)
-    );
+    const enPages = new Map(getSource('en').getPages().map(page => [logicalPageUrl(page.url), page]));
+    const enPartGroups = readerParts.map(part => {
+      const partChapters = chapters.filter(u => u.part === part.number);
+      const enMeta = EN_PARTS[part.number] ?? { label: `Part ${part.number}`, title: part.title };
+      const firstOrd = partChapters[0]?.ordinal ?? 0;
+      const lastOrd = partChapters.at(-1)?.ordinal ?? 0;
+      return {
+        part,
+        enMeta,
+        chapters: partChapters,
+        rangeLabel: firstOrd === lastOrd ? `Chapter ${firstOrd}` : `Chapters ${firstOrd}–${lastOrd}`,
+        coreQuestion: (enReaderGuide.partQuestions as Record<string, string>)[String(part.number)] ?? '',
+      };
+    });
     return (
       <PublicationShell
         lang="en"
         title="Book Guide"
-        description={`Complete ${readerParts.length}-part, ${chapters.length}-chapter roadmap, ${topics.length} topical essays, ${appendices.length} appendices, and reference apparatus for the meaning-equivalent English edition.`}
+        description={`Navigate all ${readerParts.length} parts and ${chapters.length} chapters, three reading paths, six practical entry questions, ${topics.length} topical essays, and ${appendices.length} appendices.`}
       >
         <div className={styles.root} data-en-guide="">
-          <section className={styles.sectionBlock} aria-labelledby="en-guide-status">
+          {/* A. 8-Part Roadmap */}
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-roadmap">
             <div className={styles.sectionHeader}>
-              <h2 id="en-guide-status">Edition Status</h2>
-              <p className={styles.sectionMeta}>{readerParts.length} Parts · {chapters.length} Chapters · {topics.length} Topics · {appendices.length} Appendices</p>
+              <h2 id="en-guide-roadmap">Eight-Part Roadmap</h2>
+              <p className={styles.sectionMeta}>{chapters.length} Chapters · {topics.length} Topics · {appendices.length} Appendices</p>
             </div>
-            <p>
-              Published English units: <strong>{publishedEnUnits.size}</strong> / {webUnits.length}. All main chapters,
-              topical essays, appendices, interactive cases, and global reference pages are published and aligned to the Chinese edition.
-            </p>
+            <ol className={styles.roadmapGrid}>
+              {enPartGroups.map(({ part, enMeta, rangeLabel, coreQuestion }) => (
+                <li key={part.number}>
+                  <a href={`#part-${part.number}`} className={styles.roadmapCard}>
+                    <div className={styles.roadmapTop}>
+                      <span className={styles.partTag}>{enMeta.label}</span>
+                      <span className={styles.rangeTag}>{rangeLabel}</span>
+                    </div>
+                    <span className={styles.roadmapTitle}>{enMeta.title}</span>
+                    <p className={styles.roadmapQuestion}>{coreQuestion}</p>
+                  </a>
+                </li>
+              ))}
+            </ol>
           </section>
 
+          {/* B1. 3 Reading Paths */}
+          <section className={styles.sectionBlock} aria-labelledby="en-guide-modes" data-guide-section="modes">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-modes">Three Reading Paths</h2>
+              <p className={styles.sectionMeta}>Same worked cases and primary evidence, three ways in</p>
+            </div>
+            <div className={styles.modesGrid}>
+              {enReaderGuide.readingModes.map(mode => (
+                <div key={mode.id} className={styles.modeCard} data-guide-mode={mode.id}>
+                  <span className={styles.modeBadge}>{mode.badge}</span>
+                  <h3 className={styles.modeTitle}>{mode.title}</h3>
+                  <p className={styles.modeAudience}>Best for: {mode.audience}</p>
+                  <p className={styles.modeDesc}>{mode.description}</p>
+                  {mode.startHref.startsWith('#') ? (
+                    <a href={mode.startHref} className={styles.modeAction}>
+                      {mode.startLabel} →
+                    </a>
+                  ) : (
+                    <Link href={mode.startHref} className={styles.modeAction}>
+                      {mode.startLabel} →
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* B2. 6 Problem-First Entries */}
+          <section id="en-problem-routes" className={styles.sectionBlock} aria-labelledby="en-guide-problems" data-guide-section="problems">
+            <div className={styles.sectionHeader}>
+              <h2 id="en-guide-problems">Browse by Practical Question</h2>
+              <p className={styles.sectionMeta}>Direct entry points for six recurring modeling and review questions</p>
+            </div>
+            <div className={styles.problemGrid}>
+              {enReaderGuide.problemRoutes.map(prob => (
+                <div key={prob.id} className={styles.problemCard} data-guide-problem={prob.id}>
+                  <h3 className={styles.problemQuestion}>{prob.question}</h3>
+                  <p className={styles.problemSummary}>{prob.summary}</p>
+                  <div className={styles.problemLinks}>
+                    {prob.targets.map(target => {
+                      const unit = unitByKey.get(target.route);
+                      const enTitle = unitEntries[target.route]?.enTitle ?? enPages.get(target.route)?.data.title ?? target.route;
+                      return (
+                        <Link key={target.route} href={`/en${target.route}/`} className={styles.problemChip}>
+                          <span>{unit?.ordinal ? `Ch. ${unit.ordinal} · ${enTitle}` : enTitle}</span>
+                          <span className={styles.problemChipWhy}>· {target.why}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* C. Front Matter */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-front">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-front">Front Matter</h2>
               <p className={styles.sectionMeta}>Orientation and editorial conventions</p>
             </div>
             <div className={styles.frontGrid}>
-              {frontMatter.map(unit => (
-                <Link key={unit.key} href={`/en${unit.key}/`} className={styles.frontCard}>
-                  <span className={styles.frontTitle}>{unitEntries[unit.key]?.enTitle ?? unit.title}</span>
-                </Link>
-              ))}
+              {frontMatter.map(unit => {
+                const page = enPages.get(unit.key);
+                return (
+                  <Link key={unit.key} href={`/en${unit.key}/`} className={styles.frontCard}>
+                    <span className={styles.frontTitle}>{unitEntries[unit.key]?.enTitle ?? unit.title}</span>
+                    {page?.data.description && <p className={styles.frontDesc}>{page.data.description}</p>}
+                  </Link>
+                );
+              })}
             </div>
           </section>
 
+          {/* D. Parts and Chapters */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-chapters">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-chapters">Parts and Chapters</h2>
-              <p className={styles.sectionMeta}>Full {chapters.length}-chapter structure shared with the Chinese edition</p>
+              <p className={styles.sectionMeta}>{readerParts.length} parts, {chapters.length} chapters—aligned across web and print editions</p>
             </div>
-            {readerParts.map(part => {
-              const partChapters = chapters.filter(u => u.part === part.number);
-              const enMeta = EN_PART_TITLES[part.number] ?? { label: `Part ${part.number}`, title: part.title };
-              const firstOrd = partChapters[0]?.ordinal ?? 0;
-              const lastOrd = partChapters.at(-1)?.ordinal ?? 0;
-              return (
-                <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
-                  <div className={styles.partHeading}>
-                    <h3>{enMeta.label}: {enMeta.title}</h3>
-                    <span className={styles.rangeTag}>
-                      {firstOrd === lastOrd ? `Chapter ${firstOrd}` : `Chapters ${firstOrd}–${lastOrd}`}
-                    </span>
-                  </div>
-                  <ol className={styles.chapterList}>
-                    {partChapters.map(unit => {
-                      const isPublished = publishedEnUnits.has(unit.key);
-                      return (
-                        <li key={unit.key} className={styles.chapterItem}>
-                          <div className={styles.chapterRowTop}>
-                            <div className={styles.chapterTitleWrap}>
-                              <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
-                              {isPublished ? (
-                                <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
-                                  {unitEntries[unit.key]?.enTitle ?? unit.title}
-                                </Link>
-                              ) : (
-                                <span className={styles.chapterLink}>{unitEntries[unit.key]?.enTitle ?? unit.title}</span>
-                              )}
-                            </div>
-                            <span className={styles.rangeTag}>
-                              {isPublished ? 'Published' : 'In preparation'}
-                            </span>
+            {enPartGroups.map(({ part, enMeta, chapters: partChapters, rangeLabel }) => (
+              <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
+                <div className={styles.partHeading}>
+                  <h3>{enMeta.label}: {enMeta.title}</h3>
+                  <span className={styles.rangeTag}>{rangeLabel}</span>
+                </div>
+                <ol className={styles.chapterList}>
+                  {partChapters.map(unit => {
+                    const page = enPages.get(unit.key);
+                    return (
+                      <li key={unit.key} className={styles.chapterItem}>
+                        <div className={styles.chapterRowTop}>
+                          <div className={styles.chapterTitleWrap}>
+                            <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
+                            <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
+                              {unitEntries[unit.key]?.enTitle ?? unit.title}
+                            </Link>
                           </div>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </section>
-              );
-            })}
+                        </div>
+                        {page?.data.description && <p className={styles.chapterDesc}>{page.data.description}</p>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </section>
+            ))}
           </section>
 
+          {/* E. Topical Essays */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-topics">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-topics">Topical Essays</h2>
-              <p className={styles.sectionMeta}>5 standalone conceptual and methodological essays</p>
+              <p className={styles.sectionMeta}>{topics.length} standalone conceptual and methodological essays</p>
             </div>
             <ul className={styles.cardGrid}>
-              {topics.map((unit, idx) => (
-                <li key={unit.key} className={styles.unitCard}>
-                  <div className={styles.unitCardTop}>
-                    <span className={styles.unitLabel}>Topic {idx + 1}</span>
-                    <Link href={`/en${unit.key}/`} className={styles.unitLink}>
-                      {unitEntries[unit.key]?.enTitle ?? unit.title}
-                    </Link>
-                  </div>
-                </li>
-              ))}
+              {topics.map((unit, idx) => {
+                const page = enPages.get(unit.key);
+                return (
+                  <li key={unit.key} className={styles.unitCard}>
+                    <div className={styles.unitCardTop}>
+                      <span className={styles.unitLabel}>Topic {idx + 1}</span>
+                      <Link href={`/en${unit.key}/`} className={styles.unitLink}>
+                        {unitEntries[unit.key]?.enTitle ?? unit.title}
+                      </Link>
+                    </div>
+                    {page?.data.description && <p className={styles.unitDesc}>{page.data.description}</p>}
+                  </li>
+                );
+              })}
             </ul>
           </section>
 
+          {/* F. Appendices */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-appendices">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-appendices">Appendices</h2>
               <p className={styles.sectionMeta}>Appendices A–E: Numerical reconstructions, factor checks, and LCA timeline</p>
             </div>
             <ol className={styles.cardGrid}>
-              {appendices.map((unit, idx) => (
-                <li key={unit.key} className={styles.unitCard}>
-                  <div className={styles.unitCardTop}>
-                    <span className={styles.unitLabel}>Appendix {String.fromCharCode(65 + idx)}</span>
-                    <Link href={`/en${unit.key}/`} className={styles.unitLink}>
-                      {unitEntries[unit.key]?.enTitle ?? unit.title}
-                    </Link>
-                  </div>
-                </li>
-              ))}
+              {appendices.map((unit, idx) => {
+                const page = enPages.get(unit.key);
+                return (
+                  <li key={unit.key} className={styles.unitCard}>
+                    <div className={styles.unitCardTop}>
+                      <span className={styles.unitLabel}>Appendix {String.fromCharCode(65 + idx)}</span>
+                      <Link href={`/en${unit.key}/`} className={styles.unitLink}>
+                        {unitEntries[unit.key]?.enTitle ?? unit.title}
+                      </Link>
+                    </div>
+                    {page?.data.description && <p className={styles.unitDesc}>{page.data.description}</p>}
+                  </li>
+                );
+              })}
             </ol>
           </section>
 
+          {/* G. Reference & Publication Tools */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-tools">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-tools">Reference &amp; Publication Tools</h2>
@@ -182,9 +252,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
             <ul className={styles.cardGrid}>
               {[
-                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All reviewed claims with evidence bindings, scopes, and caveats.' },
-                { href: '/en/concepts/', title: 'Concepts Index', desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
                 { href: '/en/research/', title: 'References & Sources', desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
+                { href: '/en/concepts/', title: 'Concepts Index', desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
+                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All reviewed claims with evidence bindings, scopes, and caveats.' },
                 { href: '/en/timeline/', title: 'LCA Historical Timeline', desc: '27 milestones (1969–2026) with primary-source verification status.' },
                 { href: '/en/print/', title: 'Continuous Reading & Print Edition', desc: 'Full monograph assembled in one printable document.' },
                 { href: '/en/changes/', title: 'Editions & Errata', desc: 'Source commit traceability, bilingual alignment, and errata submission.' },

@@ -116,6 +116,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href="/en/coverage/">Book Guide</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
           </p>
         </div>
+        <section className="print-preface" aria-labelledby="en-editorial-note">
+          <h2 id="en-editorial-note">Editorial Note</h2>
+          <p>
+            This continuous print edition assembles the complete meaning-equivalent English monograph—front matter, all {readerParts.length} parts ({enUnits.filter(u => u.kind === 'chapter').length} chapters), {enTopics.length} topical essays, {enAppendices.length} appendices, and primary references—under the same chapter and section numbering used in the web edition.
+          </p>
+          <p>
+            All cross-framework comparisons, numerical reconstructions, and database analyses rest on inspected primary reports, peer-reviewed studies, and official technical specifications. Copyrighted standards and proprietary database internals are explicitly bounded where full texts are not publicly held; automated validation checks structure and traceability rather than conferring independent scientific certification.
+          </p>
+        </section>
         <nav aria-label="Book Contents" className="reader-book-contents">
           <h2>Contents</h2>
           <ul>{renderEnTocItems(enFrontMatter)}</ul>

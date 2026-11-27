@@ -137,6 +137,9 @@ export function ZhHomePage() {
           <Link href="/zh/concepts/">
             概念索引<span>术语定义与英文原词</span>
           </Link>
+          <Link href="/zh/claims/">
+            注释与论证<span>全书规范论述、前提依赖与适用条件</span>
+          </Link>
           <Link href="/zh/changes/">
             版本与勘误<span>历次修订留痕与章节合并记录</span>
           </Link>

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "partQuestions": {
+    "1": "Why can environmental decisions rarely rest on a single stage, and how do early container studies and modern LCA frameworks divide methodological responsibility?",
+    "2": "How do you anchor a fair functional reference, balance linear process networks, and close hybrid inventory boundaries without double counting?",
+    "3": "When processes yield co-products, shift marginal supply, draw from dynamic grids, or enter recycling loops, how should burdens be partitioned or credited?",
+    "4": "How do emissions and resource extractions translate into midpoint and endpoint indicators across climate, acidification, eutrophication, particulate matter, water, and toxicity?",
+    "5": "Where do multi-criteria trade-offs, spatial regionalization, monetary valuation, social risk scales, and life cycle costing hit their interpretive limits?",
+    "6": "How did major background LCA databases evolve, why do their underlying methods diverge, and why do elementary flows and processes resist lossless cross-database mapping?",
+    "7": "How do dataset applicability, uncertainty propagation, pedigree ratings, and statutory product-footprint rules constrain what conclusions a study can legitimately support?",
+    "8": "Returning to worked wall-service, carrier-bag, and prospective technology cases, how can you audit an LCA comparison and revise specific steps when new evidence arrives?"
+  },
+  "readingModes": [
+    {
+      "id": "sequential",
+      "badge": "Path 1",
+      "title": "Sequential Study (Foundations & Courses)",
+      "audience": "Readers new to life cycle assessment and graduate-level courses",
+      "description": "Start with the Preface and Reading Guide, then move straight through Parts I–VIII—from early beverage-container ledgers to background databases, data quality, and full comparative cases.",
+      "startHref": "/en/docs/",
+      "startLabel": "Begin with the Preface"
+    },
+    {
+      "id": "problem-first",
+      "badge": "Path 2",
+      "title": "Problem-First Lookup (Practitioners & Reviewers)",
+      "audience": "Experienced LCA modelers and critical reviewers checking specific methodological boundaries",
+      "description": "Jump straight to any of the six recurring modeling and review questions below, paired with the Concepts Index and References to inspect primary-source divergences.",
+      "startHref": "#en-problem-routes",
+      "startLabel": "Browse 6 Practical Questions"
+    },
+    {
+      "id": "case-reverse",
+      "badge": "Path 3",
+      "title": "Case-First Reverse Reading (Empirical Entry)",
+      "audience": "Readers who prefer to examine a complete numerical comparison before unpacking theory",
+      "description": "Open with Wall Service Comparison and Carrier-Bag Studies, then trace links and chapter notes back to functional units, matrix balancing, background databases, climate metrics, and review rules.",
+      "startHref": "/en/docs/book/wall-service-to-comparison/",
+      "startLabel": "Jump to Wall Service Case"
+    }
+  ],
+  "problemRoutes": [
+    {
+      "id": "prob-carbon-footprint",
+      "question": "Building a product carbon footprint or preparing for EU Battery Regulation / ESPR compliance—where should I start?",
+      "summary": "Clarify functional vs. declared units, fossil vs. biogenic carbon rules, secondary-data thresholds, and statutory comparative-assertion gates.",
+      "targets": [
+        {
+          "route": "/docs/book/service-and-reference",
+          "why": "Functional units & reference flows"
+        },
+        {
+          "route": "/docs/book/climate-equivalence",
+          "why": "Climate metrics & biogenic carbon"
+        },
+        {
+          "route": "/docs/book/product-footprint-rules-and-practice",
+          "why": "GHG Protocol, PEF & EU regulations"
+        }
+      ]
+    },
+    {
+      "id": "prob-allocation",
+      "question": "How do I choose between allocation, system expansion, and recycling formulas (including CFF) without double counting?",
+      "summary": "Separate attributional burden-sharing from consequential marginal substitution, and verify electricity scales and recycling handover rules.",
+      "targets": [
+        {
+          "route": "/docs/book/joint-production",
+          "why": "Partitioning & allocation residuals"
+        },
+        {
+          "route": "/docs/book/market-boundaries-and-response",
+          "why": "Constrained markets & marginal supply"
+        },
+        {
+          "route": "/docs/book/recycling-chains-and-accounting",
+          "why": "Circular Footprint Formula & handover"
+        }
+      ]
+    },
+    {
+      "id": "prob-lcia-reversal",
+      "question": "Why does switching impact assessment methods or weighting sets flip the ranking of the exact same inventory?",
+      "summary": "Trace midpoint vs. endpoint cut-offs, regionalized characterization, normalization-denominator dilution, and value-choice weighting mechanisms.",
+      "targets": [
+        {
+          "route": "/docs/book/midpoint-endpoint-value-choices",
+          "why": "Midpoint & endpoint causal cut-offs"
+        },
+        {
+          "route": "/docs/book/localization-evidence-and-denominators",
+          "why": "Spatial granularity & normalization"
+        },
+        {
+          "route": "/docs/book/ecological-scarcity-and-targets",
+          "why": "Distance-to-target weighting limits"
+        }
+      ]
+    },
+    {
+      "id": "prob-data-quality",
+      "question": "How should I choose a background database, handle cross-database mapping limits, and interpret data quality and uncertainty?",
+      "summary": "Navigate global database families, elementary-flow and process mapping redlines, dataset applicability, pedigree ratings, and Monte Carlo limits.",
+      "targets": [
+        {
+          "route": "/docs/book/lca-database-landscape-and-history",
+          "why": "Global database families & selection"
+        },
+        {
+          "route": "/docs/book/elementary-flows-and-lcia-coupling",
+          "why": "Elementary flows & LCIA coupling"
+        },
+        {
+          "route": "/docs/book/exchange-formats-and-interoperability-governance",
+          "why": "Exchange schemas & mapping redlines"
+        },
+        {
+          "route": "/docs/book/data-applicability",
+          "why": "Applicability, review & version shifts"
+        }
+      ]
+    },
+    {
+      "id": "prob-prospective",
+      "question": "Assessing lab-scale technologies or 2030/2050 decarbonization pathways—what are the main pitfalls in prospective LCA?",
+      "summary": "Distinguish process scale-up, IAM-coupled superstructure background scenarios, and dynamic timing boundaries along with their validation limits.",
+      "targets": [
+        {
+          "route": "/docs/book/electricity-service-and-response",
+          "why": "Marginal grids & temporal scales"
+        },
+        {
+          "route": "/docs/book/future-technology-and-context",
+          "why": "Scale-up & prospective scenarios"
+        },
+        {
+          "route": "/docs/book/revisable-judgment",
+          "why": "Seven targeted revision routes"
+        }
+      ]
+    },
+    {
+      "id": "prob-review-judgment",
+      "question": "Given a published comparative LCA report, how can I test whether its conclusions actually hold up?",
+      "summary": "Use worked arithmetic cases and government assessments to audit comparative-assertion eligibility, hotspot thresholds, and critical-review boundaries.",
+      "targets": [
+        {
+          "route": "/docs/book/wall-service-to-comparison",
+          "why": "Service equivalence & paired uncertainty"
+        },
+        {
+          "route": "/docs/book/interpretation-and-limits",
+          "why": "Carrier-bag studies & critical review"
+        },
+        {
+          "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+          "why": "Environment, social & cost double-counting"
+        }
+      ]
+    }
+  ]
+}
