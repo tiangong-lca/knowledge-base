@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-2-ozone-to-particulate-321",
+  "task": "tiangong-lca/knowledge-base#321",
+  "date": "2026-11-27",
+  "scientificApproval": false,
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 2,
+      "resolvedCount": 2,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "checkedSources": [
+        "Existing reviewed catalog evidence for RIVM 2016-0104 (Ch. 6 & Table S2.1), EU EF 3.1 XML / JRC109369 / JRC130796, CML 2002 POCP, ILCD 2011 LOTOS-EUROS, and UNEP/SETAC GLAM particulate matter factors",
+        "Full Part IV premise DAG across Ch. 14–21 and static rendered HTML under out/{zh,en}/"
+      ],
+      "keyFixesApplied": [
+        "Updated publicly rendered scope on cl-pm-conclusion (Ch. 18 Note 45, ZH & EN) from transitioning to water consumption to transitioning to Section 18.5 photochemical ozone formation.",
+        "Updated publicly rendered scope on cl-ozone119-precursor-entry (Ch. 18 Note 46, ZH & EN) from single-pathway net-emission examples to secondary inorganic aerosols and atmospheric deposition, and updated cl-ozone119-printed-limits reasoning/scope (Note 52) to reflect closing Ch. 18 and transitioning to water consumption.",
+        "Added defensive non-empty unique-id validation for appended post-checkpoint sections in scripts/reader-pm-selection.mjs.",
+        "Updated cl-pm-finite-change and cl-b14-reading-checks Part IV pathway roadmap and harmonized Table 4 NOₓ subscript typography."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 4,
+      "resolvedCount": 4,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "keyFixesApplied": [
+        "Moved the GLAM Australian primary PM2.5 appendix pointer above cl-pm-conclusion in both ZH and EN Ch. 18 MDX so Note 45 flows directly into Section 18.5 Photochemical Ozone Formation.",
+        "Updated stale chapter-title reference in cl-pm-finite-change (Ch. 18 Note 26, ZH & EN) to Acidification and Eutrophication.",
+        "Replaced cl-path-operation-indicator with backward in-chapter premise cl-pm-precursor-health on cl-ozone119-precursor-entry (Ch. 18 Note 46) and aligned ZH/EN scope and opening prose.",
+        "Removed literal unrendered Markdown asterisks (*...*) from all Phase 2.2-updated English claim texts and caveats (cl-pm-slope-context, cl-particulate131-ef-ammonia-inversion, cl-tox123-normative-zeros, cl-water125-diagnostic-synthesis, cl-water-marginal-contexts), harmonized cl-path-multiple-paths terminology, aligned publicSummary routes/wording, and fixed EN Reading Guide link label for Ch. 19."
+      ]
+    }
+  ]
+}

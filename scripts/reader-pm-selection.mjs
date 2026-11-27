@@ -171,10 +171,21 @@ function assertPmSelectionResearch(research, closure) {
 /** @param {any} edition @param {any} [accepted] */
 export function assertPmSelectionRegistration(edition, accepted) {
   const matches = edition?.units?.filter(unit => routes.includes(unit.key) || routes.includes(unit.source));
+  const pmRevised = currentRevisions.some(r => r.routes?.includes(pmSelectionRoute));
+  const sectionsMatch = (unit, index) => {
+    const expected = sections(currentBookLayout(`B17:${unit.key}:source`, accepted.units[index]));
+    if (index === 0 && pmRevised && Array.isArray(unit.sections) && unit.sections.length >= expected.length) {
+      const extra = unit.sections.slice(expected.length);
+      const ids = unit.sections.map(s => s?.id);
+      const validExtra = extra.every(s => typeof s?.id === 'string' && s.id.trim() && typeof s?.title === 'string' && s.title.trim());
+      return validExtra && new Set(ids).size === ids.length && same(unit.sections.slice(0, expected.length), expected);
+    }
+    return same(unit.sections, expected);
+  };
   if (!matches || matches.length !== 2 || !same(matches.map(unit => unit.key), routes)
       || matches.some((unit, index) => unit.key !== unit.source || unit.kind !== (index ? 'appendix' : 'chapter') || unit.coverage)
       || matches[0].part !== currentBookLayout('book:part-title:4', '环境后果') || matches[1].part
-      || accepted && matches.some((unit, index) => !same(unit.sections, sections(currentBookLayout(`B17:${unit.key}:source`, accepted.units[index])))))
+      || accepted && matches.some((unit, index) => !sectionsMatch(unit, index)))
     throw new Error('PM selection requires the shared PM chapter and calculation appendix registration');
 }
 
@@ -212,10 +223,18 @@ function validatePmCatalog(catalog, accepted, projection) {
   const postCheckpointAddedClaims = new Set(
     currentRevisions.flatMap(r => (r.claims ?? []).filter(c => c.op === 'add').map(c => c.id)),
   );
+  const preCheckpointClaimFrom = new Map();
+  for (const r of currentRevisions) {
+    for (const c of r.claims ?? []) {
+      if (c.op === 'modify' && !preCheckpointClaimFrom.has(c.id)) preCheckpointClaimFrom.set(c.id, c.from);
+    }
+  }
   for (const [kind, field, referenced, frozen] of reverseUses) {
-    const actual = catalog.claims.filter(row => row.status === 'reviewed' && !pmIds.has(row.id)
-      && !postCheckpointAddedClaims.has(row.id)
-      && row[field].some(id => referenced.has(id)));
+    const actual = catalog.claims.filter(row => {
+      if (row.status !== 'reviewed' || pmIds.has(row.id) || postCheckpointAddedClaims.has(row.id)) return false;
+      const effective = preCheckpointClaimFrom.get(row.id) ?? row;
+      return effective[field].some(id => referenced.has(id));
+    });
     if (!exactIds(actual, currentBookLayout(`B17:reverse-${kind}-consumers`, frozen.filter(row => row.status === 'reviewed').map(row => row.id))))
       errors.push(`PM selection unreviewed external ${kind} consumer roster differs`);
   }
