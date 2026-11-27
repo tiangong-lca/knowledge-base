@@ -75,10 +75,10 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   if (mergeByBookUnit.has(closingSynthesisKey)) assertMergedUnit(closingSynthesisKey, 'B32');
   else assertClosingSynthesisRegistration(edition);
   if (!removedRouteSet.has(cleanerProductionRoute)) assertCleanerProductionRegistration(edition);
-  assertFunctionalReferenceRegistration(edition);
+  if (!removedRouteSet.has(functionalReferenceSupplement)) assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
   assertHybridInventoryRegistration(edition);
-  assertExchangeSemanticsRegistration(edition);
+  if (!removedRouteSet.has('/docs/flows') && !removedRouteSet.has('/docs/characterization')) assertExchangeSemanticsRegistration(edition);
   const assembly = units.find(unit => unit.key === frameworkUnitKey);
   if (mergeByBookUnit.has(frameworkUnitKey)) {
     assertMergedUnit(frameworkUnitKey, 'B04');

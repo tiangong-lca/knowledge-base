@@ -13,8 +13,8 @@ const bumpNums = s => s.replace(/\d+/g, n => String(Number(n) + 1));
  */
 export function formatZhReaderLocator(raw) {
   if (!raw || typeof raw !== 'string') return raw ?? '';
-  if (!ZH_ZERO_INDEX_RE.test(raw)) return raw;
-  let out = raw;
+  let out = raw.includes('`') ? raw.replace(/`([^`]+)`/g, '“$1”') : raw;
+  if (!ZH_ZERO_INDEX_RE.test(out)) return out;
   out = out.replace(/指定\s*(\d+)\s*个扫描页[，,]\s*见\s*pdfIndices/gi, '指定 $1 个扫描页');
   out = out.replace(/（零基索引\s*[0-9、，,–—\-]+）/g, '');
   out = out.replace(/[；;]\s*零基索引\s*[0-9、，,–—\-]+(?=）)/g, '');

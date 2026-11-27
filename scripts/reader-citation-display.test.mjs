@@ -45,8 +45,9 @@ test('formatZhReaderLocator converts all 0-based PDF/NEPIS/notebook index forms 
   assert.equal(formatZhReaderLocator('notebooks/320.ipynb，零基单元 3–5、7。'), 'notebooks/320.ipynb，第 4–6、8 单元。');
   assert.equal(formatZhReaderLocator('印刷 pp155–156；PDF zero indexes0–1；§§1–2'), '印刷 pp155–156；PDF 第 1–2 页；§§1–2');
   assert.equal(formatZhReaderLocator('指定45个扫描页，见pdfIndices'), '指定 45 个扫描页');
+  assert.equal(formatZhReaderLocator('Supporting Information §2 输入表，S5 `Power losses` 行'), 'Supporting Information §2 输入表，S5 “Power losses” 行');
   for (const ev of catalog.evidence) {
-    assert.doesNotMatch(formatZhReaderLocator(ev.locator), /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)/i);
+    assert.doesNotMatch(formatZhReaderLocator(ev.locator), /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)|`/i);
   }
   for (const r of readings.readings) {
     for (const p of r.passages ?? []) {

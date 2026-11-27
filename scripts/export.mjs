@@ -225,6 +225,14 @@ export async function exportArtifacts(validateSource, validateOutput) {
   writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中英双语书稿。网站：天工 LCA 知识库。\n\n## 中文版\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [发展大事记](${routeBase}/timeline/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n${enSection}`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
+  if (existsSync('out/en/print/index.html')) {
+    const expectedUnits = getPresentationUnits('book').length;
+    const enPrintHtml = readFileSync('out/en/print/index.html', 'utf8');
+    const enPrintArticles = (enPrintHtml.match(/<article\s+class="print-chapter\b/g) ?? []).length;
+    if (enPrintArticles !== expectedUnits) {
+      throw new Error(`English print edition rendered ${enPrintArticles} units, expected ${expectedUnits}`);
+    }
+  }
   emitRouteRedirects('out');
   console.log(`Public export verified: ${published.claims.length} claims; source ${sourceCommit}${dirty ? ' (working preview)' : ''}`);
 

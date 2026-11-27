@@ -171,7 +171,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
     const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
     if (processErrors.length) throw new Error(processErrors.join('\n'));
   }
-  if (!isRevised('/docs/book/service-and-reference')) {
+  if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit')) {
     const functionalErrors = validateFunctionalReferenceCoverage(edition,rawSources,functionalAccepted,catalog,functionalProse);
     if (functionalErrors.length) throw new Error(functionalErrors.join('\n'));
   }
@@ -179,7 +179,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
     const errors = validateFrameworkCoverage(edition,rawSources,accepted);
     if (errors.length) throw new Error(errors.join('\n'));
   }
-  if (!isRevised('/docs/book/exchange-and-elementary-flow')) {
+  if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization')) {
     const exchangeErrors = validateExchangeSemanticsCoverage(edition, rawSources, undefined, catalog, exchangeProse);
     if (exchangeErrors.length) throw new Error(exchangeErrors.join("\n"));
   }

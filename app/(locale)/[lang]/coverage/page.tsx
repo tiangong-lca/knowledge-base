@@ -205,7 +205,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <section className={styles.sectionBlock} aria-labelledby="en-guide-topics">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-topics">Topical Essays</h2>
-              <p className={styles.sectionMeta}>{topics.length} standalone conceptual and methodological essays</p>
+              <p className={styles.sectionMeta}>{topics.length} standalone methodological reading guides complementing the main chapters (historical source criticism and database system models—aligned across web and print)</p>
             </div>
             <ul className={styles.cardGrid}>
               {topics.map((unit, idx) => {
@@ -453,7 +453,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <section className={styles.sectionBlock} aria-labelledby="guide-topics" data-guide-section="topics">
           <div className={styles.sectionHeader}>
             <h2 id="guide-topics">概念与实践专题</h2>
-            <p className={styles.sectionMeta}>{topics.length} 篇独立专题，配合正文辨析核心概念与软件语义</p>
+            <p className={styles.sectionMeta}>{topics.length} 篇独立方法论导读，分别聚焦史料核验原则与背景数据库系统模型辨读（与连续版目录一致）</p>
           </div>
           <ul className={styles.cardGrid} data-guide-topics-list="">
             {topics.map(unit => {
