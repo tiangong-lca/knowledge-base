@@ -12,6 +12,7 @@ export function EnHomePage() {
   const chapters = units.filter(unit => unit.kind === 'chapter');
   const topics = units.filter(unit => unit.kind === 'topic');
   const appendices = units.filter(unit => unit.kind === 'appendix');
+  const appendixRange = appendices.length > 1 ? `A–${String.fromCharCode(64 + appendices.length)}` : 'A';
 
   return (
     <main id="main-content">
@@ -25,7 +26,7 @@ export function EnHomePage() {
           </h1>
           <p className="home-lead">
             How does the world behind a product enter calculation and become an environmental judgment?
-            This complete meaning-equivalent English edition spans all {readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices.
+            From early container ledgers to modern methodological debates, follow concepts, models, and primary evidence across life cycle assessment.
           </p>
           <div className="home-actions flex-wrap">
             <Link className="primary-link whitespace-nowrap" href="/en/docs/">
@@ -106,7 +107,7 @@ export function EnHomePage() {
       <section className="reading-section">
         <div className="section-heading">
           <h2>Topical Essays</h2>
-          <Link href="/en/coverage/#en-guide-appendices">View Appendices A–E</Link>
+          <Link href="/en/coverage/#en-guide-appendices">View Appendices {appendixRange}</Link>
         </div>
         <div className="chapter-list">
           {topics.map((unit, idx) => {
@@ -129,10 +130,10 @@ export function EnHomePage() {
 
       <section className="evidence-overview">
         <div>
-          <h2>Trace Claims Back to Primary Sources</h2>
+          <h2>Trace Arguments Back to Primary Sources</h2>
           <p>
             Chapter-end notes record primary sources, exact passage locators, validity scopes, and caveats. Use the reference apparatus below
-            to compare frameworks, verify dates, or inspect every reviewed claim.
+            to compare frameworks, trace historical milestones, or inspect every note.
           </p>
         </div>
         <div className="overview-links">
@@ -140,16 +141,16 @@ export function EnHomePage() {
             {UI_SURFACES.bookGuide.en}<span>{readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices</span>
           </Link>
           <Link href="/en/timeline/">
-            {UI_SURFACES.timeline.en}<span>Milestones from 1969 to 2026 with source links</span>
+            {UI_SURFACES.timeline.en}<span>Key milestones from 1969 to 2026 with source links</span>
           </Link>
           <Link href="/en/research/">
             {UI_SURFACES.references.en}<span>Primary bibliography and passage-level citation locators</span>
           </Link>
           <Link href="/en/concepts/">
-            {UI_SURFACES.conceptIndex.en}<span>Core LCA terminology and cross-framework mappings</span>
+            {UI_SURFACES.conceptIndex.en}<span>Core LCA terms, definitions, and cross-framework mappings</span>
           </Link>
           <Link href="/en/claims/">
-            {UI_SURFACES.chapterNotes.en}<span>All chapter notes with sources, scopes, and caveats</span>
+            {UI_SURFACES.chapterNotes.en}<span>Chapter-end notes with supporting sources, scopes, and caveats</span>
           </Link>
           <Link href="/en/changes/">
             {UI_SURFACES.revisionsErrata.en}<span>Reader-facing revisions and errata reporting</span>

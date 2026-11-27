@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "id": "phase1b-final-delivery-prose-310",
+  "date": "2026-11-27",
+  "task": "#310",
+  "title": "统一首页、导览、打印版编写说明与章节提要的最终出版措辞",
+  "rationale": "将中英文首页、全书导览、打印版编写说明、网站元描述及部分章节与大事记附录提要润色为面向读者的最终出版表述，改为动态统计部/章/附录/节点数量，并使英文版编写说明与中文版在语义层面对等。",
+  "routes": [
+    "/",
+    "/coverage",
+    "/print",
+    "/docs/appendices/lca-timeline",
+    "/docs/book",
+    "/docs/book/data-applicability",
+    "/docs/book/uncertainty-and-variability",
+    "/docs/book/data-quality-and-probability",
+    "/docs/book/product-footprint-rules-and-practice",
+    "/docs/book/social-assessment-objects-and-meaning",
+    "/docs/book/cost-perspectives-and-sustainability-combination"
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [
+    {
+      "op": "modify",
+      "path": "content/docs/appendices/lca-timeline.mdx",
+      "fromSha256": "e87e9df2419a3c6bb39affacbf261329caaeb633c19bae0866071ae632e94610",
+      "toSha256": "a1c003d3b19abcfde6722024d6442452a184376136a4dc7f3eae0eb6e21fcf78",
+      "previous": "---\ntitle: 生命周期评价发展大事记\ndescription: 1969–2026 年生命周期评价代表性事件、框架演进、数据库与法规节点的可视化时间线与一手来源核验状态。\n---\n\n## 演进脉络与核验说明 [#演进脉络]\n\n本附录按五个历史时期（早期资源账本、框架成型与分化、标准化与模型深化、指南体系与区域化、法规强制与前瞻动态）与四条方法主线（框架与标准、清单与数据库、影响评价方法、经典案例与政策）梳理生命周期评价自 1969 年至 2026 年的 27 个关键节点。\n\n所有节点均公开标注一手来源核验状态：标为“已核对一手来源”的 22 个节点直接对应本库已核读的原始报告、方法论文或官方法规，可点击来源标签直达[参考文献与出处](/sources/)；尚未在本库直接核读原件全文的 5 个早期或付费标准节点如实公开标为“待核”，并说明当前核验边界。本附录亦提供独立浏览入口[发展大事记](/timeline/)。\n\n## 1969–2026 年发展大事记 [#大事记总览]\n\n<LcaTimeline embedded />\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/index.mdx",
+      "fromSha256": "77bae13b07b2d8f6c5c1f1fd4106de3d929eb678b43a36ee69650180d47c3e62",
+      "toSha256": "30726b77146171bce8cabf1d862a390e41bcb2a619de8f5f05c4c5c9099afb2c",
+      "previous": "---\ntitle: 阅读导论\ndescription: 按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。\n---\n\n本书围绕一个问题展开：一项环境判断需要哪些依据？先明确所比较的服务，再把提供服务所需的活动组织为系统，据此计算排放和资源需求。环境模型进一步估计这些量可能造成的后果。使用结果时，还须回到原来的问题，判断数据和分析能够支持什么结论。\n\n<ReaderSection id=\"问题与历史\" />\n<ReaderSection id=\"用途与地区语境\" />\n\n第一部沿[生命周期视角](/docs/book/integrative-ambitions/)、[饮料容器账本](/docs/book/early-container-comparisons/)、[容器比较与政策判断](/docs/book/early-container-policy-and-systems/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)与[清洁生产中的生命周期评价](/docs/book/cleaner-production-purpose-and-prospects/)展开：先从早期饮料容器核算与政策分析辨明两类问题所需的不同证据，再系统对照 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段组织、比较断言门槛、影响加权与审验鉴证上的共同核心与分歧，最后考察清洁生产中的应用条件。\n\n<ReaderSection id=\"比较对象与方法选择\" />\n<ReaderSection id=\"从系统关系到计算结果\" />\n\n第二部沿[功能参照](/docs/book/service-and-reference/)、[过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)与[混合清单](/docs/book/inventory-boundary-and-hybrid/)展开，说明系统如何建立与闭合：从功能单位、声明单位与活动层参考产品的四体系对照出发，经线性过程配平、流与交换边界及零/缺项分辨，到过程截断阈值、资本品边界与混合清单防重叠的跨体系比较。第三部沿[共同生产](/docs/book/joint-production/)、[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)展开，区分如何分担已有负担与一项选择会改变哪些供给活动，并对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）在替代边界、市场约束、电力尺度与循环足迹公式（CFF）上的条件与分歧。\n\n清单记录资源采掘、土地利用、取耗水与物质排放。第四部沿[中点与终点](/docs/book/midpoint-endpoint-value-choices/)、[气候当量](/docs/book/climate-equivalence/)、[酸化与营养富集](/docs/book/acidification-and-nutrient-pathways/)、[颗粒物排放与健康损害](/docs/book/particulate-emissions-and-health/)、[耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)与[毒性路径](/docs/book/usetox-pathways-and-boundaries/)展开，系统对照 ReCiPe 2016、欧盟环境足迹（EF 3.1）、GLAM、IPCC AR6、AWARE 与 USEtox，解释清单量如何经由不同环境机制转化为中点与终点指标。阅读时可以选取一个表征因子，追查它所对应的干预对象、空间背景、时间窗口与证据边界。第五部沿[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)与[环境损害估值](/docs/book/lime-preferences-and-damage-weights/)考察跨类别取舍，辨析政策目标距离、混合稳健度权重、空间表征与归一化分母耦合、保护领域截停以及陈述偏好货币估值如何改变方案排序与公开比较边界。\n\n<ReaderSection id=\"时间未来与相邻评价\" />\n\n不同章节中的“时间”也可能表示不同对象。气候计算关心排放发生的时刻和响应的计算终点，[未来技术与情景](/docs/book/future-technology-and-context/)则需要设定工艺规模及其供给背景。第五部后两章通过[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)和[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)进一步区分产品与组织参照、风险工时量表与不可抵消的基本权利底线，以及主体成本账本、异质货币消重、多准则否决阈值与地球边界配额分配；合并使用前，仍须明确某个量表示谁的经历、权利或支出。\n\n<ReaderSection id=\"数据与审查\" />\n<ReaderSection id=\"数据质量与不确定性\" />\n\n第六部聚焦现代生命周期评价不可或缺的上游基础设施：从[背景数据库的发展历程与全谱系版图](/docs/book/lca-database-landscape-and-history/)出发，经[主流数据库的方法论底层分歧](/docs/book/database-methodological-divergences/)、[基本流与底层 LCIA 耦合：为何 Flows 无法无损映射](/docs/book/elementary-flows-and-lcia-coupling/)与[过程与产品流为何难以跨库映射](/docs/book/process-and-technosphere-mapping-limits/)，最后在[数据交换格式、映射基础设施与互操作治理边界](/docs/book/exchange-formats-and-interoperability-governance/)确立三级互操作红线与透明披露清单。\n\n第七部考察结果所依据的数据、模型和规则。取得数据并不意味着它就适合当前对象，[数据适用性](/docs/book/data-applicability/)说明背景数据集的适用性、区域化覆盖、审查与换版边界；[变异与不确定性](/docs/book/uncertainty-and-variability/)辨明五类误差层次及全局灵敏度与蒙特卡洛次数的失效边界；[质量评分与概率](/docs/book/data-quality-and-probability/)借柏林杯重调查与跨体系对照区分谱系方差、序数评级门槛与定性披露；[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)则说明自愿与法定规则如何把服务定义、活动量、合格评定与比较条件连成一体。\n\n<ReaderSection id=\"解释与使用\" />\n<ReaderSection id=\"完整做一遍\" />\n\n第八部先用[墙面服务比较](/docs/book/wall-service-to-comparison/)复算假想条件并对照国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的比较断言与成对不确定性门槛；再通过[购物袋研究](/docs/book/interpretation-and-limits/)对照英国环境署与丹麦环保署评估及国际解释审查规则，区分实际资料能解释的差异与需另行佐证的建议；随后借[未来技术与情景](/docs/book/future-technology-and-context/)辨析前瞻性、事前与动态评价中的工艺放大、情景背景与时间边界。\n\n<ReaderSection id=\"把各章接起来\" />\n\n收束章[可修订的判断](/docs/book/revisable-judgment/)结合容器、墙面和购物袋案例，将全书的服务界定、系统边界、背景数据、影响路径、价值取舍、不确定性与审查体制收束为七类定向修订路由。把研究对象、数量关系、适用边界与证据来历说明白，后续研究才知道出现新资料时应重算哪一步、保留哪些既有依据，以及哪些推论不得越界。\n\n初次系统学习可以顺读八部。有清单计算基础的读者，也可以从过程网络或环境路径开始，遇到定义和历史身份问题时再查前文。若想先看一次完整比较，可以从墙面和购物袋案例入手，沿注释及章内链接查阅服务、矩阵或气候指标。三条阅读路线采用同一套案例条件和文献依据。\n\n**标准文本核验边界说明**：本书全部跨体系条款、数值与算例比较均建立在已逐页核验的公开获取一手报告、同行评议论文与欧盟官方公报之上。国际标准 ISO 14040/14044:2006、ISO 14067:2018、ISO 14025:2006、ISO/TS 14071:2014、EN 15804+A2 及我国国家标准 GB/T 24067-2024 属受版权或付费授权保护文本，除已注明核读的公开预览节外，本书未持有其授权全文，不在正文转述或补造未核验的付费条文逐字要求；实际开展法定申报或认证审查时，须以现行有效授权原件为准。\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/data-applicability.mdx",
+      "fromSha256": "f413fd2dfef8abc27fbe7c5e3095a0e49c3f1776248189162095255b8f195a5c",
+      "toSha256": "880554ad5126e5dc66a208d4805890620afe04e54851f47b04c5496b6fd50863",
+      "previous": "---\ntitle: 数据适用性\ndescription: 围绕过程数据的表示角色、固有与研究语境代表性、多维质量聚合算式、验证与独立评审门槛、五维合规声明及参考包换版补缺规则，系统比较国际指南、欧盟环境足迹、瑞士 ecoinvent 数据库与天工公开规范的共同条件与结论反转。\n---\n\n## 数据所代表的过程 [#表示对象]\n\n<Prose ids=\"cl-db2011-user-and-manager cl-db2011-represented-object cl-db2011-scope-examples\" />\n\n<Prose ids=\"cl-dapp147-dataset-roles-and-system-linking cl-dapp147-intrinsic-vs-context-representativeness\" />\n\n## 数据的质量信息 [#质量信息]\n\n<Prose ids=\"cl-db2011-representativeness-and-precision cl-db2011-documenting-number\" />\n\n<Prose ids=\"cl-dapp147-quality-architectures-and-prerequisite-split\" />\n\n<Prose ids=\"cl-db2011-aggregation-information cl-db2011-missing-and-zero\" />\n\n<Prose ids=\"cl-dapp147-weakest-link-vs-mean-and-80pct-masking\" />\n\n表 1 五套主要数据体系在质量维度、单维缺省上限、聚合算式及准入用途上的结构分工。\n\n| 比较维度 | UNEP/SETAC（2011） | ILCD 详细指南（2010） | ILCD 入门级（1.1 版，2012） | 欧盟建议书 2021/2279 与 EF 指南 2.0 | ecoinvent 第 3 版（2013） |\n| --- | --- | --- | --- | --- | --- |\n| 评价对象层级 | 单元过程或聚合过程数据集文档 | 过程数据集整体（区分单元过程、部分终止系统、清单结果） | 过程数据集整体（不作质量分档） | 公司特定数据集、次级数据集及研究语境最相关过程 | 除参考产品外的单条输入输出交换流 |\n| 计分质量指标 | 表 4.1 定性说明精密度、完整性、代表性、一致性、重现性 | 技术、地域、时间代表性加完整性、精密度、方法学共 6 项（1—5 分） | 质量合规固定标为“未定义”（Not defined），按国际标准准则陈述质量并记述三项代表性 | 技术（TeR）、地域（GeR 或 GR）、时间（TiR）代表性与精密度（P）共 4 项（1—5 分） | 基本不确定度加可靠性、完整性、时间、地域、进一步技术相关性 5 项谱系分 |\n| 完整性与方法学 | 与代表性、精密度并列作定性文档审查 | 纳入 6 项打分指标参与式 3 合成 | 遵循国际标准过程方法并记录建模与分配，不强制手册方法 | 移出算式设为二元最低准入前提，XML 字段标为“不适用”（Not applicable） | 方法学由主库编审规则统一约束，完整性为第 2 项谱系方差指标 |\n| 未知项与单项封顶 | 要求区分真实零值与缺失值并文字交代缺口 | 未评估或未知项赋 5 分，不适用赋 0 分并扣减有效指标数；无独立单项硬顶 | 无量化总分与单项上限 | 供应端次级数据每项加权分 ≤ 3.0；公司特定数据 P ≤ 3、三项代表性 ≤ 2 | 未评估交换流默认取最差谱系档 5 分，无数据集级淘汰上限 |\n| 聚合算式或映射 | 不设标量聚合公式 | 式 3 最弱项五倍权重：(六项和 + 4×最弱分) / (有效项数 + 4) | 不计算总体数据质量评级（研究端引用时亦禁止重算） | 式 19 与式 20 四项算术均值；公司特定数据按 80% 阈值分别筛活动数据与直接流，次级数据按单一总分前 80% 重标定加权 | 对数正态底层正态方差 6 项直接相加（5 分谱系附加方差和为 0.21） |\n| 分档门槛与用途 | 支撑使用者按目标与范围作人工适用性判断 | 表 7 三档：≤ 1.6 高质量、高于 1.6 至 ≤ 3 基本质量、高于 3 至 ≤ 4 数据估计 | 供数据网络节点起步准入；在欧盟研究中作 ≤ 10% 单一总分代理 | 表 22 五档（≤ 1.5 极优、高于 1.5 至 ≤ 2.0 优良、高于 2.0 至 ≤ 3.0 良好、高于 3 至 ≤ 4.0 尚可、高于 4 差）；数据需求矩阵规定公司特定数据 ≤ 1.5、合规次级数据 ≤ 3.0 | 静态清单取中位数，方差专供蒙特卡洛清单不确定性传播 |\n\n## 数据的审查范围 [#审查范围]\n\n<Prose ids=\"cl-db2011-review-relative-to-criteria cl-db2011-review-questions cl-db2011-validation-context\" />\n\n<Prose ids=\"cl-dapp147-validation-vs-review-and-team-thresholds\" />\n\n<Prose ids=\"cl-db2011-recommendation-strength cl-db2011-review-of-guidance\" />\n\n<Prose ids=\"cl-dapp147-five-aspect-compliance-and-uuid-semantics\" />\n\n## 数据换版与补缺 [#版本变化]\n\n<Prose ids=\"cl-db2011-versioned-confidence\" />\n\n<Prose ids=\"cl-dapp147-package-migration-inheritance-and-surveillance cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge\" />\n\n表 2 五套体系在校验评审门槛、合规声明结构、区域残差、换版重审与次级补缺上的制度规则对照。\n\n| 制度维度 | UNEP/SETAC（2011） | ILCD 2010 与入门级 1.1 版 | 欧盟建议书 2021/2279 与 EF 指南（2.0 及 3.1 增补） | ecoinvent 第 3 版（2013） | 天工公开规范 TIDAS（v0.3.0） |\n| --- | --- | --- | --- | --- | --- |\n| 自动校验与人工审查 | 第 2 章与第 4 章区分手工或自动验证同独立系统审查 | 总论第 11 章将交付物评审矩阵移交专卷；入门级允许 1 名外部免报告或 1 名内部附报告 | 次级入库仅准许至少 2 名含外部专家联合评审并禁用单人外审；研究验证须达 6 分且初级数据必做现场核查，Look@LCI 偏差 ≤ 1% | 在线 ecoEditor 自动验证写入第 3340 字段；转换活动目标至少 3 名专家（含 4 类横向编辑）审查，3.0 版如实披露缺口 | 过程模式支持单条或数组审查历史，含“Not reviewed”共 6 值枚举且报告引用可选 |\n| 合规声明矩阵结构 | 区分强烈推荐（shall）、推荐与建议，保留有依据少数意见 | 表 9 确立质量、方法、命名、审查、文档五维；完整合规设 12 套情景乘质量 UUID，入门级另设独立 UUID | 表 1 强制并列 6 组（无类别规则时 5 组）UUID，国际标准与流列表维度按职责精确标“Not defined” | 按主库统一活动命名、地理父子继承与系统模型规则管理，不用多系统 UUID 并列块 | 公开规则定义语义与格式谓词，刻意排除严重度、阶段归属与默认阻断策略 |\n| 区域残差与混合命名 | 建议记录聚合范围、底层数据可得性与分配方式 | 区分单工序或黑箱单元过程、部分终止系统与清单结果 | 中心数据集标部分终止系统；非主要支撑子过程标单工序单元过程且严禁脱离父系统复用 | 强制先建全球父过程 GLO 并按产量差额自动算 RoW；严格拆分转换活动与消费组合市场活动 | 生产组合应具成文权重；电网损耗或 1:1 变压节点不自动转消费组合，绿证不改写物理发电技术 |\n| 版本演进与失效红线 | 建议报告技术、资料或基本流更新及新版实际受审范围 | 合规源数据集基线版本号 01.02.000（或更高可用版），网络建设过渡期最长 3 年 | 旧版转换数据降为代理；JRC130796 实测 2,752 份数据集中 6%、10%、13% 前三主类易位；报告最长 3 年有效，单类恶化超 10.0% 或总分恶化超 5.0% 强制更新 | 新增局部数据联动改写 RoW 与市场份额；3.0 版记录未同步更新 GLO 时负交换置零或复制 GLO 例外 | 强制要求 NN.NN 或 NN.NN.NNN 定长版本号随内容变更严格单调递增 |\n| 缺口补齐与截断上限 | 表 2.1 末行允许在无更佳资料时用足够一致数据补缺并逐项说明理由 | 入门级允许挥发性有机物（VOC）等部分聚合基本流作为起步过渡 | 四级次级阶梯（EF 合规、EF 代理、≤ 10% 单一总分 ILCD-EL 代理、剔除并报缺口）；物料、能量与各影响类别累计截断均低于 3.0%；2026 过渡指导预计延用至 2028 年 | 未指明子区室仅在无具体信息时使用；除特定水体总和指标等例外，总和排放须扣除已单报物质以防双计 | 消费方产品可设定业务豁免与阶段门禁，但不得把未通过公开规则定义的记录改写为通过 |\n\n<Prose ids=\"cl-db2011-conditional-use\" />\n\n继续阅读：[变异与不确定性](/docs/book/uncertainty-and-variability)。\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/uncertainty-and-variability.mdx",
+      "fromSha256": "2411e752800911f1f0de4d390370de421b5d8045c9bdd50bb56701fc79a0ae4c",
+      "toSha256": "4649e3430499b97d83bf898d793d9cdf5212d6af8766a69395459490e45c3f41",
+      "previous": "---\ntitle: 变异与不确定性\ndescription: 区分固有变异、认识不确定性与方法选择，跨体系对照国际参考生命周期数据系统（ILCD）与欧盟产品环境足迹（PEF）的不确定性与热点规则、一阶泰勒与随机全局灵敏度失效边界、蒙特卡洛次数陷阱及求解数值稳定性。\n---\n\n## 分布与估计对象 [#估计对象]\n\n<Prose ids=\"cl-unc-types cl-unc-target cl-unc-sd-sem cl-unc149-variability-vs-epistemic\" />\n\n## 参数与模型选择 [#不确定性来源]\n\n<Prose ids=\"cl-unc-parameters cl-unc-model cl-unc-choices cl-book-unc-separate cl-unc149-framework-comparison\" />\n\n表 1 五类误差与差异层次的数学表达及 ILCD / PEF 制度处理对照。\n\n| 误差或差异层次 | 本质与可缩减性 | 恰当数学或程序表达 | ILCD 2010 指南处理 | 欧盟建议书 2021/2279（PEF）处理 | 常见误用陷阱 |\n| --- | --- | --- | --- | --- | --- |\n| 固有变异（厂际、地域、时间） | 系统内在真实散布；不能靠增加抽样消除，须分区域／工艺／时段刻画 | 总体分布与标准差（SD）、子总体分层 | 区分来源变异与均值估计，按目标界定代表性 | 经技术、地域、时间代表性评分与细化活动数据反映 | 用均值标准误掩盖个体工厂或流域极端值 |\n| 参数认识不确定性 | 测量精度不足或资料缺口；可经补充实测与文献核查缩减 | 样本均值标准误（SEM）、概率密度函数与相关性 | 清单与影响层可配合蒙特卡洛计算并按图 26 优先改进 | 全篇无蒙特卡洛强制条款，折入数据质量评级精密度项 P | 以重复模拟替代缺失观测或把模拟次数当样本量 |\n| 模型结构不确定性 | 空间聚合、机制简化或边界遗漏；不能靠收窄参数分布补回，须改进结构 | 机制对照、高分辨率模型或结构残差分析 | 规定条款 I.a 明示计算不确定度常遗漏系统性偏差 | 第 6.2 节完整性与一致性稳健性检验配合边界规则 | 仅报告极窄参数误差棒却忽略流域或排放路径丢失 |\n| 方法与规范选择不确定性 | 功能单位、分配、表征与赋权约定；属研究设定，不适用抽样缩减 | 离散情景分析与条件对照，默认不赋等概率 | 目标范围、多功能性与不同影响评价（LCIA）方法以情景并列检验 | 由统一产品规则与强制热点门槛锁定，第 6.2 节作敏感度检视 | 将两种规范情景当成随机抽样或混算均值与方差 |\n| 数值求解不稳定性 | 矩阵条件数、舍入与算法误差；独立于数据抽样，须靠数值算法诊断 | 矩阵病态（条件数）分析、算法稳健性与收敛诊断 | 与清单数据不确定性分属不同层次 | 依赖标准化参考包与合规工具校验，不替代算法分析 | 把矩阵病态导致的解跳变误归咎于原始工厂数据 |\n\n## 求解的数值稳定性 [#数值可靠性]\n\n在检视矩阵求解本身的数值稳定性之前，先依次核查全局灵敏度分析、一阶线性近似的失效边界以及蒙特卡洛模拟次数陷阱，以免把传播算法或抽样设定的失真误判为数据或矩阵求解问题。\n\n<Prose ids=\"cl-unc149-local-vs-global-sa cl-unc149-taylor-vs-sampling cl-unc149-gsa-outliers-nonlinearity cl-unc149-mc-runs-precision-vs-accuracy cl-unc149-comparative-paired-and-pvalue cl-unc149-pedigree-mc-boundary\" />\n\n表 2 局部与全局不确定性传播及灵敏度分析方法的输入需求、高离散表现与结论边界对照。\n\n| 方法类别 | 所需输入信息 | 计算代价 | 高离散度（CV = 30%）与偏斜表现 | 交互、离群值与相关性处理 | 合法支持的结论边界 |\n| --- | --- | --- | --- | --- | --- |\n| 局部单因子灵敏度（OAT／偏导数） | 仅基准点估计值 | 低（按参数逐一微扰） | 忽略各参数真实离散跨度，无法反映右偏均值上移 | 不能捕捉多参数同时变化的交互效应 | 仅用于初步识别基准点附近的边际斜率 |\n| 一阶泰勒关键议题分析（KIA） | 中心值与离散度（无需完整分布） | 1 次解析计算（Groen 等人 2017 表 3，最快） | 电力案例方差低估约 33%、白鱼低估约 20%，且漏掉均值上移 | 仅作一阶线性展开，不输出完整概率分布 | 仅适用于低离散度（如 CV = 5%）近似线性模型的快速筛查 |\n| 标准化回归平方（SRC） | 完整概率密度函数与随机样本 | N 次抽样运行（Groen 等人 2017 表 3） | 均值与方差贴近基准，但电力案例解释份额跌至 81.7% | 对右尾离群值敏感；常规实现假定输入无相关 | 适用于低至中等离散度、近似线性且离群值不突出的模型 |\n| 随机平衡设计（RBD） | 完整概率密度函数与分层样本 | N 次抽样运行（Groen 等人 2017 表 3，后处理快于 SRC） | 电力案例解释份额跌至 79.7%；白鱼 115 参数案例为 94.0% | 易受高离散度右尾影响且低贡献参数可能高估；假定输入无相关 | 适用于参数较多且需快速频域分解的探索性筛查 |\n| 斯皮尔曼秩相关平方（SCC） | 完整概率密度函数与随机样本 | N 次抽样运行（Groen 等人 2017 表 3，与 SRC 共用样本） | 电力案例解释 94.0%、白鱼 115 参数案例解释 94.5% | 秩变换显著抑制右尾离群值；仍假定输入无相关 | 适用于高离散度单调非线性模型的稳健主因排序 |\n| 索博尔一阶与总效应（Sobol SME／STE） | 完整概率密度函数与双样本矩阵 | 表 3 计作 2N 基础矩阵（含混合矩阵评估，最慢） | 电力案例 SME 91.6%、STE 110%，稳健捕捉 18.4 个百分点交互差额 | 可显式分离主效应与交互及非线性表征效应 | 适用于高离散度、强交互或非线性中点／终点路径的深度诊断 |\n| 差值协方差蒙特卡洛＋样本量上限 | 含共享过程结构与真实样本量 n 的输入 | 随 N_run 线性增长（Heijungs 2020 第 1 节：单次 1 秒至 5 分钟） | 可保留真实分布形态，但大 N_run 会把均值标准误压至虚假极小 | 宜对两系统之差计入共享过程协方差；谱系分布缺真实样本量 | 仅可在区分模拟误差与实测样本量、且不把无显著差异当相等的前提下支持比较推断 |\n\n<Prose ids=\"cl-unc-numerical cl-book-unc-bridge\" />\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/data-quality-and-probability.mdx",
+      "fromSha256": "fb4d207da23d3e937625826a635a3f001ec6793b80899f711e473f3441ca9b4a",
+      "toSha256": "f6d965ce1413567faa07975c7d275f8b3cccd214baf84da272c104ef5879e933",
+      "previous": "---\ntitle: 质量评分与概率\ndescription: 从柏林杯重调查看平均值的估计精度与杯重散布有何不同，再说明怎样用这批资料提出完整性因子，并比较 ecoinvent 谱系方差、欧盟产品环境足迹（PEF）序数数据质量评级（DQR）门槛与温室气体核算体系（GHG Protocol）定性披露对质量评分的不同用法。\n---\n\n## 杯重调查与估计 [#杯重调查与估计]\n\n<Prose ids=\"cl-ped-study-question cl-ped-population cl-ped-design cl-ped-weighted-mean cl-ped-design-variance\" />\n\n## 散布与估计精度 [#散布与估计精度]\n\n<Prose ids=\"cl-ped-cluster-arithmetic cl-ped-population-spread cl-ped-poststratification cl-ped-stratified-conflict\" />\n\n表 1 柏林杯重调查中杯重散布与不同抽样估计精度对照（均值和方差取自报告，其余按上文算式复算）。\n\n| 比较对象 | 报告所列的均值和方差 | 据报告复算的结果 |\n| --- | --- | --- |\n| 整群路线的均值精度 | 均值5.6589 g；均值估计方差0.0072 g² | 标准误约0.0849 g；相对标准误约1.4995% |\n| 总体杯重的散布 | 杯重方差0.72 g²；以5.6474 g为比较分母 | 标准差约0.8485 g；相对标准差约15.0251% |\n| 后分层的均值精度 | 均值5.7245 g；均值估计方差0.0014 g² | 标准误约0.0374 g；相对标准误约0.6536% |\n| 分层路线的均值精度 | 均值5.6474 g；均值估计方差0.0034 g² | 相对标准误约1.0325%；原文讨论写0.07%，尚不相合 |\n\n“总体杯重的散布”一行说明杯重相差多大，其余三行说明用各自的方法估计平均杯重有多精确。相对标准差和相对标准误都可以用百分数表示，解释时仍要区分它们。\n\n<Prose ids=\"cl-ped-estimate-boundary\" />\n\n## 完整性评分的校准 [#完整性评分的校准]\n\n<Prose ids=\"cl-unc-scores cl-unc-calibration cl-ped-subsets cl-ped-score-mapping cl-ped-gsd-definition cl-ped-completeness-ratio cl-ped-factor-values cl-ped-calibration-boundary cl-unc-calibration-limits\" />\n\n## 概率模型与参数 [#概率模型与参数]\n\n<Prose ids=\"cl-ped-ratio-rule cl-ped-ratio-example cl-ped-independent-product cl-ped-ratio-residual cl-ped-factor-conventions cl-unc-baseline cl-ped-inventory-assumptions cl-ped-inventory-combination cl-ped-inventory-interval cl-ped-inventory-center cl-dqp-ecoinvent-v3-variance cl-dqp-pef-ordinal-dqr\" />\n\n## 评分检验与使用条件 [#评分的检验与适用]\n\n<Prose ids=\"cl-unc-table-conflict cl-ped-reliability-cv-trace cl-ped-score-test-design cl-ped-score-test-results cl-ped-three-tests cl-unc-alongside cl-unc-context cl-unc-synthesis cl-dqp-ghgp-qualitative-dqi\" />\n\n表 2 四类代表性数据质量体系在评分刻度、概率转换与准入报告义务上的设计对照。\n\n| 体系与一手来源 | 评估维度与打分刻度 | 综合规则与概率转换 | 准入门槛或报告义务 | 关键假定与适用边界 |\n| --- | --- | --- | --- | --- |\n| ecoinvent 第三版专家谱系（Weidema 等 2013，表 10.4–10.5） | 5 项（可靠性、完整性、时间、地理、进一步技术）；1–5 级 | 转为对数尺度正态附加方差 σ²，与 1 项基础方差共 6 项线性相加 | 作为清单参数蒙特卡洛抽样输入，无统一总分准入闸门 | 假定附加误差零均值且相互独立；2013 年表仍属专家判断，不含模型不确定性与人为错误 |\n| ecoinvent 实证校准谱系（Ciroth 等 2012/2016） | 同 5 项谱系维度（本章详析完整性与可靠性校准）；1–5 级 | 以实证子集与参照组散布比值校准几何标准差或方差系数 | 旨在替换专家系数，仍服务于对数正态概率分布构造 | 校准受限于有限样本与分组规则，仍依赖独立性与零偏差假定，无法自动消除系统偏差 |\n| 欧盟 PEF 序数评级（建议书 (EU) 2021/2279 附件一第 4.6.5 节） | 4 项打分（TeR、GeR、TiR、P，1–5 级）；完整性与方法一致性为不打分前提 | 四项等权算术平均得 DQR（式 19–20），划 5 档序数等级；2021 年原刊公报 OJ L 471 全文 396 页（2022 年更正重刊版 OJ L 144 全文 384 页）均未设置概率转换 | 数据需求矩阵硬门槛：企业实测 DQR≤1.5、次级 DQR≤3.0、替代贡献≤10% | 衡量数据收集档次与合规准入，不代表参数随机方差大小，也不能替代不确定性分析 |\n| 温室气体核算体系（GHG Protocol）产品标准（2011，第 8.3 节与第 10 章）及美国环保署框架 | 5 项（技术、时间、地域、完整性、可靠性）；4 档定性（很好/良好/尚可/差） | 无统一数值综合 DQR，也不强制转为概率分布；代表性元数据与定量误差分离 | 强制文字披露显著过程数据质量与定性不确定性来源；蒙特卡洛或泰勒展开为可选项 | 防止将方向性偏差与多维代表性欠缺压扁为单一区间宽度，但纯定性描述难直接跨报告自动比对 |\n\n<Prose ids=\"cl-dqp-four-framework-synthesis cl-dqp-paywalled-iso-boundary cl-dqp-cross-chapter-bridge\" />\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/product-footprint-rules-and-practice.mdx",
+      "fromSha256": "e6ef7f026b24b7cec98056cbe958eaf2cab36a725f4ae9c9e8c2e4ba0a7408d0",
+      "toSha256": "ed5efbff83c35dafeed6ad987ed72389642b651234f3b815b451dc261e5510ba",
+      "previous": "---\ntitle: 产品足迹规则\ndescription: 从一升牛奶的冷藏和洗涤出发，核对类别规则、活动用量、发布的气候结果及审查范围，并横向比较欧盟自愿产品环境足迹（PEF）、温室气体核算体系（GHG Protocol）产品标准与具有直接法律约束力的欧盟电池法规和生态设计法规（ESPR），再用甲烷算法说明比较声明的共同条件。\n---\n\n## 类别规则与默认服务 [#规则与规定服务]\n\n<Prose ids=\"cl-rule-opening cl-rule-force cl-rule-category cl-rule-rp cl-rule-issuer cl-rule-version cl-rule-validity cl-pfr151-binding-batteries cl-pfr151-espr-dpp-conversion\" />\n\n表 1 四套产品足迹与强制法规体系的法律效力、适用范围与分析单位对照。\n\n| 规则体系与文本 | 法律效力与发布主体 | 适用范围与主要豁免 | 影响类别与指标 | 分析单位与生命周期边界 | 声明用途与准入门槛 |\n| --- | --- | --- | --- | --- | --- |\n| 欧盟建议书 (EU) 2021/2279 与乳制品产品环境足迹类别规则（PEFCR） | 无强制约束力建议（《欧盟运行条约》TFEU 第 288 条）；欧盟委员会 / 行业技术秘书处 | 通用 PEF 与组织环境足迹（OEF）方法及具体类别规则（如液态奶等乳制品） | 多类别环境足迹（含气候变化等 16 类指标，可归一化加权） | 功能单位与代表产品基准；含默认使用阶段（家用冷藏与洗涤） | 仅按同版规则与验证条件支持基准对照与比较，不自动产生法定准入 |\n| 温室气体核算体系（GHG Protocol）产品标准（2011） | 自愿核算标准；世界资源研究所（WRI）与世界可持续发展工商理事会（WBCSD）联合发布 | 各类商品与服务的生命周期温室气体核算 | 单一气候指标（6 类京都温室气体，100 年全球增温潜势 GWP；不应代称整体环境表现） | 最终产品须用功能单位＋摇篮到坟墓；中间产品用参考流＋摇篮到大门 | 原样仅支持同产品跨期追踪；不支持国际标准化组织（ISO）14044 比较断言，采购比较需配产品规则 |\n| 欧盟电池法规 (EU) 2023/1542 | 直接适用全成员国之强制法规（第 96 条）；欧洲议会与理事会 | 电动汽车、容量大于 2 kWh 可充电工业与轻型交通工具电池（按厂按型号） | 单一气候变化表征结果（不作归一化与加权，遵循 PEF 气候方法） | 寿命期总供电量 1 千瓦时（kWh，备用电池 1 千瓦分 kWmin）；覆盖 4 阶段并排除使用阶段 | 三阶段强制市场准入：申报 → 性能分级（每 3 年复核）→ 法定最高限值 |\n| 欧盟生态设计法规 (EU) 2024/1781（ESPR） | 直接适用全成员国之框架法规（第 80 条）；欧洲议会与理事会 | 含零部件与中间品的实物商品；排除食品、饲料、药品、活体及专项机动车 | 授权法案可设定碳足迹或环境足迹（择用 PEF 2021/2279 或国际标准） | 由各产品组授权法案逐类规定（通常给予至少 18 个月过渡期） | 授权法案确立强制披露/性能门槛并绑定数字产品护照（中央库 2026-07-19 前建成） |\n\n## 使用阶段的活动与结果 [#活动量与报表]\n\n<Prose ids=\"cl-rule-use-boundary cl-rule-default cl-rule-wash-cycles cl-rule-wash-inputs cl-rule-results-layer cl-rule-use-result cl-rule-report-split cl-rule-quantity-scale cl-rule-capital-gap cl-rule-storage-gap cl-rule-reconstruction-limit cl-pfr151-ghgp-boundary-unit cl-pfr151-ghgp-vs-battery-accounting\" />\n\n## 模型与审查范围 [#模型与审查范围]\n\n<Prose ids=\"cl-rule-why-chain cl-rule-review-objects cl-rule-review-2018 cl-rule-review-2024 cl-rule-review-identity cl-pfr151-assurance-vs-notified-body cl-pfr151-product-vs-corporate-scope3\" />\n\n## 甲烷算法与比较条件 [#算法响应与比较]\n\n<Prose ids=\"cl-rule-methane-rule cl-rule-nordic-design cl-rule-ration-units cl-rule-niu-provenance cl-rule-niu-result cl-rule-ipcc-result cl-rule-ipcc-class cl-rule-model-meaning cl-rule-comparison-limits cl-rule-evidence-judgment cl-pfr151-comparative-assertion-gates cl-pfr151-paywalled-standard-boundaries\" />\n\n表 2 四套产品足迹与法规体系在使用阶段、数据粒度、合格评定与比较声明上的操作边界对照。\n\n| 比较维度 | 乳制品 PEFCR（欧盟 PEF 体系） | GHG Protocol 产品标准（2011） | 欧盟电池法规 (EU) 2023/1542 | 欧盟 ESPR (EU) 2024/1781 与未检视付费标准边界 |\n| --- | --- | --- | --- | --- |\n| 使用阶段与非归因过程 | 强制纳入默认家用冷藏与洗涤活动，受类别规则参数约束 | 最终产品强制摇篮到坟墓；资本品、管理费用、研发与通勤默认非归因可排除 | 附件二明确排除使用阶段（除非设计显著影响），仅算原材料、生产、分销与报废 | ESPR 按产品组授权法案定边界；ISO 14067 / EN 15804 细则须查授权原文 |\n| 生物源、土地利用与抵消 | 遵循环境足迹（EF）方法与类别规则（如甲烷方程须全链一致） | 生物源与 20 年/单次收获期直接土地利用变化（LUC）分列（间接土地利用变化 iLUC 非强制）；禁用延迟折算、抵消与避免排放 | 附件二第 7 点严禁将碳抵消计入碳足迹声明（仅可另作附加环境信息） | ESPR 序言第 23 条提及临时碳储等方法考量，具体规则待授权法案落定 |\n| 活动数据与截断门槛 | 区分企业特定数据与 EF 次级数据集，受过渡指导约束 | 归因过程无统一百分比截断，须同时满足缺口、无代理、不显著 3 条件并披露 | 5 大核心部件强制采用具体工厂特定活动数据，禁用默认值且禁止跨厂抽样 | 视具体授权法案而定；数字产品护照绑定唯一产品、经营者与设施标识 |\n| 审查、鉴证与合格评定 | 类别规则评审小组审查＋研究层独立验证员验证 | 允许第一方或第三方独立鉴证，区分有限保证（消极意见）与合理保证（积极意见） | 禁用模块 A 自我声明；强制第三方公告机构按模块 D1（定期审核、可不定期抽查）或模块 G 评定 | 依授权法案规定合格评定路径；付费标准认证细则须核现行授权文本 |\n| 比较声明与企业核算接口 | 比较声明须统一甲烷算法、规则版本、功能单位与验证范围 | 不支持比较断言；产品清单之和须加非归因范围三类别方近似企业范围一二三总量 | 通过法定统一计算与公告机构核验支撑跨型号性能分级与最高限值合规 | ESPR 比较与披露口径待授权法案确立；ISO 14067:2018、ISO 14025:2006、EN 15804+A2、GB/T 24067-2024 付费正文留作开放边界 |\n\n<Prose ids=\"cl-rule-conclusion\" />\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/social-assessment-objects-and-meaning.mdx",
+      "fromSha256": "a2eccb9cee719737a55e89061013f4119086f0a5a9e0c97ad4a9e09053a033ec",
+      "toSha256": "97eac556ae5e1bf4ee340c44467899d958a8320be69052f09eec6ce5989f1faa",
+      "previous": "---\ntitle: 社会表现与影响\ndescription: 以工作服采购与成衣制造企业组合为例，对照产品与组织参照、矩阵卫星缩放与产值工时悖论、宏观风险筛查与现场认证局限、线性与指数参照量表、职业健康损害路径以及跨支柱消重规则。\n---\n\n## 社会评价对象 [#社会评价对象]\n\n<Prose ids=\"cl-sustainability-social-object-and-stakeholders cl-sustainability-product-functional-reference cl-sustainability-organization-reporting-reference cl-soc139-portfolio-reference-and-comparative-assertions cl-soc139-matrix-satellite-linearity-and-software-encoding\" />\n\n表 1 五套社会与组织评价体系的对象参照、缩放关系与公开比较规则对照。\n\n| 体系与版本 | 评价对象与参照基准 | 缩放变量与矩阵关系 | 公开比较声明规则 | 工作服／成衣链典型失真 | 方法边界与待核条件 |\n| --- | --- | --- | --- | --- | --- |\n| UNEP 2020 产品 S-LCA（配 2021 方法学表） | 特定穿用服务的功能单位与参考流（工作服件数或贸易采购额） | 工时等活动变量仅表过程份额；权利状态、工资比与超时阈值不满足无条件线性累加 | 未禁止产品比较，但要求风险、表现与影响表述严格匹配数据分辨率 | 用采购额作参照时，高价耐穿或生活工资产品被推算出更多部门工时 | 活动变量分配不等于证明伤害随工时成正比 |\n| UNEP 2020 组织 SO-LCA（第 7 章） | 报告组织或其一部分、产品组合与参照期间（通常 1 年） | 定性制度判断与组合级记录并存，禁止直接除以售出服装件数 | 明确不拟用于面向公众披露的组织间比较声明 | 若把 1 起打压工会事件除以 60,000 件成衣（每件 0.0000167 起），高产高销会人为稀释侵权 | 制度用途限定不替代后续法规或专门标准的适用判断 |\n| 欧盟建议书 (EU) 2021/2279 组织 OEF（配 OEFSR v6.3） | 组织加一年期产品组合（如 NACE 14 成衣厂 40,000 件 T 恤＋20,000 条长裤＝17,000 kg），含食堂园艺 | 物理环境基本流随产品组合线性缩放，可按年度营业额等参照系统归一化 | 遵守同部门相似产品组合的 OEFSR 并归一化后，允许公开组织间优劣或等效声明 | 成衣示例原印件将年度周洗水电（0.4968 MJ 与 6.9 L）误按单套 0.69 kg 计算；营业额分母对奢侈溢价敏感 | 序言第（18）条明示仅覆盖环境影响，不含劳工权利指标 |\n| PSILCA v3（全球多区域投入产出库 Eora 15,000 部门／openLCA） | 1 美元（USD）国家特定部门产值或完整产品系统需求向量 | 默认将风险指标作伪基本流乘反推工时（0.001—1 h/USD）；或按技术矩阵缩放对角元总产值求加权平均 | 定位供应链社会热点与筛选情景，不直接等同企业现场合规结论 | 支付生活工资使单价翻倍（如后节 40 对 20 美元算例）的安全工厂反被推算出 2.0 倍部门风险工时 | 对角元直接归一化脚本要求全系统统一货币单位，混入物理过程即异量纲相加 |\n| UNEP 全球生命周期影响评价方法共识项目（GLAM）2024/2026 工作环境（美国投入产出模型 USEEIO 基底） | 1 美元（2012 年不变价，USD2012）行业商品经济产出（主文表 2 标明美国代表全球） | 投入产出 Leontief 逆矩阵汇总每美元产值伤残调整生命年（DALY）；2026 主文反对按国内生产总值（GDP）比跨国外推 | 建议仅作缺乏区域实测资料时的筛查基线，不作绝对全球定论 | 2024 实发工作簿对 52 国按各国年均工资 W_c 倒数（43,746 美元/W_c）缩放，土耳其达瑞士 28.76 倍，印孟越缺席 | 主文 362 部门、补篇 397 部门与工作簿 420 部门存在源内口径差异 |\n\n## 活动与社会表现 [#社会评价证据]\n\n<Prose ids=\"cl-sustainability-worker-hours-not-impact cl-sustainability-risk-not-facility-performance cl-sustainability-reference-scale-performance cl-sustainability-social-impact-pathways cl-soc139-wage-price-and-automation-paradoxes cl-soc139-macro-screening-cutoffs-and-certification-limits cl-soc139-occupational-health-pathways-and-rights-boundary\" />\n\n## 量表与抵消 [#社会量表解释]\n\n<Prose ids=\"cl-sustainability-ordinal-zero-and-net-zero cl-soc139-ordinal-vs-exponential-scale-reversal cl-soc139-three-social-zeros-and-compensation-limits cl-soc139-cross-pillar-overlap-audit\" />\n\n表 2 社会风险筛查、认证审核、量表编码与职业健康路径的证据边界对照。\n\n| 方法或证据层 | 等级编码与零值语义 | 同一工作服链判别表现 | 能独立支持的判断 | 核心盲区与源内异文 | 与环境评价及成本评价的衔接 |\n| --- | --- | --- | --- | --- | --- |\n| 宏观国家—部门热点筛查（SHDB 191 国／PSILCA v3） | 四分位或法规基准定级；SHDB 低于 0.1% 工时截断，PSILCA 常设货币截断 | 德国纺织链童工风险无截断为 0.0868 中风险工时，10⁻⁵ 截断跌至 0.04864，10⁻³ 仅剩 0.02 | 识别高工时占比或高风险国家—部门，排定尽职调查优先级 | 生态谬误（合规厂背负高危国标签、违规分包藏身低危国均值）；PSILCA 第 41 页将美国安全违规率全球照搬 | 仅作背景风险线索，既非工厂实绩也非采购现金流 |\n| 自愿可持续性认证与现场审核（Meemken 等 2021） | 合格／不合格准入或整改项；未违规记零缺陷 | 覆盖全球不足 2% 农地与低收入国约 2% 小农户；小农场雇工常未获益 | 核验受检时刻书面制度、工资单与可见安全设施是否达标 | 五层非随机自选择混淆因果；受审方付费与预告检查致最高 50%／79% 未受内外部抽检，30%—70% 认证量未按认证售出 | 认证费、防护投入与溢价计入 LCC，证书本身不免除非预告复核 |\n| 线性等距量表与阶跃加成（SHDB 社会热点指数） | 低中高极高赋 0、1、2、3 分；工时占 0.1%、0.2%、1% 上浮 10%、20%、30%（超 100 封顶 100），无数据自分母剔除 | 100 h 受控算例中，甲（10 h 极高＋90 h 低＝30 分）较乙（60 h 中＋40 h 低＝60 分）分值低一半（乙为甲的 2.00 倍），表观更优 | 在不跨议题正负抵消的前提下汇总同一国家—部门多主题警示强度 | 低风险赋 0 且极高仅中风险 3 倍，大批量低风险工时可稀释局部严重侵权；1% 与 60% 工时占比获相同 30% 加成 | 序数合成得分不可与环境当量或货币成本直接相加 |\n| 指数风险工时汇总（PSILCA v3 表 3） | 无风险 0，极低至极高赋 0.01、0.1、1、10、100，机会 0.1、1、10，无数据默认赋 0.1 | 同一 100 h 算例中，甲暴涨至 1,009 中风险工时，反达乙（64 中风险工时）的 15.77 倍 | 凸显供应链中哪怕工时很短的极高风险工序，并单列正面机会 | 90 h 无数据自动产生 9.0 中风险工时；安全表误标 DALYs 且每十万雇员违规数指标 y 误排 y ≤ 0.06，环境管理表极高风险误印低于 0.005 | 须先剔除数据库内置的环境管理或足迹项，方可与环境评价（E-LCA）并列 |\n| 第二类职业健康损害路径（CML／ILCD 至 GLAM 2026） | 物理零暴露与零发病为 0；非致死工伤 0.72 DALY/例，致死工伤 33.3 YLL/例（高于 PM₂.₅ 的 23.6 DALY/例） | 量化全球约 70,000,000 DALY 职业负担；休闲运动负 DALY（−1×10⁻⁴ 至 −4.8×10⁻⁴/h）不可外推至职业劳动 | 在暴露浓度或工伤率可靠时，将车间健康损失与室外污染置于同一 DALY 量纲比较 | 若 E-LCA 已启用室内空气毒性（如涂装苯乙烯毒性因子达室外的约 211 倍）再叠加 S-LCA 职业病伤即双重计算 | 防护支出与工伤保费入 LCC，未补偿残余 DALY 归健康损害，基本权利仍独立保留 |\n\n<Prose ids=\"cl-book-social-results-to-cost\" />\n"
+    },
+    {
+      "op": "modify",
+      "path": "content/docs/book/cost-perspectives-and-sustainability-combination.mdx",
+      "fromSha256": "5c88be44e7e139314c55ddc645b2f8e87e5096089ac06b17ec3acd6acd70d2ba",
+      "toSha256": "bf1eb9864091a1faddf63526ad77b7066b41b76d7b16229ed5061339d657c69a",
+      "previous": "---\ntitle: 生命周期成本与综合评价\ndescription: 沿用工作服采购，对照三类生命周期成本账本、主体激励与贴现率翻转、五类异质货币量、多准则补偿与否决规则、场址风险与区域物质流工具边界以及地球边界配额分配。\n---\n\n## 成本主体与范围 [#成本主体]\n\n<Prose ids=\"cl-sustainability-lcc-actor-perspective cl-sustainability-lcc-internalization-boundary cl-book-cost-ledgers cl-lcc143-three-lcc-archetypes-and-value-added-consolidation cl-lcc143-actor-split-incentive-and-discount-rate-reversal cl-lcc143-five-monetary-quantities-and-shadow-price-double-counting\" />\n\n表 1 五类生命周期成本与货币估值范式的核算主体、贴现与并入边界对照。\n\n| 货币核算或估值范式 | 核算主体与决策问题 | 内部交易与税费处理 | 时间贴现约定 | 未计价环境／社会后果 | 并入生命周期可持续性评价（LCSA）的边界 |\n| --- | --- | --- | --- | --- | --- |\n| 常规生命周期成本（Conventional LCC，自 1933 年美国总会计局 GAO 传统） | 单一组织（多为采购方全拥有成本 TCO 或制造方内部成本） | 仅计该主体自身现金收支；常忽略上游外部环节或报废端 | 按企业资本机会成本贴现为净现值（NPV） | 账外外部性一律不计 | 系统边界常窄于物理生命周期，需先对齐功能单位方可并列 |\n| 环境生命周期成本（Environmental LCC，Swarr 等 2011／Heijungs 等 2013） | 产品链一个或多个主体在等价功能单位下的真实货币流 | 中间商品价格在矩阵附加值中一负一正抵消；纳入现行及预期决策期内（如 2 年内）内部化的税费或补贴 | 建议按决策目标选用私人或社会贴现率，并以 0% 无贴现作敏感性对照 | 严禁把未内部化环境损害再折算成货币叠加 | 与环境生命周期评价（E-LCA）和社会评价互补，避免同源排放双计 |\n| 社会生命周期成本（Societal LCC，UNEP/SETAC 2011 图 5） | 社会整体福利视角下的全部私人成本收益加货币化外部性 | 抵消主体间纯转移支付（如已缴环境税不可再与全额影子损害重复相加） | 多采用较低社会贴现率评估跨期公共福利 | 将气候、污染等外部损害按影子价格或治理成本并入总账 | 若已货币化环境损害，不得再与 E-LCA 物理指标重复加总同一后果 |\n| 环境损害支付意愿估值（日本 LIME2／ISO 14008，见前文《环境损害估值》） | 受访公众避免边际健康或生态损害的陈述／揭示支付意愿（WTP） | 非市场偏好权重（如 LIME2 赋 1.47×10⁷ JPY/DALY），不代表企业账面现金支出 | 取决于终点暴露积分期与调查情景设定 | 覆盖部分使用价值与非使用价值，但受收入水平与未知路径限制 | 属影响评价赋权因子；若并入全成本（如日本洗衣机占 3.74%）须防双计 |\n| 资源未来额外采选成本终点（ReCiPe 2016 USD2013，见前文《中点与终点》） | 当代开采迫使未来人类转向低品位矿床或边际油气田的额外采选费 | 宏观地质品位—产量回归积分（如原油 0.457 USD2013/kg），不含现期买方采购价 | ReCiPe 2016 化石燃料终点按未来累计额外成本未贴现均值计算 | 仅表征非生物资源稀缺保护领域，不含污染健康或劳工条件 | 属环境终点指标而非财务支出，绝不可与采购方 LCC 现金流直接相加 |\n\n## 三类结果与重叠 [#三类结果]\n\n<Prose ids=\"cl-sustainability-conceptual-combination-not-sum cl-sustainability-social-proxy-product-attribution cl-book-cost-health-overlap cl-lcc143-cut-off-asymmetry-and-cost-rebound-boundary cl-lcc143-demarcating-ra-eia-and-mfa-ioa cl-lcc143-single-issue-footprints-vs-multi-indicator-profiles\" />\n\n## 权重与结果呈现 [#取舍呈现]\n\n<Prose ids=\"cl-sustainability-dashboard-zero-is-relative cl-sustainability-explicit-aggregation-conditions cl-lcc143-dashboard-iia-outranking-and-compensatory-reversals cl-lcc143-planetary-boundaries-and-sharing-principle-reversal\" />\n\n表 2 综合可持续性呈现、多准则决策与相邻分析工具的适用边界对照。\n\n| 综合呈现或相邻方法范式 | 零点／基准定义 | 跨维度可补偿性与否决机制 | 同一工作服算例表现 | 触发结论反转的非物理因素 | 原生适用范围与互补职责 |\n| --- | --- | --- | --- | --- | --- |\n| 分项并列与缺失单列（Finkbeiner 2010／UNEP/SETAC 2011 基线） | 各支柱保留原生物理当量、风险工时与货币零点；缺失资料单独标注 | 不做跨支柱加总，显式呈现环境、成本与劳动条件间的真实权衡 | 直接看清甲省总现值（0% 下 132.00 € 对 140.00 €）、丙低碳高价、戊涉强迫劳动风险 | 无算术掩盖；优先补证能否翻转判断的关键缺项 | 早期与常规 LCSA 首选方式，防止不可通约目标被单分抹平 |\n| 集合内极差相对仪表盘（LCSD，0—1,000 分七色标尺） | 候选集内最优赋 1,000 分（深绿）、最差赋 0 分（深红），缺失标紫罗兰色 | 同一主题及跨主题算术或加权平均，默认允许高分项补偿 0 分项 | 在甲、乙、丙中甲以 722.22 分胜乙（583.33 分）；加入严格劣标丁后乙以 816.67 分反超甲（800.00 分） | 违反无关备选方案独立性（IIA），陪跑劣方案改写极差分母 | 仅表征本组候选内部相对位次，0 分既非零影响亦非绝对红线 |\n| 补偿性效用与三角图（LCST／MAUT／线性加权和） | 按内外部归一化转无量纲效用，三支柱权重和为 100% | 完全补偿：任一维度劣势均可被其余维度的足够高分抵消 | 在甲、乙、戊等权极差加权下，涉严重劳工风险的戊凭低碳低价满分以 666.67 分夺冠 | 权重向量选择（等权重亦为主观价值设定）与效用函数曲率 | 适用于不存在底线违约、且决策者明确接受边际替代率的优选 |\n| 非补偿性级别高于与否决阈值（ELECTRE／PROMETHEE，GLAM 第三阶段） | 成对比较优劣差距，设定无差异、严格偏好与不可逾越否决阈值 | 非补偿或部分补偿：单项劣势触及否决阈值即一票阻断“级别高于”关系 | 戊虽在碳与成本两柱占 2/3 和谐多数，但社会风险差距 60 h 触及 50 h 否决线而被一票阻断级别高于关系（无缘胜出） | 否决阈值、边界轮廓类别（sorting）与和谐度门槛设定 | 守住禁止童工、强迫劳动或法定限值等不可被低价抵消的硬约束 |\n| 生态效率与场址／区域相邻工具（Eco-efficiency／RA／EIA／MFA-IOA） | 比值以单位成本或附加值作分母；RA 以预测浓度与无效应浓度比 1 为界 | 生态效率单看环境／货币比；RA 与 EIA 按场址法定浓度限值独立准入 | 摇篮到大门净附加值为正致负 LCC；单厂排 10 g 助剂可致局部超标，十厂散排 20 g 反低于限值 | 比值掩盖总量且分母趋零奇异；场址水文稀释与部门汇总层级改变结论 | 场址许可归 RA／EIA，国家与区域物质存量源汇归 MFA／SFA／IOA |\n| 地球边界承载力绝对预算比（AESA，GLAM 表 3／强可持续性甜甜圈） | 以分配给研究对象的安全运行空间配额为 1（小于等于 1 为达标） | 强可持续性禁止跨生态边界或用经济收益补偿超界项 | 甲′（20 kg，240 €）与乙′（16 kg，120 €）按消费支出分预算判甲′达标（0.833）乙′超界（1.333），按同等服务分 18.0 kg 则完全倒转 | 全球预算下放至微观产品的伦理分配原则（支出份额对同等需求） | 评估宏观或部门绝对生态上限；现缺人体健康与非生物资源边界 |\n\n<Prose ids=\"cl-book-cost-decision\" />\n"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/docs/appendices/lca-timeline",
+      "route": "/docs/appendices/lca-timeline",
+      "sha256": "bbbad05b7abc1002cc04052ea63c6f3d68bd3b88b7fcc58358f85de42f3fea31"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/appendices/lca-timeline",
+      "sha256": "a77e5f88b99de586589ee5b607a97863e6139d3327b5c0f38365d00bd179688b"
+    },
+    {
+      "path": "/docs/book",
+      "route": "/docs/book",
+      "sha256": "35b2530b0c322b362b9e0e17085d49c8622004685931fdb8367b8f36063bb4aa"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book",
+      "sha256": "da1c2da4c5bb09d4e4c51388da468477f31e394bbd7c99f4b036c263056f1c11"
+    },
+    {
+      "path": "/docs/book/data-applicability",
+      "route": "/docs/book/data-applicability",
+      "sha256": "58e4bf4afac2db61f1f8e9b2e4fc47bd6d0f379f1a4147ba5917daa0078082b6"
+    },
+    {
+      "path": "/print",
+      "route": "book-data-applicability",
+      "sha256": "01d65c4f21accaff537f51a2af48997aa54f5100ef7518f60000d059a151395d"
+    },
+    {
+      "path": "/docs/book/uncertainty-and-variability",
+      "route": "/docs/book/uncertainty-and-variability",
+      "sha256": "161fbae48546e7e58615a5b60d68945283d2d442993310e54583bad90b74226a"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/uncertainty-and-variability",
+      "sha256": "a0ef3414ec780e9fdea9cab9217b5ba352ab2695e62880361d80636c047c0353"
+    },
+    {
+      "path": "/docs/book/data-quality-and-probability",
+      "route": "/docs/book/data-quality-and-probability",
+      "sha256": "deadb08fcdc22d20c4429a6625316a794c655b82e1c243829ca95ba94174a500"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/data-quality-and-probability",
+      "sha256": "8457c8368a24932072a9fafb845439e6deb37210208dad4f98feccd40970f302"
+    },
+    {
+      "path": "/docs/book/product-footprint-rules-and-practice",
+      "route": "/docs/book/product-footprint-rules-and-practice",
+      "sha256": "630aceb466ba9e1c0e003ca08a4e522d2e5b7aa5761b53a21c864369dd778445"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/product-footprint-rules-and-practice",
+      "sha256": "7c138fdab2476c7f62c055000751e31eed8cd06953ef008ef764450335ff107b"
+    },
+    {
+      "path": "/docs/book/social-assessment-objects-and-meaning",
+      "route": "/docs/book/social-assessment-objects-and-meaning",
+      "sha256": "90b8565fd060f0f874010104c1971580ec8c6c664b963fef3bfb8ec51d556a76"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/social-assessment-objects-and-meaning",
+      "sha256": "e2f65b3225e158a4b003d7473c4f0aad936bb689ebaf55ca5bee77ec92ef8af3"
+    },
+    {
+      "path": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "sha256": "1adba4df0941c098a596a22fcb6a4b7e10d093fc1235f360a704c6edf4130ffb"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/cost-perspectives-and-sustainability-combination",
+      "sha256": "dadee429b7f6a3d46afa96ed0f5b8079f1273facbf1b3892ed7d476820872226"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "dc32806c642f68f34579942a566715cfbd032846790ab31d2078e195fbc35cb8"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "c37d45a6f2d07fe0e0daa6613b94f2f248c1242a631f93055e97e71f49460844"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "2550598668078fa31272e5cf242a43d2f3cdb431d8eee2c4c102cfb6ebd76e48"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "f58e7323e54e55940b392d9d3b0ac768251f138fbf63d90dab84b83ab86da552"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "9d296cdaad73e57316e2bfa8134e8c0e6bc6d1957e264b04e57cee120f120647"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "f535a85a36872c670397d6827675117b63421a882b908532eb5a976d52d19189"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "00bbf5b1975324e0c12d49a695b17b40283667b1e96155394727b2e9360c5013"
+    },
+    {
+      "path": "downloads/bibliography.json",
+      "sha256": "34e8ed853b61e37aa1f73f737d99d4c409ab76faab3b984c2be3126e19d44d69"
+    },
+    {
+      "path": "downloads/research.json",
+      "sha256": "34e8ed853b61e37aa1f73f737d99d4c409ab76faab3b984c2be3126e19d44d69"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "editorial-copy-revision",
+      "date": "2026-11-27",
+      "file": "_docs/editorial/review-evidence/phase1b-final-delivery-prose-310/review-record.json",
+      "sha256": "1ab56e162ddb6ce488dfd6aac095576b8a78223e2ca846974335236841ff29c5"
+    }
+  ]
+}
