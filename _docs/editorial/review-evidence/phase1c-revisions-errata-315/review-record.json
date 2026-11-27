@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "unitId": "phase1c-revisions-errata-315",
+  "issue": "tiangong-lca/knowledge-base#315",
+  "reviewedAt": "2026-11-27",
+  "reviewKind": "agent-source-check",
+  "scientificApproval": false,
+  "scope": "Phase 1C: Transform /zh/changes/ and /en/changes/ into a reader-facing bilingual Revisions & Errata surface backed by config/public-revisions.json and opt-in publicSummary fields on post-checkpoint revisions, resolving affected routes dynamically to current chapter numbers and titles while removing raw internal developer batch/iteration dumps from public pages.",
+  "checks": [
+    "Created config/public-revisions.json and scripts/reader-public-revisions.mjs with bilingual title/summary schema, dynamic route resolution to live ZH/EN chapter numbers and titles, and fail-closed validation against dead routes, leaked Han in English, and internal dev jargon.",
+    "Updated app/(locale)/[lang]/changes/page.tsx so both /zh/changes/ and /en/changes/ render meaning-equivalent Content & Structural Revisions and Errata sections without internal iteration counts, batch names, Issue numbers, filenames, flag names, or cross-locale fallback disclaimers.",
+    "Preserved buildPublicChangesLedger() untouched for verify-checkpoint-history.mjs while updating validateCleanDeliveryOutput() and scripts/reader-clean-delivery.test.mjs to verify the new bilingual reader-facing /changes/ contract and reject leaked internal batch/iteration controls.",
+    "Added unit test suite scripts/reader-public-revisions.test.mjs covering production data, dead-route rejection, Han-leak rejection, dev-jargon rejection, and opt-in publicSummary integration."
+  ],
+  "blockingIssues": []
+}
