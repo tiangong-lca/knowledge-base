@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
-import { assertNumberingToc, assertReaderNumbering, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, printReadingEntryAnchor, readNumberedHeading, readerNumberingManifest, readerParts } from './reader-numbering.mjs';
+import { assertNumberingToc, assertReaderNumbering, currentPrintReadingHref, getContinuationLink, getHeadingNumbering, getPresentationUnits, getUnitHeadingPlan, getUnitNumbering, printReadingEntryAnchor, readNumberedHeading, readerContinuationContracts, readerNumberingManifest, readerParts } from './reader-numbering.mjs';
 import { currentRouteChanges } from './reader-checkpoint.mjs';
 import { printUnitAnchor } from './reader-book.mjs';
 
@@ -221,8 +221,10 @@ test('manifest contains every actual source and does not silently hide authored 
 
 
 test('the three exact source-qualified continuations keep their own website and current book targets',()=>{
+  const policyContract = readerContinuationContracts.find(row => row.key === 'policy-to-framework');
+  assert.equal(policyContract.route, '/docs/book/early-container-comparisons');
   const cases = [
-    ['policy-to-framework','/docs/book/early-container-policy-and-systems','/docs/book/early-container-policy-and-systems',
+    ['policy-to-framework',policyContract.route,policyContract.bookSourceKey ?? policyContract.route,
       '/docs/book/framework-responsibilities/','评价框架与分析步骤','book-framework-responsibilities'],
     ['emission-time-to-future','/docs/book/climate-equivalence','book-climate-equivalence',
       '/docs/book/future-technology-and-context/',getUnitNumbering('book','/docs/book/future-technology-and-context').title,'/docs/book/future-technology-and-context'],

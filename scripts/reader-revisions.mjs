@@ -196,6 +196,12 @@ export function validateRevisionSchema(revision, label = 'revision') {
             throw new Error(`${label}: routeChanges retire-unit successorAnchor requires a non-null successor and '#anchor' value`);
           }
         }
+        if (rc.anchors !== undefined) {
+          if (!rc.successor) {
+            throw new Error(`${label}: routeChanges retire-unit anchors requires a non-null successor`);
+          }
+          validateAnchorMap(rc.anchors, 'retire-unit', false);
+        }
         continue;
       }
       if (!Array.isArray(rc.from) || rc.from.length < 2 || !rc.from.every(r => nonempty(r) && r.startsWith('/'))) {
@@ -337,11 +343,16 @@ export function extractRouteChanges(revisions) {
         continue;
       }
       if (rc.op === 'retire-unit') {
+        const anchors = {
+          ...(rc.successorAnchor ? { '*': rc.successorAnchor } : {}),
+          ...(rc.anchors ? { ...rc.anchors } : {}),
+        };
         const record = {
           op: 'retire-unit',
           route: rc.route,
           successor: rc.successor ?? null,
           successorAnchor: rc.successorAnchor ?? null,
+          anchors,
           ...meta,
         };
         retiredUnits.push(record);
@@ -351,7 +362,7 @@ export function extractRouteChanges(revisions) {
           fromToMap.set(rc.route, {
             ...record,
             to: record.successor,
-            anchors: record.successorAnchor ? { '*': record.successorAnchor } : {},
+            anchors,
           });
         }
         continue;
@@ -504,6 +515,15 @@ export function validateRouteChangesAgainstOutput(revisions, activeRoutes, ancho
           retired.successorAnchor.slice(1),
           `Retired unit successorAnchor (${retired.route} -> ${retired.successor}${retired.successorAnchor}, ${retired.revisionId})`,
         );
+      }
+      if (anchorsByRoute && retired.anchors) {
+        for (const [oldKey, newHash] of Object.entries(retired.anchors)) {
+          checkAnchorOnRoute(
+            retired.successor,
+            newHash.slice(1),
+            `Retired unit anchor mapping (${oldKey} -> ${newHash}, ${retired.revisionId})`,
+          );
+        }
       }
     }
   }
@@ -1097,7 +1117,35 @@ export function applyRouteChangesToCitations(entries, revisions) {
       };
     }
 
-    if (target.path === '/print') return null;
+    if (target.path === '/print') {
+      if (change.op !== 'retire-unit' || !change.to || change.to === target.route) return null;
+      const nextRoute = change.to;
+      const oldPrefix = printUnitAnchor(target.route);
+      const nextPrefix = printUnitAnchor(nextRoute);
+      let nextId = null;
+      if (target.kind === 'note' && target.claimId) {
+        nextId = chapterNoteAnchor(nextPrefix, target.claimId);
+      } else if (target.kind === 'chapter') {
+        nextId = nextPrefix;
+      } else if (target.kind === 'note-group') {
+        nextId = `${nextPrefix}-annotations`;
+      } else if (target.kind === 'heading') {
+        const rawId = target.id.startsWith(`${oldPrefix}-`) ? target.id.slice(oldPrefix.length + 1) : target.id;
+        const mapped = change.anchors?.[`${target.route}#${rawId}`] ?? change.anchors?.[`#${rawId}`] ?? change.anchors?.['*'];
+        if (!mapped) return null;
+        nextId = `${nextPrefix}-${mapped.slice(1)}`;
+      }
+      if (!nextId) return null;
+      return {
+        target: {
+          ...target,
+          route: nextRoute,
+          path: '/print',
+          id: nextId,
+        },
+        change,
+      };
+    }
 
     const explicit = change.anchors?.[`${target.route}#${target.id}`] ?? change.anchors?.[`#${target.id}`];
     if (explicit) {
@@ -1192,8 +1240,45 @@ export function applyRouteChangesToCitations(entries, revisions) {
       };
     }
 
+    const printRetiredRoute = entry.path === '/print'
+      && nextTargets?.length > 0
+      && (lastChange?.op === 'retire-unit' || fromToMap.get(entry.route)?.op === 'retire-unit')
+      ? nextTargets[0].route
+      : entry.route;
+
+    const printRemappedRetained = entry.path === '/print'
+      && entry.mode === 'retained'
+      && nextTargets?.length === 1
+      && nextTargets[0].id !== entry.id;
+    if (printRemappedRetained) {
+      return {
+        ...entry,
+        route: printRetiredRoute,
+        mode: 'alias',
+        targets: nextTargets,
+        scope: nextScope,
+        edition: entry.edition ?? (lastChange ? { sourceCommit: lastChange.sourceCommit, sourceDate: lastChange.date } : entry.edition),
+        retiredFrom: entry.retiredFrom ?? (lastChange ? { route: entry.route, revisionId: lastChange.revisionId } : undefined),
+      };
+    }
+
+    const printRemappedAlias = entry.path === '/print'
+      && entry.mode === 'alias'
+      && nextTargets?.length === 1
+      && lastChange?.op === 'retire-unit';
+    if (printRemappedAlias) {
+      return {
+        ...entry,
+        route: printRetiredRoute,
+        targets: nextTargets,
+        scope: nextScope,
+        retiredFrom: entry.retiredFrom ?? { route: entry.route, revisionId: lastChange.revisionId },
+      };
+    }
+
     return {
       ...entry,
+      route: printRetiredRoute,
       targets: nextTargets,
       scope: nextScope,
     };

@@ -1,4 +1,6 @@
 import { citationHref, citationSourceHref } from './reader-citations.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { isRouteRevised } from './reader-revisions.mjs';
 
 export function readerParagraphText(node, marker) {
   if (node === marker) return '';
@@ -15,7 +17,7 @@ export function qualifyCurrentHistoricalDocument(document, entries, migrations, 
   const byAddress = new Map(entries.map(entry => [identity(entry), entry]));
   const currentLabel = target => {
     const actual = surfaces.get(target.path)?.ids.get(target.id);
-    if (!actual || actual.route !== target.route) return null;
+    if (!actual || actual.route !== target.route || !actual.title) return null;
     if (target.kind === 'note') return actual.claimId === target.claimId && actual.number
       ? `《${actual.title}》注 ${actual.number}` : null;
     if (target.kind === 'heading') return actual.section
@@ -68,7 +70,10 @@ export function validateReaderHistoricalText(unit, entries, path, label) {
     const valid = entry && (alias ? entry.mode === 'alias' && node.getAttribute('data-legacy-for') === entry.targets[0].id : notice ? entry.mode === 'notice' : entry.mode === 'retained' && entry.scope);
     const targets = entry ? alias ? [] : scopeId ? entry.scope?.targets ?? [] : entry.targets : [];
     const explanation = entry ? alias ? '' : entry.scope?.text ?? '可从下列链接查阅这一留存版本对应的内容。' : '';
-    const labels = targets.map(target => target.label ?? (current ? current.currentLabel(target) : label(target)));
+    const labels = targets.map(target => {
+      const live = current ? current.currentLabel(target) : label(target);
+      return (target.label && (!isRouteRevised(currentRevisions, target.route) || live === null)) ? target.label : live;
+    });
     const expected = entry ? versionText(entry.edition) + explanation + labels.join('') : '';
     const hrefs = entry ? [citationSourceHref(entry.edition.sourceCommit), ...targets.map(target => citationHref(target, path))] : [];
     if (!valid || labels.some(value => value === null) || compact(node.text) !== compact(expected) || JSON.stringify(node.querySelectorAll('a').map(link => link.getAttribute('href'))) !== JSON.stringify(hrefs))

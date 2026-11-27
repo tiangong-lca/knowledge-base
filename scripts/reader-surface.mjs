@@ -642,7 +642,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         errors.push(...validateRenderedWallSelection(document,path,book.wallOriginal,book.catalog,book.wallAccepted));
       if (!isRevised('/docs/book/joint-production-and-allocation', '/docs/book/allocation-and-substitution', '/docs/book/allocation-judgment-and-corrections', '/docs/monograph/joint-production', '/docs/book/joint-production'))
         errors.push(...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse));
-      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
         errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
       if (!isRevised('/docs/book/service-and-reference'))
         errors.push(...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
@@ -695,6 +695,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         target.kind === 'note-group' ? /^H[23]$/.test(actual.tag) : actual.section);
       if (!semanticMatch) errors.push(`${address}: wrong or missing ${target.kind} destination ${target.path}/#${target.id}`);
       if (entry.mode === 'alias' && !entry.scope && !entry.retiredFrom && entry.capturedScope
+          && !isRouteRevised(activeRevisions, target.route)
           && !matchesCapturedScope(previousSurface(`${target.path}#${target.id}`, actual), entry))
         errors.push(`${address}: old ${entry.capturedScope.title} aliased scope changed without a reviewed migration`);
 
@@ -730,7 +731,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       errors.push(...validateJointProductionCoverage(book.edition,book.sources,book.jointOriginal,book.catalog,book.jointProse));
     if (!isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities'))
       errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
-    if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+    if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
       errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
     if (!isRevised('/docs/book/service-and-reference'))
       errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));

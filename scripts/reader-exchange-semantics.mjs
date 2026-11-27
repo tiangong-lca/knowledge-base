@@ -3,6 +3,8 @@ import { serviceConstraintsEvaluationFile } from './reader-service-constraints.m
 import { visibleHistoryControl } from './reader-flow-boundary.mjs';
 import { historyPrintPointerTitleLayout } from './reader-copyedit.mjs';
 import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from './reader-numbering.mjs';
+import { currentRevisions, currentRouteChanges } from './reader-checkpoint.mjs';
+import { isRouteRevised } from './reader-revisions.mjs';
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentPart5Reread, currentUncertaintyComparison } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
@@ -48,11 +50,31 @@ export function assertExchangeSemanticsProseAccepted(prose) {
 function currentHistoryPrintPointers(partial) {
   const oldPointers = currentBookLayout(historyPrintPointerTitleLayout, partial.projection);
   const title = currentFlowBoundary?.numbering.titles.find(row=>row.route===exchangeSemanticsRoute);
-  const pointers = !title ? oldPointers : oldPointers.map(row=>{
+  const flowPointers = !title ? oldPointers : oldPointers.map(row=>{
     if(row.route!==exchangeSemanticsRoute)return row;
     const before=`见《${title.from}》的相应论述与注释。`;
     if(!row.text.endsWith(before))throw new Error('S01 B08 pointer does not match its qualified predecessor');
     return {...row,text:row.text.slice(0,-before.length)+`见《${title.to}》的相应论述与注释。`};
+  });
+  const pointers = flowPointers.map(row => {
+    let targetRoute = row.route;
+    const visited = new Set([targetRoute]);
+    while (currentRouteChanges.fromToMap.has(targetRoute)) {
+      const next = currentRouteChanges.fromToMap.get(targetRoute)?.to;
+      if (!next || visited.has(next)) break;
+      visited.add(next);
+      targetRoute = next;
+    }
+    const current = getUnitNumbering('book', targetRoute)?.title;
+    if (!current) return { ...row, route: targetRoute };
+    const revisedRoute = targetRoute === 'book-framework-responsibilities'
+      ? '/docs/book/framework-responsibilities'
+      : targetRoute;
+    if (targetRoute !== row.route || isRouteRevised(currentRevisions, revisedRoute)) {
+      const updatedText = row.text.replace(/见《[^》]+》的相应论述与注释。$/, `见《${current}》的相应论述与注释。`);
+      return { ...row, route: targetRoute, text: updatedText };
+    }
+    return row;
   });
   if (pointers !== partial.projection && pointers.some(row => {
     const current = getUnitNumbering('book', row.route)?.title;
@@ -114,7 +136,8 @@ export function validateExchangeSemanticsCoverage(edition,sources,accepted=origi
     const actual=sources.get(source.route);if(actual===undefined||!same(collectChapterClaimOccurrences(actual),currentFlowBoundary?.occurrences.find(row=>row.key===`content${source.route}.mdx`)?.to??source.claimIds))errors.push(`B08 retained website source occurrence order differs: ${source.route}`);
   }
   const history=sources.get(historyRoute);
-  if(history===undefined || !currentBookMdxMatches(partial.sourceRoute, partial.websiteSourceSha256, textDigest(history)) || !same(collectChapterClaimOccurrences(history),partial.claimIds))errors.push('S01 complete website source, nine claims or six ordinary blocks changed');
+  const historyRevised = isRouteRevised(currentRevisions, historyRoute);
+  if(history===undefined || (!historyRevised && !currentBookMdxMatches(partial.sourceRoute, partial.websiteSourceSha256, textDigest(history))) || !same(collectChapterClaimOccurrences(history),partial.claimIds))errors.push('S01 complete website source, nine claims or six ordinary blocks changed');
   else if(!same(collectChapterClaimOccurrences(projectExchangeSemanticsRaw(historyRoute,history,true,partial)),partial.retainedClaimIds))errors.push('S01 projected occurrence / note plan differs from retained APOS');
   for(const item of currentHistoryPrintPointers(partial)) {
     const actual=sources.get(sourceRouteForKey(item.route,edition));
@@ -407,10 +430,12 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
         if(node.tagName===(print?'H3':'H2'))sourceSection=print?node.id.slice(printUnitAnchor(historyRoute).length+1):node.id;
         else paragraphSections.set(node,sourceSection);
       }
-      for(const block of currentBookLayout('S01:ordinary', partial.ordinary)){
-        const found=bodyParagraphs.filter(node=>normalize(node.text)===normalize(plain(block.text))),expectedLinks=[...block.text.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)].map(match=>({text:match[1],href:print?frameworkBookHref(match[2],historyRoute):currentPrintReadingHref(match[2])}));
-        if(found.length!==1||paragraphSections.get(found[0])!==block.sourceHeading)errors.push(`${path}: S01 retained ordinary content missing, repeated or misplaced: ${block.block}`);
-        else if(!same(found[0].querySelectorAll('a').map(node=>({text:node.text,href:node.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, '')})),expectedLinks))errors.push(`${path}: S01 retained ordinary navigation label or target missing or changed: ${block.block}`);
+      if (!isRouteRevised(currentRevisions, historyRoute)) {
+        for(const block of currentBookLayout('S01:ordinary', partial.ordinary)){
+          const found=bodyParagraphs.filter(node=>normalize(node.text)===normalize(plain(block.text))),expectedLinks=[...block.text.matchAll(/\[([^\]]+)\]\(([^)]*)\)/g)].map(match=>({text:match[1],href:print?frameworkBookHref(match[2],historyRoute):currentPrintReadingHref(match[2])}));
+          if(found.length!==1||paragraphSections.get(found[0])!==block.sourceHeading)errors.push(`${path}: S01 retained ordinary content missing, repeated or misplaced: ${block.block}`);
+          else if(!same(found[0].querySelectorAll('a').map(node=>({text:node.text,href:node.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, '')})),expectedLinks))errors.push(`${path}: S01 retained ordinary navigation label or target missing or changed: ${block.block}`);
+        }
       }
       errors.push(...validateExchangeAnnotationOutput(document,unit,historyRoute,catalog,{print}));
       if(print) {
@@ -421,8 +446,9 @@ export function validateRenderedExchangeSemantics(document,path,accepted=origina
       }
     }
   }
-  if(print)for(const route of new Set(partial.projection.map(item=>item.route).filter(route=>route!==exchangeSemanticsRoute))) {
-    const units=document.querySelectorAll(`article[data-reader-route="${route}"]`),ids=partial.projection.filter(item=>item.route===route).map(item=>item.claimId);
+  const movedPointers = currentHistoryPrintPointers(partial);
+  if(print)for(const route of new Set(movedPointers.map(item=>item.route).filter(route=>route!==exchangeSemanticsRoute))) {
+    const units=document.querySelectorAll(`article[data-reader-route="${route}"]`),ids=movedPointers.filter(item=>item.route===route).map(item=>item.claimId);
     if(units.length!==1)errors.push(`/print: missing or repeated moved S01 annotation destination unit: ${route}`);
     else errors.push(...validateExchangeAnnotationOutput(document,units[0],route,catalog,{print:true,claimIds:ids}));
   }

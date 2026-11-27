@@ -11,7 +11,7 @@ import { assertExchangeSemanticsRegistration, exchangeSemanticsRoute, exchangeSe
 import { assertProcessNetworkRegistration } from './reader-process-network.mjs';
 import { assertFunctionalReferenceRegistration, functionalReferenceSupplement } from './reader-functional-reference.mjs';
 import { createHash } from 'node:crypto';
-import { assertCleanerProductionRegistration } from './reader-cleaner-production.mjs';
+import { assertCleanerProductionRegistration, cleanerProductionRoute } from './reader-cleaner-production.mjs';
 import { collectChapterClaimOccurrences, printUnitAnchor, readSourceHeading } from './reader-book.mjs';
 import { currentRouteChanges } from './reader-checkpoint.mjs';
 
@@ -74,7 +74,7 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   else assertJointProductionRegistration(edition);
   if (mergeByBookUnit.has(closingSynthesisKey)) assertMergedUnit(closingSynthesisKey, 'B32');
   else assertClosingSynthesisRegistration(edition);
-  assertCleanerProductionRegistration(edition);
+  if (!removedRouteSet.has(cleanerProductionRoute)) assertCleanerProductionRegistration(edition);
   assertFunctionalReferenceRegistration(edition);
   assertProcessNetworkRegistration(edition);
   assertHybridInventoryRegistration(edition);
