@@ -1,11 +1,34 @@
 ---
 title: Resources, Land, and Biodiversity
-description: Land use, mineral extraction, and fossil fuel extraction follow fundamentally different impact pathways from pollutant emissions. Compare ReCiPe 2016, LC-IMPACT, EF 3.1, and Van Oers updates on habitat recovery, scarcity proxies, uranium classification, and table checks.
+description: Land use, biodiversity, mineral extraction, and fossil fuel extraction follow fundamentally different impact pathways from pollutant emissions. Compare ReCiPe 2016, LC-IMPACT, GLAM v1.1, EF 3.1, and Van Oers updates on habitat recovery, Global Extinction Probabilities (GEP) and fragmentation, biodiversity blind spots, scarcity proxies, uranium classification, and table checks.
 ---
 
 ## Land Use and Biodiversity Recovery [#land-use-and-recovery]
 
 <Prose ids="cl-land111-midpoint cl-land111-conversion cl-land111-horizon cl-land111-integral cl-land111-aggregation" />
+
+## Global Extinction Risk, Land-Use Intensity, and Habitat Fragmentation [#extinction-risk-and-fragmentation]
+
+<Prose ids="cl-bio35-local-vs-global-metrics cl-bio35-intensity-and-fragmentation" />
+
+## Multi-Pressure Ecosystem Quality Integration and Structural Blind Spots [#multipressure-and-biodiversity-blindspots]
+
+<Prose ids="cl-bio35-multipressure-integration" />
+
+Table 1. Comparison of three major ecosystem-quality LCIA frameworks (ReCiPe 2016, LC-IMPACT v1.0, and GLAM v1.1) across endpoint scale, covered pathways, spatial resolution, marginal/average conventions, ecotoxicity calibration, and cross-realm limits.
+
+| Comparison dimension | ReCiPe 2016 (RIVM 2016-0104; Huijbregts et al., 2017) | LC-IMPACT v1.0 (Verones et al., 2020 Overall Report) | GLAM research v1.1 (Verones et al., 2026) |
+| --- | --- | --- | --- |
+| Endpoint metric and scale | Local PDF·m²·yr / PDF·m³·yr scaled by fixed global average species densities into species·yr (local species loss) | Global PDF·yr using IUCN Vulnerability Scores (VS) in 3 pathways and richness proxies in others | Unified global PDF·yr using unity-normalized Global Extinction Probabilities (GEP, summing to 1 per species group) across all regionalized pathways |
+| Covered ecosystem pathways | 11 pathways (6 terrestrial, 4 freshwater, 1 marine: marine ecotoxicity only) | 11 pathways (terrestrial and freshwater climate change, terrestrial ozone, terrestrial acidification, freshwater [phosphorus] and marine [dissolved inorganic nitrogen] eutrophication, terrestrial/freshwater/marine ecotoxicity, land use, water consumption) | 8 categories, > 500,000 CFs (freshwater and terrestrial ecotoxicity, land use, freshwater eutrophication [phosphorus and nitrogen], marine eutrophication, terrestrial/freshwater/marine climate change, water consumption, marine aquatic microplastics, terrestrial acidification) |
+| Spatial resolution of distributed CFs | Global default; country CFs for ozone, acidification, freshwater eutrophication, and water consumption (none for land use or ecotoxicity) | Native (ecoregions, watersheds, large marine ecosystems, and grids) plus country, continent, and global | Country + global for 5 categories (land use, water consumption, freshwater and marine eutrophication, terrestrial acidification); global only for ecotoxicity, climate change, and microplastics |
+| Marginal vs. average and value choices | Fixed marginal or linear per pathway; three cultural perspectives (Individualist, Hierarchist, Egalitarian [I/H/E]), unquantified for land use and 4 other pathways | Explicit marginal and average sets where possible; 4 modular sets crossing 100-yr vs. long-term and certain vs. all impacts | Average only for climate change and marine eutrophication; marginal only for terrestrial acidification; both for the remaining 5 categories |
+| Ecotoxicity PAF-to-PDF calibration | Acute-based; damage factor (DF) = 1 | Chronic HC50 from L(E)C50 (preferring chronic test data, default ACR = 0.5 fallback from acute); PAF-to-PDF damage factor = 2 | Chronic HC20-EC10; 1:1 PAF-to-PDF calibration accounting for opportunistic species |
+| Cross-realm aggregation and key gaps | Direct sum into species·yr via fixed densities; omits marine invasive species, marine plastic debris, and land-use reptiles/amphibians | Recommends keeping terrestrial, freshwater, and marine separate; omits arthropods, fungi, and bacteria | Recommends keeping realms separate (equal 1/3 weight if aggregated); omits fisheries, terrestrial invertebrates, genetic/functional diversity, macroplastics, ocean acidification, marine ecotoxicity, and ecosystem noise |
+
+<Prose ids="cl-bio35-blindspots-and-limits" />
+
+Core definitions and primary sources for Global Extinction Probabilities (GEP), Vulnerability Scores, and biodiversity blind spots appear under <ConceptRef id="cn-biodiversity-gep-blindspots" />.
 
 ## Mineral Scarcity and Cost Proxies [#mineral-scarcity-and-cost-proxies]
 
@@ -15,7 +38,7 @@ description: Land use, mineral extraction, and fossil fuel extraction follow fun
 
 <Prose ids="cl-fossil117-scarcity-energy cl-fossil117-heating-basis cl-fossil117-uranium-boundary" />
 
-Table 1. Accounting basis for energy carriers and natural uranium across two resource midpoint systems (ReCiPe 2016 fossil fuel potential and EF 3.1 fossil resource use).
+Table 2. Accounting basis for energy carriers and natural uranium across two resource midpoint systems (ReCiPe 2016 fossil fuel potential and EF 3.1 fossil resource use).
 
 | Input | ecoinvent higher heating value (MJ-eq) | ReCiPe 2016 midpoint | EF 3.1 Resource use, fossils |
 | --- | --- | --- | --- |
