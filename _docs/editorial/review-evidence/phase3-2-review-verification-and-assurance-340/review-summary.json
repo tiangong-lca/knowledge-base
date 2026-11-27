@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase3-2-review-verification-and-assurance-340",
+  "issue": "tiangong-lca/knowledge-base#340",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Dual independent agent review of primary-source fidelity, premise-DAG invariants, engineering integrity, Clean Public Delivery (§2.15), and meaning-level bilingual parity (§2.17). Does not constitute human domain expert peer review or legal/conformity-assessment advice.",
+  "reviewers": [
+    {
+      "id": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "role": "Primary-Source & Engineering Auditor",
+      "initialVerdict": "no-go",
+      "finalVerdict": "resolved",
+      "blockingCount": 6,
+      "resolvedCount": 6
+    },
+    {
+      "id": "70734190-fba8-45eb-9377-e71bfd6b5e7f",
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "initialVerdict": "changes-requested",
+      "finalVerdict": "resolved",
+      "blockingCount": 5,
+      "resolvedCount": 5
+    }
+  ],
+  "blockingFindings": [
+    {
+      "id": "B1",
+      "sourceReviewer": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "summary": "JRC Guide for EF compliant data sets v2.0 specifies DQR as 'two digits (X.X e.g. 1.5)' (one decimal place), which was mistranslated as '两位小数' / 'two-decimal' in 5 places.",
+      "resolution": "Corrected all 5 locations (ev-rev32-jrc-ef-data-v2-review, cl-rev32-dataset-review ZH & EN, Table 2 ZH & EN) to '两位数字（X.X，即一位小数）' / 'two-digit (X.X, one-decimal)'."
+    },
+    {
+      "id": "B2/R1",
+      "sourceReviewer": "both",
+      "summary": "23 raw Markdown '*...*' italic pairs leaked visibly into rendered English HTML across Ch. 34, Ch. 35, /concepts/, /claims/, /sources/, and /print/ because <Prose> renders en/claims.json as plain text.",
+      "resolution": "Removed all Markdown asterisk emphasis delimiters from cl-rev32-* and cl-epd31-paywalled-boundaries-and-bridge in knowledge/editions/en/claims.json and verified zero raw '*...*' pairs across rendered EN outputs."
+    },
+    {
+      "id": "B3",
+      "sourceReviewer": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "summary": "EU Batteries Regulation (EU) 2023/1542 Annex VIII Part B (Module D1) starts on OJ L 191/96, not p. 98.",
+      "resolution": "Updated ev-rev32-batteries-art17-25-annex8 locator across catalog.json, en/bibliography.json, and revision manifest to pp. 40, 42–43, 96–101."
+    },
+    {
+      "id": "B4",
+      "sourceReviewer": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "summary": "cl-rev32-preverified-tools over-generalized ECO V1.1's Model-EPD exclusion, unverified-tool ban, unlocked-tool fixed-input checks, and ECO/IBU four-eyes review across GPI v5.1.0.",
+      "resolution": "Rewrote cl-rev32-preverified-tools (ZH & EN) and Table 2 to attribute each requirement strictly to its actual source regime while noting GPI §8.6 permits any software for ordinary individually verified EPDs and relies on automated feeds, user pre-verification, or automated plausibility checks in §8.6.9.1."
+    },
+    {
+      "id": "B5",
+      "sourceReviewer": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "summary": "UK Environment Agency (2011) Annex E: (a) waste-incineration credit override appears in Annex E.2.5 Comment 2.5.2 (pp. 113–114), not Annex E.3 (pp. 118–119); (b) ZH wording for incinerator capacity typo (225,000 miswritten as 225 tonnes) read backwards.",
+      "resolution": "Separated Annex E.3 (pp. 118–119) from Annex E.2.5 Comment 2.5.2 (pp. 113–114) and corrected ZH typo direction in ev-rev32-ea2011-and-dairy-empirical, cl-rev32-what-review-catches, and cl-rev32-what-review-cannot-establish."
+    },
+    {
+      "id": "B6",
+      "sourceReviewer": "3f5ac04f-9d9b-4a46-a212-c51ce9c16dff",
+      "summary": "GPI v5.1.0 individual verifier competence requirements span Sections 5.10.1.3 and 5.10.3, not Section 5.10.3 alone.",
+      "resolution": "Updated citation in cl-rev32-competence-scoring (ZH & EN) to Sections 5.10.1.3 and 5.10.3."
+    },
+    {
+      "id": "R2",
+      "sourceReviewer": "70734190-fba8-45eb-9377-e71bfd6b5e7f",
+      "summary": "EN cl-rev32-what-review-cannot-establish dropped UK government policy and WRATE rationale for the incineration-credit override, while ZH left WRATE unglossed.",
+      "resolution": "Restored full UK government policy, revised Waste Framework Directive, and Waste and Resources Assessment Tool for the Environment (WRATE) rationale and gloss in both ZH and EN."
+    },
+    {
+      "id": "R3",
+      "sourceReviewer": "70734190-fba8-45eb-9377-e71bfd6b5e7f",
+      "summary": "ZH caveat in cl-rev32-competence-scoring referenced a non-existent table ('表中'), and Ch. 34 bridge ZH caveat retained stale '跨部承接'.",
+      "resolution": "Updated cl-rev32-competence-scoring ZH caveat to '本节所列资历下限' and cl-epd31-paywalled-boundaries-and-bridge ZH caveat to '跨章承接范围'."
+    },
+    {
+      "id": "R4",
+      "sourceReviewer": "70734190-fba8-45eb-9377-e71bfd6b5e7f",
+      "summary": "Table 1 erroneously prefixed ISO 14065 with ISO/IEC in both ZH and EN.",
+      "resolution": "Corrected Table 1 in both languages to ISO/IEC 17029 and ISO 14065, or ISO/IEC 17065 (also distinguishing 'should' vs 'shall' per GPI §5.10.2)."
+    },
+    {
+      "id": "R5",
+      "sourceReviewer": "70734190-fba8-45eb-9377-e71bfd6b5e7f",
+      "summary": "Unintroduced acronyms (SVR, CB, GI, TC, ILCD-EL, EMAS in EN, NACE Rev. 2, LCDN, PEFCR, GPI, IBU, CFB-EV) reduced standalone readability.",
+      "resolution": "Expanded all institutional and technical acronyms on first use in Ch. 35 prose and spelled out CB, GI, TC, SVR, and ILCD-EL in Tables 1–2 across ZH and EN."
+    }
+  ],
+  "nonBlockingResolutions": [
+    "Added '与术语表' to ev-rev32-ghgp-assurance-ch12 ZH locator and updated ev-rev32-jrc-ef-data-v2-review Section 6 page span to 30–32.",
+    "Refined Table 1 cells for GHG Protocol ('Voluntary product GHG standard' / 'procurement/labels'), ILCD 2010 ('No site-visit mandate specified'), and EU Batteries ('Art. 7–8' Module A bar, 'refusals/withdrawals' authority reporting).",
+    "Aligned Table 2 EN 'production/accounting links', GPI §5.10.2 should vs shall, IBU §8.1 '3 LCAs and 3 prior verifications/reviews' + 'at least 20 EPDs', GPI §§8.4.7–8.4.8 references, EN six IBU §12.2 desk methods, PEF §8.4.3 vs CFB-EV §7.4 documentation nuance, ZH '真实使用功能', dropped one-off '(ODP)' in EN, disclosed ISO 9001/14001/50001 and XP TS 14071 in paywalled boundaries, added EN Table periods and concise explicit heading anchors, removed nested ZH parentheses in Book Index, and updated ZH /changes/ and description wording."
+  ],
+  "openLimitations": [
+    "Human domain expert peer review has not been conducted (scientificApproval: false).",
+    "Paywalled standards (ISO 14071:2024 / ISO/TS 14071:2014, ISO/IEC 17020/17029/17065, ISO 14065/14064-3/19011, ISO 9001/14001/50001, XP TS 14071, and full ISO 14040/14044/14025/EN 15804+A2/EN 15941) were not inspected clause-by-clause.",
+    "JRC CFB-EV (2023) remains an unfinalized EPLCA technical draft pending final EU delegated acts."
+  ]
+}
