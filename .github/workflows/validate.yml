@@ -93,12 +93,12 @@ jobs:
           fi
 
   tests:
-    name: tests (shard ${{ matrix.shard }}/2)
+    name: tests (shard ${{ matrix.shard }}/4)
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2]
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -111,7 +111,7 @@ jobs:
           install: false
       - run: pnpm install --frozen-lockfile
       - name: Run balanced test shard
-        run: node scripts/ci-test-shard.mjs --shard ${{ matrix.shard }} --total 2
+        run: node scripts/ci-test-shard.mjs --shard ${{ matrix.shard }} --total 4
 
   build:
     needs: plan
