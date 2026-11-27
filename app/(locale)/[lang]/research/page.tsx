@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: `${UI_SURFACES.references.zh} — 书目与核读` };
+  return { title: `${UI_SURFACES.references.zh} — 原始书目` };
 }
 
 export default async function LocalizedResearchPage({ params }: { params: Promise<{ lang: string }> }) {

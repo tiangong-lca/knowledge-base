@@ -15,7 +15,7 @@ const repoRoot = resolve(scriptDir, '..');
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
 export const readableBookCheckpointPin = 'ff2c17673a141aa1b87e2520af8cec9a885998830438a087fe2e10173558251e';
-export const revisionsIndexPin = 'c43bcaca286cdf77497460e36b7a571190b04997b72404c280de79fd8e7d259a';
+export const revisionsIndexPin = '2e146dc8e16e5c6815584f8f3e0fe5e88defc043afcb74fb34d18975c75e57f2';
 
 export function selectCheckpoint(config = checkpointConfig, pin = readableBookCheckpointPin) {
   if (!config || config.schemaVersion !== 1 || editionDigest(config) !== pin) {

@@ -83,8 +83,28 @@ const processPatterns = [
   /本\s*轮/g, /本次\s*核读/g, /首版\s*建设/g, /主任务/g, /源码\s*提交/g,
   /待\s*交付/g, /研究\s*进行中/g, /核查\s*日志/g, /检索\s*日志/g, /构建\s*状态/g,
   /当前为\s*AI\s*辅助来源核查稿/gi,
+  // Retired ZH UI & process-prose phrases (Phase 1F final-delivery guard)
+  /网页细读目录/g, /书籍目录与连续阅读/g, /核读记录/g, /书目与核读/g,
+  /待核说明/g, /暂标为待核/g, /已核对一手来源/g, /尚待正式购买授权/g,
+  /\bpdfIndices\b/g,
+  /规范论述清单/g, /已发布迭代修订清单/g, /具名论述更正清单/g,
+  // Retired EN UI & process-prose phrases (Phase 1F final-delivery guard)
+  /\bWeb Reading Contents\b/g, /\bChangelog & Errata\b/g,
+  /For international readers:/gi, /English edition reader note/gi,
+  /meaning-equivalent English edition/gi, /meaning-equivalent monograph/gi,
+  /cryptographically aligned/gi, /\bthis library\b/gi,
+  /\b0-based\s+index(?:es)?\b/gi, /\bzero-based\b/gi,
+  /pending licensed full-text/gi, /Primary source verified/gi,
+  /Chinese Editions & Errata ledger/gi,
 ];
-const aiExecution = /AI\s*辅助(?:来源)?核查(?:稿)?|来源核查由\s*AI\s*辅助完成/gi;
+const finalDeliveryOnlyPatterns = [
+  /本库/g, /私有缓存/g, /私人任务缓存/g, /私有临时研究目录/g,
+  /零基(?:索引|分页块|单元|\s*PDF)/g,
+  /整合改写试点/g, /整部连续回读/g, /全书连续回读/g, /统稿/g,
+  /SHA-256\s*(?:回执|verified)/gi,
+];
+const enScriptLeakRe = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const aiExecution = /AI\s*辅助(?:来源)?核查(?:稿)?|来源核查由\s*AI\s*辅助完成|Source verification was assisted by AI/gi;
 const machineKeys = new Set(['inputSha256', 'sourceCommit', 'reviewedAt', 'reviewKind', 'caseBinding', 'schemaVersion', 'artifactKind', 'scientificApproval', 'captureMethod', 'readingStatus', 'accessStatus', 'agent-source-check', 'selected-passages', 'not-close-read', 'working-preview']);
 const rawHash = /(?<![a-f0-9])[a-f0-9]{64}(?![a-f0-9])/gi;
 const caseId = /\bCASE-[A-Z0-9]+(?:-[A-Z0-9]+)*\b/g;
@@ -111,9 +131,10 @@ export function readerInternalIds(...records) {
   return ids;
 }
 
-export function validateReaderText(text, { label = 'Reader prose', knownIds = new Set(), allowAIStatement = false } = {}) {
+export function validateReaderText(text, { label = 'Reader prose', knownIds = new Set(), allowAIStatement = false, strictFinalDelivery = false } = {}) {
   const errors = [], prose = String(text).normalize('NFKC');
-  for (const pattern of processPatterns) {
+  const activePatterns = strictFinalDelivery ? [...processPatterns, ...finalDeliveryOnlyPatterns] : processPatterns;
+  for (const pattern of activePatterns) {
     pattern.lastIndex = 0;
     const match = pattern.exec(prose);
     if (match) errors.push(`${label}: project-process prose “${match[0]}” belongs in development Markdown`);
@@ -162,9 +183,31 @@ export function validateReaderMdx(raw, label, knownIds = new Set()) {
   return [...errors, ...validateReaderText(prose, { label, knownIds })];
 }
 
-/** Inspect decoded DOM text, not embedded RSC/JSON scripts or attribute values. */
-export function validateReaderHtml(html, { label = 'HTML', knownIds = new Set(), allowAIStatement = false } = {}) {
+/** Inspect decoded DOM text and head metadata, not embedded RSC/JSON scripts or attribute values. */
+export function validateReaderHtml(html, { label = 'HTML', knownIds = new Set(), allowAIStatement = false, locale = null } = {}) {
   const document = htmlParser.parse(html), errors = [], ids = new Set();
+  const isEnPage = locale === 'en' || (locale === null && /^en(?:\/|$)/.test(label));
+
+  // Inspect <title> and public description metadata before stripping <head> noise.
+  const titleNode = document.querySelector('title');
+  const titleText = titleNode?.text ?? '';
+  if (titleText) {
+    errors.push(...validateReaderText(titleText, { label: `${label} <title>`, knownIds, strictFinalDelivery: true }));
+    if (isEnPage && enScriptLeakRe.test(titleText)) {
+      errors.push(`${label} <title>: leaked non-English CJK characters on English page: “${titleText}”`);
+    }
+  }
+  const metaSelector = 'meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[name="twitter:title"],meta[name="twitter:description"]';
+  for (const meta of document.querySelectorAll(metaSelector)) {
+    const content = meta.getAttribute('content') ?? '';
+    if (!content) continue;
+    const metaName = meta.getAttribute('name') ?? meta.getAttribute('property') ?? 'meta';
+    errors.push(...validateReaderText(content, { label: `${label} <meta ${metaName}>`, knownIds, strictFinalDelivery: true }));
+    if (isEnPage && enScriptLeakRe.test(content)) {
+      errors.push(`${label} <meta ${metaName}>: leaked non-English CJK characters on English page: “${content}”`);
+    }
+  }
+
   for (const node of document.querySelectorAll('script,style')) node.remove();
   for (const node of document.querySelectorAll('[id]')) {
     const id = node.getAttribute('id');
@@ -174,19 +217,39 @@ export function validateReaderHtml(html, { label = 'HTML', knownIds = new Set(),
   // Preserve block boundaries without separating inline spans: textContent alone
   // would concatenate an exposed ID with the next paragraph's first word.
   const prose = document.structuredText;
-  errors.push(...validateReaderText(prose, { label, knownIds, allowAIStatement }));
+  errors.push(...validateReaderText(prose, { label, knownIds, allowAIStatement, strictFinalDelivery: true }));
   const aiStatements = prose.match(aiExecution) ?? [];
   if (allowAIStatement && aiStatements.length > 1) errors.push(`${label}: general AI writing identity must appear only once`);
-  for (const node of document.querySelectorAll('[aria-label]')) errors.push(...validateReaderText(node.getAttribute('aria-label'), { label: `${label} aria-label`, knownIds }));
+  for (const node of document.querySelectorAll('[aria-label]')) {
+    const aria = node.getAttribute('aria-label') ?? '';
+    errors.push(...validateReaderText(aria, { label: `${label} aria-label`, knownIds, strictFinalDelivery: true }));
+  }
   for (const node of document.querySelectorAll('[href],[src]')) {
     const href = node.getAttribute('href') ?? node.getAttribute('src');
     if (localDeveloperPath(href)) errors.push(`${label}: development Markdown must not be served or indexed as a reader route`);
+  }
+
+  // Enforce zero non-whitelisted Han/Hiragana/Katakana characters on English public HTML pages.
+  if (isEnPage) {
+    const bodyDoc = htmlParser.parse(html);
+    for (const node of bodyDoc.querySelectorAll('script,style,head,.english-term')) node.remove();
+    for (const link of bodyDoc.querySelectorAll('a[href]')) {
+      const href = link.getAttribute('href') ?? '';
+      if (href === '/zh/' || href.startsWith('/zh/') || (href === '/' && /中文/.test(link.text))) {
+        link.remove();
+      }
+    }
+    const enVisible = bodyDoc.structuredText;
+    const leaks = enVisible.match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]+/gu);
+    if (leaks) {
+      errors.push(`${label}: leaked non-English CJK characters on English page: “${[...new Set(leaks)].slice(0, 6).join('、')}”`);
+    }
   }
   return errors;
 }
 
 export function validateReaderIndex(text) {
-  const errors = validateReaderText(text, { label: 'llms.txt' });
+  const errors = validateReaderText(text, { label: 'llms.txt', strictFinalDelivery: true });
   if (/Research register|Literature map|Coverage and gaps|研究工作台|检索协议|\/downloads\/research\.json/i.test(text)) errors.push('llms.txt: advertise the reader bibliography, not the former research workbench/legacy register endpoint');
   for (const match of text.matchAll(/\]\(([^)]+)\)/g)) if (localDeveloperPath(match[1])) errors.push('llms.txt: development Markdown must not enter the public AI reading index');
   return errors;
@@ -767,7 +830,13 @@ async function validatePublicationOutput(root, { knownIds = new Set(), sourceCom
       else if (entry.isFile() && entry.name.endsWith('.html')) {
         const html = await readFile(path, 'utf8');
         if (label.startsWith('docs/book/') || label.startsWith('zh/docs/book/') || ((label === 'print/index.html' || label === 'zh/print/index.html') && /<article[^>]+class="print-chapter\b/.test(html))) bookOutput = true;
-        errors.push(...validateReaderHtml(html, { label, knownIds, allowAIStatement: label === 'changes/index.html' || label === 'print/index.html' || label === 'zh/changes/index.html' || label === 'zh/print/index.html' }));
+        const allowAIStatement = label === 'changes/index.html'
+          || label === 'print/index.html'
+          || label === 'zh/changes/index.html'
+          || label === 'zh/print/index.html'
+          || label === 'en/changes/index.html'
+          || label === 'en/print/index.html';
+        errors.push(...validateReaderHtml(html, { label, knownIds, allowAIStatement, locale: label.startsWith('en/') ? 'en' : 'zh' }));
       }
       else if (entry.isFile() && entry.name === 'llms.txt') errors.push(...validateReaderIndex(await readFile(path, 'utf8')));
       else if (!entry.isFile()) errors.push(`${label}: unexpected public output entry`);
