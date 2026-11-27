@@ -7,6 +7,7 @@ import { currentReaderOrdinaryAttributes, ChapterContent } from '@/components/ch
 import { EnChapterContent } from '@/components/en-chapter-content';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { EN_PARTS, getEnNumberedToc, getEnUnitLabel, getNumberedToc, getUnitNumbering, getWebsitePagination } from '@/lib/reader-numbering';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import { EN_PUBLIC_ENABLED, SUPPORTED_LOCALES, isSupportedLocale, type Locale } from '@/lib/i18n';
 import { getMDXComponents } from '@/mdx-components';
 import { languageAlternates } from '@/lib/seo-policy.mjs';
@@ -61,9 +62,9 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
         }}
       >
         <p className="reader-view-label">
-          Web Reading Contents
+          {UI_SURFACES.contents.en}
           {enPart ? ` · ${enPart.label} · ${enPart.title}` : ''} ·{' '}
-          <Link href="/en/print/">Continuous Reading &amp; Print</Link>
+          <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link>
         </p>
         <DocsTitle id="main-content" tabIndex={-1}>
           <NumberedTitle number={enLabel}>{page.data.title}</NumberedTitle>
@@ -93,8 +94,8 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
       data-reader-title={page.data.title}
     >
       <p className="reader-view-label">
-        网页细读目录{unit.partTitle ? ` · ${unit.partLabel} ${unit.partTitle}` : ''} ·{' '}
-        <Link href="/zh/print/">书籍目录与连续阅读</Link>
+        {UI_SURFACES.contents.zh}{unit.partTitle ? ` · ${unit.partLabel} ${unit.partTitle}` : ''} ·{' '}
+        <Link href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</Link>
       </p>
       <DocsTitle id="main-content" tabIndex={-1} data-reader-heading-key="@unit">
         <NumberedTitle number={unit.label}>{page.data.title}</NumberedTitle>

@@ -5,6 +5,7 @@ import { Claim } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
 import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 import type { ClaimKind, EvidenceRelation } from '@/lib/catalog';
 
@@ -27,12 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   if (lang === 'en') {
     return {
-      title: 'Notes & Claims',
-      description: 'Canonical claim statements, primary-source bindings, validity scopes, caveats, and premise links.',
+      title: UI_SURFACES.chapterNotes.en,
+      description: 'Chapter-end notes, primary-source citations, validity scopes, caveats, and premise links.',
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: '注释与论证' };
+  return { title: UI_SURFACES.chapterNotes.zh };
 }
 
 export default async function LocalizedClaimsPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -44,8 +45,8 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
     return (
       <PublicationShell
         lang="en"
-        title="Notes & Claims"
-        description="Inspect primary-source evidence, inferential links, validity scopes, and caveats for every reviewed claim in the book."
+        title={UI_SURFACES.chapterNotes.en}
+        description="Inspect primary-source evidence, inferential links, validity scopes, and caveats for every chapter note in the book."
       >
         <p>
           Within each chapter, notes are numbered in order of appearance; this index gathers all{' '}
@@ -102,7 +103,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
       </PublicationShell>
     );
   }
-  return <PublicationShell title="注释与论证" description="查阅论述的文献依据、推理联系和适用范围。">
+  return <PublicationShell title={UI_SURFACES.chapterNotes.zh} description="查阅各章注释的文献依据、推理联系和适用范围。">
     <p>各章注释按章内出现顺序编号；这里汇集全书论述，供交叉查阅。文献陈述、解释、综合论证、计算与分析建议具有不同的依据，不能互相替代。</p>
     {catalog.claims.filter(c => c.status === 'reviewed').map(c => <Claim id={c.id} anchor key={c.id} />)}
   </PublicationShell>;

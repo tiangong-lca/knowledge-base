@@ -1,7 +1,7 @@
 import type { Root, Node, Item } from 'fumadocs-core/page-tree';
 import type { TOCItemType } from 'fumadocs-core/toc';
 import { NumberedTitle } from '@/components/numbered-heading';
-import { EN_PARTS } from '@/lib/ui-glossary';
+import { EN_PARTS, UI_SURFACES } from '@/lib/ui-glossary';
 import { assertNumberingToc, getHeadingNumbering, getPresentationUnits, getUnitNumbering, readerParts } from '@/scripts/reader-numbering.mjs';
 
 const routeKey = (value: string) => value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
@@ -44,11 +44,11 @@ export function getWebsiteTree(tree: Root, locale: 'zh' | 'en' = 'zh'): Root {
       children: units.filter(unit => unit.part === part.number).map(item),
     });
   }
-  children.push({ type: 'folder', $id: 'reader-web-topics', name: isEn ? 'Topical Essays' : '概念与实践专题', defaultOpen: true, children: units.filter(unit => unit.kind === 'topic').map(item) });
-  children.push({ type: 'folder', $id: 'reader-web-appendices', name: isEn ? 'Appendices' : '附录', defaultOpen: true, children: units.filter(unit => unit.kind === 'appendix').map(item) });
+  children.push({ type: 'folder', $id: 'reader-web-topics', name: UI_SURFACES.topicalEssays[locale], defaultOpen: true, children: units.filter(unit => unit.kind === 'topic').map(item) });
+  children.push({ type: 'folder', $id: 'reader-web-appendices', name: UI_SURFACES.appendices[locale], defaultOpen: true, children: units.filter(unit => unit.kind === 'appendix').map(item) });
   const represented = new Set(units.map(unit => routeKey(unit.key)));
   for (const route of pages.keys()) if (!represented.has(route)) throw new Error(`Website page absent from numbered navigation: ${route}`);
-  return { ...tree, name: isEn ? 'Web Reading Contents' : '网页细读目录', children };
+  return { ...tree, name: UI_SURFACES.contents[locale], children };
 }
 
 export function getNumberedToc(page: {url: string; data: {toc: TOCItemType[]}}, view: 'web' | 'book' = 'web'): TOCItemType[] {

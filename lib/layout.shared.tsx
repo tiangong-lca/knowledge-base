@@ -1,6 +1,7 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { SiteBrand } from '@/components/site-brand';
 import type { Locale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import enUi from '@/config/editions/en/ui.json';
 
 export function baseOptions(lang: Locale = 'zh'): BaseLayoutProps {
@@ -12,17 +13,17 @@ export function baseOptions(lang: Locale = 'zh'): BaseLayoutProps {
       githubUrl: 'https://github.com/tiangong-lca/knowledge-base',
       links: [
         { text: enUi.nav.read, url: '/en/docs/' },
-        { text: enUi.nav.timeline, url: '/en/timeline/' },
-        { text: enUi.nav.guide, url: '/en/coverage/' },
+        { text: UI_SURFACES.timeline.en, url: '/en/timeline/' },
+        { text: UI_SURFACES.bookGuide.en, url: '/en/coverage/' },
         {
           type: 'menu',
           text: enUi.nav.indexMenu,
           items: [
-            { text: enUi.nav.concepts, description: enUi.nav.conceptsDesc, url: '/en/concepts/' },
-            { text: enUi.nav.references, description: enUi.nav.referencesDesc, url: '/en/research/' },
-            { text: enUi.nav.claims, description: enUi.nav.claimsDesc, url: '/en/claims/' },
-            { text: enUi.nav.changes, description: enUi.nav.changesDesc, url: '/en/changes/' },
-            { text: enUi.nav.print, description: enUi.nav.printDesc, url: '/en/print/' },
+            { text: UI_SURFACES.conceptIndex.en, description: enUi.nav.conceptsDesc, url: '/en/concepts/' },
+            { text: UI_SURFACES.references.en, description: enUi.nav.referencesDesc, url: '/en/research/' },
+            { text: UI_SURFACES.chapterNotes.en, description: enUi.nav.claimsDesc, url: '/en/claims/' },
+            { text: UI_SURFACES.revisionsErrata.en, description: enUi.nav.changesDesc, url: '/en/changes/' },
+            { text: UI_SURFACES.fullTextPrint.en, description: enUi.nav.printDesc, url: '/en/print/' },
           ],
         },
       ],
@@ -34,35 +35,35 @@ export function baseOptions(lang: Locale = 'zh'): BaseLayoutProps {
     githubUrl: 'https://github.com/tiangong-lca/knowledge-base',
     links: [
       { text: '阅读', url: `${prefix}/docs/` },
-      { text: '发展大事记', url: `${prefix}/timeline/` },
-      { text: '全书导览', url: `${prefix}/coverage/` },
+      { text: UI_SURFACES.timeline.zh, url: `${prefix}/timeline/` },
+      { text: UI_SURFACES.bookGuide.zh, url: `${prefix}/coverage/` },
       {
         type: 'menu',
-        text: '索引与出处',
+        text: '索引与参考',
         items: [
           {
-            text: '概念索引',
+            text: UI_SURFACES.conceptIndex.zh,
             description: '核心术语、英文原词与跨体系定义对照',
             url: `${prefix}/concepts/`,
           },
           {
-            text: '参考文献与出处',
-            description: '原始文献书目、核读记录与逐条引文出处定位',
+            text: UI_SURFACES.references.zh,
+            description: '全书引用的原始报告、论文、标准与出处位置',
             url: `${prefix}/research/`,
           },
           {
-            text: '注释与论证',
-            description: '全书论述条目、适用边界与前置依赖',
+            text: UI_SURFACES.chapterNotes.zh,
+            description: '全书章末注释、适用条件与前提关系总览',
             url: `${prefix}/claims/`,
           },
           {
-            text: '版本与勘误',
-            description: '历次修订留痕与公开变更日志',
+            text: UI_SURFACES.revisionsErrata.zh,
+            description: '影响读者理解的内容修订、章节调整与勘误入口',
             url: `${prefix}/changes/`,
           },
           {
-            text: '连续阅读与打印',
-            description: '按全书顺序连续阅读或纸面打印',
+            text: UI_SURFACES.fullTextPrint.zh,
+            description: '按全书顺序连续阅读或输出纸面打印版',
             url: `${prefix}/print/`,
           },
         ],

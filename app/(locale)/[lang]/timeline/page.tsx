@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { LcaTimeline } from '@/components/lca-timeline';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -35,7 +36,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
         <p className="subtle">
           This timeline is also included in the monograph as{' '}
           <Link href="/en/docs/appendices/lca-timeline/">Appendix E: Historical Timeline of Life Cycle Assessment</Link>
-          , and appears at the end of the <Link href="/en/print/">Continuous Reading &amp; Print Edition</Link>. Every milestone publicly displays its primary-source verification status (Primary source verified / Unverified).
+          , and appears at the end of the <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link>. Every milestone publicly displays its primary-source verification status (Primary source verified / Unverified).
         </p>
         <LcaTimeline lang="en" />
       </PublicationShell>
@@ -49,7 +50,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
       <p className="subtle">
         本时间线已同步编入书籍{' '}
         <Link href="/zh/docs/appendices/lca-timeline/">附录 E《生命周期评价发展大事记》</Link>
-        ，亦可在 <Link href="/zh/print/">连续阅读与打印版</Link> 末尾查看完整纸面排版。所有节点均公开标示一手来源核验状态（已核对一手来源／待核）。
+        ，亦可在 <Link href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</Link> 末尾查看完整纸面排版。所有节点均公开标示一手来源核验状态（已核对一手来源／待核）。
       </p>
       <LcaTimeline />
     </PublicationShell>

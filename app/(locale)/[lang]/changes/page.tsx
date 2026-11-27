@@ -4,6 +4,7 @@ import { PublicationNote } from '@/components/publication-note';
 import { PublicationShell } from '@/components/publication-shell';
 import { getBuildIdentity } from '@/lib/build-identity';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { buildPublicChangesLedger } from '@/scripts/reader-changes-ledger.mjs';
 
@@ -15,11 +16,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   if (lang === 'en') {
     return {
-      title: 'Editions & Errata',
-      description: 'Online edition governance, source commit traceability, and errata reporting for the English edition.',
+      title: UI_SURFACES.revisionsErrata.en,
+      description: 'Reader-facing revisions, chapter updates, and errata reporting for The Past and Present of Life Cycle Assessment.',
     };
   }
-  return { title: '版本与勘误' };
+  return { title: UI_SURFACES.revisionsErrata.zh };
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
@@ -32,8 +33,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
-        title="Editions & Errata"
-        description="Online text governance, bilingual alignment, and errata reporting for The Past and Present of Life Cycle Assessment."
+        title={UI_SURFACES.revisionsErrata.en}
+        description="Reader-facing revisions, chapter updates, and errata reporting for The Past and Present of Life Cycle Assessment."
       >
         <h2>Online Edition</h2>
         <p>
@@ -42,8 +43,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </p>
         <p>
           <a href={identity.sourceUrl} rel="noreferrer">View source commit</a> ·{' '}
-          <Link href="/en/print/">Continuous Reading &amp; Print Edition</Link> ·{' '}
-          <Link href="/en/coverage/">Book Guide</Link>
+          <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link> ·{' '}
+          <Link href="/en/coverage/">{UI_SURFACES.bookGuide.en}</Link>
         </p>
 
         <h2>Bilingual Alignment &amp; Completeness</h2>
@@ -79,10 +80,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const revisions = ledger.revisions ?? [];
   const retirements = ledger.retirements ?? [];
   const merges = ledger.merges ?? [];
-  return <PublicationShell title="版本与勘误" description="《生命周期评价的前世今生》的在线文本、修订清单与勘误入口。">
+  return <PublicationShell title={UI_SURFACES.revisionsErrata.zh} description="《生命周期评价的前世今生》的在线文本、修订清单与勘误入口。">
     <h2>在线文本</h2>
-    <p>引用网页时，请记录篇名、网址和访问日期；引用原始研究时，以章末注释列明的作品与版本为准。历史指南的年份与方法版本，是其解释范围的一部分。为保持正文与打印版连续洁净，各轮修订说明与历史版本追踪统一汇总于本页，不再嵌入正文章节阅读流。</p>
-    <p><a href={identity.sourceUrl}>查看本版文本</a> · <a href="/zh/print/">连续阅读与打印</a></p>
+    <p>引用网页时，请记录篇名、网址和访问日期；引用原始研究时，以章末注释列明的作品与版本为准。历史指南的年份与方法版本，是其解释范围的一部分。</p>
+    <p><a href={identity.sourceUrl}>查看本版文本</a> · <a href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</a></p>
     <h2>勘误</h2>
     <p>如发现引文、算式或论述存在问题，可提供篇名、相关段落与原始出处，<a href={identity.errataUrl}>提出勘误或补充证据</a>。第三方文献的更正需要同时辨认原版和更正版本；不能只改一个数字而丢失它的来源。</p>
     <PublicationNote />

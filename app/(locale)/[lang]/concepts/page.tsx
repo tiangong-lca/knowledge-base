@@ -6,6 +6,7 @@ import { enClaimsMap } from '@/components/en-chapter-content';
 import enMappingsFile from '@/knowledge/editions/en/mappings.json';
 import { formatEnConceptTitle } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog from '@/lib/catalog';
 
 const enMappingConditions = (enMappingsFile.mappings ?? {}) as Record<string, string[]>;
@@ -23,12 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   if (lang === 'en') {
     return {
-      title: 'Concepts Index',
+      title: UI_SURFACES.conceptIndex.en,
       description: 'Core LCA concepts, cross-framework definitions, and conceptual mappings.',
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: '概念索引' };
+  return { title: UI_SURFACES.conceptIndex.zh };
 }
 
 export default async function LocalizedConceptsPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -51,7 +52,7 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
     return (
       <PublicationShell
         lang="en"
-        title="Concepts Index"
+        title={UI_SURFACES.conceptIndex.en}
         description="Names are only entry points. Each concept's meaning depends on its source framework, version, object level, and scope of applicability."
       >
         <div className="concept-jump">

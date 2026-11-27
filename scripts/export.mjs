@@ -64,14 +64,14 @@ export function emitRouteRedirects(outDir = 'out', configPath = 'config/route-re
   if (existsSync(join(outDir, 'zh', 'docs', 'index.html'))) {
     const legacyRoots = [
       { from: '/docs', to: '/zh/docs', title: '全书正文' },
-      { from: '/sources', to: '/zh/sources', title: '引文出处' },
-      { from: '/claims', to: '/zh/claims', title: '注释与论证' },
+      { from: '/sources', to: '/zh/sources', title: '参考文献 — 引文定位' },
+      { from: '/claims', to: '/zh/claims', title: '注释汇编' },
       { from: '/concepts', to: '/zh/concepts', title: '概念索引' },
       { from: '/coverage', to: '/zh/coverage', title: '全书导览' },
-      { from: '/changes', to: '/zh/changes', title: '版本与勘误' },
-      { from: '/print', to: '/zh/print', title: '连续阅读与打印' },
+      { from: '/changes', to: '/zh/changes', title: '修订与勘误' },
+      { from: '/print', to: '/zh/print', title: '全书连续版' },
       { from: '/research', to: '/zh/research', title: '参考文献' },
-      { from: '/timeline', to: '/zh/timeline', title: 'LCA 发展大事记' },
+      { from: '/timeline', to: '/zh/timeline', title: '发展大事记' },
     ];
     for (const unit of getPresentationUnits('web')) {
       if (unit.key !== '/docs') {
@@ -192,7 +192,7 @@ export async function exportArtifacts(validateSource, validateOutput) {
   writeFileSync('out/downloads/search-index-en.json', JSON.stringify(enSearchIndex));
 
   const routeBase = prefix ? '/zh' : '';
-  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书正文](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文出处](${routeBase}/sources/)\n- [注释与论证](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [连续阅读与打印](${routeBase}/print/)\n- [版本与勘误](${routeBase}/changes/)\n- [English Edition](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
+  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [English Edition](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
   emitRouteRedirects('out');

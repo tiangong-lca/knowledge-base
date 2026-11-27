@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getSource } from '@/lib/source';
 import { NumberedTitle } from '@/components/numbered-heading';
-import { EN_PARTS } from '@/lib/ui-glossary';
+import { EN_PARTS, UI_SURFACES } from '@/lib/ui-glossary';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 
 const logicalKey = (url: string) => url.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
@@ -32,13 +32,13 @@ export function EnHomePage() {
               Start Reading
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/en/coverage/">
-              Book Guide
+              {UI_SURFACES.bookGuide.en}
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/en/timeline/">
-              Historical Timeline
+              {UI_SURFACES.timeline.en}
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/en/print/">
-              Print Edition
+              {UI_SURFACES.fullTextPrint.en}
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/">
               Chinese Edition
@@ -66,8 +66,8 @@ export function EnHomePage() {
         <div className="section-heading">
           <h2>All {chapters.length} Chapters Across {readerParts.length} Parts</h2>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/en/coverage/">Book Guide</Link>
-            <Link href="/en/print/">Continuous Reading &amp; Print</Link>
+            <Link href="/en/coverage/">{UI_SURFACES.bookGuide.en}</Link>
+            <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link>
           </div>
         </div>
         {readerParts.map(part => {
@@ -137,22 +137,22 @@ export function EnHomePage() {
         </div>
         <div className="overview-links">
           <Link href="/en/coverage/">
-            Book Guide<span>{readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices</span>
+            {UI_SURFACES.bookGuide.en}<span>{readerParts.length} parts, {chapters.length} chapters, {topics.length} topical essays, and {appendices.length} appendices</span>
           </Link>
           <Link href="/en/timeline/">
-            LCA Historical Timeline<span>27 milestones (1969–2026) with primary-source verification</span>
+            {UI_SURFACES.timeline.en}<span>Milestones from 1969 to 2026 with source links</span>
           </Link>
           <Link href="/en/research/">
-            References &amp; Sources<span>Bibliography and passage-level citation locators</span>
+            {UI_SURFACES.references.en}<span>Primary bibliography and passage-level citation locators</span>
           </Link>
           <Link href="/en/concepts/">
-            Concepts Index<span>Core LCA terminology and cross-framework mappings</span>
+            {UI_SURFACES.conceptIndex.en}<span>Core LCA terminology and cross-framework mappings</span>
           </Link>
           <Link href="/en/claims/">
-            Notes &amp; Claims<span>All reviewed claims with scopes and caveats</span>
+            {UI_SURFACES.chapterNotes.en}<span>All chapter notes with sources, scopes, and caveats</span>
           </Link>
           <Link href="/en/changes/">
-            Editions &amp; Errata<span>Source commit traceability and errata reporting</span>
+            {UI_SURFACES.revisionsErrata.en}<span>Reader-facing revisions and errata reporting</span>
           </Link>
         </div>
       </section>
