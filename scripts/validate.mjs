@@ -25,6 +25,7 @@ import { validateTimelineData } from './reader-timeline.mjs';
 import { validateReaderGuideConfig } from './reader-guide.mjs';
 import { detectInternalDraftChapterNumbers } from './reader-quality-lint.mjs';
 import { validateBilingualEditions } from './reader-bilingual.mjs';
+import { validateBilingualStructuralParity } from './reader-bilingual-parity.mjs';
 import { currentEditionKeys, validateFrameworkCoverage, assertFrameworkHeadingHistory } from './reader-edition.mjs';
 import { readerInternalIds, validateReaderClaims, validateReaderMdx } from './reader-surface.mjs';
 
@@ -159,6 +160,7 @@ async function validatePublication(root, requireCurrent) {
     errors.push(...detectInternalDraftChapterNumbers(data));
     const bilingual = validateBilingualEditions(root, data);
     errors.push(...bilingual.errors);
+    errors.push(...validateBilingualStructuralParity(root).errors);
     try {
       if (!isRevised('/docs/book/particulate-emissions-and-health'))
         errors.push(...validatePmSelectionCoverage(edition, sources, data, pmAccepted, undefined, { readings, literature }));

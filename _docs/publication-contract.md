@@ -17,7 +17,7 @@ checkPaths:
   - "scripts/**"
   - "releases/**"
 lastReviewedAt: 2026-11-27
-lastReviewedCommit: 6158c7520de7e0d665673030a50b6b46c8f3c3da
+lastReviewedCommit: 6889e9e837d9248f0fca938eaadee0ee250003b9
 ---
 
 # Publication contract
@@ -822,3 +822,5 @@ The user-authorized English edition is authored at the **meaning level** rather 
 - **Mutual refinement & drift control**: Chinese ambiguities or errors uncovered during English authoring are corrected in the Chinese canonical layer via the post-checkpoint revision tooling (permitted in the same PR using a structured 3-commit layout). Every English claim pins `zhDigest`; drift fails validation unless explicitly marked `pendingSync` with a visible reader notice.
 - **Terminology & Chinese sources**: `knowledge/editions/en/termbase.json` records every canonical English term with `basis: official` (citing authoritative standards/glossaries) or `basis: contextual` (rationale within the monograph). Chinese standards and policy sources use official English titles where published, or contextual translations retaining the original Chinese title.
 - **Epistemic status**: Passing bilingual parity, build and zero-context reader checks does not establish scientific or human expert approval. Both editions retain `scientificApproval: false` until separately certified.
+- **Per-change correspondence (2026-11-27, `#302`)**: Every change to public content in either language updates the other language in the same delivery, at the meaning level rather than word for word, across all public surfaces including reading guides, home pages, navigation, print, reference pages and page metadata (`_docs/lca-book-goal.md` §2.17). Published pages may not show `pendingSync` claims.
+- **Structural parity gate**: `scripts/reader-bilingual-parity.mjs`, run by `pnpm validate`, fails on differing page sets, `meta.json` order, section counts, claim sequence, tables, worked cases, `ReaderSection` anchors, reader-guide identities/targets, missing English frontmatter or unpublished English claims. Justified structural differences are listed with rationale and removal plan in `config/editions/en/parity-exceptions.json`; stale entries fail. The gate checks skeletons only; meaning equivalence still requires a recorded bilingual meaning review.

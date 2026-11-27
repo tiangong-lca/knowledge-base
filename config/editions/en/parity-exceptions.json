@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "exceptions": [
+    {
+      "path": "book/index.mdx",
+      "check": "readerSections",
+      "rationale": "The English Reading Guide groups the eight parts under five section anchors while the Chinese guide uses ten finer anchors. Both cover the same parts and reading routes, but the paragraph skeletons differ. Resolve by rewriting both guides to one shared section structure in the final-delivery wording package; remove this entry in the same change.",
+      "since": "2026-11-27"
+    }
+  ]
+}
