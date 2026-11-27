@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase3-3-lca-results-in-policy-and-part7-342",
+  "issue": "tiangong-lca/knowledge-base#342",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Dual independent agent review of primary-source legal/numerical fidelity, premise-DAG invariants, 8-part structural integrity, Clean Public Delivery (§2.15), and meaning-level bilingual parity (§2.17). Does not constitute human domain expert peer review or legal/customs/accreditation advice.",
+  "reviewers": [
+    {
+      "id": "2a63f274-70b5-4bee-8e2b-210e616e2bb9",
+      "role": "Primary-Source & Engineering Auditor",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 6,
+      "resolvedCount": 6
+    },
+    {
+      "id": "e8b4dd5d-38e5-4c78-8659-5afb1d1ab6bc",
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 3,
+      "resolvedCount": 3
+    }
+  ],
+  "blockingFindings": [
+    {
+      "id": "B1",
+      "sourceReviewer": "2a63f274-70b5-4bee-8e2b-210e616e2bb9",
+      "summary": "EPBD (EU) 2024/1275 Article 22 conflated semi-annual public national updates (Art. 22(4)) with transfers to the EU Building Stock Observatory, which Art. 22(5) sets at least once per year.",
+      "resolution": "Separated Art. 22(2) machine-readable national databases, Art. 22(4) at-least-twice-yearly public aggregated updates, and Art. 22(5) at-least-annual Observatory transfers across ev-pol33-epbd-art7-annex3, cl-pol33-epbd-whole-life-gwp (ZH/EN), and Table 1 (ZH/EN)."
+    },
+    {
+      "id": "B2",
+      "sourceReviewer": "2a63f274-70b5-4bee-8e2b-210e616e2bb9",
+      "summary": "CBAM (EU) 2023/956 four-year record retention was cited as Article 7(5) instead of Article 7(6) (which sets retention through the end of the fourth year after the declaration submission year).",
+      "resolution": "Updated ev-pol33-cbam-boundary-defaults-verif, cl-pol33-cbam-boundary-defaults-verification (ZH/EN), and Table 1 (ZH/EN) to cite Article 7(5)–(6) with exact retention scope."
+    },
+    {
+      "id": "B3",
+      "sourceReviewer": "2a63f274-70b5-4bee-8e2b-210e616e2bb9",
+      "summary": "CBAM Annex IV point 3 precursors were misstated as 'explicitly listed in Annex I' rather than input materials listed as relevant to production-process system boundaries in the Article 7(7) implementing act.",
+      "resolution": "Corrected ev-pol33-cbam-boundary-defaults-verif, cl-pol33-cbam-boundary-defaults-verification (ZH/EN), cl-pol33-china-gbt24067-and-cross-border-tension (ZH), and Table 1 (ZH/EN)."
+    },
+    {
+      "id": "B4",
+      "sourceReviewer": "both",
+      "summary": "Printed OJ page locators in ev-pol33-epbd-art7-annex3 (missing Art. 17(15) p. 37; Arts. 35/37 on p. 47 not 50–51) and both CBAM evidence records needed exact page corrections.",
+      "resolution": "Corrected all three evidence locators across knowledge/catalog.json, knowledge/editions/en/bibliography.json, and the revision manifest against literal OJ PDF page footers."
+    },
+    {
+      "id": "B5",
+      "sourceReviewer": "2a63f274-70b5-4bee-8e2b-210e616e2bb9",
+      "summary": "China 15-ministry plan Task 7 (policy synergy with ETS, voluntary emission-reduction trading, and EIA) was merged with Task 20 (factor cross-checking with national ETS and pollutant-discharge permit platform).",
+      "resolution": "Separated Task 7 and Task 20 accurately across ev-pol33-china-plan-2024-30, cl-pol33-china-carbon-footprint-plan (ZH/EN), and Table 1 (ZH/EN)."
+    },
+    {
+      "id": "B6/R1",
+      "sourceReviewer": "both",
+      "summary": "Three live public 7-part/old-Part-VI leftovers remained after the 8-part split: Ch. 39 cl-rev163-monograph-closing-boundary ('七部'/'all seven parts'), cl-rev163-targeted-revision-routing ZH scope ('全书七部'), and Part V introduction in config/reader-numbering.json ('产品足迹合规门槛' assigned to Part VI).",
+      "resolution": "Updated both Ch. 39 claims (ZH/EN + zhDigest + revision manifest) to eight parts and updated Part V's introduction in config/reader-numbering.json to point cleanly to Part VI's data-quality scope."
+    },
+    {
+      "id": "R2",
+      "sourceReviewer": "e8b4dd5d-38e5-4c78-8659-5afb1d1ab6bc",
+      "summary": "Multiple unexpanded acronyms in Ch. 36 body, Table 1, standalone public surfaces (description, Reading Guide, Book Guide, /changes/, /timeline/), and Ch. 3/32 bridge claims—including ambiguity hazards CCS (Chinese Classification for Standards) and CN (EU Combined Nomenclature).",
+      "resolution": "Expanded CCS, ICS, CN, DPP, CPR, PPA, EU CSW-CERTEX, ICT, PFCs, N₂O, B2C, ESG, PEF, OEF, EPD, SAMR, SAC, MEE, IMI, AVR, EPC, EV, LMT, NEVs, PV, IP, GHG, and end of life across Ch. 36, Table 1, and all standalone public surfaces."
+    },
+    {
+      "id": "R3",
+      "sourceReviewer": "e8b4dd5d-38e5-4c78-8659-5afb1d1ab6bc",
+      "summary": "Minor ZH/EN EPBD bridge nuance drift ('建筑全生命周期碳披露' vs 'whole-building carbon ceilings') in index.mdx and Ch. 35 bridge.",
+      "resolution": "Aligned both ZH and EN across Reading Guide, Part 7 intro, and cl-rev32-paywalled-boundaries-and-bridge to '建筑全生命周期碳披露与限值路线图' / 'whole-building life-cycle carbon disclosure and 2030 limit roadmaps'."
+    }
+  ],
+  "nonBlockingResolutions": [
+    "Synced internal reasoning metadata on cl-dqp-cross-chapter-bridge, cl-db30-part6-to-part7-bridge, and cl-rev32-paywalled-boundaries-and-bridge.",
+    "Explicitly prefixed ECGT amended UCPD articles ('经修订的 UCPD' / 'amended UCPD') to avoid confusion with ECGT's own 6 articles.",
+    "Added CBAM Art. 22(2) '按默认值测算' / 'determined by reference to default values' qualifier and refined China 15-ministry plan date wording (dated 22 May 2024 / officially issued 4 June 2024).",
+    "Standardized EN chemical/unit typography (CO₂, N₂O, kgCO₂eq/m²), split the two dense Section 36.3 sentences for readability, added 'and resource allocation' and 'and cut-off thresholds' parity details, updated Sequential Study Path 1 description in both reader guides, and cleaned 7-part CSS comments in components/reader-guide.module.css."
+  ],
+  "openLimitations": [
+    "Human domain expert peer review has not been conducted (scientificApproval: false).",
+    "Copyrighted/paywalled standards (GB/T 24067-2024, EN 15978:2011, ISO 14067:2018, ISO 14024, ISO/IEC 15459-1 through 15459-6, ISO/IEC 17065) were not purchased or inspected clause-by-clause.",
+    "ESPR delegated acts, EPBD Annex III Union framework, CBAM post-2026 review, and China's rolling 2027/2030 sector rules remain evolving legal instruments."
+  ]
+}
