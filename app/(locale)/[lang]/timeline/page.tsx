@@ -6,6 +6,7 @@ import { LcaTimeline } from '@/components/lca-timeline';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import { TIMELINE_MILESTONES } from '@/lib/timeline-data';
 import { UI_SURFACES } from '@/lib/ui-glossary';
+import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -27,6 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function LocalizedTimelinePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isSupportedLocale(lang)) notFound();
+  const timelineAppendix = getPresentationUnits('web').find(u => u.key === '/docs/appendices/lca-timeline');
+  const enAppendixLabel = timelineAppendix?.prefix ? `Appendix ${timelineAppendix.prefix}` : 'Appendix';
+  const zhAppendixLabel = timelineAppendix?.label ?? '附录';
   if (lang === 'en') {
     return (
       <PublicationShell
@@ -36,7 +40,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
       >
         <p className="subtle">
           This timeline is also included in the book as{' '}
-          <Link href="/en/docs/appendices/lca-timeline/">Appendix E: Historical Timeline of Life Cycle Assessment</Link>
+          <Link href="/en/docs/appendices/lca-timeline/">{enAppendixLabel}: Historical Timeline of Life Cycle Assessment</Link>
           , and appears at the end of <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link>.
         </p>
         <LcaTimeline lang="en" />
@@ -50,7 +54,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
     >
       <p className="subtle">
         本时间线已同步编入书籍{' '}
-        <Link href="/zh/docs/appendices/lca-timeline/">附录 E《生命周期评价发展大事记》</Link>
+        <Link href="/zh/docs/appendices/lca-timeline/">{zhAppendixLabel}《生命周期评价发展大事记》</Link>
         ，亦可在 <Link href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</Link> 末尾查看完整纸面排版。
       </p>
       <LcaTimeline />
