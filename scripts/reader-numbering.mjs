@@ -21,10 +21,21 @@ import { projectRevisionNumbering } from './reader-revisions.mjs';
 
 const routeKey = value => typeof value === 'string' ? value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/' : value;
 const chinese = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+function deepFreeze(value) {
+  if (!value || typeof value !== 'object' || Object.isFrozen(value)) return value;
+  Object.freeze(value);
+  for (const child of Object.values(value)) deepFreeze(child);
+  return value;
+}
+deepFreeze(numbering);
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
 export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
-export function assertReaderNumbering(value = numbering, independentDigest = currentBookLayout('book:numbering-pin', readerNumberingDigest)) {
+const defaultNumberingDigest = currentBookLayout('book:numbering-pin', readerNumberingDigest);
+let defaultNumberingVerified = false;
+export function assertReaderNumbering(value = numbering, independentDigest = defaultNumberingDigest) {
+  const isDefault = value === numbering && independentDigest === defaultNumberingDigest;
+  if (isDefault && defaultNumberingVerified) return;
   const checkpointValue = projectRevisionNumbering(currentRevisions, value);
   const previous = projectServiceConstraintsNumbering(currentServiceConstraints, projectPart4RereadNumbering(currentPart4Reread, projectPart5RereadNumbering(currentPart5Reread, projectPart6RereadNumbering(currentPart6Reread, projectPart7RereadNumbering(currentPart7Reread, projectPart3RereadNumbering(currentPart3Reread, projectPart2RereadNumbering(currentPart2Reread, projectPart1RereadNumbering(currentPart1Reread, projectWholeBookRereadNumbering(currentWholeBookReread, checkpointValue)))))))));
   if (createHash('sha256').update(JSON.stringify(previous)).digest('hex') !== flowBoundaryNumbering(currentFlowBoundary, previous, independentDigest)) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
@@ -40,6 +51,7 @@ export function assertReaderNumbering(value = numbering, independentDigest = cur
       throw new Error('Each book part must contain at least three chapters to avoid imbalanced one- or two-chapter parts');
     }
   }
+  if (isDefault) defaultNumberingVerified = true;
 }
 export const readerNumberingManifest = numbering;
 export const bookTopicPresentation = currentBookLayout('book:notes-presentation', {
@@ -73,27 +85,44 @@ export function currentPrintReadingHref(href, print = false) {
   return href;
 }
 
+const cachedPresentationUnits = new Map();
+const cachedUnitsByRoute = new Map();
+const cachedHeadingPlans = new Map();
+
 /** Publication numbers belong to a view/edition; routes and claim IDs do not.
  * @returns {NumberingUnit[]}
  */
 export function getPresentationUnits(view) {
   assertReaderNumbering();
   if (view !== 'book' && view !== 'web') throw new TypeError(`Unknown reading view: ${view}`);
-  const counts = { chapter: 0, topic: 0, appendix: 0 };
-  return numbering[view].map(unit => {
-    const part = readerParts.find(part => part.number === unit.part);
-    if (unit.kind === 'front-matter') return { ...unit, label: null, prefix: null, ordinal: null, partLabel: null };
-    const ordinal = ++counts[unit.kind];
-    if (!Number.isInteger(ordinal)) throw new TypeError(`Unknown reading unit kind: ${unit.kind}`);
-    const prefix = unit.kind === 'chapter' ? String(ordinal) : unit.kind === 'topic' ? `T${ordinal}` : String.fromCharCode(64 + ordinal);
-    const label = unit.kind === 'chapter' ? `第${ordinal}章` : unit.kind === 'topic' ? (view === 'book' ? `${bookTopicPresentation.labelPrefix}${bookTopicPresentation.keepPrefix ? prefix : ordinal}` : '专题') : `附录 ${prefix}`;
-    return { ...unit, label, prefix, ordinal, partLabel: part?.label ?? null, partTitle: part?.title ?? null };
-  });
+  let cached = cachedPresentationUnits.get(view);
+  if (!cached) {
+    const counts = { chapter: 0, topic: 0, appendix: 0 };
+    cached = deepFreeze(numbering[view].map(unit => {
+      const part = readerParts.find(part => part.number === unit.part);
+      if (unit.kind === 'front-matter') return { ...unit, label: null, prefix: null, ordinal: null, partLabel: null };
+      const ordinal = ++counts[unit.kind];
+      if (!Number.isInteger(ordinal)) throw new TypeError(`Unknown reading unit kind: ${unit.kind}`);
+      const prefix = unit.kind === 'chapter' ? String(ordinal) : unit.kind === 'topic' ? `T${ordinal}` : String.fromCharCode(64 + ordinal);
+      const label = unit.kind === 'chapter' ? `第${ordinal}章` : unit.kind === 'topic' ? (view === 'book' ? `${bookTopicPresentation.labelPrefix}${bookTopicPresentation.keepPrefix ? prefix : ordinal}` : '专题') : `附录 ${prefix}`;
+      return { ...unit, label, prefix, ordinal, partLabel: part?.label ?? null, partTitle: part?.title ?? null };
+    }));
+    cachedPresentationUnits.set(view, cached);
+    const byRoute = new Map();
+    for (const unit of cached) {
+      const k = routeKey(unit.key);
+      if (!byRoute.has(k)) byRoute.set(k, unit);
+    }
+    cachedUnitsByRoute.set(view, byRoute);
+  }
+  return cached.slice();
 }
 
 export function getUnitNumbering(view, route) {
   const key = routeKey(route);
-  return getPresentationUnits(view).find(unit => routeKey(unit.key) === key) ?? null;
+  if (!cachedUnitsByRoute.has(view)) getPresentationUnits(view);
+  else assertReaderNumbering();
+  return cachedUnitsByRoute.get(view).get(key) ?? null;
 }
 
 /** The plan includes real component subheadings but only MDX sections enter the TOC.
@@ -103,16 +132,22 @@ export function getHeadingNumberPlan(view, route) {
   const unit = getUnitNumbering(view, route);
   if (!unit) throw new Error(`Reading unit is absent from ${view} numbering: ${route}`);
   if (!unit.prefix) return [];
-  const headings = numbering.headings[unit.source];
-  if (!Array.isArray(headings)) throw new Error(`Missing actual heading inventory: ${unit.source}`);
-  const counters = [];
-  return headings.map(heading => {
-    const index = heading.depth - 2;
-    if (!Number.isInteger(index) || index < 0 || index > 4 || (index > 0 && !counters[index - 1])) throw new Error(`Invalid actual heading hierarchy: ${unit.source} ${heading.key}`);
-    counters[index] = (counters[index] ?? 0) + 1;
-    counters.length = index + 1;
-    return { ...heading, number: `${unit.prefix}.${counters.join('.')}` };
-  });
+  const cacheKey = `${view}:${unit.key}`;
+  let cached = cachedHeadingPlans.get(cacheKey);
+  if (!cached) {
+    const headings = numbering.headings[unit.source];
+    if (!Array.isArray(headings)) throw new Error(`Missing actual heading inventory: ${unit.source}`);
+    const counters = [];
+    cached = deepFreeze(headings.map(heading => {
+      const index = heading.depth - 2;
+      if (!Number.isInteger(index) || index < 0 || index > 4 || (index > 0 && !counters[index - 1])) throw new Error(`Invalid actual heading hierarchy: ${unit.source} ${heading.key}`);
+      counters[index] = (counters[index] ?? 0) + 1;
+      counters.length = index + 1;
+      return { ...heading, number: `${unit.prefix}.${counters.join('.')}` };
+    }));
+    cachedHeadingPlans.set(cacheKey, cached);
+  }
+  return cached.slice();
 }
 
 export function getHeadingNumbering(view, route, key) {
