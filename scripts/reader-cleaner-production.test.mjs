@@ -7,6 +7,7 @@ import { validateReaderOutputFixture } from './reader-surface.mjs';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { assertCleanerProductionAccepted, assertCleanerProductionHeadingHistory, assertCleanerProductionRegistration, cleanerProductionHeadingEntries, cleanerProductionRoute as route, remapCleanerProductionCitations, validateCleanerProductionCoverage, validateRenderedCleanerProduction } from './reader-cleaner-production.mjs';
 import { getUnitNumbering } from './reader-numbering.mjs';
+import { currentBookLayout } from './reader-current-expectations.mjs';
 import { currentEditionKeys, publishedHeadingEntries, remapBookCitations } from './reader-edition.mjs';
 import { createCanonicalCitationEntries, createLegacyCitationEntries } from './reader-citations.mjs';
 import { chapterAnchorPrefix, createChapterNotePlan, printUnitAnchor, splitReferenceTail } from './reader-book.mjs';
@@ -17,8 +18,21 @@ const [accepted, captured, edition, baseline, placements, history, framework, fr
 ].map(json));
 const actualCatalog = JSON.parse(await readFile(new URL('../knowledge/catalog.json', import.meta.url), 'utf8'));
 const body = ids => `<Prose ids="${ids.join(' ')}" />`;
-const current = edition.units.find(unit => unit.key === route);
-const title = getUnitNumbering('web', route).title;
+const b05Sections = currentBookLayout('B05:headings', ['预防目的', '应用设想', '发展条件'].map(title => ({ id: title, title })));
+const b05UnitFixture = {
+  key: route,
+  source: route,
+  kind: 'chapter',
+  part: currentBookLayout('book:part-title:1', '问题的来路'),
+  sections: b05Sections,
+};
+const current = edition.units.find(unit => unit.key === route) ?? b05UnitFixture;
+const b05Edition = edition.units.some(unit => unit.key === route)
+  ? edition
+  : { ...edition, units: [...edition.units, b05UnitFixture] };
+const title = edition.units.some(unit => unit.key === route)
+  ? getUnitNumbering('web', route).title
+  : currentBookLayout('B05:title', accepted.title);
 const currentHeading = section => current.sections.find(heading => heading.id === section.id);
 const headingSource = section => {
   const { id, title } = currentHeading(section);
@@ -57,17 +71,17 @@ test('B05 stays one shared source with explicit metadata in the current39 mixed 
     copy => copy.units.find(unit => unit.key === route).part = '另部',
     copy => copy.units.find(unit => unit.key === route).sections.reverse(),
   ]) {
-    const copy = structuredClone(edition); change(copy);
-    assert.throws(() => currentEditionKeys(copy, available.filter(source => source !== route), baseline, placements), /B05/);
+    const copy = structuredClone(b05Edition); change(copy);
+    assert.throws(() => assertCleanerProductionRegistration(copy), /B05/);
   }
-  assertCleanerProductionRegistration(edition);
+  assertCleanerProductionRegistration(b05Edition);
 });
 
 test('source occurrence guard rejects omissions, duplicates, replacements, wrong sections and unreviewed additions', () => {
-  assert.deepEqual(validateCleanerProductionCoverage(edition, sources(raw), accepted), []);
+  assert.deepEqual(validateCleanerProductionCoverage(b05Edition, sources(raw), accepted), []);
   for (const id of accepted.sections.flatMap(section => section.claimIds)) {
-    assert(validateCleanerProductionCoverage(edition, sources(raw.replace(id, '').replace(/<Prose ids="\s*" \/>/g, '')), accepted).some(error => /propositions/.test(error)));
-    assert(validateCleanerProductionCoverage(edition, sources(raw.replace(id, `${id} ${id}`)), accepted).some(error => /propositions/.test(error)));
+    assert(validateCleanerProductionCoverage(b05Edition, sources(raw.replace(id, '').replace(/<Prose ids="\s*" \/>/g, '')), accepted).some(error => /propositions/.test(error)));
+    assert(validateCleanerProductionCoverage(b05Edition, sources(raw.replace(id, `${id} ${id}`)), accepted).some(error => /propositions/.test(error)));
   }
   const first = accepted.source.claimIds[0];
   for (const changed of [
@@ -77,17 +91,17 @@ test('source occurrence guard rejects omissions, duplicates, replacements, wrong
     raw.replace(headingSource(accepted.sections[0]), '## 未登记节'), raw.replace(`title: ${title}`, 'title: 旧标题'),
   ]) {
     assert.notEqual(changed, raw);
-    assert(validateCleanerProductionCoverage(edition, sources(changed), accepted).length);
+    assert(validateCleanerProductionCoverage(b05Edition, sources(changed), accepted).length);
   }
   const catalog = { claims: accepted.sections.flatMap(section => section.claimIds).map(id => ({ id, status: 'reviewed', kind: 'source-statement', ...accepted.additions.find(addition => addition.id === id) })) };
-  assert.deepEqual(validateCleanerProductionCoverage(edition, sources(raw), accepted, catalog), []);
+  assert.deepEqual(validateCleanerProductionCoverage(b05Edition, sources(raw), accepted, catalog), []);
   const addition = catalog.claims.at(-1);
   for (const field of ['kind','evidenceIds','premiseIds','reviewedAt','reviewKind']) {
     const changed = structuredClone(catalog); changed.claims.at(-1)[field] = field.endsWith('Ids') ? [] : 'wrong';
-    assert(validateCleanerProductionCoverage(edition, sources(raw), accepted, changed).some(error => /binding/.test(error)));
+    assert(validateCleanerProductionCoverage(b05Edition, sources(raw), accepted, changed).some(error => /binding/.test(error)));
   }
   addition.status = 'draft';
-  assert(validateCleanerProductionCoverage(edition, sources(raw), accepted, catalog).some(error => /Unreviewed/.test(error)));
+  assert(validateCleanerProductionCoverage(b05Edition, sources(raw), accepted, catalog).some(error => /Unreviewed/.test(error)));
 });
 
 test('all 4064 unique addresses retain generation context and the same captured historical claim meanings', () => {

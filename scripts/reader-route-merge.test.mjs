@@ -604,3 +604,93 @@ test('readerContinuationContracts dynamically tracks renamed destination chapter
   assert.ok(cont.webContext.includes(destTitle));
   assert.ok(cont.bookContext.includes(destTitle));
 });
+
+test('retire-unit with anchors remaps /print chapter, heading, note-group and note citations to the successor chapter', async () => {
+  const { printUnitAnchor } = await import('./reader-book.mjs');
+  const oldRoute = '/docs/book/old-part1';
+  const newRoute = '/docs/book/new-part1';
+  const oldPfx = printUnitAnchor(oldRoute);
+  const newPfx = printUnitAnchor(newRoute);
+  const rev = {
+    schemaVersion: 1,
+    id: 'rev-retire-print',
+    date: '2026-11-28',
+    title: '合并测试',
+    rationale: '测试退役章节在连续版中的锚点迁移。',
+    routes: [newRoute],
+    routeChanges: [
+      {
+        op: 'retire-unit',
+        route: oldRoute,
+        successor: newRoute,
+        successorAnchor: '#sec-default',
+        anchors: { '#old-h2': '#sec-mapped' },
+        rationale: '将旧章并入新章对应小节。',
+      },
+    ],
+    claims: [],
+    files: [],
+    outputs: [],
+    publicArtifacts: [],
+    corrections: [],
+  };
+  assert.doesNotThrow(() => validateRevisionSchema(rev, 'rev-retire-print'));
+  const entries = [
+    {
+      route: oldRoute,
+      path: '/print',
+      id: `${oldPfx}-old-h2`,
+      mode: 'retained',
+      targets: [{ route: oldRoute, path: '/print', id: `${oldPfx}-old-h2`, kind: 'heading' }],
+      edition: { sourceCommit: 'abc', sourceDate: '2026-11-01' },
+    },
+    {
+      route: oldRoute,
+      path: '/print',
+      id: 'print-chapter-old',
+      mode: 'notice',
+      targets: [{ route: oldRoute, path: '/print', id: oldPfx, kind: 'chapter' }],
+      edition: { sourceCommit: 'abc', sourceDate: '2026-11-01' },
+    },
+    {
+      route: oldRoute,
+      path: '/print',
+      id: `${oldPfx}-unmapped-h2`,
+      mode: 'retained',
+      targets: [{ route: oldRoute, path: '/print', id: `${oldPfx}-unmapped-h2`, kind: 'heading' }],
+      edition: { sourceCommit: 'abc', sourceDate: '2026-11-01' },
+    },
+    {
+      route: oldRoute,
+      path: '/print',
+      id: `${oldPfx}-annotations`,
+      mode: 'retained',
+      targets: [{ route: oldRoute, path: '/print', id: `${oldPfx}-annotations`, kind: 'note-group' }],
+      edition: { sourceCommit: 'abc', sourceDate: '2026-11-01' },
+    },
+    {
+      route: oldRoute,
+      path: '/print',
+      id: `${oldPfx}-claim-cl-demo`,
+      mode: 'retained',
+      targets: [{ route: oldRoute, path: '/print', id: `${oldPfx}-claim-cl-demo`, kind: 'note', claimId: 'cl-demo' }],
+      edition: { sourceCommit: 'abc', sourceDate: '2026-11-01' },
+    },
+  ];
+  const out = applyRouteChangesToCitations(entries, [rev]);
+  assert.equal(out[0].route, newRoute);
+  assert.equal(out[0].mode, 'alias');
+  assert.equal(out[0].targets[0].id, `${newPfx}-sec-mapped`);
+  assert.equal(out[1].route, newRoute);
+  assert.equal(out[1].mode, 'notice');
+  assert.equal(out[1].targets[0].id, newPfx);
+  assert.equal(out[2].route, newRoute);
+  assert.equal(out[2].mode, 'alias');
+  assert.equal(out[2].targets[0].id, `${newPfx}-sec-default`);
+  assert.equal(out[3].route, newRoute);
+  assert.equal(out[3].mode, 'alias');
+  assert.equal(out[3].targets[0].id, `${newPfx}-annotations`);
+  assert.equal(out[4].route, newRoute);
+  assert.equal(out[4].mode, 'alias');
+  assert.equal(out[4].targets[0].id, `${newPfx}-claim-cl-demo`);
+});

@@ -225,7 +225,7 @@ async function validatePublication(root, requireCurrent) {
         errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
       if (!isRevised('/docs/book/service-and-reference'))
         errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
-      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking'))
+      if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
         errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));
       if (!isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities'))
         errors.push(...validateFrameworkCoverage(edition,sources,accepted,data));

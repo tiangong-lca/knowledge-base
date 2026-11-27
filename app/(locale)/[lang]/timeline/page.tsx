@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
   return {
     title: '生命周期评价发展大事记',
-    description: '从 1969 年饮料容器账本到 2026 年欧盟数字产品护照与前瞻动态方法，按时期与主题串联全书关键历史节点、文献来源与对应正文。',
+    description: '从 1969 年饮料容器研究到 2026 年欧盟数字产品护照与前瞻动态方法，按时期与主题串联全书关键历史节点、文献来源与对应正文。',
     alternates: { canonical: '/zh/docs/appendices/lca-timeline/' },
   };
 }
@@ -36,7 +36,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
       <PublicationShell
         lang="en"
         title="LCA Historical Timeline (1969–2026)"
-        description={`Trace ${TIMELINE_MILESTONES.length} key milestones across five historical eras and four methodological tracks—from early beverage container ledgers and ISO standardization to EU regulatory footprints and prospective dynamic LCA.`}
+        description={`Trace ${TIMELINE_MILESTONES.length} key milestones across five historical eras and four methodological tracks—from early beverage container studies and ISO standardization to EU regulatory footprints and prospective dynamic LCA.`}
       >
         <p className="subtle">
           This timeline is also included in the book as{' '}

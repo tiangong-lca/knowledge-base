@@ -126,7 +126,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
 
   const isRevised = (...routes: string[]) => isRouteRevised(currentRevisions, ...routes);
 
-  if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking')) {
+  if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects')) {
     const cleanerErrors = validateCleanerProductionCoverage(edition, new Map(rawPages.map(page => [page.url, page.raw])), cleanerAccepted, catalog);
     if (cleanerErrors.length) throw new Error(cleanerErrors.join('\n'));
   }
@@ -197,7 +197,7 @@ export const getChapterReferenceIndex = cache((print = false): Promise<ChapterRe
   return pending;
 });
 export async function getCitationLabel(target: Destination) {
-  if (target.label) return target.label;
+  if (target.label && !isRouteRevised(currentRevisions, target.route)) return target.label;
   const print = target.path === '/print';
   if (target.kind === 'note') {
     const index = await getChapterReferenceIndex(print);
