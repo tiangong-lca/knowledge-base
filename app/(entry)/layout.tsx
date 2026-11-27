@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     siteName: localeMetadata.zh.siteName,
     title: localeMetadata.zh.title,
-    description: '从概念的来历到方法的含义，沿着证据理解生命周期评价。八部多章、五篇专题与五份附录的中文 LCA 知识库。',
+    description: localeMetadata.zh.description,
     images: [{ url: '/icon-512x512.png', width: 512, height: 512, alt: localeMetadata.zh.siteName }],
   },
   twitter: {

@@ -15,6 +15,16 @@ export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth
   const canonical = `${origin.replace(/\/$/, '')}${destPath}`;
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const anchorsJson = JSON.stringify(entry.anchors ?? {}).replace(/</g, '\\u003c');
+  const isRelocate = entry.kind === 'relocate';
+  const pageTitle = isRelocate
+    ? `页面已迁至新地址：${esc(entry.title)} — 生命周期评价的前世今生`
+    : `章节已合并：${esc(entry.title)} — 生命周期评价的前世今生`;
+  const heading = isRelocate
+    ? '页面已迁至新地址'
+    : `本章已合并至《${esc(entry.title)}》`;
+  const bodyNote = isRelocate
+    ? `您访问的页面现已位于新网址，正在自动跳转至《${esc(entry.title)}》。`
+    : `原篇章内容已整合至《${esc(entry.title)}》，正在自动跳转至合并后的完整章节。`;
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -22,12 +32,12 @@ export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth
   <meta name="robots" content="noindex" />
   <link rel="canonical" href="${esc(canonical)}" />
   <meta http-equiv="refresh" content="0; url=${esc(destPath)}" />
-  <title>章节已合并：${esc(entry.title)} — 生命周期评价的前世今生</title>
+  <title>${pageTitle}</title>
 </head>
 <body>
   <main style="max-width:40rem;margin:4rem auto;padding:0 1.25rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;">
-    <h1>本章已合并至《${esc(entry.title)}》</h1>
-    <p>原网页分页已与书籍正文章次统一，正在自动跳转至合并后的完整章节。</p>
+    <h1>${heading}</h1>
+    <p>${bodyNote}</p>
     <p><a id="redirect-link" href="${esc(destPath)}">立即前往《${esc(entry.title)}》</a></p>
   </main>
   <script>
@@ -63,19 +73,19 @@ export function emitRouteRedirects(outDir = 'out', configPath = 'config/route-re
   // legacy unprefixed Chinese route so bookmarked links and hash fragments work.
   if (existsSync(join(outDir, 'zh', 'docs', 'index.html'))) {
     const legacyRoots = [
-      { from: '/docs', to: '/zh/docs', title: '全书正文' },
-      { from: '/sources', to: '/zh/sources', title: '参考文献 — 引文定位' },
-      { from: '/claims', to: '/zh/claims', title: '注释汇编' },
-      { from: '/concepts', to: '/zh/concepts', title: '概念索引' },
-      { from: '/coverage', to: '/zh/coverage', title: '全书导览' },
-      { from: '/changes', to: '/zh/changes', title: '修订与勘误' },
-      { from: '/print', to: '/zh/print', title: '全书连续版' },
-      { from: '/research', to: '/zh/research', title: '参考文献' },
-      { from: '/timeline', to: '/zh/timeline', title: '发展大事记' },
+      { from: '/docs', to: '/zh/docs', title: '全书正文', kind: 'relocate' },
+      { from: '/sources', to: '/zh/sources', title: '参考文献 — 引文定位', kind: 'relocate' },
+      { from: '/claims', to: '/zh/claims', title: '注释汇编', kind: 'relocate' },
+      { from: '/concepts', to: '/zh/concepts', title: '概念索引', kind: 'relocate' },
+      { from: '/coverage', to: '/zh/coverage', title: '全书导览', kind: 'relocate' },
+      { from: '/changes', to: '/zh/changes', title: '修订与勘误', kind: 'relocate' },
+      { from: '/print', to: '/zh/print', title: '全书连续版', kind: 'relocate' },
+      { from: '/research', to: '/zh/research', title: '参考文献', kind: 'relocate' },
+      { from: '/timeline', to: '/zh/timeline', title: '发展大事记', kind: 'relocate' },
     ];
     for (const unit of getPresentationUnits('web')) {
       if (unit.key !== '/docs') {
-        legacyRoots.push({ from: unit.key, to: `/zh${unit.key}`, title: unit.title });
+        legacyRoots.push({ from: unit.key, to: `/zh${unit.key}`, title: unit.title, kind: 'relocate' });
       }
     }
     for (const item of legacyRoots) {
@@ -179,12 +189,12 @@ export async function exportArtifacts(validateSource, validateOutput) {
   const enSearchIndex = [
     {
       title: 'LCA Historical Timeline (1969–2026)',
-      text: 'Visual timeline of 27 life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
+      text: 'Visual timeline of key life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
       url: '/en/timeline/',
       kind: 'Timeline',
     },
     ...readMdxMeta('content-en/docs', '/en/docs').map(p => ({ ...p, kind: 'Chapter' })),
-    ...(enClaimsDoc.claims || []).map(c => ({ title: c.text, text: c.scope || '', url: `/en/claims/#${c.id}`, kind: 'Claim' })),
+    ...(enClaimsDoc.claims || []).map(c => ({ title: c.text, text: c.scope || '', url: `/en/claims/#${c.id}`, kind: 'Note' })),
     ...published.concepts.map(c => ({ title: formatConceptEn(c.english || c.label), text: formatConceptEn(c.english || ''), url: `/en/concepts/#${c.id}`, kind: 'Concept' })),
     ...published.sources.map(s => ({ title: s.title, text: s.publisher || '', url: `/en/sources/#${s.id}`, kind: 'Source' })),
   ];
@@ -192,7 +202,10 @@ export async function exportArtifacts(validateSource, validateOutput) {
   writeFileSync('out/downloads/search-index-en.json', JSON.stringify(enSearchIndex));
 
   const routeBase = prefix ? '/zh' : '';
-  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中文书稿。网站：天工 LCA 知识库。\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [English Edition](/en/)\n- [书目与引文数据](/downloads/bibliography.json)\n`);
+  const enSection = prefix
+    ? `\n## English Edition — The Past and Present of Life Cycle Assessment\n\n- [Home](/en/)\n- [Book Guide](/en/coverage/)\n- [Reading Guide](/en/docs/book/)\n- [Timeline](/en/timeline/)\n- [References](/en/research/)\n- [Citation Locators](/en/sources/)\n- [Chapter Notes](/en/claims/)\n- [Concept Index](/en/concepts/)\n- [Full Text & Print](/en/print/)\n- [Revisions & Errata](/en/changes/)\n`
+    : '';
+  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中英双语书稿。网站：天工 LCA 知识库。\n\n## 中文版\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [发展大事记](${routeBase}/timeline/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n${enSection}`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
   emitRouteRedirects('out');

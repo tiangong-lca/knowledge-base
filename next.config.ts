@@ -17,6 +17,7 @@ const config: NextConfig = {
     useTypeScriptCli: true,
     cpus: SSG_CPUS,
     memoryBasedWorkersCount: true,
+    globalNotFound: true,
   },
 };
 const withMDX = createMDX();
