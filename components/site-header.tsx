@@ -11,6 +11,7 @@ import {
 } from 'fumadocs-ui/components/dialog/search';
 import { baseOptions } from '@/lib/layout.shared';
 import type { Locale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import { entryDestination, languageDestination, saveManualLanguage } from '@/lib/locale-preference.mjs';
 import enUi from '@/config/editions/en/ui.json';
 
@@ -77,7 +78,7 @@ function KnowledgeSearchDialog(props: SharedProps) {
       <SearchDialogHeader>
         <SearchDialogIcon />
         <SearchDialogInput
-          placeholder={isEn ? enUi.searchPlaceholder : '搜索章节、概念、引文或论述'}
+          placeholder={isEn ? enUi.searchPlaceholder : '搜索章节、概念、参考文献或注释'}
           aria-label={isEn ? enUi.searchAriaLabel : '搜索知识库'}
         />
         <SearchDialogClose />
@@ -195,12 +196,12 @@ export function SiteChrome({ lang = 'zh', children }: { lang?: Locale; children:
       <footer className="site-footer">
         <div>
           <strong>{isEn ? enUi.footer.title : '天工 LCA 知识库'}</strong>
-          <p>{isEn ? enUi.footer.tagline : '每个判断都可以追问，每次修订都留下依据。'}</p>
+          <p>{isEn ? enUi.footer.tagline : '每个判断均可回溯出处，每次修订说明所改之处。'}</p>
         </div>
         <nav aria-label={isEn ? 'Footer navigation' : '页脚导航'}>
-          <a href={`${prefix}/timeline/`}>{isEn ? enUi.nav.timeline : '发展大事记'}</a>
-          <a href={`${prefix}/changes/`}>{isEn ? enUi.nav.changes : '版本与勘误'}</a>
-          <a href={`${prefix}/print/`}>{isEn ? enUi.nav.print : '连续阅读与打印'}</a>
+          <a href={`${prefix}/timeline/`}>{UI_SURFACES.timeline[lang]}</a>
+          <a href={`${prefix}/changes/`}>{UI_SURFACES.revisionsErrata[lang]}</a>
+          <a href={`${prefix}/print/`}>{UI_SURFACES.fullTextPrint[lang]}</a>
           <a href="https://github.com/tiangong-lca/knowledge-base">GitHub</a>
         </nav>
       </footer>

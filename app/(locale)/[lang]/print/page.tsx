@@ -25,7 +25,7 @@ import { part2RereadSource } from '@/scripts/reader-part2-reread.mjs';
 import { part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
 import { wholeBookRereadSource } from '@/scripts/reader-whole-book-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
-import { EN_PARTS } from '@/lib/ui-glossary';
+import { EN_PARTS, UI_SURFACES } from '@/lib/ui-glossary';
 
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map(lang => ({ lang }));
@@ -34,13 +34,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (lang === 'en') {
-    const chCount = getPresentationUnits('web').filter(u => u.kind === 'chapter').length;
+    const webUnits = getPresentationUnits('web');
+    const chCount = webUnits.filter(u => u.kind === 'chapter').length;
+    const topicCount = webUnits.filter(u => u.kind === 'topic').length;
+    const appCount = webUnits.filter(u => u.kind === 'appendix').length;
     return {
-      title: 'Continuous Reading & Print Edition',
-      description: `Complete continuous reading and printable English edition covering all ${readerParts.length} parts, ${chCount} chapters, 5 topical essays, 5 appendices, and references.`,
+      title: UI_SURFACES.fullTextPrint.en,
+      description: `Complete continuous reading and printable English edition covering all ${readerParts.length} parts, ${chCount} chapters, ${topicCount} topical essays, ${appCount} appendices, and references.`,
     };
   }
-  return { title: '书籍目录、连续阅读与打印' };
+  return { title: UI_SURFACES.fullTextPrint.zh };
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
@@ -196,8 +199,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <ChapterContent page={page} print />
     </article>;
   };
-  return <PublicationShell title="生命周期评价的前世今生" description="书籍目录与连续阅读。正文按部、章、节展开，补充篇目与附录分别列后，注释随章。">
-    <div className="print-controls"><PrintButton /><p>书籍与网页正文统一按连续章次编排；<Link href="/#web-contents">网页目录</Link>与连续阅读版逐章对应。引用时请记录章名、网址、版本和访问日期。</p></div>
+  return <PublicationShell title="生命周期评价的前世今生" description="全书连续版。正文按部、章、节展开，专题与附录分别列后，注释随章。">
+    <div className="print-controls"><PrintButton /><p>全书连续版与分章网页采用同一套连续章次；<Link href="/#web-contents">目录</Link>与连续版逐章对应。引用时请记录章名、网址、版本和访问日期。</p></div>
     <PublicationNote />
     <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">
       <h2>书籍目录</h2>

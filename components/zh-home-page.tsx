@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrderedPages } from '@/lib/reader-book';
 import { NumberedTitle } from '@/components/numbered-heading';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 
 const logicalKey = (url: string) => url.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
@@ -28,13 +29,13 @@ export function ZhHomePage() {
               开始阅读
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/coverage/">
-              全书导览
+              {UI_SURFACES.bookGuide.zh}
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/timeline/">
-              发展大事记
+              {UI_SURFACES.timeline.zh}
             </Link>
             <Link className="secondary-link whitespace-nowrap" href="/zh/print/">
-              连续阅读与打印
+              {UI_SURFACES.fullTextPrint.zh}
             </Link>
           </div>
         </div>
@@ -59,8 +60,8 @@ export function ZhHomePage() {
         <div className="section-heading">
           <h2>全书 {chapters.length} 章目录</h2>
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/zh/coverage/">按问题速查与阅读路径</Link>
-            <Link href="/zh/print/">书籍目录与连续阅读</Link>
+            <Link href="/zh/coverage/">{UI_SURFACES.bookGuide.zh}</Link>
+            <Link href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</Link>
           </div>
         </div>
         {readerParts.map(part => (
@@ -126,22 +127,22 @@ export function ZhHomePage() {
         </div>
         <div className="overview-links">
           <Link href="/zh/coverage/">
-            全书导览<span>八部主线、三种路径与六条问题入口</span>
+            {UI_SURFACES.bookGuide.zh}<span>八部主线、三种路径与六条问题入口</span>
           </Link>
           <Link href="/zh/timeline/">
-            发展大事记<span>1969–2026 可视化时间线与一手来源核验</span>
+            {UI_SURFACES.timeline.zh}<span>1969–2026 可视化时间线与一手来源核验</span>
           </Link>
           <Link href="/zh/research/">
-            参考文献与出处<span>书目核读记录与逐条引文位置切换</span>
+            {UI_SURFACES.references.zh}<span>原始书目与逐条引文位置</span>
           </Link>
           <Link href="/zh/concepts/">
-            概念索引<span>术语定义与英文原词</span>
+            {UI_SURFACES.conceptIndex.zh}<span>术语定义与英文原词</span>
           </Link>
           <Link href="/zh/claims/">
-            注释与论证<span>全书规范论述、前提依赖与适用条件</span>
+            {UI_SURFACES.chapterNotes.zh}<span>全书章末注释、前提依赖与适用条件</span>
           </Link>
           <Link href="/zh/changes/">
-            版本与勘误<span>历次修订留痕与章节合并记录</span>
+            {UI_SURFACES.revisionsErrata.zh}<span>读者可见修订与勘误入口</span>
           </Link>
         </div>
       </section>

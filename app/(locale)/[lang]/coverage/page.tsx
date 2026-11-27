@@ -7,6 +7,7 @@ import { readerGuideConfig } from '@/lib/reader-guide';
 import enReaderGuide from '@/config/editions/en/reader-guide.json';
 import { getSource } from '@/lib/source';
 import { EN_PARTS } from '@/lib/reader-numbering';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 import alignment from '@/knowledge/editions/alignment.json';
 import styles from '@/components/reader-guide.module.css';
@@ -252,12 +253,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
             <ul className={styles.cardGrid}>
               {[
-                { href: '/en/research/', title: 'References & Sources', desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
-                { href: '/en/concepts/', title: 'Concepts Index', desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
-                { href: '/en/claims/', title: 'Notes & Claims', desc: 'All reviewed claims with evidence bindings, scopes, and caveats.' },
-                { href: '/en/timeline/', title: 'LCA Historical Timeline', desc: '27 milestones (1969–2026) with primary-source verification status.' },
-                { href: '/en/print/', title: 'Continuous Reading & Print Edition', desc: 'Full monograph assembled in one printable document.' },
-                { href: '/en/changes/', title: 'Editions & Errata', desc: 'Source commit traceability, bilingual alignment, and errata submission.' },
+                { href: '/en/research/', title: UI_SURFACES.references.en, desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
+                { href: '/en/concepts/', title: UI_SURFACES.conceptIndex.en, desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
+                { href: '/en/claims/', title: UI_SURFACES.chapterNotes.en, desc: 'All chapter notes with primary sources, validity scopes, and caveats.' },
+                { href: '/en/timeline/', title: UI_SURFACES.timeline.en, desc: 'Key historical milestones from 1969 to 2026 with source provenance.' },
+                { href: '/en/print/', title: UI_SURFACES.fullTextPrint.en, desc: 'Complete book assembled in one continuous printable document.' },
+                { href: '/en/changes/', title: UI_SURFACES.revisionsErrata.en, desc: 'Reader-facing revisions, chapter updates, and errata submission.' },
               ].map(tool => (
                 <li key={tool.href} className={styles.unitCard}>
                   <Link href={tool.href} className={styles.unitLink}>{tool.title}</Link>

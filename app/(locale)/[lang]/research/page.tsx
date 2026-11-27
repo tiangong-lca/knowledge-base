@@ -5,6 +5,7 @@ import { PublicationShell } from '@/components/publication-shell';
 import { ReferencesTabs } from '@/components/references-tabs';
 import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { UI_SURFACES } from '@/lib/ui-glossary';
 import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
 
@@ -12,12 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   if (lang === 'en') {
     return {
-      title: 'References & Sources — Bibliography',
+      title: `${UI_SURFACES.references.en} — Bibliography`,
       description: 'Primary standards, reports, scholarly papers, and verified passage-level reading locators.',
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: '参考文献与出处 — 书目与核读' };
+  return { title: `${UI_SURFACES.references.zh} — 书目与核读` };
 }
 
 export default async function LocalizedResearchPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -36,7 +37,7 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
     return (
       <PublicationShell
         lang="en"
-        title="References & Sources"
+        title={UI_SURFACES.references.en}
         description="Primary reports, methodological papers, standards, and software documentation cited in the text."
       >
         <ReferencesTabs active="research" sourceCount={catalog.sources.length} evidenceCount={catalog.evidence.length} prefix="/en" lang="en" />
@@ -77,7 +78,7 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
     );
   }
 
-  return <PublicationShell title="参考文献与出处" description="正文所引报告、方法论文、指南与软件文档。具体引文位置见各章注释与引文定位标签页。">
+  return <PublicationShell title={UI_SURFACES.references.zh} description="正文所引报告、方法论文、指南与软件文档。具体引文位置见各章注释与引文定位标签页。">
     <ReferencesTabs active="research" sourceCount={catalog.sources.length} evidenceCount={catalog.evidence.length} prefix="/zh" />
     <p>按文献原题名列示。历史来源的日期指向具体报告、文章或版本；学位论文中的再印文本与原期刊文章分别注明。</p>
     {catalog.sources.map(source => {
