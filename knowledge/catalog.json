@@ -87252,6 +87252,241 @@
         "本核查清单依据五套公开可得一手文本归纳，涉及法定合规申报或第三方认证时须核对现行有效授权标准全文与适用行业品类规则。"
       ],
       "reasoning": "把本章四节提炼为读者可直接上手的四步审读与设计核查清单，明确公开预览边界并自然衔接第二部下一章《功能参照》。"
+    },
+    {
+      "id": "cl-p3o24-attributional-vs-consequential",
+      "text": "在进入共产品、市场、电力与材料循环四类具体问题之前，第三部先沿着第二部《研究目的与范围》确立的决策情景划清一道根本分界：研究究竟在做归属记账（attributional accounting，文献中亦称归因核算），还是在建模系统响应（consequential modeling）。早期分配文献（Ekvall 与 Tillman 1997；Ekvall、Tillman 与 Molander 2005，其原始术语与伦理辨析详见下文《信息目的》一节）已反复表明，这一分界取决于研究想回答哪一类问题——描述既定产品系统所连带的环境流，还是估计某项可能决定如何改变这些流量——而非日历时间先后。当代主要框架沿此分界走出清晰分流：GHG Protocol 产品标准（2011，第 5.2 节与框 5.1）将全部产品碳清单锁定在归因核算路径，把后果分析留给减排项目评估与公共政策；ILCD 2010（第 5.3 节表 2、§§6.5.4.2—6.5.4.4）则按“是否支持决策”与“背景市场是否发生大尺度结构性产能变动”划出纯核算（情景 C，其中 C2 不计入跨系统交互抵扣）、微观决策采用既有产能与平均市场混合作为实用简化的情景 A，以及中宏观结构响应的情景 B；而 Weidema 等（2013）在 ecoinvent v3 后果模型中定位于小尺度长期决策，认为单次购买的累积效应同样驱动长期资本投资，因而拒绝微观平均简化，坚持链接无约束边际供应者。",
+      "kind": "synthesis",
+      "scope": "第三部开篇对归属记账与系统响应的概念分界，连接第二部决策情景与早期分配文献、ILCD、GHG Protocol 及 ecoinvent v3 原文定位。",
+      "evidenceIds": [
+        "ev-allocation-1997-definition",
+        "ev-allocation-2005-definitions",
+        "ev-gs23-ilcd-ch5-goal-contexts",
+        "ev-sub105-ilcd-proxy-purpose",
+        "ev-mkt169-ilcd-contexts",
+        "ev-mkt169-ecoinvent-consequential",
+        "ev-mkt169-ghgp-attributional-allocation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-1997-definition",
+          "relation": "supports",
+          "rationale": "提供 Ekvall & Tillman (1997) 区分按比例分担与系统扩展程序层次的文献依据。"
+        },
+        {
+          "evidenceId": "ev-allocation-2005-definitions",
+          "relation": "supports",
+          "rationale": "提供 Ekvall 等 (2005) 按所求信息类型而非日历时间区分两类研究问法的原始定义。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-ch5-goal-contexts",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 第 5.3 节表 2 对情景 A、B、C1 及不计跨系统交互的 C2 的划分。"
+        },
+        {
+          "evidenceId": "ev-sub105-ilcd-proxy-purpose",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §6.5.4.2 将情景 A 平均市场混合界定为实用简化的原文依据。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ilcd-contexts",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §§6.5.4.3—6.5.4.4 情景 B 与 C 的结构变动与核算界定。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ecoinvent-consequential",
+          "relation": "supports",
+          "rationale": "提供 Weidema 等 (2013) ecoinvent v3 后果模型面向小尺度长期决策与边际链接的定位。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol 产品标准第 5.2 节强制归因核算及框 5.1 后果路径适用范围。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-decision-contexts"
+      ],
+      "conceptIds": [
+        "cn-system-model",
+        "cn-allocation-procedure",
+        "cn-allocation-context"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-28",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "文献中 retrospective/prospective 与 attributional/consequential 并非处处逐字同义；下文保留各原始文献自身的术语与边界条件，不把四套框架强行合并为单一二分标签。"
+      ],
+      "reasoning": "在读者进入共产品分配细节前，将全第三部共同面对的“归属记账 vs. 系统响应”总开关与第二部《研究目的与范围》衔接起来，并平滑过渡到下一节《信息目的》。"
+    },
+    {
+      "id": "cl-p3o24-four-domain-propagation",
+      "text": "这道总分界并非只在共产品一章出现，而是贯穿第三部全部四个问题域，同时改写每一章的算式结构与所需经验证据（表 1）。在《共同生产》中，归属路径把既有一批排放按物理或经济比例切分给各产品标签，而响应路径则在系统扩展名下添加缺失功能或扣除被替代的参照供给以比较路线差值（ILCD §6.5.3）；即便在归因框架内部，欧盟 PEF 附件一 §4.5 也明确把第一步的细分或整系统扩展，同第二步须双重举证的直接替代区分开来。在《市场响应》中，归属路径链接历史平均消费组合或合格合同层级（如欧盟 PEF 附件一 §4.4.2 的四级合同电力层级及一国消费未追踪比例 >95% 退回残余组合规则），而响应路径必须查明产能、副产品与政策约束以定位真正增减产的无约束边际供应者。在《供电系统》中，年度区域电厂平均排放率（如 eGRID2023 修订 2 按年净发电计）回答排放归属，短期运行模型（如 AVERT 4.3.0 面向基年起约五年内的既有化石机组调度）与长期容量扩展模型（如 Cambium 2024 通过基线与需求扰动双求解给出长期边际排放率 LRMER）则分别刻画不同时间尺度下的电网物理响应，且跨资料比较时须核对母线发电与终端配电损耗分母。在《材料循环》中，截断规则或欧盟 PEF 附件一 §4.4.8 循环足迹公式（CFF）借助固定分摊参数 A、质量比与默认值为 0 的参数 B 在先后生命周期之间交接负担与抵扣，而后果反事实分析（如 Ekvall 等 2021）进一步追问：当本地焚烧产能短期固定时，多回收一吨废塑料究竟减少了本地焚烧热电，还是仅腾出产能、转而吸纳原本在境外处理的进口可燃废物。",
+      "kind": "synthesis",
+      "scope": "归属记账与系统响应分界在共同生产、市场响应、供电系统与材料循环四个问题域中的传导机制及表 1 总览。",
+      "evidenceIds": [
+        "ev-sub105-ilcd-expansion",
+        "ev-sub105-pef-hierarchy",
+        "ev-mkt169-pef-electricity",
+        "ev-kb48-main-egrid2023-guide-generation-scope",
+        "ev-kb48-main-egrid2023-guide-ggl-method",
+        "ev-kb48-main-egrid2023-rev2-srl23-erct",
+        "ev-kb48-avertmanual43-rates-and-horizon",
+        "ev-kb48-avertweb43-release-config",
+        "ev-kb48-future-cambium2024-report-delivery",
+        "ev-kb48-future-cambium2024-report-lrmer-process",
+        "ev-cff109-2022-equation",
+        "ev-cff109-2022-allocation",
+        "ev-cff109-2022-quality",
+        "ev-cff109-ekvall-capacity"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-sub105-ilcd-expansion",
+          "relation": "supports",
+          "rationale": "提供 ILCD §6.5.3 系统扩展中添加功能与扣除替代供给两类操作的区分。"
+        },
+        {
+          "evidenceId": "ev-sub105-pef-hierarchy",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §4.5 第一步细分/整系统扩展与第二步直接替代的层级区分。"
+        },
+        {
+          "evidenceId": "ev-mkt169-pef-electricity",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §4.4.2 四级合同电力层级及一国消费未追踪 >95% 退回残余组合规则。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-generation-scope",
+          "relation": "supports",
+          "rationale": "提供 eGRID2023 区域电厂年平均排放率与年净发电分母界定。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-guide-ggl-method",
+          "relation": "supports",
+          "rationale": "提供 eGRID2023 输配电网总损耗及发电/终端换算分母说明。"
+        },
+        {
+          "evidenceId": "ev-kb48-main-egrid2023-rev2-srl23-erct",
+          "relation": "supports",
+          "rationale": "提供 eGRID2023 修订 2 区域直接 CO₂ 输出率工作簿证据。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertmanual43-rates-and-horizon",
+          "relation": "supports",
+          "rationale": "提供 AVERT v4.3 基线平均与边际化石率区分及约五年短期适用范围。"
+        },
+        {
+          "evidenceId": "ev-kb48-avertweb43-release-config",
+          "relation": "supports",
+          "rationale": "提供 AVERT Web Edition v4.3.0 版本标识依据。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-delivery",
+          "relation": "supports",
+          "rationale": "提供 Cambium 2024 母线与终端配电损耗换算口径依据。"
+        },
+        {
+          "evidenceId": "ev-kb48-future-cambium2024-report-lrmer-process",
+          "relation": "supports",
+          "rationale": "提供 Cambium 2024 LRMER 双求解同时刻画运行与容量调整的机制。"
+        },
+        {
+          "evidenceId": "ev-cff109-2022-equation",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §4.4.8 式 3 材料、能量与处置分项结构。"
+        },
+        {
+          "evidenceId": "ev-cff109-2022-allocation",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF CFF 中参数 A 与默认 B=0 的负担/抵扣分摊条款。"
+        },
+        {
+          "evidenceId": "ev-cff109-2022-quality",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF CFF 替代点与质量比折算同种原生材料替代条款。"
+        },
+        {
+          "evidenceId": "ev-cff109-ekvall-capacity",
+          "relation": "supports",
+          "rationale": "提供 Ekvall 等 (2021) 瑞典固定焚烧产能下本地废物与进口可燃废物相互作用的反事实机制。"
+        }
+      ],
+      "premiseIds": [
+        "cl-p3o24-attributional-vs-consequential"
+      ],
+      "conceptIds": [
+        "cn-joint-partition-residual",
+        "cn-market-marginal-production",
+        "cn-power-response",
+        "cn-cycle-burden-handoff"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-28",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本段与表 1 汇总第三部四章共用的判断骨架；各章的具体算例数值、复算条件与局限分别在后续四章逐一展开。"
+      ],
+      "reasoning": "把第三部原本分散在四章的“归属 vs. 响应”结构提炼为一眼可读的跨章地图，帮助读者在展开计算前先看懂四章的内在统一性。"
+    },
+    {
+      "id": "cl-p3o24-boundaries-and-double-counting",
+      "text": "正因为归属记账与系统响应回答的是不同问题，两类路径并不存在“哪一种普遍更准确”的排序，反而最忌在未声明问题口径的情况下相互混用。Ekvall、Tillman 与 Molander（2005）系统对比了两类路径在因果覆盖范围、模型不确定性与规范取舍上的相互批评，明确指出没有哪一派能普遍取代另一派；Frischknecht（1998）则指出，分配结果的唯一性、全部产品份额加总还原总排放的一致性，以及为规则本身提供辩护，是三项相互独立的责任。一旦在同一产品账本里把归属前景核算与未经验证的市场替代抵扣混在一起，就会同时破坏加总守恒并制造双重抵扣（例如两家相邻企业同时把同一批再生料或绿电的替代收益记在各自账下）。正因如此，主流框架在跨界处均设下严格护栏：ILCD 2010（§6.5.4 规定 I.a）把情景 A 下的平均市场混合替代严格限定于具备等效替代路线与足够市场吸收能力的情形（规模不足时须核查更广义等效功能乃至转入情景 B；仅在替代建模不可行且通用数据不够准确时才按规定 I.a.iv.4 回退分配）；欧盟 PEF（附件一 §4.5）要求同时提供直接市场效应与直接代表性清单两重证据，方准在归因账本内采用直接替代；GHG Protocol 产品标准（§§9.3.2、11.3.2）仅允许在掌握副产品去向且采用供应商或平均因子时开展归因系统扩展，并明令禁止从产品碳足迹总值中直接扣除市场避免排放。明确这些边界与护栏后，下一节先从共产品最基础的信息目的切入，再进入分担与参照供给算例。",
+      "kind": "interpretation",
+      "scope": "归属与系统响应不存在普遍优劣、混用引发双重计算的风险以及 ILCD、欧盟 PEF 与 GHG Protocol 在替代边界处的防错护栏。",
+      "evidenceIds": [
+        "ev-allocation-1998-defensibility",
+        "ev-allocation-2005-limits",
+        "ev-sub105-ilcd-conditions",
+        "ev-sub105-pef-hierarchy",
+        "ev-mkt169-ghgp-attributional-allocation"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-allocation-1998-defensibility",
+          "relation": "supports",
+          "rationale": "提供 Frischknecht (1998) 对唯一性、加总一致性与规则辩护三项不同责任的区分。"
+        },
+        {
+          "evidenceId": "ev-allocation-2005-limits",
+          "relation": "supports",
+          "rationale": "提供 Ekvall 等 (2005) 关于两类路径相互批评且无普遍优越结论的论证。"
+        },
+        {
+          "evidenceId": "ev-sub105-ilcd-conditions",
+          "relation": "supports",
+          "rationale": "提供 ILCD §6.5.4 规定 I.a 关于等效备选、足量吸收（规模不足转更广义等效功能或情景 B）及 I.a.iv.4 不可行且通用数据不足时回退分配的条件。"
+        },
+        {
+          "evidenceId": "ev-sub105-pef-hierarchy",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §4.5 对直接替代的双重举证要求。"
+        },
+        {
+          "evidenceId": "ev-mkt169-ghgp-attributional-allocation",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol §§9.3.2 与 11.3.2 关于采用供应商或平均因子开展归因系统扩展及禁止扣除市场避免排放的条款。"
+        }
+      ],
+      "premiseIds": [
+        "cl-p3o24-four-domain-propagation"
+      ],
+      "conceptIds": [
+        "cn-allocation",
+        "cn-allocation-procedure",
+        "cn-rule-conformance"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-28",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本段所述护栏均对应各框架已公开核验条文；具体研究中若涉法定合规披露或行业产品品类规则（PCR/PEFCR），仍须按适用规则检查其最新生效版本。"
+      ],
+      "reasoning": "把读者最容易踩坑的“归属与后果混算双计”问题摆在表 1 之后收束本节，直接引出本章《信息目的》的深入辨析。"
     }
   ],
   "concepts": [

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-4-part3-attribution-response-325",
+  "task": "#325",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor (independent read-only research subagent)",
+      "conversationId": "91f28a85-60c7-4bbd-8fa5-f60bab3481ae",
+      "initialVerdict": "FAIL-CLOSED (6 blocking, 5 non-blocking)",
+      "finalDisposition": "All 6 blocking findings and all 5 non-blocking suggestions resolved before submission."
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer (independent read-only research subagent)",
+      "conversationId": "1c0f36a8-1bba-4294-82c1-0bf7cd7101e9",
+      "initialVerdict": "REVISE BEFORE MERGE (6 blocking, 5 non-blocking)",
+      "finalDisposition": "All 6 blocking findings and all applicable non-blocking suggestions resolved before submission."
+    }
+  ],
+  "resolvedBlockingFindings": [
+    {
+      "id": "P24-B1",
+      "source": "Primary-Source Audit B1 + Bilingual Reader Review B1",
+      "issue": "EN cl-p3o24-four-domain-propagation inverted the physical causal direction of Ekvall et al. (2021) (writing that diverted plastics displace imported waste instead of freeing capacity that draws in imported combustible waste), while ZH wrote 本地焚烧发电 omitting heat (热电).",
+      "resolution": "Aligned both ZH and EN to the exact physically accurate diversion-and-freed-capacity framing with local heat and power (本地焚烧热电 / local heat and power generation)."
+    },
+    {
+      "id": "P24-B2",
+      "source": "Primary-Source Audit B2 + Bilingual Reader Review B5",
+      "issue": "cl-p3o24-boundaries-and-double-counting and Table 1 Row 1 Col 4 collapsed ILCD 2010 §6.5.4 Provision I.a into 'otherwise fall back to two-step allocation', contradicting ev-sub105-ilcd-conditions and Section 5 cl-sub105-fallbacks; Table 1 also added unattached 'C2 always allocates'.",
+      "resolution": "Restored ILCD's exact two-branch distinction (insufficient market scale checks broader equivalent function or shifts to Situation B; Provision I.a.iv.4 falls back to allocation only when substitution modeling is infeasible and generic data are insufficient) and aligned C2 to ev-gs23-ilcd-ch5-goal-contexts (excludes cross-system crediting)."
+    },
+    {
+      "id": "P24-B3",
+      "source": "Primary-Source Audit B3",
+      "issue": "cl-p3o24-boundaries-and-double-counting and Table 1 Row 1 Col 4 narrowed GHG Protocol Product Standard §9.3.2 to 'average factors' alone, omitting 'supplier-specific' factors verified in ev-mkt169-ghgp-attributional-allocation.",
+      "resolution": "Updated both ZH and EN claim text and Table 1 Row 1 Col 4 to state supplier-specific or average factors (供应商或平均因子)."
+    },
+    {
+      "id": "P24-B4",
+      "source": "Primary-Source Audit B4",
+      "issue": "Table 1 cited CFF quality ratios & substitution point, eGRID2023 Rev. 2 direct CO2, AVERT 4.3.0 patch version, and busbar-vs.-end-use loss denominators without attaching their primary evidence rows to cl-p3o24-four-domain-propagation; ZH Row 4 Col 4 attached quality-ratio virgin substitution to the factor B clause.",
+      "resolution": "Attached ev-cff109-2022-equation, ev-cff109-2022-quality, ev-kb48-main-egrid2023-rev2-srl23-erct, ev-kb48-avertweb43-release-config, ev-kb48-main-egrid2023-guide-ggl-method, and ev-kb48-future-cambium2024-report-delivery; rewrote ZH Row 4 Col 4 so like-for-like quality-ratio adjustment modifies the material-recycling (A) clause."
+    },
+    {
+      "id": "P24-B5",
+      "source": "Primary-Source Audit B5",
+      "issue": "cl-p3o24-attributional-vs-consequential cited ILCD §§6.5.4.3–6.5.4.4 for Situation A's average-mix practical simplification, omitting §6.5.4.2 and ev-sub105-ilcd-proxy-purpose.",
+      "resolution": "Updated citation to §§6.5.4.2–6.5.4.4 in both ZH and EN and attached ev-sub105-ilcd-proxy-purpose and ev-gs23-ilcd-ch5-goal-contexts."
+    },
+    {
+      "id": "P24-B6",
+      "source": "Primary-Source Audit B6",
+      "issue": "cl-p3o24-four-domain-propagation grouped EU PEF Annex I §4.5 with ILCD §6.5.3 as a consequential system-expansion route, blurring PEF §4.5 Step 1 (whole-system expansion) and Step 2 (direct substitution).",
+      "resolution": "Attributed adding missing functions / subtracting displaced reference supply under system expansion specifically to ILCD §6.5.3 and separately distinguished EU PEF Annex I §4.5 Step 1 whole-system expansion vs. Step 2 direct substitution."
+    },
+    {
+      "id": "P24-B7",
+      "source": "Bilingual Reader Review B2 + Primary-Source Audit N4",
+      "issue": "Table 1 Row 4 Col 4 EN omitted the grammatical subject ('additional domestic waste'); Row 4 Col 5 ZH used malformed '废热电抵扣' and fused '质量比替代点', while EN dropped 'quality ratios'.",
+      "resolution": "Restored exact subject in EN Row 4 Col 4 and aligned Row 4 Col 5 across ZH and EN on A/B conventions, quality ratios, point of substitution, and local heat/power recovery double-crediting."
+    },
+    {
+      "id": "P24-B8",
+      "source": "Bilingual Reader Review B3",
+      "issue": "publicSummary.title.en rendered 跨章对照表 as 'Cross-Part Table', implying a table spanning multiple Parts rather than Part III's four chapters.",
+      "resolution": "Updated publicSummary.title.en to 'Added Attribution and System Response Opening Section and Four-Domain Comparison Table to Part III'."
+    },
+    {
+      "id": "P24-B9",
+      "source": "Bilingual Reader Review B4",
+      "issue": "Table 1 appeared after Claim 3, interrupting the closing handoff sentence from Section 1 into Section 2.",
+      "resolution": "Moved Table 1 immediately after Claim 2 (cl-p3o24-four-domain-propagation) and before Claim 3 (cl-p3o24-boundaries-and-double-counting) in both ZH and EN MDX files, and synchronized Claim 3's closing handoff across ZH and EN."
+    },
+    {
+      "id": "P24-B10",
+      "source": "Bilingual Reader Review B6",
+      "issue": "Section 1 Claim 1 re-defined all four Ekvall & Tillman (1997) / Ekvall et al. (2005) terms verbatim right before Section 2 opened by introducing those exact same papers and re-expanding 'retrospective LCA'.",
+      "resolution": "Refactored Claim 1 to preview the foundational allocation literature cleanly as a pointer into Section 2 (Information Goals / 信息目的) and focus Paragraph 1 on the contemporary framework split across GHG Protocol, ILCD 2010, and ecoinvent v3."
+    }
+  ],
+  "nonBlockingPolishApplied": [
+    "Added explicit parenthetical gloss for 归属记账（attributional accounting，文献中亦称归因核算） and standardized 归因核算 for GHG Protocol §5.2.",
+    "Added ILCD's two classification criteria in EN Claim 1, 'average' and full LRMER expansion on first mention in EN Claim 2, '既有化石机组' in ZH Claim 2 & Table 1 Row 3, 'modeling uncertainty' in EN Claim 3, and country-level consumption scope ('一国消费' / 'a country's consumption') for EU PEF Annex I §4.4.2 >95% threshold.",
+    "Removed redundant Col 1 link echoes in Table 1 Rows 2–4, standardized unbolded table captions matching recent chapters, harmonized Annex I / 附件一 citations, broadened Col 4 header to cover frameworks and grid/recycling models, and refined frontmatter descriptions, Part 3 introduction, and Reading Guide prose."
+  ]
+}

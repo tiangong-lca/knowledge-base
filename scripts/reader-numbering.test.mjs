@@ -113,14 +113,16 @@ test('website numbering unifies chapter ordinals with book and preserves topic s
 test('actual case detail keeps its source sibling hierarchy and stays outside formal sections', () => {
   const jointUnit = getUnitNumbering('book', 'book-joint-production');
   assert.ok(jointUnit?.ordinal);
-  const jOrd = jointUnit.ordinal;
   const joint = getUnitHeadingPlan('book', 'book-joint-production');
+  const refSupply = joint.find(row => row.id === '参照供给');
+  assert.ok(refSupply?.number);
   assert.deepEqual(joint.filter(row => row.type === 'case').map(row => [row.key, row.depth, row.number]), [
-    ['@case:joint:title', 3, `${jOrd}.3.1`],
-    ['@case:joint:partition', 4, `${jOrd}.3.1.1`],
-    ['@case:joint:routes', 4, `${jOrd}.3.1.2`],
+    ['@case:joint:title', 3, `${refSupply.number}.1`],
+    ['@case:joint:partition', 4, `${refSupply.number}.1.1`],
+    ['@case:joint:routes', 4, `${refSupply.number}.1.2`],
   ]);
-  assert.equal(joint.filter(row => row.type === 'mdx').length, 4);
+  const expectedJointMdxCount = readerNumberingManifest.headings['/docs/book/joint-production'].filter(row => row.type === 'mdx').length;
+  assert.equal(joint.filter(row => row.type === 'mdx').length, expectedJointMdxCount);
 
   const wallUnit = getUnitNumbering('book', '/docs/book/wall-service-to-comparison');
   assert.ok(wallUnit?.ordinal);
