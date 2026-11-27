@@ -6,6 +6,8 @@ import { getMDXComponents } from '@/mdx-components';
 import { TeachingCase } from '@/components/teaching-case';
 import { LcaTimeline } from '@/components/lca-timeline';
 import { formatEnBibliographicText, formatEnConceptTitle } from '@/lib/en-citation-format';
+import { NumberedTitle } from '@/components/numbered-heading';
+import { getEnSectionPrefix, getUnitNumbering } from '@/lib/reader-numbering';
 import type { ReaderPage } from '@/lib/reader-book';
 
 export interface EnClaimEntry {
@@ -151,12 +153,56 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
   }
 
   const MDX = page.data.body;
+  const logicalUrl = page.url.replace(/^\/en(?=\/|$)/, '') || '/';
+  const unit = getUnitNumbering('web', logicalUrl);
+  const sectionPrefix = getEnSectionPrefix(unit);
+  let h2Counter = 0;
+  let h3Counter = 0;
+
+  function EnH2({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+    h2Counter += 1;
+    h3Counter = 0;
+    const num = sectionPrefix ? `${sectionPrefix}.${h2Counter}` : `${h2Counter}`;
+    if (print) {
+      return (
+        <h4 {...props} id={props.id ? `${noteAnchorPrefix}${props.id}` : undefined}>
+          <NumberedTitle number={num}>{children}</NumberedTitle>
+        </h4>
+      );
+    }
+    return (
+      <h2 {...props}>
+        <NumberedTitle number={num}>{children}</NumberedTitle>
+      </h2>
+    );
+  }
+
+  function EnH3({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+    h3Counter += 1;
+    const num = h2Counter > 0 ? (sectionPrefix ? `${sectionPrefix}.${h2Counter}.${h3Counter}` : `${h2Counter}.${h3Counter}`) : undefined;
+    if (print) {
+      return (
+        <h5 {...props} id={props.id ? `${noteAnchorPrefix}${props.id}` : undefined}>
+          <NumberedTitle number={num}>{children}</NumberedTitle>
+        </h5>
+      );
+    }
+    return (
+      <h3 {...props}>
+        <NumberedTitle number={num}>{children}</NumberedTitle>
+      </h3>
+    );
+  }
+
+  const NotesHeading = print ? 'h4' : 'h2';
 
   return (
     <>
       <MDX
         components={getMDXComponents(
           {
+            h2: EnH2,
+            h3: EnH3,
             Prose: ChapterProse,
             Claim: Paragraph,
             ReaderSection,
@@ -173,7 +219,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
 
       {noteOrder.length > 0 && (
         <section className="chapter-notes not-prose" aria-labelledby={`${noteAnchorPrefix}notes`}>
-          <h2 id={`${noteAnchorPrefix}notes`}>Notes</h2>
+          <NotesHeading id={`${noteAnchorPrefix}notes`}>Notes</NotesHeading>
           <ol>
             {noteOrder.map(id => {
               const canonical = catalogClaims.get(id)!;

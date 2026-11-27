@@ -6,7 +6,7 @@ import { availableDocLocales, getSource } from '@/lib/source';
 import { currentReaderOrdinaryAttributes, ChapterContent } from '@/components/chapter-content';
 import { EnChapterContent } from '@/components/en-chapter-content';
 import { NumberedTitle } from '@/components/numbered-heading';
-import { getNumberedToc, getUnitNumbering, getWebsitePagination } from '@/lib/reader-numbering';
+import { EN_PARTS, getEnNumberedToc, getEnUnitLabel, getNumberedToc, getUnitNumbering, getWebsitePagination } from '@/lib/reader-numbering';
 import { EN_PUBLIC_ENABLED, SUPPORTED_LOCALES, isSupportedLocale, type Locale } from '@/lib/i18n';
 import { getMDXComponents } from '@/mdx-components';
 import { languageAlternates } from '@/lib/seo-policy.mjs';
@@ -49,29 +49,20 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
   if (locale === 'en') {
     const logicalEnUrl = page.url.replace(/^\/en(?=\/|$)/, '') || '/';
     const enUnit = getUnitNumbering('web', logicalEnUrl);
-    const enPartLabels: Record<number, string> = {
-      1: 'Part I · Origins, Questions, and Methodological Framework',
-      2: 'Part II · Functional Unit, Process Networks, and Life Cycle Inventory',
-      3: 'Part III · Multifunctionality, Allocation, and System Boundaries',
-      4: 'Part IV · Life Cycle Impact Assessment Pathways and Models',
-      5: 'Part V · Normalization, Weighting, Regionalization, and Sustainability Extensions',
-      6: 'Part VI · Background Databases and Interoperability',
-      7: 'Part VII · Data Quality, Uncertainty, and Product Footprint Rules',
-      8: 'Part VIII · Case Synthesis, Interpretation, and Revisable Judgment',
-    };
-    const enLabel =
-      enUnit?.kind === 'chapter'
-        ? `Chapter ${enUnit.ordinal}`
-        : enUnit?.kind === 'topic'
-          ? 'Topical Essay'
-          : enUnit?.kind === 'appendix'
-            ? `Appendix ${String.fromCharCode(64 + (enUnit.ordinal ?? 1))}`
-            : undefined;
+    const enPart = enUnit?.part ? EN_PARTS[enUnit.part] : undefined;
+    const enLabel = enUnit ? getEnUnitLabel(enUnit) : undefined;
     return (
-      <DocsPage toc={page.data.toc}>
+      <DocsPage
+        toc={getEnNumberedToc(page)}
+        footer={{
+          className: 'docs-pagination',
+          enabled: Boolean(slug?.length),
+          items: getWebsitePagination(logicalEnUrl, src.getPages(), 'en'),
+        }}
+      >
         <p className="reader-view-label">
-          English Edition
-          {enUnit?.part && enPartLabels[enUnit.part] ? ` · ${enPartLabels[enUnit.part]}` : ''} ·{' '}
+          Web Reading Contents
+          {enPart ? ` · ${enPart.label} · ${enPart.title}` : ''} ·{' '}
           <Link href="/en/print/">Continuous Reading &amp; Print</Link>
         </p>
         <DocsTitle id="main-content" tabIndex={-1}>
