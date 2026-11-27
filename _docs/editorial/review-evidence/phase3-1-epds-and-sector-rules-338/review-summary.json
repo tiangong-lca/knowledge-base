@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "task": "tiangong-lca/knowledge-base#338",
+  "revisionId": "phase3-1-epds-and-sector-rules-338",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Editorial, primary-source fidelity, premise-DAG, bilingual-parity, and engineering verification only; does not constitute independent scientific peer review by external domain experts.",
+  "primarySourceExtractors": [
+    {
+      "role": "Primary-Source Extractor: EPD Programme Operators & ECO Platform",
+      "subagentId": "fb4bc6ab-1520-4b69-8138-e3cc13b4fc02",
+      "sourcesInspected": [
+        "src-epd31-environdec-gpi-510",
+        "src-epd31-ibu-gi-21",
+        "src-epd31-eco-lca-20",
+        "src-epd31-eco-digital-11"
+      ]
+    },
+    {
+      "role": "Primary-Source Extractor: PEF/EN 15804, Comparability & JRC CFB-EV",
+      "subagentId": "8bbdd9a6-1704-4447-adca-c63f3a69bf63",
+      "sourcesInspected": [
+        "src-epd31-durao-2020",
+        "src-epd31-konradsen-2024",
+        "src-epd31-otero-2026",
+        "src-epd31-passer-2015",
+        "src-epd31-jrc-cfb-ev-2023-draft"
+      ]
+    }
+  ],
+  "postEditReviews": [
+    {
+      "role": "Primary-Source & Engineering Auditor for Phase 3.1 #338",
+      "subagentId": "0b4525c2-5251-4bb9-9465-79ef4b87d0e8",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingFindings": [
+        "knowledge/editions/alignment.json entry for /docs/book/epds-and-sector-rules used {enTitle, enSlug, status} instead of {enStatus: 'published', enTitle, slots: [...]}, bypassing shared-slot validation.",
+        "cl-epd31-batteries-and-agrifood and Table 2 overstated the EU Dairy PEFCR enteric methane rule compared to Ch. 33 (cl-rule-methane-rule) and omitted primary ev-kb44-dairy2025-* evidence links.",
+        "cl-epd31-konradsen-experiment and ev-epd31-konradsen-experiment attributed consequential A-C modeling to EPD International GPI without distinguishing Konradsen et al.'s interpretation of GPI v4.0 (2021) from GPI v5.1.0 (2026)'s strict A-C attributional rule."
+      ],
+      "nonBlockingAdopted": [
+        "Updated config/reader-numbering.json Part 6 introduction to include Chapter 34.",
+        "Updated cl-rule-conclusion ZH/EN scope and reviewedAt to 2026-11-28.",
+        "Replaced §6.7.2 with §§6.8–6.8.1 in ev-epd31-gpi-types-validity locator.",
+        "Added ev-wsc157-pef-pefcr-classes-verification evidence links and clarified '107 additional fields' alongside environmental indicators."
+      ],
+      "resolution": "Resolved all 3 blocking findings and all 4 non-blocking items; refreshed zhDigests, revision manifest, and CSS/public artifacts; rebuilt and verified 116/116 pages, 46/46 ZH & EN print units, and 824/824 tests PASS.",
+      "postFixStatus": "RESOLVED"
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer for Phase 3.1 #338",
+      "subagentId": "623592c2-0c49-4bb4-be8f-d74a72136b18",
+      "initialVerdict": "PASS",
+      "blockingFindings": [],
+      "nonBlockingAdopted": [
+        "Aligned Part 6 introduction in config/reader-numbering.json.",
+        "Synchronized secondary clauses across ZH & EN in cl-epd31-type3-governance, cl-epd31-eco-platform-harmonization, and cl-epd31-konradsen-experiment.",
+        "Polished ZH wording (横向通用计算细则, 同一首位版本号, ECO Platform in description) and aligned EN table captions to sentence-case unbolded style with trailing periods."
+      ],
+      "resolution": "Passed with zero blocking findings; all 4 polish suggestions adopted and rebuilt cleanly.",
+      "postFixStatus": "PASS"
+    }
+  ],
+  "verificationSummary": {
+    "validate": "PASS",
+    "checkpointHistory": "PASS (41 historical units, 184 snapshot files, gitVerified=true)",
+    "typecheck": "PASS",
+    "staticBuild": "PASS (116/116 pages; 46/46 ZH & EN print units; 1,193 claims; 0 broken anchors; 0 EN CJK leaks)",
+    "bilingualParity": "PASS (0 parity exceptions; 12/12 shared slots verified in alignment.json)",
+    "unitTests": "PASS (824/824)"
+  }
+}
