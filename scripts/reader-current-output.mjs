@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import htmlParser from 'next/dist/compiled/node-html-parser/index.js';
 import { buildDependencies, publicCatalog } from './knowledge.mjs';
 import { readerBibliography } from './reader-bibliography.mjs';
+import { formatZhReaderLocator } from './reader-citation-display.mjs';
 import { collectChapterClaimOccurrences } from './reader-book.mjs';
 import { projectExchangeSemanticsRaw, validateExchangeAnnotationOutput } from './reader-exchange-semantics.mjs';
 import { editionDigest, sha256 } from './reader-current-edition.mjs';
@@ -125,7 +126,7 @@ export function validateReadableBookResearchOutput(document, published, literatu
   for (const [index, source] of published.sources.entries()) {
     const article = articles[index], title = article?.querySelector('h2 a');
     if (article?.id !== source.id || title?.getAttribute('href') !== source.url || compact(title?.text) !== compact(source.title)
-        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher}。${source.version}。`))
+        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher}。${formatZhReaderLocator(source.version)}。`))
       errors.push(`Readable book research source title, order or version differs: ${source.id}`);
     const reading = ledger.readings.find(row => row.id === source.reading?.readingId);
     const work = reading && literature.records.find(row => row.id === reading.workId || row.workId === reading.workId);
@@ -139,7 +140,7 @@ export function validateReadableBookResearchOutput(document, published, literatu
       seenReadings.add(reading.id);
       expectedAnchors.push(reading.id);
       passages = reading.passages.map(passage => [
-        passage.id, compact(passage.locator + (passage.printedPages ? '，' + passage.printedPages : '')),
+        passage.id, compact(formatZhReaderLocator(passage.locator) + (passage.printedPages ? '，' + formatZhReaderLocator(passage.printedPages) : '')),
       ]);
     }
     const actualAnchors = article?.querySelectorAll('span[id]').map(node => node.id);
@@ -199,7 +200,7 @@ function validatePublicRecordOutput(path, document, published) {
     ]),
   ]);
   const expected = published.sources.map(source => [
-    source.id, compact(source.title), published.evidence.filter(row => row.sourceId === source.id).map(row => [row.id, compact(row.locator), compact(row.summary)]),
+    source.id, compact(source.title), published.evidence.filter(row => row.sourceId === source.id).map(row => [row.id, compact(formatZhReaderLocator(row.locator)), compact(formatZhReaderLocator(row.summary))]),
   ]);
   return JSON.stringify(actual) === JSON.stringify(expected) ? [] : ['Readable book actual source/evidence index differs from the current public catalog'];
 }

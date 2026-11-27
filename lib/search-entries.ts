@@ -2,7 +2,12 @@ import type { SearchEntry } from '@/components/site-header';
 import { getSource } from '@/lib/source';
 import catalog from '@/lib/catalog';
 import enClaimsFile from '@/knowledge/editions/en/claims.json';
-import { formatEnBibliographicText, formatEnConceptTitle } from '@/lib/en-citation-format';
+import {
+  formatEnConceptTitle,
+  getEnSourcePublisher,
+  getEnSourceTitle,
+  getEnSourceVersion,
+} from '@/lib/en-citation-format';
 import type { Locale } from '@/lib/i18n';
 
 interface EnClaimSearchRow {
@@ -19,7 +24,7 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
     return [
       {
         title: 'LCA Historical Timeline (1969–2026)',
-        text: 'Visual timeline of 27 life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
+        text: 'Visual timeline of key life cycle assessment milestones from early resource inventories to ISO standards, consensus models, and prospective LCA.',
         url: '/en/timeline/',
         kind: 'Timeline',
       },
@@ -33,7 +38,7 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
         title: c.text,
         text: c.scope ?? '',
         url: `/en/claims/#${c.id}`,
-        kind: 'Claim',
+        kind: 'Note',
       })),
       ...catalog.concepts.map((c) => ({
         title: formatEnConceptTitle(c.english || c.label),
@@ -42,8 +47,8 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
         kind: 'Concept',
       })),
       ...catalog.sources.map((s) => ({
-        title: s.title,
-        text: `${formatEnBibliographicText(s.publisher)} ${formatEnBibliographicText(s.version)}`.trim(),
+        title: getEnSourceTitle(s),
+        text: `${getEnSourcePublisher(s)} ${getEnSourceVersion(s)}`.trim(),
         url: `/en/sources/#${s.id}`,
         kind: 'Source',
       })),

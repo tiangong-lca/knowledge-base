@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "phase1d-bibliography-and-notes-313",
+  "date": "2026-11-27",
+  "task": "#313",
+  "title": "补齐英文书目定位、统一 1 起算 PDF 页码并清理来源页内部保存信息",
+  "rationale": "以人工撰写的英文书目与引文定位覆盖全部文献、证据与核读段落，移除运行时正则替换并增加缺项即报错校验；将中英文公开页面的 PDF 与 NEPIS 零基索引统一转为从 1 起算页码；从公开来源页移除内部保存指纹与路径信息；为英文章末注释补齐类别标签与依据关系标注。",
+  "routes": [
+    "/sources",
+    "/research",
+    "/claims",
+    "/print"
+  ],
+  "claims": [],
+  "concepts": [],
+  "evidence": [],
+  "sources": [],
+  "mappings": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "a3e920d55d0b28d42e6d18cd6605560f93de31f1e531fa8528e21c5ab78859ec"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "f1585c675710cc07bdc46f443a0a5eaa0efda6fceebdc600db71a843c69fa296"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "d19186362f78c726618e89479476a5695adfa1f03e3c468f64e556d5711c8d4b"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "f58e7323e54e55940b392d9d3b0ac768251f138fbf63d90dab84b83ab86da552"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "7424d96eeefa1ba22b0692f06a70a1bf8f72b881c4cb5584b85245127a16f46e"
+    }
+  ],
+  "corrections": [],
+  "reviewEvidence": [
+    {
+      "kind": "editorial-copy-revision",
+      "date": "2026-11-27",
+      "file": "_docs/editorial/review-evidence/phase1d-bibliography-and-notes-313/review-record.json",
+      "sha256": "630ea283172bbb426b410cabf688ff46f7974864cbdc2c2b4d61a2e9f8001f02"
+    }
+  ]
+}

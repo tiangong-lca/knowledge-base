@@ -3,26 +3,16 @@ import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { Claim } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
-import { formatEnBibliographicText } from '@/lib/en-citation-format';
+import {
+  EN_CLAIM_KINDS,
+  EN_EVIDENCE_RELATIONS,
+  getEnEvidenceLocator,
+  getEnSourceTitle,
+  getEnSourceVersion,
+} from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
-import type { ClaimKind, EvidenceRelation } from '@/lib/catalog';
-
-const EN_KINDS: Record<ClaimKind, string> = {
-  'source-statement': 'Source statement',
-  interpretation: 'Interpretation',
-  synthesis: 'Synthesis',
-  calculation: 'Calculation',
-  proposal: 'Analytical proposal',
-};
-
-const EN_RELATIONS: Record<EvidenceRelation, string> = {
-  supports: 'supports',
-  qualifies: 'qualifies',
-  contradicts: 'contradicts',
-  context: 'context',
-};
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -50,7 +40,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
       >
         <p>
           Within each chapter, notes are numbered in order of appearance; this index gathers all{' '}
-          <strong>{reviewedClaims.length}</strong> reviewed claims across the monograph for cross-reference. Source statements,
+          <strong>{reviewedClaims.length}</strong> notes across the book for cross-reference. Source statements,
           interpretations, syntheses, calculations, and analytical proposals rest on different evidentiary grounds and cannot substitute for one another.
         </p>
         {reviewedClaims.map(claim => {
@@ -61,18 +51,19 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
               <blockquote className="claim-text">{enClaim?.text ?? claim.text}</blockquote>
               <div className="claim-annotation">
                 <p>
-                  <strong>{EN_KINDS[claim.kind]}.</strong> {enClaim?.scope ?? claim.scope}
+                  <strong>{EN_CLAIM_KINDS[claim.kind]}.</strong> {enClaim?.scope ?? claim.scope}
                 </p>
                 {evidence.length > 0 && (
                   <ul className="annotation-sources">
                     {evidence.map(({ evidence: item, relation }) => {
                       const source = sourcesById.get(item.sourceId);
                       if (!source) return null;
+                      const ver = getEnSourceVersion(source);
                       return (
                         <li key={item.id}>
-                          <Link href={`/en/sources/#${item.id}`}>{source.title}</Link>
-                          {source.version ? ` (${formatEnBibliographicText(source.version)})` : ''} — {formatEnBibliographicText(item.locator)}
-                          {relation !== 'supports' && <span> ({EN_RELATIONS[relation]})</span>}
+                          <Link href={`/en/sources/#${item.id}`}>{getEnSourceTitle(source)}</Link>
+                          {ver ? ` (${ver})` : ''} — {getEnEvidenceLocator(item)}
+                          {relation !== 'supports' && <span> ({EN_EVIDENCE_RELATIONS[relation]})</span>}
                         </li>
                       );
                     })}

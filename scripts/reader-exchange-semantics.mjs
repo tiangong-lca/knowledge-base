@@ -6,6 +6,8 @@ import { currentPrintReadingHref, getHeadingNumbering, getUnitNumbering } from '
 import { currentBookLayout, currentBookMdxMatches, currentBookRecordMatches, currentFlowBoundary, currentPart5Reread, currentUncertaintyComparison } from './reader-current-expectations.mjs';
 import readingRegister from '../knowledge/research/readings.json' with { type: 'json' };
 import { getClaimEvidence } from './knowledge.mjs';
+import { formatZhReaderLocator } from './reader-citation-display.mjs';
+export { formatZhReaderLocator };
 import { frameworkBookHref } from './reader-edition.mjs';
 import { createHash } from 'node:crypto';
 import original from '../config/exchange-semantics-original.json' with { type: 'json' };
@@ -277,7 +279,7 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     const sourceItems=sourceLists[0]?.querySelectorAll('li')??[];
     if(sourceItems.length!==evidence.length)fail('evidence source occurrences missing or repeated');
     evidence.forEach(({evidence:item,relation},index)=>{
-      const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active,uncActive):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${item.locator.replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
+      const source=catalog.sources.find(source=>source.id===item.sourceId),displayTitle=source?readerCitationSourceTitle(source,part5Active,uncActive):'',li=sourceItems[index],link=li?.querySelector('a'),expectedText=source?`${displayTitle}。${formatZhReaderLocator(item.locator).replace(/。+$/u,'')}。${relation!=='supports'?`（${annotationRelations[relation]}）`:''}`:'';
       const sourceHref = link?.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, '');
       if(!source||!li||sourceHref!==`/sources/#${item.id}`||link.text!==displayTitle||compact(withoutCarrierText(li))!==compact(expectedText)) {fail(`source, locator or relation missing or changed (${item.id})`);return;}
       const artifact=expectedPassageArtifact(catalog,item,readings),carriers=li.querySelectorAll('.source-reading');

@@ -1,5 +1,5 @@
 import { currentPart5Reread, currentUncertaintyComparison } from '@/scripts/reader-current-expectations.mjs';
-import { readerCitationSourceTitle } from '@/scripts/reader-exchange-semantics.mjs';
+import { formatZhReaderLocator, readerCitationSourceTitle } from '@/scripts/reader-exchange-semantics.mjs';
 import { loadShiftEvaluationFile } from '@/scripts/reader-load-shift.mjs';
 import { serviceConstraintsEvaluationFile } from '@/scripts/reader-service-constraints.mjs';
 import Link from 'next/link';
@@ -68,7 +68,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = sourcesById.get(item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
-      return <li key={item.id}><Link href={`/zh/sources/#${item.id}`}>{readerCitationSourceTitle(source, Boolean(currentPart5Reread), Boolean(currentUncertaintyComparison))}</Link>。{item.locator.replace(/。+$/u, '')}。
+      return <li key={item.id}><Link href={`/zh/sources/#${item.id}`}>{readerCitationSourceTitle(source, Boolean(currentPart5Reread), Boolean(currentUncertaintyComparison))}</Link>。{formatZhReaderLocator(item.locator).replace(/。+$/u, '')}。
         {relation !== 'supports' && <span>（{evidenceRelations[relation]}）</span>}
         <EvidencePassage evidence={item} />
       </li>;
