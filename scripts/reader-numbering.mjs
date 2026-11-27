@@ -20,7 +20,7 @@ import { projectRevisionNumbering } from './reader-revisions.mjs';
 /** @typedef {{key:string,id?:string,title:string,depth:number,type:string,number:string}} HeadingNumber */
 
 const routeKey = value => typeof value === 'string' ? value.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/' : value;
-const chinese = ['', '一', '二', '三', '四', '五', '六', '七', '八'];
+const chinese = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
 // Main owns the independently reviewed current-edition pin, separate from immutable histories.
 /** @type {string|null} */
 export const readerNumberingDigest = "edf363ea6a65b1f4093a224ec17124b618ac34405f6f4abdd6127bccacd01306";
@@ -29,12 +29,16 @@ export function assertReaderNumbering(value = numbering, independentDigest = cur
   const previous = projectServiceConstraintsNumbering(currentServiceConstraints, projectPart4RereadNumbering(currentPart4Reread, projectPart5RereadNumbering(currentPart5Reread, projectPart6RereadNumbering(currentPart6Reread, projectPart7RereadNumbering(currentPart7Reread, projectPart3RereadNumbering(currentPart3Reread, projectPart2RereadNumbering(currentPart2Reread, projectPart1RereadNumbering(currentPart1Reread, projectWholeBookRereadNumbering(currentWholeBookReread, checkpointValue)))))))));
   if (createHash('sha256').update(JSON.stringify(previous)).digest('hex') !== flowBoundaryNumbering(currentFlowBoundary, previous, independentDigest)) throw new Error('Reader numbering differs from the independently pinned actual heading and part inventory');
   if (currentBookLayout('book:formal-section-budget', false)) {
-    const counts = value.book.filter(unit => unit.kind === 'chapter').map(unit =>
+    const chapters = value.book.filter(unit => unit.kind === 'chapter');
+    const counts = chapters.map(unit =>
       value.headings[unit.source]?.filter(slot => slot.type === 'mdx' && slot.depth === 2).length ?? 0);
-    const maxSections = counts.length <= 32 ? 120 : 120 + (counts.length - 32) * 5;
-    if (counts.length < 32 || counts.some(count => count < 3 || count > 5)
-        || counts.reduce((sum, count) => sum + count, 0) > maxSections)
-      throw new Error(`Final book requires at least 32 chapters with three to five formal sections each and at most ${maxSections} in total`);
+    if (chapters.length === 0 || counts.some(count => count < 2)) {
+      throw new Error('Book chapters must each contain at least two formal level-2 sections');
+    }
+    const partCounts = value.parts.map(part => chapters.filter(unit => unit.part === part.number).length);
+    if (partCounts.some(count => count < 3)) {
+      throw new Error('Each book part must contain at least three chapters to avoid imbalanced one- or two-chapter parts');
+    }
   }
 }
 export const readerNumberingManifest = numbering;

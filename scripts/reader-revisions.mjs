@@ -90,9 +90,29 @@ export function validateRevisionSchema(revision, label = 'revision') {
     if (!Array.isArray(revision.routeChanges)) {
       throw new Error(`${label}: routeChanges must be an array`);
     }
+    const validateAnchorMap = (anchors, opName, allowCrossRoute = false) => {
+      if (anchors === undefined) return;
+      if (!anchors || typeof anchors !== 'object' || Array.isArray(anchors)) {
+        throw new Error(`${label}: routeChanges ${opName} anchors must be a plain object`);
+      }
+      for (const [k, v] of Object.entries(anchors)) {
+        const validLocal = nonempty(v) && v.startsWith('#') && v.length > 1;
+        const validCross = allowCrossRoute && nonempty(v) && v.startsWith('/') && v.includes('#') && !v.endsWith('#');
+        if (!nonempty(k) || (!validLocal && !validCross)) {
+          throw new Error(
+            `${label}: routeChanges ${opName} anchor mapping must map non-empty key to ${allowCrossRoute ? "'#anchor' or '/route#anchor'" : "'#anchor'"}: ${k} -> ${v}`,
+          );
+        }
+      }
+    };
     for (const rc of revision.routeChanges) {
-      if (!rc || !['merge', 'add-unit', 'relocate-prefix'].includes(rc.op)) {
-        throw new Error(`${label}: routeChanges entry requires op: 'merge', 'add-unit', or 'relocate-prefix'`);
+      if (!rc || !['merge', 'add-unit', 'relocate-prefix', 'split', 'move', 'retire-unit'].includes(rc.op)) {
+        throw new Error(
+          `${label}: routeChanges entry requires op: 'merge', 'add-unit', 'relocate-prefix', 'split', 'move', or 'retire-unit'`,
+        );
+      }
+      if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
+        throw new Error(`${label}: routeChanges ${rc.op} requires clean reader-facing rationale without internal claim IDs`);
       }
       if (rc.op === 'relocate-prefix') {
         if (typeof rc.fromPrefix !== 'string' || (rc.fromPrefix !== '' && !rc.fromPrefix.startsWith('/'))) {
@@ -101,17 +121,66 @@ export function validateRevisionSchema(revision, label = 'revision') {
         if (!nonempty(rc.toPrefix) || !rc.toPrefix.startsWith('/') || rc.toPrefix.endsWith('/') || rc.toPrefix === rc.fromPrefix) {
           throw new Error(`${label}: routeChanges relocate-prefix requires distinct toPrefix starting with '/' and without trailing '/'`);
         }
-        if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
-          throw new Error(`${label}: routeChanges relocate-prefix requires clean reader-facing rationale without internal claim IDs`);
-        }
         continue;
       }
       if (rc.op === 'add-unit') {
         if (!nonempty(rc.route) || !rc.route.startsWith('/') || !['chapter', 'appendix', 'topic'].includes(rc.kind)) {
           throw new Error(`${label}: routeChanges add-unit requires '/' route and kind ('chapter' | 'appendix' | 'topic')`);
         }
-        if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
-          throw new Error(`${label}: routeChanges add-unit requires clean reader-facing rationale without internal claim IDs`);
+        continue;
+      }
+      if (rc.op === 'split') {
+        if (!nonempty(rc.from) || !rc.from.startsWith('/')) {
+          throw new Error(`${label}: routeChanges split requires '/' route in from`);
+        }
+        if (!Array.isArray(rc.to) || rc.to.length < 2 || !rc.to.every(r => nonempty(r) && r.startsWith('/'))) {
+          throw new Error(`${label}: routeChanges split requires at least two '/' routes in to`);
+        }
+        if (new Set(rc.to).size !== rc.to.length) {
+          throw new Error(`${label}: routeChanges split contains duplicate route in to`);
+        }
+        if (rc.primaryTo !== undefined && (!nonempty(rc.primaryTo) || !rc.to.includes(rc.primaryTo))) {
+          throw new Error(`${label}: routeChanges split primaryTo must be one of the routes in to`);
+        }
+        if (rc.bookUnit !== undefined && !nonempty(rc.bookUnit)) {
+          throw new Error(`${label}: routeChanges split bookUnit must be non-empty when present`);
+        }
+        validateAnchorMap(rc.anchors, 'split', true);
+        continue;
+      }
+      if (rc.op === 'move') {
+        if (!nonempty(rc.from) || !rc.from.startsWith('/') || !nonempty(rc.to) || !rc.to.startsWith('/')) {
+          throw new Error(`${label}: routeChanges move requires '/' routes in from and to`);
+        }
+        const sameRoute = rc.from === rc.to;
+        if (rc.fromPart !== undefined && (!Number.isInteger(rc.fromPart) || rc.fromPart < 1)) {
+          throw new Error(`${label}: routeChanges move fromPart must be a positive integer`);
+        }
+        if (rc.toPart !== undefined && (!Number.isInteger(rc.toPart) || rc.toPart < 1)) {
+          throw new Error(`${label}: routeChanges move toPart must be a positive integer`);
+        }
+        if (sameRoute && (rc.fromPart === undefined || rc.toPart === undefined || rc.fromPart === rc.toPart)) {
+          throw new Error(`${label}: routeChanges move with identical from and to requires distinct fromPart and toPart`);
+        }
+        if (rc.bookUnit !== undefined && !nonempty(rc.bookUnit)) {
+          throw new Error(`${label}: routeChanges move bookUnit must be non-empty when present`);
+        }
+        validateAnchorMap(rc.anchors, 'move', false);
+        continue;
+      }
+      if (rc.op === 'retire-unit') {
+        if (!nonempty(rc.route) || !rc.route.startsWith('/')) {
+          throw new Error(`${label}: routeChanges retire-unit requires '/' route`);
+        }
+        if (rc.successor !== undefined && rc.successor !== null) {
+          if (!nonempty(rc.successor) || !rc.successor.startsWith('/') || rc.successor === rc.route) {
+            throw new Error(`${label}: routeChanges retire-unit successor must be null or a distinct '/' route`);
+          }
+        }
+        if (rc.successorAnchor !== undefined) {
+          if (!rc.successor || !nonempty(rc.successorAnchor) || !rc.successorAnchor.startsWith('#') || rc.successorAnchor.length < 2) {
+            throw new Error(`${label}: routeChanges retire-unit successorAnchor requires a non-null successor and '#anchor' value`);
+          }
         }
         continue;
       }
@@ -127,19 +196,7 @@ export function validateRevisionSchema(revision, label = 'revision') {
       if (rc.bookUnit !== undefined && !nonempty(rc.bookUnit)) {
         throw new Error(`${label}: routeChanges merge bookUnit must be non-empty when present`);
       }
-      if (!nonempty(rc.rationale) || /\bcl-[a-z0-9-]+/i.test(rc.rationale)) {
-        throw new Error(`${label}: routeChanges merge requires clean reader-facing rationale without internal claim IDs`);
-      }
-      if (rc.anchors !== undefined) {
-        if (!rc.anchors || typeof rc.anchors !== 'object' || Array.isArray(rc.anchors)) {
-          throw new Error(`${label}: routeChanges merge anchors must be a plain object`);
-        }
-        for (const [k, v] of Object.entries(rc.anchors)) {
-          if (!nonempty(k) || !nonempty(v) || !v.startsWith('#')) {
-            throw new Error(`${label}: routeChanges merge anchor mapping must map non-empty key to '#anchor': ${k} -> ${v}`);
-          }
-        }
-      }
+      validateAnchorMap(rc.anchors, 'merge', false);
     }
   }
   for (const outRow of revision.outputs ?? []) {
@@ -169,25 +226,35 @@ export function validateRevisionSchema(revision, label = 'revision') {
 
 export function extractRouteChanges(revisions) {
   const merges = [];
+  const splits = [];
+  const moves = [];
+  const retiredUnits = [];
   const addedUnits = [];
   const addedUnitKeys = new Set();
   const fromToMap = new Map();
   const mergedFromSet = new Set();
   const mergedToSet = new Set();
+  const splitFromSet = new Set();
+  const movedFromSet = new Set();
+  const retiredRouteSet = new Set();
+  const removedRouteSet = new Set();
   const prefixRelocations = [];
   let activePrefix = '';
 
   for (const rev of revisions ?? []) {
     for (const rc of rev.routeChanges ?? []) {
+      const meta = {
+        rationale: rc.rationale,
+        revisionId: rev.id,
+        date: rev.date,
+        sourceCommit: rev.sourceCommit ?? rev.id,
+      };
       if (rc.op === 'relocate-prefix') {
         const record = {
           op: 'relocate-prefix',
           fromPrefix: rc.fromPrefix,
           toPrefix: rc.toPrefix,
-          rationale: rc.rationale,
-          revisionId: rev.id,
-          date: rev.date,
-          sourceCommit: rev.sourceCommit ?? rev.id,
+          ...meta,
         };
         prefixRelocations.push(record);
         activePrefix = rc.toPrefix;
@@ -198,13 +265,76 @@ export function extractRouteChanges(revisions) {
           op: 'add-unit',
           route: rc.route,
           kind: rc.kind,
-          rationale: rc.rationale,
-          revisionId: rev.id,
-          date: rev.date,
-          sourceCommit: rev.sourceCommit ?? rev.id,
+          ...meta,
         };
         addedUnits.push(record);
         addedUnitKeys.add(rc.route);
+        removedRouteSet.delete(rc.route);
+        continue;
+      }
+      if (rc.op === 'split') {
+        const retainedSelf = rc.to.includes(rc.from);
+        const primaryTo = rc.primaryTo ?? (retainedSelf ? rc.from : rc.to[0]);
+        const record = {
+          op: 'split',
+          from: rc.from,
+          to: [...rc.to],
+          primaryTo,
+          toDefault: primaryTo,
+          retainedSelf,
+          bookUnit: rc.bookUnit ?? null,
+          anchors: rc.anchors ? { ...rc.anchors } : {},
+          ...meta,
+        };
+        splits.push(record);
+        for (const dest of rc.to) removedRouteSet.delete(dest);
+        if (!retainedSelf) {
+          splitFromSet.add(rc.from);
+          removedRouteSet.add(rc.from);
+        }
+        fromToMap.set(rc.from, { ...record, to: primaryTo, toRoutes: [...rc.to] });
+        continue;
+      }
+      if (rc.op === 'move') {
+        const routeChanged = rc.from !== rc.to;
+        const record = {
+          op: 'move',
+          from: rc.from,
+          to: rc.to,
+          fromPart: rc.fromPart ?? null,
+          toPart: rc.toPart ?? null,
+          routeChanged,
+          bookUnit: rc.bookUnit ?? null,
+          anchors: rc.anchors ? { ...rc.anchors } : {},
+          ...meta,
+        };
+        moves.push(record);
+        removedRouteSet.delete(rc.to);
+        if (routeChanged) {
+          movedFromSet.add(rc.from);
+          removedRouteSet.add(rc.from);
+          fromToMap.set(rc.from, record);
+        }
+        continue;
+      }
+      if (rc.op === 'retire-unit') {
+        const record = {
+          op: 'retire-unit',
+          route: rc.route,
+          successor: rc.successor ?? null,
+          successorAnchor: rc.successorAnchor ?? null,
+          ...meta,
+        };
+        retiredUnits.push(record);
+        retiredRouteSet.add(rc.route);
+        removedRouteSet.add(rc.route);
+        if (record.successor) {
+          fromToMap.set(rc.route, {
+            ...record,
+            to: record.successor,
+            anchors: record.successorAnchor ? { '*': record.successorAnchor } : {},
+          });
+        }
         continue;
       }
       if (rc.op !== 'merge') continue;
@@ -214,20 +344,35 @@ export function extractRouteChanges(revisions) {
         to: rc.to,
         bookUnit: rc.bookUnit ?? null,
         anchors: rc.anchors ? { ...rc.anchors } : {},
-        rationale: rc.rationale,
-        revisionId: rev.id,
-        date: rev.date,
-        sourceCommit: rev.sourceCommit ?? rev.id,
+        ...meta,
       };
       merges.push(record);
       mergedToSet.add(rc.to);
+      removedRouteSet.delete(rc.to);
       for (const oldRoute of rc.from) {
         mergedFromSet.add(oldRoute);
+        removedRouteSet.add(oldRoute);
         fromToMap.set(oldRoute, record);
       }
     }
   }
-  return { merges, addedUnits, addedUnitKeys, fromToMap, mergedFromSet, mergedToSet, prefixRelocations, activePrefix };
+  return {
+    merges,
+    splits,
+    moves,
+    retiredUnits,
+    addedUnits,
+    addedUnitKeys,
+    fromToMap,
+    mergedFromSet,
+    mergedToSet,
+    splitFromSet,
+    movedFromSet,
+    retiredRouteSet,
+    removedRouteSet,
+    prefixRelocations,
+    activePrefix,
+  };
 }
 
 export function isRouteRevised(revisions, ...routes) {
@@ -235,11 +380,18 @@ export function isRouteRevised(revisions, ...routes) {
   for (const rev of revisions ?? []) {
     for (const r of rev.routes ?? []) revised.add(r);
     for (const rc of rev.routeChanges ?? []) {
-      if (rc.op === 'add-unit') {
+      if (rc.op === 'add-unit' || rc.op === 'retire-unit') {
         revised.add(rc.route);
+        if (rc.successor) revised.add(rc.successor);
       } else if (rc.op === 'merge') {
         revised.add(rc.to);
         for (const oldRoute of rc.from ?? []) revised.add(oldRoute);
+      } else if (rc.op === 'split') {
+        revised.add(rc.from);
+        for (const newRoute of rc.to ?? []) revised.add(newRoute);
+      } else if (rc.op === 'move') {
+        revised.add(rc.from);
+        revised.add(rc.to);
       }
     }
   }
@@ -249,28 +401,90 @@ export function isRouteRevised(revisions, ...routes) {
 export function validateRouteChangesAgainstOutput(revisions, activeRoutes, anchorsByRoute = null) {
   const errors = [];
   const activeSet = new Set(activeRoutes);
-  const { merges, addedUnits } = extractRouteChanges(revisions);
+  const { merges, splits, moves, retiredUnits, addedUnits, removedRouteSet } = extractRouteChanges(revisions);
+
+  const checkTargetActive = (route, context) => {
+    if (removedRouteSet.has(route)) return;
+    if (!activeSet.has(route)) {
+      errors.push(`${context}: target route is absent from active routes: ${route}`);
+    }
+  };
+  const checkAnchorOnRoute = (destRoute, anchorId, label) => {
+    if (!anchorsByRoute || removedRouteSet.has(destRoute)) return;
+    const targetAnchors = anchorsByRoute.get(destRoute);
+    if (!targetAnchors || !targetAnchors.has(anchorId)) {
+      errors.push(`${label} points to missing heading on ${destRoute}: #${anchorId}`);
+    }
+  };
+
   for (const added of addedUnits) {
+    if (removedRouteSet.has(added.route)) continue;
     if (!activeSet.has(added.route)) {
       errors.push(`Added unit route is absent from active routes: ${added.route} (${added.revisionId})`);
     }
   }
   for (const merge of merges) {
-    if (!activeSet.has(merge.to)) {
+    if (!removedRouteSet.has(merge.to) && !activeSet.has(merge.to)) {
       errors.push(`Route merge target is absent from active routes: ${merge.to} (${merge.revisionId})`);
     }
     for (const oldRoute of merge.from) {
-      if (activeSet.has(oldRoute)) {
+      if (removedRouteSet.has(oldRoute) && activeSet.has(oldRoute)) {
         errors.push(`Merged legacy route still appears in active routes: ${oldRoute} -> ${merge.to} (${merge.revisionId})`);
       }
     }
-    if (anchorsByRoute && merge.anchors) {
+    if (anchorsByRoute && merge.anchors && !removedRouteSet.has(merge.to)) {
       const targetAnchors = anchorsByRoute.get(merge.to);
       for (const [oldKey, newHash] of Object.entries(merge.anchors)) {
         const anchorId = newHash.slice(1);
         if (!targetAnchors || !targetAnchors.has(anchorId)) {
           errors.push(`Route merge anchor mapping points to missing heading on ${merge.to}: ${oldKey} -> ${newHash} (${merge.revisionId})`);
         }
+      }
+    }
+  }
+  for (const split of splits) {
+    for (const dest of split.to) {
+      checkTargetActive(dest, `Route split (${split.revisionId})`);
+    }
+    if (!split.retainedSelf && removedRouteSet.has(split.from) && activeSet.has(split.from)) {
+      errors.push(`Split legacy route still appears in active routes: ${split.from} (${split.revisionId})`);
+    }
+    if (anchorsByRoute && split.anchors) {
+      for (const [oldKey, targetSpec] of Object.entries(split.anchors)) {
+        const hashAt = targetSpec.indexOf('#');
+        const destRoute = hashAt === 0 ? split.primaryTo : targetSpec.slice(0, hashAt);
+        const anchorId = targetSpec.slice(hashAt + 1);
+        if (!split.to.includes(destRoute)) {
+          errors.push(`Route split anchor mapping targets route outside split.to: ${oldKey} -> ${targetSpec} (${split.revisionId})`);
+          continue;
+        }
+        checkAnchorOnRoute(destRoute, anchorId, `Route split anchor mapping (${oldKey} -> ${targetSpec}, ${split.revisionId})`);
+      }
+    }
+  }
+  for (const move of moves) {
+    checkTargetActive(move.to, `Route move (${move.revisionId})`);
+    if (move.routeChanged && removedRouteSet.has(move.from) && activeSet.has(move.from)) {
+      errors.push(`Moved legacy route still appears in active routes: ${move.from} -> ${move.to} (${move.revisionId})`);
+    }
+    if (anchorsByRoute && move.anchors) {
+      for (const [oldKey, newHash] of Object.entries(move.anchors)) {
+        checkAnchorOnRoute(move.to, newHash.slice(1), `Route move anchor mapping (${oldKey} -> ${newHash}, ${move.revisionId})`);
+      }
+    }
+  }
+  for (const retired of retiredUnits) {
+    if (removedRouteSet.has(retired.route) && activeSet.has(retired.route)) {
+      errors.push(`Retired unit route still appears in active routes: ${retired.route} (${retired.revisionId})`);
+    }
+    if (retired.successor) {
+      checkTargetActive(retired.successor, `Retired unit successor (${retired.revisionId})`);
+      if (retired.successorAnchor) {
+        checkAnchorOnRoute(
+          retired.successor,
+          retired.successorAnchor.slice(1),
+          `Retired unit successorAnchor (${retired.route} -> ${retired.successor}${retired.successorAnchor}, ${retired.revisionId})`,
+        );
       }
     }
   }
@@ -835,33 +1049,60 @@ export function applyClaimRetirementsToCitations(entries, retirements) {
 }
 
 /**
- * Shared citation-address retargeting for merged routes (post-checkpoint routeChanges).
- * Remaps targets pointing at merged legacy routes to their merged destination route and anchor,
+ * Shared citation-address retargeting for merged, split, moved, or retired routes (post-checkpoint routeChanges).
+ * Remaps targets pointing at legacy routes to their current destination route and anchor,
  * while preserving /print book-unit anchors unchanged.
  */
 export function applyRouteChangesToCitations(entries, revisions) {
   const { fromToMap } = extractRouteChanges(revisions);
   if (!fromToMap.size) return entries;
 
-  const remapAnchorId = (oldRoute, oldId, merge, kind, claimId) => {
-    if (kind === 'note' && claimId) {
-      return chapterNoteAnchor(chapterAnchorPrefix(merge.to), claimId);
+  const stepTarget = target => {
+    const change = fromToMap.get(target.route) ?? fromToMap.get(target.path);
+    if (!change) return null;
+    const explicit = change.anchors?.[`${target.route}#${target.id}`] ?? change.anchors?.[`#${target.id}`];
+    if (explicit) {
+      const hashAt = explicit.indexOf('#');
+      const nextRoute = hashAt === 0 ? change.to : explicit.slice(0, hashAt);
+      const nextId = explicit.slice(hashAt + 1);
+      if (nextRoute === target.route && nextId === target.id) return null;
+      return {
+        ...target,
+        route: nextRoute,
+        path: nextRoute,
+        id: nextId,
+      };
     }
-    const explicit = merge.anchors[`${oldRoute}#${oldId}`] ?? merge.anchors[`#${oldId}`];
-    if (explicit) return explicit.slice(1);
-    return oldId;
+    if (change.op === 'split' && change.retainedSelf) return null;
+    const nextRoute = change.to;
+    if (!nextRoute || nextRoute === target.route) return null;
+    let nextId = target.id;
+    if (target.kind === 'note' && target.claimId) {
+      nextId = chapterNoteAnchor(chapterAnchorPrefix(nextRoute), target.claimId);
+    } else if (change.anchors?.['*']) {
+      nextId = change.anchors['*'].slice(1);
+    }
+    return {
+      ...target,
+      route: nextRoute,
+      path: nextRoute,
+      id: nextId,
+    };
   };
 
   const remapTarget = target => {
     if (!target || target.path === '/print') return target;
-    const merge = fromToMap.get(target.route) ?? fromToMap.get(target.path);
-    if (!merge) return target;
-    return {
-      ...target,
-      route: merge.to,
-      path: merge.to,
-      id: remapAnchorId(target.route, target.id, merge, target.kind, target.claimId),
-    };
+    let current = target;
+    const visited = new Set([`${current.route}#${current.id}`]);
+    for (let depth = 0; depth < 16; depth++) {
+      const next = stepTarget(current);
+      if (!next) break;
+      const key = `${next.route}#${next.id}`;
+      if (visited.has(key)) throw new Error(`Cycle in routeChanges target resolution involving ${target.route}`);
+      visited.add(key);
+      current = next;
+    }
+    return current;
   };
 
   return entries.map(entry => {

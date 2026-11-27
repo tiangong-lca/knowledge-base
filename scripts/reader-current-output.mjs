@@ -14,7 +14,7 @@ import { showEditorialHistoryInProse } from './reader-editorial-mode.mjs';
 import { extractRouteChanges } from './reader-revisions.mjs';
 
 function routesForChanges(current, sources) {
-  const { merges: routeChanges, addedUnits, mergedFromSet } = extractRouteChanges(current.revisions ?? []);
+  const { merges: routeChanges, splits, moves, addedUnits, mergedFromSet, removedRouteSet } = extractRouteChanges(current.revisions ?? []);
   const routes = new Set();
   if (current.changes.file.has('app/global.css')) for (const route of sources.keys()) routes.add(route);
   if (current.changes.file.has('components/teaching-case-client.tsx')) routes.add('/docs/book/wall-service-to-comparison');
@@ -27,13 +27,21 @@ function routesForChanges(current, sources) {
     if (fileChange?.op === 'delete') continue;
     if (!/^content\/.+\.mdx?$/.test(path)) continue;
     const route = path.slice('content'.length).replace(/\.mdx?$/, '').replace(/\/index$/, '');
-    if (!mergedFromSet.has(route) && sources.has(route)) routes.add(route);
+    if (!mergedFromSet.has(route) && !removedRouteSet.has(route) && sources.has(route)) routes.add(route);
   }
   for (const rc of routeChanges) {
-    if (rc.op === 'merge' && sources.has(rc.to)) routes.add(rc.to);
+    if (rc.op === 'merge' && !removedRouteSet.has(rc.to) && sources.has(rc.to)) routes.add(rc.to);
+  }
+  for (const split of splits ?? []) {
+    for (const dest of split.to) {
+      if (!removedRouteSet.has(dest) && sources.has(dest)) routes.add(dest);
+    }
+  }
+  for (const move of moves ?? []) {
+    if (!removedRouteSet.has(move.to) && sources.has(move.to)) routes.add(move.to);
   }
   for (const added of addedUnits ?? []) {
-    if (sources.has(added.route)) routes.add(added.route);
+    if (!removedRouteSet.has(added.route) && sources.has(added.route)) routes.add(added.route);
   }
   const claims = new Set([...current.changes.record.keys()]
     .filter(key => key.startsWith('claims:')).map(key => key.slice('claims:'.length)));
@@ -51,7 +59,7 @@ export function validateReadableBookReviewedOutput(current, documents, sources, 
   const errors = [];
   if (current.changes.record.size && (!documents?.size || !sources?.size || !edition.units?.length))
     return ['Readable book record changes require independently verified actual output documents'];
-  const { mergedFromSet } = extractRouteChanges(current.revisions ?? []);
+  const { mergedFromSet, removedRouteSet } = extractRouteChanges(current.revisions ?? []);
   const required = new Set(), changedRoutes = routesForChanges(current, sources);
   for (const route of changedRoutes) {
     if (route.startsWith('/docs') && route !== '/docs/appendices') required.add(`${route}#${route}`);
@@ -63,7 +71,7 @@ export function validateReadableBookReviewedOutput(current, documents, sources, 
   const claims = new Map(catalog.claims.map(row => [row.id, row]));
   const editorialHistory = showEditorialHistoryInProse();
   for (const [key, { path, route, sha256: expected }] of current.outputs) {
-    if (path !== '/print' && mergedFromSet.has(route)) continue;
+    if (path !== '/print' && (mergedFromSet.has(route) || removedRouteSet.has(route))) continue;
     const articles = documents?.get(path)?.querySelectorAll('article[data-reader-route]') ?? [];
     const matches = articles.filter(node => node.getAttribute('data-reader-route') === route);
     if (matches.length !== 1 || (editorialHistory && sha256(matches[0].outerHTML) !== expected)) {
