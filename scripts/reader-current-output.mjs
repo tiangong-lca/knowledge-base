@@ -72,7 +72,8 @@ export function validateReadableBookReviewedOutput(current, documents, sources, 
   const claims = new Map(catalog.claims.map(row => [row.id, row]));
   const editorialHistory = showEditorialHistoryInProse();
   for (const [key, { path, route, sha256: expected }] of current.outputs) {
-    if (path !== '/print' && (mergedFromSet.has(route) || removedRouteSet.has(route))) continue;
+    if (removedRouteSet.has(route)) continue;
+    if (path !== '/print' && mergedFromSet.has(route)) continue;
     const articles = documents?.get(path)?.querySelectorAll('article[data-reader-route]') ?? [];
     const matches = articles.filter(node => node.getAttribute('data-reader-route') === route);
     if (matches.length !== 1 || (editorialHistory && sha256(matches[0].outerHTML) !== expected)) {

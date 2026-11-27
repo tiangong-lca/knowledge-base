@@ -1,45 +1,47 @@
 ---
-title: 背景数据库的发展历程与全谱系版图
-description: 梳理背景数据库从 1970 年代手工清单表到链接与联邦互操作时代的四代演进，系统对照 ecoinvent、Sphera MLC（原 GaBi）、欧盟 EF 3.1、USLCI、日本 IDEA、中国 CLCD 与天工 TIDAS、法国 AGRIBALYSE、行业协会、农业食品化工专库及 EXIOBASE/USEEIO 等十六类代表数据库的定位与边界。
+title: 背景数据库的演变与方法差异
+description: 梳理背景数据库从早期清单表到解耦链接系统的演进脉络与主流范式边界，对照系统模型、聚合形态、地理残差与资本品截断四重底层分歧。
 ---
 
-## 从手工清单表到链接数据库 [#从手工清单表到链接数据库]
+## 从手工清单表到解耦链接 [#从手工清单表到解耦链接]
 
 <Prose ids="cl-db26-why-background-db cl-db26-early-tables-to-ecoinvent-v1 cl-db26-linked-to-federated-era" />
 
-## 综合通用商业与半公开数据库 [#综合通用商业与半公开数据库]
+## 主要数据库范式与许可边界 [#主要数据库范式与许可边界]
 
-<Prose ids="cl-db26-ecoinvent-architecture cl-db26-sphera-mlc-gabi cl-db26-ef-and-elcd" />
+<Prose ids="cl-db26-ecoinvent-architecture cl-db26-sphera-mlc-gabi cl-db26-ef-and-elcd cl-db26-uslci-flcac cl-db26-eeio-and-social-dbs" />
 
-## 国家与区域公共生命周期清单库 [#国家与区域公共生命周期清单库]
+表 1 八类主流生命周期背景数据库范式在治理定位、数据形态、系统模型与许可边界上的对照。
 
-<Prose ids="cl-db26-uslci-flcac cl-db26-asia-pacific-national-dbs cl-db26-agribalyse-national-food" />
-
-## 行业专属、农业食品、投入产出与社会数据库 [#行业专属农业食品投入产出与社会数据库]
-
-<Prose ids="cl-db26-industry-and-sectoral-dbs cl-db26-eeio-and-social-dbs" />
-
-表 1 全球主要 LCA 背景数据库在维护机构、覆盖范式、数据形态、系统模型与开放许可边界上的全景对照。
-
-| 数据库名称 | 维护机构与核心定位 | 覆盖范围与范式 | 主要交付形态 | 典型系统模型／分配特征 | 开放与许可边界 |
+| 数据库范式与代表 | 维护主体与定位 | 覆盖范围与建模范式 | 主要交付形态 | 系统模型与分配特征 | 开放与许可边界 |
 | --- | --- | --- | --- | --- | --- |
-| ecoinvent（v1–v3.11+） | 瑞士 ecoinvent 协会；全球综合透明单元过程标杆库 | 全球多部门过程 LCI（能源、材料、化工、农业、运输、废物等） | 透明单元过程（UPR）与聚合结果（LCI）并行 | 原始库与系统模型分离：Cut-off、APOS、Consequential、EN 15804 | 文档公开；机读库按商业／学术分级付费许可 |
-| Sphera MLC（原 GaBi） | Sphera；工程建模驱动的综合工业背景库 | 全球多部门工业链（联合多家行业协会，含第三方核查） | 大量纵向／横向聚合 LCI，配部分单元过程 | 单一工程团队按行业工艺规则统一建模与分配 | 商业闭源许可；内部过程表不可公开逐行检视 |
-| 欧盟 EF 3.0 / 3.1 次级库 | 欧盟委员会联合研究中心（JRC）及授权节点 | 面向欧盟 PEF/OEF 法规合规的欧洲与全球供应链 | ILCD-EF XML 部分终止系统为主 | 强制绑定循环足迹公式（CFF）与欧盟推荐规则 | 面向 PEF/OEF 合规研究提供专享授权，限制二次商用分发 |
-| ELCD（历史库） | 欧盟 JRC（2018 年 6 月正式停服） | 历史欧洲基础能源、材料与运输参考清单 | 聚合 LCI 与部分单元过程存档 | 历史归因规则，已不再更新 | 历史存档公开可查，不适用于现行合规研究 |
-| USLCI / Federal LCA Commons | 美国 NREL 及 USDA/DOE/EPA/FHWA/USFS/NIST 联合仓储 | 美国本土能源、运输、建材、林业与基础工业 | 开放单元过程与机构专题仓储（配 FedEFL） | 以归因过程为主；单库部分上游链条存在未闭合缺口 | 公有领域免费开放，提供公开 API |
-| IDEA（日本） | 日本产综研（AIST）IDEA 开发研究组／SuMPO | 覆盖按 JSCC 分类的日本全产业商品与服务 | 过程与投入产出结合的混合结构清单 | 面向日本碳足迹与企业核算的归因口径 | 机构介绍公开；商业发行版须付费许可 |
-| CLCD（中国） | 亿科环境／四川大学团队 | 中国本土能源、电网、运输与基础工业原材料 | 与 eFootprint/eBalance 配套的本土背景清单 | 面向中国工业链的归因建模口径 | 商业许可库；内部过程表未在无授权下公开检视 |
-| 天工规范（TIDAS） | 天工开源协作生态（@tiangong-lca/tidas-spec） | 面向中国与国际数据交换的开放数据结构与语义规则 | 公开 JSON-Schema／ILCD 对齐规范与校验规则 | 公开规则与消费端业务策略分离，定长单调版本号 | 开源公开规范；配套数据生态持续演进 |
-| AGRIBALYSE（法国） | 法国生态转型署（ADEME）与 INRAE 等研究联合体 | 法国农业初级产品至成品食品（“从农场到餐桌”） | 汇总结果公开；单元过程链接 ecoinvent 与 WFLDB | 农业／食品归因口径，工业与进口背景嵌套商业母库 | 公共免费开放；拆解单元过程须配套母库许可 |
-| AusLCI / SICV / MY-LCID | 澳（ALCAS）、巴（IBICT）、马（SIRIM）等国家机构 | 各国本土电网、运输、矿产与代表性产业 | 国家公共过程仓储或区域适配包 | 本土归因基准，跨境上游常衔接全球通用库 | 公共或注册开放，覆盖深度因国而异 |
-| 行业协会 LCI（PlasticsEurope、worldsteel、IAI 等） | 国际及欧洲塑料、钢铁、铝业、水泥、造纸行业协会 | 特定基础材料（高炉／电弧钢、聚合物、原铝与再生铝等） | 摇篮到大门聚合清单（保护成员商业机密） | 协会专属回收与副产物惯例（如金属闭环／价值校正） | 公开申请或会员获取；内部工厂明细不公开 |
-| Agri-footprint & WFLDB | Blonk Consultants；Agroscope & Quantis | 全球农作物、饲料、畜牧与食品加工供应链 | 农业食品专用过程单元与汇总清单 | Agri-footprint 提供经济／质量／能量多套分配变体 | 商业或联盟许可，广泛集成于主流 LCA 软件 |
-| Carbon Minds（cm.chemicals） | 德国 Carbon Minds | 细分国别与工艺路线的全球基础及精细化学品 | 区域化化工单元与供应链数据集 | 支持归因与多区域工艺路线对比 | 商业许可专库 |
-| EXIOBASE 3 & USEEIO v2.0 | EXIOBASE 联盟；美国环保署（EPA） | 全球高分辨 MR-EEIO（EXIOBASE）；美国商品 EEIO（USEEIO） | 经济投入产出表＋环境卫星账户矩阵 | 行业技术／商品技术假设，零上游截断、按货币价格映射 | 高度开放（USEEIO 开源可复现；EXIOBASE 科研开放） |
-| Eora / GLORIA / BONSAI | 悉尼大学 IELab（UN IRP）；BONSAI 开源社区 | 极广国别 MRIO（Eora/GLORIA）；开源全球混合数据网络 | 全球多区域投入产出矩阵或开放知识图谱 | 宏观消费足迹与全球物质流核算口径 | Eora 学术免费／商用付费；GLORIA 与 BONSAI 开放导向 |
-| PSILCA & SHDB | GreenDelta；New Earth | 基于 MRIO 贸易矩阵的全球国家—部门社会风险评价 | 货币流耦合工时与社会风险等级数据库 | 部门产值反推工时＋风险加权（见第五部《社会表现与影响》） | 商业许可库（配套公开方法文档） |
+| 透明单元过程通用库（ecoinvent v1–v3.11+） | 瑞士 ecoinvent 协会 | 全球多部门过程清单（能源、材料、化工、农业、运输、废物） | 透明单元过程（UPR）与聚合结果并行 | 原始库与系统模型分离：Cut-off、APOS、Consequential、EN 15804 | 方法文档公开；机读库分级付费许可 |
+| 工程聚合型商业库（Sphera MLC / 原 GaBi） | Sphera 工程建模团队及合作行业协会 | 全球多部门工业供应链（含第三方核查） | 大量纵向／横向聚合 LCI，配部分单元过程 | 单一工程团队按行业工艺机制统一设定分配或系统扩展 | 商业闭源许可；内部过程表不公开逐行检视 |
+| 法规合规次级库（欧盟 EF 3.0 / 3.1；历史 ELCD） | 欧盟委员会联合研究中心（JRC）及授权节点 | 欧盟 PEF/OEF 合规供应链（ELCD 现已停止更新并仅作历史存档） | ILCD-EF 部分终止系统为主 | 强制绑定循环足迹公式（CFF）与欧盟推荐规则 | 面向 PEF/OEF 合规研究提供专享授权，限制二次分发 |
+| 开放公共联邦仓储（USLCI / Federal LCA Commons） | 美国 NREL 与 USDA、DOE、EPA、FHWA、USFS、NIST 等联合维护 | 美国本土能源、运输、建材、林业与基础工业 | 开放单元过程仓储，配套联邦统一基本流列表与 API | 归因过程为主；单库部分上游链条存在未闭合缺口 | 公有领域免费开放 |
+| 国家与区域本土库及开放规范（IDEA、CLCD、AGRIBALYSE、TIDAS） | 日本产综研（AIST）、亿科/川大、法国 ADEME/INRAE、天工开源生态 | 本土电网、工业、农业食品或跨平台开放数据规范 | 国家背景清单（IDEA/CLCD）、公开结果嵌套商业母库（AGRIBALYSE）或开源校验规范（TIDAS） | 以本土归因口径为主；TIDAS 分离公开数据契约与消费端策略 | 许可不一：AGRIBALYSE 结果与 TIDAS 规范开放，IDEA/CLCD 机读库须商业授权 |
+| 行业协会平均清单（worldsteel、PlasticsEurope、IAI 等） | 国际及欧洲钢铁、塑料、铝业等行业协会 | 基础材料主流路线（高炉／电弧钢、聚合物、原铝与再生铝等） | 摇篮到大门聚合清单（保护成员企业机密） | 行业专属回收与副产物惯例（如金属闭环或价值校正） | 公开申请或会员获取；单厂过程明细不公开 |
+| 农业食品与化工专库（Agri-footprint、WFLDB、Carbon Minds） | Blonk、Agroscope/Quantis、Carbon Minds 等专业机构 | 全球作物饲料畜牧加工或国别工艺路线级化学品 | 细分农业／化工单元过程与汇总清单 | 部分库并行经济／质量／能量分配变体或工艺路线对比 | 商业或联盟许可，集成于主流 LCA 软件 |
+| 投入产出与社会风险矩阵（USEEIO v2.0、EXIOBASE 3、PSILCA、SHDB） | 美国 EPA、EXIOBASE 联盟、GreenDelta、New Earth 等 | 全经济体货币—环境矩阵及贸易耦合社会风险工时 | 对称投入产出矩阵＋环境或社会风险卫星账户 | 行业／商品技术投影，零上游截断（详见《混合清单》与《社会表现与影响》） | USEEIO 开源可复现、EXIOBASE 科研开放；PSILCA/SHDB 为商业许可 |
 
-<Prose ids="cl-db26-landscape-selection-bridge" />
+## 系统模型与聚合形态 [#系统模型与聚合形态]
 
-继续阅读：[主流数据库的方法论底层分歧](/docs/book/database-methodological-divergences)。
+<Prose ids="cl-db27-same-product-different-scores cl-db27-ecoinvent-four-system-models cl-db27-cross-db-multifunctionality-split cl-db27-unit-vs-aggregated-processes cl-db27-aggregation-locks-assumptions" />
+
+## 地理残差、市场与资本品边界 [#地理残差市场与资本品边界]
+
+<Prose ids="cl-db27-geography-and-row-residuals cl-db27-market-electricity-transport-modeling cl-db27-capital-goods-asymmetry cl-db27-cutoffs-and-temporal-lag" />
+
+表 2 五类代表背景数据库范式在系统模型、聚合形态、地理市场、资本品与截断规则上的底层方法对照。
+
+| 方法论维度 | ecoinvent v3 | Sphera MLC（原 GaBi） | 欧盟 EF 3.0 / 3.1 次级库 | 国家公共库（USLCI / IDEA / CLCD） | EEIO / MRIO（EXIOBASE 3 / USEEIO） |
+| --- | --- | --- | --- | --- | --- |
+| 多功能性与回收模型 | 原始库与系统模型分离：Cut-off、Cut-off EN 15804、APOS、Consequential 四套并行 | 工程团队按行业物理机制统一设定默认分配或系统扩展 | 强制绑定循环足迹公式（CFF）按材料参数切分原生与再生负担 | 多固化单一归因分配口径（按具体库与行业惯例） | 国民经济供给—使用表经行业技术或商品技术假设投影为对称矩阵 |
+| 交付颗粒度与透明度 | 透明单元过程（UPR）为主，支持逐层拆解与蒙特卡洛传播 | 大量纵向／横向聚合 LCI（保护工业机密），辅以部分单元过程 | 以 ILCD-EF 部分终止系统为主，禁止非主要子过程脱离父系统复用 | USLCI 开放单元过程；IDEA/CLCD 为本土商业背景清单 | 宏观部门级货币—环境矩阵，无法拆解至具体单厂工艺 |
+| 地理聚合与残差规则 | 同活动地理严格非重叠；大国电力分区域电网；GLO/RoW 产量残差动态联动 | 国别与区域平均生产／消费组合为主，由团队维护一致性 | 面向欧洲与全球主要贸易国别，绑定官方 EF 区域化位置码 | 聚焦本国电力、燃料与基础工业统计；跨境上游常衔接全球库 | 按国家／区域经济核算边界划分，USEEIO v2.0 支持本土／境外拆分 |
+| 运输与电网边界 | 转化活动（出厂）与市场活动（内置平均运输、进口份额与网损）严格分离 | 多数工业材料交付工厂大门过程，常需前景显式外加运输 | 结合残余电网组合（扣除追踪绿电）与明确运输情景规则 | 各国电压等级、网损与运输内嵌规则不一，切换前须逐项核对 | 运输与电力作为独立经济部门按购买者价格与贸易利润率矩阵闭合 |
+| 资本品与截断准则 | 全库默认纳入厂房、设备与基础设施；过程级截断 | 多数工业过程默认排除或选择性纳入资本品 | 物料、能量与各影响类别累计截断均低于 3.0%；资本品依规则限定 | 资本品覆盖度不均；早期 USLCI 单库存在未闭合上游缺口 | 原则上全经济体零上游截断（是否含固定资本形成取决于扩展配置） |
+
+<Prose ids="cl-db27-method-divergence-bridge" />
+
+继续阅读：[流与过程的跨库对应](/docs/book/elementary-flows-and-lcia-coupling/)。

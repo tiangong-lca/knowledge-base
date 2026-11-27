@@ -17,38 +17,51 @@ export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const anchorsJson = JSON.stringify(entry.anchors ?? {}).replace(/</g, '\\u003c');
   const isRelocate = entry.kind === 'relocate';
-  const pageTitle = isRelocate
-    ? `页面已迁至新地址：${esc(entry.title)} — 生命周期评价的前世今生`
-    : `章节已合并：${esc(entry.title)} — 生命周期评价的前世今生`;
-  const heading = isRelocate
-    ? '页面已迁至新地址'
-    : `本章已合并至《${esc(entry.title)}》`;
-  const bodyNote = isRelocate
-    ? `您访问的页面现已位于新网址，正在自动跳转至《${esc(entry.title)}》。`
-    : `原篇章内容已整合至《${esc(entry.title)}》，正在自动跳转至合并后的完整章节。`;
+  const isEn = entry.lang === 'en' || String(entry.from ?? '').startsWith('/en/') || destPath.startsWith('/en/');
+  const defaultHash = entry.defaultAnchor ? (entry.defaultAnchor.startsWith('#') ? entry.defaultAnchor : `#${entry.defaultAnchor}`) : '';
+  const pageTitle = isEn
+    ? (isRelocate
+      ? `Page Moved: ${esc(entry.title)} — The Past and Present of Life Cycle Assessment`
+      : `Chapter Merged: ${esc(entry.title)} — The Past and Present of Life Cycle Assessment`)
+    : (isRelocate
+      ? `页面已迁至新地址：${esc(entry.title)} — 生命周期评价的前世今生`
+      : `章节已合并：${esc(entry.title)} — 生命周期评价的前世今生`);
+  const heading = isEn
+    ? (isRelocate ? 'Page Moved to a New Address' : `Merged into ${esc(entry.title)}`)
+    : (isRelocate ? '页面已迁至新地址' : `本章已合并至《${esc(entry.title)}》`);
+  const bodyNote = isEn
+    ? (isRelocate
+      ? `The page you requested now lives at a new address. Redirecting to ${esc(entry.title)}.`
+      : `This chapter has been consolidated into ${esc(entry.title)}. Redirecting to the integrated chapter.`)
+    : (isRelocate
+      ? `您访问的页面现已位于新网址，正在自动跳转至《${esc(entry.title)}》。`
+      : `原篇章内容已整合至《${esc(entry.title)}》，正在自动跳转至合并后的完整章节。`);
+  const linkText = isEn ? `Continue to ${esc(entry.title)}` : `立即前往《${esc(entry.title)}》`;
+  const initialTarget = `${destPath}${defaultHash ? `#${encodeURIComponent(defaultHash.slice(1))}` : ''}`;
   return `<!doctype html>
-<html lang="zh-CN">
+<html lang="${isEn ? 'en' : 'zh-CN'}">
 <head>
   <meta charset="utf-8" />
   <meta name="robots" content="noindex" />
   <link rel="canonical" href="${esc(canonical)}" />
-  <meta http-equiv="refresh" content="0; url=${esc(destPath)}" />
+  <meta http-equiv="refresh" content="0; url=${esc(initialTarget)}" />
   <title>${pageTitle}</title>
 </head>
 <body>
   <main style="max-width:40rem;margin:4rem auto;padding:0 1.25rem;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;">
     <h1>${heading}</h1>
     <p>${bodyNote}</p>
-    <p><a id="redirect-link" href="${esc(destPath)}">立即前往《${esc(entry.title)}》</a></p>
+    <p><a id="redirect-link" href="${esc(initialTarget)}">${linkText}</a></p>
   </main>
   <script>
     (function () {
       var dest = ${JSON.stringify(destPath)};
       var map = ${anchorsJson};
+      var fallbackHash = ${JSON.stringify(defaultHash ? `#${encodeURIComponent(defaultHash.slice(1))}` : '')};
       var rawHash = window.location.hash ? window.location.hash.slice(1) : '';
       var decoded = rawHash;
       try { decoded = decodeURIComponent(rawHash); } catch (e) {}
-      var nextHash = decoded ? (map[decoded] ? '#' + encodeURIComponent(map[decoded]) : '#' + encodeURIComponent(decoded)) : '';
+      var nextHash = decoded ? (map[decoded] ? '#' + encodeURIComponent(map[decoded]) : '#' + encodeURIComponent(decoded)) : fallbackHash;
       var target = dest + nextHash;
       var link = document.getElementById('redirect-link');
       if (link) link.setAttribute('href', target);
