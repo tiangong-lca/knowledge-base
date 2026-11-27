@@ -10,6 +10,8 @@ import fwConfig from '../config/reader-framework-comparison.json' with { type: '
 import part2Config from '../config/reader-part2-reread.json' with { type: 'json' };
 import hybConfig from '../config/reader-hybrid-inventory-comparison.json' with { type: 'json' };
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { projectRevisionNumbering } from './reader-revisions.mjs';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
@@ -78,9 +80,10 @@ test('preparePart3RereadSource recovers exact f6d1eca5 predecessor state and ver
 
 test('projectPart3RereadNumbering, part3RereadLayout, and changes ledger behave reversibly', () => {
   const unit = selectPart3Reread(part3Config, part3RereadUnitPin, false);
-  const projected = projectPart3RereadNumbering(unit, numbering);
+  const checkpointNumbering = projectRevisionNumbering(currentRevisions, numbering);
+  const projected = projectPart3RereadNumbering(unit, checkpointNumbering);
   assert.equal(projected.parts[2].introduction, unit.partIntroduction.from);
-  assert.equal(projectPart3RereadNumbering(null, numbering), numbering);
+  assert.equal(projectPart3RereadNumbering(null, checkpointNumbering), checkpointNumbering);
 
   const mock = { ordinary: [{ section: 'old', text: 'old', navigation: [] }] };
   const updated = part3RereadLayout(unit, 'B10:/docs/allocation:source', mock);

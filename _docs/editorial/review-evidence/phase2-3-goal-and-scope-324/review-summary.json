@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-3-goal-and-scope-324",
+  "task": "tiangong-lca/knowledge-base#324",
+  "date": "2026-11-27",
+  "scientificApproval": false,
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 3,
+      "resolvedCount": 3,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "checkedSources": [
+        "ISO 14044:2006 public preview (15 pp., printed pp. 6–9 / PDF pp. 12–15, SHA-256 verified, §§4.1–4.2.3.5)",
+        "ILCD Handbook Detailed Guidance (2010, 417 pp., Ch. 4–5 & §6.6, printed pp. 25–38 & 96–107, SHA-256 verified)",
+        "Commission Recommendation (EU) 2021/2279 Corrigendum Annex I (OJ L 144, 384 pp., Glossary, §1, §§3.1–3.2, §§4.1–4.2, §§4.6.1–4.6.4, SHA-256 verified)",
+        "GHG Protocol Product Life Cycle Accounting and Reporting Standard (2011, 148 pp., Ch. 2, §5.2, Ch. 6–8, Appendix A, SHA-256 verified)",
+        "CML 2001/2002 Operational Guide Part 2a (101 pp., Ch. 2 §§2.1–2.3.4, §3.2, §§3.3.4–3.3.5, SHA-256 verified)"
+      ],
+      "keyFixesApplied": [
+        "Corrected CML 2001 Part 2a Chapter 3 section numbers from §§3.3.3–3.3.4 to §§3.3.4–3.3.5 across catalog evidence, EN bibliography, cl-gs23-foreground-data-hierarchies (ZH & EN), and Table 1 (ZH & EN), and added §3.2 (pp. 26–27) to ev-gs23-cml-goal-scope-foreground locator.",
+        "Corrected ISO 14044:2006 public-preview boundary in cl-gs23-scope-elements caveats (ZH & EN) to state preview covers §§4.2.3.2–4.2.3.4 and the opening portion of §4.2.3.5 (terminating inside §4.2.3.5 on printed p. 9), and removed uninspected parenthetical topic attributions for paywalled §§4.2.3.6–4.2.3.8.",
+        "Expanded locators and summaries in ev-gs23-ghgp-goal-boundary-excl (Ch. 2 pp. 8–11, §5.2 pp. 21–22, Ch. 8 §§8.2/8.3.4–8.3.5 pp. 47/51–52) and ev-gs23-pef-goal-scope-cutoff (added §1 OJ L 144/23–24) plus ILCD §6.6 Provision VIII.a comparative mass/energy nuance (p. 107).",
+        "Aligned ISO 14044 §4.2.3.2 comparison wording, §4.2.3.1 normative modality ('should' / 均应), ILCD Situation C1 co-product+recycling interaction wording, Table 2 Row 3 attributional qualifier, and standardized scripts/reader-surface.mjs to use isRouteRevised()."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 4,
+      "resolvedCount": 4,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "keyFixesApplied": [
+        "Restored missing Chinese clause in cl-gs23-foreground-data-hierarchies so GHG Protocol maps directly operated attributable processes to primary data and upstream/downstream links to secondary databases or spend-based factors.",
+        "Resolved ISO 14044 §4.2.3.5 self-contradiction in Note 3 caveats (ZH & EN).",
+        "Fixed Chinese domain typo in Ch. 6 Table 2 Row 3 (市场均价数据 -> 市场平均数据).",
+        "Aligned canonical chapter titles across Ch. 4 Whole-Book Analytical Map Table (ZH & EN, including Part VI First–Last range), Ch. 6 EN caveats (Data Quality Scores and Probability, Hybrid Inventory Analysis), and EN Reading Guide (index.mdx), plus aligned Part I intro bridge, cl-fw179-decision-gates ZH, cl-gs23-comparative-assertion-gates EN caveat, Table 1 ILCD audience wording, and Ch. 5 closing scope."
+      ]
+    }
+  ]
+}
