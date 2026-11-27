@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "scope": "current-46-unit-37-chapter-book-and-49-unit-37-chapter-website-presentation",
+  "scope": "current-48-unit-39-chapter-book-and-51-unit-39-chapter-website-presentation",
   "parts": [
     {
       "number": 1,
@@ -20,7 +20,7 @@
     {
       "number": 4,
       "title": "环境后果",
-      "introduction": "清单给出了资源采掘、土地利用、取耗水和污染物排放等数量。要知道这些活动可能带来什么后果，还要沿着环境机制追查：本部从中点与终点的因果截点出发，依次考察土地恢复与矿产、化石资源，气候响应、排放时间与生物碳，酸化、富营养化、光化学臭氧、平流层臭氧与电离辐射，以及颗粒物健康损害、耗水缺水与多介质化学毒性；并跨体系对照 ReCiPe 2016、欧盟环境足迹（EF 3.1）、全球生命周期影响评价指南（GLAM）、政府间气候变化专门委员会第六次评估报告（IPCC AR6）、剩余可用水模型（AWARE）与 USEtox 在空间背景、时间窗口、暴露路径与不确定性边界上的真实分歧，为第五部《尺度与取舍》讨论跨类别权衡打下基础。"
+      "introduction": "清单给出了资源采掘、土地利用、取耗水和污染物排放等数量。要知道这些活动可能带来什么后果，还要沿着环境机制追查：本部先在《影响评价的结构》中辨明中点与终点截点、时间与空间设定、必选与可选步骤及六大方法体系谱系，再分章考察气候当量、臭氧层与电离辐射、酸化与营养富集、颗粒物排放与健康损害、耗水与缺水潜势、毒性路径，以及资源、土地与生物多样性；跨体系对照 CML、ReCiPe 2016、欧盟环境足迹（EF 3.1）、LC-IMPACT、IMPACT World+、GLAM、IPCC AR6、WMO 2022、AWARE 与 USEtox 在空间背景、时间窗口、暴露路径与不确定性边界上的真实分歧，为第五部《尺度与取舍》讨论跨类别权衡打下基础。"
     },
     {
       "number": 5,
@@ -152,7 +152,7 @@
       "source": "/docs/book/midpoint-endpoint-value-choices",
       "kind": "chapter",
       "part": 4,
-      "title": "中点与终点"
+      "title": "影响评价的结构"
     },
     {
       "key": "book-climate-equivalence",
@@ -160,6 +160,13 @@
       "kind": "chapter",
       "part": 4,
       "title": "气候当量"
+    },
+    {
+      "key": "/docs/book/ozone-and-ionizing-radiation",
+      "source": "/docs/book/ozone-and-ionizing-radiation",
+      "kind": "chapter",
+      "part": 4,
+      "title": "臭氧层与电离辐射"
     },
     {
       "key": "/docs/book/acidification-and-nutrient-pathways",
@@ -188,6 +195,13 @@
       "kind": "chapter",
       "part": 4,
       "title": "毒性路径"
+    },
+    {
+      "key": "/docs/book/resources-land-and-biodiversity",
+      "source": "/docs/book/resources-land-and-biodiversity",
+      "kind": "chapter",
+      "part": 4,
+      "title": "资源、土地与生物多样性"
     },
     {
       "key": "/docs/book/ecological-scarcity-and-targets",
@@ -467,7 +481,7 @@
       "source": "/docs/book/midpoint-endpoint-value-choices",
       "kind": "chapter",
       "part": 4,
-      "title": "中点与终点"
+      "title": "影响评价的结构"
     },
     {
       "key": "/docs/book/climate-equivalence",
@@ -475,6 +489,13 @@
       "kind": "chapter",
       "part": 4,
       "title": "气候当量"
+    },
+    {
+      "key": "/docs/book/ozone-and-ionizing-radiation",
+      "source": "/docs/book/ozone-and-ionizing-radiation",
+      "kind": "chapter",
+      "part": 4,
+      "title": "臭氧层与电离辐射"
     },
     {
       "key": "/docs/book/acidification-and-nutrient-pathways",
@@ -503,6 +524,13 @@
       "kind": "chapter",
       "part": 4,
       "title": "毒性路径"
+    },
+    {
+      "key": "/docs/book/resources-land-and-biodiversity",
+      "source": "/docs/book/resources-land-and-biodiversity",
+      "kind": "chapter",
+      "part": 4,
+      "title": "资源、土地与生物多样性"
     },
     {
       "key": "/docs/book/ecological-scarcity-and-targets",
@@ -1142,6 +1170,13 @@
         "key": "模型输入数据与因子发行包",
         "id": "模型输入数据与因子发行包",
         "title": "模型与资料",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "方法体系与归一化",
+        "id": "方法体系与归一化",
+        "title": "必选步骤、归一化与方法谱系",
         "depth": 2,
         "type": "mdx"
       }
@@ -2120,6 +2155,52 @@
         "key": "面向未来的互操作路径从静态转换到可验证元数据与开放规范",
         "id": "面向未来的互操作路径从静态转换到可验证元数据与开放规范",
         "title": "面向未来的互操作路径：从静态转换到可验证元数据与开放规范",
+        "depth": 2,
+        "type": "mdx"
+      }
+    ],
+    "/docs/book/ozone-and-ionizing-radiation": [
+      {
+        "key": "平流层臭氧耗竭",
+        "id": "平流层臭氧耗竭",
+        "title": "平流层臭氧耗竭",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "电离辐射",
+        "id": "电离辐射",
+        "title": "电离辐射",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "终点选择与因子包差异",
+        "id": "终点选择与因子包差异",
+        "title": "终点选择与因子包差异",
+        "depth": 2,
+        "type": "mdx"
+      }
+    ],
+    "/docs/book/resources-land-and-biodiversity": [
+      {
+        "key": "土地利用与恢复",
+        "id": "土地利用与恢复",
+        "title": "土地利用与生物多样性恢复",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "矿产稀缺与费用代理",
+        "id": "矿产稀缺与费用代理",
+        "title": "矿产稀缺与费用代理",
+        "depth": 2,
+        "type": "mdx"
+      },
+      {
+        "key": "化石能源边界与表值核对",
+        "id": "化石能源边界与表值核对",
+        "title": "化石能源边界与表值核对",
         "depth": 2,
         "type": "mdx"
       }

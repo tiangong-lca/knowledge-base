@@ -70,6 +70,17 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
     seenOutputs.add(dedup);
     outputs.push({ path: pathKey, route: routeKey, sha256: sha256(Buffer.from(article.outerHTML, 'utf8')) });
   };
+  const edition = JSON.parse(await readFile(join(repo, 'config/book-edition.json'), 'utf8'));
+  for (const fileRow of rev.files ?? []) {
+    if (fileRow.op === 'delete') continue;
+    if (!/^content\/docs\/.+\.mdx?$/.test(fileRow.path)) continue;
+    const route = fileRow.path.slice('content'.length).replace(/\.mdx?$/, '').replace(/\/index$/, '');
+    if (route === '/docs/appendices') continue;
+    await addOutputReceipt(route, route, `${route.slice(1)}/index.html`);
+    for (const unit of edition.units.filter(u => u.source === route)) {
+      await addOutputReceipt('/print', unit.key, 'print/index.html');
+    }
+  }
   for (const rc of rev.routeChanges ?? []) {
     if (rc.op === 'merge') {
       await addOutputReceipt(rc.to, rc.to, `${rc.to.slice(1)}/index.html`);

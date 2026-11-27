@@ -413,3 +413,117 @@ test('routeChanges supports combined merge, split, move, and retire-unit operati
   assert.equal(remapped[2].targets[0].route, '/docs/book/cleaner-origin');
   assert.equal(remapped[2].targets[0].id, 'cleaner-section');
 });
+
+test('split routeChanges with retainedSelf and claimRoutes converts web alias to notice and updates /print alias', () => {
+  const splitRev = {
+    schemaVersion: 1,
+    id: 'rev-split-retained-self',
+    date: '2026-11-27',
+    title: '拆分原综合章为三章',
+    rationale: '将原综合章拆分为影响评价结构、臭氧辐射与资源土地三章。',
+    routes: [
+      '/docs/book/midpoint-endpoint-value-choices',
+      '/docs/book/ozone-and-ionizing-radiation',
+      '/docs/book/resources-land-and-biodiversity',
+    ],
+    routeChanges: [
+      {
+        op: 'split',
+        from: '/docs/book/midpoint-endpoint-value-choices',
+        to: [
+          '/docs/book/midpoint-endpoint-value-choices',
+          '/docs/book/ozone-and-ionizing-radiation',
+          '/docs/book/resources-land-and-biodiversity',
+        ],
+        primaryTo: '/docs/book/midpoint-endpoint-value-choices',
+        claimRoutes: {
+          'cl-land111-midpoint': '/docs/book/resources-land-and-biodiversity',
+          'cl-ozrad121-formula-table': '/docs/book/ozone-and-ionizing-radiation',
+        },
+        rationale: '原《中点与终点》按主题拆分为《影响评价的结构》《臭氧层与电离辐射》与《资源、土地与生物多样性》三章。',
+      },
+    ],
+    claims: [],
+    concepts: [],
+    evidence: [],
+    sources: [],
+    mappings: [],
+    files: [],
+    outputs: [],
+    publicArtifacts: [],
+    corrections: [],
+    reviewEvidence: [],
+  };
+
+  assert.doesNotThrow(() => validateRevisionSchema(splitRev, 'splitRev'));
+  assert.throws(
+    () => validateRevisionSchema({
+      ...splitRev,
+      routeChanges: [{ ...splitRev.routeChanges[0], claimRoutes: { 'cl-x': '/docs/book/not-in-to' } }],
+    }),
+    /declared destination route/,
+  );
+
+  const entries = [
+    {
+      route: '/docs/book/midpoint-endpoint-value-choices',
+      path: '/docs/book/midpoint-endpoint-value-choices',
+      id: 'old-web-land',
+      mode: 'alias',
+      edition: { sourceCommit: 'bb6ab1a', sourceDate: '2026-11-22' },
+      targets: [{
+        route: '/docs/book/midpoint-endpoint-value-choices',
+        path: '/docs/book/midpoint-endpoint-value-choices',
+        id: 'old-target-web',
+        kind: 'note',
+        claimId: 'cl-land111-midpoint',
+      }],
+    },
+    {
+      route: '/docs/book/midpoint-endpoint-value-choices',
+      path: '/print',
+      id: 'old-print-land',
+      mode: 'alias',
+      edition: { sourceCommit: 'bb6ab1a', sourceDate: '2026-11-22' },
+      targets: [{
+        route: '/docs/book/midpoint-endpoint-value-choices',
+        path: '/print',
+        id: 'old-target-print',
+        kind: 'note',
+        claimId: 'cl-land111-midpoint',
+      }],
+    },
+    {
+      route: '/docs/book/midpoint-endpoint-value-choices',
+      path: '/docs/book/midpoint-endpoint-value-choices',
+      id: 'stay-lcia',
+      mode: 'alias',
+      edition: { sourceCommit: 'bb6ab1a', sourceDate: '2026-11-22' },
+      targets: [{
+        route: '/docs/book/midpoint-endpoint-value-choices',
+        path: '/docs/book/midpoint-endpoint-value-choices',
+        id: 'stay-target',
+        kind: 'note',
+        claimId: 'cl-lcia-midpoint-pathway',
+      }],
+    },
+  ];
+
+  const remapped = applyRouteChangesToCitations(entries, [splitRev]);
+  // Web entry moved across routes -> converted to notice on source page pointing to new route
+  assert.equal(remapped[0].mode, 'notice');
+  assert.equal(remapped[0].path, '/docs/book/midpoint-endpoint-value-choices');
+  assert.equal(remapped[0].targets[0].route, '/docs/book/resources-land-and-biodiversity');
+  assert.equal(remapped[0].targets[0].path, '/docs/book/resources-land-and-biodiversity');
+  assert.match(remapped[0].targets[0].id, /cl-land111-midpoint$/);
+  assert.equal(remapped[0].scope.targets[0].route, '/docs/book/resources-land-and-biodiversity');
+  // Print entry stays alias on /print with updated target route & printUnitAnchor
+  assert.equal(remapped[1].mode, 'alias');
+  assert.equal(remapped[1].path, '/print');
+  assert.equal(remapped[1].targets[0].route, '/docs/book/resources-land-and-biodiversity');
+  assert.equal(remapped[1].targets[0].path, '/print');
+  assert.match(remapped[1].targets[0].id, /^print-unit-.*cl-land111-midpoint$/);
+  // Unlisted claim stays untouched on primary route
+  assert.equal(remapped[2].mode, 'alias');
+  assert.equal(remapped[2].targets[0].route, '/docs/book/midpoint-endpoint-value-choices');
+});
