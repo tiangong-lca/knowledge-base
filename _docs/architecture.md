@@ -48,6 +48,14 @@ build. No source-validation result is cached or transferred as admission, and no
 new environment bypass is introduced. Existing preview output isolation and
 the exporter's preview/editorial-history refusals remain unchanged.
 
+`.github/workflows/validate.yml` runs `checks` (`verify-checkpoint-history.mjs`,
+`pnpm typecheck`, and cached `docpact 0.1.9` lint), two deterministic test shards
+(`scripts/ci-test-shard.mjs`, covering all `scripts/*.test.mjs` without gaps or
+overlap), and `build` (with `.next/cache` caching, skipped only on proven
+`docs-only` PRs touching `_docs/**`, `AGENTS.md`, `README.md`, or `.docpact/**`
+without `ci:full`; `push main` and `workflow_dispatch` always run `full`) in
+parallel, joined by the required terminal `validate` gate.
+
 
 ## Product-footprint-comparison successor
 
