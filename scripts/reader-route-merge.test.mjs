@@ -218,3 +218,198 @@ test('validateRouteChangesAgainstOutput catches missing target, lingering legacy
   assert.equal(missingAnchor.length, 1);
   assert.match(missingAnchor[0], /missing heading/);
 });
+
+test('routeChanges supports combined merge, split, move, and retire-unit operations with anchor and chain validation', () => {
+  const baseRev = {
+    schemaVersion: 1,
+    id: 'rev-1-add-temp',
+    date: '2026-11-26',
+    title: '新增背景数据库两章',
+    rationale: '补充背景数据库章节。',
+    routes: ['/docs/book/db-a', '/docs/book/db-b'],
+    routeChanges: [
+      { op: 'add-unit', route: '/docs/book/db-a', kind: 'chapter', rationale: '新增数据库格局一章。' },
+      { op: 'add-unit', route: '/docs/book/db-b', kind: 'chapter', rationale: '新增数据库分歧一章。' },
+    ],
+    claims: [],
+    concepts: [],
+    evidence: [],
+    sources: [],
+    mappings: [],
+    files: [],
+    outputs: [],
+    publicArtifacts: [],
+    corrections: [],
+    reviewEvidence: [],
+  };
+
+  const reorgRev = {
+    schemaVersion: 1,
+    id: 'rev-2-reorg-combined',
+    date: '2026-11-27',
+    title: '全书结构整合与拆分',
+    rationale: '按内容体量重组部分章节并保持旧链接可追踪。',
+    routes: [
+      '/docs/book/db-merged',
+      '/docs/book/impact-structure',
+      '/docs/book/ozone-and-radiation',
+      '/docs/book/resources-land-biodiversity',
+      '/docs/book/temporal-and-future',
+      '/docs/book/cleaner-origin',
+    ],
+    routeChanges: [
+      {
+        op: 'merge',
+        from: ['/docs/book/db-a', '/docs/book/db-b'],
+        to: '/docs/book/db-merged',
+        anchors: { '/docs/book/db-a#s1': '#s1-merged' },
+        rationale: '合并两章背景数据库内容。',
+      },
+      {
+        op: 'split',
+        from: '/docs/book/midpoint-and-endpoint',
+        to: ['/docs/book/impact-structure', '/docs/book/ozone-and-radiation', '/docs/book/resources-land-biodiversity'],
+        primaryTo: '/docs/book/impact-structure',
+        anchors: {
+          '/docs/book/midpoint-and-endpoint#structure': '/docs/book/impact-structure#structure',
+          '/docs/book/midpoint-and-endpoint#ozone': '/docs/book/ozone-and-radiation#ozone',
+          '/docs/book/midpoint-and-endpoint#resources': '/docs/book/resources-land-biodiversity#resources',
+        },
+        rationale: '将原单章按主题拆分为三章。',
+      },
+      {
+        op: 'move',
+        from: '/docs/book/future-technology-and-context',
+        to: '/docs/book/temporal-and-future',
+        fromPart: 8,
+        toPart: 5,
+        anchors: { '/docs/book/future-technology-and-context#scenarios': '#future-scenarios' },
+        rationale: '将未来技术与情景移入时间尺度部并更新路径。',
+      },
+      {
+        op: 'move',
+        from: '/docs/book/product-footprint-rules',
+        to: '/docs/book/product-footprint-rules',
+        fromPart: 7,
+        toPart: 8,
+        rationale: '调整产品足迹规则所属分部。',
+      },
+      {
+        op: 'retire-unit',
+        route: '/docs/book/cleaner-production-old',
+        successor: '/docs/book/cleaner-origin',
+        successorAnchor: '#cleaner-section',
+        rationale: '并入第一部对应小节。',
+      },
+    ],
+    claims: [],
+    concepts: [],
+    evidence: [],
+    sources: [],
+    mappings: [],
+    files: [],
+    outputs: [],
+    publicArtifacts: [],
+    corrections: [],
+    reviewEvidence: [],
+  };
+
+  assert.doesNotThrow(() => validateRevisionSchema(baseRev, 'baseRev'));
+  assert.doesNotThrow(() => validateRevisionSchema(reorgRev, 'reorgRev'));
+
+  // Reject malformed split/move/retire-unit schemas
+  assert.throws(
+    () => validateRevisionSchema({ ...reorgRev, routeChanges: [{ op: 'split', from: '/docs/a', to: ['/docs/b'], rationale: '拆分' }] }),
+    /at least two/,
+  );
+  assert.throws(
+    () => validateRevisionSchema({ ...reorgRev, routeChanges: [{ op: 'move', from: '/docs/a', to: '/docs/a', rationale: '移动' }] }),
+    /distinct fromPart and toPart/,
+  );
+  assert.throws(
+    () => validateRevisionSchema({ ...reorgRev, routeChanges: [{ op: 'retire-unit', route: '/docs/a', successor: null, successorAnchor: '#x', rationale: '退役' }] }),
+    /successorAnchor requires a non-null successor/,
+  );
+  assert.throws(
+    () => validateRevisionSchema({ ...reorgRev, routeChanges: [{ op: 'retire-unit', route: '/docs/a', successor: '/docs/b', rationale: '退役 cl-123' }] }),
+    /without internal claim IDs/,
+  );
+
+  const revs = [baseRev, reorgRev];
+  const extracted = extractRouteChanges(revs);
+  assert.equal(extracted.splits.length, 1);
+  assert.equal(extracted.moves.length, 2);
+  assert.equal(extracted.retiredUnits.length, 1);
+  assert.equal(extracted.removedRouteSet.has('/docs/book/db-a'), true);
+  assert.equal(extracted.removedRouteSet.has('/docs/book/midpoint-and-endpoint'), true);
+  assert.equal(extracted.removedRouteSet.has('/docs/book/future-technology-and-context'), true);
+  assert.equal(extracted.removedRouteSet.has('/docs/book/cleaner-production-old'), true);
+  assert.equal(extracted.removedRouteSet.has('/docs/book/product-footprint-rules'), false);
+
+  assert.equal(isRouteRevised(revs, '/docs/book/midpoint-and-endpoint'), true);
+  assert.equal(isRouteRevised(revs, '/docs/book/ozone-and-radiation'), true);
+  assert.equal(isRouteRevised(revs, '/docs/book/future-technology-and-context'), true);
+  assert.equal(isRouteRevised(revs, '/docs/book/cleaner-production-old'), true);
+
+  const activeRoutes = [
+    '/docs/book/db-merged',
+    '/docs/book/impact-structure',
+    '/docs/book/ozone-and-radiation',
+    '/docs/book/resources-land-biodiversity',
+    '/docs/book/temporal-and-future',
+    '/docs/book/product-footprint-rules',
+    '/docs/book/cleaner-origin',
+  ];
+  const anchors = new Map([
+    ['/docs/book/db-merged', new Set(['s1-merged'])],
+    ['/docs/book/impact-structure', new Set(['structure'])],
+    ['/docs/book/ozone-and-radiation', new Set(['ozone'])],
+    ['/docs/book/resources-land-biodiversity', new Set(['resources'])],
+    ['/docs/book/temporal-and-future', new Set(['future-scenarios'])],
+    ['/docs/book/cleaner-origin', new Set(['cleaner-section'])],
+  ]);
+
+  // Earlier add-unit routes superseded by later merge do NOT falsely fail active-route checks
+  assert.deepEqual(validateRouteChangesAgainstOutput(revs, activeRoutes, anchors), []);
+
+  // Stale retired / split / moved route still active is caught
+  const staleErrs = validateRouteChangesAgainstOutput(revs, [...activeRoutes, '/docs/book/cleaner-production-old'], anchors);
+  assert.ok(staleErrs.some(e => e.includes('Retired unit route still appears')));
+
+  // Missing split heading anchor is caught
+  const badSplitAnchors = new Map(anchors);
+  badSplitAnchors.set('/docs/book/ozone-and-radiation', new Set());
+  const anchorErrs = validateRouteChangesAgainstOutput(revs, activeRoutes, badSplitAnchors);
+  assert.ok(anchorErrs.some(e => e.includes('missing heading') && e.includes('ozone')));
+
+  // Citation retargeting across split, move, and retire-unit
+  const remapped = applyRouteChangesToCitations([
+    {
+      route: '/docs/book/midpoint-and-endpoint',
+      path: '/docs/book/midpoint-and-endpoint',
+      id: 'old-ozone',
+      mode: 'alias',
+      targets: [{ route: '/docs/book/midpoint-and-endpoint', path: '/docs/book/midpoint-and-endpoint', id: 'ozone', kind: 'heading' }],
+    },
+    {
+      route: '/docs/book/future-technology-and-context',
+      path: '/docs/book/future-technology-and-context',
+      id: 'old-future',
+      mode: 'alias',
+      targets: [{ route: '/docs/book/future-technology-and-context', path: '/docs/book/future-technology-and-context', id: 'scenarios', kind: 'heading' }],
+    },
+    {
+      route: '/docs/book/cleaner-production-old',
+      path: '/docs/book/cleaner-production-old',
+      id: 'old-cleaner',
+      mode: 'alias',
+      targets: [{ route: '/docs/book/cleaner-production-old', path: '/docs/book/cleaner-production-old', id: 'intro', kind: 'heading' }],
+    },
+  ], revs);
+  assert.equal(remapped[0].targets[0].route, '/docs/book/ozone-and-radiation');
+  assert.equal(remapped[0].targets[0].id, 'ozone');
+  assert.equal(remapped[1].targets[0].route, '/docs/book/temporal-and-future');
+  assert.equal(remapped[1].targets[0].id, 'future-scenarios');
+  assert.equal(remapped[2].targets[0].route, '/docs/book/cleaner-origin');
+  assert.equal(remapped[2].targets[0].id, 'cleaner-section');
+});

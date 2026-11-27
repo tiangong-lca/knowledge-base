@@ -435,10 +435,10 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
     ...validateReadableBookReviewedOutput(book.current, numbered?.documents, book.sources, book.edition, book.catalog, book.readings),
     ...await validateArtifacts(root, book.current, book),
   ] : [];
-  const { mergedFromSet, activePrefix } = extractRouteChanges(activeRevisions);
+  const { mergedFromSet, removedRouteSet, activePrefix } = extractRouteChanges(activeRevisions);
   const prefixDir = activePrefix ? activePrefix.replace(/^\//, '') : '';
   for (const path of new Set([...sourceBaseline.pages.map(page => page.route), ...(history?.pages ?? []).map(page => page.route), ...(locations.printAdditions ?? []).map(page => page.route), ...(book ? [...numbered.documents.keys(), pmSelectionAppendix, ...entries.flatMap(entry => [entry.path, ...entry.targets.map(target => target.path), ...entry.scope?.targets?.map(target => target.path) ?? []])] : []), '/print'])) {
-    if (mergedFromSet.has(path)) continue;
+    if (mergedFromSet.has(path) || removedRouteSet.has(path)) continue;
     const htmlFile = path === '/' ? join(root, 'index.html') : join(root, prefixDir, path.slice(1), 'index.html');
     const html = await readFile(htmlFile, 'utf8').catch(error => {
       if (error.code !== 'ENOENT') throw error;

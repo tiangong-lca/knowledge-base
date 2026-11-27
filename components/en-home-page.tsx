@@ -1,20 +1,10 @@
 import Link from 'next/link';
 import { getSource } from '@/lib/source';
 import { NumberedTitle } from '@/components/numbered-heading';
+import { EN_PARTS } from '@/lib/ui-glossary';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 
 const logicalKey = (url: string) => url.replace(/^\/(zh|en)(?=\/|$)/, '').replace(/\/+$/, '') || '/';
-
-const EN_PARTS: Record<number, { label: string; title: string }> = {
-  1: { label: 'Part I', title: 'Origins, Questions, and Methodological Framework' },
-  2: { label: 'Part II', title: 'Functional Unit, Process Networks, and Life Cycle Inventory' },
-  3: { label: 'Part III', title: 'Multifunctionality, Allocation, and System Boundaries' },
-  4: { label: 'Part IV', title: 'Life Cycle Impact Assessment Pathways and Models' },
-  5: { label: 'Part V', title: 'Normalization, Weighting, Regionalization, and Sustainability Extensions' },
-  6: { label: 'Part VI', title: 'Background Databases and Interoperability' },
-  7: { label: 'Part VII', title: 'Data Quality, Uncertainty, and Product Footprint Rules' },
-  8: { label: 'Part VIII', title: 'Case Synthesis, Interpretation, and Revisable Judgment' },
-};
 
 export function EnHomePage() {
   const enPages = new Map(getSource('en').getPages().map(page => [logicalKey(page.url), page]));

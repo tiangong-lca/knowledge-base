@@ -299,7 +299,7 @@ export function applyCatalogAndMdxTransform({
   }
 
   const routeChanges = (spec.routeChanges ?? []).map(rc => {
-    assertNoInternalIds(`routeChange.rationale(${rc.to})`, rc.rationale);
+    assertNoInternalIds(`routeChange.rationale(${rc.to ?? rc.route ?? rc.from})`, rc.rationale);
     return rc;
   });
 

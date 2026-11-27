@@ -79,6 +79,20 @@ export async function refreshRevisionArtifacts(revId, { repo = defaultRepoRoot, 
     } else if (rc.op === 'add-unit') {
       await addOutputReceipt(rc.route, rc.route, `${rc.route.slice(1)}/index.html`);
       await addOutputReceipt('/print', rc.route, 'print/index.html');
+    } else if (rc.op === 'split') {
+      for (const dest of rc.to ?? []) {
+        await addOutputReceipt(dest, dest, `${dest.slice(1)}/index.html`);
+        await addOutputReceipt('/print', dest, 'print/index.html');
+      }
+      if (rc.bookUnit) {
+        await addOutputReceipt('/print', rc.bookUnit, 'print/index.html');
+      }
+    } else if (rc.op === 'move') {
+      await addOutputReceipt(rc.to, rc.to, `${rc.to.slice(1)}/index.html`);
+      await addOutputReceipt('/print', rc.bookUnit ?? rc.to, 'print/index.html');
+    } else if (rc.op === 'retire-unit' && rc.successor) {
+      await addOutputReceipt(rc.successor, rc.successor, `${rc.successor.slice(1)}/index.html`);
+      await addOutputReceipt('/print', rc.successor, 'print/index.html');
     }
   }
   if (outputs.length) {
