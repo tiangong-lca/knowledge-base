@@ -7850,6 +7850,60 @@
       },
       "reviewStatus": "reviewed",
       "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "src-bio35-verones-2022-gep",
+      "title": "Global extinction probabilities of terrestrial, freshwater, and marine species groups for use in Life Cycle Assessment",
+      "publisher": "Ecological Indicators (Elsevier, Gold Open Access; IRTA institutional repository copy)",
+      "version": "Vol. 142, 109204 (2022), pp. 1–10, doi:10.1016/j.ecolind.2022.109204 (Verones et al.)",
+      "url": "https://repositori.irta.cat/bitstream/20.500.12327/1894/1/Verones_Global_2022.pdf",
+      "accessedAt": "2026-11-28",
+      "accessStatus": "public-full-text-inspected",
+      "rights": "开放获取同行评议论文（CC BY 4.0，IRTA 机构仓储公开 PDF），可直接核验全文、公式与物种表。",
+      "preservation": "已直接核验 10 页公开 PDF 原文（SHA-256: 148d2cf77959e8b07b5861229b4113473f31be1a2b83ae7809587c0c8f66be23）。",
+      "artifact": {
+        "mediaType": "application/pdf",
+        "sha256": "148d2cf77959e8b07b5861229b4113473f31be1a2b83ae7809587c0c8f66be23",
+        "resolvedUrl": "https://repositori.irta.cat/bitstream/20.500.12327/1894/1/Verones_Global_2022.pdf"
+      },
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "src-bio35-scherer-2023-fragmentation",
+      "title": "Biodiversity Impact Assessment Considering Land Use Intensities and Fragmentation",
+      "publisher": "Environmental Science & Technology (ACS, Open Access via Europe PMC: PMC10702493)",
+      "version": "Vol. 57(48), pp. 19612–19623 (2023), doi:10.1021/acs.est.3c04191 (Scherer et al., PMC10702493)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10702493/fullTextXML",
+      "accessedAt": "2026-11-28",
+      "accessStatus": "public-full-text-inspected",
+      "rights": "开放获取同行评议论文（CC BY 4.0，Europe PMC 全文 XML，PMC10702493），可直接核验全部章节与结果。",
+      "preservation": "已直接核验 Europe PMC 完整 JATS XML 全文（SHA-256: 78b01538ce4fbaa852bc56514734db35a705ea7ea4d850417d1fafbf4a3feab1；XML 载体不含独立印刷页码且公式以图形元素存放，故按章节标题定位）。",
+      "artifact": {
+        "mediaType": "application/xml",
+        "sha256": "78b01538ce4fbaa852bc56514734db35a705ea7ea4d850417d1fafbf4a3feab1",
+        "resolvedUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10702493/fullTextXML"
+      },
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "src-bio35-glam-2026-ecosystem",
+      "title": "A global consensus life cycle impact assessment method - GLAM: impacts on ecosystem quality",
+      "publisher": "The International Journal of Life Cycle Assessment (Springer, Open Access; ÉTS institutional repository copy)",
+      "version": "Vol. 31, Article 181 (2026), pp. 1–24, doi:10.1007/s11367-026-02748-4 (Verones et al., GLAM research v1.1.2025.11)",
+      "url": "https://espace2.etsmtl.ca/id/eprint/34515/1/Henderson-A-2026-34515.pdf",
+      "accessedAt": "2026-11-28",
+      "accessStatus": "public-full-text-inspected",
+      "rights": "开放获取同行评议论文（CC BY-NC-ND 4.0，ÉTS 机构仓储 24 页排印版 PDF）；本库仅作书目定位与原创综合分析，不重新分发或改编原 PDF。",
+      "preservation": "已直接核验 24 页公开 PDF 原文（SHA-256: 0f96358a43da12db37cb63eb877aef08f3b5079e8be5230e37dc44c8c3c3aca2）。",
+      "artifact": {
+        "mediaType": "application/pdf",
+        "sha256": "0f96358a43da12db37cb63eb877aef08f3b5079e8be5230e37dc44c8c3c3aca2",
+        "resolvedUrl": "https://espace2.etsmtl.ca/id/eprint/34515/1/Henderson-A-2026-34515.pdf"
+      },
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
     }
   ],
   "evidence": [
@@ -45079,6 +45133,86 @@
       "relation": "supports",
       "reviewStatus": "reviewed",
       "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-recipe-local-density",
+      "sourceId": "src-land111-rivm2016",
+      "locator": "RIVM 2016-0104 报告 §1.1—1.3、§1.5 表 1.1—1.2 与表 1.5、§2.4、§6.4.2、§7.4、§8.4、§9.3—9.4、§10.4、§11.2—11.4 与表 11.2（正文第 14—22、32、56、59、63、68、71、78—86 页）",
+      "summary": "ReCiPe 2016 将局地相对物种损失（陆地 PDF·m²·yr、淡水与海洋 PDF·m³·yr）乘以空间不变的全球平均物种密度（陆地 1.48×10⁻⁸ species/m²、淡水 7.89×10⁻¹⁰ species/m³、海洋 3.46×10⁻¹² species/m³）汇总为 species·yr；土地利用中点到终点固定系数为 1.48×10⁻⁸ × 0.60 = 8.88×10⁻⁹ species·yr/(m²·yr 年作物当量)（表 1.5 舍入为 8.9×10⁻⁹），且仅覆局地影响、未对土地利用等 5 类路径量化三类文化视角，爬行与两栖类在土地利用数据中缺席，淡水耗水淡水鱼限南北纬 42° 以内流域（§10.4.3），11 条生态路径中海洋仅覆海洋生态毒性。",
+      "paraphrase": "ReCiPe 2016 用固定全球平均物种密度将局地损失折算为 species·yr，不反映特有性或全球受威胁等级，且土地与水路径存在明确类群与空间截断。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-recipe-2017-gaps",
+      "sourceId": "src-book-recipe-2017-primary-article",
+      "locator": "Huijbregts 等（2017）§2.1、表 2、§3.2.8、§4.2—4.4（第 139、143—145 页）",
+      "summary": "Huijbregts 等（2017）明确承认 ReCiPe 2016 终点刻画的是时空累加的局地物种损失，而全球物种灭绝风险属于另一独立维度；生态毒性急性到实地损害因子取 1；土地利用与生态毒性均不提供国家级表征因子；并在 §4.4 明文将海洋外来入侵物种与海洋塑料垃圾列为尚未覆盖的缺失生态影响路径。",
+      "paraphrase": "ReCiPe 2016 主论文确认其终点表征局地物种损失而非全球灭绝风险，并将海洋入侵物种与塑料垃圾列为未覆盖路径。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-lcimpact-vs-modular",
+      "sourceId": "src-loc137-lcimpact-ch1",
+      "locator": "LC-IMPACT v1.0 总报告第 1 章（第 6—17 页，含式 1.2 与表 1.1—1.5）、第 10 章（第 127—128 页，含式 10.17—10.18）、第 11 章（第 139—143 页，含式 11.9—11.16 与 §11.5）",
+      "summary": "LC-IMPACT v1.0 以全球潜在消失物种比例（PDF·yr）为终点，通过式 1.2 将脆弱性评分（VS，取值 0 至 1）引入生态表征因子：动物像素级 VS 结合物种分布区占比与线性缩放的国际自然保护联盟（IUCN）受威胁权重（无危 0.2 至极危 1.0），维管植物则按 90 个生物地理区特有度比值近似且默认受威胁权重为 1，再经全球物种总数与世界均值 VS（哺乳 0.44、鸟类 0.29、两栖 0.59、爬行 0.46、植物 1.0）归一化并按动植物 50/50 合并。表 1.5 显示 11 条生态路径中仅土地压力、湿地耗水与海洋富营养化 3 条具备完整 IUCN 脆弱性评分，其余路径回退为物种丰富度代理；生态毒性（第 127—128 页）以优先采慢性试验值、缺失时以默认急慢性比（ACR）0.5 由急性折算的慢性 50% 物种危害浓度（HC50，基于半数致死或效应浓度 L(E)C50）为基础，配以 PAF 到 PDF 损害因子 DFe = 2；另用“100 年／长期 × 确定／全部影响”四套模块化因子替代文化视角，并建议分开报告陆地、淡水与海洋三个领域；第 11.5 节明言因缺 IUCN 数据排除了节肢动物、真菌与细菌。",
+      "paraphrase": "LC-IMPACT 以 IUCN 脆弱性评分迈向全球 PDF·yr、采用优先慢性（缺省 ACR = 0.5）的 HC50 生态毒性配 DFe = 2，但仅 3 条路径具备完整 VS 映射且排除无脊椎与微生物。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-verones-2022-gep",
+      "sourceId": "src-bio35-verones-2022-gep",
+      "locator": "Verones 等（2022）摘要（第 1 页）、§2.1 式 1 与表 1—2（第 2—3 页）、§3.1—3.2 与图 1—3（第 3—6 页）、§4.1—4.4 与表 4（第 5—7 页）、§5 式 3—4 与表 5（第 8 页）",
+      "summary": "Verones 等（2022）在 20 个物种组（表 4 细分 26 个领域—类群行）、98,212 个物种（总分布面积 1680 亿 km²：陆地 5 组 58,466 种含 26,976 种维管植物、淡水 13 行 32,662 种、海洋 8 组 7,084 种）上建立全球归一化灭绝概率（GEP）：各物种组在全球各区 GEP 之和恒等于 1 且可精确加和，融合分布区占比、出现确信度权重（现存 1.0 至不确定／灭绝 0.0）与默认分级 IUCN 威胁权重（极危 8、濒危 6、易危 4、近危／低危／数据缺乏 2、无危 1，另设线性与对数方案），与局地绝对物种数无关，在网格尺度跨越数个量级（陆地植物与哺乳类热点位于马达加斯加，淡水鱼位于刚果盆地，海洋辐鳍鱼集中于海岸与岛屿）。§5 表 5 以立陶宛哺乳类淹没算例证明必须先将表征因子与 GEP 对齐至同一空间分辨率再相乘：先面积加权再乘国家 GEP 得 6.44×10⁻¹⁷ PDF/m²，而先分生态区相乘再平均得 1.21×10⁻¹⁵ PDF/m²，偏差约 19 倍且破坏全球归一。§4.4 明确指出昆虫与土壤生物缺乏空间数据、淡水仅含 3 种真菌与 5 种鳃足类、深海认知有限，且 GEP 未涵盖遗传多样性。",
+      "paraphrase": "Verones 等（2022）在 98,212 种生物上建立各物种组全球求和为 1 的 GEP，证明空间分辨率错配可造成约 19 倍偏差，并指明无脊椎、深海与遗传多样性盲区。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-scherer-2023-eca",
+      "sourceId": "src-bio35-scherer-2023-fragmentation",
+      "locator": "Scherer 等（2023，PMC10702493）Abstract、Methods（Characterization Factor Framework、Model Parametrization、Taxonomic and Spatial Aggregation）、Results（Spatial Distribution、CFs for Different Approaches、Sensitivity Analysis）与 Discussion（Limitations、Application）",
+      "summary": "Scherer 等（2023）在乡间物种—面积关系（cSAR）中用等效连通面积（ECA，m²）替代原始栖息地面积，按中位扩散距离（植物 3,245 种性状扩展至 26,573 种；鸟哺按体重；两栖爬行统一 9 km）与基质阻力耦合栖息地破碎化，覆盖 5 类土地利用（耕地、牧场、人工林含油棕与农林复合、经营林、城市）× 3 档管理强度（极低、轻度、高强）× 5 个陆地类群（维管植物、两栖、鸟、不含蝙蝠的哺乳、爬行；四脊椎类等权后与植物 50/50 合并）及全部 825 个陆地生态区。结果显示：高强耕地植物占用因子跨生态区相差约 4 个量级；全球边际因子总体超平均因子 2 倍以上，鸟类接近 10 倍；脊椎动物间斯皮尔曼相关系数高（0.78—0.87），但植物与脊椎动物仅 0.21—0.38；按 2015 年全球土地占用推算近 16% 的陆地植物与脊椎动物面临长期灭绝债务；敏感性分析表明去掉管理强度仅带来 −2% 至 +6% 区域物种损失偏差，而去掉破碎化（以总面积代 ECA）在全部类群均系统压低损失，证明模型对破碎化较强度更敏感；全球因子方差由 GEP（两栖爬行→区位主导）与栖息地亲和度（鸟哺→地类主导）支配。作者同时提醒因破碎化内嵌于生态区基线，因子无法评估破碎化程度本身的改变，且因计算开销未给出完整不确定性区间，约 308,000 种已知维管植物中仅覆盖约 27,000 种，丰富度亦无种群衰退早期预警。",
+      "paraphrase": "Scherer 等（2023）用 cSAR 耦合等效连通面积（ECA）与三档强度覆盖 825 个生态区，证明模型对破碎化比强度更敏感，并指出基线内嵌与无早期预警局限。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-glam-2026-framework",
+      "sourceId": "src-bio35-glam-2026-ecosystem",
+      "locator": "Verones 等（2026，GLAM 生态系统质量论文）摘要（第 1 页）、表 1（第 2—3 页）、§1、§3、§4.1—4.3（第 4—6 页）、§5.1—5.7（第 6—18 页）",
+      "summary": "GLAM 研究版 v1.1.2025.11 在统一全球 PDF·yr 终点下整合 8 个成熟生态影响类别（生态毒性［淡水与陆地］、土地利用、淡水富营养化［含磷与氮］、海洋富营养化、气候变化［陆／淡／海三领域］、耗水［基于物种—径流量关系、覆盖 2,320 个流域的淡水鱼，非基于 AWARE，区域因子平均高出全球约 5 个量级］、水生微塑料［MarILCA，11 种聚合物 × 3 形状 × 5 粒径的海洋水体与沉积物］、陆地酸化［细化至陆地生态区尺度，维管植物覆盖率由 0.6% 升至 49%］），提供逾 50 万个国家与全球表征因子（5 类具国家级＋全球分辨率，生态毒性、气候与微塑料仅提供全球因子）。生态毒性改用基于慢性 10% 效应浓度（EC10）的 20% 物种危害浓度（HC20-EC10）并经 1:1 的 PAF 到 PDF 标定；所有区域化路径通过逾 90,000 种生物、25 物种组的 GEP（排除数据缺乏与已灭绝物种）转为全球灭绝风险（陆地酸化等传输路径施加于受纳生态区）；推荐分领域报告，若跨领域合并则陆、淡、海各赋 1/3 等权。需特别核验的一处原表勘误：论文表 1（第 2 页）将土地占用与土地转变单位误印互换为 PDF·yr/m²（占用）与 PDF/m²（转变），而 Scherer（2023）与 LC-IMPACT 第 11 章的正确口径为占用因子 PDF/m²（乘清单 m²·yr）与转变因子 PDF·yr/m²（乘清单 m²），最终均得 PDF·yr。",
+      "paraphrase": "GLAM v1.1 以 GEP 统一 8 类生态影响、逾 50 万表征因子与慢性 1:1 PAF→PDF 标定，并核出原论文表 1 土地占用与转变单位互换的印表异文。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-glam-2026-blindspots",
+      "sourceId": "src-bio35-glam-2026-ecosystem",
+      "locator": "Verones 等（2026）§1（第 4 页）、表 1（第 2—3 页）、§5.1.3、§5.2.4、§5.3.4、§5.6.1、§5.6.4、§5.7.4、§6（第 8、10—11、15—19 页）",
+      "summary": "GLAM v1.1 原文在 §1、§5.6 与 §6 系统坦承仍存在的重大结构性盲区：类群上陆地无脊椎动物等广泛缺位（仅海洋与毒理实验室路径含部分水生无脊椎动物）、约 30.8 万种维管植物仅覆盖约 2.7 万种，淡水富营养化与耗水仅依赖淡水鱼、陆地酸化仅依赖维管植物，且各类别底层物种基线并不统一（气候、耗水、酸化仅计原生种，土地与海洋富营养化计全部现存种，毒理与微塑料用非空间实验室数据）；组织层次上 PDF 仅衡物种丰富度而缺少功能多样性等维度，渔业生物量捕捞因采用丰度指标与 PDF 消失口径不兼容且时间受限而被移出 GLAM v1.1；压力路径上明确缺失海洋生态毒性、生态光化学臭氧、海洋酸化、生态系统噪声、大型塑料缠绕、淡水与陆地微塑料及生态毒性沉积物室（§5.6.1 第 15 页指出塑料添加剂释放可归入既有生态毒性路径另行表征，不在微塑料物理效应框架内），且多数类别尚未给出完整定量不确定性范围。",
+      "paraphrase": "GLAM v1.1 原文坦承陆地无脊椎动物缺位、物种基线不统一、渔业丰度与 PDF 冲突、大型塑料／海洋酸化／噪声等压力缺位及定量不确定性不足。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-bio35-glam3-scoping-gaps",
+      "sourceId": "src-acid113-glam-scoping",
+      "locator": "UNEP GLAM 第三阶段范围文件（2021）执行摘要、生态系统质量工作组与生态系统服务工作组（第 3—4、62—71、77—80、85—93、127—129 页）",
+      "summary": "UNEP GLAM 第三阶段范围文件详细列明生态系统质量与生态系统服务领域的长期缺口：生物多样性范围中陆地无脊椎动物、真菌、原核生物及授粉昆虫与沉积物／近海生物群落均属未满足目标；功能多样性仅停留在美洲与德国等区域研究；生态系统噪声（含海洋噪声）因缺少人力搁置；渔业过度捕捞伴随海底拖网破坏、丢弃渔获与食物网营养级动态空缺；大型塑料（>5 mm）缠绕与误食影响全部海龟物种、三分之二海豹、三分之一鲸类与四分之一海鸟，且高达 94% 的塑料最终下沉，同时第 88 页说明塑料添加剂浸出的生态毒性建模因成熟度不足而未纳入塑料物理效应项目；此外陆地富营养化、水生酸化及依赖前景数据的土壤盐渍化与压实均尚未纳入通用全球 LCIA 模型。",
+      "paraphrase": "GLAM 第三阶段范围文件逐项记录了无脊椎／微生物、功能多样性、生态系统噪声、渔业底拖网、大型海洋垃圾、塑料添加剂建模成熟度及土壤盐渍化等未满足缺口。",
+      "relation": "supports",
+      "reviewStatus": "reviewed",
+      "reviewKind": "agent-source-check"
     }
   ],
   "claims": [
@@ -77302,7 +77436,7 @@
     },
     {
       "id": "cl-mineral115-cost-proxy",
-      "text": "与后节化石资源拒绝单一换算系数不同，RIVM 2016-0104 报告处理矿产资源时用一个公共系数连接中点与终点。在最终可采资源情景下，报告对所有矿产采用 0.23 USD2013/kg 铜当量；按所报 SOP 乘算，铜、镍、锰的未来额外费用因子分别为 0.23、约 0.665 和约 0.0189 USD2013/kg 开采元素（对各 1 kg 输入，单位变为 USD2013）。正如前节土地利用所示，乘公共正倍率保留原排序，结果仍与 SOP 一致。USD2013 表示固定的 2013 年币值，不是这笔钱已在 2013 年支付；报告借助价格与矿石需求、费用之间的回归关系近似连接两类量，把单位写成货币并不会自动增加每种金属各自的费用机制。",
+      "text": "与后节化石资源拒绝单一换算系数不同，RIVM 2016-0104 报告处理矿产资源时用一个公共系数连接中点与终点。在最终可采资源情景下，报告对所有矿产采用 0.23 USD2013/kg 铜当量；按所报 SOP 乘算，铜、镍、锰的未来额外费用因子分别为 0.23、约 0.665 和约 0.0189 USD2013/kg 开采元素（对各 1 kg 输入，单位变为 USD2013）。正如前文土地利用一节所示，乘公共正倍率保留原排序，结果仍与 SOP 一致。USD2013 表示固定的 2013 年币值，不是这笔钱已在 2013 年支付；报告借助价格与矿石需求、费用之间的回归关系近似连接两类量，把单位写成货币并不会自动增加每种金属各自的费用机制。",
       "kind": "calculation",
       "scope": "原2016 H/E统一铜费用率与本书按显示值乘算",
       "evidenceIds": [
@@ -77704,7 +77838,7 @@
     },
     {
       "id": "cl-fossil117-heating-basis",
-      "text": "即使同按热量建立化石中点，不同体系选用的热值定义与参考基准也不同（表 1）。EF 3.1 官方参考包中的“化石资源使用”方法将全部列入的能量载体绑定到净热值（低位热值，MJ），因子一律为 1 MJ/MJ；RIVM 2016-0104 报告的化石燃料潜势（Fossil Fuel Potential，FFP）则采用附表所引 ecoinvent 高位热值能量当量（MJ-eq）与原油高位热值之比，正文表舍入为 kg 油当量。在这五种化石燃料内部，只有先统一高低位热值口径并考虑两位小数舍入（如硬煤未舍入商约 0.4170），MJ 与 kg 油当量才呈固定比例对应；不能见到热值单位，就假定两套中点对富含氢的天然气与含水较高的煤给出相同的相对比值。",
+      "text": "即使同按热量建立化石中点，不同体系选用的热值定义与参考基准也不同（表 2）。EF 3.1 官方参考包中的“化石资源使用”方法将全部列入的能量载体绑定到净热值（低位热值，MJ），因子一律为 1 MJ/MJ；RIVM 2016-0104 报告的化石燃料潜势（Fossil Fuel Potential，FFP）则采用附表所引 ecoinvent 高位热值能量当量（MJ-eq）与原油高位热值之比，正文表舍入为 kg 油当量。在这五种化石燃料内部，只有先统一高低位热值口径并考虑两位小数舍入（如硬煤未舍入商约 0.4170），MJ 与 kg 油当量才呈固定比例对应；不能见到热值单位，就假定两套中点对富含氢的天然气与含水较高的煤给出相同的相对比值。",
       "kind": "interpretation",
       "scope": "EF 3.1净热值MJ中点与ReCiPe 2016高位热值FFP中点的条件对应关系",
       "evidenceIds": [
@@ -77744,7 +77878,7 @@
     },
     {
       "id": "cl-fossil117-uranium-boundary",
-      "text": "类别边界同样不一致：核能链开采的天然铀，究竟算矿产元素还是能量载体？欧盟联合研究中心（JRC）的 EF 方法说明记载，原 ADP 模型按质量（kg）给铀因子，但 ILCD 基本流表把铀列入以 MJ 计量的地下不可再生能源资源，EF 遂在“化石资源使用”中为铀赋 1 MJ/MJ；核查 EF 3.1 官方方法文件可见，该类别含褐煤、原油、硬煤、天然气、泥炭与铀 6 项输入流，而“矿产与金属资源使用”不含铀。相反，Van Oers 等人在 2020 年论文表注中明确反对欧盟产品环境足迹（PEF）将铀并入化石或能量载体，强调铀除供能外另有用途，其附表把铀留在元素耗竭中（累计 ADP 约 0.007823 kg 锑当量/kg，正文表舍入作 7.8×10⁻³）；ReCiPe 2016 同样把铀留在矿产 SOP 表内，化石 FFP 表不收铀（表 1）。用不同体系比较核电与煤电或气电时，仅这一基本流单位与归类选择，就会改变铀资源负担落在“化石”还是“矿产”指标上。",
+      "text": "类别边界同样不一致：核能链开采的天然铀，究竟算矿产元素还是能量载体？欧盟联合研究中心（JRC）的 EF 方法说明记载，原 ADP 模型按质量（kg）给铀因子，但 ILCD 基本流表把铀列入以 MJ 计量的地下不可再生能源资源，EF 遂在“化石资源使用”中为铀赋 1 MJ/MJ；核查 EF 3.1 官方方法文件可见，该类别含褐煤、原油、硬煤、天然气、泥炭与铀 6 项输入流，而“矿产与金属资源使用”不含铀。相反，Van Oers 等人在 2020 年论文表注中明确反对欧盟产品环境足迹（PEF）将铀并入化石或能量载体，强调铀除供能外另有用途，其附表把铀留在元素耗竭中（累计 ADP 约 0.007823 kg 锑当量/kg，正文表舍入作 7.8×10⁻³）；ReCiPe 2016 同样把铀留在矿产 SOP 表内，化石 FFP 表不收铀（表 2）。用不同体系比较核电与煤电或气电时，仅这一基本流单位与归类选择，就会改变铀资源负担落在“化石”还是“矿产”指标上。",
       "kind": "interpretation",
       "scope": "EF与Van Oers 2020元素ADP及ReCiPe 2016矿产SOP在天然铀类别归属上的体系分歧",
       "evidenceIds": [
@@ -87550,7 +87684,7 @@
         "ev-fossil117-ef31-fossil-factors"
       ],
       "caveats": [
-        "所录 RIVM 2016-0104 附表异文属可定位的源内不一致，不代表官方已刊正式勘误；本章生物多样性讨论聚焦 ReCiPe 2016 与 LC-IMPACT 的土地利用指标，不穷尽所有生物多样性评价框架。",
+        "所录 RIVM 2016-0104 附表异文属可定位的源内不一致，不代表官方已刊正式勘误；本章生物多样性讨论聚焦 ReCiPe 2016、LC-IMPACT v1.0、Verones 等（2022）GEP、Scherer 等（2023）破碎化模型与 GLAM v1.1 的生态系统质量框架，不穷尽所有生物多样性评价方法。",
         "40.0 - 4.45·ln(1.61×10¹⁴) ≈ -105.6 仅用于证明印刷公式与表S9.2的kg单位不能直接闭合，不据此否定图13.2在十亿桶标度下的原拟合。",
         "RIVM 2016-0104 化石章文献误引与单位细节：第 96 页将高位热值附表误引为表 S9.2（实际在表 S9.1），将原油成本曲线误引为图 11.2（实为图 13.2），将成本公式 C_x = 1/(a_x + b_x·ln CFE_x) 标到矿产 SOP 论文（Vieira 等 2016b）名下而将终点因子归于“准备中”未刊稿；附表 S9.2 列原油 a = 40.0、b = −4.45、CFE = 1.61×10¹⁴ kg，硬煤累计开采量印作 n.a.，当期成本标 USD2008 而正文终点表标 USD2013。"
       ],
@@ -90155,6 +90289,199 @@
           "rationale": "ILCD 2010 以 83 处 [ISO!]、88 处 [ISO+] 与多项“无对应 ISO 章节”标注，系统揭示了 ISO 14044 的八大开放空间。"
         }
       ]
+    },
+    {
+      "id": "cl-bio35-local-vs-global-metrics",
+      "kind": "source-statement",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-28",
+      "text": "衡量生物多样性损失，首要分水岭在于区分可随周边迁入逆转的“局地消失”与不可逆的“全球灭绝”，三大主流生命周期影响评价（LCIA）体系在此走出截然不同的尺度路径。其一，ReCiPe 2016（RIVM 2016-0104 报告；Huijbregts 等，2017）以时空积分的局地潜在消失物种比例（PDF·m²·yr 或 PDF·m³·yr）为起点，再乘以空间不变的全球平均物种密度（陆地 1.48×10⁻⁸ 物种/m²、淡水 7.89×10⁻¹⁰ 物种/m³、海洋 3.46×10⁻¹² 物种/m³）折算为物种乘年（species·yr），土地利用中点到终点固定系数为 8.88×10⁻⁹ species·yr/(m²·yr 年作物当量)；该体系不纳入物种特有性或受威胁等级，原文也坦承全球灭绝风险属于另一独立维度。其二，LC-IMPACT v1.0（Verones 等，2020）通过脆弱性评分（VS，取值 0 至 1）将局地损失推向全球潜在消失物种比例乘年（PDF·yr），把动物分布区占比与线性缩放的国际自然保护联盟（IUCN）受威胁等级（无危 0.2 至极危 1.0）结合，但 11 条生态路径中仅土地压力、湿地耗水与海洋富营养化 3 条路径具备完整 IUCN 脆弱性映射，维管植物更在 90 个生物地理区中默认受威胁权重为 1。其三，全球灭绝概率（GEP，Verones 等，2022；后被联合国环境规划署［UNEP］全球生命周期影响评价方法指导 GLAM v1.1 采纳）在 20 个物种组、98,212 种生物（陆地 58,466 种含 26,976 种维管植物、淡水 32,662 种、海洋 7,084 种）上建立按各物种组全球求和恒等于 1 的空间权重，结合分布区占比、出现确信度（0 至 1）与默认分级 IUCN 威胁权重（1 至 8，并设线性与对数备选），与局地绝对物种数无关且在网格尺度跨越数个量级（陆地植物与哺乳类热点集中在马达加斯加、淡水鱼在刚果盆地、海洋辐鳍鱼沿海岸与岛屿分布）。应用 GEP 时须先将表征因子与 GEP 对齐至同一空间分辨率再相乘：Verones 等（2022）以立陶宛两生态区哺乳类淹没为例证明，先对生态区表征因子按面积加权平均再乘国家 GEP 得 6.44×10⁻¹⁷ PDF/m²，而先分生态区相乘再取平均会高估至 1.21×10⁻¹⁵ PDF/m²，误差约 19 倍且破坏全球归一性。",
+      "scope": "对照 ReCiPe 2016 的局地物种密度折算、LC-IMPACT 的脆弱性评分（VS）与 Verones 等（2022）／GLAM 的全球灭绝概率（GEP）三种生物多样性尺度框架。",
+      "caveats": [
+        "局地指标与全球灭绝指标分别服务于局地生态系统功能评估与不可逆全球灭绝风险比较，二者数值不可直接换算；在大气跨区沉降等传输型路径（如陆地酸化）中，GEP 须施加于受纳生态系统而非排放网格，分配与概率问题仍在演进。"
+      ],
+      "evidenceIds": [
+        "ev-bio35-recipe-local-density",
+        "ev-bio35-recipe-2017-gaps",
+        "ev-bio35-lcimpact-vs-modular",
+        "ev-bio35-verones-2022-gep",
+        "ev-bio35-glam-2026-framework"
+      ],
+      "premiseIds": [
+        "cl-land111-conversion",
+        "cl-land111-horizon"
+      ],
+      "conceptIds": [
+        "cn-biodiversity-gep-blindspots",
+        "cn-pdf-local-response"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-bio35-recipe-local-density",
+          "relation": "supports",
+          "rationale": "ReCiPe 2016 用固定全球平均物种密度将局地损失折算为 species·yr，不反映特有性或全球受威胁等级，且土地与水路径存在明确类群与空间截断。"
+        },
+        {
+          "evidenceId": "ev-bio35-recipe-2017-gaps",
+          "relation": "supports",
+          "rationale": "ReCiPe 2016 主论文确认其终点表征局地物种损失而非全球灭绝风险，并将海洋入侵物种与塑料垃圾列为未覆盖路径。"
+        },
+        {
+          "evidenceId": "ev-bio35-lcimpact-vs-modular",
+          "relation": "supports",
+          "rationale": "LC-IMPACT 以 IUCN 脆弱性评分迈向全球 PDF·yr、采用优先慢性（缺省 ACR = 0.5）的 HC50 生态毒性配 DFe = 2，但仅 3 条路径具备完整 VS 映射且排除无脊椎与微生物。"
+        },
+        {
+          "evidenceId": "ev-bio35-verones-2022-gep",
+          "relation": "supports",
+          "rationale": "Verones 等（2022）在 98,212 种生物上建立各物种组全球求和为 1 的 GEP，证明空间分辨率错配可造成约 19 倍偏差，并指明无脊椎、深海与遗传多样性盲区。"
+        },
+        {
+          "evidenceId": "ev-bio35-glam-2026-framework",
+          "relation": "supports",
+          "rationale": "GLAM v1.1 以 GEP 统一 8 类生态影响、逾 50 万表征因子与慢性 1:1 PAF→PDF 标定，并核出原论文表 1 土地占用与转变单位互换的印表异文。"
+        }
+      ]
+    },
+    {
+      "id": "cl-bio35-intensity-and-fragmentation",
+      "kind": "source-statement",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-28",
+      "text": "仅按粗放地类划分面积，同样会掩盖管理强度与栖息地破碎化的生态差异。Scherer 等（2023，已被 GLAM v1.1 土地路径采用）在乡间物种—面积关系（cSAR）中以等效连通面积（ECA，m²）取代原始栖息地面积，依托物种中位扩散距离与周边地类基质阻力刻画斑块连通度，覆盖耕地、牧场、人工林（含油棕与农林复合）、经营林与城市 5 类土地利用、极低／轻度／高强 3 档管理强度，以及维管植物、两栖、鸟类、不含蝙蝠的哺乳类与爬行类 5 个陆地类群（四类脊椎动物等权后与植物按 50/50 合并），贯通全球全部 825 个陆地生态区。模型结果揭示四项关键数量规律：其一，高强度耕地的植物占用因子在不同生态区相差约 4 个量级，且全球边际因子总体超过平均因子 2 倍以上、鸟类接近 10 倍；其二，脊椎动物各类群间斯皮尔曼相关系数高达 0.78 至 0.87，但植物与脊椎动物仅 0.21 至 0.38，说明只看单一脊椎类群会漏掉植物响应；其三，按 2015 年全球土地占用推算，若现状持续，近 16% 的陆地植物与脊椎动物面临长期灭绝债务；其四，敏感性分析表明去掉管理强度区分仅使区域物种损失变动 −2% 至 +6%，而去掉破碎化（以总面积替代 ECA）在所有类群中均系统压低损失，证明模型对破碎化比对强度更敏感——但在全球表征因子总方差中，两栖与爬行类仍由 GEP（区位）支配、鸟类与哺乳类由栖息地亲和度（地类）支配。还须注意，因破碎化内嵌于生态区基线以便兼容不含斑块几何信息的常规清单，这套因子不能用于评估某项工程对破碎化程度本身的边际改变。",
+      "scope": "总结 Scherer 等（2023）与 GLAM v1.1 将管理强度及等效连通面积（ECA）破碎化纳入土地生物多样性表征的核心机制与敏感性边界。",
+      "caveats": [
+        "由于破碎化计算开销巨大，Scherer 等（2023）未给出完整定量表征因子不确定性区间，且约 30.8 万种已知维管植物中仅覆盖约 2.7 万种。"
+      ],
+      "evidenceIds": [
+        "ev-bio35-scherer-2023-eca",
+        "ev-bio35-glam-2026-framework"
+      ],
+      "premiseIds": [
+        "cl-bio35-local-vs-global-metrics",
+        "cl-land111-midpoint"
+      ],
+      "conceptIds": [
+        "cn-biodiversity-gep-blindspots",
+        "cn-marginal-ecosystem-effect",
+        "cn-average-ecosystem-effect"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-bio35-scherer-2023-eca",
+          "relation": "supports",
+          "rationale": "Scherer 等（2023）用 cSAR 耦合等效连通面积（ECA）与三档强度覆盖 825 个生态区，证明模型对破碎化比强度更敏感，并指出基线内嵌与无早期预警局限。"
+        },
+        {
+          "evidenceId": "ev-bio35-glam-2026-framework",
+          "relation": "supports",
+          "rationale": "GLAM v1.1 以 GEP 统一 8 类生态影响、逾 50 万表征因子与慢性 1:1 PAF→PDF 标定，并核出原论文表 1 土地占用与转变单位互换的印表异文。"
+        }
+      ]
+    },
+    {
+      "id": "cl-bio35-multipressure-integration",
+      "kind": "source-statement",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-28",
+      "text": "跨不同环境压力统一汇总生态系统质量时，各类别能否真正通约取决于指标标定与领域规则（见表 1）。ReCiPe 2016 覆盖 11 条生态路径（其中海洋仅覆海洋生态毒性），以固定物种密度直接相加为 species·yr，生态毒性急性到实地损害因子（DF）取 1；LC-IMPACT v1.0 同样覆盖 11 条路径，生态毒性采用基于半数致死或效应浓度（L(E)C50）的慢性 50% 物种危害浓度（HC50，优先使用慢性试验数据，缺失时以默认急慢性比［ACR］0.5 由急性折算），并配以潜在受影响物种比例（PAF）到 PDF 损害因子 2，同时用“100 年／长期 × 确定／全部影响”四套模块化因子替代文化视角，建议分开报告陆地、淡水与海洋。GLAM 研究版 v1.1（Verones 等，2026）则在统一全球 PDF·yr 终点下整合 8 个成熟影响类别——生态毒性（淡水与陆地）、土地利用、淡水富营养化（同时纳入磷与氮）、海洋富营养化、气候变化（分陆、淡、海三领域）、耗水（覆盖 2,320 个流域的淡水鱼，基于物种—径流量关系而非剩余可用水模型［AWARE］，区域因子平均高出全球约 5 个量级）、水生微塑料（基于生命周期评价海洋塑料影响框架 MarILCA，覆盖海洋水体与沉积物中 11 种聚合物、3 种形状与 5 档粒径）以及陆地酸化（细化至生态区尺度，维管植物覆盖率由 0.6% 提升至 49%），提供逾 50 万个国家与全球表征因子，生态毒性改用基于慢性 10% 效应浓度（EC10）的 20% 物种危害浓度（HC20-EC10）指标并经 1:1 的 PAF 到 PDF 标定；GLAM 同样推荐分领域呈现，若必须跨领域汇总则陆、淡、海各赋 1/3 等权。核对原表时还须防范一处排印异文：GLAM 2026 论文表 1（第 2 页）将土地占用与转变因子单位互换印作 PDF·yr/m²（占用）与 PDF/m²（转变），对照 Scherer 等（2023）与 LC-IMPACT 第 11 章原式，正确口径应为占用因子 PDF/m²（乘清单 m²·yr）与转变因子 PDF·yr/m²（乘清单 m²），乘后同为 PDF·yr。",
+      "scope": "对照 ReCiPe 2016、LC-IMPACT v1.0 与 GLAM v1.1 的多压力生态质量整合架构、生态毒性标定、跨领域权重与土地单位勘误。",
+      "caveats": [
+        "GLAM v1.1 仅对土地、耗水、淡水／海洋富营养化与陆地酸化 5 类提供国家级表征因子，生态毒性、气候变化与水生微塑料仍仅具全球级因子，且气候变化与海洋富营养化仅提供平均因子、陆地酸化仅提供边际因子。"
+      ],
+      "evidenceIds": [
+        "ev-bio35-recipe-local-density",
+        "ev-bio35-lcimpact-vs-modular",
+        "ev-bio35-glam-2026-framework"
+      ],
+      "premiseIds": [
+        "cl-bio35-local-vs-global-metrics",
+        "cl-bio35-intensity-and-fragmentation"
+      ],
+      "conceptIds": [
+        "cn-biodiversity-gep-blindspots",
+        "cn-endpoint"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-bio35-recipe-local-density",
+          "relation": "supports",
+          "rationale": "ReCiPe 2016 用固定全球平均物种密度将局地损失折算为 species·yr，不反映特有性或全球受威胁等级，且土地与水路径存在明确类群与空间截断。"
+        },
+        {
+          "evidenceId": "ev-bio35-lcimpact-vs-modular",
+          "relation": "supports",
+          "rationale": "LC-IMPACT 以 IUCN 脆弱性评分迈向全球 PDF·yr、采用优先慢性（缺省 ACR = 0.5）的 HC50 生态毒性配 DFe = 2，但仅 3 条路径具备完整 VS 映射且排除无脊椎与微生物。"
+        },
+        {
+          "evidenceId": "ev-bio35-glam-2026-framework",
+          "relation": "supports",
+          "rationale": "GLAM v1.1 以 GEP 统一 8 类生态影响、逾 50 万表征因子与慢性 1:1 PAF→PDF 标定，并核出原论文表 1 土地占用与转变单位互换的印表异文。"
+        }
+      ]
+    },
+    {
+      "id": "cl-bio35-blindspots-and-limits",
+      "kind": "synthesis",
+      "status": "reviewed",
+      "reviewKind": "agent-source-check",
+      "reviewedAt": "2026-11-28",
+      "text": "即便采用当前最完备的 GLAM v1.1、LC-IMPACT 或 ReCiPe 2016 模型，生命周期评价对生物多样性的测度仍存在三层无法靠换算弥补的结构性盲区。第一层是类群与基线偏倚：现有模型高度集中于维管植物（已知约 30.8 万种中仅覆盖约 2.7 万种）与陆地脊椎动物，而陆地无脊椎动物（尤其昆虫与授粉者）、真菌、土壤微生物／原核生物及深海生物普遍缺席或极度代表不足（Verones 等，2022 淡水 GEP 仅含 3 种真菌、5 种鳃足类与 10 种环带类；GLAM 淡水富营养化与耗水仅依赖淡水鱼、陆地酸化仅依赖维管植物）；同时同一方法内部各类别物种池亦不统一（气候、耗水与酸化仅计原生种，土地与海洋富营养化计全部现存种，毒理与微塑料则基于非空间实验室物种）。第二层是组织层次盲区：潜在消失物种比例（PDF）只衡量物种丰富度，遗漏了遗传多样性（Verones 等，2022 明确指出）、功能多样性（尚无可用全球 LCIA 模型）以及种群丰度变化——丰度缺位不仅使模型无法在灭绝前发出早期预警，也直接导致渔业生物量捕捞因丰度指标与 PDF 消失口径不兼容而被移出 GLAM v1.1。第三层是压力路径与不确定性盲区：渔业过度捕捞与海底拖网破坏、大型塑料缠绕（GLAM v1.1 物理效应路径仅涵盖海洋微塑料，遗漏大型海洋垃圾以及淡水与陆地微塑料；塑料添加剂浸出则因成熟度不足在 2021 范围文件中未并入塑料物理项目，由 2026 论文指出应归入生态毒性另行表征）、海洋外来入侵物种（ReCiPe 2016 主论文明确列为缺失路径）、生态系统噪声（陆地与海洋）、海洋酸化、海洋生态毒性、生态光化学臭氧、陆地富营养化、水生酸化及土壤盐渍化与压实均未在共识模型中齐备，且多数类别仍缺乏完整的定量因子不确定性区间。因此，较低的 PDF·yr 或 species·yr 读数绝不等于“未伤害生物多样性”，而只代表在已建模的有限类群与压力子集下风险较低。",
+      "reasoning": "综合 ReCiPe 2016（Huijbregts 等，2017）、LC-IMPACT v1.0（Verones 等，2020）、Verones 等（2022）、Scherer 等（2023）、GLAM 第三阶段范围文件（2021）与 GLAM v1.1（Verones 等，2026）六份公开一手文献的自省局限，将生物多样性 LCA 盲区收束为类群、组织层次与压力路径三重结构约束，防止读者把部分物种丰富度代理误读为完整生态安全保证。",
+      "scope": "界定当前主流 LCA 生态系统质量指标在类群覆盖、生物多样性维度与人类压力路径上的结构盲区及解释红线。",
+      "caveats": [
+        "本条所列各项盲区均限定在所引六份一手文献（Huijbregts 等，2017；Verones 等，2020；UNEP GLAM 第三阶段范围文件，2021；Verones 等，2022；Scherer 等，2023；Verones 等，2026）明文讨论的缺口范围内，不代为外推其中未记载的其他生态压力（例如人工光污染）。"
+      ],
+      "evidenceIds": [
+        "ev-bio35-recipe-2017-gaps",
+        "ev-bio35-lcimpact-vs-modular",
+        "ev-bio35-verones-2022-gep",
+        "ev-bio35-scherer-2023-eca",
+        "ev-bio35-glam-2026-blindspots",
+        "ev-bio35-glam3-scoping-gaps"
+      ],
+      "premiseIds": [
+        "cl-bio35-multipressure-integration"
+      ],
+      "conceptIds": [
+        "cn-biodiversity-gep-blindspots",
+        "cn-pdf-local-response"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-bio35-recipe-2017-gaps",
+          "relation": "supports",
+          "rationale": "ReCiPe 2016 主论文确认其终点表征局地物种损失而非全球灭绝风险，并将海洋入侵物种与塑料垃圾列为未覆盖路径。"
+        },
+        {
+          "evidenceId": "ev-bio35-lcimpact-vs-modular",
+          "relation": "supports",
+          "rationale": "LC-IMPACT 以 IUCN 脆弱性评分迈向全球 PDF·yr、采用优先慢性（缺省 ACR = 0.5）的 HC50 生态毒性配 DFe = 2，但仅 3 条路径具备完整 VS 映射且排除无脊椎与微生物。"
+        },
+        {
+          "evidenceId": "ev-bio35-verones-2022-gep",
+          "relation": "supports",
+          "rationale": "Verones 等（2022）在 98,212 种生物上建立各物种组全球求和为 1 的 GEP，证明空间分辨率错配可造成约 19 倍偏差，并指明无脊椎、深海与遗传多样性盲区。"
+        },
+        {
+          "evidenceId": "ev-bio35-scherer-2023-eca",
+          "relation": "supports",
+          "rationale": "Scherer 等（2023）用 cSAR 耦合等效连通面积（ECA）与三档强度覆盖 825 个生态区，证明模型对破碎化比强度更敏感，并指出基线内嵌与无早期预警局限。"
+        },
+        {
+          "evidenceId": "ev-bio35-glam-2026-blindspots",
+          "relation": "supports",
+          "rationale": "GLAM v1.1 原文坦承陆地无脊椎动物缺位、物种基线不统一、渔业丰度与 PDF 冲突、大型塑料／海洋酸化／噪声等压力缺位及定量不确定性不足。"
+        },
+        {
+          "evidenceId": "ev-bio35-glam3-scoping-gaps",
+          "relation": "supports",
+          "rationale": "GLAM 第三阶段范围文件逐项记录了无脊椎／微生物、功能多样性、生态系统噪声、渔业底拖网、大型海洋垃圾、塑料添加剂建模成熟度及土壤盐渍化等未满足缺口。"
+        }
+      ]
     }
   ],
   "concepts": [
@@ -91386,6 +91713,21 @@
         "非对称符合",
         "可比性优先于灵活性",
         "湘南导则"
+      ]
+    },
+    {
+      "id": "cn-biodiversity-gep-blindspots",
+      "label": "生物多样性全球灭绝概率与评价盲区",
+      "english": "Global extinction probability and biodiversity assessment blind spots",
+      "definitionClaimIds": [
+        "cl-bio35-local-vs-global-metrics",
+        "cl-bio35-blindspots-and-limits"
+      ],
+      "aliases": [
+        "全球灭绝概率",
+        "脆弱性评分",
+        "等效连通面积",
+        "生物多样性评价盲区"
       ]
     }
   ],

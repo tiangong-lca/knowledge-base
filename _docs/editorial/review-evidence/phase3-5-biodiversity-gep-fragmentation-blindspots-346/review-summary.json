@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase3-5-biodiversity-gep-fragmentation-blindspots-346",
+  "issue": "tiangong-lca/knowledge-base#346",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Dual independent agent review of primary-source biodiversity/LCIA mathematical fidelity, premise-DAG invariants, Clean Public Delivery (§2.15), integration consistency (§2.16), and meaning-level bilingual parity (§2.17). Does not constitute human domain expert peer review.",
+  "reviewers": [
+    {
+      "id": "a31f9e12-5103-4722-a005-0d4f3c3c4509",
+      "role": "Primary-Source & Engineering Auditor",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 5,
+      "resolvedCount": 5
+    },
+    {
+      "id": "faae67ad-b21d-4e61-a76b-c619a97b8c3d",
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 5,
+      "resolvedCount": 5
+    }
+  ],
+  "blockingFindings": [
+    {
+      "id": "B1",
+      "sourceReviewer": "both",
+      "summary": "Renumbering the energy-carrier/uranium table from Table 1 to Table 2 left two stale '(Table 1)' / '（表 1）' cross-references in cl-fossil117-heating-basis and cl-fossil117-uranium-boundary (ZH & EN).",
+      "resolution": "Updated both claims to Table 2 / 表 2 across catalog.json and en/claims.json, refreshed zhDigests, and logged both as op='modify' in the revision manifest."
+    },
+    {
+      "id": "B2",
+      "sourceReviewer": "a31f9e12-5103-4722-a005-0d4f3c3c4509",
+      "summary": "LC-IMPACT v1.0 ecotoxicity was described as 'acute L(E)C50', whereas Ch. 10 (pp. 127–128, Eqs. 10.17–10.18) defines chronic HC50 from L(E)C50 (preferring chronic test data, default ACR = 0.5 fallback from acute) paired with DFe = 2 PDF/PAF.",
+      "resolution": "Corrected ev-bio35-lcimpact-vs-modular (locator expanded to pp. 127–128), cl-bio35-multipressure-integration (ZH/EN), and Table 1 Row 5 (ZH/EN)."
+    },
+    {
+      "id": "B3",
+      "sourceReviewer": "a31f9e12-5103-4722-a005-0d4f3c3c4509",
+      "summary": "The figure '825 ecoregions' for terrestrial acidification came from UNEP GLAM3 Scoping (p. 78) rather than Verones et al. (2026) §5.7.1 (p. 17, which states 'ecoregion scale'), and appeared in EN prose/ZH evidence but not ZH prose.",
+      "resolution": "Updated ev-bio35-glam-2026-framework and cl-bio35-multipressure-integration (ZH/EN) to '生态区尺度' / 'at the ecoregion scale'."
+    },
+    {
+      "id": "B4",
+      "sourceReviewer": "a31f9e12-5103-4722-a005-0d4f3c3c4509",
+      "summary": "Plastic additive leaching was attributed to Verones et al. (2026) as an omitted GLAM v1.1 pathway, whereas §5.6.1 (p. 15) notes additives can be characterized under ecotoxicity and the integration-readiness deferral is documented in UNEP GLAM3 Scoping (2021, p. 88).",
+      "resolution": "Moved the additive-leaching readiness gap to ev-bio35-glam3-scoping-gaps, clarified §5.6.1 in ev-bio35-glam-2026-blindspots, and aligned cl-bio35-blindspots-and-limits (ZH/EN)."
+    },
+    {
+      "id": "B5",
+      "sourceReviewer": "a31f9e12-5103-4722-a005-0d4f3c3c4509",
+      "summary": "src-bio35-glam-2026-ecosystem.rights stated CC BY instead of the article's actual CC BY-NC-ND 4.0 license (p. 20).",
+      "resolution": "Corrected rights metadata to CC BY-NC-ND 4.0, noting metadata/original-synthesis use without PDF redistribution."
+    },
+    {
+      "id": "R2",
+      "sourceReviewer": "faae67ad-b21d-4e61-a76b-c619a97b8c3d",
+      "summary": "Rendered Note [25] (cl-resources-table-checks caveat) still stated the chapter's biodiversity discussion focused solely on land-use indicators in ReCiPe 2016 and LC-IMPACT.",
+      "resolution": "Updated cl-resources-table-checks closing synthesis and caveat (ZH/EN) to reflect GEP, fragmentation, GLAM v1.1, and biodiversity blind spots, and updated cl-mineral115-cost-proxy '前节' to '前文土地利用一节'."
+    },
+    {
+      "id": "R3",
+      "sourceReviewer": "faae67ad-b21d-4e61-a76b-c619a97b8c3d",
+      "summary": "EN Table 1 used cryptic undefined shorthand (T/FW/M, DIN, LMEs, acidif, eutroph, ecotox, P & N) and both ZH/EN Table 1 left I/H/E unexpanded.",
+      "resolution": "Spelled out all realms, nutrients, and pathways in EN Table 1 and expanded Individualist/Hierarchist/Egalitarian (I/H/E) in both ZH and EN Table 1."
+    },
+    {
+      "id": "R4",
+      "sourceReviewer": "faae67ad-b21d-4e61-a76b-c619a97b8c3d",
+      "summary": "Ecotoxicity acronyms HC20-EC10 (ZH/EN) and L(E)C50 (EN; partial ZH) were unexpanded, and ZH PAF was expanded on its second occurrence instead of its first.",
+      "resolution": "Expanded HC50, L(E)C50, ACR, PAF (on first use in ZH & EN), and HC20-EC10 cleanly in cl-bio35-multipressure-integration."
+    },
+    {
+      "id": "R5",
+      "sourceReviewer": "faae67ad-b21d-4e61-a76b-c619a97b8c3d",
+      "summary": "Meaning-level ZH/EN parity gaps: ZH '区域因子均高出' vs EN 'averaging', missing ZH 'species–discharge relationships', 'of 11 pathways', '90 biogeographic regions', 'per species group', ambiguous Lithuania CF aggregation wording, and caveat asymmetry on cl-bio35-blindspots-and-limits.",
+      "resolution": "Aligned every detail across ZH and EN claims, Table 1, and caveats, and refreshed all zhDigests."
+    }
+  ],
+  "nonBlockingResolutions": [
+    "Added ev-bio35-glam-2026-framework to cl-bio35-local-vs-global-metrics evidenceIds/evidenceLinks to close provenance for GLAM v1.1 adoption and receiving-cell atmospheric GEP.",
+    "Qualified GLAM v1.1 invertebrate gap as terrestrial invertebrates (e.g., insects) in Table 1 Row 6 and ev-bio35-glam-2026-blindspots while noting aquatic/marine invertebrates present in specific pathways.",
+    "Tightened locators across ev-bio35-recipe-local-density (§§1.1–1.3, 9.3, 11.2, Table 11.2), ev-bio35-recipe-2017-gaps (Table 2), ev-bio35-lcimpact-vs-modular (p. 17, pp. 127–128), and ev-bio35-glam3-scoping-gaps (Ecosystem Services Task Force).",
+    "Polished EN 'Four key quantitative findings emerge from the model:', expanded UNEP and Marine Impacts in Life Cycle Assessment [MarILCA], standardized 'Verones 等（2022）', removed internal XML-verification phrasing from cl-bio35-intensity-and-fragmentation caveat, aligned '8.88×10⁻⁹ species·yr/(m²·yr 年作物当量)', aligned EN Section 21.3 heading with 'Integration', and refined EN Table 1 'marginal only for terrestrial acidification'."
+  ],
+  "openLimitations": [
+    "Human domain expert peer review has not been conducted (scientificApproval: false).",
+    "Scherer et al. (2023) and most GLAM v1.1 ecosystem quality categories do not yet supply full quantitative characterization-factor uncertainty ranges."
+  ]
+}
