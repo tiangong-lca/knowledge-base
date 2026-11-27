@@ -17,6 +17,8 @@ import { restoreMarketResponseComparisonTestFiles } from './reader-market-respon
 import { restorePart3RereadTestFiles } from './reader-part3-reread.mjs';
 import { restoreFunctionalReferenceComparisonTestFiles } from './reader-functional-reference-comparison.mjs';
 import { projectWholeBookRereadNumbering, restoreWholeBookRereadTestFiles } from './reader-whole-book-reread.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { projectRevisionNumbering } from './reader-revisions.mjs';
 import { restorePart1RereadTestFiles } from './reader-part1-reread.mjs';
 import { restoreFrameworkComparisonTestFiles } from './reader-framework-comparison.mjs';
 import { restorePart2RereadTestFiles } from './reader-part2-reread.mjs';
@@ -131,10 +133,11 @@ test('Part IV continuous reread ordinary IDs, numbering/printParts projection, 4
   assert.equal(part4RereadOrdinaryId(config.unit, x04, false, 6), undefined);
 
   // Numbering projection restores exact predecessor Part 4 introduction and rejects drift / angle brackets
-  const preWholeBookNum = wholeBook.unit ? projectWholeBookRereadNumbering(wholeBook.unit, numbering) : numbering;
+  const checkpointNumbering = projectRevisionNumbering(currentRevisions, numbering);
+  const preWholeBookNum = wholeBook.unit ? projectWholeBookRereadNumbering(wholeBook.unit, checkpointNumbering) : checkpointNumbering;
   const projectedNum = projectPart4RereadNumbering(config.unit, preWholeBookNum);
   assert.equal(projectedNum.parts.find(p => p.number === 4).introduction, config.unit.partIntroduction.from);
-  const badNum = structuredClone(numbering);
+  const badNum = structuredClone(checkpointNumbering);
   badNum.parts.find(p => p.number === 4).introduction = '篡改导言';
   assert.throws(() => projectPart4RereadNumbering(config.unit, badNum), /differs from the reviewed Part 4 introduction/);
 

@@ -14,6 +14,8 @@ import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readLoadShiftCaseFiles } from './reader-load-shift.mjs';
 import { readServiceConstraintsFiles } from './reader-service-constraints.mjs';
 import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { projectRevisionNumbering } from './reader-revisions.mjs';
 import {
   wholeBookRereadCorrections,
   wholeBookRereadId,
@@ -74,7 +76,8 @@ test('projectWholeBookRereadNumbering and changes ledger behave reversibly', () 
   const preview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
   const unit = selectWholeBookReread(wholeBookConfig, wholeBookRereadUnitPin, preview);
   if (!unit) return;
-  const projected = projectWholeBookRereadNumbering(unit, numbering);
+  const checkpointNumbering = projectRevisionNumbering(currentRevisions, numbering);
+  const projected = projectWholeBookRereadNumbering(unit, checkpointNumbering);
   assert.equal(projected.parts[3].introduction, unit.partIntroduction.from);
   assert.equal(wholeBookRereadCorrections.length, 7);
   const ledger = buildPublicChangesLedger();

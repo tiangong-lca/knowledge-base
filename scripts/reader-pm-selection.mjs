@@ -209,8 +209,12 @@ function validatePmCatalog(catalog, accepted, projection) {
     ['evidence', 'evidenceIds', new Set(ids(closure.evidence)), original.directExternalEvidenceConsumers],
     ['concept', 'conceptIds', new Set(ids(closure.concepts)), original.externalSharedConceptConsumers],
   ];
+  const postCheckpointAddedClaims = new Set(
+    currentRevisions.flatMap(r => (r.claims ?? []).filter(c => c.op === 'add').map(c => c.id)),
+  );
   for (const [kind, field, referenced, frozen] of reverseUses) {
     const actual = catalog.claims.filter(row => row.status === 'reviewed' && !pmIds.has(row.id)
+      && !postCheckpointAddedClaims.has(row.id)
       && row[field].some(id => referenced.has(id)));
     if (!exactIds(actual, currentBookLayout(`B17:reverse-${kind}-consumers`, frozen.filter(row => row.status === 'reviewed').map(row => row.id))))
       errors.push(`PM selection unreviewed external ${kind} consumer roster differs`);

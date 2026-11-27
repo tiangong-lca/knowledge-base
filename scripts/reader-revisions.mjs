@@ -105,6 +105,18 @@ export function validateRevisionSchema(revision, label = 'revision') {
         }
       }
     };
+    const validateClaimRouteMap = (claimRoutes, allowedRoutes, opName) => {
+      if (claimRoutes === undefined) return;
+      if (!claimRoutes || typeof claimRoutes !== 'object' || Array.isArray(claimRoutes)) {
+        throw new Error(`${label}: routeChanges ${opName} claimRoutes must be a plain object`);
+      }
+      const allowed = new Set(allowedRoutes);
+      for (const [claimId, destRoute] of Object.entries(claimRoutes)) {
+        if (!nonempty(claimId) || !nonempty(destRoute) || !allowed.has(destRoute)) {
+          throw new Error(`${label}: routeChanges ${opName} claimRoutes entry must map non-empty claimId to a declared destination route: ${claimId} -> ${destRoute}`);
+        }
+      }
+    };
     for (const rc of revision.routeChanges) {
       if (!rc || !['merge', 'add-unit', 'relocate-prefix', 'split', 'move', 'retire-unit'].includes(rc.op)) {
         throw new Error(
@@ -146,6 +158,7 @@ export function validateRevisionSchema(revision, label = 'revision') {
           throw new Error(`${label}: routeChanges split bookUnit must be non-empty when present`);
         }
         validateAnchorMap(rc.anchors, 'split', true);
+        validateClaimRouteMap(rc.claimRoutes, rc.to, 'split');
         continue;
       }
       if (rc.op === 'move') {
@@ -166,6 +179,7 @@ export function validateRevisionSchema(revision, label = 'revision') {
           throw new Error(`${label}: routeChanges move bookUnit must be non-empty when present`);
         }
         validateAnchorMap(rc.anchors, 'move', false);
+        validateClaimRouteMap(rc.claimRoutes, [rc.to], 'move');
         continue;
       }
       if (rc.op === 'retire-unit') {
@@ -284,10 +298,14 @@ export function extractRouteChanges(revisions) {
           retainedSelf,
           bookUnit: rc.bookUnit ?? null,
           anchors: rc.anchors ? { ...rc.anchors } : {},
+          claimRoutes: rc.claimRoutes ? { ...rc.claimRoutes } : {},
           ...meta,
         };
         splits.push(record);
-        for (const dest of rc.to) removedRouteSet.delete(dest);
+        for (const dest of rc.to) {
+          removedRouteSet.delete(dest);
+          if (dest !== rc.from) addedUnitKeys.add(dest);
+        }
         if (!retainedSelf) {
           splitFromSet.add(rc.from);
           removedRouteSet.add(rc.from);
@@ -306,6 +324,7 @@ export function extractRouteChanges(revisions) {
           routeChanged,
           bookUnit: rc.bookUnit ?? null,
           anchors: rc.anchors ? { ...rc.anchors } : {},
+          claimRoutes: rc.claimRoutes ? { ...rc.claimRoutes } : {},
           ...meta,
         };
         moves.push(record);
@@ -1058,8 +1077,28 @@ export function applyRouteChangesToCitations(entries, revisions) {
   if (!fromToMap.size) return entries;
 
   const stepTarget = target => {
-    const change = fromToMap.get(target.route) ?? fromToMap.get(target.path);
+    const change = fromToMap.get(target.route) ?? (target.path !== '/print' ? fromToMap.get(target.path) : null);
     if (!change) return null;
+
+    if (target.kind === 'note' && target.claimId && change.claimRoutes?.[target.claimId]) {
+      const nextRoute = change.claimRoutes[target.claimId];
+      if (nextRoute === target.route) return null;
+      const isPrint = target.path === '/print';
+      const nextPath = isPrint ? '/print' : nextRoute;
+      const prefix = isPrint ? printUnitAnchor(nextRoute) : chapterAnchorPrefix(nextRoute);
+      return {
+        target: {
+          ...target,
+          route: nextRoute,
+          path: nextPath,
+          id: chapterNoteAnchor(prefix, target.claimId),
+        },
+        change,
+      };
+    }
+
+    if (target.path === '/print') return null;
+
     const explicit = change.anchors?.[`${target.route}#${target.id}`] ?? change.anchors?.[`#${target.id}`];
     if (explicit) {
       const hashAt = explicit.indexOf('#');
@@ -1067,10 +1106,13 @@ export function applyRouteChangesToCitations(entries, revisions) {
       const nextId = explicit.slice(hashAt + 1);
       if (nextRoute === target.route && nextId === target.id) return null;
       return {
-        ...target,
-        route: nextRoute,
-        path: nextRoute,
-        id: nextId,
+        target: {
+          ...target,
+          route: nextRoute,
+          path: nextRoute,
+          id: nextId,
+        },
+        change,
       };
     }
     if (change.op === 'split' && change.retainedSelf) return null;
@@ -1083,45 +1125,73 @@ export function applyRouteChangesToCitations(entries, revisions) {
       nextId = change.anchors['*'].slice(1);
     }
     return {
-      ...target,
-      route: nextRoute,
-      path: nextRoute,
-      id: nextId,
+      target: {
+        ...target,
+        route: nextRoute,
+        path: nextRoute,
+        id: nextId,
+      },
+      change,
     };
   };
 
   const remapTarget = target => {
-    if (!target || target.path === '/print') return target;
+    if (!target) return { target, change: null };
     let current = target;
-    const visited = new Set([`${current.route}#${current.id}`]);
+    let lastChange = null;
+    const visited = new Set([`${current.path}|${current.route}#${current.id}`]);
     for (let depth = 0; depth < 16; depth++) {
-      const next = stepTarget(current);
-      if (!next) break;
-      const key = `${next.route}#${next.id}`;
+      const stepped = stepTarget(current);
+      if (!stepped) break;
+      const next = stepped.target;
+      const key = `${next.path}|${next.route}#${next.id}`;
       if (visited.has(key)) throw new Error(`Cycle in routeChanges target resolution involving ${target.route}`);
       visited.add(key);
       current = next;
+      lastChange = stepped.change;
     }
-    return current;
+    return { target: current, change: lastChange };
   };
 
   return entries.map(entry => {
     let changed = false;
+    let lastChange = null;
     const nextTargets = entry.targets?.map(t => {
-      const remapped = remapTarget(t);
-      if (remapped !== t) changed = true;
+      const { target: remapped, change } = remapTarget(t);
+      if (remapped !== t) {
+        changed = true;
+        if (change) lastChange = change;
+      }
       return remapped;
     });
     let nextScope = entry.scope;
     if (entry.scope?.targets) {
       const remappedScopeTargets = entry.scope.targets.map(t => {
-        const remapped = remapTarget(t);
-        if (remapped !== t) changed = true;
+        const { target: remapped, change } = remapTarget(t);
+        if (remapped !== t) {
+          changed = true;
+          if (change) lastChange = change;
+        }
         return remapped;
       });
       if (changed) nextScope = { ...entry.scope, targets: remappedScopeTargets };
     }
     if (!changed) return entry;
+
+    const webCrossRouteAlias = entry.mode === 'alias'
+      && entry.path !== '/print'
+      && nextTargets?.length === 1
+      && nextTargets[0].route !== entry.route;
+    if (webCrossRouteAlias) {
+      return {
+        ...entry,
+        mode: 'notice',
+        targets: nextTargets,
+        scope: { text: lastChange?.rationale ?? entry.scope?.text ?? '本条历史引用已随章节调整迁移至目标章节。', targets: nextTargets },
+        edition: entry.edition ?? (lastChange ? { sourceCommit: lastChange.sourceCommit, sourceDate: lastChange.date } : entry.edition),
+      };
+    }
+
     return {
       ...entry,
       targets: nextTargets,

@@ -38,7 +38,9 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
     throw new Error('Book edition has missing or duplicate units');
   const mergeList = Array.isArray(routeChanges) ? routeChanges : (routeChanges?.merges ?? []);
   const addedList = Array.isArray(routeChanges) ? [] : (routeChanges?.addedUnits ?? []);
-  const addedUnitKeys = new Set(addedList.map(u => u.route));
+  const addedUnitKeys = Array.isArray(routeChanges)
+    ? new Set()
+    : new Set(routeChanges?.addedUnitKeys ?? addedList.map(u => u.route));
   for (const added of addedList) {
     const found = units.find(u => u.key === added.route);
     if (!found || found.source !== added.route || found.kind !== added.kind) {

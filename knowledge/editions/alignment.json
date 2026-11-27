@@ -2008,7 +2008,7 @@
     },
     "/docs/book/midpoint-endpoint-value-choices": {
       "enStatus": "published",
-      "enTitle": "Midpoints and Endpoints",
+      "enTitle": "The Structure of Impact Assessment",
       "slots": [
         {
           "kind": "shared",
@@ -2024,42 +2024,6 @@
         },
         {
           "kind": "shared",
-          "id": "cl-ozrad121-emission-midpoint"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-land111-midpoint"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-land111-conversion"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-adp"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-sop"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-rank"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-fossil117-scarcity-energy"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-fossil117-heating-basis"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-fossil117-uranium-boundary"
-        },
-        {
-          "kind": "shared",
           "id": "cl-lcia-scenarios-are-choices"
         },
         {
@@ -2068,87 +2032,15 @@
         },
         {
           "kind": "shared",
-          "id": "cl-ozrad121-odp-horizons"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-n2o-scope"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-reference-scope"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-ir-horizons"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-endpoint-choices"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-endpoint-limits"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-land111-horizon"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-land111-integral"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-land111-aggregation"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-reserves"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-fossil117-scenario-proxy"
-        },
-        {
-          "kind": "shared",
           "id": "cl-lcia-model-data-factor-separation"
         },
         {
           "kind": "shared",
-          "id": "cl-fossil117-equal-midpoint"
+          "id": "cl-lcia-mandatory-vs-optional"
         },
         {
           "kind": "shared",
-          "id": "cl-fossil117-proxy-consequence"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-cost-proxy"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-metal-cost"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-calibration"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-assumptions"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-formula-table"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-ozrad121-package-discrepancies"
-        },
-        {
-          "kind": "shared",
-          "id": "cl-mineral115-judgment"
+          "id": "cl-lcia-method-family-lineage"
         },
         {
           "kind": "shared",
@@ -2355,6 +2247,52 @@
         {
           "kind": "shared",
           "id": "cl-climate-conclusion"
+        }
+      ]
+    },
+    "/docs/book/ozone-and-ionizing-radiation": {
+      "enStatus": "published",
+      "enTitle": "Stratospheric Ozone and Ionizing Radiation",
+      "slots": [
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-emission-midpoint"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-odp-horizons"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-n2o-scope"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad-wmo2022-update"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-reference-scope"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-ir-horizons"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-endpoint-choices"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-endpoint-limits"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-formula-table"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-ozrad121-package-discrepancies"
         }
       ]
     },
@@ -2899,6 +2837,96 @@
         {
           "kind": "shared",
           "id": "cl-usetox-conclusion"
+        }
+      ]
+    },
+    "/docs/book/resources-land-and-biodiversity": {
+      "enStatus": "published",
+      "enTitle": "Resources, Land, and Biodiversity",
+      "slots": [
+        {
+          "kind": "shared",
+          "id": "cl-land111-midpoint"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-land111-conversion"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-land111-horizon"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-land111-integral"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-land111-aggregation"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-adp"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-sop"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-rank"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-reserves"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-cost-proxy"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-metal-cost"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-calibration"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-assumptions"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-mineral115-judgment"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-scarcity-energy"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-heating-basis"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-uranium-boundary"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-scenario-proxy"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-equal-midpoint"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-fossil117-proxy-consequence"
+        },
+        {
+          "kind": "shared",
+          "id": "cl-resources-table-checks"
         }
       ]
     },

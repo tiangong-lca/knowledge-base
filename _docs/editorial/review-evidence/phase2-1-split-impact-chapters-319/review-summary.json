@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-1-split-impact-chapters-319",
+  "task": "tiangong-lca/knowledge-base#319",
+  "date": "2026-11-27",
+  "scientificApproval": false,
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 9,
+      "resolvedCount": 9,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "checkedSources": [
+        "Bulle et al. (2019), Int J Life Cycle Assess 24(9): 1653–1674 (Open Access CC BY 4.0 PDF, 22 pp., SHA-256 verified)",
+        "WMO (2022) Scientific Assessment of Ozone Depletion Annex (NOAA CSL official PDF, 58 pp., printed pp. 436–492, SHA-256 verified, Table A-5 facing-page y-aligned)",
+        "Existing reviewed catalog evidence for CML 2001, ILCD 2010, EU PEF (EU) 2021/2279, EF 3.1 XML, RIVM 2016-0104, LC-IMPACT, and Van Oers et al. (2020)"
+      ],
+      "keyFixesApplied": [
+        "Corrected Ch. 14 Table 1 on ReCiPe 2016 (stops at 3 AoP endpoints without default cross-AoP weighting sets), LC-IMPACT (endpoint/damage-only, no midpoint layer), EF 3.1 (country/region-level AWARE water rather than watershed-level), and IMPACT World+ (native resolution; damage-level normalization only, no recommended weighting).",
+        "Corrected WMO 2022 Annex PDF pageCount (59 -> 58) and printed page range (436–488 -> 436–492); expanded Bulle et al. (2019) locators to pp. 1653–1663 and pp. 1657–1662 including 500-yr bound for climate change and marine acidification.",
+        "Updated stale table numbers in cl-ozrad121-odp-horizons, cl-ozrad121-n2o-scope (Table 2 -> Table 1), and cl-ozrad121-ir-horizons (Table 3 -> Table 2).",
+        "Migrated orphaned fossil-chapter caveats from cl-ozrad121-formula-table onto cl-resources-table-checks and added complete EN caveats to all 4 newly added claims including ISO 14044 paywalled-text disclosure.",
+        "Reconciled CFC-115 lifetime across prose and Table 1 (>1,000 yr in WMO 2011 vs. 540 yr in WMO 2022) and fixed cl-mineral115-rank section pointer (next section -> below).",
+        "Verified 0 missing, 0 orphaned, and 0 forward cross-chapter premise dependencies across all 39 book chapters and 1,109 mounted claims."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "mode": "independent-research-subagent",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingCount": 7,
+      "resolvedCount": 7,
+      "finalVerdict": "RESOLVED_AND_VERIFIED",
+      "keyFixesApplied": [
+        "Removed internal roadmap wording from cl-resources-table-checks caveat and replaced with clean current-edition scope boundary in both ZH and EN.",
+        "Updated cl-lcia-midpoint-pathway endnote scope and rewrote cl-b14-reading-checks endnote caveats (ZH & EN) to match the generalized structural chapter.",
+        "Aligned EN frontmatter description of Ch. 14, N2O WMO 2018->2022 lifetime wording, Halon-1211 WMO 2011 comparison, Ch. 14 closing pathway list, cl-ozrad121-odp-horizons/reference-scope scopes, and cl-land111-horizon chapter-independent opening."
+      ]
+    }
+  ]
+}
