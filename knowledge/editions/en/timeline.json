@@ -2,7 +2,10 @@
   "schemaVersion": 1,
   "locale": "en",
   "sourceTitles": {
-    "src-lime-jp2003": "Development of LCIA Weighting Factors through the Application of Conjoint Analysis [in Japanese]"
+    "src-lime-jp2003": "Development of LCIA Weighting Factors through the Application of Conjoint Analysis [in Japanese]",
+    "src-pol33-china-mee-2024-30": "Implementation Plan for Establishing a Carbon Footprint Management System (Huan Qihou [2024] No. 30, MEE & 14 Ministries) [in Chinese]",
+    "src-pol33-china-mee-gbt24067": "Official MEE Announcement on the Release of China's General Product Carbon Footprint Standard GB/T 24067-2024 [in Chinese]",
+    "src-pol33-china-samr-gbt24067": "SAMR/SAC National Standard Public Metadata Record for GB/T 24067-2024 [in Chinese]"
   },
   "eras": [
     {
@@ -592,6 +595,27 @@
       ]
     },
     {
+      "id": "m-2023-eu-cbam",
+      "year": "2023",
+      "era": "regulation",
+      "track": "case-policy",
+      "title": "EU Carbon Border Adjustment Mechanism (CBAM, Regulation (EU) 2023/956) Anchors Border Pricing",
+      "actor": "European Parliament and Council of the European Union",
+      "summary": "Established a 2023–2025 transitional reporting phase and 2026 definitive regime across cement, electricity, fertilisers, iron and steel, aluminium, and hydrogen, mirroring EU Emissions Trading System (EU ETS) stationary-installation boundaries with punitive fallback defaults and EU ETS site-visit verification.",
+      "significance": "Tied embedded-emission accounting directly to border certificate surrender while exposing the sharp boundary divide between trade carbon pricing and full cradle-to-grave product LCA.",
+      "status": "verified",
+      "chapters": [
+        {
+          "label": "Life Cycle Results in Policy",
+          "href": "/en/docs/book/lca-results-in-policy/"
+        },
+        {
+          "label": "Review, Verification, and Assurance",
+          "href": "/en/docs/book/review-verification-and-assurance/"
+        }
+      ]
+    },
+    {
       "id": "m-2024-espr-arvidsson",
       "year": "2024",
       "era": "regulation",
@@ -613,13 +637,34 @@
       ]
     },
     {
+      "id": "m-2024-ecgt-epbd-china-plan",
+      "year": "2024",
+      "era": "regulation",
+      "track": "case-policy",
+      "title": "EU Anti-Greenwashing Bans, Whole-Building Carbon Disclosure, and China's Carbon Footprint Plan",
+      "actor": "European Union · China Ministry of Ecology and Environment & 14 Ministries",
+      "summary": "The EU enacted the Empowering Consumers for the Green Transition Directive (ECGT, (EU) 2024/825, banning offset-based climate-neutral product claims from September 2026) and the recast Energy Performance of Buildings Directive (EPBD, (EU) 2024/1275, mandating 50-year cumulative whole-building global warming potential [GWP] disclosure from 2028/2030), while China issued its 15-ministry Carbon Footprint Implementation Plan and national general standard GB/T 24067-2024.",
+      "significance": "Consumer-law enforcement, whole-building carbon ceilings, and national carbon-footprint standard systems converged to bring life cycle metrics into mainstream public policy.",
+      "status": "verified",
+      "chapters": [
+        {
+          "label": "Life Cycle Results in Policy",
+          "href": "/en/docs/book/lca-results-in-policy/"
+        },
+        {
+          "label": "Environmental Product Declarations and Sector Rules",
+          "href": "/en/docs/book/epds-and-sector-rules/"
+        }
+      ]
+    },
+    {
       "id": "m-2026-dpp-transition",
       "year": "2026",
       "era": "regulation",
       "track": "case-policy",
-      "title": "EU Digital Product Passport Central Registry Milestone & EF 3.1 Secondary Data Transition",
+      "title": "EU Digital Product Passport Registry, Anti-Greenwashing Application, Green Claims Withdrawal Notice, and EF 3.1 Transition",
       "actor": "European Commission",
-      "summary": "ESPR sets July 2026 for launching the Digital Product Passport central registry, while the European Commission issued EF 3.1 secondary-data transition guidance (projected through 2028) confronting real-world database supply and cross-study comparability tensions.",
+      "summary": "2026 marked a decisive inflection point for EU policy: CBAM entered its definitive regime in January, ESPR targeted 19 July for the central Digital Product Passport registry, ECGT's anti-greenwashing bans took effect on 27 September, the Commission listed the Green Claims proposal (COM(2023) 166) for withdrawal on 4 November in its 2027 Work Programme Annex III, and transitional Environmental Footprint (EF 3.1) secondary-data guidance addressed ongoing database supply gaps.",
       "significance": "Reminds practitioners and regulators that methodological implementation always co-evolves with data supply and version migration—conclusions must remain traceable and revisable.",
       "status": "verified",
       "chapters": [
@@ -638,6 +683,10 @@
         {
           "label": "Environmental Product Declarations and Sector Rules",
           "href": "/en/docs/book/epds-and-sector-rules/"
+        },
+        {
+          "label": "Life Cycle Results in Policy",
+          "href": "/en/docs/book/lca-results-in-policy/"
         }
       ]
     }
