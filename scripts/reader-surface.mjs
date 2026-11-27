@@ -1,5 +1,5 @@
 import { showEditorialHistoryInProse, withCleanDeliveryValidation, FORBIDDEN_PROSE_ATTR_PATTERNS, FORBIDDEN_PROSE_TEXT_PATTERNS } from './reader-editorial-mode.mjs';
-import { buildPublicChangesLedger } from './reader-changes-ledger.mjs';
+import { buildPublicRevisionsAndErrata } from './reader-public-revisions.mjs';
 import { currentRetirements, currentRevisions } from './reader-checkpoint.mjs';
 import { applyClaimRetirementsToCitations, applyRouteChangesToCitations, extractRouteChanges, isRouteRevised } from './reader-revisions.mjs';
 import { functionalReferenceComparisonPreviousSurface, qualifyFunctionalReferenceComparisonHistory } from './reader-functional-reference-comparison.mjs';
@@ -682,7 +682,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   return errors;
 }
 
-export async function validateCleanDeliveryOutput(root, documents, ledger = buildPublicChangesLedger()) {
+export async function validateCleanDeliveryOutput(root, documents, publicLedger = buildPublicRevisionsAndErrata()) {
   const errors = [];
   for (const [path, document] of documents) {
     const nodes = document.querySelectorAll('*');
@@ -710,41 +710,38 @@ export async function validateCleanDeliveryOutput(root, documents, ledger = buil
   }
   const { activePrefix: cleanPrefix } = extractRouteChanges(currentRevisions);
   const prefixedChanges = cleanPrefix ? join(root, cleanPrefix.replace(/^\//, ''), 'changes/index.html') : null;
-  const changesFile = prefixedChanges && existsSync(prefixedChanges) ? prefixedChanges : join(root, 'changes/index.html');
-  const changesHtml = await readFile(changesFile, 'utf8').catch(error => {
-    if (error.code === 'ENOENT') return null;
-    throw error;
-  });
-  if (changesHtml === null) {
-    errors.push('changes/index.html: clean-delivery requires the public /changes/ revision ledger page');
-    return errors;
+  const zhChangesFile = prefixedChanges && existsSync(prefixedChanges) ? prefixedChanges : join(root, 'changes/index.html');
+  const enChangesFile = join(root, 'en', 'changes/index.html');
+  const pagesToCheck = [{ file: zhChangesFile, label: 'changes/index.html', required: true }];
+  if (existsSync(enChangesFile)) {
+    pagesToCheck.push({ file: enChangesFile, label: 'en/changes/index.html', required: true });
   }
-  const changesDoc = htmlParser.parse(changesHtml);
-  const ledgerEl = changesDoc.querySelector('[data-reader-changes-ledger]');
-  if (!ledgerEl) {
-    errors.push('changes/index.html: missing [data-reader-changes-ledger] container');
-    return errors;
-  }
-  const renderedIterations = new Set(ledgerEl.querySelectorAll('[data-changes-iteration]').map(n => n.getAttribute('data-changes-iteration')));
-  for (const item of ledger.iterations) {
-    if (!renderedIterations.has(item.id)) errors.push(`changes/index.html: missing iteration entry ${item.id}`);
-  }
-  const renderedCorrections = new Set(ledgerEl.querySelectorAll('[data-changes-correction-key]').map(n => n.getAttribute('data-changes-correction-key')));
-  for (const row of ledger.corrections) {
-    const key = `${row.unitId}|${row.claimId}`;
-    if (!renderedCorrections.has(key)) errors.push(`changes/index.html: missing named correction entry ${key}`);
-  }
-  const renderedParts = new Set(ledgerEl.querySelectorAll('[data-changes-part-intro]').map(n => n.getAttribute('data-changes-part-intro')));
-  for (const item of ledger.partIntroductions) {
-    if (!renderedParts.has(String(item.part))) errors.push(`changes/index.html: missing Part ${item.part} introduction entry`);
-  }
-  const renderedRevisions = new Set(ledgerEl.querySelectorAll('[data-changes-revision]').map(n => n.getAttribute('data-changes-revision')));
-  for (const rev of ledger.revisions ?? []) {
-    if (!renderedRevisions.has(rev.id)) errors.push(`changes/index.html: missing post-checkpoint revision entry ${rev.id}`);
-  }
-  const renderedRetirements = new Set(ledgerEl.querySelectorAll('[data-changes-retirement]').map(n => n.getAttribute('data-changes-retirement')));
-  for (const ret of ledger.retirements ?? []) {
-    if (!renderedRetirements.has(ret.id)) errors.push(`changes/index.html: missing retired claim entry ${ret.id}`);
+  for (const target of pagesToCheck) {
+    const changesHtml = await readFile(target.file, 'utf8').catch(error => {
+      if (error.code === 'ENOENT') return null;
+      throw error;
+    });
+    if (changesHtml === null) {
+      if (target.required) errors.push(`${target.label}: clean-delivery requires the public /changes/ revisions & errata page`);
+      continue;
+    }
+    const changesDoc = htmlParser.parse(changesHtml);
+    const ledgerEl = changesDoc.querySelector('[data-reader-changes-ledger]');
+    if (!ledgerEl) {
+      errors.push(`${target.label}: missing [data-reader-changes-ledger] container`);
+      continue;
+    }
+    if (ledgerEl.querySelector('[data-changes-iteration], [data-changes-correction], [data-changes-part-intro], [data-changes-retirement]')) {
+      errors.push(`${target.label}: internal batch/iteration ledger controls must not render on the public Revisions & Errata page`);
+    }
+    const renderedRevisions = new Set(ledgerEl.querySelectorAll('[data-public-revision]').map(n => n.getAttribute('data-public-revision')));
+    for (const item of publicLedger.revisions ?? []) {
+      if (!renderedRevisions.has(item.id)) errors.push(`${target.label}: missing public revision entry ${item.id}`);
+    }
+    const renderedErrata = new Set(ledgerEl.querySelectorAll('[data-public-erratum]').map(n => n.getAttribute('data-public-erratum')));
+    for (const item of publicLedger.errata ?? []) {
+      if (!renderedErrata.has(item.id)) errors.push(`${target.label}: missing public erratum entry ${item.id}`);
+    }
   }
   return errors;
 }

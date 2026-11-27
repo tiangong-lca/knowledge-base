@@ -43,24 +43,24 @@ test('Public /changes/ ledger aggregates all reviewed iterations, corrections, a
   assert.deepEqual(textErrors, []);
 });
 
-test('Clean-Delivery Gate passes clean prose + /changes/ ledger and fails closed on every forbidden development-process control', async () => {
+test('Clean-Delivery Gate passes clean prose + bilingual /changes/ ledger and fails closed on forbidden controls', async () => {
   const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'kb-clean-delivery-'));
   try {
-    const ledger = {
-      iterations: [{ id: 'unit-1' }],
-      corrections: [{ unitId: 'unit-1', claimId: 'cl-test-1' }],
-      partIntroductions: [{ part: 6 }],
+    const publicLedger = {
+      revisions: [{ id: 'pub-1' }],
+      errata: [{ id: 'err-1' }],
     };
     await fs.mkdir(path.join(tmp, 'changes'), { recursive: true });
-    const goodChanges = `<!doctype html><html><body><main id="main-content"><section data-reader-changes-ledger="">
-      <li data-changes-iteration="unit-1"></li>
-      <li data-changes-correction="cl-test-1" data-changes-correction-key="unit-1|cl-test-1"></li>
-      <li data-changes-part-intro="6"></li>
+    await fs.mkdir(path.join(tmp, 'en', 'changes'), { recursive: true });
+    const goodChanges = `<!doctype html><html><body><main id="main-content"><section data-reader-changes-ledger="zh">
+      <li data-public-revision="pub-1"></li>
+      <li data-public-erratum="err-1"></li>
     </section></main></body></html>`;
     await fs.writeFile(path.join(tmp, 'changes/index.html'), goodChanges);
+    await fs.writeFile(path.join(tmp, 'en/changes/index.html'), goodChanges);
 
     const cleanDoc = htmlParser.parse('<article data-reader-route="/docs/book/test"><h1>正文标题</h1><p>干净正文。</p></article>');
-    assert.deepEqual(await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', cleanDoc]]), ledger), []);
+    assert.deepEqual(await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', cleanDoc]]), publicLedger), []);
 
     const badCases = [
       '<article data-reader-route="/docs/book/test"><details data-copyedit-history="h1"><summary>旧题</summary></details></article>',
@@ -75,13 +75,18 @@ test('Clean-Delivery Gate passes clean prose + /changes/ ledger and fails closed
       '<article data-reader-route="/docs/book/test"><p><a href="/x">查看前版源文件</a></p></article>',
     ];
     for (const html of badCases) {
-      const errs = await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', htmlParser.parse(html)]]), ledger);
+      const errs = await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', htmlParser.parse(html)]]), publicLedger);
       assert(errs.length > 0, `Expected clean-delivery violation for: ${html}`);
     }
 
-    await fs.writeFile(path.join(tmp, 'changes/index.html'), '<main id="main-content"><section data-reader-changes-ledger=""></section></main>');
-    const missingLedgerErrs = await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', cleanDoc]]), ledger);
-    assert.equal(missingLedgerErrs.length, 3);
+    await fs.writeFile(
+      path.join(tmp, 'changes/index.html'),
+      '<main id="main-content"><section data-reader-changes-ledger="zh"><li data-changes-iteration="unit-1"></li></section></main>',
+    );
+    const leakedBatchErrs = await validateCleanDeliveryOutput(tmp, new Map([['/docs/book/test', cleanDoc]]), publicLedger);
+    assert(leakedBatchErrs.some(e => e.includes('internal batch/iteration ledger')));
+    assert(leakedBatchErrs.some(e => e.includes('missing public revision entry pub-1')));
+    assert(leakedBatchErrs.some(e => e.includes('missing public erratum entry err-1')));
   } finally {
     await fs.rm(tmp, { recursive: true, force: true });
   }
