@@ -224,7 +224,7 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
   // Check even before rendering: an authored reference must never silently lose
   // its canonical paragraph or note because a record was removed/withdrawn.
   for (const note of plan.notes) if (claims.get(note.id)?.status !== 'reviewed') throw new Error(`Unpublished or unknown chapter claim: ${note.id}`);
-  const annotations = createChapterAnnotationPlan(plan, catalog.claims, await getChapterReferenceIndex(print), { print });
+  const annotations = createChapterAnnotationPlan(plan, catalog.claims, await getChapterReferenceIndex(print), { print, localePrefix: '/zh' });
 
   function Paragraph({ id }: { id: string }) {
     const crossReference = historyPrintCrossReference(cleanRoute, id, print);

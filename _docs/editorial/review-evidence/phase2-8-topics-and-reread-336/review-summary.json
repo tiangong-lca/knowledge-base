@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "task": "tiangong-lca/knowledge-base#336",
+  "revisionId": "phase2-8-topics-and-reread-336",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Editorial, source-fidelity, premise-DAG, bilingual-parity, and engineering verification only; does not constitute independent scientific peer review by external domain experts.",
+  "preEditReread": [
+    {
+      "role": "Phase 2 Continuous Bilingual Rereader — Parts I-IV",
+      "subagentId": "99165a5d-bc81-4c33-9728-2b800bee5b0b",
+      "scope": "Continuous ZH & EN reread of Parts I-IV (Chapters 1-20) and Appendices",
+      "blockingDefectsFound": 7,
+      "allResolved": true
+    },
+    {
+      "role": "Phase 2 Continuous Bilingual Rereader — Parts V-VII & Topics",
+      "subagentId": "f91eee13-db1a-4c30-924e-eccb4febb2a8",
+      "scope": "Continuous ZH & EN reread of Parts V-VII (Chapters 21-36), 5 topical essays, Appendices, timelines, guides, and 122 built HTML pages",
+      "blockingDefectsFound": 7,
+      "allResolved": true
+    }
+  ],
+  "postEditReviews": [
+    {
+      "role": "Primary-Source & Engineering Auditor for Phase 2.8 #336",
+      "subagentId": "148c741a-7c26-488e-a29b-f78ed27743b5",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingFindings": [
+        "app/(locale)/[lang]/print/page.tsx looked up enPagesByKey by unit.key instead of unit.source after switching enUnits to getPresentationUnits('book'), silently omitting 5 consolidated chapters (Ch. 3, 9, 14, 30, 36) from /en/print/."
+      ],
+      "resolution": "Updated app/(locale)/[lang]/print/page.tsx to resolve unit.source ?? unit.key with fail-closed error throwing, added fail-closed 45-unit English print check in scripts/export.mjs, rebuilt and verified 45/45 articles and 0 broken internal anchors in out/en/print/index.html.",
+      "postFixStatus": "RESOLVED"
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer for Phase 2.8 #336",
+      "subagentId": "3514e095-21c9-478f-be7a-c8462c29fdc0",
+      "initialVerdict": "NEEDS_FIXES",
+      "blockingFindings": [
+        "/en/print/ silently dropped 5 chapters (40 units / 31 chapters rendered instead of 45 units / 36 chapters)."
+      ],
+      "nonBlockingAdopted": [
+        "Renamed publicSummary.id from pub-2026-11-28-topics-and-phase2-reread to pub-2026-11-28-topics-and-transitions for clean HTML data-public-revision attribute hygiene."
+      ],
+      "resolution": "Restored all 5 chapters in /en/print/ (45/45 articles, 0 broken anchors), cleaned publicSummary.id, rebuilt and verified.",
+      "postFixStatus": "RESOLVED"
+    }
+  ],
+  "verificationSummary": {
+    "validate": "PASS",
+    "checkpointHistory": "PASS (41 historical units, 184 snapshot files, gitVerified=true)",
+    "typecheck": "PASS",
+    "staticBuild": "PASS (114/114 pages; 45/45 ZH & EN print units; 9/9 retired-topic redirect stubs; 0 broken internal anchors)",
+    "bilingualParity": "PASS (0 parity exceptions)",
+    "unitTests": "PASS (824/824)"
+  }
+}

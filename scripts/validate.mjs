@@ -214,7 +214,7 @@ async function validatePublication(root, requireCurrent) {
         errors.push(...validateHybridInventoryCoverage(edition,sources,hybridAccepted,data,hybridProse));
       if (!exchangeOriginal || !exchangeHeadings || !exchangeCitations || !exchangePartial || !exchangeProse) throw new Error("Book edition requires independent B08 original, captured history, partial-source and manuscript inventories");
       assertExchangeSemanticsOriginal(exchangeOriginal); assertExchangeSemanticsHeadingHistory(exchangeHeadings); assertExchangeSemanticsCitationSources(exchangeCitations); assertExchangeSemanticsPartialHistory(exchangePartial);
-      if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+      if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization'))
         errors.push(...validateExchangeSemanticsCoverage(edition,sources,exchangeOriginal,data,exchangeProse,exchangePartial));
       currentEditionKeys(edition,[...sources.keys()],baseline,placements);
       assertFrameworkHeadingHistory(headings);
@@ -223,7 +223,7 @@ async function validatePublication(root, requireCurrent) {
       assertProcessNetworkHeadingHistory(processHeadingHistory);
       if (!isRevised('/docs/book/process-and-network'))
         errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
-      if (!isRevised('/docs/book/service-and-reference'))
+      if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit'))
         errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));
       if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
         errors.push(...validateCleanerProductionCoverage(edition,sources,cleanerAccepted,data));

@@ -133,7 +133,7 @@ test('current PM chapter and appendix entries use owned focusable titles while h
  }
 });
 test('both website views retain unified chapter numbering,full sidebar and local native heading TOC',()=>{
- for(const route of ['/docs/book/joint-production','/docs/book/climate-equivalence','/docs/flows','/docs/appendices/container-energy-check','/docs']){const record=web.find(unit=>unit.key===route),html=webHtml(record);assert.deepEqual(check(html,route),[]);}
+ for(const route of ['/docs/book/joint-production','/docs/book/climate-equivalence','/docs/history','/docs/appendices/container-energy-check','/docs']){const record=web.find(unit=>unit.key===route),html=webHtml(record);assert.deepEqual(check(html,route),[]);}
  const record=web.find(unit=>unit.key==='/docs/book/joint-production'),html=webHtml(record),doc=htmlParser.parse(html),toc=doc.querySelector('#nd-toc a'),header=doc.querySelector('article h1'),sidebarName=doc.querySelector('#nd-sidebar [data-reader-unit-name]');
  for(const changed of [html.replace(header.outerHTML,header.outerHTML.replace(record.label,record.label.replace('章','篇'))),html.replace(toc.outerHTML,''),html.replace(toc.outerHTML,toc.outerHTML.replace(toc.getAttribute('href'),'#other')),html.replace(sidebarName.outerHTML,''),html.replace('data-reader-unit-name="/docs"','data-reader-unit-name="/wrong"')])assert(check(changed,record.key).length);
 });
@@ -166,7 +166,7 @@ test('native mobile contents title requires current route,exact name and unique 
  const record=web.find(unit=>unit.key==='/docs/book/ecological-scarcity-and-targets'),html=webHtml(record),doc=htmlParser.parse(html),root=doc.querySelector('[data-toc-popover]'),trigger=doc.querySelector('[data-toc-popover-trigger]'),content=doc.querySelector('[data-toc-popover-content]'),name=trigger.querySelector('[data-reader-unit-name]');
  const mutations=[
   html.replace(root.outerHTML,''),html.replace(root.outerHTML,root.outerHTML.repeat(2)),
-  html.replace(root.outerHTML,root.outerHTML.replace(record.key,'/docs/flows')),
+  html.replace(root.outerHTML,root.outerHTML.replace(record.key,'/docs/history')),
   html.replace(root.outerHTML,root.outerHTML.replace(record.label,'第99章')),
   html.replace(root.outerHTML,root.outerHTML.replace(record.title,'其他题名')),
   html.replace(root.outerHTML,root.outerHTML.replace(name.outerHTML,`<a href="${record.key}/">${name.outerHTML}</a>`)),

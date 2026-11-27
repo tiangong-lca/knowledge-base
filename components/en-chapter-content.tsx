@@ -202,6 +202,16 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
   }
 
   const NotesHeading = print ? 'h4' : 'h2';
+  const sectionIds = new Set<string>();
+  for (const m of raw.matchAll(/^#{2,6}\s+.*?\[#([^\]]+)\]/gm)) sectionIds.add(m[1]);
+  for (const m of raw.matchAll(/<ReaderSection\s+id="([^"]+)"/g)) sectionIds.add(m[1]);
+
+  function EnReaderLink({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+    const resolvedHref = print && href && href.startsWith('#') && sectionIds.has(href.slice(1))
+      ? `#${noteAnchorPrefix}${href.slice(1)}`
+      : href;
+    return <a {...props} href={resolvedHref}>{children}</a>;
+  }
 
   return (
     <>
@@ -210,6 +220,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
           {
             h2: EnH2,
             h3: EnH3,
+            a: EnReaderLink,
             Prose: ChapterProse,
             Claim: Paragraph,
             ReaderSection,

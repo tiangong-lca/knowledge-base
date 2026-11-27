@@ -144,7 +144,7 @@ export function createChapterReferenceIndex(pages, { print = false } = {}) {
 }
 
 /** Scope/caveats stay with each claim; only repeated input links and premise text are condensed. */
-export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { print = false } = {}) {
+export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { print = false, localePrefix = '' } = {}) {
   const byId = new Map(claims.map(claim => [claim.id, claim])), seenInputs = new Set(), result = new Map();
   for (const note of notePlan.notes) {
     const claim = byId.get(note.id);
@@ -161,7 +161,7 @@ export function createChapterAnnotationPlan(notePlan, claims, referenceIndex, { 
         const locations = referenceIndex.get(id) ?? [];
         const location = (print ? locations.filter(item => item.printAnchor).sort((a, b) => a.printOrder - b.printOrder)[0] : null) ?? locations[0];
         if (location) premiseReferences.set(id, {
-          href: print && location.printAnchor ? `#${location.printAnchor}` : `${location.url}/#${location.anchor}`,
+          href: print && location.printAnchor ? `#${location.printAnchor}` : `${localePrefix}${location.url}/#${location.anchor}`,
           label: `《${location.title}》注 ${location.number}`,
         });
       }

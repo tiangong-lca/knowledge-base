@@ -26,9 +26,8 @@ export function JointProductionCase({ print = false, numbering = [] }: { print?:
     { href: `#${bookPrefix}-负担份额`, title: '负担份额' },
     { href: `#${bookPrefix}-参照供给`, title: '参照供给' },
   ] : [
-    { href: '#同一批产品先问份额归给谁', title: '批次份额' },
-    { href: '#先保留两项服务再看替代减项', title: '同一组服务' },
-    { href: '#部分利用时重新交代活动与去向', title: '部分利用' },
+    { href: '#负担份额', title: '负担份额' },
+    { href: '#参照供给', title: '参照供给' },
   ];
   return <section className="teaching-case" aria-labelledby="joint-batch-case-heading" data-case-id={spec.caseId} data-case-version={spec.version}>
     <Heading slot="title" id="joint-batch-case-heading">同一批共产品：份额、路线与比较残余</Heading>

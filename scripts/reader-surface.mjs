@@ -644,11 +644,11 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         errors.push(...validateRenderedJointProduction(document,path,book.jointOriginal,book.catalog,book.jointProse));
       if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
         errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
-      if (!isRevised('/docs/book/service-and-reference'))
+      if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit'))
         errors.push(...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
       if (!isRevised('/docs/book/process-and-network'))
         errors.push(...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse));
-      if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+      if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization'))
         errors.push(...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
       if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
         errors.push(...validateRenderedHybridInventory(document,path,book.hybridAccepted,book.catalog,book.hybridProse));
@@ -705,7 +705,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
   for (const [path, surface] of pages) for (const link of surface.noteLinks) {
     const match = /^(?:([^#]+?)\/?)?#(.+)$/.exec(link.href);
     if (!match) continue;
-    const destinationPath = match[1]?.replace(/\/$/,'') || path;
+    const destinationPath = match[1]?.replace(/^\/zh(?=\/)/, '').replace(/\/$/,'') || path;
     const actual = pages.get(destinationPath)?.ids.get(decodeURIComponent(match[2]));
     const number = /注\s*(\d+)/.exec(link.label)?.[1];
     if (!actual?.number || Number(number)!==actual.number) errors.push(`${path}: wrong or missing destination note label ${link.href}`);
@@ -733,13 +733,13 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       errors.push(...validateFrameworkCoverage(book.edition,book.sources,book.accepted));
     if (!isRevised('/docs/book/cleaner-production-and-life-cycle-thinking', '/docs/book/cleaner-production-purpose-and-prospects'))
       errors.push(...validateCleanerProductionCoverage(book.edition,book.sources,book.cleanerAccepted,book.catalog));
-    if (!isRevised('/docs/book/service-and-reference'))
+    if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit'))
       errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
     if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
       errors.push(...validateHybridInventoryCoverage(book.edition,book.sources,book.hybridAccepted,book.catalog,book.hybridProse));
     if (!isRevised('/docs/book/process-and-network'))
       errors.push(...validateProcessNetworkCoverage(book.edition,book.sources,book.processAccepted,book.catalog,book.processProse));
-    if (!isRevised('/docs/book/exchange-and-elementary-flow'))
+    if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization'))
       errors.push(...validateExchangeSemanticsCoverage(book.edition,book.sources,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
   }
   if (book && print && !isRevised('/docs/book/framework-history', '/docs/monograph/framework-responsibilities')) errors.push(...validateRenderedFrameworkCoverage(print.bodyClaims,book.accepted));

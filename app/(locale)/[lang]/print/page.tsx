@@ -57,7 +57,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const appendices = units.filter(unit => unit.kind === 'appendix');
 
   if (lang === 'en') {
-    const enUnits = getPresentationUnits('web');
+    const enUnits = getPresentationUnits('book');
     const enFrontMatter = enUnits.filter(unit => unit.kind === 'front-matter');
     const enTopics = enUnits.filter(unit => unit.kind === 'topic');
     const enAppendices = enUnits.filter(unit => unit.kind === 'appendix');
@@ -72,20 +72,22 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     };
     const renderEnTocItems = (items: typeof enUnits) =>
       items.map((unit, idx) => {
-        const page = enPagesByKey.get(unit.key);
-        if (!page) return null;
+        const routeKey = unit.source ?? unit.key;
+        const page = enPagesByKey.get(routeKey);
+        if (!page) throw new Error(`Missing English print page for unit: ${unit.key} (${routeKey})`);
         return (
           <li key={unit.key}>
-            <a href={`#en-${printUnitAnchor(unit.key)}`}>
+            <a href={`#en-${printUnitAnchor(routeKey)}`}>
               <NumberedTitle number={enUnitLabel(unit, idx)}>{page.data.title}</NumberedTitle>
             </a>
           </li>
         );
       });
     const renderEnArticle = (unit: typeof enUnits[number], idx: number) => {
-      const page = enPagesByKey.get(unit.key);
-      if (!page) return null;
-      const id = `en-${printUnitAnchor(unit.key)}`;
+      const routeKey = unit.source ?? unit.key;
+      const page = enPagesByKey.get(routeKey);
+      if (!page) throw new Error(`Missing English print page for unit: ${unit.key} (${routeKey})`);
+      const id = `en-${printUnitAnchor(routeKey)}`;
       return (
         <article className="print-chapter prose" key={unit.key} id={id}>
           <NumberedHeading level={unit.kind === 'front-matter' ? 2 : 3} number={enUnitLabel(unit, idx)}>
@@ -248,11 +250,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <summary><time dateTime={part5RereadSource.date}>{part5RereadSource.date}</time> 版第五部导言范围</summary>
           <p>{'前版导言：“'}{currentPart5Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part5RereadSource.commit)} data-part5-reread-part-source="">查看该版源文件</a></p>
         </details>}
-        {showEditorialHistoryInProse() && currentPart6Reread && part.number === 7 && <details className="legacy-citation-context" data-part6-reread-part="6">
+        {showEditorialHistoryInProse() && currentPart6Reread && part.number === 6 && <details className="legacy-citation-context" data-part6-reread-part="6">
           <summary><time dateTime={part6RereadSource.date}>{part6RereadSource.date}</time> 版原第六部导言范围</summary>
           <p>{'前版导言：“'}{currentPart6Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part6RereadSource.commit)} data-part6-reread-part-source="">查看该版源文件</a></p>
         </details>}
-        {showEditorialHistoryInProse() && currentPart7Reread && part.number === 8 && <details className="legacy-citation-context" data-part7-reread-part="7">
+        {showEditorialHistoryInProse() && currentPart7Reread && part.number === 7 && <details className="legacy-citation-context" data-part7-reread-part="7">
           <summary><time dateTime={part7RereadSource.date}>{part7RereadSource.date}</time> 版原第七部导言范围</summary>
           <p>{'前版导言：“'}{currentPart7Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part7RereadSource.commit)} data-part7-reread-part-source="">查看该版源文件</a></p>
         </details>}
