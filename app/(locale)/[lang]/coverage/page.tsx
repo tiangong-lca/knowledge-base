@@ -18,16 +18,19 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const chCount = getPresentationUnits('web').filter(u => u.kind === 'chapter').length;
+  const webUnits = getPresentationUnits('web');
+  const chCount = webUnits.filter(u => u.kind === 'chapter').length;
+  const topicCount = webUnits.filter(u => u.kind === 'topic').length;
+  const appCount = webUnits.filter(u => u.kind === 'appendix').length;
   if (lang === 'en') {
     return {
-      title: 'Book Guide',
-      description: `Complete ${readerParts.length}-part, ${chCount}-chapter roadmap, 5 topical essays, 5 appendices, and reference apparatus for the English edition.`,
+      title: UI_SURFACES.bookGuide.en,
+      description: `Complete ${readerParts.length}-part, ${chCount}-chapter roadmap, ${topicCount} topical essays, ${appCount} appendices, and reference apparatus.`,
     };
   }
   return {
-    title: '全书导览',
-    description: `八部 ${chCount} 章逻辑主线、三种阅读路径、六条按问题入口、五篇专题与五份附录的完整阅读地图。`,
+    title: UI_SURFACES.bookGuide.zh,
+    description: `${readerParts.length} 部 ${chCount} 章逻辑主线、多种阅读路径、按问题速查、${topicCount} 篇专题与 ${appCount} 份附录的完整阅读地图。`,
   };
 }
 
@@ -43,6 +46,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const chapters = webUnits.filter(u => u.kind === 'chapter');
   const topics = webUnits.filter(u => u.kind === 'topic');
   const appendices = webUnits.filter(u => u.kind === 'appendix');
+  const appendixRange = appendices.length > 1 ? `A–${String.fromCharCode(64 + appendices.length)}` : 'A';
 
   if (lang === 'en') {
     const unitEntries = alignment.units as Record<string, { enStatus?: string; enTitle?: string }>;
@@ -63,14 +67,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
-        title="Book Guide"
-        description={`Navigate all ${readerParts.length} parts and ${chapters.length} chapters, three reading paths, six practical entry questions, ${topics.length} topical essays, and ${appendices.length} appendices.`}
+        title={UI_SURFACES.bookGuide.en}
+        description={`Navigate all ${readerParts.length} parts and ${chapters.length} chapters, ${enReaderGuide.readingModes.length} reading paths, ${enReaderGuide.problemRoutes.length} practical entry questions, ${topics.length} topical essays, and ${appendices.length} appendices.`}
       >
         <div className={styles.root} data-en-guide="">
-          {/* A. 8-Part Roadmap */}
+          {/* A. Multi-Part Roadmap */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-roadmap">
             <div className={styles.sectionHeader}>
-              <h2 id="en-guide-roadmap">Eight-Part Roadmap</h2>
+              <h2 id="en-guide-roadmap">Book Roadmap ({readerParts.length} Parts)</h2>
               <p className={styles.sectionMeta}>{chapters.length} Chapters · {topics.length} Topics · {appendices.length} Appendices</p>
             </div>
             <ol className={styles.roadmapGrid}>
@@ -89,11 +93,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </ol>
           </section>
 
-          {/* B1. 3 Reading Paths */}
+          {/* B1. Reading Paths */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-modes" data-guide-section="modes">
             <div className={styles.sectionHeader}>
-              <h2 id="en-guide-modes">Three Reading Paths</h2>
-              <p className={styles.sectionMeta}>Same worked cases and primary evidence, three ways in</p>
+              <h2 id="en-guide-modes">Reading Paths</h2>
+              <p className={styles.sectionMeta}>Same worked cases and primary evidence, {enReaderGuide.readingModes.length} ways in</p>
             </div>
             <div className={styles.modesGrid}>
               {enReaderGuide.readingModes.map(mode => (
@@ -116,11 +120,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </section>
 
-          {/* B2. 6 Problem-First Entries */}
+          {/* B2. Problem-First Entries */}
           <section id="en-problem-routes" className={styles.sectionBlock} aria-labelledby="en-guide-problems" data-guide-section="problems">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-problems">Browse by Practical Question</h2>
-              <p className={styles.sectionMeta}>Direct entry points for six recurring modeling and review questions</p>
+              <p className={styles.sectionMeta}>Direct entry points for recurring modeling and review questions</p>
             </div>
             <div className={styles.problemGrid}>
               {enReaderGuide.problemRoutes.map(prob => (
@@ -225,7 +229,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <section className={styles.sectionBlock} aria-labelledby="en-guide-appendices">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-appendices">Appendices</h2>
-              <p className={styles.sectionMeta}>Appendices A–E: Numerical reconstructions, factor checks, and LCA timeline</p>
+              <p className={styles.sectionMeta}>Appendices {appendixRange}: Numerical reconstructions, factor checks, and LCA timeline</p>
             </div>
             <ol className={styles.cardGrid}>
               {appendices.map((unit, idx) => {
@@ -248,8 +252,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {/* G. Reference & Publication Tools */}
           <section className={styles.sectionBlock} aria-labelledby="en-guide-tools">
             <div className={styles.sectionHeader}>
-              <h2 id="en-guide-tools">Reference &amp; Publication Tools</h2>
-              <p className={styles.sectionMeta}>Trace claims, concepts, primary sources, timeline milestones, and print edition</p>
+              <h2 id="en-guide-tools">Reference Apparatus</h2>
+              <p className={styles.sectionMeta}>Trace notes, concepts, primary sources, historical milestones, and the continuous print edition</p>
             </div>
             <ul className={styles.cardGrid}>
               {[
@@ -289,15 +293,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <PublicationShell
-      title="全书导览"
-      description={`按八部 ${chapters.length} 章、五篇概念与实践专题、五份复核与大事记附录梳理全书结构，支持顺读、按问题速查或从经典案例倒推。`}
+      title={UI_SURFACES.bookGuide.zh}
+      description={`按 ${readerParts.length} 部 ${chapters.length} 章、${topics.length} 篇概念与实践专题、${appendices.length} 份附录梳理全书结构，支持顺读、按问题速查或从经典案例倒推。`}
     >
       <div className={styles.root}>
-        {/* A. 8-Part Roadmap */}
+        {/* A. Part Roadmap */}
         <section className={styles.sectionBlock} aria-labelledby="guide-roadmap">
           <div className={styles.sectionHeader}>
-            <h2 id="guide-roadmap">八部逻辑主线</h2>
-            <p className={styles.sectionMeta}>全书 {chapters.length} 章 · 5 篇专题 · 5 份附录</p>
+            <h2 id="guide-roadmap">全书逻辑主线（共 {readerParts.length} 部）</h2>
+            <p className={styles.sectionMeta}>全书 {chapters.length} 章 · {topics.length} 篇专题 · {appendices.length} 份附录</p>
           </div>
           <ol className={styles.roadmapGrid}>
             {partGroups.map(({ part, rangeLabel, coreQuestion }) => (
@@ -315,10 +319,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </ol>
         </section>
 
-        {/* B1. 3 Reading Modes */}
+        {/* B1. Reading Modes */}
         <section className={styles.sectionBlock} aria-labelledby="guide-modes" data-guide-section="modes">
           <div className={styles.sectionHeader}>
-            <h2 id="guide-modes">三种阅读路径</h2>
+            <h2 id="guide-modes">阅读路径</h2>
             <p className={styles.sectionMeta}>同一套案例与文献依据，按需选择切入方式</p>
           </div>
           <div className={styles.modesGrid}>
@@ -342,11 +346,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </section>
 
-        {/* B2. 6 Problem-First Entries */}
+        {/* B2. Problem-First Entries */}
         <section id="problem-routes" className={styles.sectionBlock} aria-labelledby="guide-problems" data-guide-section="problems">
           <div className={styles.sectionHeader}>
             <h2 id="guide-problems">按实务问题速查</h2>
-            <p className={styles.sectionMeta}>六类高频建模、评价与审查问题直达入口</p>
+            <p className={styles.sectionMeta}>高频建模、评价与审查问题直达入口</p>
           </div>
           <div className={styles.problemGrid}>
             {readerGuideConfig.problemRoutes.map(prob => (
@@ -388,11 +392,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </section>
 
-        {/* D. 8 Parts / Chapters */}
+        {/* D. Parts / Chapters */}
         <section className={styles.sectionBlock} aria-labelledby="guide-chapters" data-guide-section="chapters">
           <div className={styles.sectionHeader}>
             <h2 id="guide-chapters">正文章节</h2>
-            <p className={styles.sectionMeta}>八部 {chapters.length} 章，网页与书籍打印版逐章对应</p>
+            <p className={styles.sectionMeta}>共 {readerParts.length} 部 {chapters.length} 章，分章网页与全书连续版逐章对应</p>
           </div>
           {partGroups.map(({ part, chapters: partChapters, rangeLabel }) => (
             <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
@@ -449,7 +453,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <section className={styles.sectionBlock} aria-labelledby="guide-topics" data-guide-section="topics">
           <div className={styles.sectionHeader}>
             <h2 id="guide-topics">概念与实践专题</h2>
-            <p className={styles.sectionMeta}>5 篇独立深挖专题，配合正文辨析核心概念与软件语义</p>
+            <p className={styles.sectionMeta}>{topics.length} 篇独立专题，配合正文辨析核心概念与软件语义</p>
           </div>
           <ul className={styles.cardGrid} data-guide-topics-list="">
             {topics.map(unit => {
@@ -474,8 +478,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {/* F. Appendices */}
         <section className={styles.sectionBlock} aria-labelledby="guide-appendices" data-guide-section="appendices">
           <div className={styles.sectionHeader}>
-            <h2 id="guide-appendices">复核与大事记附录</h2>
-            <p className={styles.sectionMeta}>附录 A–E：算例方程重建、因子复算与 1969–2026 发展大事记</p>
+            <h2 id="guide-appendices">附录</h2>
+            <p className={styles.sectionMeta}>附录 {appendixRange}：算例方程重建、因子复算与发展大事记</p>
           </div>
           <ol className={styles.cardGrid} data-guide-appendices-list="">
             {appendices.map(unit => {
@@ -498,8 +502,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {/* G. Tools */}
         <section className={styles.sectionBlock} aria-labelledby="guide-tools" data-guide-section="tools">
           <div className={styles.sectionHeader}>
-            <h2 id="guide-tools">交叉检索与出版工具</h2>
-            <p className={styles.sectionMeta}>从正文论述一键溯源至一手文献、术语定义与历次修订记录</p>
+            <h2 id="guide-tools">参考与检索</h2>
+            <p className={styles.sectionMeta}>从正文注释直达原始文献、术语定义与修订记录</p>
           </div>
           <ul className={styles.cardGrid}>
             {readerGuideConfig.tools.map(tool => (

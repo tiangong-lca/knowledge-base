@@ -11,6 +11,8 @@ export function ZhHomePage() {
   const units = getPresentationUnits('web');
   const chapters = units.filter(unit => unit.kind === 'chapter');
   const topics = units.filter(unit => unit.kind === 'topic');
+  const appendices = units.filter(unit => unit.kind === 'appendix');
+  const appendixRange = appendices.length > 1 ? `A–${String.fromCharCode(64 + appendices.length)}` : 'A';
   return (
     <main id="main-content">
       <section className="home-intro">
@@ -97,7 +99,7 @@ export function ZhHomePage() {
       <section className="reading-section">
         <div className="section-heading">
           <h2>概念与实践专题</h2>
-          <Link href="/zh/coverage/#guide-appendices">查看附录 A–E</Link>
+          <Link href="/zh/coverage/#guide-appendices">查看附录 {appendixRange}</Link>
         </div>
         <div className="chapter-list">
           {topics.map(unit => {
@@ -122,24 +124,24 @@ export function ZhHomePage() {
         <div>
           <h2>从论述回到出处</h2>
           <p>
-            章末注释列出文献、原文位置与适用条件。遇到同名概念、方法分歧或不同版本时，可以沿引文进一步比较，或按时间线与导览回看关键节点。
+            章末注释列出原始文献、具体位置与适用条件。遇到同名概念、方法分歧或不同版本时，可沿引文进一步对照，或通过大事记与全书导览回看关键节点。
           </p>
         </div>
         <div className="overview-links">
           <Link href="/zh/coverage/">
-            {UI_SURFACES.bookGuide.zh}<span>八部主线、三种路径与六条问题入口</span>
+            {UI_SURFACES.bookGuide.zh}<span>{readerParts.length} 部主线、多种阅读路径与按问题速查</span>
           </Link>
           <Link href="/zh/timeline/">
-            {UI_SURFACES.timeline.zh}<span>1969–2026 可视化时间线与一手来源核验</span>
+            {UI_SURFACES.timeline.zh}<span>1969–2026 关键节点与原始文献脉络</span>
           </Link>
           <Link href="/zh/research/">
-            {UI_SURFACES.references.zh}<span>原始书目与逐条引文位置</span>
+            {UI_SURFACES.references.zh}<span>全书引用的原始书目与逐条出处位置</span>
           </Link>
           <Link href="/zh/concepts/">
-            {UI_SURFACES.conceptIndex.zh}<span>术语定义与英文原词</span>
+            {UI_SURFACES.conceptIndex.zh}<span>核心术语定义、英文原词与跨体系辨析</span>
           </Link>
           <Link href="/zh/claims/">
-            {UI_SURFACES.chapterNotes.zh}<span>全书章末注释、前提依赖与适用条件</span>
+            {UI_SURFACES.chapterNotes.zh}<span>全书章末注释、前提关系与适用条件</span>
           </Link>
           <Link href="/zh/changes/">
             {UI_SURFACES.revisionsErrata.zh}<span>读者可见修订与勘误入口</span>

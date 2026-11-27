@@ -4,6 +4,7 @@ import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { EnChapterContent } from '@/components/en-chapter-content';
 import { formatEnBibliographicText } from '@/lib/en-citation-format';
 import { PublicationNote } from '@/components/publication-note';
+import { getBuildIdentity } from '@/lib/build-identity';
 import catalog from '@/lib/catalog';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
 import { getLegacyCitations, getPrintPages, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
@@ -96,26 +97,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       );
     };
 
+    const { textDate } = getBuildIdentity();
     return (
       <PublicationShell
         lang="en"
         title="The Past and Present of Life Cycle Assessment"
-        description="Complete continuous reading and print edition. Arranged by part and chapter, followed by topical essays, appendices, and primary references."
+        description="Complete continuous reading and print edition, arranged by part and chapter, followed by topical essays, appendices, and references."
       >
         <div className="print-controls">
           <PrintButton label="Print or Save as PDF" />
           <p>
-            The English web chapters and continuous print edition follow the same {enUnits.filter(u => u.kind === 'chapter').length}-chapter numbering. See the{' '}
-            <Link href="/en/coverage/">Book Guide</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
+            The web chapters and continuous print edition follow the same {enUnits.filter(u => u.kind === 'chapter').length}-chapter numbering. See the{' '}
+            <Link href="/en/coverage/">{UI_SURFACES.bookGuide.en}</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
           </p>
         </div>
         <section className="print-preface" aria-labelledby="en-editorial-note">
           <h2 id="en-editorial-note">Editorial Note</h2>
           <p>
-            This continuous print edition assembles the complete meaning-equivalent English monograph—front matter, all {readerParts.length} parts ({enUnits.filter(u => u.kind === 'chapter').length} chapters), {enTopics.length} topical essays, {enAppendices.length} appendices, and primary references—under the same chapter and section numbering used in the web edition.
+            <em>The Past and Present of Life Cycle Assessment</em> online edition, <time dateTime={textDate}>{textDate}</time>. Publication years and specific editions of cited works are recorded in chapter-end notes.
           </p>
           <p>
-            All cross-framework comparisons, numerical reconstructions, and database analyses rest on inspected primary reports, peer-reviewed studies, and official technical specifications. Copyrighted standards and proprietary database internals are explicitly bounded where full texts are not publicly held; automated validation checks structure and traceability rather than conferring independent scientific certification.
+            Each chapter examines its question against specific inspected sections or passages of named primary works. Citing a publication does not imply that the entire document was read or that all of its conclusions are adopted. Uninspected sections and paywalled originals are never used as support; exact scopes and caveats appear in chapter-end notes.
+          </p>
+          <p>
+            In the notes, <em>Source statement</em> reports a cited source, <em>Interpretation</em> clarifies meaning, <em>Calculation</em> shows explicit derivations, <em>Synthesis</em> links multiple premises, and <em>Analytical proposal</em> marks a practice suggested by the author. <em>Validity scope</em> bounds the main-text claim, <em>Context</em> provides background, and <em>Premises referenced</em> points to earlier notes relied upon in a derivation.
+          </p>
+          <p>
+            Source verification was assisted by AI, and editorial review does not constitute independent peer review by external domain experts. Worked teaching cases clearly separate constructed inputs from externally sourced values and do not establish real-world product rankings, regulatory compliance, or third-party certification.
           </p>
         </section>
         <nav aria-label="Book Contents" className="reader-book-contents">
