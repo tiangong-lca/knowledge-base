@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "unitId": "phase1d-bibliography-and-notes-313",
+  "issue": "tiangong-lca/knowledge-base#313",
+  "reviewedAt": "2026-11-27",
+  "reviewKind": "agent-source-check",
+  "scientificApproval": false,
+  "scope": "Phase 1D: Human-authored English bibliography overlay (knowledge/editions/en/bibliography.json), removal of runtime CJK regex substitution in lib/en-citation-format.ts, fail-closed English bibliography validation, 1-based PDF/NEPIS/notebook pagination display across Chinese and English surfaces, removal of internal preservation metadata from public /sources/, and addition of claim-kind and relation badges to English chapter-end notes.",
+  "checks": [
+    "Authored 267 source entries, 1,126 evidence locators, and 1,190 reading passages in knowledge/editions/en/bibliography.json with 0 CJK script leaks, 0 fullwidth CJK punctuation leaks, and 0 zero-based index leaks across all 327 sources, 1,224 evidence records, and 1,392 reading passages.",
+    "Removed SAFE_PHRASE_MAP regex substitution from lib/en-citation-format.ts and added fail-closed validateEnBibliography in scripts/validate.mjs plus unit tests in scripts/reader-citation-display.test.mjs.",
+    "Converted all 235 zero-based Chinese/English index expressions to 1-based reader pagination via formatZhReaderLocator while preserving internal 0-based pdfIndices verification records.",
+    "Removed source.preservation (SHA-256 and private archive notes) from public /zh/sources/ rendering.",
+    "Added EN_CLAIM_KINDS and EN_EVIDENCE_RELATIONS labels to English chapter-end notes in components/en-chapter-content.tsx matching /en/claims/ and Chinese chapter notes."
+  ],
+  "blockingIssues": []
+}

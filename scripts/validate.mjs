@@ -23,6 +23,7 @@ import { currentRevisions } from './reader-checkpoint.mjs';
 import { isRouteRevised, validateRouteChangesAgainstOutput } from './reader-revisions.mjs';
 import { validateTimelineData } from './reader-timeline.mjs';
 import { validatePublicRevisions } from './reader-public-revisions.mjs';
+import { validateEnBibliography } from './reader-citation-display.mjs';
 import { validateReaderGuideConfig } from './reader-guide.mjs';
 import { detectInternalDraftChapterNumbers } from './reader-quality-lint.mjs';
 import { validateBilingualEditions } from './reader-bilingual.mjs';
@@ -187,6 +188,8 @@ async function validatePublication(root, requireCurrent) {
       if (!numbering) throw new Error('Current reader publication requires its independently pinned reader-numbering.json');
       errors.push(...validateReaderNumberingSources(numbering,sources,edition));
       errors.push(...validatePublicRevisions());
+      const enBib = await readOptional('knowledge/editions/en/bibliography.json');
+      errors.push(...validateEnBibliography(data, readings, enBib));
       const missingWall = [['original',wallOriginal],['heading-history',wallHeadings],['accepted',wallAccepted]].filter(([,value])=>!value).map(([name])=>`wall-selection-${name}.json`);
       if (missingWall.length) throw new Error(`Book edition requires its wall original, captured headings and final selection; missing: ${missingWall.join(', ')}`);
       assertWallSelectionOriginal(wallOriginal); assertWallSelectionHeadingHistory(wallHeadings);

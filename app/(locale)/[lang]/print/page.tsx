@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { EnChapterContent } from '@/components/en-chapter-content';
-import { formatEnBibliographicText } from '@/lib/en-citation-format';
+import { formatZhReaderLocator, getEnSourcePublisher, getEnSourceTitle, getEnSourceVersion } from '@/lib/en-citation-format';
 import { PublicationNote } from '@/components/publication-note';
 import { getBuildIdentity } from '@/lib/build-identity';
 import catalog from '@/lib/catalog';
@@ -178,8 +178,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <h2>References</h2>
             {catalog.sources.map(item => (
               <div className="evidence-item" key={item.id}>
-                <strong>{item.title}</strong>
-                <p>{formatEnBibliographicText(item.publisher)}. {formatEnBibliographicText(item.version)}.</p>
+                <strong>{getEnSourceTitle(item)}</strong>
+                <p>{getEnSourcePublisher(item)}. {getEnSourceVersion(item)}.</p>
                 <a href={item.url} rel="noreferrer">Source link</a>
               </div>
             ))}
@@ -260,7 +260,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>)}
       <section className="print-part"><h2 data-reader-book-notes-heading="body">{bookTopicPresentation.title}</h2>{topics.map(article)}</section>
       <section className="print-part"><h2>附录</h2>{appendices.map(article)}</section>
-      <section className="print-chapter" id="print-references"><h2>参考文献</h2>{catalog.sources.map(item=><div className="evidence-item" key={item.id}><strong>{item.title}</strong><p>{item.publisher}。{item.version}。</p><a href={item.url}>文献链接</a></div>)}</section>
+      <section className="print-chapter" id="print-references"><h2>参考文献</h2>{catalog.sources.map(item=><div className="evidence-item" key={item.id}><strong>{item.title}</strong><p>{item.publisher}。{formatZhReaderLocator(item.version)}。</p><a href={item.url}>文献链接</a></div>)}</section>
     </div>
   </PublicationShell>;
 }

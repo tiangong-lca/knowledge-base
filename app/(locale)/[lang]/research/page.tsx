@@ -3,7 +3,14 @@ import { notFound } from 'next/navigation';
 import catalog from '@/lib/catalog';
 import { PublicationShell } from '@/components/publication-shell';
 import { ReferencesTabs } from '@/components/references-tabs';
-import { formatEnBibliographicText } from '@/lib/en-citation-format';
+import {
+  formatZhReaderLocator,
+  getEnPassageLocator,
+  getEnPassagePrintedPages,
+  getEnSourcePublisher,
+  getEnSourceTitle,
+  getEnSourceVersion,
+} from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import rawMap from '@/knowledge/research/literature-map.json';
@@ -55,19 +62,24 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
             <article className="source-record" key={source.id} id={source.id} style={{ overflowWrap: 'anywhere' }}>
               {firstWork && <span id={work.id} />}
               {firstReading && <span id={reading.id} />}
-              <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
-              <p>{formatEnBibliographicText(source.publisher)}. {formatEnBibliographicText(source.version)}.</p>
-              <p><Link href={`/en/sources/#${source.id}`}>Citation locators &amp; linked claims</Link></p>
+              <h2><a href={source.url} rel="noreferrer">{getEnSourceTitle(source)}</a></h2>
+              <p>{getEnSourcePublisher(source)}. {getEnSourceVersion(source)}.</p>
+              <p><Link href={`/en/sources/#${source.id}`}>Citation locators &amp; linked notes</Link></p>
               {firstReading && (
                 <details>
-                  <summary>Verified sections &amp; pages ({reading.passages.length})</summary>
+                  <summary>Cited sections &amp; pages ({reading.passages.length})</summary>
                   <ul>
-                    {reading.passages.map(passage => (
-                      <li key={passage.id} id={passage.id}>
-                        {formatEnBibliographicText(passage.locator)}
-                        {'printedPages' in passage && passage.printedPages && <>, {formatEnBibliographicText(passage.printedPages)}</>}
-                      </li>
-                    ))}
+                    {reading.passages.map(passage => {
+                      const printed = 'printedPages' in passage && passage.printedPages
+                        ? getEnPassagePrintedPages({ id: passage.id, printedPages: passage.printedPages })
+                        : '';
+                      return (
+                        <li key={passage.id} id={passage.id}>
+                          {getEnPassageLocator(passage)}
+                          {printed && <>, {printed}</>}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </details>
               )}
@@ -90,9 +102,9 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
       return <article className="source-record" key={source.id} id={source.id}>
         {firstWork && <span id={work.id} />}
         {firstReading && <span id={reading.id} />}
-        <h2><a href={source.url}>{source.title}</a></h2><p>{source.publisher}。{source.version}。</p>
+        <h2><a href={source.url}>{source.title}</a></h2><p>{source.publisher}。{formatZhReaderLocator(source.version)}。</p>
         <p><Link href={`/zh/sources/#${source.id}`}>引文位置与相关论述</Link></p>
-        {firstReading && <details><summary>引用章节与页码</summary><ul>{reading.passages.map(passage => <li key={passage.id} id={passage.id}>{passage.locator}{'printedPages' in passage && passage.printedPages && <>，{passage.printedPages}</>}</li>)}</ul></details>}
+        {firstReading && <details><summary>引用章节与页码</summary><ul>{reading.passages.map(passage => <li key={passage.id} id={passage.id}>{formatZhReaderLocator(passage.locator)}{'printedPages' in passage && passage.printedPages && <>，{formatZhReaderLocator(passage.printedPages)}</>}</li>)}</ul></details>}
       </article>;
     })}
   </PublicationShell>;

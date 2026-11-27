@@ -8,6 +8,7 @@ import { readerPublicDownloads } from './reader-current-output.mjs';
 import { readerInternalIds, validateReaderOutput } from './reader-surface.mjs';
 import { loadCasePublications, validateCasePublications, canonicalCaseInput, caseEvaluationReceipt } from './case-publication.mjs';
 import { getPresentationUnits } from './reader-numbering.mjs';
+import { getEnSourcePublisher, getEnSourceTitle } from './reader-citation-display.mjs';
 import { validateRepository } from './validate.mjs';
 
 export function renderRedirectHtml(entry, origin = 'https://prism.tiangong.earth') {
@@ -173,6 +174,9 @@ export async function exportArtifacts(validateSource, validateOutput) {
   const enClaimsDoc = existsSync('knowledge/editions/en/claims.json')
     ? JSON.parse(readFileSync('knowledge/editions/en/claims.json', 'utf8'))
     : { claims: [] };
+  const enBibDoc = existsSync('knowledge/editions/en/bibliography.json')
+    ? JSON.parse(readFileSync('knowledge/editions/en/bibliography.json', 'utf8'))
+    : { schemaVersion: 1, sources: {}, evidence: {}, passages: {} };
   const formatConceptEn = (s) => (s || '').replace(/\bthe1974container\b/g, 'the 1974 container').replace(/\bthe1974REPA\b/g, 'the 1974 REPA');
   const zhSearchIndex = [
     {
@@ -196,7 +200,7 @@ export async function exportArtifacts(validateSource, validateOutput) {
     ...readMdxMeta('content-en/docs', '/en/docs').map(p => ({ ...p, kind: 'Chapter' })),
     ...(enClaimsDoc.claims || []).map(c => ({ title: c.text, text: c.scope || '', url: `/en/claims/#${c.id}`, kind: 'Note' })),
     ...published.concepts.map(c => ({ title: formatConceptEn(c.english || c.label), text: formatConceptEn(c.english || ''), url: `/en/concepts/#${c.id}`, kind: 'Concept' })),
-    ...published.sources.map(s => ({ title: s.title, text: s.publisher || '', url: `/en/sources/#${s.id}`, kind: 'Source' })),
+    ...published.sources.map(s => ({ title: getEnSourceTitle(s, enBibDoc), text: getEnSourcePublisher(s, enBibDoc), url: `/en/sources/#${s.id}`, kind: 'Source' })),
   ];
   writeFileSync('out/downloads/search-index-zh.json', JSON.stringify(zhSearchIndex));
   writeFileSync('out/downloads/search-index-en.json', JSON.stringify(enSearchIndex));

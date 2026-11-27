@@ -46,6 +46,11 @@ export interface TimelineMilestone {
 }
 
 const sourceTitleMap = new Map(catalog.sources.map(s => [s.id, s.title]));
+const enTimelineSourceOverrides: Record<string, string> =
+  ('sourceTitles' in rawTimelineEn ? (rawTimelineEn.sourceTitles as Record<string, string>) : {});
+const enSourceTitleMap = new Map(
+  catalog.sources.map(s => [s.id, enTimelineSourceOverrides[s.id] ?? s.title]),
+);
 
 export const TIMELINE_ERAS: TimelineEra[] = rawTimeline.eras as TimelineEra[];
 export const TIMELINE_TRACKS: TimelineTrack[] = rawTimeline.tracks as TimelineTrack[];
@@ -87,7 +92,10 @@ export const TIMELINE_MILESTONES_EN: TimelineMilestone[] = rawTimelineEn.milesto
     status: m.status as TimelineStatus,
     verificationNote: 'verificationNote' in m ? (m.verificationNote as string | undefined) : undefined,
     pendingNote: 'pendingNote' in m ? (m.pendingNote as string | undefined) : undefined,
-    sources: zh?.sources ?? [],
+    sources: (zh?.sources ?? []).map(s => ({
+      id: s.id,
+      title: enSourceTitleMap.get(s.id) ?? s.title,
+    })),
     claimIds: zh?.claimIds ?? [],
     chapters: m.chapters,
   };

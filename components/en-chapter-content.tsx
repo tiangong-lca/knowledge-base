@@ -1,11 +1,18 @@
 import Link from 'next/link';
-import catalog from '@/lib/catalog';
+import catalog, { getClaimEvidence } from '@/lib/catalog';
 import enClaimsFile from '@/knowledge/editions/en/claims.json';
 import enNotesFile from '@/knowledge/editions/en/notes.json';
 import { getMDXComponents } from '@/mdx-components';
 import { TeachingCase } from '@/components/teaching-case';
 import { LcaTimeline } from '@/components/lca-timeline';
-import { formatEnBibliographicText, formatEnConceptTitle } from '@/lib/en-citation-format';
+import {
+  EN_CLAIM_KINDS,
+  EN_EVIDENCE_RELATIONS,
+  formatEnConceptTitle,
+  getEnEvidenceLocator,
+  getEnSourceTitle,
+  getEnSourceVersion,
+} from '@/lib/en-citation-format';
 import { NumberedTitle } from '@/components/numbered-heading';
 import { getEnSectionPrefix, getUnitNumbering } from '@/lib/reader-numbering';
 import type { ReaderPage } from '@/lib/reader-book';
@@ -112,7 +119,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
   function EnSourceRef({ id }: { id: string }) {
     const source = catalogSources.get(id);
     if (!source) throw new Error(`Unknown source: ${id}`);
-    return <Link href={`/en/sources/#${id}`}>{source.title}</Link>;
+    return <Link href={`/en/sources/#${id}`}>{getEnSourceTitle(source)}</Link>;
   }
 
   function EnConceptRef({ id }: { id: string }) {
@@ -224,19 +231,24 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
             {noteOrder.map(id => {
               const canonical = catalogClaims.get(id)!;
               const enClaim = enClaimsMap[id]!;
+              const claimEvidence = getClaimEvidence(catalog, canonical);
               return (
                 <li key={id} id={`${noteAnchorPrefix}${id}`} data-en-claim={id}>
-                  {enClaim.scope && <p><strong>Scope:</strong> {enClaim.scope}</p>}
-                  {canonical.evidenceIds.length > 0 && (
+                  <p>
+                    <strong>{EN_CLAIM_KINDS[canonical.kind]}.</strong>{' '}
+                    {enClaim.scope ?? ''}
+                  </p>
+                  {claimEvidence.length > 0 && (
                     <ul>
-                      {canonical.evidenceIds.map(evId => {
-                        const ev = catalogEvidence.get(evId);
-                        const src = ev ? catalogSources.get(ev.sourceId) : undefined;
-                        if (!ev || !src) return null;
+                      {claimEvidence.map(({ evidence: ev, relation }) => {
+                        const src = catalogSources.get(ev.sourceId);
+                        if (!src) return null;
+                        const ver = getEnSourceVersion(src);
                         return (
-                          <li key={evId}>
-                            <Link href={`/en/sources/#${evId}`}>{src.title}</Link>
-                            {src.version ? ` (${formatEnBibliographicText(src.version)})` : ''} — {formatEnBibliographicText(ev.locator)}
+                          <li key={ev.id}>
+                            <Link href={`/en/sources/#${ev.id}`}>{getEnSourceTitle(src)}</Link>
+                            {ver ? ` (${ver})` : ''} — {getEnEvidenceLocator(ev)}
+                            {relation !== 'supports' && <span> ({EN_EVIDENCE_RELATIONS[relation]})</span>}
                           </li>
                         );
                       })}
