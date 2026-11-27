@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { currentRevisions } from './reader-checkpoint.mjs';
 import { getPresentationUnits } from './reader-numbering.mjs';
+import { extractRouteChanges } from './reader-revisions.mjs';
 
 function readOptionalJson(relPath, fallback) {
   const url = new URL(relPath, import.meta.url);
@@ -16,7 +17,7 @@ const HAN_RE = /\p{Script=Han}/u;
 const FORBIDDEN_ZH_PUBLIC_CHANGES = /本轮|试点|批次\s*\d|回读|统稿|核读记录|待核|cl-[a-z0-9-]+|ev-[a-z0-9-]+|src-[a-z0-9-]+|B\d{2}\b|WP\d+\b|READER_EDITORIAL_HISTORY/i;
 const FORBIDDEN_EN_PUBLIC_CHANGES = /\b(?:batch\s+\d|pilot|reread|copyedit pass|PR #\d+|issue #\d+|cl-[a-z0-9-]+|ev-[a-z0-9-]+|src-[a-z0-9-]+|B\d{2}\b|WP\d+\b|READER_EDITORIAL_HISTORY)\b/i;
 
-function buildRouteResolver(units = getPresentationUnits('web')) {
+function buildRouteResolver(units = getPresentationUnits('web'), revisions = currentRevisions ?? []) {
   const byKey = new Map();
   const appendixOrder = units.filter(u => u.kind === 'appendix');
   const topicOrder = units.filter(u => u.kind === 'topic');
@@ -24,9 +25,22 @@ function buildRouteResolver(units = getPresentationUnits('web')) {
     byKey.set(unit.key, unit);
   }
   const enMeta = alignmentFile?.units ?? {};
+  const { fromToMap } = extractRouteChanges(revisions);
+
+  const followRedirect = route => {
+    let cur = route.replace(/\/$/, '');
+    const seen = new Set([cur]);
+    while (!byKey.has(cur) && fromToMap.has(cur)) {
+      const next = (fromToMap.get(cur)?.to ?? '').replace(/\/$/, '');
+      if (!next || seen.has(next)) break;
+      seen.add(next);
+      cur = next;
+    }
+    return cur;
+  };
 
   return route => {
-    const clean = route.replace(/\/$/, '');
+    const clean = followRedirect(route);
     const unit = byKey.get(clean);
     const enTitle = enMeta[clean]?.enTitle ?? unit?.title ?? clean;
     if (!unit) {
@@ -76,7 +90,17 @@ export function buildPublicRevisionsAndErrata({
   revisions = currentRevisions ?? [],
   units = getPresentationUnits('web'),
 } = {}) {
-  const resolveRoute = buildRouteResolver(units);
+  const resolveRoute = buildRouteResolver(units, revisions);
+  const dedupeRoutes = list => {
+    const seen = new Set();
+    const out = [];
+    for (const r of list.map(resolveRoute)) {
+      if (seen.has(r.route)) continue;
+      seen.add(r.route);
+      out.push(r);
+    }
+    return out;
+  };
   const combined = [];
   const seenIds = new Set();
 
@@ -93,7 +117,7 @@ export function buildPublicRevisionsAndErrata({
       kind: pub.kind,
       title: pub.title,
       summary: pub.summary,
-      routes: (pub.routes ?? rev.routes ?? []).map(resolveRoute),
+      routes: dedupeRoutes(pub.routes ?? rev.routes ?? []),
     });
   }
 
@@ -106,7 +130,7 @@ export function buildPublicRevisionsAndErrata({
       kind: entry.kind,
       title: entry.title,
       summary: entry.summary,
-      routes: (entry.routes ?? []).map(resolveRoute),
+      routes: dedupeRoutes(entry.routes ?? []),
     });
   }
 

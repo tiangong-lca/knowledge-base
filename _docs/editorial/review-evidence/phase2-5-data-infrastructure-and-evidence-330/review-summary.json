@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase2-5-data-infrastructure-and-evidence-330",
+  "issue": "tiangong-lca/knowledge-base#330",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "reviewType": "dual-independent-subagent-audit",
+  "reviewers": [
+    {
+      "role": "Primary-Source & Premise-DAG Auditor",
+      "subagentId": "380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "initialVerdict": "FAIL (8 blocking findings)",
+      "finalDisposition": "ALL_RESOLVED"
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "subagentId": "86cbcc66-853a-42d0-b693-0a4803815705",
+      "initialVerdict": "BLOCKED (5 blocking findings)",
+      "finalDisposition": "ALL_RESOLVED"
+    }
+  ],
+  "blockingFindingsResolved": [
+    {
+      "id": "P25-B1",
+      "source": "86cbcc66-853a-42d0-b693-0a4803815705",
+      "summary": "Inline <Claim> tags in Ch. 29 (§29.3–29.4) and Ch. 30 produced nested <p><p>...</p></p> HTML and verbatim paragraph duplication in both ZH and EN web/print builds.",
+      "resolution": "Migrated Ch. 29 §29.3–29.4 and all of Ch. 30 (ZH & EN) to block-level <Prose ids=\"...\" /> matching the rest of the monograph, folding distinct audit details (LCIA method IDs, dry/wet basis factors) into cl-db30-mandatory-mapping-audit-disclosure and eliminating CommonMark CJK bold leaks and list-count mismatches."
+    },
+    {
+      "id": "P25-B2",
+      "source": "86cbcc66-853a-42d0-b693-0a4803815705 & 380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "summary": "Raw Markdown delimiters (**bold**, *italic*, `code`) leaked visibly into live HTML across cl-db28-software-handling-and-co-validation (ZH/EN), cl-db28-stoichiometry-unit-sign-traps.caveats (EN), and 8 active Part VI EN claims.",
+      "resolution": "Stripped all literal **, *, and backtick tokens from cl-db28-software-handling-and-co-validation (ZH/EN), cl-db28-stoichiometry-unit-sign-traps.caveats (EN), and all 8 Part VI EN claims (cl-dapp147-*, cl-db2011-conditional-use, cl-book-unc-bridge, cl-unc-*, cl-dqp-paywalled-iso-boundary), and eliminated CommonMark bold wrappers in Ch. 29–30 MDX."
+    },
+    {
+      "id": "P25-B3",
+      "source": "86cbcc66-853a-42d0-b693-0a4803815705",
+      "summary": "EN Chapter 28 title contained a colon ('Background Databases: Evolution and Methodological Divergences').",
+      "resolution": "Renamed consistently across all 6 lockstep files to 'Background Database Evolution and Methodological Divergences'."
+    },
+    {
+      "id": "P25-B4",
+      "source": "86cbcc66-853a-42d0-b693-0a4803815705 & 380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "summary": "Stale 'Part VII' / '第七部', old Part title 'Data and Evidence', and draft chapter numbers ('第 27/28/29 章' / 'Chapter 28') survived in reader-facing scope/caveats and internal reasoning fields.",
+      "resolution": "Updated scope, caveats, and reasoning in both ZH and EN across cl-db30-part6-to-part7-bridge, cl-db29-technosphere-to-formats-bridge, cl-gs23-foreground-data-hierarchies, cl-db30-glad-and-fedefl-mapping-hubs, cl-book-cost-decision, cl-dqp-cross-chapter-bridge, cl-db27-method-divergence-bridge, cl-db27-same-product-different-scores, cl-db29-*, cl-db30-three-tier-interoperability-redlines, and cl-unc149-pedigree-mc-boundary."
+    },
+    {
+      "id": "P25-B5",
+      "source": "86cbcc66-853a-42d0-b693-0a4803815705",
+      "summary": "ZH typo ('本土与境外形态拆分' instead of '影响拆分') and stale pre-merge scope/caveats on consolidated cl-db26-eeio-and-social-dbs (still citing dropped Eora/GLORIA) and cl-db26-uslci-flcac.",
+      "resolution": "Corrected ZH text to '本土与境外影响拆分' and updated ZH/EN scope, caveats, and reasoning on both consolidated claims to match their merged coverage."
+    },
+    {
+      "id": "P25-B6",
+      "source": "380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "summary": "Unbacked ELCD '2018' / 'June 2018' discontinuation date in Ch. 28 Table 1 and unbacked 'EU-27+3' in Ch. 28 Table 2.",
+      "resolution": "Aligned Ch. 28 Table 1 (ZH & EN) with cl-db26-ef-and-elcd ('no longer maintained; historical archive only') without an unverified date, and replaced 'EU-27+3' in Table 2 with verified wording ('European and major global trade geographies bound to official EF location codes')."
+    },
+    {
+      "id": "P25-B7",
+      "source": "380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "summary": "Unsupported '95%+' mandatory zero-characterization audit threshold and unbacked Brightway/SimaPro software-behavior claims in cl-db28-software-handling-and-co-validation and Ch. 29 Table 1.",
+      "resolution": "Removed the unbacked 95%+ threshold and uninspected Brightway/SimaPro claims from both ZH/EN claim prose and Ch. 29 Table 1, anchoring software handling strictly to inspected openLCA FlowMap, ILCD 2010 §8.2, and UNEP GLAD WG1 documentation."
+    },
+    {
+      "id": "P25-B8",
+      "source": "380caa06-fb6f-4f97-a8e7-a69592ae6bde",
+      "summary": "Misattributed supports link on cl-db27-capital-goods-asymmetry pointing to ev-db26-frischknecht-2005-v1 (which does not mention capital goods/infrastructure), plus stray ev-db26-tidas-open-spec on cl-db27-market-electricity-transport-modeling and IDEA/PM2.5-10 wording precision.",
+      "resolution": "Attached verified public-passages-inspected ev-hyb175-ecoinvent-completeness (src-dapp147-ecoinvent-v3-2013) as supports on cl-db27-capital-goods-asymmetry, replaced stray TIDAS link with verified ev-mkt169-pef-electricity on cl-db27-market-electricity-transport-modeling, tightened IDEA attribution to AIST without uninspected internal-table claims, and clarified EF 3.1 PM2.5–10 uncharacterized status and 0.23x PM2.5 multiplier for total PM10."
+    }
+  ],
+  "notes": "Editorial and primary-source verification only; does not establish independent domain-expert scientific endorsement."
+}

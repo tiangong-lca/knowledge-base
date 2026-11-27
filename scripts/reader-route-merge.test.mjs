@@ -9,6 +9,9 @@ import {
   validateRevisionSchema,
   validateRouteChangesAgainstOutput,
 } from './reader-revisions.mjs';
+import { renderRedirectHtml } from './export.mjs';
+import { buildPublicRevisionsAndErrata } from './reader-public-revisions.mjs';
+import { validateReadableBookReviewedOutput } from './reader-current-output.mjs';
 
 const sha256 = text => createHash('sha256').update(Buffer.from(text, 'utf8')).digest('hex');
 
@@ -526,4 +529,68 @@ test('split routeChanges with retainedSelf and claimRoutes converts web alias to
   // Unlisted claim stays untouched on primary route
   assert.equal(remapped[2].mode, 'alias');
   assert.equal(remapped[2].targets[0].route, '/docs/book/midpoint-endpoint-value-choices');
+});
+
+test('renderRedirectHtml emits localized English HTML with defaultAnchor fallback and zero CJK', () => {
+  const html = renderRedirectHtml({
+    from: '/en/docs/book/database-methodological-divergences',
+    to: '/en/docs/book/lca-database-landscape-and-history',
+    lang: 'en',
+    title: 'Background Database Evolution and Methodological Divergences',
+    defaultAnchor: 'system-models-and-aggregation-depth',
+    anchors: { 'old-sec': 'system-models-and-aggregation-depth' },
+  });
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /Continue to Background Database Evolution and Methodological Divergences/);
+  assert.match(html, /#system-models-and-aggregation-depth/);
+  assert.equal(/\p{Script=Han}/u.test(html), false);
+});
+
+test('buildPublicRevisionsAndErrata resolves retired chapter routes to successor chapters and deduplicates chips', () => {
+  const units = [
+    { key: '/docs/book/db-merged', source: '/docs/book/db-merged', kind: 'chapter', ordinal: 28, title: '合并背景库章' },
+  ];
+  const revisions = [
+    {
+      id: 'rev-retire-db',
+      routeChanges: [
+        { op: 'retire-unit', route: '/docs/book/db-old', successor: '/docs/book/db-merged', successorAnchor: '#sec', rationale: '合并入主章。' },
+      ],
+    },
+  ];
+  const entries = [
+    {
+      id: 'pub-test',
+      date: '2026-11-28',
+      kind: 'addition',
+      routes: ['/docs/book/db-merged', '/docs/book/db-old'],
+      title: { zh: '新增背景库内容', en: 'Added background database content' },
+      summary: { zh: '正文增补。', en: 'Content added.' },
+    },
+  ];
+  const out = buildPublicRevisionsAndErrata({ entries, revisions, units });
+  assert.equal(out.all.length, 1);
+  assert.equal(out.all[0].routes.length, 1);
+  assert.equal(out.all[0].routes[0].route, '/docs/book/db-merged');
+  assert.equal(out.all[0].routes[0].exists, true);
+  assert.equal(out.all[0].routes[0].zhLabel, '第 28 章《合并背景库章》');
+});
+
+test('validateReadableBookReviewedOutput skips retired /print receipts recorded in earlier revisions', () => {
+  const current = {
+    revisions: [
+      {
+        id: 'rev-retire',
+        routeChanges: [
+          { op: 'retire-unit', route: '/docs/book/retired-ch', successor: '/docs/book/kept-ch', rationale: '退役旧章。' },
+        ],
+      },
+    ],
+    changes: { file: new Map(), record: new Map() },
+    outputs: new Map([
+      ['/print#/docs/book/retired-ch', { path: '/print', route: '/docs/book/retired-ch', sha256: 'deadbeef' }],
+    ]),
+  };
+  const errors = validateReadableBookReviewedOutput(current, new Map(), new Map(), { units: [] }, { claims: [] }, null);
+  assert.deepEqual(errors, []);
 });

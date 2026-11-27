@@ -41,7 +41,11 @@ export function currentEditionKeys(edition, availableSources, baseline, placemen
   const addedUnitKeys = Array.isArray(routeChanges)
     ? new Set()
     : new Set(routeChanges?.addedUnitKeys ?? addedList.map(u => u.route));
+  const removedRouteSet = Array.isArray(routeChanges)
+    ? new Set()
+    : (routeChanges?.removedRouteSet ?? new Set());
   for (const added of addedList) {
+    if (removedRouteSet.has(added.route)) continue;
     const found = units.find(u => u.key === added.route);
     if (!found || found.source !== added.route || found.kind !== added.kind) {
       throw new Error(`Added unit registration invalid: ${added.route}`);
