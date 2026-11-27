@@ -7,6 +7,8 @@ import wholeBookConfig from '../config/reader-whole-book-reread.json' with { typ
 import part1Config from '../config/reader-part1-reread.json' with { type: 'json' };
 import fwConfig from '../config/reader-framework-comparison.json' with { type: 'json' };
 import numbering from '../config/reader-numbering.json' with { type: 'json' };
+import { currentRevisions } from './reader-checkpoint.mjs';
+import { projectRevisionNumbering } from './reader-revisions.mjs';
 import baseline from '../config/readable-book-baseline.json' with { type: 'json' };
 import loadShiftConfig from '../config/reader-load-shift.json' with { type: 'json' };
 import serviceConfig from '../config/reader-service-constraints.json' with { type: 'json' };
@@ -82,9 +84,10 @@ test('projectPart2RereadNumbering and changes ledger behave reversibly', () => {
   const preview = process.env.READABLE_BOOK_REVIEW_PREVIEW === '1';
   const unit = selectPart2Reread(part2Config, part2RereadUnitPin, preview);
   if (!unit) return;
-  const projected = projectPart2RereadNumbering(unit, numbering);
+  const checkpointNumbering = projectRevisionNumbering(currentRevisions, numbering);
+  const projected = projectPart2RereadNumbering(unit, checkpointNumbering);
   assert.equal(projected.parts[1].introduction, unit.partIntroduction.from);
-  assert.equal(projectPart2RereadNumbering(null, numbering), numbering);
+  assert.equal(projectPart2RereadNumbering(null, checkpointNumbering), checkpointNumbering);
 
   const ledger = buildPublicChangesLedger();
   assert(ledger.iterations.some(row => row.id === part2RereadId));

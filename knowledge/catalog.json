@@ -44039,6 +44039,55 @@
       "relation": "supports",
       "reviewStatus": "reviewed",
       "reviewKind": "agent-source-check"
+    },
+    {
+      "id": "ev-gs23-iso14044-preview-goal-scope",
+      "sourceId": "src-flow-pilot-iso44",
+      "locator": "§§4.1、4.2.1、4.2.2、4.2.3.1—4.2.3.5（公开预览印第 6—9 页；PDF 第 12—15 页，预览止于 §4.2.3.5）",
+      "summary": "ISO 14044:2006 公开预览明确规定 LCA 四阶段结构，禁止单靠清单研究作公开披露的比较断言并明言无科学依据将结果化约为单一总分（§4.1，印第 6 页）；列明目的 4 项必载要素（预期应用、开展理由、目标受众、是否用于公开比较断言，§4.2.2）与范围 14 项要素及迭代修订披露要求（§§4.2.1、4.2.3.1，印第 7 页）；规定系统边界删减仅在不显著改变总体结论时允许，且公开比较断言的终审灵敏度分析须同时涵盖质量、能量与环境显著性三类截断标准（§§4.2.3.3.1、4.2.3.3.3，印第 8—9 页）。公开预览止于 §4.2.3.5，未检阅 §§4.2.3.6—4.2.3.8 及后续付费正文。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-ilcd-ch5-goal-contexts",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "第 5 章 §§5.1—5.3 与表 2（印第 29—38 页；PDF 第 49—58 页）",
+      "summary": "ILCD 2010 详细指南将目的界定扩展为 6 项必载内容：预期应用、方法/假设与影响覆盖局限（§5.2.2）、开展理由、细分内/受限外部/公众及技术/非技术类型的目标受众（§5.2.4）、是否涉及公开比较或比较断言（§5.2.5）以及委托方与关键参与方（§5.2.6）；并在 §5.3 表 2 按“是否支持决策”与“背景及其他系统变化尺度（无/小尺度非结构变动 vs. 大尺度结构变动）”划分为微观决策支持情景 A、中宏观结构决策情景 B 与描述性核算情景 C（含交互的 C1 与不含交互的 C2）。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-ilcd-foreground-background",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "§6.6.1 概念框、图 12 与图 13（印第 96—99 页；PDF 第 116—119 页）",
+      "summary": "ILCD 2010 §6.6.1 显式区分前景系统与背景系统的两种不同界定。按数据采集默认采用的“特异性视角”（specificity perspective），前景系统是研究对象特有的、不能由市场均值替代的过程（自有工厂、一级供应商及具备定向供应关系的上游环节），背景系统是经均质市场平均供给、可用平均或通用数据代表的过程。按生态设计常用的“管理控制视角”（management perspective），前景系统是生产者、服务运营者或用户拥有直接控制权或决定性影响力的过程（含自有作业、归因模式下按单定制的一级供应商及受设计左右的使用/报废属性），而受长期合同锁定无法短期更换的一级供应商与二级以上供应链均归入背景系统。图 12 同步区分摇篮到坟墓、摇篮到大门与大门到大门边界。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-ilcd-boundaries-cutoff",
+      "sourceId": "src-book-ilcd-2010",
+      "locator": "§§6.6.2—6.6.3、图 14 与 §6.6 规定 I、VIII.a（印第 100—107 页；PDF 第 120—127 页）",
+      "summary": "ILCD 2010 §6.6.2 要求依研究目的作定性边界界定与前景流程图（图 14），并强调属于更复杂系统的零部件（如汽车启动电池、节水淋浴头）因存在技术交互不能脱离宿主系统孤立比较（印第 101 页）；§6.6.3 规定定量截断须按总体环境影响完整度（如覆盖每项影响类别或归一化加权总影响的 85% 或 95%）界定，并提示“100% 总影响”本身依赖近似外推，截断过大将同时引入漏算偏差与额外不确定性；§6.6 规定 I 界定 LCA 覆盖正常与异常运行而不涵盖事故与泄漏，规定 VIII.a（印第 107 页）补充指出比较研究须同步兼顾质量与能量截断标准。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-pef-goal-scope-cutoff",
+      "sourceId": "src-kb44-ec2021",
+      "locator": "附件一术语表（公报第 L 144/19 页）、§1（第 L 144/23—24 页）、§§3.1—3.2（第 L 144/26—32 页）、§§4.1—4.2（第 L 144/33 页）与 §§4.6.1—4.6.4（第 L 144/78—79 页）",
+      "summary": "欧盟 (EU) 2021/2279 附件一 §1 限定跨产品比较与比较断言仅在遵循有效 PEFCR 时成立；§3.1 规定 PEF 目的须载明预期应用、理由与决策情景、受众、委托方及核查员身份 5 项；§3.2 设功能单位与参考流、系统边界（含强制标出公司特定数据的边界图 §3.2.2）、不得删减的全部 16 项 EF 类别（表 2）、附加信息（中间产品强制含生物碳、R1 再生料含量与 CFF 参数 §3.2.4.2）及假设局限 5 大模块；§4.1 规定筛查步禁止任何截断；§4.2 设 5 项默认阶段并规定中间产品排除分销、使用与报废；§4.6.1—4.6.3 视初级数据为公司／供应链特定数据同义词，强制物料清单与制造采用公司特定数据并设二级数据四级层级（ILCD-EL 代理上限为单一总分 10%，否则作经核查员验证的数据缺口排除）；§4.6.4 规定正式研究避免截断，累计上限为质量、能量、单一总分及每项影响类别的 3.0%（另计于背景库既有截断之上）。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-ghgp-goal-boundary-excl",
+      "sourceId": "src-pfr151-ghgp-2011",
+      "locator": "第 2 章（印第 8—11 页；PDF 第 10—13 页）、§5.2（印第 21—22 页；PDF 第 23—24 页）、第 6 章（印第 26—29 页）、第 7 章 §§7.1—7.2、7.3.4—7.3.5、图 7.1—7.2（印第 33—36、42 页；PDF 第 35—38、44 页）及第 8 章 §§8.2、8.3.4—8.3.5（印第 47、51—52 页；PDF 第 49、53—54 页）",
+      "summary": "GHG Protocol 产品标准（2011）第 2 章（含表 2.1）以企业气候风险评估、减排追踪、供应链协作与客户披露等商业目标引导方法与数据选型；§5.2 规定产品碳清单采用归因核算路径；第 7 章要求边界纳入全部直接构成、制造与运载产品的“归属过程”（attributable processes），按 5 项默认生命周期阶段绘制强制过程图（§7.2 图 7.1—7.2），仅当同时满足存在数据缺口、无法用代理或外推填补且经保守上限估算证明不显著（§7.3.4 举质量/能量/体积与温室气体均低于 1% 为例）三条件时方可排除归属过程并须在报告中披露理由；资本品、厂区照明空调与研发行政销售等“非归属过程”（non-attributable processes）非必选，但不可分或具相关性时应纳入（§7.3.5）；第 8 章（§§8.2、8.3.4—8.3.5）要求公司所有或控制的归属过程采集初级数据，其余上下游环节可使用二级数据库或基于支出的投入产出因子。",
+      "relation": "supports"
+    },
+    {
+      "id": "ev-gs23-cml-goal-scope-foreground",
+      "sourceId": "src-book-cml-2001-part2a",
+      "locator": "第 2 章 §§2.1—2.3.4（印第 16—24 页）与第 3 章 §3.2、§§3.3.4—3.3.5（印第 26—27、34、36 页）",
+      "summary": "CML 2001/2002 Part 2a 第 2 章在界定研究目的前先确定过程语境（Process Context I/II/III）与利益相关方监督架构（§2.3.1），以稳态均衡模型面向长期结构变动决策（§2.2、§3.2），在范围定义中明确时间、地域与技术覆盖（默认所在区域现行平均的“主流现代技术”modal-modern technology）及简化、详细、可选扩展三档精细度（§2.3.3），并要求公开比较断言须披露系统等效性并评论未涵盖的相关替代方案（§2.3.4 印第 24 页）；第 3 章提出前景过程优先采用 SPOLD 统一交换格式、背景过程沿用数据库或文献格式（§3.3.4 印第 34 页），并要求在产品比较中核查各对比系统间前景与背景数据比例是否存在重大不对称（§3.3.5 印第 36 页）。",
+      "relation": "supports"
     }
   ],
   "claims": [
@@ -47313,9 +47362,9 @@
     },
     {
       "id": "cl-regional-sun-development-agenda",
-      "text": "作者据此建议引进、消化国际方法，发展适合本地的方法和资料，并在清洁生产审计、生态设计、废物管理与生态工业中开展应用研究和示范。这些讨论区分了两项问题：生命周期评价能够帮助研究什么，以及开展这些研究还需要哪些条件。作者在 2002 年提出这些建议时，相关工作仍有待推进。明确历史来源与框架分工后，第二部《服务与清单》将从功能参照出发，具体辨析功能单位、声明单位、参考流与可比性门槛，并展开过程网络、流交换与混合清单的核算边界。",
+      "text": "作者据此建议引进、消化国际方法，发展适合本地的方法和资料，并在清洁生产审计、生态设计、废物管理与生态工业中开展应用研究和示范。这些讨论区分了两项问题：生命周期评价能够帮助研究什么，以及开展这些研究还需要哪些条件。作者在 2002 年提出这些建议时，相关工作仍有待推进。明确历史来源与框架分工后，第二部《服务与清单》将先从《研究目的与范围》出发，界定研究目的、决策情景、前景与背景系统及系统边界截断规则，再依次展开功能参照、过程网络、流交换与混合清单的核算边界。",
       "kind": "interpretation",
-      "scope": "Sun2002 §5a、d的方法/数据支持与应用研究建议",
+      "scope": "Sun2002 §5a、d 的方法/数据支持与应用研究建议，以及向第二部《研究目的与范围》的衔接。",
       "evidenceIds": [
         "ev-regional-sun-prospects"
       ],
@@ -84423,7 +84472,7 @@
     {
       "id": "cl-fw179-shared-phases",
       "kind": "synthesis",
-      "text": "把上述历史脉络延伸到当代主流操作指南，可以看到 CML 2001/2002、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）共享同一底层骨架：先界定目的、分析基准与系统边界，再归集清单、计算影响，并借完整性、敏感性与一致性检查反复修正假设。CML 2001（Part 2a）沿 ISO 共识设目标与范围、清单、影响评价与解释 4 阶段，前置程序管理成 5 章；ILCD 2010 将四阶段绘为多轮精化迭代回路，先以通用数据筛出热点再聚焦主导环节；GHG Protocol 产品标准虽按商业目标、边界、分配、不确定性、鉴证与减排目标展开，本质仍延续“先定问题、再建账、后核验”的闭环逻辑。",
+      "text": "把上述历史脉络延伸到当代主流操作指南，CML 2001/2002（Part 2a）、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）仍共享同一底层闭环：先定目的、范围与比较基准，再建清单、算影响，最后经完整性、敏感性与一致性检查反复修订。四套指南的具体条款并不在本章逐项展开，而是构成全书后七部的路线图（见下表）。",
       "scope": "跨体系框架阶段与迭代结构对照；对应 CML 2001 Part 2a（pp. 3–4）、ILCD 2010（§4 Fig. 4）与 GHG Protocol 产品标准 2011（§3.1 Fig. 3.1）。",
       "evidenceIds": [
         "ev-fw179-cml-framework",
@@ -84463,7 +84512,7 @@
     {
       "id": "cl-fw179-decision-gates",
       "kind": "synthesis",
-      "text": "真正把四套体系推向不同运行轨道的，首先是“研究回答何类问题”与“何时允许对外作跨产品比较断言”。ILCD 2010（第 1 节）按决策情景前置分流：微观产品决策（Situation A）假定不引发背景产能结构变动，中宏观战略决策（Situation B）则计入结构性产能变化，纯描述性核算（Situation C）不追究经济后果，再分计入外部回收收益的 C1 与不计入的 C2——不同情景直接改写系统边界与清单规则。欧盟 PEF 2021（附件一第 1 节）将可比性门槛收紧至品类规则层面：区分一般比较与比较断言，两者仅在遵循有效产品环境足迹品类规则（PEFCR）时成立。GHG Protocol 产品标准（第 1.5、5.3.2 节）则定位为单一产品纵向减排追踪，明言不支持 ISO 14044 意义上宣称整体环境优劣的比较断言，跨产品对比须另依产品规则补足一致性。",
+      "text": "第一道主线分岔落在“立题与比较资格”：ILCD 2010 在目的阶段即按决策导向与背景变动尺度分为微观（A）、中宏观（B）与描述核算（C1/C2）；欧盟 PEF 2021 仅在遵循有效品类规则（PEFCR）时允许跨产品比较与比较断言；GHG Protocol 产品标准（2011）则定位于单一产品纵向减排追踪，不支持 ISO 14044 意义上的整体比较断言。有关目的要素、前景／背景系统划分、截断规则、功能单位与多功能处理的细则，分别在第二部《研究目的与范围》《功能参照》与第三部展开。",
       "scope": "跨体系决策情景分流与比较断言门槛对照；对应 ILCD 2010（§1）、EU PEF 2021（Annex I Definitions & §1）与 GHG Protocol 2011（§1.5, §5.3.2, Appendix A）。",
       "evidenceIds": [
         "ev-fw179-ilcd-framework",
@@ -84502,7 +84551,7 @@
     {
       "id": "cl-fw179-impact-weighting",
       "kind": "synthesis",
-      "text": "第二道实质分歧在于影响类别覆盖范围及是否允许加权汇总为单一总分。CML 2001（Part 2a）以中点问题导向的多类别表征为基线，强推荐归一化以便观察相对量级，却将分组与加权留作无统一基线法的可选扩展，并转述 ISO 14042 禁令——不得对公开披露的比较断言使用加权，研究者须在放弃公开比较、转作内部使用或停止加权间抉择。欧盟 PEF 2021（附件一第 3.2、5.1—5.2 节）则采强统一设计：强制涵盖全部 16 项环境足迹（EF）影响类别且不得排除，分类表征后强制归一化与加权并可汇总单一总分（区分含与不含使用阶段）。GHG Protocol 产品标准仅核算温室气体单一类别，省去跨类权衡争议，却也无法代表毒性、酸化、水资源或土地利用等负担，不能据此推断产品“整体更环保”。",
+      "text": "第二道主线分岔落在“影响覆盖与跨类取舍”：CML 2001 以多类别中点剖面为基线，强推荐归一化却将加权留作可选，并转述禁止在公开比较断言中加权的原则；欧盟 PEF 2021 强制覆盖全部 16 项环境足迹类别并强制归一化与加权；GHG Protocol 产品标准仅核算温室气体单一类别，无法代表其他环境负担。各影响路径的机制与分歧见第四部，归一化、赋权、估值与综合可持续性边界见第五部。",
       "scope": "跨体系影响类别覆盖与归一化/加权规则对照；对应 CML 2001 Part 2a（pp. 48, 75, 77–78）、EU PEF 2021（Annex I Table 2, §5.1–5.2）与 GHG Protocol 2011（§1.5, §3.1）。",
       "evidenceIds": [
         "ev-fw179-cml-framework",
@@ -84542,7 +84591,7 @@
     {
       "id": "cl-fw179-review-assurance",
       "kind": "synthesis",
-      "text": "解释阶段的检查程序与外部审验制度同样随治理目标分层。CML 2001（Part 2a 第 5 章）将解释落脚于一致性、完整性与敏感性／不确定性评估，要求先交代结果带宽与局限再提建议。ILCD 2010（第 11 章）要求在范围定义阶段即确定审验类型，核查研究是否合规、方法科学有效、数据适宜且如实反映局限，在专门审验细则出台前以 ISO 14040/14044 要求为最低底线。欧盟 PEF 2021（附件一第 8.1 节）把外部审查设为硬门槛：凡研究结果或其部分信息用于任何形式对外沟通，均强制独立核查与验证，核对模型、数据与报告一致性。GHG Protocol 产品标准（第 12 章）采财务与碳核算常用的鉴证（assurance）框架，界定报告企业、利益相关方与鉴证方三方结构，要求产品碳清单至少经第一方或第三方鉴证，但并不等同于多指标生命周期评审小组的同行审验。",
+      "text": "第三道主线分岔落在“数据证据与外部审验”：CML 2001 与 ILCD 2010 以一致性、完整性、敏感性检查及 ISO 底线审查为轴；欧盟 PEF 2021 规定凡涉对外沟通均强制独立核查与验证；GHG Protocol 产品标准则采用第一方或第三方鉴证机制。背景数据库与跨库映射的底层限度见第六部，数据适用性、不确定性、质量评分与足迹法规见第七部，完整案例比较与审查判断见第八部。",
       "scope": "跨体系解释检查、同行审验与外部鉴证治理对照；对应 CML 2001 Part 2a（Ch. 5）、ILCD 2010（§11）、EU PEF 2021（Annex I §8.1）与 GHG Protocol 2011（§12.1–12.2）。",
       "evidenceIds": [
         "ev-fw179-cml-framework",
@@ -84588,7 +84637,7 @@
     {
       "id": "cl-fw179-method-choice-effects",
       "kind": "synthesis",
-      "text": "这些框架差异并不停留在目录写法上，而是会直接改变同一项产品研究的输出形态、合规门槛与决策风险。若同一家制造企业需要面向欧盟市场发布竞品对比声明，仅按 GHG Protocol 产品标准完成单一温室气体核算并做第一方鉴证，既缺少 15 项非气候影响类别，也不具备比较断言的制度资格；转向 CML 2001 详细基线可以得到多类别中点剖面，但若缺乏统一品类规则与公开加权许可，不同研究在边界、分配与数据库上仍可能各说各话；改用欧盟 PEF 2021 并遵循对应 PEFCR、通过独立核查后，确实能获得跨产品可比的 16 类别剖面与单一加权总分，但代价是必须接受预设的类别列表、归一化与权重系数以及更高的模型披露与核查成本。至于 ILCD 2010，若研究目的是评估会改变电网或原材料产能的政策方案，误选 Situation A（微观）而非 Situation B（中宏观），更会在框架起点就把后续清单建模导向错误方向。",
+      "text": "把三道分岔并置可见，挑选框架并不只是换一份报告模板，而是预先锁死了研究能回答什么问题、覆盖哪些影响与承担多高核查成本：单类别碳足迹换来聚焦却不具整体比较断言资格，强统一品类规则换来跨产品可比性却须接受预设权重与核查成本，误判决策情景更会在起点偏离清单建模方向。后续各部将沿着这张分析地图逐环拆解这些选择的数理与实证后果。",
       "scope": "框架选择对研究输出形态、可比性资格与决策风险的实际影响；综合上述四份公开指南规则。",
       "evidenceIds": [
         "ev-fw179-cml-framework",
@@ -84636,7 +84685,7 @@
     {
       "id": "cl-fw179-epistemic-limits",
       "kind": "synthesis",
-      "text": "最后须明确本节跨体系对照的证据边界：上述比较全部直接核自 CML 2001 Part 2a、ILCD 2010 详细指南、欧盟 (EU) 2021/2279 附件一与 GHG Protocol 产品标准（2011）四份公开原文；受版权限制的 ISO 14040/14044:2006 完整付费文本（统一核验边界见《阅读导论》）与尚未获取的 SETAC 1991/1993 原始会议文集不作未核条文补造。同样重要的是，符合任一评价框架的阶段步骤并通过外部审验或鉴证，只能证明核算遵循了该框架的程序与披露规则，本身既不能弥补缺失的实测排放数据，也不能替代后续各部将逐项展开的功能参照、清单边界、分配规则、影响模型与不确定性验证。",
+      "text": "上述全书地图全部核自 CML 2001 Part 2a、ILCD 2010 详细指南、欧盟 (EU) 2021/2279 附件一与 GHG Protocol 产品标准（2011）四份公开原文；受版权限制的 ISO 14040/14044:2006 付费全文（核验边界见《阅读导论》）与未获取的早期 SETAC 会议文集不作未核条文补造。同样需要记住：遵循任一框架的程序步骤并通过审验或鉴证，本身既不能弥补缺失的实测数据，也不能替代后续各部对目的范围、功能参照、清单边界、分配规则、影响模型与不确定性的逐项检验。",
       "scope": "本节跨体系框架对照的付费原文边界、未获取史料边界与合规性认识边界。",
       "evidenceIds": [
         "ev-fw179-cml-framework",
@@ -86710,6 +86759,499 @@
           "rationale": "提供 EF 3.1 化石资源使用按净热值计 1 MJ/MJ 及纳入天然铀的依据。"
         }
       ]
+    },
+    {
+      "id": "cl-gs23-goal-elements",
+      "text": "做一项生命周期评价，第一步并不是打开软件或收集排放系数，而是把“为什么做、给谁看、用来做什么决定”写清楚。不同操作体系对研究目的的最低披露项并不完全一致（表 1）：ISO 14044:2006 公开预览（§4.2.2）规定四项必载要素——预期应用、开展理由、目标受众，以及结果是否拟用于向公众披露的比较断言，并在 §4.1 明确禁止单靠清单研究作公开比较断言，同时指出没有科学依据把生命周期评价结果化约为单一总分。ILCD 2010 详细指南（第 5 章）在此基础上扩充为六项，额外要求在目的阶段即交代方法、假设与影响覆盖的局限（§5.2.2）以及委托方与关键参与方（§5.2.6），并把受众细分为内部、受限外部或公众以及技术或非技术两维（§5.2.4）。欧盟产品环境足迹（PEF）指南（(EU) 2021/2279 附件一 §3.1）列出五项必载要素，把独立核查员身份前置锁定到目的定义中；CML 2001/2002（Part 2a §§2.3.1—2.3.2）则要求先确定过程语境与利益相关方监督架构；GHG Protocol 产品标准（2011 第 2 章）直接以企业气候风险评估、减排追踪与客户披露等商业目标为起点。",
+      "kind": "synthesis",
+      "scope": "五套公开文本在研究目的必载要素、受众分类、核查员前置与商业目标定位上的跨体系对照。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-gs23-ilcd-ch5-goal-contexts",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-ghgp-goal-boundary-excl",
+        "ev-gs23-cml-goal-scope-foreground"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "提供 ISO 14044 公开预览 §4.1 与 §4.2.2 的四项必载目的要素及单一总分界限。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-ch5-goal-contexts",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 第 5 章六项目标要素及受众二维分类。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §3.1 五项目标要素及核查员身份前置规定。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol 产品标准第 2 章以企业商业目标驱动核算的定位。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "提供 CML 2001 Part 2a 过程语境与利益相关方监督的前置程序要求。"
+        }
+      ],
+      "premiseIds": [
+        "cl-fw179-shared-phases"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products",
+        "cn-rule-conformance"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ISO 14044:2006 仅依据公开预览第 6—9 页（§§4.1—4.2.3.5）核验，未检阅后续付费正文；其余四套框架均直接核自公开可得原文。"
+      ],
+      "reasoning": "把五套公开操作规范在研究目的阶段各自的必载要素并排对照，揭示研究目的并非形式化前言，而是后续受众沟通、比较资格与审核机制的制度起点。"
+    },
+    {
+      "id": "cl-gs23-decision-contexts",
+      "text": "研究目的写定之后，最关键的建模分岔在于：这项研究是在描述既有供应链的归属份额，还是在评估一项选择会引发哪些供给增减？ILCD 2010（§5.3 表 2）沿着两个维度给出前置分类：第一，研究是否用于支持具体决策；第二，若用于决策，该决策是否会通过市场机制在背景系统或其他经济系统中引发大尺度结构性产能变动（例如新建或淘汰发电厂与冶炼产能），而非仅仅改变现有装置的开工率。由此分出三类原型情景：微观决策支持（情景 A，无变动或仅小尺度非结构变动）、中宏观决策支持（情景 B，存在大尺度结构变动）以及纯描述性核算（情景 C，进一步区分计入回收与共产品等跨系统交互的 C1 与不计入交互的 C2）。相比之下，GHG Protocol 产品标准（第 5.2 节）将全部产品碳清单锁定在归因核算路径；欧盟 PEF 在既定品类规则框架下统一供应链核算口径；CML 2001（Part 2a §§2.2、3.2）则默认采用稳态均衡模型支持面向长期结构变动的决策。这些在目的阶段作出的情景归类，将直接决定第三部如何处理共产品分配、受限市场、电网边际响应与材料循环。",
+      "kind": "interpretation",
+      "scope": "目的阶段决策情景归类（ILCD 情景 A/B/C1/C2 与其他框架默认导向）及其对后续清单与分配建模的制约。",
+      "evidenceIds": [
+        "ev-gs23-ilcd-ch5-goal-contexts",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-ghgp-goal-boundary-excl",
+        "ev-gs23-cml-goal-scope-foreground"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-ilcd-ch5-goal-contexts",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §5.3 表 2 按决策导向与背景变化尺度划分 A/B/C1/C2 的原文依据。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "说明欧盟 PEF 在统一方法与 PEFCR 下预设核算框架的特征。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "说明 GHG Protocol 产品标准围绕归因产品碳清单的定位。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "提供 CML 2001 Part 2a §§2.2 与 3.2 面向长期结构变动稳态均衡模型的起点说明。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-goal-elements",
+        "cl-fw179-decision-gates"
+      ],
+      "conceptIds": [
+        "cn-allocation-context",
+        "cn-system-model"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ILCD 情景分类决定的是该指南体系内的 LCI 建模路径与多功能处理规则，不同框架在具体执行时仍受各自数据库与品类规则约束；归因与后果模型的具体数学与市场机制将在第三部展开。"
+      ],
+      "reasoning": "把研究目的抽象条目落到“是否支持决策”与“背景变化尺度”两道操作判断，使读者理解为何目的定义不是装饰文字，而是锁死后续建模范式的开关。"
+    },
+    {
+      "id": "cl-gs23-scope-elements",
+      "text": "如果说研究目的回答“为何而做”，研究范围（scope）则负责把整个研究的技术规格一次铺开，使模型深度与研究目的相称。ISO 14044:2006 公开预览（§4.2.3.1）将范围拆解为十四项须明确描述的要素：所研究的产品系统、系统功能、功能单位、系统边界、分配程序、影响评价方法与影响类型、拟采用的结果解释方式、数据要求、关键假设、价值选择与可选步骤、研究局限、数据质量要求、关键性审查类型（若有）以及报告形式。不同操作指南把这十四项组织为各有侧重的工程清单：欧盟 PEF（附件一 §3.2）归并为五大范围模块，强制涵盖全部 16 项 EF 影响类别不得删减（表 2），并要求中间产品在附加技术信息中强制披露出厂生物碳含量、再生料比例 R1 及相关循环足迹公式参数（§3.2.4.2）；CML 2001（Part 2a §2.3.3）突出时间、地域与技术覆盖三项基准（默认采用目标区域内现行平均的“主流现代技术”），并按简化级、详细级与可选扩展级匹配工作深度；GHG Protocol 产品标准（第 6—7 章）则以分析单位、参考流、五项默认生命周期阶段与强制过程图锁定碳清单范围。",
+      "kind": "source-statement",
+      "scope": "ISO 14044 公开预览十四项范围要素与欧盟 PEF、CML 2001 及 GHG Protocol 范围组织方式的对照。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-cml-goal-scope-foreground",
+        "ev-gs23-ghgp-goal-boundary-excl"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "逐项核自 ISO 14044 公开预览 §4.2.3.1（印第 7 页）十四项范围要素列表。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF §3.2 五大范围模块、全部 16 项 EF 类别强制要求及 §3.2.4.2 中间产品附加技术信息规定。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "提供 CML 2001 Part 2a §2.3.3 时间/地域/主流现代技术覆盖及三档精细度设置。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol 第 6—7 章分析单位、五阶段与强制过程图要求。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-goal-elements"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products",
+        "cn-fu",
+        "cn-reference-flow"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ISO 14044 公开预览给出 §4.2.3.1 的十四项范围总目、§§4.2.3.2—4.2.3.4 全文以及 §4.2.3.5 的前段内容（止于印第 9 页）；§4.2.3.5 余段、§§4.2.3.6—4.2.3.8 及后续付费条款均超出公开预览范围，未直接检阅。"
+      ],
+      "reasoning": "将 ISO 14044 十四项范围总目作为统一坐标系，逐一对应三套主流操作指南如何把抽象范围条目转化为可执行的建模规格与强制披露清单。"
+    },
+    {
+      "id": "cl-gs23-iteration-and-screening",
+      "text": "范围要素虽须在开工前拟定，却并非一成不变的静态合同，更不是看见不利结果后临时改写边界的借口。ISO 14044 公开预览（§§4.2.1、4.2.3.1）强调生命周期评价天然具有迭代性：当出现未预见的约束或新信息时，可以修订研究范围乃至目的，但每一项改动及其理由均应如实记录。ILCD 2010（第 4 章）把这种迭代结构化为多轮精化回路——先建立粗略模型识别主导环节，再借助完整性、敏感性与一致性检查把数据采集资源集中到关键过程，同时严正警示：高不确定性会掩盖真实差异，若因关键数据、时间或经费不足而无法分辨优劣，绝不得据此宣称“两方案无显著差异”。欧盟 PEF（附件一 §4.1）更将首轮迭代制度化为“筛查步”（screening step）：筛查阶段必须完整跑通清单与影响评价，且明确规定“筛查步不允许任何截断”，待借现成初级或二级数据识别出关键类别、关键阶段与关键过程后，再回头精化初始范围并安排高成本的公司特定数据采集。",
+      "kind": "interpretation",
+      "scope": "范围定义迭代修订的合法边界、ILCD 精度警示与欧盟 PEF 零截断筛查步的机制分工。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-ilcd-iteration",
+        "ev-gs23-pef-goal-scope-cutoff"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "提供 ISO 14044 公开预览 §§4.2.1 与 4.2.3.1 关于迭代修订与记录理由的原文条款。"
+        },
+        {
+          "evidenceId": "ev-ilcd-iteration",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 第 4 章迭代精度限制及不得因缺数或高不确定性断言无显著差异的规定。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一 §4.1 筛查步必须含影响评价且禁止任何截断的原文条款。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-scope-elements"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products",
+        "cn-variability-uncertainty"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "迭代精化改变的是对既有问题的模型完备度与数据精度；若在看到初步排序后变更功能单位或删去不利阶段以迎合预设结论，则违背范围修订须如实记录并服务原定目的的规范。"
+      ],
+      "reasoning": "把迭代从泛泛的流程口号还原为三项可核查的操作纪律：变更须留痕、高不确定性不得推断无差异、首轮热点筛查不得预先截断。"
+    },
+    {
+      "id": "cl-gs23-comparative-assertion-gates",
+      "text": "研究目的清单里看似只有一句勾选——“结果是否拟用于向公众披露的比较断言”——实际上会同步收紧整项研究的范围、边界、影响评价与审查门槛。在 ISO 14044 公开预览中，除所有系统间比较均须在同一功能单位与参考流下核查功能等效性并交代被忽略的附加功能（§4.2.3.2）外，勾选公开比较断言还立即触发两道硬约束：不得仅用清单研究作公开比较断言（§4.1），且终审灵敏度分析必须同时纳入质量、能量与环境显著性三类截断标准（§4.2.3.3.3）。CML 2001（Part 2a §2.3.4）进一步要求公开比较断言须就性能、边界、数据质量、分配、评价规则与影响评价逐项论证等效性，并评论未纳入研究的相关替代方案。欧盟 PEF（附件一 §§1、3.1）把门槛收紧至品类规则与外部验证双重约束：唯有严格遵循有效 PEFCR 并通过独立核查与验证，才允许发表跨产品比较或比较断言。GHG Protocol 产品标准（附录 A）则明确划清边界：单凭单一温室气体清单不支持 ISO 14044 意义上的公开比较断言，跨产品比较须另建一致的产品规则。",
+      "kind": "interpretation",
+      "scope": "公开比较断言意向对研究范围、截断灵敏度、系统等效披露与品类规则门槛的联动收紧效应。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-gs23-cml-goal-scope-foreground",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-pfr151-ghgp-comparative-gates"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "提供 ISO 14044 公开预览 §§4.1、4.2.3.2 与 4.2.3.3.3 对公开比较断言的三道前置约束。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "提供 CML 2001 Part 2a §2.3.4 关于系统等效性披露及评论未涵盖替代方案的要求。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 对比较断言须循 PEFCR 并强制独立核查的规定。"
+        },
+        {
+          "evidenceId": "ev-pfr151-ghgp-comparative-gates",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol 附录 A 明言不支持 ISO 14044 比较断言的原始条款。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-scope-elements",
+        "cl-fw179-decision-gates"
+      ],
+      "conceptIds": [
+        "cn-rule-conformance",
+        "cn-review-scope"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ISO 14044 中有关公开比较断言关键性评审小组组成的细则位于公开预览之外的付费条款，此处仅引述公开预览已检阅的 §§4.1、4.2.3.2 与 4.2.3.3.3；跨体系评审与验证制度将在后续章节详述。"
+      ],
+      "reasoning": "串联四套规范对公开比较断言的前置收紧机制，说明目的阶段的一句话勾选如何直接改变范围深度、截断检验与合规成本。"
+    },
+    {
+      "id": "cl-gs23-foreground-specificity-vs-management",
+      "text": "在进入具体建账之前，范围定义还须厘清全书反复使用的一对核心概念——前景系统（foreground system）与背景系统（background system）。实践中许多人误以为“前景等于自有工厂、背景等于数据库”，但 ILCD 2010（§6.6.1 概念框、图 13）明确指出，前景与背景背后其实是两套目的不同、边界并不重合的划分标准（表 2）。第一套是数据采集默认采用的“特异性视角”（specificity perspective）：凡属研究对象特有、不能用市场平均数据替代的过程均属前景系统——不仅包括企业自有车间，也涵盖一级供应商乃至因采购认证绿电或认证木材而具有定向关系的上游环节；凡经均质市场平均供给、可用行业或区域平均数据合理代表的过程则归入背景系统（因此从制造商角度看，一般化的使用与报废阶段默认属背景系统，除非研究专门比较特定使用或处置技术）。第二套是生态设计常用的“管理控制视角”（management perspective）：前景系统界定为生产者、服务运营者或用户拥有直接控制权或决定性影响力的过程，包括自有作业、归因模式下按单定制的一级供应商，以及由产品设计直接左右的使用能耗与可拆解回收属性；而受长期合约锁定、短期内无法更换的唯一上游专供商与二级以上供应链均归入背景系统。同一个长期锁定的专有供应商，在特异性视角下必须作为前景采集专属数据，在管理视角下却不在决策可控范围内——不先说明采用哪一视角，前景与背景的争论就会各说各话。",
+      "kind": "interpretation",
+      "scope": "前景系统与背景系统的正式定义，以及 ILCD 2010 特异性视角与管理控制视角的边界分叉。",
+      "evidenceIds": [
+        "ev-gs23-ilcd-foreground-background"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-ilcd-foreground-background",
+          "relation": "supports",
+          "rationale": "直接依据 ILCD 2010 §6.6.1 概念框（印第 96—98 页）与图 13（印第 99 页）对特异性视角与管理控制视角的正式定义与反例。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-scope-elements"
+      ],
+      "conceptIds": [
+        "cn-system-model",
+        "cn-data-fitness"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ILCD 2010 §6.6.1 同时提醒，两种划分均属操作性指引而非绝对二分：在特异性视角下，某些情景中合格通用数据可能比低质实测更适用；在管理视角下，许多环节仅受部分影响，难以非黑即白地归类。"
+      ],
+      "reasoning": "在第二部开篇正式锚定前景系统与背景系统这对贯穿清单建模、背景数据库与数据质量审查的核心术语，并用两视角分叉反例破除“前景＝自有车间”的常见误读。"
+    },
+    {
+      "id": "cl-gs23-foreground-data-hierarchies",
+      "text": "前景与背景的划分一经确定，便直接映射为各框架的初级／二级数据强制规则与跨方案可比性检验。欧盟 PEF（附件一术语表及 §§3.2.2、4.6.1—4.6.3）把初级数据明确定义为“公司特定数据”或“供应链特定数据”的同义词，强制在系统边界图中标出采用公司特定数据的环节，要求物料清单（BoM）与主产品制造必须使用公司特定数据，并给背景二级数据设定了严格的四级顺位：优先采用符合 EF 规范的二级数据集；无则采用 EF 代理数据集（旧版 EF 转换数据亦视为代理）并在局限节披露；再无则可用 ILCD 入门级（ILCD-EL）代理但累计不得超过单一总分的 10%；若仍缺失则须排除该过程并作为数据缺口交由核查员验证。CML 2001（Part 2a §§3.3.4—3.3.5）则从数据格式与比较偏差两个角度设防：前景过程优先采用统一交换格式（当年推荐 SPOLD）记录，背景过程沿用数据库或文献格式，并在产品比较中特别警示——若两个对比方案之间前景实测数据与背景通用数据的占比存在重大不对称，就会引入系统性比较偏差。GHG Protocol 产品标准（第 7—8 章）则将公司直接运营的归属过程对应初级数据，并将上下游环节对应二级数据库或基于支出的投入产出因子。至于背景数据库自身的演进谱系、方法分叉与跨库映射红线，将在第六部与第七部深入剖析。",
+      "kind": "source-statement",
+      "scope": "欧盟 PEF 公司特定数据与二级数据四级层级、CML 2001 前/背景数据比例不对称警示及 GHG Protocol 数据对应规则。",
+      "evidenceIds": [
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-cml-goal-scope-foreground",
+        "ev-gs23-ghgp-goal-boundary-excl"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF 附件一术语表、§3.2.2 及 §§4.6.1—4.6.3 公司特定数据强制项与二级数据四级顺位（含 ILCD-EL 10% 上限）。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "提供 CML 2001 Part 2a §§3.3.4—3.3.5 关于前/背景数据格式及对比方案前/背景比例差异的核查要求。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol 产品标准第 7—8 章归属过程初级数据与上下游二级／投入产出因子的对应结构。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-foreground-specificity-vs-management"
+      ],
+      "conceptIds": [
+        "cn-data-fitness",
+        "cn-quality-rating"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "具体数据质量评级（DQR）矩阵与谱系方差转换规则见第七部《数据适用性》与《质量评分与概率》；此处聚焦范围定义阶段前/背景边界与数据顺位的关系。"
+      ],
+      "reasoning": "把前景/背景概念直接落到可执行的数据分级规则和比较偏差警示，打通本节与后续第六部（背景数据库）和第七部（数据适用性与质量）的知识链条。"
+    },
+    {
+      "id": "cl-gs23-boundary-types-and-stages",
+      "text": "系统边界决定哪些单元过程归入被研究的产品系统，以及模型在何处截停。在结构上，任何完整生命周期模型都同时面对三重界面：一是技术圈与生态圈之间的边界（基本流在此跨越进入环境或自自然界开采）；二是目标产品系统与其余技术圈之间的边界（参考流、共产品、再生料与待处理废物在此交接）；三是纳入建模与被截断忽略的过程之间的边界。按阶段完整性，研究通常采用三类边界原型（ILCD 2010 图 12）：覆盖全生命周期的“摇篮到坟墓”（cradle-to-grave）、止于出厂门的“摇篮到大门”（cradle-to-gate，适用于多用途中间产品），以及仅含厂内工序的“大门到大门”（gate-to-gate，常用作上游或下游研究的模块）。欧盟 PEF（§4.2）与 GHG Protocol（§7.2 图 7.1）均列出五项默认阶段——原材料获取与预处理、生产制造、分销与储运、使用阶段及寿命终结——且 PEF 明确规定中间产品应排除分销、使用与报废阶段；但 ILCD 2010（§6.6.2）同时强调，当被评价对象只是更复杂系统中的零部件（如汽车启动电池、节水淋浴头或不同窗框材料）且会改变宿主系统运行能耗或维护需求时，绝不能将其脱离宿主系统孤立比较，技术交互必须写入系统边界。",
+      "kind": "source-statement",
+      "scope": "产品系统三重界面、摇篮到坟墓／摇篮到大门／大门到大门边界原型、五项默认阶段及零部件宿主系统交互边界。",
+      "evidenceIds": [
+        "ev-gs23-ilcd-foreground-background",
+        "ev-gs23-ilcd-boundaries-cutoff",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-ghgp-goal-boundary-excl"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-ilcd-foreground-background",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §6.6.1 单元过程 vs. 完整研究边界定义及图 12 三类边界原型。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-boundaries-cutoff",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §6.6.2 关于零部件与宿主复杂系统技术交互边界（汽车启动电池、节水淋浴头等）的原文规定。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF §4.2 五项默认阶段及中间产品排除分销/使用/报废的条款。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol §7.2 图 7.1 五项默认阶段与强制过程图要求。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-scope-elements"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-flow",
+        "cn-exchange"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "ILCD 2010 §6.6 规定 I 同时指明常规生命周期评价覆盖正常与异常运行工况，通常不把偶发工业事故、重大泄漏或食品直接摄食纳入常规清单边界；若此类风险对特定比较关键，须另行说明。"
+      ],
+      "reasoning": "把系统边界从一句抽象定义拆解为三重界面、三类阶段原型、五项默认阶段与零部件宿主交互四项清晰判断工具。"
+    },
+    {
+      "id": "cl-gs23-attributable-and-cutoff-divergences",
+      "text": "在现实供应链中，向上游追溯原材料、设备与服务几乎牵涉整个全球经济，任何过程清单都不得不面对“哪些微小环节可以忽略”的截断（cut-off）问题。但不同体系对截断门槛、适用对象与允许排除的举证条件差异极大（表 1）：ISO 14044 公开预览（§§4.2.3.3.1、4.2.3.3.3）规定唯有不显著改变总体结论时才允许删减，并要求公开比较断言在终审灵敏度分析中同时检视质量、能量与环境显著性三类标准——因为高毒性催化剂或贵金属即便质量占比不足 0.1%，仍可能主导毒性或资源指标。ILCD 2010（§6.6.3）据此直接舍弃纯质量截断，改以总体环境影响完整度界定截断（如覆盖每项影响类别或归一化加权总影响的 85% 或 95%），并提醒“100% 总影响”本身只能近似外推，截断越宽，漏算偏差与外推不确定性越大。欧盟 PEF（§§4.1、4.6.4）定下最严苛的量化红线：筛查步零截断，正式研究应避免截断且累计上限为质量、能量、单一总分及每项影响类别的 3.0%，且这一 3.0% 须叠加在背景数据库既有截断之上单独受控。GHG Protocol 产品标准（§§7.2、7.3.4—7.3.5）则先按相关性划分“归属过程”与“非归属过程”：资本品、厂区照明空调与研发行政销售等非归属过程默认可选（不可分或具相关性时纳入），而归属过程仅当同时满足存在数据缺口、无法用代理或外推填补、且经保守上限估算证明不显著（如质量、能量、体积与温室气体均低于 1% 的经验门槛）三项条件时方可排除并披露理由。",
+      "kind": "interpretation",
+      "scope": "ISO 14044 公开预览、ILCD 2010、欧盟 PEF 与 GHG Protocol 在归属边界与截断规则上的实质分歧。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-gs23-ilcd-boundaries-cutoff",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-ghgp-goal-boundary-excl"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "提供 ISO 14044 公开预览 §§4.2.3.3.1 与 4.2.3.3.3 的删减条件与质量/能量/环境显著性三标准。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-boundaries-cutoff",
+          "relation": "supports",
+          "rationale": "提供 ILCD 2010 §6.6.3 基于环境影响完整度（如 85%—95%）而非纯质量比例设定截断及 100% 近似外推局限。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "提供欧盟 PEF §4.1 零截断筛查与 §4.6.4 累计 3.0%（叠加背景库既有截断之上）规则。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "提供 GHG Protocol §§7.2、7.3.4—7.3.5 归属/非归属划分及三条件排除门槛（含 <1% 保守上限示例）。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-boundary-types-and-stages"
+      ],
+      "conceptIds": [
+        "cn-inventory-truncation",
+        "cn-rule-conformance"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "过程清单的截断误差与经济投入产出闭合方法（混合清单）将在第二部末章《混合清单》继续定量对照；此处对比的是范围定义阶段的法定与指南排除门槛。"
+      ],
+      "reasoning": "揭示同样称为“截断规则”，各体系在参照分母（质量 vs. 环境影响）、是否叠加背景库截断、以及是否先剥离资本品与管理开销上存在根本分叉。"
+    },
+    {
+      "id": "cl-gs23-scope-audit-and-preview",
+      "text": "审读或设计任何一项生命周期研究时，可以按四步快速核验其“研究目的与范围”是否立得住：第一，核对目的与比较资格——研究是否声明了目标受众、决策情景与比较断言意向，其方法选择（例如单类别碳清单或无 PEFCR 的多类别比较）是否与该资格相称；第二，核对前景与背景边界——是否明确了采用特异性视角还是管理控制视角，一级定制供应商与产品设计相关的使用能耗是否配足了专有数据，对比方案之间是否存在前/背景数据比例失衡；第三，核对系统边界与累计截断——是否绘制了对齐报告名称的过程图，是否计及零部件与宿主系统的技术交互，截断阈值是否同时受环境显著性约束且未把背景库已有截断重复漏算；第四，核对迭代记录与标准原文边界——后续修订是否留痕、未检阅的付费标准条款（如 ISO 14044:2006 公开预览第 9 页之后的 §§4.2.3.6—4.2.3.8 与 §§4.3—5.3）是否如实标明依据边界而非暗中补造。确立研究目的、前景边界与系统范围之后，下一章《功能参照》将进入最核心的比较基准问题：如何把被比较的服务固定为可计量的功能单位与参考流。",
+      "kind": "synthesis",
+      "scope": "研究目的与范围四步核查清单、ISO 14044 公开预览核验边界声明及向《功能参照》的章节衔接。",
+      "evidenceIds": [
+        "ev-gs23-iso14044-preview-goal-scope",
+        "ev-gs23-ilcd-ch5-goal-contexts",
+        "ev-gs23-ilcd-foreground-background",
+        "ev-gs23-ilcd-boundaries-cutoff",
+        "ev-gs23-pef-goal-scope-cutoff",
+        "ev-gs23-ghgp-goal-boundary-excl",
+        "ev-gs23-cml-goal-scope-foreground"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-gs23-iso14044-preview-goal-scope",
+          "relation": "supports",
+          "rationale": "支撑比较资格、截断显著性及 ISO 14044 公开预览截止边界的如实披露。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-ch5-goal-contexts",
+          "relation": "supports",
+          "rationale": "支撑决策情景核查。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-foreground-background",
+          "relation": "supports",
+          "rationale": "支撑特异性视角与管理视角前景/背景边界核查。"
+        },
+        {
+          "evidenceId": "ev-gs23-ilcd-boundaries-cutoff",
+          "relation": "supports",
+          "rationale": "支撑宿主系统交互与环境影响完整度核查。"
+        },
+        {
+          "evidenceId": "ev-gs23-pef-goal-scope-cutoff",
+          "relation": "supports",
+          "rationale": "支撑边界图公司特定数据标注与叠加背景库之上的累计 3.0% 截断核查。"
+        },
+        {
+          "evidenceId": "ev-gs23-ghgp-goal-boundary-excl",
+          "relation": "supports",
+          "rationale": "支撑强制过程图与归属过程三条件排除核查。"
+        },
+        {
+          "evidenceId": "ev-gs23-cml-goal-scope-foreground",
+          "relation": "supports",
+          "rationale": "支撑对比方案前/背景数据比例失衡核查。"
+        }
+      ],
+      "premiseIds": [
+        "cl-gs23-decision-contexts",
+        "cl-gs23-iteration-and-screening",
+        "cl-gs23-comparative-assertion-gates",
+        "cl-gs23-foreground-data-hierarchies",
+        "cl-gs23-attributable-and-cutoff-divergences"
+      ],
+      "conceptIds": [
+        "cn-framework-work-products",
+        "cn-inventory-truncation",
+        "cn-rule-conformance"
+      ],
+      "mappingIds": [],
+      "status": "reviewed",
+      "reviewedAt": "2026-11-27",
+      "reviewKind": "agent-source-check",
+      "caveats": [
+        "本核查清单依据五套公开可得一手文本归纳，涉及法定合规申报或第三方认证时须核对现行有效授权标准全文与适用行业品类规则。"
+      ],
+      "reasoning": "把本章四节提炼为读者可直接上手的四步审读与设计核查清单，明确公开预览边界并自然衔接第二部下一章《功能参照》。"
     }
   ],
   "concepts": [
