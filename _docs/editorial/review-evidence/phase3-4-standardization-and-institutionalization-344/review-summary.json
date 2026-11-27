@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase3-4-standardization-and-institutionalization-344",
+  "issue": "tiangong-lca/knowledge-base#344",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Dual independent agent review of primary-source historical/institutional fidelity, premise-DAG invariants, Clean Public Delivery (§2.15), and meaning-level bilingual parity (§2.17). Does not constitute human domain expert peer review or legal/standards certification advice.",
+  "reviewers": [
+    {
+      "id": "e438d787-3e67-49f9-adf7-97d249a3d319",
+      "role": "Primary-Source & Engineering Auditor",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 3,
+      "resolvedCount": 3
+    },
+    {
+      "id": "bd17c0f0-7bd7-42cc-aedb-1645fe6aad06",
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 5,
+      "resolvedCount": 5
+    }
+  ],
+  "blockingFindings": [
+    {
+      "id": "B1",
+      "sourceReviewer": "e438d787-3e67-49f9-adf7-97d249a3d319",
+      "summary": "ILCD 2010 [ISO!] and [ISO+] raw regex counts (87/92) included 4 meta-explanatory occurrences of the symbol legend; actual tagged provisions are 83 stricter-than-ISO (82 [ISO!] + 1 (ISO!)) and 88 outside-ISO ([ISO+]).",
+      "resolution": "Updated counts to 83 and 88 across ev-std34-ilcd2010-open-space, cl-std34-iso-open-space (ZH/EN + zhDigest), evidenceLinks, Table 1 (ZH/EN), and the revision manifest."
+    },
+    {
+      "id": "B2",
+      "sourceReviewer": "e438d787-3e67-49f9-adf7-97d249a3d319",
+      "summary": "Early LCI slowdown period was rendered as 1975–1985 instead of the primary-source wording 'from 1975 through the early 1980s' (EPA 1993 p. 6; EPA 2006 p. 4).",
+      "resolution": "Corrected to '1975 年至 1980 年代初' / 'from 1975 through the early 1980s' across ev-std34-epa1993-history-crisis, ev-std34-epa2006-ag-statement, and cl-std34-crisis-and-early-push (ZH/EN)."
+    },
+    {
+      "id": "B3/R1",
+      "sourceReviewer": "both",
+      "summary": "Raw Markdown backticks around [ISO!] and [ISO+] leaked verbatim into rendered Chinese prose across 5 static pages because <Prose> and evidence renderers output plain text.",
+      "resolution": "Removed backticks from cl-std34-iso-open-space, ev-std34-ilcd2010-open-space, and ZH Table 1 Row 4 for clean plain-text rendering and visual parity with EN."
+    },
+    {
+      "id": "R2",
+      "sourceReviewer": "bd17c0f0-7bd7-42cc-aedb-1645fe6aad06",
+      "summary": "Near-verbatim back-to-back repetition of the Part I to Part II closing bridge between cl-std34-verification-boundary-bridge and the final MDX paragraph in both ZH and EN.",
+      "resolution": "Replaced the final MDX paragraph in both ZH and EN with the concise <ConceptRef> and Part II continuation link pattern matching Part VII closing chapters."
+    },
+    {
+      "id": "R3",
+      "sourceReviewer": "bd17c0f0-7bd7-42cc-aedb-1645fe6aad06",
+      "summary": "Unexpanded acronyms on first use inside Ch. 4 prose, caveats, and Table 1 (LCA, EEC/DG XI, SPOLD, InLCA/LCM, IPP/SCP, DG ENV, EF, ILCD-EL, AWARE, OEFSR, EoL).",
+      "resolution": "Expanded every acronym on first appearance in both ZH and EN prose, caveats, and Table 1."
+    },
+    {
+      "id": "R4",
+      "sourceReviewer": "bd17c0f0-7bd7-42cc-aedb-1645fe6aad06",
+      "summary": "Unexpanded acronyms on standalone public surfaces (frontmatter description, /changes/ publicSummary, /timeline/ new milestones, Reading Guide Part I, and Book Guide Part I intro) plus the publishing phrase 'bilingual timeline' in EN /changes/.",
+      "resolution": "Expanded acronyms across all standalone surfaces and replaced 'bilingual timeline' with 'Timeline'."
+    },
+    {
+      "id": "R5",
+      "sourceReviewer": "bd17c0f0-7bd7-42cc-aedb-1645fe6aad06",
+      "summary": "Meaning-level bilingual parity drifts on ILCD §6.10.8 comparative carbon footprints, ISO 14067:2018 land-use-change carbon, Part VII statutory examples, Caveat 8 OEFSR count, and /changes/ & /timeline/ summaries.",
+      "resolution": "Aligned all five passages at meaning-level parity across ZH and EN and refreshed zhDigests."
+    }
+  ],
+  "nonBlockingResolutions": [
+    "Corrected ev-std34-unep-initiative-outputs locators (Shonan pp. 10, 38–39, 109, 117; GLAM3 Scoping pp. 13, 70, 76, 147) and removed unreferenced 2020 mention from that single-source summary.",
+    "Removed '内部' from ev-std34-epa1993-history-crisis.summary (keeping 'internal' attributed to EPA 2006 p. 4).",
+    "Refined locators for ev-std34-ilcd2010-open-space (§6.7.1 fn. 86), ev-std34-com2013-196-diagnosis (fn. 16 replacing fn. 10), ev-std34-jrc2019-pef-updates (added Annex A §A.5 in ZH), and ev-std34-iso40-44-previews (added §4.2.1 p. 7 for iterative scope).",
+    "Removed inline section/page citations from EN claim body prose, standardized ZH '第 5.4 节', harmonized '美国环境保护署（US EPA）' and '环境毒理学与化学学会（SETAC）' with Ch. 3, aligned Table 1 Row 5 '≥3 人独立评审' and 6-column ZH caption, changed Seattle 'workshop' to 'conference', aligned Ch. 3 bridge & Reading Guide SETAC/Initiative wording, spelled out 'Recommendation 2013/179/EU' in EN timeline title, and removed redundant 'evidence' keys from the two new EN timeline milestones."
+  ],
+  "openLimitations": [
+    "Human domain expert peer review has not been conducted (scientificApproval: false).",
+    "Paywalled/copyrighted standards (ISO 14040/14044:2006 clauses beyond public previews, withdrawn ISO 14040:1997–14043:2000, ISO 14025, ISO 14067) and non-public SETAC workshop volumes (Fava et al., 1991; Consoli et al., 1993) were not purchased or inspected in full."
+  ]
+}
