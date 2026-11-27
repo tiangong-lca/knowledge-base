@@ -94,7 +94,7 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
         })}
       </section>
 
-      <section aria-label={isEn ? 'Filter by theme, verification status, and keyword' : '主题、核验状态与关键词筛选'} className={styles.toolbar}>
+      <section aria-label={isEn ? 'Filter by theme, source basis, and keyword' : '主题、文献依据与关键词筛选'} className={styles.toolbar}>
         <div className={styles.filterRows}>
           <div className={styles.trackGroup} role="group" aria-label={isEn ? 'Filter by theme' : '按主题筛选'}>
             <button
@@ -121,14 +121,14 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
             })}
           </div>
 
-          <div className={styles.trackGroup} role="group" aria-label={isEn ? 'Filter by primary-source verification status' : '按一手来源核验状态筛选'}>
+          <div className={styles.trackGroup} role="group" aria-label={isEn ? 'Filter by source basis' : '按文献依据筛选'}>
             <button
               type="button"
               aria-pressed={selectedStatus === 'all'}
               className={`${styles.pill} ${selectedStatus === 'all' ? styles.pillActive : ''}`}
               onClick={() => setSelectedStatus('all')}
             >
-              {isEn ? `All (${milestones.length})` : `全部状态（${milestones.length}）`}
+              {isEn ? `All (${milestones.length})` : `全部（${milestones.length}）`}
             </button>
             <button
               type="button"
@@ -136,7 +136,7 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
               className={`${styles.pill} ${selectedStatus === 'verified' ? styles.pillActive : ''}`}
               onClick={() => setSelectedStatus(prev => (prev === 'verified' ? 'all' : 'verified'))}
             >
-              {isEn ? `Primary source verified (${verifiedCount})` : `已核对一手来源（${verifiedCount}）`}
+              {isEn ? `From primary source (${verifiedCount})` : `据原始文献（${verifiedCount}）`}
             </button>
             <button
               type="button"
@@ -144,7 +144,7 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
               className={`${styles.pill} ${selectedStatus === 'pending' ? styles.pillActive : ''}`}
               onClick={() => setSelectedStatus(prev => (prev === 'pending' ? 'all' : 'pending'))}
             >
-              {isEn ? `Unverified (${pendingCount})` : `待核（${pendingCount}）`}
+              {isEn ? `From secondary accounts (${pendingCount})` : `据转述（${pendingCount}）`}
             </button>
           </div>
         </div>
@@ -181,8 +181,8 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
       {groupedByEra.length === 0 ? (
         <div className={styles.emptyState}>
           {isEn
-            ? 'No matching milestones. Clear the search query or adjust era, theme, and verification filters.'
-            : '没有匹配的大事记节点。请清空关键词或切换时期、主题与核验状态筛选。'}
+            ? 'No matching milestones. Clear the search query or adjust era, theme, and source filters.'
+            : '没有匹配的大事记节点。请清空关键词或切换时期、主题与文献依据筛选。'}
         </div>
       ) : (
         groupedByEra.map(({ era, items }) => {
@@ -223,8 +223,8 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
                             data-timeline-status={item.status}
                           >
                             {item.status === 'verified'
-                              ? (isEn ? 'Primary source verified' : '已核对一手来源')
-                              : (isEn ? 'Unverified' : '待核')}
+                              ? (isEn ? 'From primary source' : '据原始文献')
+                              : (isEn ? 'From secondary accounts' : '据转述')}
                           </span>
                           <span
                             className={`${styles.trackBadge} ${
@@ -244,7 +244,7 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
 
                       {item.status === 'verified' && item.sources.length > 0 && (
                         <div className={styles.evidenceBox}>
-                          <span className={styles.chapterLabel}>{isEn ? 'Primary sources:' : '一手来源：'}</span>
+                          <span className={styles.chapterLabel}>{isEn ? 'Primary sources:' : '原始文献：'}</span>
                           {item.sources.map(src => (
                             <Link
                               key={src.id}
@@ -263,7 +263,7 @@ export function LcaTimeline({ embedded = false, lang = 'zh' }: LcaTimelineProps)
 
                       {item.status === 'pending' && item.pendingNote && (
                         <p className={styles.pendingBox}>
-                          <strong>{isEn ? 'Verification note: ' : '待核说明：'}</strong>
+                          <strong>{isEn ? 'Source note: ' : '出处说明：'}</strong>
                           {item.pendingNote}
                         </p>
                       )}

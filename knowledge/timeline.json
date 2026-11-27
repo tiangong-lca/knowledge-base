@@ -33,10 +33,22 @@
     }
   ],
   "tracks": [
-    { "id": "framework", "label": "框架与标准" },
-    { "id": "inventory", "label": "清单与数据库" },
-    { "id": "impact", "label": "影响评价方法" },
-    { "id": "case-policy", "label": "经典案例与政策" }
+    {
+      "id": "framework",
+      "label": "框架与标准"
+    },
+    {
+      "id": "inventory",
+      "label": "清单与数据库"
+    },
+    {
+      "id": "impact",
+      "label": "影响评价方法"
+    },
+    {
+      "id": "case-policy",
+      "label": "经典案例与政策"
+    }
   ],
   "milestones": [
     {
@@ -49,11 +61,20 @@
       "summary": "首次系统追踪玻璃瓶、金属罐与塑料容器从原料开采、制造到废弃处置的能量、原料与排放账本，奠定“从摇篮到坟墓”比较思路。",
       "significance": "公认的现代生命周期清单分析（LCI）源头，把包装争议从单一环节拉向全链条物料能量平衡。",
       "status": "pending",
-      "pendingNote": "1969 年 MRI 受可口可乐委托完成的内部原报告未公开全文；本库已直接核读同一团队 1974 年公开报告 EPA SW-91c（见 1974 节点），1969 年早期内部研究细节暂标为待核。",
-      "evidence": { "sourceIds": [], "claimIds": [] },
+      "pendingNote": "1969 年 MRI 受可口可乐委托完成的内部原报告未公开全文；本书已直接核读同一团队 1974 年公开报告 EPA SW-91c（见 1974 节点），1969 年内部研究的细节据后续公开文献转述。",
+      "evidence": {
+        "sourceIds": [],
+        "claimIds": []
+      },
       "chapters": [
-        { "label": "饮料容器账本", "href": "/docs/book/early-container-comparisons/" },
-        { "label": "生命周期视角", "href": "/docs/book/integrative-ambitions/" }
+        {
+          "label": "饮料容器账本",
+          "href": "/docs/book/early-container-comparisons/"
+        },
+        {
+          "label": "生命周期视角",
+          "href": "/docs/book/integrative-ambitions/"
+        }
       ]
     },
     {
@@ -67,12 +88,23 @@
       "significance": "首次清晰暴露“相同实物账本在不同使用行为假设下会得出相反政策结论”。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-epa-1972-beverage-problem"],
-        "claimIds": ["cl-early-policy-question-version", "cl-early-policy-counting-objects"]
+        "sourceIds": [
+          "src-book-epa-1972-beverage-problem"
+        ],
+        "claimIds": [
+          "cl-early-policy-question-version",
+          "cl-early-policy-counting-objects"
+        ]
       },
       "chapters": [
-        { "label": "容器比较与政策判断", "href": "/docs/book/early-container-policy-and-systems/" },
-        { "label": "可修订的判断", "href": "/docs/book/revisable-judgment/" }
+        {
+          "label": "容器比较与政策判断",
+          "href": "/docs/book/early-container-policy-and-systems/"
+        },
+        {
+          "label": "可修订的判断",
+          "href": "/docs/book/revisable-judgment/"
+        }
       ]
     },
     {
@@ -86,12 +118,23 @@
       "significance": "让企业内部委托研究走向公开政府报告与可复核方法文本。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-epa-1974-nine-beverage"],
-        "claimIds": ["cl-early-container-commission", "cl-early-container-service-basis"]
+        "sourceIds": [
+          "src-book-epa-1974-nine-beverage"
+        ],
+        "claimIds": [
+          "cl-early-container-commission",
+          "cl-early-container-service-basis"
+        ]
       },
       "chapters": [
-        { "label": "饮料容器账本", "href": "/docs/book/early-container-comparisons/" },
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" }
+        {
+          "label": "饮料容器账本",
+          "href": "/docs/book/early-container-comparisons/"
+        },
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        }
       ]
     },
     {
@@ -104,10 +147,16 @@
       "summary": "在欧洲系统整理包装材料清单数据，并尝试按法规排放限值计算“临界体积”，为后续生态稀缺法（UBP）铺平道路。",
       "significance": "标志欧洲从纯物料能量清单迈向基于环境承载与政策目标的影响汇总尝试。",
       "status": "pending",
-      "pendingNote": "1984 年瑞士联邦环保局（BUS）第 24 号原始德文报告尚未在本库直接核读；后续生态稀缺法演变可参见第 20 章《生态稀缺赋权》所核读文献，本节点暂标为待核。",
-      "evidence": { "sourceIds": [], "claimIds": [] },
+      "pendingNote": "1984 年瑞士联邦环保局（BUS）第 24 号原始德文报告未公开全文，此处据后续公开文献转述；生态稀缺法的后续演变可参见《生态稀缺赋权》一章所核读的原始文献。",
+      "evidence": {
+        "sourceIds": [],
+        "claimIds": []
+      },
       "chapters": [
-        { "label": "生态稀缺赋权", "href": "/docs/book/ecological-scarcity-and-targets/" }
+        {
+          "label": "生态稀缺赋权",
+          "href": "/docs/book/ecological-scarcity-and-targets/"
+        }
       ]
     },
     {
@@ -120,10 +169,16 @@
       "summary": "汇聚欧美研究者统一术语为 Life Cycle Assessment，并提出清单分析、影响评价与改进分析三组件技术框架。",
       "significance": "LCA 正式从零散的包装能耗研究升格为跨国学术共同体共建的方法学科。",
       "status": "pending",
-      "pendingNote": "1990 年 SETAC 佛蒙特研讨会原始会议报告（Fava 等，1991）尚未在本库直接核读，目前仅依据 1992–1996 年后续公开指南转述，暂标为待核。",
-      "evidence": { "sourceIds": [], "claimIds": [] },
+      "pendingNote": "1990 年 SETAC 佛蒙特研讨会原始会议报告（Fava 等，1991）未公开发布全文，此处据 1992–1996 年公开指南转述。",
+      "evidence": {
+        "sourceIds": [],
+        "claimIds": []
+      },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        }
       ]
     },
     {
@@ -137,12 +192,24 @@
       "significance": "奠定现代中点影响评价（Midpoint LCIA）与矩阵化清单求解的双重理论支柱。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-cml-1992-part1", "src-book-cml-1992-backgrounds"],
-        "claimIds": ["cl-cml-opening", "cl-cml-edition"]
+        "sourceIds": [
+          "src-book-cml-1992-part1",
+          "src-book-cml-1992-backgrounds"
+        ],
+        "claimIds": [
+          "cl-cml-opening",
+          "cl-cml-edition"
+        ]
       },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" },
-        { "label": "过程网络", "href": "/docs/book/inventory-calculation/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        },
+        {
+          "label": "过程网络",
+          "href": "/docs/book/inventory-calculation/"
+        }
       ]
     },
     {
@@ -155,14 +222,25 @@
       "summary": "细化目标与范围界定、功能单位、数据质量记录与系统边界截断原则，强化同行评议与透明度要求。",
       "significance": "把“先定服务功能、再建过程账本”的规范要求写入可操作的工程手册。",
       "status": "verified",
-      "verificationNote": "已直接核读 US EPA 1993 报告原件（EPA/600/R-92/245）；同期 SETAC 1993 实践准则通过后续指南转述，未单列原件核读。",
+      "verificationNote": "已直接核读 US EPA 1993 报告原件（EPA/600/R-92/245）；同期 SETAC 1993 实践准则据后续公开指南转述。",
       "evidence": {
-        "sourceIds": ["src-book-epa-1993"],
-        "claimIds": ["cl-book-framework-records", "cl-book-framework-epa1993"]
+        "sourceIds": [
+          "src-book-epa-1993"
+        ],
+        "claimIds": [
+          "cl-book-framework-records",
+          "cl-book-framework-epa1993"
+        ]
       },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" },
-        { "label": "功能参照", "href": "/docs/book/service-and-reference/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        },
+        {
+          "label": "功能参照",
+          "href": "/docs/book/service-and-reference/"
+        }
       ]
     },
     {
@@ -175,11 +253,20 @@
       "summary": "将早期“改进分析”重塑为贯穿全程的“生命周期解释”，确立目标与范围、清单分析、影响评价、解释四阶段迭代结构。",
       "significance": "成为全球首个跨国界 LCA 国际标准骨架，后续 14041/14042/14043 随之展开。",
       "status": "pending",
-      "pendingNote": "ISO 14040:1997 属已废止的付费国际标准，本库未直接核读 1997 年原件全文；相关沿革目前依据 CML 2001 与 EPA 2006 公开指南转述，暂标为待核。",
-      "evidence": { "sourceIds": [], "claimIds": [] },
+      "pendingNote": "ISO 14040:1997 为已废止的付费国际标准，未查阅其全文；相关沿革据 CML 2001 与 US EPA 2006 公开指南转述。",
+      "evidence": {
+        "sourceIds": [],
+        "claimIds": []
+      },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" },
-        { "label": "清洁生产中的生命周期评价", "href": "/docs/book/cleaner-production-purpose-and-prospects/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        },
+        {
+          "label": "清洁生产中的生命周期评价",
+          "href": "/docs/book/cleaner-production-purpose-and-prospects/"
+        }
       ]
     },
     {
@@ -193,12 +280,24 @@
       "significance": "首次用严密实证算例揭示“同一度外购电在不同记账边界下对应不同发电来源”。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-menard-dones-gantner-1998", "src-book-frischknecht-1998-thesis-allocation"],
-        "claimIds": ["cl-market-average-question", "cl-market-balance"]
+        "sourceIds": [
+          "src-menard-dones-gantner-1998",
+          "src-book-frischknecht-1998-thesis-allocation"
+        ],
+        "claimIds": [
+          "cl-market-average-question",
+          "cl-market-balance"
+        ]
       },
       "chapters": [
-        { "label": "市场响应", "href": "/docs/book/market-boundaries-and-response/" },
-        { "label": "供电系统", "href": "/docs/book/electricity-service-and-response/" }
+        {
+          "label": "市场响应",
+          "href": "/docs/book/market-boundaries-and-response/"
+        },
+        {
+          "label": "供电系统",
+          "href": "/docs/book/electricity-service-and-response/"
+        }
       ]
     },
     {
@@ -212,12 +311,24 @@
       "significance": "清晰划开“归因记账（谁分担既有排放）”与“后果建模（需求变化让谁多生产）”的分水岭。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-weidema-frees-nielsen-1999", "src-book-weidema-2001-addendum"],
-        "claimIds": ["cl-market-question", "cl-market-meaning"]
+        "sourceIds": [
+          "src-weidema-frees-nielsen-1999",
+          "src-book-weidema-2001-addendum"
+        ],
+        "claimIds": [
+          "cl-market-question",
+          "cl-market-meaning"
+        ]
       },
       "chapters": [
-        { "label": "市场响应", "href": "/docs/book/market-boundaries-and-response/" },
-        { "label": "共同生产", "href": "/docs/book/joint-production/" }
+        {
+          "label": "市场响应",
+          "href": "/docs/book/market-boundaries-and-response/"
+        },
+        {
+          "label": "共同生产",
+          "href": "/docs/book/joint-production/"
+        }
       ]
     },
     {
@@ -231,12 +342,24 @@
       "significance": "确立近二十年国际学界与工业界最广泛引用的中点基线表征体系之一。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-cml-2001-part2a", "src-book-cml-2001-part1"],
-        "claimIds": ["cl-book-cml-reference", "cl-book-reference-reading"]
+        "sourceIds": [
+          "src-book-cml-2001-part2a",
+          "src-book-cml-2001-part1"
+        ],
+        "claimIds": [
+          "cl-book-cml-reference",
+          "cl-book-reference-reading"
+        ]
       },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" },
-        { "label": "中点与终点", "href": "/docs/book/midpoint-endpoint-value-choices/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        },
+        {
+          "label": "中点与终点",
+          "href": "/docs/book/midpoint-endpoint-value-choices/"
+        }
       ]
     },
     {
@@ -250,11 +373,20 @@
       "significance": "把“过程截断误差”与“部门聚合/价格折算误差”的权衡推上台面。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-suh-2004-boundary-thesis-reprint", "src-suh-2004-functions-thesis-reprint"],
-        "claimIds": ["cl-inv-example-meaning", "cl-inv-boundary-carrier"]
+        "sourceIds": [
+          "src-book-suh-2004-boundary-thesis-reprint",
+          "src-suh-2004-functions-thesis-reprint"
+        ],
+        "claimIds": [
+          "cl-inv-example-meaning",
+          "cl-inv-boundary-carrier"
+        ]
       },
       "chapters": [
-        { "label": "混合清单", "href": "/docs/book/inventory-boundary-and-hybrid/" }
+        {
+          "label": "混合清单",
+          "href": "/docs/book/inventory-boundary-and-hybrid/"
+        }
       ]
     },
     {
@@ -268,11 +400,20 @@
       "significance": "展示终点货币化如何将环境权衡转化为可比货币量，也暴露支付意愿对人口与收入分布的依赖。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-lime-jp2003", "src-lime-2004-conjoint"],
-        "claimIds": ["cl-lime-same-table", "cl-lime-different-card"]
+        "sourceIds": [
+          "src-lime-jp2003",
+          "src-lime-2004-conjoint"
+        ],
+        "claimIds": [
+          "cl-lime-same-table",
+          "cl-lime-different-card"
+        ]
       },
       "chapters": [
-        { "label": "环境损害估值", "href": "/docs/book/lime-preferences-and-damage-weights/" }
+        {
+          "label": "环境损害估值",
+          "href": "/docs/book/lime-preferences-and-damage-weights/"
+        }
       ]
     },
     {
@@ -285,15 +426,30 @@
       "summary": "将原 14041–14043 合并为单一要求与指南标准 ISO 14044，明确公开比较断言的强制关键性审查与禁加权底线。",
       "significance": "构成至今仍居全球核心地位的 LCA 原则、要求与评审治理基准。",
       "status": "verified",
-      "verificationNote": "本库已核读 ISO 14040:2006 与 ISO 14044:2006 机构公开预览条款（术语与清单边界节）；公开比较断言与禁加权底线据已核读公开指南转述，完整付费标准全文及评审细则尚待正式购买授权后复核。",
+      "verificationNote": "此处对照了 ISO 14040:2006 与 ISO 14044:2006 公开预览条款（术语与清单边界节），公开比较断言与禁加权要求据公开指南转述；未查阅付费标准全文。",
       "evidence": {
-        "sourceIds": ["src-flow-pilot-iso40", "src-flow-pilot-iso44"],
-        "claimIds": ["cl-flow99-two-boundaries", "cl-flow99-elementary"]
+        "sourceIds": [
+          "src-flow-pilot-iso40",
+          "src-flow-pilot-iso44"
+        ],
+        "claimIds": [
+          "cl-flow99-two-boundaries",
+          "cl-flow99-elementary"
+        ]
       },
       "chapters": [
-        { "label": "评价框架与分析步骤", "href": "/docs/book/framework-responsibilities/" },
-        { "label": "墙面服务比较", "href": "/docs/book/wall-service-to-comparison/" },
-        { "label": "购物袋研究", "href": "/docs/book/interpretation-and-limits/" }
+        {
+          "label": "评价框架与分析步骤",
+          "href": "/docs/book/framework-responsibilities/"
+        },
+        {
+          "label": "墙面服务比较",
+          "href": "/docs/book/wall-service-to-comparison/"
+        },
+        {
+          "label": "购物袋研究",
+          "href": "/docs/book/interpretation-and-limits/"
+        }
       ]
     },
     {
@@ -307,11 +463,20 @@
       "significance": "将跨模型相差数个数量级的毒性表征收束到透明可复核的科学共识框架。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-kb88-rosenbaum-2008", "src-book-usetox-2-documentation-v11"],
-        "claimIds": ["cl-usetox-matched-emissions", "cl-usetox-model-comparison"]
+        "sourceIds": [
+          "src-kb88-rosenbaum-2008",
+          "src-book-usetox-2-documentation-v11"
+        ],
+        "claimIds": [
+          "cl-usetox-matched-emissions",
+          "cl-usetox-model-comparison"
+        ]
       },
       "chapters": [
-        { "label": "毒性路径", "href": "/docs/book/usetox-pathways-and-boundaries/" }
+        {
+          "label": "毒性路径",
+          "href": "/docs/book/usetox-pathways-and-boundaries/"
+        }
       ]
     },
     {
@@ -324,10 +489,16 @@
       "summary": "融合 CML 中点与 Eco-indicator 99 终点路线，按个人主义（I）、层级主义（H）与平等主义（E）三套价值视角显式参数化时间范围与证据门槛。",
       "significance": "明确揭示“终点汇总并非纯自然科学，而是物理因果链与规范性价值选择的结合”。",
       "status": "pending",
-      "pendingNote": "本库已直接核读 ReCiPe 2016 论文与 RIVM 报告（见 2016 节点），但尚未直接核读 Goedkoop 等 2009 年首版 ReCiPe 2008 报告原件，本节点暂标为待核。",
-      "evidence": { "sourceIds": [], "claimIds": [] },
+      "pendingNote": "本书直接核读了 ReCiPe 2016 论文与 RIVM 报告（见 2016 节点），未直接查阅 Goedkoop 等 2009 年首版 ReCiPe 2008 报告原件，此处据后续公开文献转述。",
+      "evidence": {
+        "sourceIds": [],
+        "claimIds": []
+      },
       "chapters": [
-        { "label": "中点与终点", "href": "/docs/book/midpoint-endpoint-value-choices/" }
+        {
+          "label": "中点与终点",
+          "href": "/docs/book/midpoint-endpoint-value-choices/"
+        }
       ]
     },
     {
@@ -341,12 +512,23 @@
       "significance": "成为欧洲生命周期数据网络与产品足迹体系最详尽的公开操作蓝本。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-ilcd-2010"],
-        "claimIds": ["cl-fu-distinction", "cl-book-service"]
+        "sourceIds": [
+          "src-book-ilcd-2010"
+        ],
+        "claimIds": [
+          "cl-fu-distinction",
+          "cl-book-service"
+        ]
       },
       "chapters": [
-        { "label": "数据适用性", "href": "/docs/book/data-applicability/" },
-        { "label": "市场响应", "href": "/docs/book/market-boundaries-and-response/" }
+        {
+          "label": "数据适用性",
+          "href": "/docs/book/data-applicability/"
+        },
+        {
+          "label": "市场响应",
+          "href": "/docs/book/market-boundaries-and-response/"
+        }
       ]
     },
     {
@@ -360,13 +542,30 @@
       "significance": "标示企业碳核算、全球清单治理与政府循证决策三条应用主线同时走向成熟。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-pfr151-ghgp-2011", "src-book-unep-2011-databases", "src-pack-ea2011"],
-        "claimIds": ["cl-pfr151-ghgp-boundary-unit", "cl-db2011-user-and-manager", "cl-pack-question"]
+        "sourceIds": [
+          "src-pfr151-ghgp-2011",
+          "src-book-unep-2011-databases",
+          "src-pack-ea2011"
+        ],
+        "claimIds": [
+          "cl-pfr151-ghgp-boundary-unit",
+          "cl-db2011-user-and-manager",
+          "cl-pack-question"
+        ]
       },
       "chapters": [
-        { "label": "购物袋研究", "href": "/docs/book/interpretation-and-limits/" },
-        { "label": "产品足迹规则", "href": "/docs/book/product-footprint-rules-and-practice/" },
-        { "label": "数据适用性", "href": "/docs/book/data-applicability/" }
+        {
+          "label": "购物袋研究",
+          "href": "/docs/book/interpretation-and-limits/"
+        },
+        {
+          "label": "产品足迹规则",
+          "href": "/docs/book/product-footprint-rules-and-practice/"
+        },
+        {
+          "label": "数据适用性",
+          "href": "/docs/book/data-applicability/"
+        }
       ]
     },
     {
@@ -380,11 +579,19 @@
       "significance": "首次在实证层面严格追问“数据质量打分究竟能否可靠换算为概率方差”。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-ciroth-2012-pedigree-refinement"],
-        "claimIds": ["cl-unc-scores", "cl-unc-calibration"]
+        "sourceIds": [
+          "src-book-ciroth-2012-pedigree-refinement"
+        ],
+        "claimIds": [
+          "cl-unc-scores",
+          "cl-unc-calibration"
+        ]
       },
       "chapters": [
-        { "label": "质量评分与概率", "href": "/docs/book/data-quality-and-probability/" }
+        {
+          "label": "质量评分与概率",
+          "href": "/docs/book/data-quality-and-probability/"
+        }
       ]
     },
     {
@@ -398,12 +605,23 @@
       "significance": "彻底改变现代背景数据库的链接方式，也使数据库版本迁移与残差漂移成为核心审计议题。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-dapp147-ecoinvent-v3-2013"],
-        "claimIds": ["cl-dapp147-dataset-roles-and-system-linking", "cl-dapp147-quality-architectures-and-prerequisite-split"]
+        "sourceIds": [
+          "src-dapp147-ecoinvent-v3-2013"
+        ],
+        "claimIds": [
+          "cl-dapp147-dataset-roles-and-system-linking",
+          "cl-dapp147-quality-architectures-and-prerequisite-split"
+        ]
       },
       "chapters": [
-        { "label": "数据适用性", "href": "/docs/book/data-applicability/" },
-        { "label": "市场响应", "href": "/docs/book/market-boundaries-and-response/" }
+        {
+          "label": "数据适用性",
+          "href": "/docs/book/data-applicability/"
+        },
+        {
+          "label": "市场响应",
+          "href": "/docs/book/market-boundaries-and-response/"
+        }
       ]
     },
     {
@@ -417,13 +635,29 @@
       "significance": "推动影响评价从全球均质因子迈向高空间分辨率、受体敏感的本地化表征。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-book-recipe-2017-primary-article", "src-water-aware2018", "src-kb46-fantke2017"],
-        "claimIds": ["cl-lcia-midpoint-pathway", "cl-water-aware-question"]
+        "sourceIds": [
+          "src-book-recipe-2017-primary-article",
+          "src-water-aware2018",
+          "src-kb46-fantke2017"
+        ],
+        "claimIds": [
+          "cl-lcia-midpoint-pathway",
+          "cl-water-aware-question"
+        ]
       },
       "chapters": [
-        { "label": "耗水与缺水潜势", "href": "/docs/book/water-scarcity-and-reference/" },
-        { "label": "颗粒物排放与健康损害", "href": "/docs/book/particulate-emissions-and-health/" },
-        { "label": "影响评价本地化", "href": "/docs/book/localization-evidence-and-denominators/" }
+        {
+          "label": "耗水与缺水潜势",
+          "href": "/docs/book/water-scarcity-and-reference/"
+        },
+        {
+          "label": "颗粒物排放与健康损害",
+          "href": "/docs/book/particulate-emissions-and-health/"
+        },
+        {
+          "label": "影响评价本地化",
+          "href": "/docs/book/localization-evidence-and-denominators/"
+        }
       ]
     },
     {
@@ -437,11 +671,19 @@
       "significance": "以震撼实证说明单看碳足迹如何掩盖水资源、臭氧消耗与土地利用的跨类别负担转移。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-int159-danish-epa-2018"],
-        "claimIds": ["cl-int159-danish-epa-fu-eol", "cl-int159-danish-epa-multi-indicator"]
+        "sourceIds": [
+          "src-int159-danish-epa-2018"
+        ],
+        "claimIds": [
+          "cl-int159-danish-epa-fu-eol",
+          "cl-int159-danish-epa-multi-indicator"
+        ]
       },
       "chapters": [
-        { "label": "购物袋研究", "href": "/docs/book/interpretation-and-limits/" }
+        {
+          "label": "购物袋研究",
+          "href": "/docs/book/interpretation-and-limits/"
+        }
       ]
     },
     {
@@ -455,13 +697,30 @@
       "significance": "为高不确定性、新兴技术放大与动态排放建模划定清晰的方法红线。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-unc149-heijungs-2020", "src-fut161-tsoy-2020", "src-fut161-lueddeckens-2020"],
-        "claimIds": ["cl-unc149-mc-runs-precision-vs-accuracy", "cl-fut161-upscaling-methods", "cl-fut161-dynamic-time-horizons"]
+        "sourceIds": [
+          "src-unc149-heijungs-2020",
+          "src-fut161-tsoy-2020",
+          "src-fut161-lueddeckens-2020"
+        ],
+        "claimIds": [
+          "cl-unc149-mc-runs-precision-vs-accuracy",
+          "cl-fut161-upscaling-methods",
+          "cl-fut161-dynamic-time-horizons"
+        ]
       },
       "chapters": [
-        { "label": "变异与不确定性", "href": "/docs/book/uncertainty-and-variability/" },
-        { "label": "未来技术与情景", "href": "/docs/book/future-technology-and-context/" },
-        { "label": "气候当量", "href": "/docs/book/climate-equivalence/" }
+        {
+          "label": "变异与不确定性",
+          "href": "/docs/book/uncertainty-and-variability/"
+        },
+        {
+          "label": "未来技术与情景",
+          "href": "/docs/book/future-technology-and-context/"
+        },
+        {
+          "label": "气候当量",
+          "href": "/docs/book/climate-equivalence/"
+        }
       ]
     },
     {
@@ -475,13 +734,28 @@
       "significance": "一方面把企业足迹推向高度标准化的合规监管路线，另一方面打通面向 2030/2050 脱碳情景的工程计算瓶颈。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-kb44-ec2021", "src-fut161-steubing-2021"],
-        "claimIds": ["cl-rule-rp", "cl-fut161-superstructure-iam"]
+        "sourceIds": [
+          "src-kb44-ec2021",
+          "src-fut161-steubing-2021"
+        ],
+        "claimIds": [
+          "cl-rule-rp",
+          "cl-fut161-superstructure-iam"
+        ]
       },
       "chapters": [
-        { "label": "产品足迹规则", "href": "/docs/book/product-footprint-rules-and-practice/" },
-        { "label": "材料循环", "href": "/docs/book/recycling-chains-and-accounting/" },
-        { "label": "未来技术与情景", "href": "/docs/book/future-technology-and-context/" }
+        {
+          "label": "产品足迹规则",
+          "href": "/docs/book/product-footprint-rules-and-practice/"
+        },
+        {
+          "label": "材料循环",
+          "href": "/docs/book/recycling-chains-and-accounting/"
+        },
+        {
+          "label": "未来技术与情景",
+          "href": "/docs/book/future-technology-and-context/"
+        }
       ]
     },
     {
@@ -495,11 +769,18 @@
       "significance": "标志 LCA/碳足迹首次在大型工业品领域从自愿信息披露跨越为具有直接法律约束力的市场准入闸门。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-pfr151-eu-2023-1542"],
-        "claimIds": ["cl-pfr151-binding-batteries"]
+        "sourceIds": [
+          "src-pfr151-eu-2023-1542"
+        ],
+        "claimIds": [
+          "cl-pfr151-binding-batteries"
+        ]
       },
       "chapters": [
-        { "label": "产品足迹规则", "href": "/docs/book/product-footprint-rules-and-practice/" }
+        {
+          "label": "产品足迹规则",
+          "href": "/docs/book/product-footprint-rules-and-practice/"
+        }
       ]
     },
     {
@@ -513,12 +794,24 @@
       "significance": "监管合规基础设施（DPP）与面向未来技术评价的方法术语同步进入制度化阶段。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-pfr151-eu-2024-1781", "src-fut161-arvidsson-2024"],
-        "claimIds": ["cl-pfr151-espr-dpp-conversion", "cl-fut161-terminology-axes"]
+        "sourceIds": [
+          "src-pfr151-eu-2024-1781",
+          "src-fut161-arvidsson-2024"
+        ],
+        "claimIds": [
+          "cl-pfr151-espr-dpp-conversion",
+          "cl-fut161-terminology-axes"
+        ]
       },
       "chapters": [
-        { "label": "产品足迹规则", "href": "/docs/book/product-footprint-rules-and-practice/" },
-        { "label": "未来技术与情景", "href": "/docs/book/future-technology-and-context/" }
+        {
+          "label": "产品足迹规则",
+          "href": "/docs/book/product-footprint-rules-and-practice/"
+        },
+        {
+          "label": "未来技术与情景",
+          "href": "/docs/book/future-technology-and-context/"
+        }
       ]
     },
     {
@@ -532,13 +825,28 @@
       "significance": "提醒研究者与监管者：方法规范落地永远伴随数据供给演进与版本迁移，结论必须保持可追溯、可修订。",
       "status": "verified",
       "evidence": {
-        "sourceIds": ["src-pfr151-eu-2024-1781", "src-kb44-ec-transition2026"],
-        "claimIds": ["cl-rule-validity", "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"]
+        "sourceIds": [
+          "src-pfr151-eu-2024-1781",
+          "src-kb44-ec-transition2026"
+        ],
+        "claimIds": [
+          "cl-rule-validity",
+          "cl-dapp147-proxy-hierarchy-cutoff-and-part6-bridge"
+        ]
       },
       "chapters": [
-        { "label": "数据适用性", "href": "/docs/book/data-applicability/" },
-        { "label": "产品足迹规则", "href": "/docs/book/product-footprint-rules-and-practice/" },
-        { "label": "可修订的判断", "href": "/docs/book/revisable-judgment/" }
+        {
+          "label": "数据适用性",
+          "href": "/docs/book/data-applicability/"
+        },
+        {
+          "label": "产品足迹规则",
+          "href": "/docs/book/product-footprint-rules-and-practice/"
+        },
+        {
+          "label": "可修订的判断",
+          "href": "/docs/book/revisable-judgment/"
+        }
       ]
     }
   ]

@@ -141,7 +141,7 @@ export async function EnChapterContent({ page, print = false }: { page: ReaderPa
         }}
       >
         <p style={{ margin: '0 0 0.35rem', fontSize: '0.82rem', fontWeight: 600, opacity: 0.8 }}>
-          English edition reader note · {note.title}
+          Note · {note.title}
         </p>
         <p style={{ margin: 0 }}>{note.text}</p>
       </aside>

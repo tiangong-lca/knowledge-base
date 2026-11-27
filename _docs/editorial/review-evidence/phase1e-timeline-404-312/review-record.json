@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "unitId": "phase1e-timeline-404-312",
+  "issue": "tiangong-lca/knowledge-base#312",
+  "reviewedAt": "2026-11-27",
+  "reviewKind": "agent-source-check",
+  "scientificApproval": false,
+  "scope": "Phase 1E: Timeline provenance wording and badges, EN EditionNotes cleanup, dead code removal (en-in-prep-page.tsx, unused ui.json keys), relocate vs. merge redirect distinction, global bilingual 404 (app/global-not-found.tsx + app/(entry)/not-found.tsx), bilingual llms.txt, and removal of hardcoded counts in layout metadata and search index.",
+  "checks": [
+    "Timeline ZH/EN badges changed to 据原始文献/据转述 (From primary source / From secondary accounts) with clean source-note copy removing 本库, 暂标为待核, 尚待正式购买授权, this library, pending licensed full-text, and Unverified.",
+    "Removed orphaned en-note-guide-bilingual-edition from knowledge/editions/en/notes.json and knowledge/editions/alignment.json; stripped 'For international readers:' prefixes and changed 'English edition reader note ·' to 'Note ·'.",
+    "Deleted unused components/en-in-prep-page.tsx and removed dead keys from config/editions/en/ui.json.",
+    "Updated scripts/export.mjs renderRedirectHtml to distinguish kind='relocate' from kind='merge' with unit test coverage in scripts/export-redirects.test.mjs; updated out/llms.txt to cover both ZH and EN editions; removed hardcoded milestone count from search-index-en.json and layout OpenGraph description.",
+    "Added global bilingual 404 (app/global-not-found.tsx with Next.js experimental.globalNotFound) and bilingual app/(entry)/not-found.tsx linking to /, /zh/coverage/, /en/, and /en/coverage/."
+  ],
+  "blockingIssues": []
+}

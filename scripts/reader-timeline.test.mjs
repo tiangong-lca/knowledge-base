@@ -16,6 +16,11 @@ test('production knowledge/timeline.json passes primary-source and active-route 
   assert.equal(timeline.milestones.length, 27);
   assert.ok(verified.length >= 20, `expected >=20 verified milestones, got ${verified.length}`);
   assert.ok(pending.every(m => m.pendingNote.length > 10));
+  const zhText = JSON.stringify(timeline);
+  assert.doesNotMatch(zhText, /本库|暂标为待核|尚待正式购买授权/);
+  const enTimeline = JSON.parse(readFileSync(new URL('../knowledge/editions/en/timeline.json', import.meta.url), 'utf8'));
+  const enText = JSON.stringify(enTimeline);
+  assert.doesNotMatch(enText, /this library|pending licensed full-text|marked Unverified/i);
 });
 
 test('validateTimelineData rejects verified milestone without sources, pending without pendingNote, and dead routes', () => {
