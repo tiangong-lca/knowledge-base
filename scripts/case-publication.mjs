@@ -22,6 +22,7 @@ import { dairyRulesInputShape, validateDairyRulesCase, evaluateDairyRulesCase, v
 import { particulateHealthInputShape, validateParticulateHealthCase, evaluateParticulateHealthCase, validateParticulateHealthFacts } from './particulate-health.mjs';
 import { electricityServiceInputShape, validateElectricityServiceCase, evaluateElectricityServiceCase, validateElectricityServiceFacts } from './electricity-service.mjs';
 import { nativeExchangeInputShape, validateNativeExchangeCase, evaluateNativeExchangeCase, validateNativeExchangeFacts } from './native-exchange.mjs';
+import { wallExtensionInputShape, validateWallExtensionCase, evaluateWallExtensionCase, validateWallExtensionFacts, validateWallExtensionParentLink } from './wall-extension.mjs';
 
 // Every nested object has an explicit schema. Unknown fields never enter public
 // downloads or the approved-input hash, including capture/private metadata.
@@ -143,6 +144,9 @@ const caseAdapters = new Map([
     validateFacts: () => [] }],
   ['CASE-PHOSPHORUS-BOUNDARY', { shape: phosphorusInputShape, validate: validatePhosphorusBoundaryCase,
     context: input => ({ evaluated: evaluatePhosphorusBoundaryCase(input) }), validateFacts: validatePhosphorusLossFact }],
+  ['CASE-WALL-EXT', { shape: wallExtensionInputShape, validate: validateWallExtensionCase,
+    context: input => ({ evaluated: evaluateWallExtensionCase(input) }), validateFacts: validateWallExtensionFacts,
+    wallParent: { label: 'wall extension', key: 'wallParent', validate: validateWallExtensionParentLink } }],
   ['CASE-WALL-CONNECT', { shape: wallInputShape, validate: validateTeachingCase, context: input => {
     const [low, high] = input.uncertainty.closedRange;
     return Object.fromEntries(['smooth', 'rough'].map(scenario => [scenario,
