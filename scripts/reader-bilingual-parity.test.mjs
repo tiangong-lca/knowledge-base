@@ -40,12 +40,16 @@ test('meta order ignores separators but not page sequence', () => {
 });
 
 test('reader guides compare identities and targets, not wording', () => {
-  const zh = { partQuestions: { 1: '问' }, readingModes: [{ id: 'm' }], problemRoutes: [{ id: 'p', targets: [{ route: '/x' }] }] };
-  const en = { partQuestions: { 1: 'Question' }, readingModes: [{ id: 'm' }], problemRoutes: [{ id: 'p', targets: [{ route: '/x' }] }] };
+  const sum = { establishes: 'a', contrasts: 'b', gaps: 'c', bridge: 'd' };
+  const zh = { partQuestions: { 1: '问' }, partSummaries: { 1: sum }, readingModes: [{ id: 'm' }], problemRoutes: [{ id: 'p', targets: [{ route: '/x' }] }] };
+  const en = { partQuestions: { 1: 'Question' }, partIntroductions: { 1: 'Intro' }, partSummaries: { 1: sum }, readingModes: [{ id: 'm' }], problemRoutes: [{ id: 'p', targets: [{ route: '/x' }] }] };
   assert.deepEqual(compareReaderGuides(zh, en), []);
   const drift = { ...en, problemRoutes: [{ id: 'p', targets: [{ route: '/y' }] }] };
   assert.equal(compareReaderGuides(zh, drift)[0].check, 'problemTargets');
   assert.equal(compareReaderGuides(zh, { ...en, partQuestions: { 1: ' ' } })[0].check, 'partQuestions');
+  assert.equal(compareReaderGuides(zh, { ...en, partIntroductions: { 1: '' } })[0].check, 'partIntroductions');
+  assert.equal(compareReaderGuides(zh, { ...en, partSummaries: { 1: { ...sum, gaps: '' } } })[0].check, 'partSummaries');
+  assert.equal(compareReaderGuides(zh, { ...en, partIntroductions: { 1: 'Intro', 9: 'Extra' } })[0].check, 'partIntroductions');
 });
 
 test('exceptions need rationale, and unused exceptions fail', () => {

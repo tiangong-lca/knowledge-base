@@ -283,6 +283,44 @@
   color: var(--color-fd-foreground);
 }
 
+.partClosing {
+  margin-top: 0.2rem;
+  padding: 0.85rem 1.05rem;
+  border: 1px solid var(--color-fd-border);
+  border-left: 3px solid var(--kb-subtle);
+  border-radius: 6px;
+  background: var(--kb-surface);
+}
+
+.partClosingTitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: var(--color-fd-primary);
+}
+
+.partClosingList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1.1rem;
+  margin: 0;
+}
+
+.partClosingList dt {
+  font-size: 0.76rem;
+  font-weight: 650;
+  color: var(--color-fd-foreground);
+  margin-bottom: 0.18rem;
+}
+
+.partClosingList dd {
+  margin: 0;
+  font-size: 0.81rem;
+  line-height: 1.62;
+  color: var(--kb-subtle);
+}
+
 .chapterList {
   display: flex;
   flex-direction: column;
@@ -425,7 +463,8 @@
   }
 
   .problemGrid,
-  .frontGrid {
+  .frontGrid,
+  .partClosingList {
     grid-template-columns: 1fr;
   }
 }
@@ -435,7 +474,8 @@
   .modeCard,
   .problemCard,
   .chapterItem,
-  .unitCard {
+  .unitCard,
+  .partClosing {
     break-inside: avoid;
     border-color: #bbb;
   }

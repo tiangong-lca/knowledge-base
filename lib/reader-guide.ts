@@ -33,8 +33,16 @@ export interface GuideTool {
   description: string;
 }
 
+export interface GuidePartSummary {
+  establishes: string;
+  contrasts: string;
+  gaps: string;
+  bridge: string;
+}
+
 export const readerGuideConfig = {
   partQuestions: rawGuide.partQuestions as Record<string, string>,
+  partSummaries: rawGuide.partSummaries as Record<string, GuidePartSummary>,
   readingModes: rawGuide.readingModes as GuideReadingMode[],
   problemRoutes: rawGuide.problemRoutes as GuideProblemRoute[],
   chapterCompanions: rawGuide.chapterCompanions as Record<string, GuideCompanion[]>,

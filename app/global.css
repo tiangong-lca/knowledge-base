@@ -170,6 +170,11 @@ button { cursor: pointer; }
 .reader-book-contents section > h3 { margin-top: 1.8rem; font-size: 1.1rem; }
 .print-part > h2 { margin-top: 3rem; font-size: 2rem; line-height: 1.5; }
 .print-part-introduction { line-height: 1.95; color: var(--color-fd-muted-foreground); }
+.print-part-closing { margin: 2rem 0 1.25rem; padding: 1.05rem 1.25rem; border: 1px solid var(--color-fd-border); border-inline-start: 3px solid var(--color-fd-primary); border-radius: 6px; background: var(--kb-surface); }
+.print-part-closing-title { margin: 0 0 .65rem; font-size: .9rem; font-weight: 650; color: var(--color-fd-primary); }
+.print-part-closing-list { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: .65rem; }
+.print-part-closing-list dt { font-size: .85rem; font-weight: 650; color: var(--color-fd-foreground); margin-bottom: .15rem; }
+.print-part-closing-list dd { margin: 0; font-size: .92rem; line-height: 1.75; color: var(--color-fd-muted-foreground); }
 /* Native contents and case links must arrive below the fixed reading header. */
 .print-book .print-chapter,
 .print-book [data-reader-part],
@@ -193,6 +198,7 @@ button { cursor: pointer; }
   .print-chapter[data-reader-route="/docs/book/data-quality-and-probability"] table { break-inside: avoid; }
   .print-part { break-before: page; }
   .print-part > h2 { margin-top: 0; }
+  .print-part-closing { break-inside: avoid; border-color: #bbb; }
   .print-part > .print-chapter:first-of-type { break-before: auto; }
   h4, h5, h6 { break-after: avoid; }
 }

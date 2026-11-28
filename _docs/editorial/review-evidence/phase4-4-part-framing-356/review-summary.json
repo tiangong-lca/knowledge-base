@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase4-4-part-framing-356",
+  "issue": "tiangong-lca/knowledge-base#356",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclosure": "Independent AI-assisted primary-source/engineering audit and zero-context bilingual reader review completed; this record does not constitute human domain-expert peer review or scientific approval.",
+  "routes": [
+    "/coverage",
+    "/print"
+  ],
+  "reviewers": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "subagentId": "9202f72c-dc60-413e-9dca-194f9dbf0a5d",
+      "blockingCount": 5,
+      "advisoryCount": 6,
+      "allBlockingResolved": true,
+      "allAdvisoryResolved": true,
+      "summary": "Audited all 8 EN partIntroductions, all 8 ZH/EN partSummaries, coverage/print TSX & CSS, validators, revision manifest digests, and rendered HTML/CSS. Caught and resolved 5 blocking findings: B1 missing grid-template-columns on .print-part-closing-list inheriting global dl 7rem 1fr grid (fixed to grid-template-columns: minmax(0, 1fr)); B2 Part 1 gaps 1969 Coca-Cola provenance fixed to US EPA (1993, 2006) & UNEP (1996) plus uninspected SETAC 1991-1993 proceedings and MRI private inputs; B3 Part 2 gaps fixed ISO 14044 uninspected range (§§4.2.3.6-4.2.3.8 & §§4.3-5.3; cut-offs §§4.2.3.3.1/4.2.3.3.3 were inspected), removed misplaced EN 15804 & proprietary software, and added FU empirical & hybrid IO aggregation limits; B4 Part 3 fixed APOS mistranslation and scoped contrasts/gaps strictly to Part 3 (ILCD A/B/C, ecoinvent v3 Consequential, PEF §4.4.2 residual mix & §4.5/CFF, GHG Protocol, Danish corrugated-box study, ISO 14044 §4.3.4); B5 moved European-whitelist fallback from Part 4 to Part 5, replaced Part 5 ISO/TS 14072 with ISO 14008, removed ISO 14067 from Part 4, and added ISO 14067:2018, ISO/TS 14072:2014, and ISO 22095 to Part 7 gaps. Also resolved all 6 advisories (A1 unconditional validator & orphan-key rejection; A2 Part 3 CFF vs Danish corrugated-box wording; A3 ecoinvent tiered-license nuance, Part 6 ISO 14044 boundary & TIDAS naming; A4 named ECO Platform V2.0/V8.0/V1.1 docs & Part 8 ISO/TS 14071 + editorial review phrasing; A5 canonical EN chapter/appendix titles; A6 USEtox 2.1 via JRC 2019 & marine invasive species)."
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "subagentId": "72621cb1-91b6-4f6f-a27a-99959dd99a40",
+      "blockingCount": 5,
+      "advisoryCount": 6,
+      "allBlockingResolved": true,
+      "allAdvisoryResolved": true,
+      "summary": "Reviewed ZH & EN part openings/closings across rendered /coverage/, /print/, and /changes/. Caught and resolved all 5 blocking findings: B1 Part 4 whitelist misattribution & ZH/EN scope mismatch; B2 five meaning-level bilingual drifts/dropped caveats (Part 5 public comparative-assertion weighting ban, Part 1 structural trade-offs contrast, Part 2 reference-flow/dual-boundary/double-counting & aggregation limits, Part 6 cannot replace primary factory measurements, Part 3 physical vs contractual electricity); B3 canonical EN chapter/section titles and ZH Part 8 print back-matter alignment (专题与方法附记); B4 standalone per-part first-use acronym expansion across all 8 parts (EPA, CML, ILCD, PEF, GHG Protocol, ISO, GLAM, IPCC AR6, WMO 2022, AWARE, USEtox, LIME1/2, PEFCR, WFLDB/SHDB/PSILCA, EF, JRC, GWP, GB/T, ECGT, LCIA); B5 removed internal terminology ('meaning-level' on /en/changes/ and 'dual review' in Part 8 gaps). Also resolved advisories A1-A5 (China PCF policy framework precision, idiomatic EN prose, TIDAS naming, exact Appendix F-J titles); logged A6 (30 ZH Appendix J full-width colon bold markers) for immediate fix in Phase 4.5."
+    }
+  ],
+  "verificationGates": {
+    "cleanPublicDelivery": "pass",
+    "bilingualStructuralParity": "pass (0 exceptions)",
+    "printClosingGridVerified": true,
+    "enCjkLeaks": 0,
+    "headingNumberingInvariants": "pass"
+  }
+}

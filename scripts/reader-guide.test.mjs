@@ -23,3 +23,17 @@ test('validateReaderGuideConfig rejects dead chapter route, missing part questio
   badComp.chapterCompanions['/docs/book/nonexistent'] = [{ route: '/docs/history', badge: '专题' }];
   assert.ok(validateReaderGuideConfig(badComp, numbering).some(e => e.includes('not an active chapter')));
 });
+
+test('validateReaderGuideConfig rejects missing, incomplete, or orphan partSummaries', () => {
+  const missingSummary = structuredClone(guide);
+  delete missingSummary.partSummaries['4'];
+  assert.ok(validateReaderGuideConfig(missingSummary, numbering).some(e => e.includes('partSummaries') && e.includes('Part 4')));
+
+  const blankGaps = structuredClone(guide);
+  blankGaps.partSummaries['1'].gaps = '   ';
+  assert.ok(validateReaderGuideConfig(blankGaps, numbering).some(e => e.includes('partSummaries') && e.includes('Part 1')));
+
+  const extraKey = structuredClone(guide);
+  extraKey.partSummaries['99'] = { establishes: 'a', contrasts: 'b', gaps: 'c', bridge: 'd' };
+  assert.ok(validateReaderGuideConfig(extraKey, numbering).some(e => e.includes('unknown part key: 99')));
+});

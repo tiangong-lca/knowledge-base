@@ -27,6 +27,8 @@ import { part1RereadSource } from '@/scripts/reader-part1-reread.mjs';
 import { wholeBookRereadSource } from '@/scripts/reader-whole-book-reread.mjs';
 import { printUnitAnchor } from '@/scripts/reader-book.mjs';
 import { EN_PARTS, UI_SURFACES } from '@/lib/ui-glossary';
+import { readerGuideConfig } from '@/lib/reader-guide';
+import enReaderGuide from '@/config/editions/en/reader-guide.json';
 
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map(lang => ({ lang }));
@@ -157,6 +159,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {enFrontMatter.map((u, idx) => renderEnArticle(u, idx))}
           {readerParts.map(part => {
             const enPart = EN_PARTS[part.number];
+            const enIntro = (enReaderGuide.partIntroductions as Record<string, string>)[String(part.number)];
+            const enSummary = (enReaderGuide.partSummaries as Record<string, { establishes: string; contrasts: string; gaps: string; bridge: string }>)[String(part.number)];
             return (
               <section className="print-part" key={part.number}>
                 <h2 id={`en-print-part-${part.number}`}>
@@ -164,7 +168,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                     {enPart?.title ?? part.title}
                   </NumberedTitle>
                 </h2>
+                {enIntro && <p className="print-part-introduction">{enIntro}</p>}
                 {enUnits.filter(u => u.part === part.number).map((u, idx) => renderEnArticle(u, idx))}
+                {enSummary && (
+                  <aside className="print-part-closing" data-part-closing={part.number} aria-label={`${enPart?.label ?? `Part ${part.number}`} closing summary`}>
+                    <p className="print-part-closing-title">{enPart?.label ?? `Part ${part.number}`} Closing Summary</p>
+                    <dl className="print-part-closing-list">
+                      <div><dt>What this part establishes</dt><dd>{enSummary.establishes}</dd></div>
+                      <div><dt>Key cross-framework contrasts</dt><dd>{enSummary.contrasts}</dd></div>
+                      <div><dt>Remaining evidence gaps and boundaries</dt><dd>{enSummary.gaps}</dd></div>
+                      <div><dt>{part.number === readerParts.length ? 'Monograph synthesis' : 'Bridge to the next part'}</dt><dd>{enSummary.bridge}</dd></div>
+                    </dl>
+                  </aside>
+                )}
               </section>
             );
           })}
@@ -259,6 +275,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p>{'前版导言：“'}{currentPart7Reread.partIntroduction.from}{'” '}<a href={citationSourceHref(part7RereadSource.commit)} data-part7-reread-part-source="">查看该版源文件</a></p>
         </details>}
         {units.filter(unit=>unit.part===part.number).map(article)}
+        {readerGuideConfig.partSummaries[String(part.number)] && (
+          <aside className="print-part-closing" data-part-closing={part.number} aria-label={`${part.label}部末小结`}>
+            <p className="print-part-closing-title">{part.label}小结</p>
+            <dl className="print-part-closing-list">
+              <div><dt>本部回答</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].establishes}</dd></div>
+              <div><dt>主要对照</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].contrasts}</dd></div>
+              <div><dt>仍缺的证据与边界</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].gaps}</dd></div>
+              <div><dt>{part.number === readerParts.length ? '全书收束' : '承接下一部'}</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].bridge}</dd></div>
+            </dl>
+          </aside>
+        )}
       </section>)}
       <section className="print-part"><h2 data-reader-book-notes-heading="body">{bookTopicPresentation.title}</h2>{topics.map(article)}</section>
       <section className="print-part"><h2>附录</h2>{appendices.map(article)}</section>
