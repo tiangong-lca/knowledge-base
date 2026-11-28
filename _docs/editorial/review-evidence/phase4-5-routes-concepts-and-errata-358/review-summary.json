@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase4-5-routes-concepts-and-errata-358",
+  "issue": "tiangong-lca/knowledge-base#358",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "scientificApprovalNote": "Automated/AI dual review checks primary-source entailment, schema/validator integrity, rendered HTML typography, bilingual meaning-level alignment, and Clean Public Delivery compliance only; it does not constitute human domain-expert scientific peer review.",
+  "reviews": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "agentId": "a849deda-1ff3-4567-97f7-d36682329c25",
+      "initialVerdict": "BLOCKING FINDINGS",
+      "blockingCount": 5,
+      "advisoryCount": 4,
+      "resolvedBlocking": [
+        "B1: Added cl-rev32-four-regimes to map-comparative-to-review-scope and cl-norm36-four-pitfalls + cl-loc137-dirty-denominator-paradox to map-normalization-to-pitfalls; attributed every review/verification gate explicitly to inspected public texts without overclaiming paywalled ISO 14044 §6, and aligned normalization purpose/hotspot wording with Pizzol et al. (2017) and EU PEF/JRC (2019).",
+        "B2: Added missing supporting claimIds across map-goal-scope-to-fu (+cl-gs23-decision-contexts, +cl-gs23-comparative-assertion-gates), map-boundary-to-truncation (+cl-gs23-foreground-specificity-vs-management), and map-impact-category-to-midpoint (+cl-lcia-method-family-lineage).",
+        "B3: Synchronized mappingRelations in scripts/reader-current-output.mjs with all 9 schema relation values; extended scripts/reader-guide.mjs to require badge/audience/startLabel, valid #anchor targets, and chapterCompanions badge === targetUnit.label; extended scripts/reader-bilingual-parity.mjs to validate EN readingModes fields and paired startHref destinations; added unit tests in reader-guide.test.mjs and reader-bilingual-parity.test.mjs.",
+        "B4: Fixed mobile horizontal overflow on long EN .companionBadge pills via max-width: 100% and @media (max-width: 820px) line-wrapping rules in components/reader-guide.module.css.",
+        "B5: Expanded ISO and removed bare EPD / developer phrasing in config/revisions/phase4-5-routes-concepts-and-errata-358.json publicSummary."
+      ],
+      "resolvedAdvisory": [
+        "A1: Enforced ZH chapterCompanions badge === targetUnit.label in scripts/reader-guide.mjs to eliminate drift risk.",
+        "A2: Updated .modesGrid to repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)) and removed the premature @media (max-width: 820px) 1-column collapse.",
+        "A3: Expanded 环境产品声明（EPD） in /zh/coverage/ intro and added parenthetical role tag to EN Path 3 title.",
+        "A4: Trimmed overlapping external/internal normalization aliases on cn-normalization, added cl-weight135-glam3-reporting-discipline to map-weighting-to-comparative, and fixed EN PEFCR singular/plural phrasing."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "agentId": "845b5c8e-2c2c-4063-a276-22d9d8a308a2",
+      "initialVerdict": "BLOCKING FINDINGS",
+      "blockingCount": 2,
+      "advisoryCount": 5,
+      "resolvedBlocking": [
+        "B1: Expanded EPD on first encounter in /zh/coverage/ page intro, /zh/coverage/ Path 3 heading, and /en/coverage/ Path 3 heading, restoring parenthetical subtitle symmetry across all 5 EN reading cards.",
+        "B2: Rewrote Phase 4.5 reader changelog entries in ZH and EN in clean editorial prose without engineering/pipeline jargon, explicitly scoped both Appendix J errata to the Chinese edition, expanded ISO and APOS symmetrically, and clarified the APOS terminology correction direction."
+      ],
+      "resolvedAdvisory": [
+        "A1: Fixed 'an approved Product Environmental Footprint Category Rules (PEFCR)' -> 'approved Product Environmental Footprint Category Rules (PEFCR)' in knowledge/editions/en/mappings.json.",
+        "A2: Added 附录 J reference to ZH Path 2, added EU or China regulatory filings to EN Path 3 audience, and expanded LCA on Path 4 audience in both ZH and EN.",
+        "A3: Added narrow-viewport wrapping rules for .companionBadge in components/reader-guide.module.css.",
+        "A4: Switched Concept Index mapping pair delimiter from '/' ('／') to '↔' in app/(locale)/[lang]/concepts/page.tsx to prevent double-slash collisions on titles such as 'Inventory boundary / truncation'.",
+        "A5: Retained verbatim CML institutional naming matching attached claim cl-weight135-comparative-assertion-regimes; pre-existing Scope punctuation on earlier claims left untouched as out-of-scope."
+      ]
+    }
+  ],
+  "finalVerdict": "ALL BLOCKING AND IN-SCOPE ADVISORY FINDINGS RESOLVED"
+}

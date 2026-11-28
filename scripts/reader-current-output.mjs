@@ -153,8 +153,11 @@ export function validateReadableBookResearchOutput(document, published, literatu
 }
 
 const mappingRelations = {
-  related: '相关', overlaps: '部分重叠', broader: '范围更宽', narrower: '范围更窄',
-  conditional: '条件对应', 'not-equivalent': '不能直接等同',
+  related: '相关', exact: '精确对应', close: '近似对应',
+  overlap: '部分重叠', overlaps: '部分重叠',
+  broader: '范围更宽', narrower: '范围更窄',
+  'conditional-equivalence': '条件对应', conditional: '条件对应',
+  'not-equivalent': '不能直接等同', unresolved: '待决',
 };
 
 function validateConceptOutput(document, published) {
@@ -250,7 +253,7 @@ export function validateReaderGuideOutput(document, sources, { prefix = '' } = {
       || JSON.stringify(actualChapters) !== JSON.stringify(chapters)
       || JSON.stringify(actualTopics) !== JSON.stringify(topics)
       || JSON.stringify(actualAppendices) !== JSON.stringify(appendices)
-      || modesCount !== 3 || problemsCount !== 6) {
+      || modesCount !== 5 || problemsCount !== 6) {
     return ['Flow boundary actual book guide differs from the current titles, descriptions, appendices, routes, or links'];
   }
   return [];
