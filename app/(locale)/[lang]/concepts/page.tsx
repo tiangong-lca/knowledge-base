@@ -5,6 +5,7 @@ import { Claim } from '@/components/evidence';
 import { enClaimsMap } from '@/components/en-chapter-content';
 import enMappingsFile from '@/knowledge/editions/en/mappings.json';
 import { formatEnConceptTitle } from '@/lib/en-citation-format';
+import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog from '@/lib/catalog';
@@ -75,10 +76,10 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
               const enClaim = enClaimsMap[id];
               return (
                 <div className="concept-definition" key={id}>
-                  <p className="claim-text">{enClaim?.text ?? claimsById.get(id)?.text}</p>
+                  <p className="claim-text">{formatMathNotation(enClaim?.text ?? claimsById.get(id)?.text ?? '')}</p>
                   {enClaim?.scope && (
                     <p className="subtle">
-                      <strong>Scope:</strong> {enClaim.scope}{' '}
+                      <strong>Scope:</strong> {formatMathNotation(enClaim.scope)}{' '}
                       <Link href={`/en/claims/#${id}`}>View full note &amp; sources →</Link>
                     </p>
                   )}
@@ -97,12 +98,12 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
                     <a href={`#${m.to}`}>{formatEnConceptTitle(toConcept?.english || toConcept?.label)}</a>
                   </p>
                   {conditions && conditions.length > 0 && (
-                    <p>{conditions.join(' ')}</p>
+                    <p>{formatMathNotation(conditions.join(' '))}</p>
                   )}
                   <p>
                     {m.claimIds.map(id => (
                       <Link key={id} href={`/en/claims/#${id}`}>
-                        {enClaimsMap[id]?.text ?? claimsById.get(id)?.text}{' '}
+                        {formatMathNotation(enClaimsMap[id]?.text ?? claimsById.get(id)?.text ?? '')}{' '}
                       </Link>
                     ))}
                   </p>
@@ -115,5 +116,5 @@ export default async function LocalizedConceptsPage({ params }: { params: Promis
     );
   }
 
-  return <PublicationShell title="概念索引" description="名称只是入口。概念的含义需要结合来源体系、版本、对象层次和适用边界理解。"><div className="concept-jump">{catalog.concepts.map(c => <a key={c.id} href={`#${c.id}`}>{c.label}</a>)}</div>{catalog.concepts.map(c => <article className="concept-record" id={c.id} key={c.id}><h2>{c.label}<span className="english-term">{c.english}</span></h2>{c.aliases.length > 0 && <p className="subtle">相关名称：{c.aliases.join('、')}</p>}{c.definitionClaimIds.map(id => <Claim id={id} key={id} />)}{(mappingsByConcept.get(c.id) ?? []).map(m => <aside className="mapping-record" key={m.id}><strong>概念关系：{({ related: '相关', exact: '精确对应', close: '近似对应', overlap: '部分重叠', overlaps: '部分重叠', broader: '范围更宽', narrower: '范围更窄', 'conditional-equivalence': '条件对应', conditional: '条件对应', 'not-equivalent': '不能直接等同', unresolved: '待决' } as Record<string, string>)[m.relation] ?? m.relation}</strong><p><a href={`#${m.from}`}>{conceptsById.get(m.from)?.label}</a> ↔ <a href={`#${m.to}`}>{conceptsById.get(m.to)?.label}</a></p><p>{Array.isArray(m.conditions) ? m.conditions.map(text => text.replace(/[。；;\s]+$/, '')).join('；') : m.conditions}</p><p>{m.claimIds.map(id => <a key={id} href={`/zh/claims/#${id}`}>{claimsById.get(id)?.text} </a>)}</p></aside>)}</article>)}</PublicationShell>;
+  return <PublicationShell title="概念索引" description="名称只是入口。概念的含义需要结合来源体系、版本、对象层次和适用边界理解。"><div className="concept-jump">{catalog.concepts.map(c => <a key={c.id} href={`#${c.id}`}>{c.label}</a>)}</div>{catalog.concepts.map(c => <article className="concept-record" id={c.id} key={c.id}><h2>{c.label}<span className="english-term">{c.english}</span></h2>{c.aliases.length > 0 && <p className="subtle">相关名称：{c.aliases.join('、')}</p>}{c.definitionClaimIds.map(id => <Claim id={id} key={id} />)}{(mappingsByConcept.get(c.id) ?? []).map(m => <aside className="mapping-record" key={m.id}><strong>概念关系：{({ related: '相关', exact: '精确对应', close: '近似对应', overlap: '部分重叠', overlaps: '部分重叠', broader: '范围更宽', narrower: '范围更窄', 'conditional-equivalence': '条件对应', conditional: '条件对应', 'not-equivalent': '不能直接等同', unresolved: '待决' } as Record<string, string>)[m.relation] ?? m.relation}</strong><p><a href={`#${m.from}`}>{conceptsById.get(m.from)?.label}</a> ↔ <a href={`#${m.to}`}>{conceptsById.get(m.to)?.label}</a></p><p>{formatMathNotation(Array.isArray(m.conditions) ? m.conditions.map(text => text.replace(/[。；;\s]+$/, '')).join('；') : m.conditions)}</p><p>{m.claimIds.map(id => <a key={id} href={`/zh/claims/#${id}`}>{formatMathNotation(claimsById.get(id)?.text ?? '')} </a>)}</p></aside>)}</article>)}</PublicationShell>;
 }

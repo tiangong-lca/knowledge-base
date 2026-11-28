@@ -26,7 +26,7 @@ export function TeachingCase({
   if (id === 'CASE-JOINT-BATCH') {
     if (version !== '1.0.0') throw new TypeError(`Unsupported teaching case ${id}@${version}`);
     if (lang === 'en') {
-      return <EnJointProductionCase />;
+      return <EnJointProductionCase print={print} />;
     }
     return <JointProductionCase print={print} numbering={numbering} />;
   }

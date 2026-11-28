@@ -64,6 +64,7 @@ export function getNumberedToc(page: {url: string; data: {toc: TOCItemType[]}}, 
 export function getEnSectionPrefix(unit: ReturnType<typeof getUnitNumbering> | undefined): string | undefined {
   if (!unit) return undefined;
   if (unit.kind === 'chapter') return `${unit.ordinal}`;
+  if (unit.kind === 'topic') return `T${unit.ordinal}`;
   if (unit.kind === 'appendix') return String.fromCharCode(64 + (unit.ordinal ?? 1));
   return undefined;
 }

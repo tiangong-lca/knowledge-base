@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase5-3-whole-book-reread-364",
+  "task": "#364",
+  "date": "2026-11-28",
+  "baseCommit": "93c82b08b15ad809a2a193f5a2437919653d8bd1",
+  "scientificApproval": false,
+  "externalHumanExpertReview": false,
+  "realReaderTrial": false,
+  "summary": "Completed five-track continuous bilingual reread across all 40 chapters, 2 topics, and 10 appendices plus Step 6 coverage inventory (Checks a-d) and dual independent post-fix audits (Engineering & Verification Auditor + Zero-Context Bilingual Reader Reviewer). All blocking and in-scope advisory findings resolved and verified (833/833 tests, 0 parity exceptions, 0 Clean-Delivery or reading-audit-log leaks, 0 broken links or print anchors).",
+  "preImplementationRereadTracks": [
+    {
+      "track": 1,
+      "role": "Front Matter & Parts I-II (Ch. 1-9)",
+      "agentId": "2e64ff38-c67f-4f0f-b724-914d6bd14c70"
+    },
+    {
+      "track": 2,
+      "role": "Parts III-IV (Ch. 10-21)",
+      "agentId": "7fca552f-f4d6-4af0-a5f5-3cf7e0bd9118"
+    },
+    {
+      "track": 3,
+      "role": "Parts V-VI (Ch. 22-33)",
+      "agentId": "72248242-8916-4396-a9ee-c5119a28b35f"
+    },
+    {
+      "track": 4,
+      "role": "Parts VII-VIII (Ch. 34-40)",
+      "agentId": "3a260869-7e5a-4acb-b049-5f6c891cf2f8"
+    },
+    {
+      "track": 5,
+      "role": "Topics 1-2, Appendices A-J & Step 6 Inventory",
+      "agentId": "a558979f-7ecc-488b-9ad8-4c36b066aa10"
+    }
+  ],
+  "postFixIndependentReviews": [
+    {
+      "reviewer": "Engineering, Verification & Step 6 Governance Auditor",
+      "agentId": "ddd6a306-c97b-4c57-8cc4-ca35ad8e35a3",
+      "initialVerdict": "PASS (0 blocking, 9 advisory)",
+      "disposition": "Resolved all in-scope advisories: validated [data-math-raw] trust boundary on <span> allowlisted tokens, protected multi-segment root-relative paths, moved rawReaderText import to top of reader-exchange-semantics.mjs, added 5 EN-only edited routes to publicSummary.routes, replaced duplicate EN Ch. 38 'Referenced Note' labels with distinct IPCC AR6 labels, cleaned EN SVG title, and tightened Step 6 report page-count, manifest-status, and A05 wording."
+    },
+    {
+      "reviewer": "Zero-Context Bilingual Reader Reviewer",
+      "agentId": "d0d79453-0239-4897-b8da-f22dec543a91",
+      "initialVerdict": "CONDITIONAL PASS (1 blocking, 4 grouped advisory)",
+      "disposition": "Resolved B1 blocking finding by scrubbing all 36 legacy reinspection, same-byte reacquisition, and visual-check audit logs from /zh/research/ and /en/research/ via sanitizeReadingAuditLogs() with fail-closed regression coverage in scripts/reader-citation-display.test.mjs. Resolved in-scope advisories: fixed /zh/print/ Appendix J anchor #七类定向修订路由 (0 broken anchors across 3,439 IDs), formatted ZH Ch. 22 Table 1 NOx (9 cells), fixed EN Ch. 38 kg CO2 typo, formatted /zh/sources/ 10^-16 and s_j, eliminated double periods (。。) on /zh/sources/ and /zh/research/, aligned ZH Reading Guide Part I title to 《问题的来源》, and linked #writing-note directly to /zh/research/ and /en/research/. Hash-locked legacy ZH case widgets retained byte-immutable."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "buildAndExport": "pass (132 Next.js static routes, 126 public content pages, 140 locale HTML files, 1,257 reviewed claims)",
+    "checkpointHistory": "pass (checkpoint-2026-11-21, 41 historical units, 184 snapshot files, gitVerified=true)",
+    "bilingualParity": "pass (0 errors, 0 parity exceptions)",
+    "unitAndIntegrationTests": "pass (833/833)",
+    "revisionsIndexPin": "94ecb115cb247ed5d5013a133ab34d8294ce25e30335460d3519e9fa2332314e"
+  }
+}

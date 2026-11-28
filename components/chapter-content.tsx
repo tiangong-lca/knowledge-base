@@ -53,6 +53,7 @@ import catalog from '@/lib/catalog';
 import { getChapterReferenceIndex, getCitationLabel, getLegacyCitations, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
 import { getMDXComponents } from '@/mdx-components';
 import { ClaimAnnotation } from '@/components/evidence';
+import { formatMathWithReferenceTail } from '@/scripts/reader-math-notation.mjs';
 import { chapterAnchorPrefix, createChapterAnnotationPlan, createChapterNotePlan, printUnitAnchor, splitReferenceTail } from '@/scripts/reader-book.mjs';
 import { frameworkBookHref } from '@/scripts/reader-edition.mjs';
 import { citationHref, citationSourceHref, type LegacyEntry } from '@/scripts/reader-citations.mjs';
@@ -231,8 +232,8 @@ export async function ChapterContent({ page, print = false }: { page: ReaderPage
     if (crossReference) return <p data-reader-partial-claim={id}><a href={`#${historyPrintDestination(crossReference).id}`}>{crossReference.text}</a></p>;
     const note = plan.byClaimId.get(id), claim = claims.get(id);
     if (!note || !claim || claim.status !== 'reviewed') throw new Error(`Chapter claim is absent from its note map: ${id}`);
-    const text = splitReferenceTail(claim.text);
-    return <p>{text.body}<span className="prose-reference-tail">{text.tail}<sup className="prose-references"><Link href={`#${note.anchor}`} role="doc-noteref" aria-label={`注 ${note.number}`} data-reader-reference={id}>[{note.number}]</Link></sup></span></p>;
+    const referenceSup = <sup className="prose-references"><Link href={`#${note.anchor}`} role="doc-noteref" aria-label={`注 ${note.number}`} data-reader-reference={id}>[{note.number}]</Link></sup>;
+    return <p>{formatMathWithReferenceTail(claim.text, splitReferenceTail, referenceSup)}</p>;
   }
   function ChapterProse({ ids }: { ids: string }) {
     return <div className="scholarly-prose">{ids.trim().split(/\s+/).filter(Boolean).map((id, index) => <Paragraph key={`${id}-${index}`} id={id} />)}</div>;

@@ -4741,6 +4741,18 @@
       "locator": "Rao et al. (2026, arXiv:2608.27716v1 preprint), Abstract, Sections 1 and 3–6 (Tables 2–3, Figs. 1 and 3), and Appendices B, F, H, J, and K (Tables 5–11, Figs. 11–13, pp. 1–46)",
       "summary": "Non-peer-reviewed vendor-authored arXiv preprint (Watershed Technology, Inc.) introducing 614 expert-labeled items across 6 decomposed cradle-to-gate product carbon footprint (PCF) tasks (numbered Tasks 1–5 and 7, with deterministic arithmetic aggregation numbered Step 6 and excluded from model evaluation; 175 ISO 14025 EPDs, 2,574-item ecoinvent v3.11 picklist, 36 open-access English PDFs / 89 claims) testing 8 frontier LLMs plus Parakeet. Shows matched-input Direct within-2x accuracy (60.0%–77.1%; up to 83.4% with composition and region, median absolute relative error still >25%) collapses to 37%–58% under auditable compositional chaining; 25%–55% fail mass conservation (total input <1x or >3x reference mass) and 47%–86% contain zero-mass \"ghost\" components despite 98%–100% tool-call compliance across structured tasks and syntactically valid BOM outputs; BOM decomposition precision 0.846–0.916 vs. recall 0.641–0.754; triage accuracy 0.620–0.725 with expected calibration error (ECE) 0.258 (~63% accuracy at ~95% confidence); mapping exact match 0.679–0.927 (ECE 0.086, Parakeet 0.759) yet extreme lexical traps (~10,000x catalyst-to-rhodium overestimate); and PDF extraction F1 score only 0.271–0.512 (material) and 0.286–0.531 (energy) with 52.4%–83.6% wrong-scope/over-extracted claims. Explicitly warns against citing leaderboard scores for EU CSRD, California SB-253, or audited LCA/EPD claims, and caveats cradle-to-gate English-only region-agnostic scope plus potential EPD pretraining contamination.",
       "paraphrase": "Rao et al. (2026 preprint) demonstrate via PCFBench that frontier LLMs suffer compositional collapse (37%–58% within-2x), mass-conservation violations (25%–55%), out-of-scope PDF extractions (52%–84%), and triage overconfidence (ECE 0.258)."
+    },
+    "ev-hyb-response-abstract": {
+      "locator": "University of York Research Database public abstract (sentences 1–3 identify the altered five-sector investigation and result; sentences 4–6 state the dominant-eigenvalue comparison); publisher copyright noted in bibliographical record; no article-page locator inferred"
+    },
+    "ev-hyb-jakobs-denominators": {
+      "locator": "Tables 4–5 Γ and Λ rows, HLCABaci percentage columns, and Table 4 caption; print p. 9"
+    },
+    "ev-hyb-jakobs-corrections": {
+      "locator": "Section 3.1; Table 3 row D and caption; print pp. 8–9"
+    },
+    "ev-hyb-yang-counterexample": {
+      "locator": "Section 2.5 Eq. (28) and following comparison; Section 2.6 Eqs. (29)–(30); print pp. 240–241 (institutional cover precedes article)"
     }
   },
   "passages": {
@@ -8540,6 +8552,18 @@
     },
     "psg-mineral115-adp-mn": {
       "locator": "recommended ADP & norm data!I60; a&g (ADPs)!KG57"
+    },
+    "psg-hyb-response-york-abstract": {
+      "locator": "University of York Research Database public abstract (sentences 1–6: altered five-sector investigation and dominant-eigenvalue comparison); no article-page locator inferred"
+    },
+    "psg-hyb-jakobs-denominators": {
+      "locator": "Tables 4–5 Γ and Λ rows, HLCABaci percentage columns, and Table 4 caption"
+    },
+    "psg-hyb-jakobs-corrections": {
+      "locator": "Section 3.1; Table 3 row D and caption"
+    },
+    "psg-hyb-yang-counterexample": {
+      "locator": "Section 2.5 Eq. (28) and following comparison; Section 2.6 Eqs. (29)–(30) (print pp. 240–241; institutional cover precedes article)"
     }
   }
 }

@@ -12,6 +12,7 @@ import { formatZhReaderLocator } from './reader-citation-display.mjs';
 export { formatZhReaderLocator };
 import { frameworkBookHref } from './reader-edition.mjs';
 import { createHash } from 'node:crypto';
+import { rawReaderText } from './reader-publication-text.mjs';
 import original from '../config/exchange-semantics-original.json' with { type: 'json' };
 import headingCapture from '../config/exchange-semantics-heading-history.json' with { type: 'json' };
 import citationSources from '../config/exchange-semantics-citation-sources.json' with { type: 'json' };
@@ -229,7 +230,7 @@ export function remapExchangeSemanticsCitations(entries,accepted=original,histor
   });
 }
 
-function paragraphText(node,marker) {if(node===marker)return '';if(node.nodeType===3)return node.text;return node.nodeType===1?node.childNodes.map(child=>paragraphText(child,marker)).join(''):'';}
+function paragraphText(node,marker) {if(node===marker)return '';if(node.nodeType===3)return node.text;if(node.nodeType!==1)return '';if(node.hasAttribute?.('data-math-raw'))return node.getAttribute('data-math-raw')??'';return node.childNodes.map(child=>paragraphText(child,marker)).join('');}
 const annotationKinds = { 'source-statement': '文献陈述', interpretation: '解释', synthesis: '综合论证', calculation: '计算', proposal: '分析建议' };
 const annotationRelations = { supports: '依据', qualifies: '适用条件', contradicts: '相反证据', context: '相关讨论' };
 const compact = text => text.replace(/\s+/g,'');
@@ -294,9 +295,9 @@ export function validateExchangeAnnotationOutput(document,unit,route,catalog,{pr
     const fail=message=>errors.push(`${print?'/print':route}: actual annotation ${message}: ${id}`),annotations=note.querySelectorAll('.claim-annotation');
     if(!claim || claim.status!=='reviewed' || note.id!==`${prefix}-claim-${id}` || annotations.length!==1) {fail('missing canonical record, stable note or annotation body');continue;}
     const annotation=annotations[0],scope=annotation.childNodes.filter(node=>node.tagName==='P')[0];
-    if(!scope || compact(scope.text)!==compact(`${annotationKinds[claim.kind]}。 ${claim.scope}`))fail('scope or kind differs');
+    if(!scope || compact(rawReaderText(scope))!==compact(`${annotationKinds[claim.kind]}。 ${claim.scope}`))fail('scope or kind differs');
     const limits=annotation.querySelectorAll('.annotation-limits'),expectedLimits=claim.caveats.map(text=>text.replace(/[。；;\s]+$/,'')).join('；')+'。';
-    if(limits.length!==(claim.caveats.length?1:0) || (claim.caveats.length&&compact(limits[0].text)!==compact(expectedLimits)))fail('caveats missing or changed');
+    if(limits.length!==(claim.caveats.length?1:0) || (claim.caveats.length&&compact(rawReaderText(limits[0]))!==compact(expectedLimits)))fail('caveats missing or changed');
     const evidence=getClaimEvidence(catalog,claim),sourceLists=annotation.querySelectorAll('.annotation-sources');
     if(evidence.length!==claim.evidenceIds.length || sourceLists.length!==(evidence.length?1:0))fail('evidence source list missing or changed');
     const sourceItems=sourceLists[0]?.querySelectorAll('li')??[];

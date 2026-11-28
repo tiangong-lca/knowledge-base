@@ -1,11 +1,32 @@
 import { citationHref, citationSourceHref } from './reader-citations.mjs';
 import { currentRevisions } from './reader-checkpoint.mjs';
+import { tokenizeMathNotation } from './reader-math-notation.mjs';
 import { isRouteRevised } from './reader-revisions.mjs';
+
+function trustedMathRaw(node) {
+  if (node?.tagName !== 'SPAN' || !node.hasAttribute?.('data-math-raw')) return null;
+  const raw = node.getAttribute('data-math-raw') ?? '';
+  const tokens = tokenizeMathNotation(raw);
+  if (tokens.length === 1 && tokens[0].kind !== 'text' && tokens[0].raw === raw) return raw;
+  return null;
+}
+
+export function rawReaderText(node) {
+  if (!node) return '';
+  if (node.nodeType === 3) return node.text;
+  if (node.nodeType !== 1) return '';
+  const mathRaw = trustedMathRaw(node);
+  if (mathRaw !== null) return mathRaw;
+  return node.childNodes.map(rawReaderText).join('');
+}
 
 export function readerParagraphText(node, marker) {
   if (node === marker) return '';
   if (node.nodeType === 3) return node.text;
-  return node.nodeType === 1 ? node.childNodes.map(child => readerParagraphText(child, marker)).join('') : '';
+  if (node.nodeType !== 1) return '';
+  const mathRaw = trustedMathRaw(node);
+  if (mathRaw !== null) return mathRaw;
+  return node.childNodes.map(child => readerParagraphText(child, marker)).join('');
 }
 
 const qualifiedCurrentHistory = new WeakMap();
