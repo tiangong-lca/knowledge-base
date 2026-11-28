@@ -167,7 +167,7 @@ async function buildChapterReferenceIndex(print = false): Promise<ChapterReferen
     const hybridErrors = validateHybridInventoryCoverage(edition,rawSources,hybridAccepted,catalog,hybridProse);
     if (hybridErrors.length) throw new Error(hybridErrors.join('\n'));
   }
-  if (!isRevised('/docs/book/process-and-network')) {
+  if (!isRevised('/docs/book/process-and-network', '/docs/book/inventory-calculation')) {
     const processErrors = validateProcessNetworkCoverage(edition,rawSources,processAccepted,catalog,processProse);
     if (processErrors.length) throw new Error(processErrors.join('\n'));
   }

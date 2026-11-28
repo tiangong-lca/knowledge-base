@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase3-6-targeted-integrated-sections-348",
+  "issue": "tiangong-lca/knowledge-base#348",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclaimer": "Dual independent agent review of primary-source numerical fidelity, premise-DAG acyclicity, paywall attribution boundaries, Clean Public Delivery (§2.15), integration consistency (§2.16), and meaning-level bilingual parity (§2.17) across all four targeted chapter integrations. Does not constitute human domain expert peer review.",
+  "reviewers": [
+    {
+      "id": "d306bf18-6914-484a-a8cd-ef278a0d0eb0",
+      "role": "Primary-Source & Engineering Auditor",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 5,
+      "resolvedCount": 5
+    },
+    {
+      "id": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "initialVerdict": "changes-required",
+      "finalVerdict": "resolved",
+      "blockingCount": 6,
+      "resolvedCount": 6
+    }
+  ],
+  "blockingFindings": [
+    {
+      "id": "A1",
+      "sourceReviewer": "d306bf18-6914-484a-a8cd-ef278a0d0eb0",
+      "summary": "Forward premise violation: cl-dec36-contribution-and-perturbation in Ch. 7 referenced cl-cml-relative-response (located in Appendix B).",
+      "resolution": "Replaced with Ch. 3 body claim cl-cml-response-scale (/docs/book/framework-responsibilities), restoring zero forward premises."
+    },
+    {
+      "id": "A2",
+      "sourceReviewer": "d306bf18-6914-484a-a8cd-ef278a0d0eb0",
+      "summary": "Conflated single matrix entry [G181] in [P293] (51% of CO₂ variance) with process P293 as a whole (60% across two of the top three inputs: 51% + 9%).",
+      "resolution": "Corrected ZH and EN cl-dec36-ecoinvent96-perturbation-and-key-issue, Table 1 Row 3, and ev-dec36-heijungs-suh-kleijn-2005 summaries to distinguish [G181] in [P293] (51%) from P293's two-input share (60%)."
+    },
+    {
+      "id": "B1",
+      "sourceReviewer": "both",
+      "summary": "Ch. 30 §30.4 cited slug-derived non-existent Ch. 8 title '《数据交换语义与换算》' / 'Exchange Semantics and Conversion'.",
+      "resolution": "Replaced with actual published Ch. 8 title '《流、交换与边界》' / 'Flows, Exchanges, and Boundaries' across Ch. 30 and Ch. 7 closing bridge, and refreshed zhDigest."
+    },
+    {
+      "id": "A4",
+      "sourceReviewer": "d306bf18-6914-484a-a8cd-ef278a0d0eb0",
+      "summary": "Ch. 34 Table 3 placed bare '(§2.2、§3.2)' / '(Sections 2.2 and 3.2)' under the uninspected paywalled ISO/TS 14072:2014 column and bare '(Annex C.F)' under the EU OEF column.",
+      "resolution": "Qualified explicitly as '（据 UNEP 2015 §2.2、§3.2 转述）' / '(as reported in UNEP 2015, Sections 2.2 and 3.2)' and '（据 UNEP 2015 附录 C.F）' / '(per UNEP 2015, Annex C.F)' in both ZH and EN Table 3."
+    },
+    {
+      "id": "A5",
+      "sourceReviewer": "d306bf18-6914-484a-a8cd-ef278a0d0eb0",
+      "summary": "Mid-word truncated evidenceLinks rationale at 120 characters on ev-db30-randonneur-declarative-recipes inside cl-sw36-architecture-and-reproducibility-pinning.",
+      "resolution": "Replaced 120-character slicing with complete full-sentence rationales on every evidenceLinks entry."
+    },
+    {
+      "id": "R2",
+      "sourceReviewer": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "summary": "Undefined jargon 'ETL' and unexpanded 'LCIA' appeared in EN Ch. 30 §30.4.",
+      "resolution": "Replaced 'data-and-ETL coupling' with 'data-model and import/export coupling' and expanded 'life cycle impact assessment (LCIA)' on first use in EN §30.4."
+    },
+    {
+      "id": "R3",
+      "sourceReviewer": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "summary": "Acronyms ILCD, ISO, LCA (and LCI in EN) appeared in Ch. 22 §22.4 before chapter-level expansion, and Ch. 7 Table 1 sat before Paragraph 3 expanded ILCD (with unexpanded ILCD in EN Ch. 7 description).",
+      "resolution": "Expanded ILCD, ISO, LCA, and LCI on first use in Ch. 22 §22.4; moved Ch. 7 Table 1 after cl-dec36-ilcd-priority-and-bridge; and replaced 'the ILCD Priority Matrix' with 'the Priority Matrix' in EN Ch. 7 description."
+    },
+    {
+      "id": "R4",
+      "sourceReviewer": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "summary": "EN Ch. 7 §7.4 had ungrammatical undefined-symbol phrasing ('exceeds |m| > 1') and collapsed 0.8 scrutiny threshold with >1 recursive amplification.",
+      "resolution": "Rewrote cleanly as 'has a multiplier magnitude above 1' and separated '>0.8 in magnitude—especially above 1—warrant priority scrutiny' from 'magnitudes above 1 signaling amplification driven by recursive intermediate economic flows'."
+    },
+    {
+      "id": "R5",
+      "sourceReviewer": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "summary": "Jarring §22.4 -> §22.5 seam (orphaned opener in cl-es-place), duplicated ISO/non-additivity rules in cl-weight135-comparative-assertion-regimes, and closing synthesis omitting §22.4 normalization pitfalls.",
+      "resolution": "Updated cl-es-place, cl-weight135-comparative-assertion-regimes, and cl-weight135-target-vs-hybrid-boundary across ZH & EN (logged as op='modify' in revision manifest) so §22.4 and §22.5 flow seamlessly without repetition."
+    },
+    {
+      "id": "R6",
+      "sourceReviewer": "b347b641-62d3-44df-a9b5-8408809c89c2",
+      "summary": "Internal editorial jargon '按集成优先原则' leaked into ZH /changes/ publicSummary, and EN /changes/ omitted 'Technical Specification' and the companion Scope 3 calculation guidance boundary.",
+      "resolution": "Removed '按集成优先原则' from ZH publicSummary and aligned ZH and EN on paywalled Technical Specification ISO/TS 14072:2014 and the separate companion Scope 3 calculation guidance."
+    }
+  ],
+  "nonBlockingResolutions": [
+    "Removed duplicate ILCD §8.2 evidence link (ev-db28-ilcd-missing-factor-zero) from cl-sw36-architecture-and-reproducibility-pinning since ev-sw36-ilcd-solver-loops already covers §§6.6.1 & 8.2 with localized ZH/EN locators.",
+    "Moved Ch. 30 Table 2 after cl-sw36-architecture-and-reproducibility-pinning and Ch. 34 Table 3 after cl-olca36-comparative-prohibition-and-paywall, eliminating premature terms and duplicate expansions.",
+    "Moved Ch. 34 ConceptRef below cl-rule-conclusion, added cl-olca36-comparative-prohibition-and-paywall to cl-rule-conclusion.premiseIds, and updated cl-rule-conclusion.scope (ZH & EN).",
+    "Added software-reproducibility controls to Ch. 30 §30.5 cl-db30-part6-to-part7-bridge (ZH & EN, logged op='modify').",
+    "Standardized openLCA capitalization, clarified 'diesel electricity generation (labeled diesel 5)', used chemical subscripts (CO₂, SO₂, PO₄) in Ch. 30 §30.4, removed premature Pellston mention from Ch. 22 Table 2 Row 3, aligned ZH '除非经正式授权委托' and '总量基准下的', specified Pearson r(214) with calculation and market-price/budget-constraint vs. choice-modeling distinction in Pizzol et al. (2017), expanded acronyms in EN Ch. 34 description and 'research and development [R&D]', clarified '11 \"First Mover\" pilot cases', aligned src-dec36-heijungs-kleijn-2001 rights with ecomed publisher notice, and kept stats_arrays literally framed as 'statistical array data format'."
+  ],
+  "openLimitations": [
+    "Human domain expert peer review has not been conducted (scientificApproval: false).",
+    "Paywalled ISO/TS 14072:2014 and the separate companion GHG Protocol Technical Guidance for Calculating Scope 3 Emissions were not directly inspected; all ISO/TS 14072 references strictly reflect UNEP/SETAC (2015)."
+  ]
+}

@@ -963,6 +963,41 @@
       "title": "A global consensus life cycle impact assessment method - GLAM: impacts on ecosystem quality",
       "publisher": "The International Journal of Life Cycle Assessment (Springer, Open Access; ÉTS institutional repository)",
       "version": "Vol. 31, Article 181 (2026), pp. 1–24, doi:10.1007/s11367-026-02748-4 (Verones et al., GLAM research v1.1.2025.11)"
+    },
+    "src-dec36-heijungs-kleijn-2001": {
+      "title": "Numerical Approaches Towards Life Cycle Interpretation: Five Examples",
+      "publisher": "The International Journal of Life Cycle Assessment (Leiden University Scholarly Publications)",
+      "version": "Vol. 6(3), pp. 141–148 (2001), doi:10.1065/lca2000.12.045 (Heijungs & Kleijn)"
+    },
+    "src-dec36-heijungs-suh-kleijn-2005": {
+      "title": "Numerical Approaches to Life Cycle Interpretation: The case of the ecoinvent'96 database",
+      "publisher": "The International Journal of Life Cycle Assessment (Leiden University Scholarly Publications, handle 1887/11430)",
+      "version": "Vol. 10(2), pp. 103–112 (2005; OnlineFirst June 2004), doi:10.1065/lca2004.06.161 (Heijungs, Suh & Kleijn)"
+    },
+    "src-sw36-iswara-2020-software": {
+      "title": "A Comparative Study of Life Cycle Impact Assessment using Different Software Programs",
+      "publisher": "IOP Conference Series: Earth and Environmental Science (IOP Publishing, Open Access)",
+      "version": "Vol. 506, 012002 (2020), pp. 1–7, doi:10.1088/1755-1315/506/1/012002 (Iswara et al.)"
+    },
+    "src-sw36-mutel-2017-brightway": {
+      "title": "Brightway: An open source framework for Life Cycle Assessment",
+      "publisher": "Journal of Open Source Software (JOSS, Open Access)",
+      "version": "Vol. 2(12), Article 236 (2017), pp. 1–2, doi:10.21105/joss.00236 (Mutel)"
+    },
+    "src-norm36-pizzol-2017-normalization": {
+      "title": "Normalisation and weighting in life cycle assessment: Quo Vadis?",
+      "publisher": "The International Journal of Life Cycle Assessment (Aalborg University VBN accepted author manuscript)",
+      "version": "Vol. 22(6), pp. 853–866 (2017; accepted manuscript 36 pp.), doi:10.1007/s11367-016-1199-1 (Pizzol et al.)"
+    },
+    "src-olca36-ghgp-2011-scope3": {
+      "title": "Corporate Value Chain (Scope 3) Accounting and Reporting Standard: Supplement to the GHG Protocol Corporate Accounting and Reporting Standard",
+      "publisher": "World Resources Institute (WRI) and World Business Council for Sustainable Development (WBCSD)",
+      "version": "2011 edition (152 PDF pp., official public standard)"
+    },
+    "src-olca36-unep-2015-olca": {
+      "title": "Guidance on Organizational Life Cycle Assessment",
+      "publisher": "United Nations Environment Programme (UNEP) / SETAC Life Cycle Initiative",
+      "version": "2015 edition (152 PDF pp.; lead authors Martínez Blanco, Finkbeiner & Inaba)"
     }
   },
   "evidence": {
@@ -4566,6 +4601,76 @@
     },
     "ev-bio35-glam3-scoping-gaps": {
       "locator": "UNEP GLAM Phase 3 Scoping document (2021), Executive Summary, Ecosystem Quality Task Force, and Ecosystem Services Task Force (pp. 3–4, 62–71, 77–80, 85–93, 127–129)"
+    },
+    "ev-dec36-heijungs-kleijn-2001": {
+      "locator": "Heijungs & Kleijn (2001), Intro, §§1–2 & §§5–6 (pp. 141–148; Tables 1, 2, 7)",
+      "summary": "Frames numerical interpretation across inventory, characterization, normalization, and weighting as smart data reduction; defines contribution analysis (false-negative blind spot, three causes of negative contributions breaking pie charts, direct-only restriction preventing 100% inflation, ban on unweighted flow clustering), local perturbation multipliers (|m| > 0.8 warranting scrutiny and > 1 arising from recursive economic flows, sum-to-zero property, zero uncertainty data required), and the 2×2 method-selection matrix.",
+      "paraphrase": "Heijungs & Kleijn (2001) specify the blind spots and direct-attribution boundary of contribution analysis alongside local perturbation multipliers and recursive flow amplification."
+    },
+    "ev-dec36-heijungs-suh-kleijn-2005": {
+      "locator": "Heijungs, Suh & Kleijn (2005), §1, §§2.1–2.6, §§3.1–3.2 (pp. 103–111; Tables 1–8, Fig. 1)",
+      "summary": "Benchmarks large-scale numerical interpretation on ecoinvent'96 (1,163 processes, 1,181 economic flows, 571 environmental flows, ~9,000 non-zeros; 1 TJ UCPTE electricity): contribution takes <1 s (11 processes >=3% = 79% of CO₂); analytical matrix perturbation takes <=20 s for CO₂ and <5 min for all 571 flows vs. ~300 h numerically; condition number ~10¹⁴ is an extreme worst-case bound while most flows show 7%–15% CVs under uniform 5% Gaussian input CV, yet waste heat to water reaches ±128 multipliers (1,771% MC / 2,052% analytical CV); non-negative variance-decomposition key-issue analysis finds 3 input coefficients drive 69% of CO₂ variance (a single output entry [G181] in [P293] drives 51%, [G182] in [P293] drives 9%—60% combined for P293—and [G182] in [P294] drives 9%); paired discernibility resolves Portugal vs. Italy (97/100) despite overlapping 95% CIs; and §1 (p. 103) explicitly notes structural path analysis (citing Treloar 1997; Suh 2003) as excluded from the paper.",
+      "paraphrase": "Heijungs, Suh & Kleijn (2005) demonstrate analytical perturbation, variance-decomposition key-issue analysis, condition-number vs. localized instability, and paired discernibility on ecoinvent'96 while naming SPA as separate."
+    },
+    "ev-dec36-ilcd-interpretation": {
+      "locator": "ILCD Handbook General Guide (2010), Ch. 9 §§9.1–9.4 & Annex E §§16.1–16.3 (pp. 285–306, 377–380; Fig. 26)",
+      "summary": "Integrates iterative interpretation into LCI/LCIA steering: separates contribution analysis (requiring a completed system boundary rather than an isolated unit process) from discrete scenario analysis for methodological choices; defines the Priority Matrix (Fig. 26: high sensitivity × high lack of quality); separates stochastic uncertainty, choice uncertainty, and unquantifiable ignorance; warns that independent Monte Carlo ignores shared-background co-variation; and stresses that statistical non-significance never establishes equivalence.",
+      "paraphrase": "ILCD (2010) combines contribution analysis, discrete scenarios, the Priority Matrix, and three uncertainty layers into iterative steering while warning that non-significance is not equality."
+    },
+    "ev-sw36-iswara-2020-caution": {
+      "locator": "Iswara et al. (2020), Abstract & §§1–4 (pp. 1–7; Tables 1–2, Figs. 3–4)",
+      "summary": "Compares SimaPro Business Licence vs. openLCA (cited as OpenLCA 1.7.0) on a 6-process oil-and-gas dummy inventory (1 kg sales gas, ecoinvent + CML midpoint), finding extreme characterization gaps (GWP100a 277,112,233 vs. 769.98 kg CO₂ eq; acidification 237,403,184.52 vs. 169.86 kg SO₂ eq; eutrophication 115,639,189.30 vs. 0.00 kg PO₄ eq; ODP 1,423.57 vs. 4,603.46 kg CFC-11 eq) that flip both dominant impact categories and GWP process hotspots. Authors attribute the gap to mismatched ecoinvent editions, omitted non-transferable SimaPro datasets, differing/missing LCIA and normalization factor packs (openLCA omits LCIA packs by default), and black-box GUI execution; audit also notes unstated versions and internal reporting errors (Abstract vs. Table 2 openLCA normalized values differ ~10⁴×; prose says almost 60% higher despite Table 1's 360,000× ratio), making it empirical cautionary evidence of replication breakdown rather than proof of linear-solver bugs.",
+      "paraphrase": "Iswara et al. (2020) provide cautionary empirical evidence of how unpinned database versions, non-portable datasets, missing factor packs, and black-box execution reverse cross-software rankings."
+    },
+    "ev-sw36-mutel-2017-brightway": {
+      "locator": "Mutel (2017), JOSS 2(12):236, pp. 1–2 (Summary & References)",
+      "summary": "Documents Brightway's open-source modular Python architecture—Brightway2-data (storage/access), Brightway2-calc (static and Monte Carlo solving), Brightway2-IO (import/export), stats_arrays (statistical array data format), and Jupyter notebook interactivity—providing an inspectable scriptable contrast to black-box GUIs (without reporting numerical cross-software benchmarks).",
+      "paraphrase": "Mutel (2017) details Brightway's decoupled, scriptable Python architecture for inspectable storage, import/export, and static or Monte Carlo calculation."
+    },
+    "ev-sw36-ilcd-solver-loops": {
+      "locator": "ILCD Handbook General Guide (2010), §6.6.1 (pp. 99–100) & §8.2 (pp. 276–281)",
+      "summary": "Notes that LCA software resolves technosphere feedback loops either mathematically (matrix inversion) or iteratively to convergence (§6.6.1), and warns that failed elementary-flow matching or missing characterization factors default silently to zero without raising errors (§8.2).",
+      "paraphrase": "ILCD (2010) distinguishes mathematical inversion from iterative loop solving and warns of silent zeroing when elementary flows fail to match characterization factors."
+    },
+    "ev-norm36-pizzol-purposes-taxonomy": {
+      "locator": "Pizzol et al. (2017), accepted manuscript §§2–5.1 (ms pp. 4–12 / PDF pp. 5–13; Table 1 ms p. 29; Table 2 ms pp. 31–32)",
+      "summary": "Identifies three legitimate purposes of normalization (plausibility check, external-reference communication, rescaling before weighting), reports the n = 216 practitioner survey (normalization computed more often than weighting, t(215)=4.71; calculation correlated with communication r(214)=0.80 and selection r(214)=0.65; weighting rated significantly lower on robustness t(215)=5.06 and transparency t(215)=3.90), and builds the full taxonomy of internal (baseline, maximum, sum, outranking—comparative only) versus external normalization (global, production-based territorial, consumption-based territorial, carrying-capacity/planetary boundaries, noting carrying-capacity lacks human-health/resource thresholds and mathematically mirrors distance-to-target weighting).",
+      "paraphrase": "Pizzol et al. (2017) establish normalization's three purposes, community survey evidence (n=216), and the complete internal, external, and carrying-capacity taxonomy."
+    },
+    "ev-norm36-pizzol-pitfalls-pellston": {
+      "locator": "Pizzol et al. (2017), accepted manuscript §2, §§5.1–5.2, §§6.1–6.2 (ms pp. 4, 9–19 / PDF pp. 5, 10–20; Table 3 ms p. 33)",
+      "summary": "Documents four normalization pitfalls: rank reversal when internal normalization precedes weighting; LCI–reference boundary and missing-substance mismatch causing severe toxicity overestimation; unnecessary/biased normalization before marginal-damage or monetary weighting; and implicit binary weighting in equal weighting or single-issue footprinting. Reports the January 2016 UNEP/SETAC Pellston workshop good-practice consensus (explicitly without endorsing mandatory use): state purpose, audit LCI–reference consistency, prioritize global references for global supply chains (while noting consumption-based is theoretically preferable), never drop categories after normalization, run multi-method sensitivity checks, favor damage over distance-to-target, affected stakeholders over expert panels unless delegated, observed market prices/budget-constraint valuation for use values and QALYs, and choice modeling for stated preferences, and advance reference uncertainty and spatialization.",
+      "paraphrase": "Pizzol et al. (2017) document internal rank reversal, toxicity overestimation from incomplete references, redundant marginal-weighting normalization, and the Pellston good-practice guardrails."
+    },
+    "ev-norm36-ilcd-jrc-rules": {
+      "locator": "ILCD Handbook General Guide (2010), §§6.7.6–6.7.7, Provision 6.7 XV.a, §§8.3–8.4 fn. 194–195 (pp. 113–115, 120, 281–283)",
+      "summary": "Covers external normalization exclusively (no internal normalization): optional under ISO 14044, but mandatory under ILCD when normalized/weighted results quantify cut-off completeness; requires pre-committing and dating the normalization basis in initial scope definition; favors global per-capita references (yielding interpretable ~10 to 10⁻⁵ magnitudes rather than 10⁻⁷ to 10⁻¹⁴ national/total bases); warns against incompatible LCIA–normalization–weighting triads or re-normalizing endpoint/monetary weighting; and bans direct summation of normalized values as implicit equal weighting.",
+      "paraphrase": "ILCD (2010) mandates pre-commitment, global per-capita preference, triad compatibility, and non-summation for external normalization."
+    },
+    "ev-norm36-jrc-2019-adp-nonadditive": {
+      "locator": "Zampori & Pant (2019), EUR 29682 EN, Glossary, Table 2 fn. 25, §5.2.1, §6.3.1, Annex A (pp. 17, 37, 104–107, 193)",
+      "summary": "States that normalized PEF results are dimensionless but not additive, do not express impact severity, must not be summed (which applies implicit weighting), and must be reported alongside characterized and weighted profiles (with hotspot selection using normalized and weighted scores). Table 2 fn. 25 and Annex A independently warn that mineral/metal abiotic depletion potential (ADP ultimate reserves) may be overestimated after normalization and note plans to develop a dissipation-based model.",
+      "paraphrase": "JRC (2019) reinforces that normalized scores are non-additive and independently cautions that mineral/metal ADP may be overestimated after normalization."
+    },
+    "ev-olca36-ghgp-scope3-structure": {
+      "locator": "WRI & WBCSD (2011), Scope 3 Standard, §1.5, §§5.1–5.4, Tables 5.2 & 5.4, Table 6.1, Ch. 7 Tables 7.1–7.7, §9.6 Fig. 9.1, §11.1 (pp. 6, 27–37, 59–80, 108, 119; PDF p. = printed p. + 2)",
+      "summary": "Defines corporate Scope 3 accounting across 6 Kyoto GHGs (excluding offsets/avoided emissions; separate biogenic CO₂), requiring one consistent consolidation approach (equity share, financial control, or operational control) across Scopes 1–3; splits 15 categories (8 upstream, 7 downstream, Table 5.4 minimum boundaries) while acknowledging reporting-year mixing of past, current, and expected future emissions; specifies 7 relevance criteria (Table 6.1) and EEIO screening (Box 7.1); distinguishes direct measurement from calculation (physical or financial spend × factor, Tables 7.1–7.2), primary/secondary combinations with mandatory supplier-share disclosure (§11.1), 5 data-quality indicators (Table 7.6), and 5 specificity tiers (Table 7.7) without naming the companion calculation guidance's four category-1 method labels; establishes two-tier double counting (mutually exclusive within one company's Scopes 1–3, inherently overlapping across separate companies' Scope 3, barring cross-company aggregation and requiring exclusive ownership against double crediting); and states the standard is not designed for inter-company comparisons (§1.5).",
+      "paraphrase": "WRI & WBCSD (2011) specify Scope 3 consolidation, 15 categories, time-boundary mixing, relevance screening, data specificity tiers, and the two-tier double-counting architecture."
+    },
+    "ev-olca36-unep-olca-architecture": {
+      "locator": "UNEP/SETAC (2015), O-LCA Guidance, §§1.1–1.2, §§3.1–3.4, Boxes 4–9, Figs. 4, 8, 10, 12–13 (pp. 20–24, 35, 40–70, 77–81; PDF p. = printed p. + 2)",
+      "summary": "Accompanies the 8-page main body of paywalled ISO/TS 14072:2014 (citing Finkbeiner & König 2013 that 27/31 ISO 14044 requirements transfer to organizations, and studies showing indirect GHGs excl. electricity reach up to 75% while internal operations often represent ~20% of impacts) to expand corporate accounting to multi-impact cradle-to-grave O-LCA preventing burden shifting; splits ISO/TS 14072's reporting unit into guidance-level reporting organization (subject, consolidation, 1-year reference period) and reporting flow (portfolio outputs, explicitly noting the two sub-terms are absent from ISO/TS 14072); defines system boundary covering direct, upstream/downstream indirect, and supporting activities (offices, R&D, commuting, leased assets, amortized capital goods; cradle-to-gate only without downstream influence; offsets barred); details top-down, bottom-up, and hybrid collection paths from ISO/TS 14072 annexes; and sets Box 8's price, exchange-rate, and inflation adjustments for spend-to-physical conversions.",
+      "paraphrase": "UNEP/SETAC (2015) detail multi-impact O-LCA architecture, the reporting-organization/reporting-flow split, supporting-activity boundaries, and top-down/bottom-up/hybrid data collection."
+    },
+    "ev-olca36-unep-comparative-prohibition": {
+      "locator": "UNEP/SETAC (2015), O-LCA Guidance, Exec. Summary, §2.2, §3.2, §5.2 Box 11, Annex C.B/D/F, Annex D (pp. 6, 34, 40, 105–106, 130–136; PDF p. = printed p. + 2)",
+      "summary": "Reports ISO/TS 14072:2014 and UNEP/SETAC O-LCA's explicit prohibition on public comparative assertions between different organizations (mandating that goals explicitly exclude public inter-organization rankings due to unique product portfolios and business models), requires critical review for external disclosure, and excludes single-score indicators in Box 11 even if third parties attempt comparisons—contrasting EU Recommendation 2013/179/EU's prescriptive OEF method, which permits intra-sector public comparisons under OEF Sector Rules (OEFSRs) while conflicting with several ISO 14040/14044/14072 principles.",
+      "paraphrase": "UNEP/SETAC (2015) document the prohibition on inter-organization public comparative assertions in ISO/TS 14072 and O-LCA and contrast EU OEF's OEFSR pathway."
+    },
+    "ev-olca36-eu-oef-2013-context": {
+      "locator": "Commission Recommendation 2013/179/EU (OJ L 124), Annex III Organisation Environmental Footprint (OEF) Guide structure (cross-checked with UNEP/SETAC 2015 Annex C.F)",
+      "summary": "Annex III of Recommendation 2013/179/EU establishes the multi-criteria Organisation Environmental Footprint (OEF) method alongside PEF, structuring the organization's product portfolio and enabling sector-specific rules (OEFSRs) for prescriptive reproducibility.",
+      "paraphrase": "EU Recommendation 2013/179/EU Annex III defines the prescriptive multi-criteria OEF method and OEFSR governance structure."
     }
   },
   "passages": {

@@ -1,6 +1,6 @@
 ---
 title: 数据格式、映射与转换披露
-description: 对照主流生命周期数据交换格式的结构局限、公共映射与声明式迁移工具，以及三级互操作红线与透明披露清单。
+description: 对照主流生命周期数据交换格式的结构局限、公共映射与声明式迁移工具、软件实现差异与复现审计要求，以及三级互操作红线与透明披露清单。
 ---
 
 ## 交换格式与有损转换 [#交换格式与有损转换]
@@ -27,6 +27,20 @@ description: 对照主流生命周期数据交换格式的结构局限、公共�
 ## 互操作红线与审计披露 [#互操作红线与审计披露]
 
 <Prose ids="cl-db30-three-tier-interoperability-redlines cl-db30-mandatory-mapping-audit-disclosure" />
+
+## 软件实现差异与复现审计 [#软件实现差异与复现审计]
+
+<Prose ids="cl-sw36-empirical-divergence-and-confounders cl-sw36-architecture-and-reproducibility-pinning" />
+
+表 2 三类主流生命周期评价软件实现范式在数据与导入导出耦合、方法包与求解审计以及典型复现风险上的对照（综合 Iswara 等，2020；Mutel，2017；ILCD 通用导则，2010；openLCA 模式与 randonneur 规范）。
+
+| 软件实现范式与代表 | 数据模型与导入导出耦合 | 方法包、连接与求解可审验性 | 典型跨软件复现风险与核验边界 |
+| --- | --- | --- | --- |
+| 捆绑专有图形界面套件（如 SimaPro 商业工作流） | 数据库常随商业许可捆绑，传统导出依赖文本名称硬链接的 CSV 格式 | 封闭图形界面运行，内部因子匹配与计算链路难以逐项开源审计 | 跨软件迁移易遗漏非可移植专有数据集；若不显式锁定库与方法版本，热点与主导类别可能翻转（Iswara 等，2020 警示） |
+| 强类型开源图形生态（如 openLCA 生态） | 采用类型化 JSON-LD 模式与显式流映射表（FlowMap），支持产品系统与默认供方配置 | 源码开放可核验连接与单位属性换算；LCIA 方法包免费但默认不随软件内置，须主动载入匹配版本 | 缺装或错配 LCIA／归一化方法包时，失配基本流按 ILCD §8.2 静默归零而不报错，导致富营养化等类别骤降甚至归零 |
+| 解耦可脚本化开源框架（如 Brightway 生态） | 数据存储（Brightway2-data）与多源导入导出（Brightway2-IO）彻底分离，可配 randonneur 声明式迁移配方 | 矩阵静态与蒙特卡洛求解（Brightway2-calc）及统计数组数据格式（stats_arrays）在 Python／Jupyter 中逐行可审验 | 高度依赖研究团队自行管理环境、数据库版本与映射脚本；Mutel（2017）仅说明软件架构而不报告跨软件求解精度基准 |
+
+关于软件实现差异、实证复现警示与方法包版本锁定审计的核心概念与出处，见 <ConceptRef id="cn-software-reproducibility-audit" />。
 
 ## 可验证元数据与证据衔接 [#可验证元数据与证据衔接]
 
