@@ -19,8 +19,9 @@ export function PublicationNote({ lang = 'zh' }: { lang?: 'zh' | 'en' }) {
           works. Citing a publication does not imply that the entire document was read or that all of its conclusions are
           adopted. Uninspected sections, paywalled standard originals (such as ISO, EN, and GB full texts), and unread
           originals are never used as support; exact scopes and caveats appear in chapter-end notes. The{' '}
-          <Link href="/en/research/">research bibliography</Link> reading-register cutoff date is 2026-11-19; primary
-          sources added in subsequent chapters are cited in full in the public bibliography and chapter notes.
+          <Link href="/en/research/">research bibliography</Link> discovery and web-reading register is synchronized
+          through 2026-11-28; selected-passage PDF logs remain bounded to verified local captures, and every cited
+          primary source is recorded in full in the public bibliography and chapter notes.
         </p>
         <p>
           In the notes, <em>Source statement</em> reports a cited source, <em>Interpretation</em> clarifies meaning,{' '}
@@ -50,7 +51,7 @@ export function PublicationNote({ lang = 'zh' }: { lang?: 'zh' | 'en' }) {
         《生命周期评价的前世今生》在线工作预览版，<time dateTime={textDate}>{textDate}</time>。本版尚未经过正式科学批准，亦未开展面向外部读者的真实试读检验；各项文献的年代与版本另见引注。
       </p>
       <p>
-        本书依据具名公开文献的特定章节或段落讨论相应问题。引用一项作品，不表示整部作品均已核读，也不表示其全部结论都已被采纳。未纳入的章节、未核验的付费标准原文（ISO、EN、GB 等）及未读原件不能作为论断的支持；具体引用范围与适用条件见章末注释。<Link href="/zh/research/">原始书目</Link>中逐篇精读登记的汇总截止日期为 2026-11-19，后续增补的一手来源均已在公开引文目录与各章注释中如实列示。
+        本书依据具名公开文献的特定章节或段落讨论相应问题。引用一项作品，不表示整部作品均已核读，也不表示其全部结论都已被采纳。未纳入的章节、未核验的付费标准原文（ISO、EN、GB 等）及未读原件不能作为论断的支持；具体引用范围与适用条件见章末注释。<Link href="/zh/research/">原始书目</Link>的文献发现登记与公开网页选读记录已同步更新至 2026-11-28；PDF 逐段选读登记严格限于已留存页码核验记录的本地样本，其余全部一手来源均已在公开引文目录与各章注释中如实列示。
       </p>
       <p>
         注释中的“文献陈述”转述来源，“解释”说明含义，“计算”展示推导，“综合论证”连接多项前提，“分析建议”表明作者提出的做法。“适用条件”限定正文判断，“相关讨论”提供背景；“本段依据的前提”指向推导所采用的其他论述。

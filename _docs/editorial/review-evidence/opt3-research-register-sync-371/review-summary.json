@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "opt3-research-register-sync-371",
+  "task": "#371",
+  "date": "2026-11-28",
+  "baseCommit": "d620d6770007391465252bd9fba08f6e32be264f",
+  "scientificApproval": false,
+  "externalHumanExpertReview": false,
+  "realReaderTrial": false,
+  "summary": "OPT-3 A09 research register synchronization through 2026-11-28: extends scripts/reader-revisions.mjs with fail-closed reversible revision.research transitions (preserving exact checkpoint-2026-11-21 recovery and static/dynamic plan parity), updates knowledge/research/literature-map.json to 2026-11-28 with 4 wave queries, 59 deduplicated discovery works, and 3 existing work mappings (achieving 370/370 = 100% catalog source discovery coverage), updates knowledge/research/readings.json to 2026-11-28 with 17 truthful web-sections readings (26 passages + English locators in knowledge/editions/en/bibliography.json) strictly bound to verified SHA-256 text/html and text/plain sources with zero fabricated PDF indices, refreshes all 9 publicArtifacts digests, updates #writing-note in components/publication-note.tsx to 2026-11-28 without touching compiled CSS (asset:reader-css byte-identical), and adds fail-closed tests in scripts/research-register-sync.test.mjs.",
+  "independentReviews": [
+    {
+      "reviewer": "Independent Engineering & Epistemic Auditor",
+      "agentId": "72f0a1da-50ae-4d0e-b557-868c392bb2cb",
+      "initialVerdict": "NEEDS TARGETED FIXES (3 blocking, 3 advisory)",
+      "disposition": "Resolved all 3 blocking and 3 advisory findings. B1: hardened validateRevisionSchema() in scripts/reader-revisions.mjs to reject unexpected/cross-section research keys, invalid calendar dates in fromUpdatedAt, duplicate IDs, non-object/array modifiedRecords.from, and addedRecords/modifiedRecords overlap, plus missing-container guards in applyRevisionsInverse(). B2: wired literature-map.json and readings.json into applyRevisionsToPlanStatic() via scripts/reader-current-expectations.mjs and added predecessor digests so currentBookRecordMatches('literature', ...) agrees with applyRevisionsToPlan(). B3: corrected accessStatus and reading appraisal/unread disclosures on paywalled Springer abstract work-opt3-db26-frischknecht-2005 (abstract-or-excerpt) and copyright-restricted SAMR metadata page work-opt3-pol33-china-samr-gbt24067 (metadata-only). A1: merged duplicate JRC EF Guide v2.0 PDF into work-loc137-ef-guide-2020 and merged duplicate ecoinvent System Models URL into work-opt3-ecoinvent-system-models. A2: curated accurate kind, contributors, publication year, DOI/ISBN/CELEX/report identifiers, dual canonical+resolved artifact URLs, and clean singular/plural citation scope copy across all 59 added works. A3: expanded scripts/research-register-sync.test.mjs with 14 schema-rejection cases, dynamic/static plan parity checks, live currentBookRecordMatches checks, and OPT-3 epistemic invariants."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "buildAndExport": "pass (134 static routes, 129 non-redirect localized HTML pages, 9 refreshed publicArtifacts, byte-identical asset:reader-css)",
+    "checkpointHistory": "pass (checkpoint-2026-11-21, gitVerified=true)",
+    "bilingualParity": "pass (0 errors, 0 parity exceptions)",
+    "unitAndIntegrationTests": "pass (840/840 including scripts/research-register-sync.test.mjs, scripts/controversies.test.mjs, and scripts/seo-policy.test.mjs)"
+  }
+}
