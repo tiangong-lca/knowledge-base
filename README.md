@@ -15,7 +15,7 @@ checkPaths:
   - "app/**"
   - "scripts/**"
 lastReviewedAt: 2026-11-28
-lastReviewedCommit: 60b4a87960655ef12d553aa69170a6cd9df09e33
+lastReviewedCommit: da6433a9ba78c4958de91c8126f04f71f1e2830d
 ---
 
 # LCA Living Knowledge Base and Review
