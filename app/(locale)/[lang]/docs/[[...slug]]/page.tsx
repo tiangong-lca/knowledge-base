@@ -47,8 +47,10 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
   const page = src.getPage(slug);
   if (!page) notFound();
 
+  const counterpartLocales = availableDocLocales(slug);
   if (locale === 'en') {
     const logicalEnUrl = page.url.replace(/^\/en(?=\/|$)/, '') || '/';
+    const zhCounterpartHref = `/zh${logicalEnUrl.endsWith('/') ? logicalEnUrl : `${logicalEnUrl}/`}`;
     const enUnit = getUnitNumbering('web', logicalEnUrl);
     const enPart = enUnit?.part ? EN_PARTS[enUnit.part] : undefined;
     const enLabel = enUnit ? getEnUnitLabel(enUnit) : undefined;
@@ -65,6 +67,12 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
           {UI_SURFACES.contents.en}
           {enPart ? ` · ${enPart.label} · ${enPart.title}` : ''} ·{' '}
           <Link href="/en/print/">{UI_SURFACES.fullTextPrint.en}</Link>
+          {counterpartLocales.includes('zh') && (
+            <>
+              {' · '}
+              <Link href={zhCounterpartHref} hrefLang="zh-CN">中文版</Link>
+            </>
+          )}
         </p>
         <DocsTitle id="main-content" tabIndex={-1}>
           <NumberedTitle number={enLabel}>{page.data.title}</NumberedTitle>
@@ -82,6 +90,7 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
   if (!unit || unit.title !== page.data.title) {
     throw new Error(`Website title differs from numbered inventory: ${page.url}`);
   }
+  const enCounterpartHref = `/en${logicalUrl.endsWith('/') ? logicalUrl : `${logicalUrl}/`}`;
   return (
     <DocsPage
       toc={getNumberedToc(page)}
@@ -97,6 +106,21 @@ export default async function LocalizedDocsPage({ params }: { params: Promise<{ 
         {UI_SURFACES.contents.zh}{unit.partTitle ? ` · ${unit.partLabel} ${unit.partTitle}` : ''} ·{' '}
         <Link href="/zh/print/">{UI_SURFACES.fullTextPrint.zh}</Link>
       </p>
+      {EN_PUBLIC_ENABLED && counterpartLocales.includes('en') && (
+        <nav
+          aria-label="语言切换"
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            marginTop: '-0.5rem',
+            marginBottom: '0.25rem',
+            fontSize: '0.75rem',
+            color: 'var(--color-fd-muted-foreground)',
+          }}
+        >
+          <Link href={enCounterpartHref} hrefLang="en" style={{ textDecoration: 'underline' }}>English</Link>
+        </nav>
+      )}
       <DocsTitle id="main-content" tabIndex={-1} data-reader-heading-key="@unit">
         <NumberedTitle number={unit.label}>{page.data.title}</NumberedTitle>
       </DocsTitle>

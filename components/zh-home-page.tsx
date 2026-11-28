@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getOrderedPages } from '@/lib/reader-book';
 import { NumberedTitle } from '@/components/numbered-heading';
+import { EN_PUBLIC_ENABLED } from '@/lib/i18n';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import { getPresentationUnits, readerParts } from '@/scripts/reader-numbering.mjs';
 
@@ -39,6 +40,11 @@ export function ZhHomePage() {
             <Link className="secondary-link whitespace-nowrap" href="/zh/print/">
               {UI_SURFACES.fullTextPrint.zh}
             </Link>
+            {EN_PUBLIC_ENABLED && (
+              <Link className="secondary-link whitespace-nowrap" href="/en/" hrefLang="en">
+                English
+              </Link>
+            )}
           </div>
         </div>
         <div className="knowledge-figure" aria-label="阅读主线：现实问题经过概念、方法和模型，形成有依据的判断">

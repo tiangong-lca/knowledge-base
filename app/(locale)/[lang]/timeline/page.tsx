@@ -4,24 +4,26 @@ import { notFound } from 'next/navigation';
 import { PublicationShell } from '@/components/publication-shell';
 import { LcaTimeline } from '@/components/lca-timeline';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { languageAlternates } from '@/lib/seo-policy.mjs';
 import { TIMELINE_MILESTONES } from '@/lib/timeline-data';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import { getPresentationUnits } from '@/scripts/reader-numbering.mjs';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
+  const languages = languageAlternates('/docs/appendices/lca-timeline', EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: 'LCA Historical Timeline (1969–2026)',
       description: `Interactive timeline of ${TIMELINE_MILESTONES.length} life cycle assessment milestones across five historical eras, with primary-source citations and chapter links.`,
-      alternates: { canonical: '/en/docs/appendices/lca-timeline/' },
+      alternates: { canonical: '/en/docs/appendices/lca-timeline/', languages },
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
   return {
     title: '生命周期评价发展大事记',
     description: '从 1969 年饮料容器研究到 2026 年欧盟数字产品护照与前瞻动态方法，按时期与主题串联全书关键历史节点、文献来源与对应正文。',
-    alternates: { canonical: '/zh/docs/appendices/lca-timeline/' },
+    alternates: { canonical: '/zh/docs/appendices/lca-timeline/', languages },
   };
 }
 
@@ -35,6 +37,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/timeline/"
         title="LCA Historical Timeline (1969–2026)"
         description={`Trace ${TIMELINE_MILESTONES.length} key milestones across five historical eras and four methodological tracks—from early beverage container studies and ISO standardization to EU regulatory footprints and prospective dynamic LCA.`}
       >
@@ -49,6 +52,7 @@ export default async function LocalizedTimelinePage({ params }: { params: Promis
   }
   return (
     <PublicationShell
+      logicalPath="/timeline/"
       title="生命周期评价发展大事记（1969–2026）"
       description="沿着五个历史时期与四条方法主线，串联起从早期包装资源账本、SETAC 与 ISO 框架成型、数据库与共识模型演进，到欧盟强制法规与前瞻动态 LCA 的关键节点。点击任意节点下方的章名或文献来源即可直达本书正文与参考文献。"
     >

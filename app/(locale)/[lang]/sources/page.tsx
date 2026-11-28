@@ -12,20 +12,23 @@ import {
   getEnSourceVersion,
 } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const alternates = localizedPageAlternates('/sources', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: `${UI_SURFACES.references.en} — Citation Locators`,
       description: 'Primary source versions, passage-level citation locators, and linked English notes.',
+      alternates,
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: `${UI_SURFACES.references.zh} — 引文定位` };
+  return { title: `${UI_SURFACES.references.zh} — 引文定位`, alternates };
 }
 
 export default async function LocalizedSourcesPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -53,6 +56,7 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/sources/"
         title={UI_SURFACES.references.en}
         description="Exact editions, passage-level citation locators, and linked notes across all primary sources."
       >
@@ -89,7 +93,7 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
     );
   }
 
-  return <PublicationShell title={UI_SURFACES.references.zh} description="文献的具体版本、引用位置与相应注释。">
+  return <PublicationShell logicalPath="/sources/" title={UI_SURFACES.references.zh} description="文献的具体版本、引用位置与相应注释。">
     <ReferencesTabs active="sources" sourceCount={catalog.sources.length} evidenceCount={catalog.evidence.length} prefix="/zh" />
     <p>历史报告、方法论文、指南和软件文档各有用途。引文保留各自的年代与语境；不同版本或同一作品的不同文本，不能仅凭名称相同互相替代。</p>
     <div className="record-list">{catalog.sources.map(source => <article className="source-record" id={source.id} key={source.id}>

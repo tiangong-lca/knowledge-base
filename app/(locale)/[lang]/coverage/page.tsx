@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { PublicationShell } from '@/components/publication-shell';
-import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { EN_PUBLIC_ENABLED, isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { getOrderedPages, logicalPageUrl } from '@/lib/reader-book';
 import { readerGuideConfig } from '@/lib/reader-guide';
 import enReaderGuide from '@/config/editions/en/reader-guide.json';
@@ -22,15 +23,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const chCount = webUnits.filter(u => u.kind === 'chapter').length;
   const topicCount = webUnits.filter(u => u.kind === 'topic').length;
   const appCount = webUnits.filter(u => u.kind === 'appendix').length;
+  const alternates = localizedPageAlternates('/coverage', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: UI_SURFACES.bookGuide.en,
       description: `Complete ${readerParts.length}-part, ${chCount}-chapter roadmap, ${topicCount} topical essays, ${appCount} appendices, and reference apparatus.`,
+      alternates,
+      robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
   return {
     title: UI_SURFACES.bookGuide.zh,
     description: `${readerParts.length} 部 ${chCount} 章逻辑主线、多种阅读路径、按问题速查、${topicCount} 篇专题与 ${appCount} 份附录的完整阅读地图。`,
+    alternates,
   };
 }
 
@@ -74,6 +79,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/coverage/"
         title={UI_SURFACES.bookGuide.en}
         description={`Navigate all ${readerParts.length} parts and ${chapters.length} chapters, ${enReaderGuide.readingModes.length} reading paths, ${enReaderGuide.problemRoutes.length} practical entry questions, ${topics.length} topical essays, and ${appendices.length} appendices.`}
       >
@@ -335,6 +341,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <PublicationShell
+      logicalPath="/coverage/"
       title={UI_SURFACES.bookGuide.zh}
       description={`按 ${readerParts.length} 部 ${chapters.length} 章、${topics.length} 篇概念与实践专题、${appendices.length} 份附录梳理全书结构，支持系统通读、课程教学、环境产品声明（EPD）与产品碳足迹实务、按问题速查或从经典案例倒推。`}
     >
