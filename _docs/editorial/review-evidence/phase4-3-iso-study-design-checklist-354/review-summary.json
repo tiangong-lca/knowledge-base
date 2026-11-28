@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase4-3-iso-study-design-checklist-354",
+  "issue": "tiangong-lca/knowledge-base#354",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "disclosure": "Independent AI-assisted primary-source/engineering audit and zero-context bilingual reader review completed; this record does not constitute human domain-expert peer review or scientific approval.",
+  "routes": [
+    "/docs/appendices/iso-study-design-checklist"
+  ],
+  "reviewers": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "subagentId": "d95d1da8-ca8b-4bd7-bb7d-5a511c51a090",
+      "blockingCount": 4,
+      "advisoryCount": 4,
+      "allBlockingResolved": true,
+      "allAdvisoryResolved": true,
+      "summary": "Verified all 30 checkpoints and 7 revision triggers against knowledge/catalog.json, chapter MDX sources, revision manifests, and rendered HTML. Caught and resolved 4 blocking issues: B1 ILCD-EL mis-expanded as European Life Cycle Reference Data (fixed to ILCD Entry-Level [ILCD-EL] in P1.4/P1.8); B2 EU Batteries Regulation Module A ban misattributed to Art. 7 in P1.8 (fixed to Art. 17(2) for Art. 7 carbon footprints); B3 RIVM 2016-0104 Ch. 13-14 citation in P3.4 (fixed to Ch. 12-13); B4 PEF Annex I §6.3.5 negative-credit absolute-value recalculation inverted to include stages (fixed to processes or elementary flows excluding life cycle stages). Also resolved all 4 advisories: A1 IBU v2.1 §12.1 vs ECO Platform V8.0 §2.1 disclaimer split and PEF Table 32 scoring precision; A2 book-edition.json schema alignment (sections array, omitting title); A3 explicit ISO/IEC 17020 paywall citation in P3.6 col 4 and CBAM Annex II CN 2601 12 00 exception in P4.7; A4 ZH/EN clause-parity polish in P1.2, P1.6, and P4.1."
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "subagentId": "33da25ca-d099-4279-9283-3db29a630600",
+      "blockingCount": 5,
+      "advisoryCount": 3,
+      "allBlockingResolved": true,
+      "allAdvisoryResolved": true,
+      "summary": "Reviewed ZH & EN MDX, rendered HTML, and /changes/ entries from a zero-context reader perspective. Caught and resolved 5 blocking clusters: B1 premature/unexpanded acronyms in EN description and J.1 (LCA, LCIA, Sphera MLC, IDEA, CLCD, LIME3, PAS 2050:2011); B2 unexpanded/late-expanded ZH acronyms and shared WGI (IDEA, eILCD, USES-LCA, EPD, WGI); B3 unexpanded EN acronyms (CF, EoL, BTX, LULUC, CO, NF, CV, FU, EU, and ISO country codes spelled out); B4 undefined mathematical symbols (s, f, g in P2.1; Qs/Qp, A, B, M, H in P2.4; E/B, (F/Fk)^2 in P3.5); B5 three factual/bilingual sync errors (ZH 'AR6 终稿' reversed Final Government Draft meaning -> 'AR6 最终政府草案（FGD）'; P1.8 Art. 7 vs Art. 17(2) alignment; EN P1.4 corporate Scope 3 -> organizational Scope 1+2+3). Also resolved all 3 advisory clusters: secondary glosses, typography/double quotes, TianGong casing, NOx subscript, /changes/ ZH parity, bold Col 2 labels, clickable P4.8 -> J.6 anchor link, and R1-R7 mapped checkpoint IDs."
+    }
+  ],
+  "verificationGates": {
+    "cleanPublicDelivery": "pass",
+    "bilingualStructuralParity": "pass (0 exceptions)",
+    "paywallBoundariesExplicit": true,
+    "enCjkLeaks": 0,
+    "brokenLinksOrAnchors": 0
+  }
+}
