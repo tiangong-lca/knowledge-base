@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "blindSpots": [
+    {
+      "id": "noise",
+      "zh": {
+        "domain": "1. 噪声（生态系统与环境人群噪声）",
+        "status": "陆地与海洋生态噪声及交通／环境噪声在 ReCiPe 2016、EF 3.1、LC-IMPACT v1.0 与 GLAM v1.1 中均缺失。",
+        "nuance": "GLAM 人体健康 2026（Fantke 等 2026）将职业噪声纳入 5 项工作环境人体健康子指标之一（DALY/美元），但这不等同于生态系统或社区环境噪声。"
+      },
+      "en": {
+        "domain": "1. Noise (ecosystem & ambient human)",
+        "status": "Terrestrial and marine ecosystem noise as well as ambient traffic/community noise are absent across ReCiPe 2016, EF 3.1, LC-IMPACT v1.0, and GLAM v1.1.",
+        "nuance": "GLAM Human Health 2026 (Fantke et al. 2026) integrates occupational noise as one of five work-environment sub-indicators (DALY per dollar), distinct from ecosystem or ambient community noise."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity",
+        "/docs/book/social-assessment-objects-and-meaning"
+      ]
+    },
+    {
+      "id": "macroplastics",
+      "zh": {
+        "domain": "2. 海洋大型塑料与缠绕（及淡水／陆地微塑料）",
+        "status": "大型塑料物理缠绕、误食及淡水与陆地微塑料在 CML、ReCiPe 2016、EF 3.1、LC-IMPACT v1.0 及 GLAM v1.1 中均缺失。",
+        "nuance": "GLAM v1.1 仅新增海洋水体与沉积物微塑料（生命周期评价海洋影响框架［MarILCA］：11 种聚合物 × 3 种形态 × 5 种粒径）；塑料添加剂浸出另归入常规生态毒性核算。"
+      },
+      "en": {
+        "domain": "2. Marine macroplastics & entanglement (plus freshwater/terrestrial microplastics)",
+        "status": "Macroplastic entanglement and ingestion as well as freshwater and terrestrial microplastics are absent across CML, ReCiPe 2016, EF 3.1, LC-IMPACT v1.0, and GLAM v1.1.",
+        "nuance": "GLAM v1.1 adds marine aquatic and sediment microplastics only (Marine Impacts in Life Cycle Assessment [MarILCA] framework: 11 polymers × 3 shapes × 5 sizes); leaching of plastic additives belongs in separate ecotoxicity accounting."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "invasive-species",
+      "zh": {
+        "domain": "3. 海洋入侵物种",
+        "status": "ReCiPe 2016 原文明确列为缺失项，EF 3.1、LC-IMPACT v1.0 与 GLAM v1.1 亦无共识表征因子。",
+        "nuance": "尚无跨国共识主流因子；压载水或海运生物转移风险须在局限说明中定性披露。"
+      },
+      "en": {
+        "domain": "3. Marine invasive species",
+        "status": "Explicitly listed as missing in the ReCiPe 2016 primary paper and absent across EF 3.1, LC-IMPACT v1.0, and GLAM v1.1.",
+        "nuance": "Zero consensus mainstream characterization factors; ballast-water or maritime bio-invasion risks require qualitative limitation disclosures."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "ocean-acidification",
+      "zh": {
+        "domain": "4. 海洋酸化",
+        "status": "在 ReCiPe 2016、EF 3.1、LC-IMPACT v1.0 及 GLAM v1.1 生态模块中均明确缺席。",
+        "nuance": "二氧化碳溶海引发的钙化生物退化未被现有主流气候或陆地酸化因子涵盖。"
+      },
+      "en": {
+        "domain": "4. Ocean acidification",
+        "status": "Absent across ReCiPe 2016, EF 3.1, LC-IMPACT v1.0, and explicitly excluded from GLAM v1.1.",
+        "nuance": "Carbon-dioxide-driven marine calcification loss is not captured by current climate or terrestrial-acidification factors."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "fisheries",
+      "zh": {
+        "domain": "5. 渔业捕捞、生物资源采掘与底拖网",
+        "status": "ReCiPe 2016、EF 3.1 与 LC-IMPACT v1.0 均排除；GLAM v1.1 亦最终删除渔业类别。",
+        "nuance": "GLAM v1.1 说明因生物量／丰度采掘指标与潜在消失物种比例（PDF）丰富度口径不相容及进度约束而被移出，水产品评估若忽略此盲区易产生系统性偏倚。"
+      },
+      "en": {
+        "domain": "5. Fisheries, biotic resource extraction & bottom trawling",
+        "status": "Excluded from ReCiPe 2016, EF 3.1, and LC-IMPACT v1.0, and dropped from GLAM v1.1.",
+        "nuance": "GLAM v1.1 removed fisheries because biomass/abundance extraction metrics are incompatible with Potentially Disappeared Fraction of species (PDF) richness loss and due to schedule constraints; seafood comparisons omitting this gap risk systematic bias."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "genetic-functional-biodiversity",
+      "zh": {
+        "domain": "6. 遗传、功能与种群丰度维度生物多样性",
+        "status": "现有主流 PDF 与物种·年体系全部缺失。",
+        "nuance": "PDF 仅度量物种丰富度丧失，不捕捉基因多样性、生态系统功能多样性与种群数量早期衰退预警。"
+      },
+      "en": {
+        "domain": "6. Genetic, functional & abundance biodiversity",
+        "status": "Absent across all mainstream PDF and species·yr methods.",
+        "nuance": "PDF tracks species richness disappearance only, omitting genetic diversity, functional diversity, and population-abundance early warning prior to extinction."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "taxonomic-bias",
+      "zh": {
+        "domain": "7. 陆地无脊椎动物、传粉昆虫、真菌与土壤微生物",
+        "status": "ReCiPe 2016、LC-IMPACT v1.0（排除节肢动物、真菌与细菌）与 GLAM v1.1（缺陆地无脊椎动物与传粉者）普遍存在严重类群偏倚。",
+        "nuance": "现有模型高度集中于约 2.7 万种维管植物（占已知约 30.8 万种的一小部分）与陆生脊椎动物；GLAM 淡水富营养化与耗水仅依赖淡水鱼，陆地酸化仅依赖维管植物。"
+      },
+      "en": {
+        "domain": "7. Terrestrial invertebrates, pollinators, fungi & soil microbes",
+        "status": "Severe taxonomic bias across ReCiPe 2016, LC-IMPACT v1.0 (excludes arthropods, fungi, bacteria), and GLAM v1.1 (no terrestrial invertebrates or pollinators).",
+        "nuance": "Models concentrate on ~27,000 of ~308,000 vascular plants plus terrestrial vertebrates; GLAM freshwater eutrophication and water rely solely on freshwater fish, and terrestrial acidification relies solely on vascular plants."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    },
+    {
+      "id": "salinization-domain-gaps",
+      "zh": {
+        "domain": "8. 土壤盐渍化、压实及单一方法内部分域缺口",
+        "status": "土壤盐渍化与压实缺共识模型；GLAM v1.1 另明确列出水生酸化、海洋生态毒性、生态光化学臭氧、陆地富营养化与生态毒性沉积物区室五项未覆盖缺口。",
+        "nuance": "同一体系内不同压力路径的参照基线亦不统一（如仅计原生种、计全部现存种或非空间实验室测试物种），合并总分前须核查口径。"
+      },
+      "en": {
+        "domain": "8. Salinization, soil compaction & intra-method domain gaps",
+        "status": "No consensus models for salinization or soil compaction; GLAM v1.1 also explicitly flags five uncovered ecosystem gaps: aquatic acidification, marine ecotoxicity, ecological photochemical ozone, terrestrial eutrophication, and ecotoxicity sediment compartments.",
+        "nuance": "Baseline reference species also vary across pathways inside a single method (native-only species vs. all extant species vs. non-spatial lab species), requiring boundary checks before summing."
+      },
+      "chapters": [
+        "/docs/book/resources-land-and-biodiversity"
+      ]
+    }
+  ],
+  "valueChoices": [
+    {
+      "id": "goal-context",
+      "zh": {
+        "locus": "1. 研究目的与决策情境",
+        "choice": "归因核算（ILCD C1/C2）、微观决策（A）还是宏观结构变动（B）；是否声明公开比较断言；前景按专有度还是管理权划界。",
+        "flip": "从情境 C/A 切换至情境 B 会改变平均与边际供方及系统扩展边界；声明公开比较断言立即禁用纯清单断言并收紧截断与类别规则门槛。"
+      },
+      "en": {
+        "locus": "1. Goal and decision context",
+        "choice": "Attributional shares (ILCD C1/C2), micro non-structural decisions (A), or macro structural shifts (B); public comparative-assertion intent; foreground specificity vs. management boundary.",
+        "flip": "Switching C/A to B alters average vs. marginal suppliers and system expansion; declaring public comparative-assertion intent bars LCI-only claims and tightens cut-off and category-rule gates."
+      },
+      "chapters": [
+        "/docs/book/goal-and-scope",
+        "/docs/book/framework-responsibilities"
+      ]
+    },
+    {
+      "id": "functional-unit",
+      "zh": {
+        "locus": "2. 功能单位、服务等效与次级功能",
+        "choice": "界定等效服务的必选属性与定位属性、纳入哪些次级功能（如垃圾袋替代），以及对容量不足购物袋是否执行整数件向上取整。",
+        "flip": "粗糙墙面加入基底处理使涂料 B 从容差内翻转为超出容差（41.091 对 27.967 kg CO₂-eq）；英、丹购物袋研究调整垃圾袋替代率或整数袋取整显著改写复用盈亏平衡次数。"
+      },
+      "en": {
+        "locus": "2. Functional unit, service equivalence, and secondary functions",
+        "choice": "Defining obligatory vs. positioning service properties, deciding which secondary functions enter the system (e.g., bin-liner replacement), and integer bag rounding for undersized carriers.",
+        "flip": "Adding substrate preparation on a rough wall flips Paint B from within tolerance to outside tolerance (41.091 vs. 27.967 kg CO₂-eq); bin-liner substitution and integer bag rounding shift UK and Danish reuse break-even counts."
+      },
+      "chapters": [
+        "/docs/book/service-and-reference",
+        "/docs/book/wall-service-to-comparison",
+        "/docs/book/interpretation-and-limits"
+      ]
+    },
+    {
+      "id": "multifunctionality",
+      "zh": {
+        "locus": "3. 多功能分配与循环负担分账",
+        "choice": "物理量分配还是经济价值分配、背景库系统模型（Cut-off、APOS 或 Consequential），以及欧盟 PEF 循环足迹公式（CFF）参数 A、B。",
+        "flip": "同一联产装置由质量分配改为收益分配可显著改写单位排放；在 CFF（A = 0.5, B = 0）下，即便完整系统净收益更利于材料回收（M > H），产品分账仍可能偏向能源回收。"
+      },
+      "en": {
+        "locus": "3. Multifunctionality allocation and recycling burden sharing",
+        "choice": "Physical vs. economic partitioning, database system models (Cut-off, APOS, or Consequential), and EU PEF Circular Footprint Formula (CFF) parameters A and B.",
+        "flip": "Switching a fixed plant from mass to revenue allocation shifts per-kg emissions; under CFF (A = 0.5, B = 0), product-allocated credits can favor energy recovery even when full-system net benefit favors material recycling (M > H)."
+      },
+      "chapters": [
+        "/docs/book/joint-production",
+        "/docs/book/recycling-chains-and-accounting",
+        "/docs/book/lca-database-landscape-and-history"
+      ]
+    },
+    {
+      "id": "time-discounting",
+      "zh": {
+        "locus": "4. 时间尺度、生物源碳记账与折现",
+        "choice": "累计辐射强迫（GWP20 对 GWP100）还是终点温升（GTP100）、生物源碳 0/0 对 −1/+1，以及生命周期成本（LCC）折现率。",
+        "flip": "同日脉冲 28.1 kg CO₂ 与 1 kg 化石甲烷在 IPCC AR6 GWP100 相等、在 GWP20 拉大（28.1 对 77.4）、在 GTP100 反转（28.1 对 7.1）；混接 −1/+1 与 0/0 生物碳会制造 −3.67 kg CO₂-eq 虚假负碳；LCC 折现率跨过约 6.49% 翻转净现值排序。"
+      },
+      "en": {
+        "locus": "4. Time horizons, biogenic carbon timing, and discounting",
+        "choice": "Cumulative radiative forcing (GWP20 vs. GWP100) vs. endpoint temperature (GTP100), biogenic carbon 0/0 vs. −1/+1, and life cycle costing (LCC) discount rates.",
+        "flip": "Equal-day pulses of 28.1 kg CO₂ and 1 kg fossil CH₄ tie under IPCC AR6 GWP100, widen under GWP20 (28.1 vs. 77.4), and reverse under GTP100 (28.1 vs. 7.1); mixing −1/+1 and 0/0 biogenic carbon fabricates −3.67 kg CO₂-eq phantom negative carbon; crossing ~6.49% LCC discount rate reverses NPV rankings."
+      },
+      "chapters": [
+        "/docs/book/climate-equivalence",
+        "/docs/book/future-technology-and-context",
+        "/docs/book/cost-perspectives-and-sustainability-combination"
+      ]
+    },
+    {
+      "id": "midpoint-endpoint",
+      "zh": {
+        "locus": "5. 中点／终点截点与文化视角",
+        "choice": "中点截点还是保护领域终点（DALY、物种·年、资源成本），以及个人主义／等级主义／平等主义（I/H/E）文化视角及其证据门槛。",
+        "flip": "仅在人类健康单一终点内，ReCiPe 化石二氧化碳因子随 I→H→E 放大 160.5 倍而一次 PM₂.₅ 保持不变，足以在 I 与 H/E 视角间翻转方案排序。"
+      },
+      "en": {
+        "locus": "5. Midpoint vs. endpoint cut-points and cultural perspectives",
+        "choice": "Midpoint indicators vs. Area of Protection endpoints (DALY, species·yr, surplus resource cost), and Individualist/Hierarchist/Egalitarian (I/H/E) perspectives.",
+        "flip": "Within Human Health alone, ReCiPe fossil CO₂ increases 160.5× from I to H to E while primary PM₂.₅ stays constant, reversing option rankings between I and H/E."
+      },
+      "chapters": [
+        "/docs/book/midpoint-endpoint-value-choices",
+        "/docs/book/lime-preferences-and-damage-weights"
+      ]
+    },
+    {
+      "id": "normalization",
+      "zh": {
+        "locus": "6. 归一化分母与参照边界",
+        "choice": "内部还是外部归一化、全球人均还是领土参照、生产基还是消费基边界，以及是否配套目标距离加权。",
+        "flip": "内部归一化增删劣势方案可引发排序反转；全球切换香港领土分母翻转立面方案；重污染地区换现状分母而不收紧目标触发“重污染分母稀释悖论”；EF 3.0 升 3.1 同步更新因子与分母改变了 2,751/2,752 项官方数据集单分。"
+      },
+      "en": {
+        "locus": "6. Normalization denominators and reference boundaries",
+        "choice": "Internal vs. external normalization, global per-capita vs. territorial references, production- vs. consumption-based boundaries, and coupling to target weights.",
+        "flip": "Adding a dominated option under internal normalization flips rankings; switching global to Hong Kong territorial denominators flips facade options; polluted denominators without tightened targets trigger the dirty-denominator dilution paradox; EF 3.0→3.1 updates altered single scores in 2,751/2,752 datasets."
+      },
+      "chapters": [
+        "/docs/book/ecological-scarcity-and-targets",
+        "/docs/book/localization-evidence-and-denominators"
+      ]
+    },
+    {
+      "id": "weighting-valuation",
+      "zh": {
+        "locus": "7. 跨类别加权与货币估值",
+        "choice": "距政策目标平方加权（瑞士生态稀缺法）、偏好×科学稳健度混合加权（欧盟 EF 3.1）、陈述偏好货币估值（LIME），或停步于未加权剖面。",
+        "flip": "瑞士 NOₓ 因子减半翻转工艺排序；EF 3.1 将毒性稳健度折减至 0.17 扩大气候对生态毒性权重比逾 5 倍并翻转路线；LIME 三版估值表在 80 万 DALY/物种临界比两侧两次翻转排序。"
+      },
+      "en": {
+        "locus": "7. Cross-category weighting and monetary valuation",
+        "choice": "Squared policy distance-to-target weighting (Swiss Ecological Scarcity), public–expert panel × robustness weights (EU EF 3.1), stated-preference WTP monetization (LIME), or stopping unweighted.",
+        "flip": "Halving the Swiss NOₓ eco-factor flips process rankings; EF 3.1's 0.17 toxicity robustness discount expands the climate-to-ecotoxicity weight ratio >5× and flips routes; LIME's three valuation editions reverse and re-reverse options across the 800,000 DALY/species break-even."
+      },
+      "chapters": [
+        "/docs/book/ecological-scarcity-and-targets",
+        "/docs/book/lime-preferences-and-damage-weights"
+      ]
+    },
+    {
+      "id": "social-cost-veto",
+      "zh": {
+        "locus": "8. 社会参照标尺、不可补偿底线与成本归属",
+        "choice": "社会绩效参照点与序数刻度（SHDB 线性 0–3 对 PSILCA 指数 0.01–100）、线性补偿还是不可补偿否决门槛，以及 LCC 成本主体视角。",
+        "flip": "由 SHDB 线性改为 PSILCA 指数刻度令两条 100 工时路线由 2.00× 翻转为 15.77×；含强迫劳动风险的方案在等权仪表盘夺冠，却被 ELECTRE 否决门槛淘汰；切换厂商利润与买方总拥有成本翻转排序。"
+      },
+      "en": {
+        "locus": "8. Social reference scales, non-compensable floors, and LCC actor boundaries",
+        "choice": "Social Performance Reference Points, ordinal spacing (SHDB linear 0–3 vs. PSILCA exponential 0.01–100), compensatory sums vs. non-compensable outranking veto thresholds, and LCC actor boundaries.",
+        "flip": "Switching SHDB linear to PSILCA exponential flips two 100-hour routes from 2.00× to 15.77×; a forced-labor bid wins under equal-weight scoring yet is eliminated by an ELECTRE veto; switching manufacturer profit to buyer total cost flips rankings."
+      },
+      "chapters": [
+        "/docs/book/social-assessment-objects-and-meaning",
+        "/docs/book/cost-perspectives-and-sustainability-combination"
+      ]
+    },
+    {
+      "id": "planetary-boundaries",
+      "zh": {
+        "locus": "9. 地球边界绝对配额共享原则",
+        "choice": "采用不可替代的强可持续生态上限，并选定把全球安全运行空间分摊到单个产品的伦理共享原则（经济消费份额对平等服务配额）。",
+        "flip": "对同一组方案，按消费支出份额甲达标（0.833）而乙超限（1.333），改按同等服务配额立即反转为甲超限（1.111）而乙达标（0.889）。"
+      },
+      "en": {
+        "locus": "9. Planetary-boundary sharing principles",
+        "choice": "Adopting non-substitutable strong-sustainability ceilings and choosing an ethical sharing principle (economic expenditure-share vs. egalitarian equal protective-service allowance).",
+        "flip": "For the same pair of options, expenditure-share allocation passes A (0.833) and fails B (1.333), whereas switching to an equal service allowance reverses the verdict to A fail (1.111) and B pass (0.889)."
+      },
+      "chapters": [
+        "/docs/book/cost-perspectives-and-sustainability-combination",
+        "/docs/book/ecological-scarcity-and-targets"
+      ]
+    },
+    {
+      "id": "governance-gates",
+      "zh": {
+        "locus": "10. 审查、验证与比较断言准入门槛",
+        "choice": "不同制度对公开优劣断言的准入与保证强度裁定（ISO 14044 公开预览、ILCD 1/2 级与禁加权、PEF 有效 PEFCR 与验证、GHG Protocol 纵向边界、欧盟电池法规公告机构 D1/G）。",
+        "flip": "同一份带加权总分的研究在内部热点诊断中合法，却在 ILCD 公开比较断言下被禁止、在无有效 PEFCR 时不得作欧盟 PEF 跨品比较，未经公告机构 D1/G 评定不得投放欧盟动力电池市场。"
+      },
+      "en": {
+        "locus": "10. Review, verification, and comparative-assertion governance gates",
+        "choice": "Institutional admissibility and assurance rules across ISO 14044 public preview, ILCD Level 1/2 and weighting ban, EU PEF active PEFCR + verification, GHG Protocol longitudinal scope, and EU Batteries Regulation Notified Body Modules D1/G.",
+        "flip": "An identical weighted study usable for internal hotspot screening is barred from public comparative assertions under ILCD, barred from cross-product PEF comparisons without an active PEFCR, and barred from the EU battery market without Notified Body D1/G conformity assessment."
+      },
+      "chapters": [
+        "/docs/book/product-footprint-rules-and-practice",
+        "/docs/book/epds-and-sector-rules",
+        "/docs/book/review-verification-and-assurance",
+        "/docs/book/lca-results-in-policy"
+      ]
+    }
+  ],
+  "revisionTriggers": [
+    {
+      "id": "R1",
+      "checkpoints": "P1.3, P4.1",
+      "zh": {
+        "trigger": "R1 · 服务性能、次级功能或真实使用行为变化",
+        "recalculate": "功能单位等效条件、各方案参考流、复用盈亏平衡次数及多指标综合排序。",
+        "boundary": "上游单元过程质量平衡与表征因子不变；不得把等质量混同于等效服务，也不得假定现实复用率必然达到模型阈值。"
+      },
+      "en": {
+        "trigger": "R1 · Changes in service performance, secondary functions, or real-world use",
+        "recalculate": "Service equivalence, reference-flow quantities, reuse break-even thresholds, and multi-indicator rankings.",
+        "boundary": "Upstream unit-process mass balances and characterization factors stay intact; never equate equal mass with functional equivalence or assume modeled reuse rates."
+      }
+    },
+    {
+      "id": "R2",
+      "checkpoints": "P1.6, P2.4, P3.3",
+      "zh": {
+        "trigger": "R2 · 工艺放大系数、前景—背景年份错位或循环分账参数变更",
+        "recalculate": "工业化放大后清单、再生负担归属（CFF 或模块 D 边界）与未来情景包络区间。",
+        "boundary": "既有基准年实测单元清单不变；不得把实验室热点等同商业量产表现，也不得把超结构软件输出当作情景概率证明。"
+      },
+      "en": {
+        "trigger": "R2 · Scale-up factors, foreground–background year alignment, or circularity parameters",
+        "recalculate": "Industrial scale-up inventories, recycled-material burden attribution (CFF or Module D), and future scenario envelopes.",
+        "boundary": "Measured base-year inventories stay intact; never equate lab hotspots with commercial performance or treat superstructure software as scenario probability proof."
+      }
+    },
+    {
+      "id": "R3",
+      "checkpoints": "P2.2, P2.3, P2.6",
+      "zh": {
+        "trigger": "R3 · 背景数据库换版、剩余地区（RoW）市场重算或缺失流补全",
+        "recalculate": "上游背景贡献占比、区域代表性偏差与缺失流覆盖披露。",
+        "boundary": "已实测的前景厂内投入产出与功能单位不变；不得把数据库换版引发的得分变动误读为工厂现场节能或增排。"
+      },
+      "en": {
+        "trigger": "R3 · Background database updates, RoW market recalculations, or newly mapped flows",
+        "recalculate": "Upstream background shares, regional representativeness bias, and missing-flow coverage disclosures.",
+        "boundary": "Measured foreground inputs/outputs and functional unit stay intact; never interpret database-version score shifts as on-site plant improvements or deteriorations."
+      }
+    },
+    {
+      "id": "R4",
+      "checkpoints": "P3.1–P3.4, P3.7, P4.5",
+      "zh": {
+        "trigger": "R4 · 影响评价方法换版、因果截点调整或官方数据包勘误",
+        "recalculate": "影响类别归属、空间与时间表征因子及受勘误波及的排序结论。",
+        "boundary": "自然物理单位下的原始基本流清单（LCI）不变；不得把方法包更新当成物理排放变化，也不得忽视已知数据包勘误。"
+      },
+      "en": {
+        "trigger": "R4 · LCIA method updates, causal cut-point shifts, or official package errata",
+        "recalculate": "Category assignment, spatial and temporal characterization factors, and rankings in errata-affected categories.",
+        "boundary": "Physical emission and resource inventories stay intact; never attribute score shifts to physical emission changes or ignore documented package errata."
+      }
+    },
+    {
+      "id": "R5",
+      "checkpoints": "P3.5, P3.6",
+      "zh": {
+        "trigger": "R5 · 归一化分母漂移、权重与货币估值立场或地球边界配额改变",
+        "recalculate": "加权单分数排序、跨维度补偿上限、社会底线一票否决与绝对边界合规结论。",
+        "boundary": "归一化之前的物理中点与生态终点剖面不变；不得把加权单分数冒充纯自然科学结论，也不得用现金流成本抵消生态损害。"
+      },
+      "en": {
+        "trigger": "R5 · Normalization denominator drift, weighting/valuation shifts, or sharing-principle changes",
+        "recalculate": "Single-score rankings, compensation limits, social-floor vetoes, and absolute compliance verdicts.",
+        "boundary": "Pre-normalization physical midpoint and ecological endpoint profiles stay intact; never present weighted single scores as value-free science or offset cash flows against ecological damage."
+      }
+    },
+    {
+      "id": "R6",
+      "checkpoints": "P4.3, P4.4",
+      "zh": {
+        "trigger": "R6 · 实测抽样方差更新、谱系矩阵替代或数据质量等级（DQR）变化",
+        "recalculate": "置信区间宽度、成对比较稳健性结论与数据质量评级披露。",
+        "boundary": "确定性点估计方程与物理质量能量守恒关系不变；不得把谱系蒙特卡洛区间等同于实测抽样方差，也不得以为高 DQR 可消除边界截断偏差。"
+      },
+      "en": {
+        "trigger": "R6 · Empirical sampling variance updates, pedigree substitution, or DQR changes",
+        "recalculate": "Confidence intervals, pairwise comparison robustness verdicts, and data quality rating disclosures.",
+        "boundary": "Deterministic balance equations and physical conservation laws stay intact; never equate pedigree Monte Carlo spreads with empirical sampling variance or assume high DQR removes boundary truncation."
+      }
+    },
+    {
+      "id": "R7",
+      "checkpoints": "P1.2, P1.8, P4.6, P4.7",
+      "zh": {
+        "trigger": "R7 · 产品足迹类别规则、法定核查要求或关键性审查范围变更",
+        "recalculate": "公开比较断言资格、性能分级归属与法定申报披露格式。",
+        "boundary": "内部热点诊断逻辑与物理减排改进方向不变；不得假定通过某一法域或指南核验即可自动满足另一法域法规或授权标准正文要求。"
+      },
+      "en": {
+        "trigger": "R7 · Product-category rule revisions, statutory verification mandates, or critical-review scope changes",
+        "recalculate": "Eligibility for public comparative assertions, performance classes, and statutory disclosure formats.",
+        "boundary": "Internal hotspot diagnostics and physical improvement levers stay intact; never assume verification under one regime automatically satisfies another jurisdiction or licensed standard text."
+      }
+    }
+  ],
+  "accessBoundaries": [
+    {
+      "id": "public-previews",
+      "zh": {
+        "title": "仅直接核验公开预览与官方注册元数据",
+        "body": "包括 ISO 14040:2006 公开预览（前言、引言、范围及 §§3.9、3.12、3.18、3.20–3.29、3.32、3.35、3.37–3.39）、ISO 14044:2006 公开预览（前言、引言、范围及 §§4.1–4.2.3.5，第 6–9 页），以及国家市场监督管理总局／全国标准信息公共服务平台对 GB/T 24040-2008 与 GB/T 24044-2008 的注册元数据。"
+      },
+      "en": {
+        "title": "Directly inspected public previews and registry metadata only",
+        "body": "Covers the ISO 14040:2006 public preview (Foreword, Introduction, Scope, and §§3.9, 3.12, 3.18, 3.20–3.29, 3.32, 3.35, 3.37–3.39), ISO 14044:2006 public preview (Foreword, Introduction, Scope, and §§4.1–4.2.3.5, pp. 6–9), and official SAMR/SAC registry metadata for GB/T 24040-2008 and GB/T 24044-2008."
+      }
+    },
+    {
+      "id": "paywalled-standards",
+      "zh": {
+        "title": "未核验付费或受版权限制的标准全文（绝不逐条重构未读条款）",
+        "body": "涵盖 ISO 14040/14044 公开预览之外的其余条款（§§4.2.3.6–4.2.3.8、§§4.3–5.3、§6 及修正案）、已作废的 ISO 14040:1997–14043:2000、ISO 14067:2018、GB/T 24067-2024（平台版权受限）、ISO 14025、ISO 21930、ISO 14071:2024、ISO/TS 14072:2014、ISO 14008、ISO 22095、EN 15804+A1/+A2、EN 15941、EN 15978、ISO/IEC 17020/17029/17065、ISO 14064-3/14065 与 PAS 2050:2011。凡涉及上述标准的结构坐标，均仅据已核公开指南、同行评审文献或官方公报转述；正式合规申报须查验现行授权正文。"
+      },
+      "en": {
+        "title": "Uninspected paywalled or copyright-restricted full texts (never reconstructed clause-by-clause)",
+        "body": "Includes clauses beyond the ISO 14040/14044 public previews (§§4.2.3.6–4.2.3.8, §§4.3–5.3, §6, and amendments), superseded ISO 14040:1997–14043:2000, ISO 14067:2018, GB/T 24067-2024 (copyright-restricted on the official portal), ISO 14025, ISO 21930, ISO 14071:2024, ISO/TS 14072:2014, ISO 14008, ISO 22095, EN 15804+A1/+A2, EN 15941, EN 15978, ISO/IEC 17020/17029/17065, ISO 14064-3/14065, and PAS 2050:2011. Structural coordinates are traced strictly through open operational guides, peer-reviewed studies, or official gazettes; formal filings require licensed current texts."
+      }
+    },
+    {
+      "id": "closed-databases-and-review-status",
+      "zh": {
+        "title": "闭源商业数据库边界与审阅状态说明",
+        "body": "商业背景数据库内部机读数据表（ecoinvent 机读数据包、Sphera MLC、IDEA、CLCD、Agri-footprint、WFLDB、Carbon Minds、SHDB、PSILCA）、专有格式 SimaPro CSV 及未公开新版本（USEtox 2.12、LIME3 原著）未作未经授权的内部拆检。本在线预览版尚未获得正式科学批准，亦未经过外部独立领域专家的同行评议或真实读者试读检验；教学案例明确区分构造输入与外部来源数值，不构成真实产品排序或第三方认证。"
+      },
+      "en": {
+        "title": "Closed commercial databases and editorial review status",
+        "body": "Closed commercial database internals (ecoinvent machine-readable packages, Sphera MLC, IDEA, CLCD, Agri-footprint, WFLDB, Carbon Minds, SHDB, PSILCA), proprietary SimaPro CSV internals, and uninspected newer releases (USEtox 2.12, original LIME3 monograph) are not inspected without license. This online working preview has not received formal scientific endorsement, independent peer review by external domain experts, or a real-reader trial; worked teaching cases separate constructed inputs from externally sourced values and do not establish product rankings or third-party certification."
+      }
+    }
+  ]
+}

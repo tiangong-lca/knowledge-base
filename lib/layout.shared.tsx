@@ -22,6 +22,7 @@ export function baseOptions(lang: Locale = 'zh'): BaseLayoutProps {
             { text: UI_SURFACES.conceptIndex.en, description: enUi.nav.conceptsDesc, url: '/en/concepts/' },
             { text: UI_SURFACES.references.en, description: enUi.nav.referencesDesc, url: '/en/research/' },
             { text: UI_SURFACES.chapterNotes.en, description: enUi.nav.claimsDesc, url: '/en/claims/' },
+            { text: UI_SURFACES.controversies.en, description: enUi.nav.controversiesDesc, url: '/en/controversies/' },
             { text: UI_SURFACES.revisionsErrata.en, description: enUi.nav.changesDesc, url: '/en/changes/' },
             { text: UI_SURFACES.fullTextPrint.en, description: enUi.nav.printDesc, url: '/en/print/' },
           ],
@@ -55,6 +56,11 @@ export function baseOptions(lang: Locale = 'zh'): BaseLayoutProps {
             text: UI_SURFACES.chapterNotes.zh,
             description: '全书章末注释、适用条件与前提关系总览',
             url: `${prefix}/claims/`,
+          },
+          {
+            text: UI_SURFACES.controversies.zh,
+            description: '各部证据边界、八类 LCIA 盲区、价值选择翻转点与限定注释',
+            url: `${prefix}/controversies/`,
           },
           {
             text: UI_SURFACES.revisionsErrata.zh,

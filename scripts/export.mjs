@@ -92,6 +92,7 @@ export function emitRouteRedirects(outDir = 'out', configPath = 'config/route-re
       { from: '/claims', to: '/zh/claims', title: '注释汇编', kind: 'relocate' },
       { from: '/concepts', to: '/zh/concepts', title: '概念索引', kind: 'relocate' },
       { from: '/coverage', to: '/zh/coverage', title: '全书导览', kind: 'relocate' },
+      { from: '/controversies', to: '/zh/controversies', title: '争议、边界与知识缺口', kind: 'relocate' },
       { from: '/changes', to: '/zh/changes', title: '修订与勘误', kind: 'relocate' },
       { from: '/print', to: '/zh/print', title: '全书连续版', kind: 'relocate' },
       { from: '/research', to: '/zh/research', title: '参考文献', kind: 'relocate' },
@@ -140,7 +141,7 @@ export async function exportArtifacts(validateSource, validateOutput) {
     if (!existsSync(`out/${route ? `${route}/` : ''}index.html`)) throw new Error(`Missing static route: ${route}`);
   }
   if (prefix) {
-    for (const route of ['zh', 'en', 'en/docs', 'en/coverage']) {
+    for (const route of ['zh', 'en', 'en/docs', 'en/coverage', 'zh/controversies', 'en/controversies']) {
       if (!existsSync(`out/${route}/index.html`)) throw new Error(`Missing bilingual static route: ${route}`);
     }
   }
@@ -198,6 +199,12 @@ export async function exportArtifacts(validateSource, validateOutput) {
       url: '/zh/timeline/',
       kind: '大事记',
     },
+    {
+      title: '争议、边界与知识缺口',
+      text: '集中汇总全书各部证据边界、八类主流 LCIA 共识盲区、十类规范性价值选择翻转点、七类定向修订触发器与全部限定注释。',
+      url: '/zh/controversies/',
+      kind: '索引',
+    },
     ...readMdxMeta('content/docs', '/zh/docs').map(p => ({ ...p, kind: '章节' })),
     ...published.claims.map(c => ({ title: c.text, text: c.scope, url: `/zh/claims/#${c.id}`, kind: '论述' })),
     ...published.concepts.map(c => ({ title: c.label, text: `${c.english} ${(c.aliases || []).join(' ')}`.trim(), url: `/zh/concepts/#${c.id}`, kind: '概念' })),
@@ -210,6 +217,12 @@ export async function exportArtifacts(validateSource, validateOutput) {
       url: '/en/timeline/',
       kind: 'Timeline',
     },
+    {
+      title: 'Controversies, Boundaries & Knowledge Gaps',
+      text: 'Consolidated index of Part I–VIII evidence boundaries, eight mainstream LCIA blind spots, ten value-choice reversal loci, seven revision triggers, and qualified or caveated notes.',
+      url: '/en/controversies/',
+      kind: 'Index',
+    },
     ...readMdxMeta('content-en/docs', '/en/docs').map(p => ({ ...p, kind: 'Chapter' })),
     ...(enClaimsDoc.claims || []).map(c => ({ title: c.text, text: c.scope || '', url: `/en/claims/#${c.id}`, kind: 'Note' })),
     ...published.concepts.map(c => ({ title: formatConceptEn(c.english || c.label), text: formatConceptEn(c.english || ''), url: `/en/concepts/#${c.id}`, kind: 'Concept' })),
@@ -220,9 +233,9 @@ export async function exportArtifacts(validateSource, validateOutput) {
 
   const routeBase = prefix ? '/zh' : '';
   const enSection = prefix
-    ? `\n## English Edition — The Past and Present of Life Cycle Assessment\n\n- [Home](/en/)\n- [Book Guide](/en/coverage/)\n- [Reading Guide](/en/docs/book/)\n- [Timeline](/en/timeline/)\n- [References](/en/research/)\n- [Citation Locators](/en/sources/)\n- [Chapter Notes](/en/claims/)\n- [Concept Index](/en/concepts/)\n- [Full Text & Print](/en/print/)\n- [Revisions & Errata](/en/changes/)\n`
+    ? `\n## English Edition — The Past and Present of Life Cycle Assessment\n\n- [Home](/en/)\n- [Book Guide](/en/coverage/)\n- [Reading Guide](/en/docs/book/)\n- [Timeline](/en/timeline/)\n- [Controversies, Boundaries & Knowledge Gaps](/en/controversies/)\n- [References](/en/research/)\n- [Citation Locators](/en/sources/)\n- [Chapter Notes](/en/claims/)\n- [Concept Index](/en/concepts/)\n- [Full Text & Print](/en/print/)\n- [Revisions & Errata](/en/changes/)\n`
     : '';
-  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中英双语书稿。网站：天工 LCA 知识库。\n\n## 中文版\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [发展大事记](${routeBase}/timeline/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n${enSection}`);
+  writeFileSync('out/llms.txt', `# 生命周期评价的前世今生\n\n从问题、概念与原始文献到方法含义和条件判断的中英双语书稿。网站：天工 LCA 知识库。\n\n## 中文版\n\n- [全书导览](${routeBase}/coverage/)\n- [阅读导论](${routeBase}/docs/book/)\n- [发展大事记](${routeBase}/timeline/)\n- [争议、边界与知识缺口](${routeBase}/controversies/)\n- [参考文献](${routeBase}/research/)\n- [引文定位](${routeBase}/sources/)\n- [注释汇编](${routeBase}/claims/)\n- [概念索引](${routeBase}/concepts/)\n- [全书连续版](${routeBase}/print/)\n- [修订与勘误](${routeBase}/changes/)\n- [书目与引文数据](/downloads/bibliography.json)\n${enSection}`);
   const surfaceErrors = await validateOutput('out', { knownIds: readerInternalIds(catalog, literatureMap, readingLedger, cases), sourceCommit });
   if (surfaceErrors.length) throw new Error(`Reader publication surface failed:\n${surfaceErrors.join('\n')}`);
   if (existsSync('out/en/print/index.html')) {

@@ -149,6 +149,9 @@ export function ZhHomePage() {
           <Link href="/zh/claims/">
             {UI_SURFACES.chapterNotes.zh}<span>全书章末注释、前提关系与适用条件</span>
           </Link>
+          <Link href="/zh/controversies/">
+            {UI_SURFACES.controversies.zh}<span>各部证据边界、八类盲区与价值选择翻转点</span>
+          </Link>
           <Link href="/zh/changes/">
             {UI_SURFACES.revisionsErrata.zh}<span>读者可见修订与勘误入口</span>
           </Link>

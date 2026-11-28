@@ -9,6 +9,7 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticToolRoutes = [
     '/coverage/',
+    '/controversies/',
     '/research/',
     '/sources/',
     '/concepts/',
