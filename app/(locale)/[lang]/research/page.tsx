@@ -12,20 +12,23 @@ import {
   getEnSourceVersion,
 } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const alternates = localizedPageAlternates('/research', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: `${UI_SURFACES.references.en} — Bibliography`,
       description: 'Primary standards, reports, scholarly papers, and verified passage-level reading locators.',
+      alternates,
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: `${UI_SURFACES.references.zh} — 原始书目` };
+  return { title: `${UI_SURFACES.references.zh} — 原始书目`, alternates };
 }
 
 export default async function LocalizedResearchPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -44,6 +47,7 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/research/"
         title={UI_SURFACES.references.en}
         description="Primary reports, methodological papers, standards, and software documentation cited in the text."
       >
@@ -90,7 +94,7 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
     );
   }
 
-  return <PublicationShell title={UI_SURFACES.references.zh} description="正文所引报告、方法论文、指南与软件文档。具体引文位置见各章注释与引文定位标签页。">
+  return <PublicationShell logicalPath="/research/" title={UI_SURFACES.references.zh} description="正文所引报告、方法论文、指南与软件文档。具体引文位置见各章注释与引文定位标签页。">
     <ReferencesTabs active="research" sourceCount={catalog.sources.length} evidenceCount={catalog.evidence.length} prefix="/zh" />
     <p>按文献原题名列示。历史来源的日期指向具体报告、文章或版本；学位论文中的再印文本与原期刊文章分别注明。</p>
     {catalog.sources.map(source => {

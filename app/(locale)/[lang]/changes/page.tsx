@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { PublicationNote } from '@/components/publication-note';
 import { PublicationShell } from '@/components/publication-shell';
 import { getBuildIdentity } from '@/lib/build-identity';
-import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { EN_PUBLIC_ENABLED, isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import { buildPublicRevisionsAndErrata } from '@/scripts/reader-public-revisions.mjs';
 
@@ -38,15 +39,19 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const alternates = localizedPageAlternates('/changes', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: UI_SURFACES.revisionsErrata.en,
       description: 'Reader-facing content revisions, structural updates, and errata for The Past and Present of Life Cycle Assessment.',
+      alternates,
+      robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
   return {
     title: UI_SURFACES.revisionsErrata.zh,
     description: '《生命周期评价的前世今生》的内容修订、结构调整与勘误记录。',
+    alternates,
   };
 }
 
@@ -64,6 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/changes/"
         title={UI_SURFACES.revisionsErrata.en}
         description="Substantive content revisions, structural updates, and errata for The Past and Present of Life Cycle Assessment."
       >
@@ -155,6 +161,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <PublicationShell
+      logicalPath="/changes/"
       title={UI_SURFACES.revisionsErrata.zh}
       description="《生命周期评价的前世今生》的内容修订、结构调整与勘误记录。"
     >

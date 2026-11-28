@@ -11,20 +11,23 @@ import {
   getEnSourceVersion,
 } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const alternates = localizedPageAlternates('/claims', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     return {
       title: UI_SURFACES.chapterNotes.en,
       description: 'Chapter-end notes, primary-source citations, validity scopes, caveats, and premise links.',
+      alternates,
       robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: UI_SURFACES.chapterNotes.zh };
+  return { title: UI_SURFACES.chapterNotes.zh, alternates };
 }
 
 export default async function LocalizedClaimsPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -36,6 +39,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/claims/"
         title={UI_SURFACES.chapterNotes.en}
         description="Inspect primary-source evidence, inferential links, validity scopes, and caveats for every chapter note in the book."
       >
@@ -95,7 +99,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
       </PublicationShell>
     );
   }
-  return <PublicationShell title={UI_SURFACES.chapterNotes.zh} description="查阅各章注释的文献依据、推理联系和适用范围。">
+  return <PublicationShell logicalPath="/claims/" title={UI_SURFACES.chapterNotes.zh} description="查阅各章注释的文献依据、推理联系和适用范围。">
     <p>各章注释按章内出现顺序编号；这里汇集全书论述，供交叉查阅。文献陈述、解释、综合论证、计算与分析建议具有不同的依据，不能互相替代。</p>
     {catalog.claims.filter(c => c.status === 'reviewed').map(c => <Claim id={c.id} anchor key={c.id} />)}
   </PublicationShell>;

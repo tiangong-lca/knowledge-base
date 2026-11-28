@@ -41,7 +41,7 @@ export function EnHomePage() {
             <Link className="secondary-link whitespace-nowrap" href="/en/print/">
               {UI_SURFACES.fullTextPrint.en}
             </Link>
-            <Link className="secondary-link whitespace-nowrap" href="/zh/">
+            <Link className="secondary-link whitespace-nowrap" href="/zh/" hrefLang="zh-CN">
               Chinese Edition
             </Link>
           </div>

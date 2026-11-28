@@ -5,7 +5,8 @@ import { EnChapterContent } from '@/components/en-chapter-content';
 import { formatZhReaderLocator, getEnSourcePublisher, getEnSourceTitle, getEnSourceVersion } from '@/lib/en-citation-format';
 import { PublicationNote } from '@/components/publication-note';
 import catalog from '@/lib/catalog';
-import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { EN_PUBLIC_ENABLED, isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
+import { localizedPageAlternates } from '@/lib/seo-policy.mjs';
 import { getLegacyCitations, getPrintPages, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
 import { getSource } from '@/lib/source';
 import { currentReaderOrdinaryAttributes, ChapterContent, LegacyCitationAliases } from '@/components/chapter-content';
@@ -35,6 +36,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
+  const alternates = localizedPageAlternates('/print', lang, EN_PUBLIC_ENABLED ? ['zh', 'en'] : ['zh']);
   if (lang === 'en') {
     const webUnits = getPresentationUnits('web');
     const chCount = webUnits.filter(u => u.kind === 'chapter').length;
@@ -43,9 +45,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     return {
       title: UI_SURFACES.fullTextPrint.en,
       description: `Complete continuous reading and printable English edition covering all ${readerParts.length} parts, ${chCount} chapters, ${topicCount} topical essays, ${appCount} appendices, and references.`,
+      alternates,
+      robots: !EN_PUBLIC_ENABLED ? { index: false, follow: false } : undefined,
     };
   }
-  return { title: UI_SURFACES.fullTextPrint.zh };
+  return { title: UI_SURFACES.fullTextPrint.zh, alternates };
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
@@ -103,6 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     return (
       <PublicationShell
         lang="en"
+        logicalPath="/print/"
         title="The Past and Present of Life Cycle Assessment"
         description="Complete continuous reading and print edition, arranged by part and chapter, followed by topical essays, appendices, and references."
       >
@@ -209,7 +214,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <ChapterContent page={page} print />
     </article>;
   };
-  return <PublicationShell title="生命周期评价的前世今生" description="全书连续版。正文按部、章、节展开，专题与附录分别列后，注释随章。">
+  return <PublicationShell logicalPath="/print/" title="生命周期评价的前世今生" description="全书连续版。正文按部、章、节展开，专题与附录分别列后，注释随章。">
     <div className="print-controls"><PrintButton /><p>全书连续版与分章网页采用同一套连续章次；<Link href="/#web-contents">目录</Link>与连续版逐章对应。引用时请记录章名、网址、版本和访问日期。</p></div>
     <PublicationNote />
     <nav aria-label="书籍目录" data-reader-contents="book" className="reader-book-contents">

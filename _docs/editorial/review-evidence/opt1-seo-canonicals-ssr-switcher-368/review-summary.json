@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "opt1-seo-canonicals-ssr-switcher-368",
+  "task": "#368",
+  "date": "2026-11-28",
+  "baseCommit": "3dd06ec04e836ffcbe811be948456cf6a72d205f",
+  "scientificApproval": false,
+  "externalHumanExpertReview": false,
+  "realReaderTrial": false,
+  "summary": "OPT-1 SEO & SSR accessibility hardening: fixed non-self-referencing canonicals and missing hreflang alternates across all 14 top-level bilingual pages (/zh|en/{coverage,changes,print,concepts,claims,sources,research}/) plus /zh|en/timeline/ hreflang, removed non-canonical /timeline/ alias from sitemap.xml, added static no-JS SSR counterpart language links across all 127 non-redirect pages (homes, tool/reference pages, chapters, topics, appendices), and enforced both via fail-closed DOM tests in scripts/seo-policy.test.mjs.",
+  "independentReviews": [
+    {
+      "reviewer": "Independent Engineering & SEO Auditor",
+      "agentId": "e54a6137-2499-4339-aeaa-937d3caa44c1",
+      "initialVerdict": "PASS (0 blocking, 4 advisory)",
+      "disposition": "Resolved all 4 advisories: defaulted localizedPageAlternates availableLocales to [i18n.defaultLanguage], aligned PublicationShell switcher gate to (isEn || EN_PUBLIC_ENABLED), removed non-canonical /timeline/ alias from app/sitemap.ts, and tightened scripts/seo-policy.test.mjs to parse DOM head <link> tags (exact canonical count=1, exact head hreflang URLs) and verify every SSR counterpart <a> resolves to a non-redirect HTML page."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "buildAndExport": "pass (132 static routes, 127 non-redirect localized HTML pages, 1,257 reviewed claims, byte-identical asset:reader-css)",
+    "checkpointHistory": "pass (checkpoint-2026-11-21, gitVerified=true)",
+    "bilingualParity": "pass (0 errors, 0 parity exceptions)",
+    "unitAndIntegrationTests": "pass (835/835 including strict DOM scripts/seo-policy.test.mjs)"
+  }
+}

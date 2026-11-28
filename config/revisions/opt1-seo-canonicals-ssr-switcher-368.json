@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "opt1-seo-canonicals-ssr-switcher-368",
+  "date": "2026-11-28",
+  "task": "#368",
+  "title": "SEO 规范链接、双语 hreflang 与无脚本静态语言切换入口优化",
+  "rationale": "为全部 14 个顶层双语参考与工具页补齐自指 canonical 与完整 zh-CN/en/x-default hreflang；为全站各章节、专题、附录及参考页增加无脚本可访问的静态 SSR 双语切换链接，并新增 scripts/seo-policy.test.mjs 防回退测试。",
+  "routes": [],
+  "claims": [],
+  "files": [],
+  "outputs": [],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "b5c26b642e994b004ccb5a28cde6d07aa7545f1e6cb363a8a7c0ffac8c852ca3"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "6ad44fe51bdcb3c9fbfb9368b73325a06ae43a6f80c6db8f3b333141e0254721"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "8e8da0638f5a138d8c1c520ea8a8f4c6e05a1cbe3e82c96a955a956f652269c2"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "8db2ca404cbf0dfaf3227e964e879b1d23c73a0235103ae11a2d3cee5521f0e8"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "ebae72e5085c0d9e319a1c68fad4cfb15e34e5038b42dc92b47c77b05ae56d64"
+    }
+  ]
+}
