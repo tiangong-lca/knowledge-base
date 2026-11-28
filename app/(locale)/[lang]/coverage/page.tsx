@@ -51,6 +51,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   if (lang === 'en') {
     const unitEntries = alignment.units as Record<string, { enStatus?: string; enTitle?: string }>;
     const enPages = new Map(getSource('en').getPages().map(page => [logicalPageUrl(page.url), page]));
+    const enCompanionBadge = (route: string) => {
+      const aIdx = appendices.findIndex(u => u.key === route);
+      if (aIdx >= 0) return `Appendix ${String.fromCharCode(65 + aIdx)}`;
+      const tIdx = topics.findIndex(u => u.key === route);
+      if (tIdx >= 0) return `Topic ${tIdx + 1}`;
+      return 'Companion';
+    };
     const enPartGroups = readerParts.map(part => {
       const partChapters = chapters.filter(u => u.part === part.number);
       const enMeta = EN_PARTS[part.number] ?? { label: `Part ${part.number}`, title: part.title };
@@ -186,6 +193,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                   <ol className={styles.chapterList}>
                     {partChapters.map(unit => {
                       const page = enPages.get(unit.key);
+                      const companions = readerGuideConfig.chapterCompanions[unit.key] ?? [];
                       return (
                         <li key={unit.key} className={styles.chapterItem}>
                           <div className={styles.chapterRowTop}>
@@ -195,6 +203,24 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                                 {unitEntries[unit.key]?.enTitle ?? unit.title}
                               </Link>
                             </div>
+                            {companions.length > 0 && (
+                              <div className={styles.companionGroup}>
+                                {companions.map(comp => {
+                                  const enBadge = enCompanionBadge(comp.route);
+                                  const enCompTitle = unitEntries[comp.route]?.enTitle ?? enPages.get(comp.route)?.data.title ?? comp.route;
+                                  return (
+                                    <Link
+                                      key={comp.route}
+                                      href={`/en${comp.route}/`}
+                                      className={styles.companionBadge}
+                                      title={`${enBadge}: ${enCompTitle}`}
+                                    >
+                                      {enBadge}: {enCompTitle}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
                           {page?.data.description && <p className={styles.chapterDesc}>{page.data.description}</p>}
                         </li>
@@ -310,7 +336,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   return (
     <PublicationShell
       title={UI_SURFACES.bookGuide.zh}
-      description={`按 ${readerParts.length} 部 ${chapters.length} 章、${topics.length} 篇概念与实践专题、${appendices.length} 份附录梳理全书结构，支持顺读、按问题速查或从经典案例倒推。`}
+      description={`按 ${readerParts.length} 部 ${chapters.length} 章、${topics.length} 篇概念与实践专题、${appendices.length} 份附录梳理全书结构，支持系统通读、课程教学、环境产品声明（EPD）与产品碳足迹实务、按问题速查或从经典案例倒推。`}
     >
       <div className={styles.root}>
         {/* A. Part Roadmap */}

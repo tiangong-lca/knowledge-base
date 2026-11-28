@@ -131,6 +131,25 @@ export function compareReaderGuides(zhGuide, enGuide) {
   const ids = list => (list ?? []).map(item => item?.id);
   if (JSON.stringify(ids(zhGuide?.readingModes)) !== JSON.stringify(ids(enGuide?.readingModes))) {
     diffs.push({ check: 'readingModes', message: `reader guide: reading paths differ (zh ${ids(zhGuide?.readingModes).join(',')}, en ${ids(enGuide?.readingModes).join(',')})` });
+  } else {
+    const enModes = new Map((enGuide?.readingModes ?? []).map(mode => [mode.id, mode]));
+    for (const zhMode of zhGuide?.readingModes ?? []) {
+      const enMode = enModes.get(zhMode.id);
+      if (!enMode) continue;
+      for (const field of ['badge', 'title', 'audience', 'description', 'startHref', 'startLabel']) {
+        if (typeof enMode[field] !== 'string' || !enMode[field].trim()) {
+          diffs.push({ check: 'readingModes', message: `reader guide: English readingMode ${zhMode.id}.${field} is missing or empty` });
+        }
+      }
+      if (typeof zhMode.startHref === 'string' && typeof enMode.startHref === 'string') {
+        const expectedEnHref = zhMode.startHref === '#problem-routes'
+          ? '#en-problem-routes'
+          : (zhMode.startHref.startsWith('/') ? `/en${zhMode.startHref}` : zhMode.startHref);
+        if (enMode.startHref !== expectedEnHref) {
+          diffs.push({ check: 'readingModes', message: `reader guide: English readingMode ${zhMode.id}.startHref is "${enMode.startHref}", expected "${expectedEnHref}"` });
+        }
+      }
+    }
   }
   if (JSON.stringify(ids(zhGuide?.problemRoutes)) !== JSON.stringify(ids(enGuide?.problemRoutes))) {
     diffs.push({ check: 'problemRoutes', message: `reader guide: practical questions differ (zh ${ids(zhGuide?.problemRoutes).join(',')}, en ${ids(enGuide?.problemRoutes).join(',')})` });

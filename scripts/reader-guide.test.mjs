@@ -37,3 +37,22 @@ test('validateReaderGuideConfig rejects missing, incomplete, or orphan partSumma
   extraKey.partSummaries['99'] = { establishes: 'a', contrasts: 'b', gaps: 'c', bridge: 'd' };
   assert.ok(validateReaderGuideConfig(extraKey, numbering).some(e => e.includes('unknown part key: 99')));
 });
+
+test('validateReaderGuideConfig enforces all 5 readingModes including course and epd-pcf', () => {
+  assert.deepEqual(guide.readingModes.map(m => m.id), ['sequential', 'course', 'epd-pcf', 'problem-first', 'case-reverse']);
+  const dropped = structuredClone(guide);
+  dropped.readingModes.pop();
+  assert.ok(validateReaderGuideConfig(dropped, numbering).some(e => e.includes('5 readingModes')));
+
+  const missingAudience = structuredClone(guide);
+  missingAudience.readingModes[1].audience = ' ';
+  assert.ok(validateReaderGuideConfig(missingAudience, numbering).some(e => e.includes('invalid readingMode: course')));
+
+  const badAnchor = structuredClone(guide);
+  badAnchor.readingModes[3].startHref = '#unknown-anchor';
+  assert.ok(validateReaderGuideConfig(badAnchor, numbering).some(e => e.includes('unknown anchor')));
+
+  const badBadge = structuredClone(guide);
+  badBadge.chapterCompanions['/docs/book/goal-and-scope'][0].badge = '附录 Z';
+  assert.ok(validateReaderGuideConfig(badBadge, numbering).some(e => e.includes('badge mismatch')));
+});

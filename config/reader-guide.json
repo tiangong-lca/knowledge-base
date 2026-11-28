@@ -14,24 +14,42 @@
     {
       "id": "sequential",
       "badge": "路线 1",
-      "title": "系统通读（零基础／教学）",
-      "audience": "首次系统学习生命周期评价的读者与高校课程",
+      "title": "系统通读（零基础）",
+      "audience": "首次系统学习生命周期评价（LCA）的读者",
       "description": "从《前言》与《阅读导论》出发，按各部顺序推进，从早期饮料容器研究一路走到背景数据库、数据证据、规则声明与政策，以及完整案例比较。",
       "startHref": "/docs/",
       "startLabel": "从《前言》开始顺读"
     },
     {
-      "id": "problem-first",
+      "id": "course",
       "badge": "路线 2",
-      "title": "按问题速查（实践者／审稿人）",
-      "audience": "已有 LCA 建模或核算经验、需核对特定方法边界的读者",
-      "description": "直接从下方高频实务问题切入对应章节，结合「概念索引」与「参考文献」核查跨体系分歧与原始来源。",
+      "title": "高校课程教学（学期大纲）",
+      "audience": "本科高年级与研究生课程教师及选课学生",
+      "description": "以《阅读导论》与每部首尾导言小结为学期讲授主线，结合饮料容器、墙面服务与购物袋三组完整案例，并以附录 J《按 ISO 四阶段组织的研究核对清单》（国际标准化组织，ISO）作为课程作业与论文设计的审验标尺。",
+      "startHref": "/docs/book/",
+      "startLabel": "进入《阅读导论》与课程主线"
+    },
+    {
+      "id": "epd-pcf",
+      "badge": "路线 3",
+      "title": "环境产品声明与产品碳足迹实务（合规从业者）",
+      "audience": "开展环境产品声明（EPD）、产品碳足迹与欧盟／中国合规申报的从业者",
+      "description": "直切《产品足迹规则》《环境产品声明与行业规则》《审查、验证与鉴证》与《政策中的生命周期结果》，联动功能参照、气候当量、背景数据库与附录 F、H、J 快速核验法定门槛与审验边界。",
+      "startHref": "/docs/book/product-footprint-rules-and-practice/",
+      "startLabel": "直达产品足迹与合规主线"
+    },
+    {
+      "id": "problem-first",
+      "badge": "路线 4",
+      "title": "按问题速查（建模者／审稿人）",
+      "audience": "已有生命周期评价（LCA）建模或审稿经验、需核对特定方法边界的读者",
+      "description": "直接从下方高频实务问题切入对应章节，结合「概念索引」「参考文献」与参考附录 F–J 核查跨体系分歧与原始来源。",
       "startHref": "#problem-routes",
       "startLabel": "查看按问题入口"
     },
     {
       "id": "case-reverse",
-      "badge": "路线 3",
+      "badge": "路线 5",
       "title": "从案例倒推（实证导向）",
       "audience": "希望先看完整数值比较再回溯方法原理的读者",
       "description": "先读《墙面服务比较》与《购物袋研究》，再沿章内链接与尾注回溯功能单位、过程网络、背景数据库、气候当量与评审门槛。",
@@ -182,12 +200,34 @@
       {
         "route": "/docs/appendices/cml-framework-calculations",
         "badge": "附录 B"
+      },
+      {
+        "route": "/docs/appendices/concept-framework-matrix",
+        "badge": "附录 F"
+      }
+    ],
+    "/docs/book/standardization-and-institutionalization": [
+      {
+        "route": "/docs/appendices/standards-and-methods-lineage",
+        "badge": "附录 H"
+      }
+    ],
+    "/docs/book/goal-and-scope": [
+      {
+        "route": "/docs/appendices/iso-study-design-checklist",
+        "badge": "附录 J"
       }
     ],
     "/docs/book/joint-production": [
       {
         "route": "/docs/allocation",
         "badge": "专题"
+      }
+    ],
+    "/docs/book/midpoint-endpoint-value-choices": [
+      {
+        "route": "/docs/appendices/lcia-method-coverage",
+        "badge": "附录 G"
       }
     ],
     "/docs/book/climate-equivalence": [
@@ -202,10 +242,36 @@
         "badge": "附录 D"
       }
     ],
+    "/docs/book/lca-database-landscape-and-history": [
+      {
+        "route": "/docs/appendices/standards-and-methods-lineage",
+        "badge": "附录 H"
+      }
+    ],
+    "/docs/book/product-footprint-rules-and-practice": [
+      {
+        "route": "/docs/appendices/concept-framework-matrix",
+        "badge": "附录 F"
+      }
+    ],
+    "/docs/book/review-verification-and-assurance": [
+      {
+        "route": "/docs/appendices/iso-study-design-checklist",
+        "badge": "附录 J"
+      }
+    ],
     "/docs/book/revisable-judgment": [
       {
         "route": "/docs/appendices/lca-timeline",
         "badge": "附录 E"
+      },
+      {
+        "route": "/docs/appendices/glossary-acronyms-and-symbols",
+        "badge": "附录 I"
+      },
+      {
+        "route": "/docs/appendices/iso-study-design-checklist",
+        "badge": "附录 J"
       }
     ]
   },

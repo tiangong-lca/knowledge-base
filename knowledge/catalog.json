@@ -92468,6 +92468,96 @@
         "报告组织与报告流",
         "两层重复计算"
       ]
+    },
+    {
+      "id": "cn-goal-and-scope",
+      "label": "目的与范围",
+      "english": "Goal and scope",
+      "definitionClaimIds": [
+        "cl-gs23-goal-elements",
+        "cl-gs23-scope-elements",
+        "cl-gs23-decision-contexts"
+      ],
+      "aliases": [
+        "研究目的与范围",
+        "目的与范围界定",
+        "决策情境"
+      ]
+    },
+    {
+      "id": "cn-system-boundary",
+      "label": "系统边界",
+      "english": "System boundary",
+      "definitionClaimIds": [
+        "cl-gs23-boundary-types-and-stages",
+        "cl-gs23-foreground-specificity-vs-management",
+        "cl-gs23-attributable-and-cutoff-divergences"
+      ],
+      "aliases": [
+        "产品系统边界",
+        "前景与背景边界",
+        "截断边界"
+      ]
+    },
+    {
+      "id": "cn-impact-category",
+      "label": "影响类别",
+      "english": "Impact category",
+      "definitionClaimIds": [
+        "cl-lcia-mandatory-vs-optional",
+        "cl-lcia-midpoint-pathway",
+        "cl-lcia-method-family-lineage"
+      ],
+      "aliases": [
+        "环境影响类别",
+        "中点影响类别",
+        "类别指标"
+      ]
+    },
+    {
+      "id": "cn-normalization",
+      "label": "归一化",
+      "english": "Normalization",
+      "definitionClaimIds": [
+        "cl-norm36-purposes-and-taxonomy",
+        "cl-norm36-ilcd-and-pellston-guardrails",
+        "cl-loc137-dirty-denominator-paradox"
+      ],
+      "aliases": [
+        "标准化",
+        "归一化分母",
+        "归一化参照"
+      ]
+    },
+    {
+      "id": "cn-weighting",
+      "label": "加权",
+      "english": "Weighting",
+      "definitionClaimIds": [
+        "cl-weight135-four-paradigm-synthesis",
+        "cl-weight135-comparative-assertion-regimes",
+        "cl-weight135-glam3-reporting-discipline"
+      ],
+      "aliases": [
+        "跨类别加权",
+        "单分数赋权",
+        "加权范式"
+      ]
+    },
+    {
+      "id": "cn-comparative-assertion",
+      "label": "比较断言",
+      "english": "Comparative assertion",
+      "definitionClaimIds": [
+        "cl-gs23-comparative-assertion-gates",
+        "cl-wsc157-ilcd-comparative-assertion",
+        "cl-pfr151-comparative-assertion-gates"
+      ],
+      "aliases": [
+        "公开比较断言",
+        "跨产品环境优劣宣称",
+        "比较断言门槛"
+      ]
     }
   ],
   "mappings": [
@@ -93012,6 +93102,92 @@
         "cl-climate-rate-formula",
         "cl-climate-rate-aggregate",
         "cl-climate-debate"
+      ]
+    },
+    {
+      "id": "map-goal-scope-to-fu",
+      "from": "cn-goal-and-scope",
+      "to": "cn-fu",
+      "relation": "broader",
+      "conditions": [
+        "目的与范围界定决定功能单位的比较基准、决策情境与公开断言资格，不能脱离既定研究目的单独设定功能单位。"
+      ],
+      "claimIds": [
+        "cl-gs23-goal-elements",
+        "cl-gs23-scope-elements",
+        "cl-gs23-decision-contexts",
+        "cl-gs23-comparative-assertion-gates"
+      ]
+    },
+    {
+      "id": "map-boundary-to-truncation",
+      "from": "cn-system-boundary",
+      "to": "cn-inventory-truncation",
+      "relation": "broader",
+      "conditions": [
+        "系统边界同时涵盖技术圈—生态圈界面、前景—背景划分与截断规则；清单截断只是其中纳入与排除的一维。"
+      ],
+      "claimIds": [
+        "cl-gs23-boundary-types-and-stages",
+        "cl-gs23-foreground-specificity-vs-management",
+        "cl-gs23-attributable-and-cutoff-divergences"
+      ]
+    },
+    {
+      "id": "map-impact-category-to-midpoint",
+      "from": "cn-impact-category",
+      "to": "cn-midpoint",
+      "relation": "broader",
+      "conditions": [
+        "影响类别涵盖中点类别与保护领域终点两个截点层级，不能把中点潜势等同于全部影响类别或终局损害。"
+      ],
+      "claimIds": [
+        "cl-lcia-mandatory-vs-optional",
+        "cl-lcia-midpoint-pathway",
+        "cl-lcia-method-family-lineage"
+      ]
+    },
+    {
+      "id": "map-normalization-to-pitfalls",
+      "from": "cn-normalization",
+      "to": "cn-normalization-taxonomy-pitfalls",
+      "relation": "broader",
+      "conditions": [
+        "归一化作为可选步骤用于量级合理性检验、跨类别量纲沟通与加权准备（欧盟产品环境足迹［PEF］与欧盟联合研究中心［JRC］2019 要求热点类别筛选须基于归一化加权得分而非单独依赖归一化），须同步对照外部／内部口径分类以及重污染分母稀释与内部归一化排序反转陷阱。"
+      ],
+      "claimIds": [
+        "cl-norm36-purposes-and-taxonomy",
+        "cl-norm36-ilcd-and-pellston-guardrails",
+        "cl-norm36-four-pitfalls",
+        "cl-loc137-dirty-denominator-paradox"
+      ]
+    },
+    {
+      "id": "map-weighting-to-comparative",
+      "from": "cn-weighting",
+      "to": "cn-comparative-assertion",
+      "relation": "related",
+      "conditions": [
+        "荷兰莱顿大学环境科学中心（CML 2001）与国际参考生命周期数据系统（ILCD 2010，条款 8.4 III）明确禁止在向公众披露的比较断言中使用数值价值加权；欧盟产品环境足迹（PEF）则要求归一化加权单分，但仅在遵循已批准产品环境足迹类别规则（PEFCR）并经外部验证时允许公开比较断言，且必须并列披露未加权剖面。"
+      ],
+      "claimIds": [
+        "cl-weight135-comparative-assertion-regimes",
+        "cl-weight135-glam3-reporting-discipline",
+        "cl-gs23-comparative-assertion-gates"
+      ]
+    },
+    {
+      "id": "map-comparative-to-review-scope",
+      "from": "cn-comparative-assertion",
+      "to": "cn-review-scope",
+      "relation": "related",
+      "conditions": [
+        "向公众披露的比较断言在已检视规范中触发逐级收紧的审查门槛：国际标准化组织（ISO）14044 公开预览（第 4.1 节）明令不得仅凭清单结果作公开比较断言；国际参考生命周期数据系统（ILCD 2010）要求背景与前景数据预验证或升格为不少于三位独立专家与利益相关方组成的外部评审组；欧盟产品环境足迹（PEF）要求在有效类别规则下经独立验证与核查；欧盟《电池法规》第 17(2) 条等法定合规框架则须由公告机构按模式 D1/G 评定，不得以模式 A 自我声明替代。"
+      ],
+      "claimIds": [
+        "cl-gs23-comparative-assertion-gates",
+        "cl-wsc157-ilcd-comparative-assertion",
+        "cl-rev32-four-regimes"
       ]
     }
   ],
