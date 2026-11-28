@@ -1,0 +1,146 @@
+---
+title: 中英术语、缩略语与数学符号表
+description: 汇总全书核心数学符号与方程、62 组（共 110 个）高频中英缩略语及跨章核心术语对照，并提供同名符号消歧与概念索引入口。
+---
+
+## 检索入口与跨章同名符号消歧 [#检索与消歧说明]
+
+本附录作为全书的随手检索工具，汇总正文中反复出现的数学符号、62 组（共 110 个）高频中英缩略语以及十二组最易混淆的核心术语对照。若需查阅全书全部概念的逐条定义、别名与支撑文献，请直接访问交互式[概念索引](/concepts/)；若需横向比对不同体系对同一概念的规则分歧，请参阅[概念 × 体系总表](/docs/appendices/concept-framework-matrix/)。
+
+跨部阅读时，有四处同名缩略语或数学符号在不同语境下含义完全不同，切勿混用：
+
+- **`EF`**：在制度与方法体系语境下指**欧盟（EU）环境足迹（Environmental Footprint）**（如 EF 3.1），在颗粒物与化学毒性表征链条（表征因子 `CF` 等于吸入分数 `iF` 乘效应因子 `EF`，即 `CF = iF × EF`）中指**效应因子（Effect Factor）**。
+- **`A` 与 `B`**：在第二部清单矩阵运算（`As = f`、`g = Bs`）中分别指**技术矩阵**与**干预矩阵**；在第三部欧盟循环足迹公式（CFF）中则分别指**材料回收分担因子（0.2–0.8）**与**能源回收分担因子（默认 0）**。
+- **`R₁` 与 `R₂`**：在欧盟循环足迹公式中指**再生料输入比例**与**报废回收率**；在 Ekvall & Tillman（1997）多级回收级联模型中则指**第一、二轮回收工艺环境负担**（与原生负担 `V₁`、最终处置 `W₃` 并列）。
+- **`S_j` 与 `s`**：小写 `s` 在清单求解中指**过程活动倍率向量**（在 Cain 等 2019 年基于排放速率变化的增温当量指标 GWP* 公式中标量 `s` 指存量权重 0.25），大写下标 `S_j` 则指全局灵敏度分析中的**一阶方差分解灵敏度指标**。
+
+## 全书核心数学符号与关键方程 [#核心数学符号]
+
+下表按全书叙事顺序严格对齐正文所用数学记号与量纲（不引入正文未采用的外来符号）。
+
+| 符号 | 中文含义与英文名称 | 典型单位 | 本书中的核心方程或用法 | 详述章节 |
+| --- | --- | --- | --- | --- |
+| `A`（矩阵） | 技术矩阵（Technology matrix） | 混合过程物理单位 | `As = f`，记录各单元过程对产品流的净产出与净消耗 | [过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)、[墙面服务比较](/docs/book/wall-service-to-comparison/) |
+| `B`（矩阵） | 干预矩阵／环境流矩阵（Intervention matrix） | 每单位过程的基本流量 | `g = Bs`，记录各单元过程向环境排放与资源开采系数 | [过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/) |
+| `f` | 外部需求向量／最终需求（Final demand vector） | 功能单位或参考流单位 | `As = f` 右端项，编码所比较服务对应的外部产品需求 | [过程网络](/docs/book/inventory-calculation/)、[墙面服务比较](/docs/book/wall-service-to-comparison/) |
+| `s` | 过程活动倍率向量（Scaling vector） | 无量纲／过程单位 | `s = A⁻¹f`，缩放技术矩阵与干预矩阵各列 | [过程网络](/docs/book/inventory-calculation/)、[混合清单](/docs/book/inventory-boundary-and-hybrid/) |
+| `g` | 生命周期清单向量（Inventory vector） | 质量、能量、面积·年、立方米、贝可（Bq）等 | `g = Bs = B A⁻¹ f`（本书按基本流乘以表征因子 `CF` 转为影响得分） | [过程网络](/docs/book/inventory-calculation/)、[变异与不确定性](/docs/book/uncertainty-and-variability/) |
+| `D` | 记账基准缩放对角矩阵（Diagonal basis-rescaling matrix） | 正比例缩放因子 | `A' = AD`、`B' = BD`、`s' = D⁻¹s`，保持总清单 `B's' = Bs` 不变 | [流、交换与边界](/docs/book/exchange-semantics-and-conversion/) |
+| `P`、`R`、`Cᵘ`、`Cᵈ`、`x`、`y` | 混合清单过程矩阵 `P`、背景技术系数 `R`、上／下游截断连接矩阵 `Cᵘ`/`Cᵈ`、背景货币产出 `x` 与外部需求 `y` | `Cᵘ`：货币/过程单位；`Cᵈ`：物理单位/货币；`x`：货币 | 耦合平衡 `Ps − Cᵈx = y` 与 `x − Rx − Cᵘs = 0` | [混合清单](/docs/book/inventory-boundary-and-hybrid/) |
+| `A`、`B`（CFF） | 循环足迹公式材料分担因子 `A`（0.2–0.8）与能源回收分担因子 `B`（默认 0） | 无量纲（0–1） | 分别调节报废回收净项 `(1 − A)R₂` 与能源回收净项 `(1 − B)R₃` | [材料循环](/docs/book/recycling-chains-and-accounting/)、[环境产品声明与行业规则](/docs/book/epds-and-sector-rules/) |
+| `R₁`、`R₂`、`R₃`、`Qs/Qp`、`E*ᵥ` | 再生料输入比 `R₁`、报废回收率 `R₂`、能源回收率 `R₃`、再生料（s）／原生料（p）质量比 `Qs/Qp` 与被替代原生清单 `E*ᵥ` | 比例无量纲（0–1）；`E*ᵥ` 为每千克清单／影响 | 欧盟产品环境足迹（PEF）循环足迹公式核心参数；处置份额为 `(1 − R₂ − R₃)`（注意与 Ekvall & Tillman 1997 级联记号 `V₁, R₁, R₂, W₃` 区分） | [材料循环](/docs/book/recycling-chains-and-accounting/)、[环境产品声明与行业规则](/docs/book/epds-and-sector-rules/) |
+| `CF` | 表征因子（Characterization factor） | 每单位清单流对应的指标单位（如伤残调整生命年［DALY］/kg、kg CO₂ 当量/kg） | 将基本流清单转化为中点或终点指标，如 `CF = iF × EF` | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/) |
+| `FF`、`XF`、`EF`、`iF` | 归趋因子／传输矩阵 `FF`、暴露分数 `XF`、效应因子 `EF`、人群吸入／摄入分数 `iF` | `FF`：天；`XF`：天⁻¹；`iF`：无量纲；`EF`：DALY/kg 或例/kg | 串联排放 → 浓度 → 摄入 → 损害：`iF = XF × FF`、`CF = iF × EF` | [颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[毒性路径](/docs/book/usetox-pathways-and-boundaries/)、[颗粒物因子的复算](/docs/appendices/particulate-factor-calculations/) |
+| `F(t)`、`AGWP(H)`、`GWP(H)` | 辐射强迫 `F(t)`、绝对与相对全球增温潜势（Global Warming Potential） | `F(t)`：W m⁻² kg⁻¹；`AGWP`：W m⁻² yr kg⁻¹；`GWP`：kg CO₂ 当量/kg | `AGWP(H) = ∫₀ᴴ F(t) dt`；`GWP(H) = AGWPᵢ(H) / AGWP_CO₂(H)` | [气候当量](/docs/book/climate-equivalence/)、[气候数值的重建](/docs/appendices/climate-numerical-reconstruction/) |
+| `R_T`、`AGTP(H)`、`GTP(H)` | 温度脉冲响应 `R_T`、绝对与相对全球温度变化潜势（Global Temperature-change Potential） | `R_T`：K/(W m⁻² yr)；`AGTP`：K kg⁻¹；`GTP`：kg CO₂ 当量/kg | `AGTP(H) = ∫₀ᴴ F(u) R_T(H−u) du`；按排放年份累加 `Σ mₖ AGTPᵢₖ(T − tₖ)` | [气候当量](/docs/book/climate-equivalence/) |
+| `Eᵂ(t)`（GWP*） | 二氧化碳增温当量年度排放率（Cain 等 2019） | 吨 CO₂ 增温当量/年 | `Eᵂ(t) = GWP_H [r(H/Δt)(E(t) − E(t−Δt)) + s E(t)]`（`E(t)` 为年排放率，`Δt` 为比较步长，`H` 为时间窗口，`r`/`s` 为流量与存量权重） | [气候当量](/docs/book/climate-equivalence/) |
+| `DALY`（`YLL`、`YLD`） | 伤残调整生命年（早死寿命损失年 `YLL` 加伤残寿命年 `YLD`） | 年（DALY） | 人体健康保护领域终点单位（如细颗粒物每例死亡 23.6 DALY，致命工伤 33.3 YLL） | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/) |
+| `CTUh`、`CTUe` | 人体与生态比较毒性单位（Comparative Toxic Unit） | `CTUh`：例/kg；`CTUe`：PAF·m³·天/kg | 化学毒性共识模型 USEtox 与欧盟 EF 人体毒性和淡水生态毒性中点单位 | [毒性路径](/docs/book/usetox-pathways-and-boundaries/)、[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/) |
+| `PAF`、`PDF`、`DF` | 潜在受影响物种比例 `PAF`、潜在消失物种比例 `PDF` 与损害转化因子 `DF`（Damage Factor） | 无量纲（0–1），积分后为 `PDF·m²·年` 或全球 `PDF·年` | 生态毒性 `PAF → PDF` 转化（ReCiPe `DF=1`、LC-IMPACT `DF=2`、UNEP 全球影响评价指导 GLAM v1.1 `1:1`） | [酸化与富营养化](/docs/book/acidification-and-nutrient-pathways/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+| `HC50`、`HC20-EC10` | 50% / 20% 物种危害浓度（后者基于慢性 10% 效应浓度 `EC10`） | mg/L；效应因子 `0.5/HC50` 或 `0.2/HC20` | USEtox 基准 `0.5/HC50`；EF 3.0/3.1 改用 `0.2/HC20`；GLAM v1.1 采慢性 `HC20-EC10` | [毒性路径](/docs/book/usetox-pathways-and-boundaries/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+| `AMD`、`EWR`、`WSI` | 单位面积剩余可用水 `AMD`、环境需水 `EWR`、取水压力指数 `WSI` | `AMD`：m³/(m²·月)；剩余可用水模型 AWARE：`m³ 世界当量/m³`；`WSI`：0.01–1 | `AMD = (实际可用水 − EWR) / 面积`；`AWARE = AMD_世界 / AMD_区域`（截断 0.1–100） | [耗水与缺水潜势](/docs/book/water-scarcity-and-reference/) |
+| `VS`、`GEP`、`ECA` | 世界自然保护联盟（IUCN）脆弱性评分 `VS`、全球灭绝概率 `GEP`、等效连通面积 `ECA` | `VS`：0–1；`GEP`：按类群全球和为 1；`ECA`：m² | LC-IMPACT 用 `VS`；GLAM v1.1 用 `GEP` 与 `ECA` 破碎化模型转为全球 `PDF·年` | [资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/) |
+| `F`、`Fₙ`、`Fₖ`、`K`、`c`、`UBP` | 瑞士生态稀缺法现状流 `F`、归一化流 `Fₙ`、临界流 `Fₖ`、表征因子 `K`、尺度常数 `c` 与环境负担点（生态点数）`UBP` | `F, Fₙ, Fₖ`：质量/年；生态因子：UBP/g（当 `Fₙ` 以 g/年计） | `生态因子 = K × (1 UBP / Fₙ) × (F / Fₖ)² × c`（`c = 10¹²/年`） | [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/) |
+| `WFᵢ`、`NFᵢ` | 加权因子 `WFᵢ` 与全球人均归一化基准 `NFᵢ` | `WFᵢ`：% 或无量纲；`NFᵢ`：指标单位/(人·年)；单分 `pt` | EF 3.1 单一总分累加 `Scoreᵢ × (WFᵢ / NFᵢ)`；本地化分析揭示 `WF/NF` 耦合约消效应 | [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/) |
+| `Dₑ`、`vₑ`、`Nₑ` | 日本终点导向影响评价方法（LIME）保护对象损害量 `Dₑ`、单位损害支付意愿权重 `vₑ` 与全国年度参照损害 `Nₑ` | `vₑ`：日元/损害单位 | 直接货币总和 `Σ Dₑ vₑ` 对归一化年份额 `Nₑ vₑ / Σ Nⱼ vⱼ` | [环境损害估值](/docs/book/lime-preferences-and-damage-weights/) |
+| `S_j`、`var(g)` | 全局灵敏度一阶方差分解指标 `S_j` 与输出总方差 `var(g)` | 无量纲（0–1） | `S_j = var(E(g ∣ p_j)) / var(g)`（`p_j` 为第 j 个不确定输入参数；Groen 等 2017） | [变异与不确定性](/docs/book/uncertainty-and-variability/) |
+| `G`（`GSD`）、`σ²`、`U_T` | 几何标准差 `GSD`、对数尺度方差 `σ²` 与平方 GSD 因子 `U_T = GSD²` | 无量纲（`G ≥ 1`、`σ² ≥ 0`） | `σ = √(σ_b² + Σ σ_k²)`（`σ_b²` 为基础方差，`σ_k²` 为 5 项谱系附加方差）；对数正态算术均值等于 `中位数 × exp(σ²/2)` | [质量评分与概率](/docs/book/data-quality-and-probability/) |
+| `DQR`（`TeR, GeR, TiR, P`） | 欧盟 PEF 序数数据质量评级（技术、地理、时间代表性与精密度） | 序数标度 1.0–5.0（非概率方差） | `DQR = (TeR + GeR + TiR + P) / 4`；自营初级数据 `≤ 1.5`，次级数据 `≤ 3.0` | [质量评分与概率](/docs/book/data-quality-and-probability/)、[数据适用性](/docs/book/data-applicability/) |
+
+## 全书高频中英缩略语分类表 [#高频缩略语表]
+
+### 基础框架、标准、清单与分配（第一至第三部、第七部） [#缩略语基础与清单]
+
+| 缩略语 | 中文全称 | 英文全称 | 核心章节 |
+| --- | --- | --- | --- |
+| LCA | 生命周期评价 | Life Cycle Assessment | [生命周期视角](/docs/book/integrative-ambitions/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/) |
+| LCI | 生命周期清单分析 | Life Cycle Inventory | [过程网络](/docs/book/inventory-calculation/)、[数据适用性](/docs/book/data-applicability/) |
+| LCIA | 生命周期影响评价 | Life Cycle Impact Assessment | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/) |
+| REPA | 资源与环境剖面分析 | Resource and Environmental Profile Analysis | [饮料容器研究](/docs/book/early-container-comparisons/)、[方法的标准化与制度化](/docs/book/standardization-and-institutionalization/) |
+| SETAC | 环境毒理学与化学学会 | Society of Environmental Toxicology and Chemistry | [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/) |
+| ISO | 国际标准化组织 | International Organization for Standardization | [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[研究目的与范围](/docs/book/goal-and-scope/) |
+| UNEP | 联合国环境规划署 | United Nations Environment Programme | [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[数据适用性](/docs/book/data-applicability/) |
+| CML | 莱顿大学环境科学研究所 | Institute of Environmental Sciences (Centrum voor Milieuwetenschappen), Leiden University | [评价框架与分析步骤](/docs/book/framework-responsibilities/)、[影响评价的结构](/docs/book/midpoint-endpoint-value-choices/) |
+| ILCD | 国际参考生命周期数据系统 | International Reference Life Cycle Data System | [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[研究目的与范围](/docs/book/goal-and-scope/) |
+| JRC | 欧盟委员会联合研究中心 | Joint Research Centre (European Commission) | [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| PEF / OEF | 产品环境足迹 / 组织环境足迹 | Product / Organisation Environmental Footprint | [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[方法的标准化与制度化](/docs/book/standardization-and-institutionalization/) |
+| PEFCR / OEFSR | 产品环境足迹品类规则 / 组织环境足迹行业规则 | PEF Category Rules / OEF Sector Rules | [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[环境产品声明与行业规则](/docs/book/epds-and-sector-rules/) |
+| WRI / WBCSD | 世界资源研究所 / 世界可持续发展工商理事会 | World Resources Institute / World Business Council for Sustainable Development | [产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| GHG | 温室气体 | Greenhouse Gas | [气候当量](/docs/book/climate-equivalence/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| EEIO / MRIO | 环境扩展投入产出 / 多区域投入产出 | Environmentally-Extended / Multi-Regional Input–Output | [混合清单](/docs/book/inventory-boundary-and-hybrid/)、[背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/) |
+| APOS | 替代点分配系统模型 | Allocation at the Point of Substitution | [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[共同生产](/docs/book/joint-production/) |
+| CFF | 循环足迹公式 | Circular Footprint Formula | [材料循环](/docs/book/recycling-chains-and-accounting/)、[环境产品声明与行业规则](/docs/book/epds-and-sector-rules/) |
+| LRMER | 长期边际排放率 | Long-Run Marginal Emission Rate | [供电系统](/docs/book/electricity-service-and-response/)、[共同生产](/docs/book/joint-production/) |
+| AVERT | 美国环保署避免排放与发电工具 | Avoided Emissions and geneRation Tool (US EPA) | [供电系统](/docs/book/electricity-service-and-response/) |
+
+### 影响评价方法、环境路径与指标（第四部） [#缩略语影响评价]
+
+| 缩略语 | 中文全称 | 英文全称 | 核心章节 |
+| --- | --- | --- | --- |
+| EF | 欧盟环境足迹（或：效应因子，须按语境区分） | Environmental Footprint (or: Effect Factor — disambiguate in context) | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/) |
+| GLAM | 全球生命周期影响评价方法指导 | Global Guidance for Life Cycle Impact Assessment Indicators and Methods (UNEP) | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+| RIVM | 荷兰国家公共卫生与环境研究院 | National Institute for Public Health and the Environment (Netherlands) | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+| IPCC | 政府间气候变化专门委员会 | Intergovernmental Panel on Climate Change | [气候当量](/docs/book/climate-equivalence/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| WMO | 世界气象组织 | World Meteorological Organization | [臭氧层与电离辐射](/docs/book/ozone-and-ionizing-radiation/) |
+| GWP / GTP | 全球增温潜势 / 全球温度变化潜势 | Global Warming Potential / Global Temperature-change Potential | [气候当量](/docs/book/climate-equivalence/) |
+| AGWP / AGTP | 绝对全球增温潜势 / 绝对全球温度变化潜势 | Absolute GWP / Absolute GTP | [气候当量](/docs/book/climate-equivalence/) |
+| dLUC / iLUC | 直接土地利用变化 / 间接土地利用变化 | Direct / Indirect Land Use Change | [气候当量](/docs/book/climate-equivalence/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| ODP / IRP | 臭氧消耗潜势 / 电离辐射潜势 | Ozone Depletion Potential / Ionizing Radiation Potential | [臭氧层与电离辐射](/docs/book/ozone-and-ionizing-radiation/) |
+| DDREF | 剂量与剂量率效能因子 | Dose and Dose-Rate Effectiveness Factor | [臭氧层与电离辐射](/docs/book/ozone-and-ionizing-radiation/) |
+| AE | 累积超载（酸化与陆地富营养化中点） | Accumulated Exceedance | [酸化与富营养化](/docs/book/acidification-and-nutrient-pathways/) |
+| POCP | 光化学臭氧生成潜势 | Photochemical Ozone Creation Potential | [颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/) |
+| HOFP / EOFP | 人体健康臭氧形成潜势 / 陆地生态臭氧形成潜势 | Human Health / Ecosystem Ozone Formation Potential (ReCiPe 2016) | [颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/) |
+| AOT40 | 超过 40 ppb 累积臭氧暴露量 | Accumulated Ozone exposure over a Threshold of 40 ppb | [颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/) |
+| NMVOC | 非甲烷挥发性有机物 | Non-Methane Volatile Organic Compounds | [颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/) |
+| DALY | 伤残调整生命年 | Disability-Adjusted Life Year | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/) |
+| AWARE | 剩余可用水缺水表征模型 | Available WAter REmaining | [耗水与缺水潜势](/docs/book/water-scarcity-and-reference/) |
+| AMD / EWR | 单位面积剩余可用水 / 环境需水 | Availability Minus Demand / Environmental Water Requirements | [耗水与缺水潜势](/docs/book/water-scarcity-and-reference/) |
+| WSI / WCP | 取水压力指数 / 耗水潜势 | Water Stress Index / Water Consumption Potential | [耗水与缺水潜势](/docs/book/water-scarcity-and-reference/) |
+| CTUh / CTUe | 人体 / 生态比较毒性单位 | Comparative Toxic Unit for humans / ecosystems | [毒性路径](/docs/book/usetox-pathways-and-boundaries/) |
+| PAF / PDF | 潜在受影响物种比例 / 潜在消失物种比例 | Potentially Affected / Potentially Disappeared Fraction of species | [资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)、[酸化与富营养化](/docs/book/acidification-and-nutrient-pathways/) |
+| VS / GEP / ECA | 脆弱性评分 / 全球灭绝概率 / 等效连通面积 | Vulnerability Score / Global Extinction Probability / Equivalent Connected Area | [资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+| ADP / SOP / SCP / FFP | 非生物资源耗竭潜势 / 额外矿石潜势 / 额外费用潜势 / 化石燃料潜势 | Abiotic Depletion / Surplus Ore / Surplus Cost / Fossil Fuel Potential | [资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/) |
+
+### 权衡、前瞻、社会成本、数据库、不确定性与政策（第五至第八部） [#缩略语数据库与政策]
+
+| 缩略语 | 中文全称 | 英文全称 | 核心章节 |
+| --- | --- | --- | --- |
+| UBP | 环境负担点（生态点数） | Umweltbelastungspunkt (Eco-point, Swiss Ecological Scarcity) | [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/) |
+| LIME | 日本终点导向生命周期影响评价方法 | Life-cycle Impact assessment Method based on Endpoint modeling | [环境损害估值](/docs/book/lime-preferences-and-damage-weights/) |
+| IAM / SDF / TRL | 综合评估模型 / 情景差异文件 / 技术就绪度 | Integrated Assessment Model / Scenario Difference File / Technology Readiness Level | [时间尺度与未来情景](/docs/book/future-technology-and-context/) |
+| S-LCA / SO-LCA / O-LCA | 社会生命周期评价 / 社会组织生命周期评价 / 组织生命周期评价 | Social LCA / Social Organizational LCA / Organizational LCA | [社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| LCC / LCSA | 生命周期成本核算 / 生命周期可持续性评价 | Life Cycle Costing / Life Cycle Sustainability Assessment | [生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/) |
+| MCDA / SMAA | 多准则决策分析 / 随机多属性可接受度分析 | Multi-Criteria Decision Analysis / Stochastic Multicriteria Acceptability Analysis | [生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)、[环境损害估值](/docs/book/lime-preferences-and-damage-weights/) |
+| UPR / MLC | 单元过程 / Sphera 托管生命周期内容库 | Unit Process / Managed LCA Content (formerly GaBi) | [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/) |
+| ELCD / USLCI / USEEIO / EXIOBASE | 欧洲参考库 / 美国清单库 / 美国环境扩展投入产出模型 / EXIOBASE 多区域投入产出库 | European Reference Life Cycle Database / US Life Cycle Inventory Database / US Environmentally-Extended Input–Output Model / EXIOBASE (Global Multi-Regional Input–Output Database) | [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/) |
+| PSILCA / SHDB | 产品社会影响生命周期评估数据库 / 社会热点数据库 | Product Social Impact Life Cycle Assessment Database / Social Hotspots Database | [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/) |
+| GLAD / FedEFL / TIDAS | 全球生命周期数据访问网络 / 美国联邦基本流列表 / 天工开放生命周期数据规范 | Global LCA Data Access / Federal LCA Commons Elementary Flow List / TianGong LCA Data Specification | [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[数据格式、映射与转换披露](/docs/book/exchange-formats-and-interoperability-governance/) |
+| UUID / JSON-LD / eILCD | 通用唯一标识符 / 链接数据 JSON / 扩展 ILCD 格式 | Universally Unique Identifier / JavaScript Object Notation for Linked Data / extended ILCD | [数据格式、映射与转换披露](/docs/book/exchange-formats-and-interoperability-governance/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/) |
+| DQR / DNM / ILCD-EL | 数据质量评级 / 数据需求矩阵 / ILCD 入门级 | Data Quality Rating / Data Needs Matrix / ILCD Entry Level | [质量评分与概率](/docs/book/data-quality-and-probability/)、[数据适用性](/docs/book/data-applicability/) |
+| GSD / SD / SEM / CV | 几何标准差 / 标准差 / 标准误 / 变异系数 | Geometric Standard Deviation / Standard Deviation / Standard Error of the Mean / Coefficient of Variation | [质量评分与概率](/docs/book/data-quality-and-probability/)、[变异与不确定性](/docs/book/uncertainty-and-variability/) |
+| OAT / KIA / SRC / SCC / RBD | 单因子扰动 / 关键议题分析 / 标准化回归平方 / 斯皮尔曼秩相关平方 / 随机平衡设计 | One-At-a-Time / Key Issue Analysis / Squared Standardized Regression Coefficient / Squared Spearman Rank Correlation / Random Balance Design | [变异与不确定性](/docs/book/uncertainty-and-variability/) |
+| EPD / PCR | 环境产品声明 / 产品品类规则 | Environmental Product Declaration / Product Category Rules | [环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/) |
+| GPI / IBU | 国际 EPD 体系通用项目指南 / 德国建筑与环境研究所 | General Programme Instructions (International EPD System) / Institut Bauen und Umwelt e.V. (German Institute for Building and Environment) | [环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[审查、验证与鉴证](/docs/book/review-verification-and-assurance/) |
+| ESPR / DPP | 欧盟可持续产品生态设计法规 / 数字产品护照 | Ecodesign for Sustainable Products Regulation / Digital Product Passport | [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[政策中的生命周期结果](/docs/book/lca-results-in-policy/) |
+| EPBD / EPC | 欧盟建筑能效指令 / 建筑能效证书 | Energy Performance of Buildings Directive / Energy Performance Certificate | [政策中的生命周期结果](/docs/book/lca-results-in-policy/) |
+| CBAM / EU ETS | 欧盟碳边境调节机制 / 欧盟排放交易体系 | Carbon Border Adjustment Mechanism / EU Emissions Trading System | [政策中的生命周期结果](/docs/book/lca-results-in-policy/) |
+| ECGT / UCPD | 欧盟赋能消费者促进绿色转型指令 / 不公平商业行为指令 | Empowering Consumers for the Green Transition Directive / Unfair Commercial Practices Directive | [政策中的生命周期结果](/docs/book/lca-results-in-policy/) |
+
+## 跨章核心术语中英对照选编 [#核心概念双语对照]
+
+下表精选全书十二组跨章辨析频率最高的概念对，中文规范词与英文原词严格对齐[概念索引](/concepts/)术语库，供中英对照阅读与论文写作核校。
+
+| 中文规范术语 | 对应英文术语 | 核心区分边界 | 核心章节 |
+| --- | --- | --- | --- |
+| 功能单位 / 声明单位 / 参考流 | Functional unit / Declared unit / Reference flow | 功能单位锚定最终交付服务（四要素）；声明单位用于下游未定的中间产品，不能代替异材功能比较；参考流是满足功能单位所需的具体实物输入量。 | [功能参照](/docs/book/service-and-reference/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/) |
+| 前景系统 / 背景系统 | Foreground system / Background system | ILCD 区分特异性视角（需初级实测）与管理控制视角（决策者可直接影响），两者边界未必重合。 | [研究目的与范围](/docs/book/goal-and-scope/) |
+| 基本流 / 产品流 / 废物流 | Elementary flow / Product flow / Waste flow | 基本流未经前后人为转化直接进出环境；产品流与废物流在技术圈内部流转，软件与标准对废物的正负方向记法不同。 | [流、交换与边界](/docs/book/exchange-semantics-and-conversion/)、[流与过程的跨库对应](/docs/book/elementary-flows-and-lcia-coupling/) |
+| 归因生命周期评价 / 后果生命周期评价 | Attributional LCA / Consequential LCA | 归因追问既有系统的负担归属份额，后果追问决策引发的边际供给变化；“过去／未来”并非二者分界轴。 | [共同生产](/docs/book/joint-production/)、[市场响应](/docs/book/market-boundaries-and-response/) |
+| 截断模型 / 替代点分配 / 系统扩展 | Cut-off / Allocation at the point of substitution (APOS) / System expansion | Cut-off 让再生料零上游负担进入下周期；APOS 回溯至共同分配点共担；系统扩展须区分“补齐缺失功能”与“扣减替代供给”。 | [共同生产](/docs/book/joint-production/)、[背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[系统模型辨读](/docs/allocation/) |
+| 中点指标 / 终点指标 / 保护领域 | Midpoint indicator / Endpoint indicator / Area of protection (AoP) | 中点贴近排放机制且附加假设少，终点靠近人体健康、生态质量与资源三大保护领域但链条更长、价值判断更深。 | [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/) |
+| 归一化 / 跨类加权 | Normalization / Weighting | 归一化除以参照总量（如全球人均）展现相对体量，禁止直接跨类相加；加权引入社会／政策价值取舍，ISO 禁用于公开比较断言。 | [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/) |
+| 未表征状态 / 显式零因子 | Uncharacterized (missing) factor / Explicit zero factor | 清单流因名称、区室或位置码失配而未挂上因子时，软件得分与因子设为零完全相同，须靠零表征审计排雷。 | [流、交换与边界](/docs/book/exchange-semantics-and-conversion/)、[流与过程的跨库对应](/docs/book/elementary-flows-and-lcia-coupling/) |
+| 变异 / 不确定性 | Variability / Uncertainty | 变异源于客观空间、时间与技术／个体异质性（不可仅靠增加样本消除），不确定性源于知识匮乏与模型简化（可通过更好资料缩减）。 | [变异与不确定性](/docs/book/uncertainty-and-variability/) |
+| 谱系方差 / 序数数据质量评级 | Pedigree variance / Ordinal data quality rating (DQR) | ecoinvent 谱系矩阵将质量打分转为对数正态方差供蒙特卡洛传播；欧盟 PEF 的 DQR 仅作序数准入闸门，不是统计方差。 | [质量评分与概率](/docs/book/data-quality-and-probability/)、[数据适用性](/docs/book/data-applicability/) |
+| 关键性审查 / 第三方验证 / 鉴证 / 法定合格评定 | Critical review / Verification / Assurance / Statutory conformity assessment | 四者独立性要求、现场核查义务与法律效力逐级分化：如欧盟电池法规禁用自声明而强制公告机构模块 D1（生产质量保证）或模块 G（单件验证）评定。 | [审查、验证与鉴证](/docs/book/review-verification-and-assurance/) |
+| 比较断言 / 非比较公开声明 | Comparative assertion / Non-comparative public declaration | 面向公众宣称一产品优于或等同于竞品的比较断言触发最严功能等效、截断灵敏度、禁加权（ISO/ILCD）或已批准 PEFCR（欧盟）与独立评审门槛。 | [墙面服务比较](/docs/book/wall-service-to-comparison/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[可修订的判断](/docs/book/revisable-judgment/) |

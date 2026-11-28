@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "task": "tiangong-lca/knowledge-base#352",
+  "revisionId": "phase4-2-reference-appendices-352",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "scope": "Phase 4.2 three bilingual reference appendices: Appendix G (/docs/appendices/lcia-method-coverage), Appendix H (/docs/appendices/standards-and-methods-lineage), and Appendix I (/docs/appendices/glossary-acronyms-and-symbols), covering 10 LCIA methods × 13 impact categories + 8 blind spots, 4 chronological version-lineage tracks with explicit paywall/license boundaries, 26 mathematical symbol rows, 62 grouped acronym entries (110 individual acronyms), and 12 curated conceptual contrasts.",
+  "reviewers": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "subagentConversationId": "e46afa82-900d-482c-8df8-05e503de186e",
+      "blockingFindingsCount": 9,
+      "advisoryFindingsCount": 10,
+      "resolution": "All 9 blocking findings (B1 unescaped pipe in Appendix I S_j row replaced with Unicode U+2223 restoring Col 5 link; B2 EN acronym count aligned to 62 grouped entries / 110 acronyms; B3 EN SRC/SCC updated to Squared Standardized Regression Coefficient / Squared Spearman Rank Correlation matching Groen 2017 & Ch. 32; B4 EF 3.1 acidification non-EU fallback corrected to European defaults; B5 EF 3.1 ecotoxicity +33% normalization jump attributed accurately to unspecified water full-freshwater assignment; B6 ReCiPe 2016 mineral endpoint multiplier split H/E 0.23 vs. I 0.16 USD2013/kg Cu-eq; B7 carbon monoxide moved outside EF 3.1's 1,074 fossil XML flows; B8 Swiss Ecological Scarcity 2006 UW0906 marked directly inspected; B9 exchange format verification boundaries separated cleanly by directly inspected vs. secondary-traced specs) and all 10 advisories resolved."
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "subagentConversationId": "6f9dd86f-3e89-4032-8165-de611f117fc5",
+      "blockingFindingsCount": 5,
+      "advisoryFindingsCount": 6,
+      "resolution": "All 5 blocking findings (B1 table pipe split; B2 62 groups / 110 acronyms; B3 AMD inverse phrasing in Appendix H & SRC/SCC alignment; B4 missing USD2013 currency on ReCiPe lignite/peat fallback; B5 complete first-use acronym/prefix/model/institution/parameter expansions across Appendices G, H, and I in both ZH & EN) and all 6 advisories (including /en/changes/ wording, table headers, double H3 numbering, UBP ZH harmonization, secondary equation symbols) resolved."
+    }
+  ],
+  "postFixChecks": {
+    "buildPages": "130/130",
+    "bilingualParityExceptions": 0,
+    "unitTests": "824/824"
+  }
+}

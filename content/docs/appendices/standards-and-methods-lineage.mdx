@@ -1,0 +1,73 @@
+---
+title: 标准与方法版本谱系
+description: 按核心标准、操作指南与政策法规、影响评价方法及背景数据库与数据格式四条主线梳理生命周期评价（LCA）关键版本演进与核验边界。
+---
+
+## 阅读说明与访问核验边界 [#核验与阅读说明]
+
+生命周期评价（LCA）的术语、计算规则与数据接口经历了半个多世纪的迭代：同一标准或方法换版，常常改变系统边界、回收分配、热值口径、归一化基准或验证门槛，导致新旧研究无法直接拼接比较。本附录与[生命周期评价发展大事记](/docs/appendices/lca-timeline/)互补——大事记按时间轴串联跨领域历史节点，本附录则按四条专业主线集中呈现各家族的“版本号 → 相对前版的关键结构变化 → 原文访问与核验边界”。
+
+为杜绝臆测与超界引用，下表每一行均如实标明核验状态：公开原始报告、同行评议论文、开源规范与官方公报均经直接核读；受版权或付费授权保护的国际标准化组织（ISO，含技术规范 ISO/TS）、欧洲标准（EN，含第 1/2 号修正案 +A1/+A2 与勘误表 +AC）及中国推荐性国家标准（GB/T）全文（包括 ISO 14040/14044 公开预览之外的条款及后续修正案、ISO 14067、ISO 14025、ISO 21930、ISO 14071、ISO/TS 14072、EN 15804+A2 与 GB/T 24067-2024）以及分级收费商业数据库内部数据表均未直接检阅，仅依据公开官方指南、元数据与开放学术文献标明其结构坐标，不重构未检阅条款。
+
+## 主线一：核心生命周期评价、碳足迹与环境产品声明标准 [#核心标准谱系]
+
+本表梳理从学会实践准则到 ISO 14040 系列、环境产品声明（EPD）与碳足迹标准的演化主线。
+
+| 年份 | 标准编号与版本 | 发布机构 | 相对前版的结构变化 | 核验边界与详述章节 |
+| --- | --- | --- | --- | --- |
+| 1990–1993 | 环境毒理学与化学学会（SETAC）佛蒙特研讨会（1990，技术框架报告 1991）→《生命周期评价实践准则》（1993） | SETAC | 统一“生命周期评价（LCA）”术语，提出清单、影响与改进三组件框架以及透明度和同行评审原则。 | 早期原件未公开挂网，据美国环境保护署（US EPA）1993、联合国环境规划署（UNEP）1996 与莱顿大学环境科学研究所（CML）2001 公开文献转述。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)。 |
+| 1997–2000 | ISO 14040:1997、14041:1998、14042:2000、14043:2000 | ISO/TC 207/SC 5 | 第一代四分册标准；以贯穿全过程的“生命周期解释”取代“改进分析”，定型四阶段迭代骨架。 | 已废止付费标准，未检阅授权全文（据 ISO 14040/14044:2006 公开预览前言及 CML 2001 / US EPA 2006 核验）。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)。 |
+| 2006（中国 2008 采标） | ISO 14040:2006（第 2 版）与 ISO 14044:2006（第 1 版）；中国等同采标 GB/T 24040-2008 与 GB/T 24044-2008 | ISO/TC 207/SC 5（≥75% 投票）；中国国家标准化管理委员会 | 将 14041–14043 合并为单册 14044，固化四阶段、目的 4 要素与范围 14 要素、公开比较断言关键性审查与禁加权规则，同时刻意保留宽阔开放空间。 | 直接核验 ISO 14040/14044:2006 公开预览（前言、引言、范围及 §§4.1–4.2.3.5）及 GB/T 24040/24044 国家标准官方登记元数据；正文其余条款及后续修正案未直接检阅。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[研究目的与范围](/docs/book/goal-and-scope/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)。 |
+| 2006 → 2026 | ISO 14025:2006 → ISO 14025:2026（见 2026 年 11 月国际 EPD 体系通则引述） | ISO | III 型环境声明（环境产品声明［EPD］）伞形标准，规范项目运营方、产品品类规则（PCR）治理与第三方验证。 | 付费版权标准，未直接检阅授权全文（据国际 EPD 体系通用项目指南 GPI v5.1.0 与德国建筑与环境研究所 IBU v2.1 公开文本转述）。参见 [环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)。 |
+| 2012/2013 → 2019/2021 | EN 15804+A1:2013（第 1 号修正案）→ EN 15804:2012+A2:2019+AC:2021（第 2 号修正案与勘误表）；并行标准 ISO 21930:2017 | 欧洲标准化委员会（CEN）/TC 350；ISO | 建筑核心品类规则：+A2 将 7 项 CML 指标扩展为与欧盟（EU）环境足迹（EF）对齐的 13 项核心加 6 项附加指标，将 C 与 D 模块设为最低必报（除非满足豁免），保留 100:0 截断并禁止归一化加权；ISO 21930 提供国际建筑 EPD 基准。 | 付费版权标准，未直接检阅授权全文（据 Durão 等 2020、欧洲建筑 EPD 项目运营方联盟 ECO Platform V2.0、IBU v2.1 与 GPI v5.1.0 公开文献转述）。参见 [环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)。 |
+| 2014 → 2024 | ISO/TS 14071:2014 → ISO 14071:2024 | ISO | 细化 ISO 14044 关键性审查程序与审查员能力要求（ECO Platform V8.0 亦提及法国实验性标准技术规范 XP TS 14071）。 | 付费版权标准，未直接检阅授权全文（据 GPI v5.1.0 与 ECO Platform V8.0 转述）。参见 [审查、验证与鉴证](/docs/book/review-verification-and-assurance/)。 |
+| 2014 | ISO/TS 14072:2014 | ISO | 8 页技术规范，将 ISO 14044（31 项要求中 27 项）扩展至组织生命周期评价（O-LCA），引入“报告单位”并严禁公开跨组织比较断言。 | 付费版权标准，未直接检阅授权全文（严格据 UNEP/SETAC 2015 年公开指南转述）。参见 [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)。 |
+| 2018 与 2024 | ISO 14067:2018 与中国推荐性国家标准 GB/T 24067-2024（2024-10-01 实施） | ISO；中国生态环境部与国家市场监管总局 | 产品碳足迹（PCF）核算通则，拆分化石、生物源与土地利用变化温室气体；GB/T 24067-2024 衔接国际通则并补充具体产品规则编制框架与地理边界指引。 | 付费／版权受限标准，未直接检阅全文（国家标准全文公开系统因国际标准版权未提供 GB/T 24067-2024 在线全文；依据官方元数据、生态环境部公告与 Zampori & Pant 2019 公开文献核验）。参见 [政策中的生命周期结果](/docs/book/lca-results-in-policy/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)。 |
+
+## 主线二：操作指南、行业通则与公共政策法规 [#指南与政策谱系]
+
+本表梳理将基础原则转化为可操作计算规则、行业运营方治理与强制性市场准入法规的公开指南与官方公报。
+
+| 年份 | 指南、规则或法规名称 | 发布机构 | 相对前版的结构变化 | 核验状态与详述章节 |
+| --- | --- | --- | --- | --- |
+| 1974 / 1993 / 1996 / 2006 | US EPA SW-91c（1974）→ EPA/600/R-92/245（1993）→ UNEP（1996）→ EPA/600/R-06/060（2006） | US EPA / UNEP | 先后奠定饮料容器资源与环境剖面分析（REPA）、功能单位清单手册、营销争议后的方法限度反思及西雅图会议 14 项超越 ISO 决策点。 | 公开原始 PDF 逐页核验。参见 [饮料容器研究](/docs/book/early-container-comparisons/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)、[方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)。 |
+| 1992 → 2001/2002 | CML 1992 指南与背景卷 → CML 2001/2002 操作与科学背景卷 | 莱顿大学环境科学研究所（CML） | 1992 年确立矩阵生命周期清单（LCI）与中点生命周期影响评价（LCIA）体系；2001/2002 年对接 ISO 14040–14043，引入三档精细度、强推荐归一化与公开比较禁加权规则。 | 公开原始 PDF 核验。参见 [评价框架与分析步骤](/docs/book/framework-responsibilities/)、[过程网络](/docs/book/inventory-calculation/)、[影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)。 |
+| 2010 | 国际参考生命周期数据系统（ILCD）通用指南与审查方案 | 欧盟委员会联合研究中心（JRC） | 确立相对 ISO 的非对称符合（83 处加严、88 处新增）、A/B/C1/C2 决策情景四分法、6 指标短板数据质量评级与两级外部审查体制。 | 公开原始 PDF 核验。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[研究目的与范围](/docs/book/goal-and-scope/)、[审查、验证与鉴证](/docs/book/review-verification-and-assurance/)。 |
+| 2011 | UNEP/SETAC《湘南数据库导则》与《迈向生命周期可持续性评价》 | UNEP/SETAC 生命周期倡议 | 避开强制条款而采非强制三级建议，区分托管型背景数据库与离散数据集图书馆，推进全球数据库与可持续性评价共识。 | 公开原始 PDF 核验。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[数据适用性](/docs/book/data-applicability/)、[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)。 |
+| 2011 | 温室气体核算体系（GHG Protocol）产品标准与企业价值链（范围三）标准 | 世界资源研究所（WRI）与世界可持续发展工商理事会（WBCSD） | 聚焦 6 类京都温室气体（100 年全球增温潜势［GWP100］），设“分析单位”、范围三 15 类价值链边界与第一／第三方有限或合理保证；原样不支持跨产品比较断言或跨企业排名。 | 两份 2011 主标准公开 PDF 逐页核验；独立配套《范围三排放计算技术指南》未检阅。参见 [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[审查、验证与鉴证](/docs/book/review-verification-and-assurance/)。 |
+| 2013 → 2019 → 2021/2022 | 欧盟委员会通告 COM(2013) 196 与建议书 2013/179/EU → JRC 2019 更新建议 → 建议书 (EU) 2021/2279 | 欧盟委员会 / JRC | 启动欧盟产品环境足迹（PEF）与组织环境足迹（OEF）体系并确立“可比性优先于灵活性”；2021 版由 14 类扩至 16 项强制类别，强制归一化加权（80% 热点筛查）、以循环足迹公式（CFF）取代 50/50 公式、引入数据需求矩阵（DNM）与 3.0% 截断上限（属非约束建议书）。 | 公开官方公报与 JRC 报告逐页核验。参见 [方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[材料循环](/docs/book/recycling-chains-and-accounting/)。 |
+| 2015 | UNEP/SETAC《组织生命周期评价（O-LCA）指南》 | UNEP/SETAC | 作为 ISO/TS 14072 操作配套，将报告单位拆为报告组织与报告流，汇总 11 项试点经验，重申禁用单分与公开跨组织比较。 | 公开 PDF 全文核验。参见 [产品足迹规则](/docs/book/product-footprint-rules-and-practice/)。 |
+| 2022–2026 | IBU 通则 v2.1（2022）· ECO Platform 规则集（2024）· 国际 EPD 体系 GPI v5.1.0（2026） | IBU · ECO Platform · EPD International | 规范 6 类 EPD、过程认证、三级预验证工具、独立派单与风险抽查机制，并强制推进 ILCD+EPD v1.2 机器可读交换。 | 公开官方 PDF 核验。参见 [环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[审查、验证与鉴证](/docs/book/review-verification-and-assurance/)。 |
+| 2023–2026 | 欧盟强制产品与气候立法群：《电池法规》(EU) 2023/1542、碳边境调节机制（CBAM）(EU) 2023/956、反洗绿指令（ECGT）(EU) 2024/825（与拟撤回绿色声明提案 COM(2023) 166）、建筑能效指令（EPBD）(EU) 2024/1275、生态设计法规（ESPR）(EU) 2024/1781、EF 3.1 2026 过渡指导 | 欧洲议会与欧盟理事会 / 欧盟委员会 | 将生命周期指标转化为法定市场准入、边境碳定价、建筑全生命周期碳披露、数字产品护照与反洗绿红线；CBAM 锚定欧盟排放交易体系（EU ETS）固定设施边界而非完整产品 LCA；COM(2026) 710 拟撤回绿色声明提案并不削弱 2026 年 9 月 27 日起施行的 ECGT 禁令。 | 公开官方公报与通告逐页核验（JRC 2023 电动汽车电池方法属未定稿技术草案）。参见 [政策中的生命周期结果](/docs/book/lca-results-in-policy/)、[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[数据适用性](/docs/book/data-applicability/)。 |
+| 2024 | 中国十五部门《关于建立碳足迹管理体系的实施方案》（环气候〔2024〕30号）与 GB/T 24067-2024 | 中国生态环境部等 15 部门 | 确立两阶段国家产品碳足迹架构：2027 年制定约 100 项、2030 年约 200 项产品规则，覆盖 19 类重点行业，建设国家因子库并建立国家标准发布后废止地方规则的统一机制。 | 实施方案公开文件核验；GB/T 24067-2024 全文受版权限制未直接检阅。参见 [政策中的生命周期结果](/docs/book/lca-results-in-policy/)。 |
+
+## 主线三：生命周期影响评价方法演进 [#影响评价方法谱系]
+
+本表梳理从早期临界体积法与中点基线到多视角终点体系、欧盟环境足迹（EF）参考包及全球共识 GLAM 框架的演进脉络。
+
+| 年份 | LCIA 方法与版本 | 发布机构或领衔团队 | 相对前版的结构变化 | 核验边界与详述章节 |
+| --- | --- | --- | --- | --- |
+| 1984 / 1992 / 1999 | 瑞士联邦环保局（BUS）临界体积法（1984）→ CML 1992 → Eco-indicator 99 | 瑞士联邦环保局（BUS）；莱顿 CML；PRé | 从法定排放限值临界体积（1984），演进至中点分类—表征—归一化骨架（1992），再开启终点损害与文化视角范式（Eco-indicator 99）。 | CML 1992 公开 PDF 核验；BUS 1984 与 Eco-indicator 99 未直接检阅原件，据公开文献转述。参见 [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)、[购物袋研究](/docs/book/interpretation-and-limits/)。 |
+| 2001–2002（及 2020 更新） | CML 2001/2002（后续 CML v4.8 / Van Oers 2020 矿产更新） | Guinée 等（莱顿 CML） | 对接 ISO 14042 的标准中点基线；Van Oers（2002）拆分化石能源与元素非生物资源耗竭潜势（ADP），2020 年按 1970–2015 累积开采更新地壳最终储量 ADP。 | 公开 PDF 核验。参见 [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)。 |
+| 2003–2004 → 2012 → 二十国集团（G20） | 日本终点导向影响评价方法 LIME1（2003/04）→ LIME2（2012）→ LIME3 | 伊坪德宏、稻叶敦等（日本产业技术综合研究所［AIST］） | 以联合分析支付意愿将 4 类保护对象货币化；LIME2 由东京扩至全国 147 站点并采随机参数模型；LIME3 扩展至二十国集团调查。 | LIME1/2 期刊论文直接核验；LIME3 据 UNEP 全球生命周期影响评价方法指导（GLAM）第三阶段公开文献转述（原书未检阅）。参见 [环境损害估值](/docs/book/lime-preferences-and-damage-weights/)。 |
+| 2006 → 2013 → 2021 | 瑞士生态稀缺法 2006 → 2013（第 1330 号）→ 2021（第 2121 号） | 瑞士联邦环境署（BAFU）与瑞士可持续商业协会（Öbu） | 2006 版将归一化流与临界比拆开使跨区域适配成为可能；2013 与 2021 版更新基准年现状流与法定目标，维持单物质取最严路径原则。 | 2006（UW0906，2009 年出版）、2013 与 2021 公开报告均直接核验。参见 [生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)。 |
+| 2008/2011 → 2017 → 2019 | USEtox 1.0 → USEtox 2.0（文档 v1.1）→ USEtox 2.1（纳入 PEF 更新） | Rosenbaum、Hauschild、Jolliet 等（UNEP/SETAC） | 基于 7 模型 45 种有机物比对确立化学毒性共识（人体／生态比较毒性单位 CTUh/CTUe）；2.0 版扩展室内与作物残留模块；2.1 版纳入欧盟 EF 更新（EF 将生态效应改为 0.2 除以 20% 物种危害浓度［HC20］）。 | 1.0、2011 论文与 2.0 文档 v1.1 公开核验；2.1 据 JRC 2019 报告转述（本书未检阅 USEtox 2.12）。参见 [毒性路径](/docs/book/usetox-pathways-and-boundaries/)。 |
+| 2009 → 2016/2017 | ReCiPe 2008 → ReCiPe 2016（荷兰国家公共卫生与环境研究院［RIVM］2016-0104；Huijbregts 等 2017） | RIVM、拉德堡德大学、CML、PRé | 2008 版融合 CML 中点与 Eco-indicator 99 终点；2016 版全面全球化与区域化（56 大气区、拆分人体健康［HOFP］与陆地生态［EOFP］臭氧潜势、新增三路耗水终点及额外矿石［SOP］／化石燃料［FFP］／额外费用［SCP］潜势、移除海洋富营养化）。 | ReCiPe 2016 报告与论文公开核验；ReCiPe 2008 未直接检阅原件，据公开文献转述。参见 [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/) 及第四部各章。 |
+| 2011 | ILCD 2011 影响评价推荐指南（EUR 24571 EN） | 欧盟委员会 JRC | 确立欧洲情境 I/II/III 三级成熟度分级，推荐累积超载酸化、欧洲大气与水体营养盐模型（EUTREND）富营养化、欧洲大气化学传输模型（LOTOS-EUROS）臭氧、USEtox 毒性与瑞士 6 档缺水因子。 | 公开 PDF 核验。参见第四部各路径章节及 [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)。 |
+| 2016/2018 → 2025/2026 | 剩余可用水模型 AWARE 1.x（2016/2018）→ AWARE 2.0（2025）与前瞻／不确定性研究（2026） | UNEP/SETAC 水利用工作组（WULCA） | 以单位面积剩余可用水（AMD）的倒数替代取水压力指数（WSI）；2.0 版更新受人类干预后水文口径，2026 研究补齐多模型不确定性与前瞻因子。 | 公开论文与工作组文档核验。参见 [耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)。 |
+| 2018 → 2020 → 2022/2023 | EF 2.0（2018）→ EF 3.0 → EF 3.1（2022 年 7 月包；JRC 2023 报告） | 欧盟委员会 JRC | EF 2.0/3.0 固化 16 类指标与三轨气候核算；EF 3.1 重点更新气候（政府间气候变化专门委员会第六次评估报告［AR6］、废除 100 年储碳、一氧化碳归零）与三项毒性（金属改 0.2/HC20 并引欧洲化学品管理局［ECHA］与欧洲食品安全局［EFSA］档案）等 6 类，其余 10 类保持不变。 | JRC 公开报告与官方 XML/Excel 因子包核验。参见 [气候当量](/docs/book/climate-equivalence/)、[毒性路径](/docs/book/usetox-pathways-and-boundaries/)、[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)。 |
+| 2019 / 2020 | IMPACT World+（2019）与 LC-IMPACT v1.0（2020） | 国际生命周期研究参考中心（CIRAIG）团队；LC-IMPACT 联盟 | IMPACT World+ 统一 0–100 年与超百年拆分及四级空间层；LC-IMPACT v1.0 建立纯终点全球生态区体系，以世界自然保护联盟（IUCN）脆弱性评分（VS）与四套时间／确定性模块取代文化视角。 | 公开论文与报告核验。参见 [影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)、[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)。 |
+| 2019 → 2024 → 2026 | UNEP GLAM 第二卷（2019）→ GLAM 颗粒物（2024）→ GLAM v1.1 生态与人体健康（2026） | UNEP 生命周期倡议（Verones、Fantke 等） | 以按类群归一的全球灭绝概率（GEP，超 9 万物种）替代 VS，纳入等效连通面积（ECA）破碎化、生命周期评价海洋影响框架（MarILCA）海洋微塑料、慢性 10% 效应浓度基准（HC20-EC10）及室内／职业颗粒物与工作环境健康。 | 公开论文与官方因子工作簿核验。参见 [资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)。 |
+
+## 主线四：背景数据库、交换格式与公共映射基础设施 [#数据库与格式谱系]
+
+本表梳理背景清单数据库从纸质账本到解耦链接、投入产出／社会扩展及开放数据契约与声明式迁移工具的四代演化。
+
+| 时期或节点 | 数据库、格式或映射基础设施 | 维护机构 | 相对前代的结构演进 | 许可边界与详述章节 |
+| --- | --- | --- | --- | --- |
+| 1970–1990 年代 | 美国中西部研究所（MRI）/ Franklin / Boustead → 瑞士环境森林景观局 BUWAL 132/250、苏黎世联邦理工能源—物质—环境组 ETH-ESU 96 / ecoinvent'96（1,163 过程）、早期 GaBi | 研究机构与商业团队 | 由第一代纸质／电子表格走向第二代机构电子清单库，但基本流命名与系统边界仍互不兼容。 | 历史文献与开放论文核验（ecoinvent'96 扰动研究公开核验）。参见 [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[过程网络](/docs/book/inventory-calculation/)。 |
+| 2003–2010 | ecoinvent v1（2003）→ v2（v2.2）；美国清单库 USLCI；欧洲参考库 ELCD；日本环境分析清单数据库 IDEA；中国生命周期基础数据库 CLCD | ecoinvent 中心；美国国家可再生能源实验室（NREL）；JRC；AIST；亿科环境科技／四川大学 | 第二代跨行业协调数据库成型：透明单元过程（ecoinvent）、公共域国家库（USLCI）、欧盟免费基线（ELCD，现已归档停更）与国家商业库（IDEA、CLCD）。 | USLCI 属公共域；ELCD 已停更归档；ecoinvent/IDEA/CLCD 为商业分级许可，本书未在无许可下检视商业内部数据表。参见 [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)。 |
+| 2013 → 2024+ | ecoinvent v3.0（2013）→ v3.11（2024 年 11 月） | ecoinvent 协会 | 第三代“解耦链接”架构：分离未链接单元过程、转化活动与市场活动，引入全球／世界其余地区（RoW）动态残差、四套官方系统模型（Cut-off、EN15804、替代点分配［APOS］、Consequential）与对数尺度谱系方差。 | 方法导则与核心论文公开核验；完整机读商业包实行分级收费许可。参见 [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[数据适用性](/docs/book/data-applicability/)、[质量评分与概率](/docs/book/data-quality-and-probability/)。 |
+| 持续更新 | Sphera 托管生命周期内容库 MLC（原 GaBi）；欧盟 EF 3.0/3.1 次级库；AGRIBALYSE / Agri-footprint / 世界食品生命周期数据库（WFLDB）/ Carbon Minds | Sphera；JRC；法国生态转型署与农业食品环境研究院（ADEME/INRAE）；Blonk；Quantis；Carbon Minds | 形成垂直／水平聚合工业库（Sphera）、内嵌循环足迹公式的监管部分终止系统库（EF 3.0/3.1）与农食／化工专库分立格局。 | Sphera、Agri-footprint、WFLDB、Carbon Minds 为封闭商业许可；EF 次级库限 PEF/OEF 授权使用；AGRIBALYSE 聚合结果公开但单元过程依赖商业母库。参见 [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)。 |
+| 2012–2022+ | 环境扩展投入产出与社会数据库：全球贸易分析项目（GTAP，用于社会热点数据库［SHDB］2012）、EXIOBASE 3（2018）、美国环境扩展投入产出模型 USEEIO v2.0（2022）、产品社会影响评估数据库 PSILCA v3 | 普渡大学 GTAP / New Earth（SHDB）；EXIOBASE 联盟；US EPA；GreenDelta | 通过货币投入产出表消除上游过程截断，并搭载环境卫星账户或风险加权工时社会卫星账户。 | USEEIO 开源代码与文档直接核验；PSILCA v3 官方手册直接核验；SHDB 据 Benoît Norris 等（2012）开放论文核验；EXIOBASE 3 为元数据登记（研究开放，商业库内部表未检阅）。参见 [背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[混合清单](/docs/book/inventory-boundary-and-hybrid/)、[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)。 |
+| 格式与公共映射演进 | EcoSpold 1 → EcoSpold 2 · ILCD 1.1 / 扩展 ILCD（eILCD）/ ILCD+EPD v1.2 · SimaPro CSV · openLCA 数据模式 `olca-schema`（链接数据 JSON［JSON-LD］）· 全球生命周期数据访问网络（GLAD，2020）· 美国联邦基本流列表（FedEFL）· `randonneur` · 天工开放生命周期数据规范（TIDAS，`tidas-spec` v0.3.0，2026） | ecoinvent；JRC/ECO Platform；PRé；GreenDelta；UNEP；US EPA；Brightway；天工 LCA | 从易失真的扁平文本格式（EcoSpold 1 缺参数、SimaPro CSV 按名链接且专有、eILCD 缺全局参数）演进至强类型通用唯一标识符（UUID）与 JSON-LD 开放契约（`olca-schema`、`tidas-spec` 分离公开语义与消费策略）、公共映射枢纽（GLAD、FedEFL）与声明式可审计迁移配方（`randonneur`）。 | 直接核验开放规范：`eILCD` SDK v2.1.1、`olca-schema`、GLAD、FedEFL、`randonneur` 与 `tidas-spec` v0.3.0；EcoSpold 1/2 经 `olca-schema` 与 ecoinvent 公开文档核验，ILCD+EPD v1.2 经 ECO Platform V1.1 与 Otero 等（2026）核验，SimaPro CSV 属专有格式无正式公开规范。参见 [数据格式、映射与转换披露](/docs/book/exchange-formats-and-interoperability-governance/)、[流与过程的跨库对应](/docs/book/elementary-flows-and-lcia-coupling/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)。 |
