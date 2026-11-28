@@ -64,6 +64,15 @@ function sanitizeReadingAuditLogs(raw, lang = 'zh') {
   out = out.replace(/；横置页图像核对/g, '');
   out = out.replace(/；图像核对/g, '');
   out = out.replace(/页面图像核对|图像核对/g, '');
+  out = out.replace(/p2151图像核实了该字样，但未回读2001原模型/g, 'p. 2151 载有该字样，未核读 2001 原模型');
+  out = out.replace(/；p22图像核查/g, '');
+  out = out.replace(/图像核查|图像核实/g, '');
+  out = out.replace(/，提取文本去空白比对也相同/g, '');
+  out = out.replace(/（视觉核对）/g, '');
+  out = out.replace(/；视觉核对(?=）)/g, '');
+  out = out.replace(/旋转图像视觉核对\s*/g, '涵盖');
+  out = out.replace(/；(?:氧化公式|比较指标表)视觉核对/g, '');
+  out = out.replace(/视觉核对/g, '');
   out = out.replace(/；\s*$/, '').replace(/\s{2,}/g, ' ').trim();
   return out;
 }

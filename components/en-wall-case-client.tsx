@@ -60,7 +60,7 @@ function EnPairedChart({
       <svg viewBox="0 0 550 295" role="img" aria-labelledby={`${id}-chart-title ${id}-chart-desc`}>
         <title id={`${id}-chart-title`}>Paired difference Δ = I(B) − I(A) versus shared θ</title>
         <desc id={`${id}-chart-desc`}>
-          Horizontal axis θ from {thetaLow} to {thetaHigh} {teachingCase.uncertainty.unit}; vertical axis kg CO₂-eq per prescribed service.
+          Horizontal axis θ from {thetaLow} to {thetaHigh} {teachingCase.uncertainty.unit.replaceAll('CO2', 'CO₂')}; vertical axis kg CO₂-eq per prescribed service.
           Shaded band is the fixed ±{tolerance} tolerance band. Solid line: smooth substrate; dashed line: rough substrate; circle: current scenario and θ.
         </desc>
         <rect x="62" y={y(tolerance)} width="430" height={y(negativeTolerance) - y(tolerance)} fill="currentColor" opacity=".08" />
@@ -185,7 +185,11 @@ export function EnWallCaseClient({ spec: teachingCase, print = false }: { spec: 
       data-case-id={id}
       data-case-version={version}
     >
-      <h3 id="wall-case-reference-title">Calculation Tables &amp; Interactive Parameters</h3>
+      {print ? (
+        <h4 id="wall-case-reference-title">Calculation Tables &amp; Interactive Parameters</h4>
+      ) : (
+        <h3 id="wall-case-reference-title">Calculation Tables &amp; Interactive Parameters</h3>
+      )}
       <p className="teaching-case-meta">
         Wall Coating Teaching Case · Data version {version} · Illustrative stipulated numbers
       </p>

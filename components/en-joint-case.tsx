@@ -36,9 +36,15 @@ export function EnJointProductionCase({ print = false }: { print?: boolean } = {
       data-case-id={spec.caseId}
       data-case-version={spec.version}
     >
-      <h3 id="en-joint-batch-case-heading">
-        One Co-Product Batch: Partitioning Shares, Supply Routes, and Comparative Residuals
-      </h3>
+      {print ? (
+        <h4 id="en-joint-batch-case-heading">
+          One Co-Product Batch: Partitioning Shares, Supply Routes, and Comparative Residuals
+        </h4>
+      ) : (
+        <h3 id="en-joint-batch-case-heading">
+          One Co-Product Batch: Partitioning Shares, Supply Routes, and Comparative Residuals
+        </h3>
+      )}
       <p className="teaching-case-meta">Pedagogical Case · Inventory Accounting</p>
       <p className="teaching-case-note">
         The tables below provide inputs and computed outputs for quick lookup; step-by-step derivations appear in{' '}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "phase5-4-final-qa-366",
+  "date": "2026-11-28",
+  "task": "#366",
+  "title": "终检清扫：中文视觉核对日志、参考文献双句号与细部排版对齐",
+  "rationale": "响应 Phase 5.4 全站零上下文独立终检结果：清扫中文公开引注与书目中的视觉核对、图像核查、图像核实及回读等内部核验措辞并补充 fail-closed 回归测试；消除打印版、引文页与书目页的重复句号；对齐《阅读导论》第三部部名、第 18 章 NOx 下标、英文墙面算例单位下标及打印版算例标题层级。",
+  "routes": [
+    "/docs/book",
+    "/docs/book/particulate-emissions-and-health"
+  ],
+  "claims": [],
+  "files": [
+    {
+      "path": "content/docs/book/index.mdx",
+      "op": "modify",
+      "fromSha256": "49f661177fa2c5064c20d1bd6a92aa1a002dea9bf3832a8b3ccbd20c7fd4309b",
+      "toSha256": "91287471d06dd77167580c40e4ea95500dfcce249c015562b317a91815452683",
+      "previous": "---\ntitle: 阅读导论\ndescription: 按历史、比较对象、系统、环境路径和证据判断的顺序阅读，也可从具体案例查阅相关方法。\n---\n\n本书围绕一个问题展开：一项环境判断需要哪些依据？先明确所比较的服务，再把提供服务所需的活动组织为系统，据此计算排放和资源需求。环境模型进一步估计这些量可能造成的后果。使用结果时，还须回到原来的问题，判断数据和分析能够支持什么结论。\n\n<ReaderSection id=\"问题与历史\" />\n<ReaderSection id=\"用途与地区语境\" />\n\n第一部《问题的来源》沿[生命周期视角](/docs/book/integrative-ambitions/)、[饮料容器研究](/docs/book/early-container-comparisons/)、[评价框架与分析步骤](/docs/book/framework-responsibilities/)与[方法的标准化与制度化](/docs/book/standardization-and-institutionalization/)展开：先从生命周期视角界定比较起点、模型简化与清洁生产中的预防应用边界，再对照 1974 年容器账本与 1972 年全国政策报告辨明两类问题所需的不同证据，继而系统对照莱顿大学环境科学研究所指南（CML 2001/2002）、国际参考生命周期数据系统（ILCD）2010、欧盟产品环境足迹（PEF）2021 与温室气体核算体系（GHG Protocol）产品标准（2011）在阶段组织、比较断言门槛、影响加权与审验鉴证上的共同核心与分歧，最后追查早期营销争议如何演进为环境毒理学与化学学会（SETAC）准则、国际标准化组织（ISO）14040/14044 系列、联合国环境规划署（UNEP）与 SETAC 联合发起的生命周期倡议及欧盟 ILCD—PEF 制度管线，并辨明制度化的结构权衡。\n\n<ReaderSection id=\"比较对象与方法选择\" />\n<ReaderSection id=\"从系统关系到计算结果\" />\n\n第二部《服务与清单》沿[研究目的与范围](/docs/book/goal-and-scope/)、[功能参照](/docs/book/service-and-reference/)、[过程网络](/docs/book/inventory-calculation/)、[流、交换与边界](/docs/book/exchange-semantics-and-conversion/)与[混合清单](/docs/book/inventory-boundary-and-hybrid/)展开，说明研究如何立题以及系统如何建立与闭合：先明确研究目的、决策情景、前景与背景系统划分及截断规则，再从功能单位、声明单位与活动层参考产品的四体系对照出发，经线性过程配平、流与交换边界及零/缺项分辨，到过程截断阈值、资本品边界与混合清单防重叠的跨体系比较。第三部《负担分担与系统响应》以[共同生产](/docs/book/joint-production/)开篇的《归属与系统响应》一节及四域对照表总领全篇，依次沿共产品份额、[市场响应](/docs/book/market-boundaries-and-response/)、[供电系统](/docs/book/electricity-service-and-response/)与[材料循环](/docs/book/recycling-chains-and-accounting/)展开，区分如何分担已有负担与一项选择会改变哪些供给活动，并对照国际参考生命周期数据系统（ILCD）、ecoinvent 第三版、欧盟产品环境足迹（PEF）及温室气体核算体系（GHG Protocol）在替代边界、市场约束、电力尺度与循环足迹公式（CFF）上的条件与分歧。\n\n清单记录资源采掘、土地利用、取耗水与物质排放。第四部《环境后果》从[影响评价的结构](/docs/book/midpoint-endpoint-value-choices/)出发，依次展开[气候当量](/docs/book/climate-equivalence/)、[臭氧层与电离辐射](/docs/book/ozone-and-ionizing-radiation/)、[酸化与富营养化](/docs/book/acidification-and-nutrient-pathways/)、[颗粒物与光化学臭氧](/docs/book/particulate-emissions-and-health/)、[耗水与缺水潜势](/docs/book/water-scarcity-and-reference/)、[毒性路径](/docs/book/usetox-pathways-and-boundaries/)与[资源、土地与生物多样性](/docs/book/resources-land-and-biodiversity/)，系统对照 CML、ReCiPe 2016、欧盟环境足迹（EF 3.1）、LC-IMPACT、IMPACT World+、联合国环境规划署全球生命周期影响评价方法指导（GLAM）、政府间气候变化专门委员会第六次评估报告（IPCC AR6）、世界气象组织（WMO）2022、可用水剩余量缺水模型（AWARE）与毒理共识模型 USEtox，解释清单量如何经由不同环境机制转化为中点与终点指标。阅读时可以选取一个表征因子，追查它所对应的干预对象、空间背景、时间窗口与证据边界。第五部《尺度与取舍》沿[生态稀缺赋权](/docs/book/ecological-scarcity-and-targets/)、[影响评价本地化](/docs/book/localization-evidence-and-denominators/)、[时间尺度与未来情景](/docs/book/future-technology-and-context/)与[环境损害估值](/docs/book/lime-preferences-and-damage-weights/)考察尺度设定与跨类别取舍，辨析政策目标距离、混合稳健度权重、空间表征与归一化分母耦合、前瞻工艺放大与动态时间边界、保护领域截停以及陈述偏好货币估值如何改变方案排序与公开比较边界。\n\n<ReaderSection id=\"时间未来与相邻评价\" />\n\n不同章节中的“时间”也可能表示不同对象：气候计算关心排放发生的时刻与响应积分终点，电力模型区分小时调度与长期容量情景，而[时间尺度与未来情景](/docs/book/future-technology-and-context/)则把工艺放大、同期竞争对手、综合评估模型（IAM）超结构背景情景与动态时间边界放入同一分析框架。第五部后两章通过[社会表现与影响](/docs/book/social-assessment-objects-and-meaning/)和[生命周期成本与综合评价](/docs/book/cost-perspectives-and-sustainability-combination/)进一步区分产品与组织参照、风险工时量表与不可抵消的基本权利底线，以及主体成本账本、异质货币消重、多准则否决阈值与地球边界配额分配；合并使用前，仍须明确某个量表示谁的经历、权利或支出。\n\n<ReaderSection id=\"数据与审查\" />\n<ReaderSection id=\"数据质量与不确定性\" />\n\n第六部《数据基础设施与证据》将背景数据库基础设施与数据证据治理整合为一条连续链条：先以[背景数据库的演变与方法差异](/docs/book/lca-database-landscape-and-history/)、[流与过程的跨库对应](/docs/book/elementary-flows-and-lcia-coupling/)与[数据格式、映射与转换披露](/docs/book/exchange-formats-and-interoperability-governance/)辨明数据库范式、底层方法分歧、基本流与过程跨库映射限度及三级互操作红线；随后依次经由[数据适用性](/docs/book/data-applicability/)、[变异与不确定性](/docs/book/uncertainty-and-variability/)与[质量评分与概率](/docs/book/data-quality-and-probability/)，核查背景数据集代表性、五类误差层次，以及谱系方差、序数质量评级与定性披露的各自边界。\n\n第七部《规则与声明》把数据与模型推进到制度约束与公共政策转化：依次沿[产品足迹规则](/docs/book/product-footprint-rules-and-practice/)、[环境产品声明与行业规则](/docs/book/epds-and-sector-rules/)、[审查、验证与鉴证](/docs/book/review-verification-and-assurance/)与[政策中的生命周期结果](/docs/book/lca-results-in-policy/)展开，厘清自愿与法定足迹规则、行业环境产品声明（EPD）项目运营方与机器可读声明、关键性审查／第三方验证／有限与合理保证／公告机构合格评定的效力边界，以及欧盟电池法规、可持续产品生态设计法规（ESPR）数字产品护照、建筑能效指令（EPBD）建筑全生命周期碳披露与 2028/2030 年限值路线图、碳边境调节机制（CBAM）、赋能消费者反洗绿指令（ECGT）与拟撤回绿色声明提案和中国碳足迹管理体系的真实制度分叉。\n\n<ReaderSection id=\"解释与使用\" />\n<ReaderSection id=\"完整做一遍\" />\n\n第八部《比较与判断》先用[墙面服务比较](/docs/book/wall-service-to-comparison/)复算假想条件并对照国际参考生命周期数据系统（ILCD）、欧盟产品环境足迹（PEF）与温室气体核算体系（GHG Protocol）的比较断言与成对不确定性门槛；再通过[购物袋研究](/docs/book/interpretation-and-limits/)对照英国环境署与丹麦环保署评估及国际解释审查规则，区分实际资料能解释的差异与需另行佐证的建议。\n\n<ReaderSection id=\"把各章接起来\" />\n\n收束章[可修订的判断](/docs/book/revisable-judgment/)结合容器、墙面和购物袋案例，将全书的服务界定、系统边界、背景数据、影响路径、价值取舍、不确定性与审查体制收束为七类定向修订路由。把研究对象、数量关系、适用边界与证据来历说明白，后续研究才知道出现新资料时应重算哪一步、保留哪些既有依据，以及哪些推论不得越界。\n\n初次系统学习可以按全书各部顺序通读。有清单计算基础的读者，也可以从过程网络或环境路径开始，遇到定义和历史身份问题时再查前文。若想先看一次完整比较，可以从[墙面服务比较](/docs/book/wall-service-to-comparison/)和[购物袋研究](/docs/book/interpretation-and-limits/)入手，沿注释及章内链接查阅服务、矩阵或气候指标。三条阅读路线采用同一套案例条件和文献依据；完整目录、专题与附录路线见[全书导览](/coverage/)。\n\n**标准与原始文献说明**：本书跨体系条款、数值复核与算例比较均依据可公开获取的原始报告、同行评议论文与官方公报。受版权或付费授权保护的标准（包括 ISO 14040/14044:2006、ISO 14067:2018、ISO 14025:2006/2026、ISO 21930:2017、ISO 14071:2024 与 ISO/TS 14071:2014、ISO/IEC 17020/17029/17065、EN 15804+A2、EN 15978:2011、ISO 14024、ISO/IEC 15459 与 GB/T 24067-2024），除已注明的公开预览节与官方指南外，本书未直接核对授权全文，亦不转述或重构未检阅的付费条款；法定申报与第三方认证须以现行有效授权标准原件为准。\n"
+    },
+    {
+      "path": "content/docs/book/particulate-emissions-and-health.mdx",
+      "op": "modify",
+      "fromSha256": "40adccc2c89507728d2a6833cbe721b3ff5f3eb9b419ea8f3910a35e2c06a7d8",
+      "toSha256": "5f8066e994f0c8caec7daebd2b6c534af4c919717c6ae041d482be5508b35dd2",
+      "previous": "---\ntitle: 颗粒物与光化学臭氧\ndescription: 从细颗粒物排放算到人群吸入、疾病发生率与健康损害，并辨明共享氮氧化物等前体的对流层光化学臭氧路径、指标截点、流行病学外推与发行包边界。\n---\n\n## 排放与健康量 [#排放与健康量]\n\n<Prose ids=\"cl-pm-opening cl-pm-particle-identity cl-pm-intake-definition cl-pm-intake-unit cl-pm-receptor-boundary cl-pm-effect-definition cl-pm-effect-default cl-pm-urban-health cl-pm-rural-health cl-pm-precursor-denominator cl-pm-precursor-health cl-particulate131-indicator-cutpoints\" />\n\n表 1 主流影响评价体系的颗粒物健康指标截点与量纲对照。\n\n| 体系 | 中点指标与单位 | 终点指标与单位 | 底层模型与关键说明 |\n| --- | --- | --- | --- |\n| ILCD 2011 | kg PM₂.₅ 当量（Level I） | DALY（初级 Level I / 二次 Level II） | 结合欧洲 RiskPoll 与美国源—受体模型 |\n| ReCiPe 2016 | kg PM₂.₅ 当量（吸入比例比值） | 全球默认乘 6.29×10⁻⁴ DALY/kg PM₂.₅ 当量 | 56 区域 TM5-FASST + 30 岁以上成人队列 |\n| LC-IMPACT | 0 项中点 | 区域 DALY/kg（初级全球均值 6.29×10⁻⁴） | 同源 TM5-FASST + 成人队列，分两档稳健度 |\n| EF 3.1 | 疾病发生例数（人均基准 5.95×10⁻⁴ 例/人，权重 8.96%） | 0 项正式终点 | UNEP/SETAC 2016 非线性模型；实为过早死亡纯文字改名 |\n\n<Prose ids=\"cl-particulate131-size-and-subcompartment\" />\n\n表 2 EF 3.1 初级颗粒物空气子区室表征因子示例（疾病发生例数/kg）。\n\n| 空气子区室 | PM₂.₅（及 PM₀.₂ / PM₀.₂–₂.₅） | PM₁₀（按 0.23×PM₂.₅ 折算） | 相对城市近地面的倍数 |\n| --- | --- | --- | --- |\n| 城市近地面 / 未指定空气 | 2.38497×10⁻⁴ | 5.48544×10⁻⁵ | 1×（基准） |\n| 非城市近地面 | 1.13763×10⁻⁵ | 2.61654×10⁻⁶ | 1/20.96 |\n| 非城市高烟囱 | 3.01757×10⁻⁶ | 6.94041×10⁻⁷ | 1/79.04 |\n| 非城市超高烟囱 | 1.62949×10⁻⁶ | 3.74783×10⁻⁷ | 1/146.36 |\n\n注：PM₂.₅–₁₀ 与大于 10 µm 粗颗粒物及高空子区室在 EF 3.1 颗粒物方法中均赋 0。\n\n## 暴露与证据 [#暴露与证据]\n\n<Prose ids=\"cl-pm-source-distribution cl-pm-evidence-levels cl-pm-cohort-design cl-pm-cohort-association cl-pm-effect-baseline cl-pm-indoor-location cl-pm-exposure-compatible cl-pm-compatible-population cl-pm-exposure-coverage\" />\n\n按排放源高度加权的计算见[排放原型与加权](/docs/appendices/particulate-factor-calculations/#排放原型与加权)。区室模型及活动持续时间的说明见[区室与活动时间](/docs/appendices/particulate-factor-calculations/#区室与活动时间)。\n\n## 参照与响应 [#参照与响应]\n\n<Prose ids=\"cl-pm-nonlinear-response cl-pm-risk-reference cl-pm-slope-meaning cl-pm-finite-change cl-pm-ier-evidence cl-pm-gemm-alternative cl-particulate131-cohen-gbd2015-scope cl-particulate131-cohen-empirical-limits cl-pm-chemistry-background cl-pm-chemistry-perturbation\" />\n\n生态参照、大气模型对照和工作簿更正的补充见[参照与模型核验](/docs/appendices/particulate-factor-calculations/#参照与模型核验)。\n\n## 因子与比较 [#因子与比较]\n\n<Prose ids=\"cl-pm-concentration-route cl-pm-regional-summary cl-pm-factor-order cl-pm-version-and-model cl-pm-matched-scope cl-pm-matched-scenario cl-pm-uncovered-pathways cl-particulate131-precursor-perspectives cl-particulate131-ef-ammonia-inversion\" />\n\n表 3 二次无机前体（SO₂、NH₃、NOₓ）在不同体系与子区室中的相对权重对照。\n\n| 体系与情景 | 单位 | SO₂ | NH₃ | NOₓ | 1 kg 郊区 NH₃ vs 2 kg 高烟囱 SO₂ |\n| --- | --- | --- | --- | --- | --- |\n| ReCiPe 2016 个人主义（I） | kg PM₂.₅ 当量/kg | 0 | 0 | 0 | 均为 0 |\n| ReCiPe 2016 等级主义（H，默认） | kg PM₂.₅ 当量/kg | 0.29 | 0 | 0 | 0 < 0.58（SO₂ 胜） |\n| ReCiPe 2016 平等主义（E，全球） | kg PM₂.₅ 当量/kg | 0.29 | 0.24 | 0.11 | 0.24 < 0.58（SO₂ 胜） |\n| LC-IMPACT 全部效应（全球） | DALY/kg | 1.83×10⁻⁴ | 1.61×10⁻⁴ | 7.62×10⁻⁵ | 1.61×10⁻⁴ < 3.66×10⁻⁴（SO₂ 胜） |\n| EF 3.1 未指定空气 | 例/kg | 8.0×10⁻⁶ | 2.1×10⁻⁵ | 1.6×10⁻⁶ | — |\n| EF 3.1 非城市 / 高烟囱 | 例/kg | 9.9×10⁻⁷ | 2.1×10⁻⁵ | 2.1×10⁻⁷ | 2.1×10⁻⁵ > 1.98×10⁻⁶（NH₃ 胜 10.61×） |\n\n<Prose ids=\"cl-particulate131-regional-endpoint-reversal cl-particulate131-package-discrepancies cl-pm-population-meaning\" />\n\nGLAM澳大利亚城乡四个初级PM₂.₅发布因子的数值换算及其发行范围见[发行范围与因子表](/docs/appendices/particulate-factor-calculations/#发行范围与因子表)。\n\n<Prose ids=\"cl-pm-conclusion\" />\n\n## 光化学臭氧形成 [#光化学臭氧形成]\n\n<Prose ids=\"cl-ozone119-precursor-entry cl-ozone119-pocp-to-lotos\" />\n\n表 4 光化学臭氧主流体系构造与典型前体因子对照。\n\n| 体系与指标 | 参照物与受体 | NOₓ（世界 / 区域） | NMVOC（世界 / 区域） | 终点转换或说明 |\n| --- | --- | --- | --- | --- |\n| CML 2002（POCP） | kg 乙烯当量；气团化学活性 | 不赋因子 | 按具体有机物赋因子 | 不计下风向人口或植被分布 |\n| ILCD 2011 / EF 3.1 | kg NMVOC 当量；人体健康（LOTOS-EUROS） | 1.0（36 国同值） | 1.0（泛指 VOC 为 0.235） | 仅设 1 项人体中点 |\n| ReCiPe 2016（HOFP） | kg NOx 当量；人体呼吸摄入（TM5-FASST） | 全球 1；比荷卢 −0.48；英爱 −0.20 | 全球 0.18；比荷卢 +0.69；英爱 +0.60 | ×9.1×10⁻⁷ DALY/kg NOx 当量 |\n| ReCiPe 2016（EOFP） | kg NOx 当量；森林草地 AOT40（TM5-FASST） | 全球 1；比荷卢 +0.16；英爱 +0.44 | 全球 0.29；比荷卢 +1.10；英爱 +1.15 | ×1.29×10⁻⁷ species·yr/kg NOx 当量 |\n\n<Prose ids=\"cl-ozone119-order-reversal cl-ozone119-titration-sign cl-ozone119-ef-location-copy cl-wallext52-nmvoc-pof cl-ozone119-multipath-accounting cl-ozone119-printed-limits\" />\n"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/docs/book",
+      "route": "/docs/book",
+      "sha256": "ab8888fe3e7bb75f386515b7ed75acbb086febd8efd6ea7536bfff346a592fab"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book",
+      "sha256": "112c24d6e4594497d29e2093c03d4a9aa47bee8812fc4f977164a4b2a6ca428d"
+    },
+    {
+      "path": "/docs/book/particulate-emissions-and-health",
+      "route": "/docs/book/particulate-emissions-and-health",
+      "sha256": "02ab0a628a3679a3a5426ede4ed2246714a778691680f2aa72fa5dccbadf5ecd"
+    },
+    {
+      "path": "/print",
+      "route": "/docs/book/particulate-emissions-and-health",
+      "sha256": "36738e9b1213aa0e6c4ae3f3e618422097aa27a1212cef6a3425e3b1244d41c2"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "f3f156fd0fb716e006ecefdd48204a267716d8ef7c88018eecfe5b75f07d895d"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "45bafa1956aa55489cce9de5dc35cca90b3500dad413836b6856cc659792c3de"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "afc60e8643e9fbcaddc9338a26637db40a6d54b1d419684ea1425b67a5bfdb7a"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "fe939015ae6879d873fefa7b200a09fb5e46443b8a364ce64ee930afe8c9ca90"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "c46f67e211d1e97d714a96b533113f062786009a17cf690adc6e9ea6a057dcb4"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "phase5-4-final-qa-366",
+  "task": "#366",
+  "date": "2026-11-28",
+  "baseCommit": "a945c5e5484856b46046bf38650390ac3c8da320",
+  "scientificApproval": false,
+  "externalHumanExpertReview": false,
+  "realReaderTrial": false,
+  "summary": "Phase 5.4 zero-context full-site final audits of committed main build a945c5e (ZH auditor b3a13efa + EN/parity auditor 421d95d7). EN edition passed with 0 blocking defects and 100% 52-unit structural/meaning-level parity. ZH auditor identified two Clean Public Delivery blockers (B1: 107 residual Chinese visual-inspection/回读 traces across ~12 legacy locators; B2: 80 literal double periods 。。 in print/sources/research templates), plus 4 minor cosmetic items (Reading Guide Part III title, Ch. 18 NOx subscripts, EN Ch. 38 kg CO2/kWh caption unit, EN print calculator h4 level). All blockers and cosmetic parity items resolved and mechanically verified at 0 hits across all 140 rendered locale HTML files with fail-closed regression coverage.",
+  "phase5_4IndependentAudits": [
+    {
+      "auditor": "Phase 5.4 Zero-Context Final Full-Site Auditor (ZH Edition)",
+      "agentId": "b3a13efa-266d-4eff-a5fd-4a139658b14f",
+      "initialVerdict": "FAIL (2 blocking: B1 Chinese reading-audit logs/回读, B2 80 literal double periods 。。; 5 non-blocking)",
+      "disposition": "Resolved B1 (0 hits across all 140 HTML files via sanitizeReadingAuditLogs + fail-closed AUDIT_LOG_RE test covering all evidence locators, summaries, and passages), B2 (0 literal 。。 across all 140 HTML files), Reading Guide Part III title (第三部《负担分配与供给变化》), and Ch. 18 Table 4 NOx subscripts."
+    },
+    {
+      "auditor": "Phase 5.4 Zero-Context Final Full-Site Auditor (EN Edition & Bilingual Parity)",
+      "agentId": "421d95d7-a354-4d19-9451-48c505c5adb2",
+      "initialVerdict": "PASS (0 blocking, 3 optional cosmetic items)",
+      "disposition": "Resolved EN Ch. 18 Table 4 NOx subscripts, EN Ch. 38 figure unit kg CO₂/kWh, and demoted EN print-view embedded calculator headings to <h4> (62==62 <h3> parity with /zh/print/)."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "buildAndExport": "pass (132 static routes, 126 public content pages, 140 locale HTML files, 1,257 claims)",
+    "checkpointHistory": "pass (checkpoint-2026-11-21, 41 historical units, 184 snapshot files, gitVerified=true)",
+    "bilingualParity": "pass (0 errors, 0 parity exceptions)",
+    "unitAndIntegrationTests": "pass (833/833)",
+    "phase5_4Gate": {
+      "auditHits": 0,
+      "doublePeriodHits": 0,
+      "part3TitleAligned": true,
+      "ch18ZhRawKgNOx": 0,
+      "ch18EnRawKgNOx": 0,
+      "ch38EnRawKgCO2": 0,
+      "enPrintH3Count": 62,
+      "zhPrintH3Count": 62
+    },
+    "revisionsIndexPin": "fd30e099759d6ae3c8aa08b1eedfbf01ac57201ed71bbeb19c6a0e23807a40bb"
+  }
+}

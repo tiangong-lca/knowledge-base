@@ -94,7 +94,7 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
     <p>历史报告、方法论文、指南和软件文档各有用途。引文保留各自的年代与语境；不同版本或同一作品的不同文本，不能仅凭名称相同互相替代。</p>
     <div className="record-list">{catalog.sources.map(source => <article className="source-record" id={source.id} key={source.id}>
       <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
-      <p>{source.publisher}。{formatZhReaderLocator(source.version).replace(/。+$/u, '')}。</p><p className="subtle">网页访问日期：{source.accessedAt}</p>
+      <p>{source.publisher.replace(/。+$/u, '')}。{formatZhReaderLocator(source.version).replace(/。+$/u, '')}。</p><p className="subtle">网页访问日期：{source.accessedAt}</p>
       <SourceReading source={source} />
       {(evidenceBySource.get(source.id) ?? []).map(evidence => <section className="evidence-item" id={evidence.id} key={evidence.id}>
         <h3>{formatZhReaderLocator(evidence.locator)}</h3><p>{formatMathNotation(formatZhReaderLocator(evidence.summary))}</p><EvidencePassage evidence={evidence} />
