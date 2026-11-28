@@ -1,0 +1,1038 @@
+{
+  "schemaVersion": 1,
+  "id": "opt3-research-register-sync-371",
+  "date": "2026-11-28",
+  "task": "#371",
+  "title": "同步更新原始文献发现登记与公开网页选读记录至 2026-11-28",
+  "rationale": "将 2026-11-19 之后新增的 59 项去重公开文献记录补齐至 literature-map.json 并将 3 项既有文献补齐来源映射（含同载体 JRC EF 2.0 指南合并与 ecoinvent 系统模型去重合并，全书 370/370 来源发现覆盖），为 17 项具备已校验 SHA-256 的公开 HTML/纯文本网页来源建立 web-sections 选读绑定与英文出处定位，同步更新编写说明日期；付费期刊摘要页与受版权保护国标元数据页如实标注为 abstract-or-excerpt 与 metadata-only，不伪造任何 PDF 页码索引，不篡改既有全文核验记录。",
+  "routes": [],
+  "claims": [],
+  "sources": [
+    {
+      "id": "src-db26-frischknecht-2005",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-frischknecht-2005",
+        "title": "The ecoinvent Database: Overview and Methodological Framework",
+        "url": "https://link.springer.com/article/10.1065/lca2004.10.181.1",
+        "version": "International Journal of Life Cycle Assessment 10(1): 3–9 (2005; DOI: 10.1065/lca2004.10.181.1; Frischknecht et al.)",
+        "publisher": "Springer (International Journal of Life Cycle Assessment)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "公开网页摘要与书目元数据核对；公开记录仅含原刊定位与原创中文比较分析，不重分发付费全文。",
+        "preservation": "核对 Springer 官方公开论文页（SHA-256 校验通过）摘要、作者信息与 ecoinvent v1.1 逾 2,500 份单元过程背景说明。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "f55329e4c6c842797c6e170c684460f6903bc314a2a0b652039c13e667ce101b",
+          "resolvedUrl": "https://link.springer.com/article/10.1065/lca2004.10.181.1"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-frischknecht-2005 to existing public web source src-db26-frischknecht-2005."
+    },
+    {
+      "id": "src-db26-wernet-2016",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-wernet-2016",
+        "title": "The ecoinvent database version 3 (part I): overview and methodology",
+        "url": "https://link.springer.com/article/10.1007/s11367-016-1087-8",
+        "version": "International Journal of Life Cycle Assessment 21: 1218–1230 (2016; DOI: 10.1007/s11367-016-1087-8; Wernet, Bauer, Steubing, Reinhard, Moreno-Ruiz & Weidema)",
+        "publisher": "Springer (International Journal of Life Cycle Assessment)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "开放获取期刊论文网页核对；公开记录仅含原刊定位与原创中文比较分析。",
+        "preservation": "核对 Springer 官方论文页（SHA-256 校验通过）摘要与方法框架，覆盖原始数据集与系统模型分离、流属性与多模型支持。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "c8258bb4d77d5385fe1fad0993fb09b8ae31fb858a96460ed0cd5eafaab7c441",
+          "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-016-1087-8"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-wernet-2016 to existing public web source src-db26-wernet-2016."
+    },
+    {
+      "id": "src-db26-ecoinvent-v311",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-ecoinvent-v311",
+        "title": "ecoinvent v3.11 Release Documentation",
+        "url": "https://ecoinvent.org/ecoinvent-v3-11/",
+        "version": "ecoinvent Association (November 2024 release page)",
+        "publisher": "ecoinvent Association",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "官方公开发布说明页；商业数据库内部过程表须另持授权。",
+        "preservation": "核对 ecoinvent v3.11 官方发布页（SHA-256 校验通过），记录农业（136 份瑞士新数据集）、锂电 NMC532/NMC622 及油气更新边界。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "7c2c34712f3ec8633673525019fb3cb26b4b71c0ce6f1a6db4c967b0b5d5157d",
+          "resolvedUrl": "https://ecoinvent.org/ecoinvent-v3-11/"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-ecoinvent-v311 to existing public web source src-db26-ecoinvent-v311."
+    },
+    {
+      "id": "src-db26-flcac-uslci",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-flcac-uslci",
+        "title": "Federal LCA Commons — U.S. Federal Interagency LCA Data Repositories",
+        "url": "https://www.lcacommons.gov/",
+        "version": "U.S. Federal LCA Commons (USDA, DOE, EPA, FHWA, USFS, NIST; accessed 2026-11-26)",
+        "publisher": "U.S. Federal LCA Commons",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "美国联邦机构公有领域开放网页与仓储门户。",
+        "preservation": "核对 Federal LCA Commons 官方首页（SHA-256 校验通过），确认联邦跨机构协作清单仓储、USLCI 定位与开放访问机制。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "ee7713f742b53cc00ded1e792aa42b1bd565b1a7de095bd756647d271d089457",
+          "resolvedUrl": "https://www.lcacommons.gov/"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-flcac-uslci to existing public web source src-db26-flcac-uslci."
+    },
+    {
+      "id": "src-db26-useeio-2022",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-useeio-2022",
+        "title": "USEEIO v2.0, The US Environmentally-Extended Input-Output Model v2.0",
+        "url": "https://www.nature.com/articles/s41597-022-01293-7",
+        "version": "Scientific Data 9, Article 194 (2022; DOI: 10.1038/s41597-022-01293-7; Ingwersen, Li, Young, Vendries & Birney)",
+        "publisher": "Nature Portfolio (Scientific Data)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "CC BY 4.0 开放获取数据论文；公开记录仅含原刊定位与原创中文比较分析。",
+        "preservation": "核对 Scientific Data 官方开放获取网页（SHA-256 校验通过），记录废物流细分、国内外影响分离、购买者价格换算与开源复现。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "1f604b70aa02a935d75e9d2f870eb6ecb732fe806f7e1b78584dc3ab3b2e6b1d",
+          "resolvedUrl": "https://www.nature.com/articles/s41597-022-01293-7"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-useeio-2022 to existing public web source src-db26-useeio-2022."
+    },
+    {
+      "id": "src-db26-agribalyse-doc",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-agribalyse-doc",
+        "title": "AGRIBALYSE® Official English Documentation (ADEME / INRAE)",
+        "url": "https://doc.agribalyse.fr/documentation-en",
+        "version": "ADEME & GIS REVALIM (accessed 2026-11-26; v3.x documentation)",
+        "publisher": "ADEME (French Agency for Ecological Transition)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "法国生态转型署公开文档门户。",
+        "preservation": "核对 AGRIBALYSE 官方英文文档门户（SHA-256 校验通过），确认从农场到餐桌定位及其与 ecoinvent、WFLDB 的背景链接关系。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "e7fa9646af3d97dfe9498e3529e74b090fb1726db1085eeb43c14cfad7726b30",
+          "resolvedUrl": "https://doc.agribalyse.fr/documentation-en"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-agribalyse-doc to existing public web source src-db26-agribalyse-doc."
+    },
+    {
+      "id": "src-db26-aist-idea",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-aist-idea",
+        "title": "AIST Research Institute of Science for Safety and Sustainability (RISS) — IDEA Development Portal",
+        "url": "https://riss.aist.go.jp/",
+        "version": "National Institute of Advanced Industrial Science and Technology (AIST, Japan; accessed 2026-11-26)",
+        "publisher": "AIST RISS (Japan)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "日本产业技术综合研究所公开机构主页；IDEA 商业数据库本身须另行授权。",
+        "preservation": "核对日本产综研安全科学研究部门公开门户（SHA-256 校验通过），确认 IDEA 开发研究组与 IDEA 实验室建制归属；商业发行过程表未直接检视。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "b203bf52d2ee9135f03e66cf01d56e398a2ba95eeecb8c1e76302bea171ce7fe",
+          "resolvedUrl": "https://riss.aist.go.jp/"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-aist-idea to existing public web source src-db26-aist-idea."
+    },
+    {
+      "id": "src-db26-worldsteel-lci",
+      "op": "modify",
+      "from": {
+        "id": "src-db26-worldsteel-lci",
+        "title": "World Steel Association — Life Cycle Thinking and LCI Programme",
+        "url": "https://worldsteel.org/",
+        "version": "World Steel Association (accessed 2026-11-26)",
+        "publisher": "World Steel Association",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "世界钢铁协会公开门户；具体 LCI 数据集须按协会条款申请获取。",
+        "preservation": "核对世界钢铁协会公开门户（SHA-256 校验通过）；其全球与区域钢铁路线清单作为行业协会数据集代表登记，具体申请制数据文件未直接检视。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "488adce71ac64e0c6b011a4a4e3b30acbb9fde4accc55b7efee623d1ab3a6c03",
+          "resolvedUrl": "https://worldsteel.org/"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db26-worldsteel-lci to existing public web source src-db26-worldsteel-lci."
+    },
+    {
+      "id": "src-db27-steubing-2016",
+      "op": "modify",
+      "from": {
+        "id": "src-db27-steubing-2016",
+        "title": "The ecoinvent database version 3 (part II): analyzing LCA results and comparison to version 2",
+        "url": "https://link.springer.com/article/10.1007/s11367-016-1109-6",
+        "version": "International Journal of Life Cycle Assessment 21: 1269–1281 (2016; DOI: 10.1007/s11367-016-1109-6; Steubing, Wernet, Reinhard, Bauer & Moreno-Ruiz)",
+        "publisher": "Springer (International Journal of Life Cycle Assessment)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "开放获取期刊论文网页核对；公开记录仅含原刊定位与原创中文比较分析。",
+        "preservation": "核对 Springer 官方论文页（SHA-256 校验通过）摘要，记录 ecoinvent v3.1 Cut-off 与 v2.2、APOS 及 Consequential 系统模型在 GWP100a、ReCiPe 终点（H/A）与生态稀缺 2006 下的系统差异对比。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "65c504aec14990dc51961a8c71d4ad706af7cc27c9378794d99870ec46649788",
+          "resolvedUrl": "https://link.springer.com/article/10.1007/s11367-016-1109-6"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db27-steubing-2016 to existing public web source src-db27-steubing-2016."
+    },
+    {
+      "id": "src-db27-ecoinvent-sysmodels",
+      "op": "modify",
+      "from": {
+        "id": "src-db27-ecoinvent-sysmodels",
+        "title": "ecoinvent Knowledge Base — System Models (Version 3)",
+        "url": "https://support.ecoinvent.org/system-models",
+        "version": "ecoinvent Association Knowledge Base (updated Feb 14, 2024; accessed 2026-11-26)",
+        "publisher": "ecoinvent Association",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "官方公开知识库文档页。",
+        "preservation": "核对 ecoinvent 官方 System Models 页面（SHA-256 校验通过），确认四套系统模型（Cut-off、Cut-off EN15804、APOS、Consequential）、细分为共同前置步骤以及 Cut-off 与 APOS 仅在废物与可回收物处理上存在结构差异。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "773bbb5027a6a12bb2dc8cae050bfd85f275c6ff55d99ba2bfaf57c45beaee99",
+          "resolvedUrl": "https://support.ecoinvent.org/system-models"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db27-ecoinvent-sysmodels to existing public web source src-db27-ecoinvent-sysmodels."
+    },
+    {
+      "id": "src-db27-ecoinvent-geographies",
+      "op": "modify",
+      "from": {
+        "id": "src-db27-ecoinvent-geographies",
+        "title": "ecoinvent Knowledge Base — Geographies (Version 3)",
+        "url": "https://support.ecoinvent.org/geographies",
+        "version": "ecoinvent Association Knowledge Base (accessed 2026-11-26)",
+        "publisher": "ecoinvent Association",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "官方公开知识库文档页。",
+        "preservation": "核对 ecoinvent 官方 Geographies 页面（SHA-256 校验通过），确认同活动地理非重叠约束（如 Europe without Switzerland）、大国分电网（美、巴、中、印）及 GLO 与 RoW 的产量加权／残差机制。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "d99b09a9f44b7bf3bbb61d42e02ab5da873f0026503582a0bcd4bc401675e95e",
+          "resolvedUrl": "https://support.ecoinvent.org/geographies"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db27-ecoinvent-geographies to existing public web source src-db27-ecoinvent-geographies."
+    },
+    {
+      "id": "src-db28-fedefl-readme",
+      "op": "modify",
+      "from": {
+        "id": "src-db28-fedefl-readme",
+        "title": "Federal LCA Commons Elementary Flow List (fedelemflowlist) — Official Repository Specification",
+        "url": "https://raw.githubusercontent.com/FLCAC-admin/fedelemflowlist/master/README.md",
+        "version": "U.S. EPA / Federal LCA Commons (DOI: 10.3390/app12199687; Zenodo: 10.5281/zenodo.6604309; accessed 2026-11-26)",
+        "publisher": "U.S. Environmental Protection Agency / Federal LCA Commons",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "MIT 开源许可公共仓储文档。",
+        "preservation": "核对 fedelemflowlist 官方 README 原文（SHA-256 校验通过），确认其为美国联邦 LCA 共享库提供标准化基本流列表格式（FlowList）与跨库基本流映射格式（FlowMapping）。",
+        "artifact": {
+          "mediaType": "text/plain",
+          "sha256": "3806e94eb9a42a7089c41255167a2f946339fd12ea331fd322efdeef1fdb5b6d",
+          "resolvedUrl": "https://raw.githubusercontent.com/FLCAC-admin/fedelemflowlist/master/README.md"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db28-fedefl-readme to existing public web source src-db28-fedefl-readme."
+    },
+    {
+      "id": "src-db28-glad-ef-readme",
+      "op": "modify",
+      "from": {
+        "id": "src-db28-glad-ef-readme",
+        "title": "UNEP GLAD Elementary Flow Resources — Working Group on Nomenclature (WG1)",
+        "url": "https://raw.githubusercontent.com/UNEP-Economy-Division/GLAD-ElementaryFlowResources/master/README.md",
+        "version": "UN Environment Programme Life Cycle Initiative (launched June 2020; accessed 2026-11-26)",
+        "publisher": "UN Environment Programme (Life Cycle Initiative)",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "联合国环境规划署生命周期倡议公开技术工作组仓储文档。",
+        "preservation": "核对 UNEP GLAD-ElementaryFlowResources 官方 README（SHA-256 校验通过），确认 GLAD 于 2020 年 6 月启动，其命名工作组（WG1）负责维护跨体系基本流列表与官方映射文件。",
+        "artifact": {
+          "mediaType": "text/plain",
+          "sha256": "9df695c190c02ce5cfdd7b18632b526504863844c3e2199ed7835f66808e2557",
+          "resolvedUrl": "https://raw.githubusercontent.com/UNEP-Economy-Division/GLAD-ElementaryFlowResources/master/README.md"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db28-glad-ef-readme to existing public web source src-db28-glad-ef-readme."
+    },
+    {
+      "id": "src-db28-olca-schema",
+      "op": "modify",
+      "from": {
+        "id": "src-db28-olca-schema",
+        "title": "openLCA JSON-LD Schema Specification (olca-schema)",
+        "url": "https://greendelta.github.io/olca-schema/",
+        "version": "GreenDelta openLCA JSON-LD schema documentation (accessed 2026-11-26)",
+        "publisher": "GreenDelta",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "公开技术模式文档。",
+        "preservation": "核对 olca-schema 官方首页（SHA-256 校验通过），确认 Flow、FlowPropertyFactor、FlowMap、FlowMapEntry、FlowMapRef、ImpactFactor 与 Location 等核心实体架构。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "d8681fa096be1cf3e31980e04d0afc1caf32647909c8358363d9e990165f03c7",
+          "resolvedUrl": "https://greendelta.github.io/olca-schema/"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db28-olca-schema to existing public web source src-db28-olca-schema."
+    },
+    {
+      "id": "src-db29-randonneur-readme",
+      "op": "modify",
+      "from": {
+        "id": "src-db29-randonneur-readme",
+        "title": "randonneur — Declarative Life Cycle Inventory Data Transformation Format and Reference Implementation",
+        "url": "https://raw.githubusercontent.com/brightway-lca/randonneur/main/README.md",
+        "version": "Brightway LCA / Chris Mutel (MIT License; accessed 2026-11-26)",
+        "publisher": "Brightway LCA Open-Source Project",
+        "accessedAt": "2026-11-26",
+        "accessStatus": "public-html-inspected",
+        "rights": "MIT 开源许可公共技术文档。",
+        "preservation": "核对 randonneur 官方 README 原文（SHA-256 校验通过），确认其声明式 JSON 转换格式（create/replace/update/delete/disaggregate）、SimaPro 至 ecoinvent 命名映射示例，以及 ecoinvent 3.9.1 至 3.10 中 xylene production 拆分为两条 BTX 工艺路径（0.117575 与 0.882425）的一对多迁移实证。",
+        "artifact": {
+          "mediaType": "text/plain",
+          "sha256": "d4f4c5e796abd3874c7b42052471dc11f916490961208b3fad8dcfa91feed9ff",
+          "resolvedUrl": "https://raw.githubusercontent.com/brightway-lca/randonneur/main/README.md"
+        }
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-db29-randonneur-readme to existing public web source src-db29-randonneur-readme."
+    },
+    {
+      "id": "src-pol33-china-mee-gbt24067",
+      "op": "modify",
+      "from": {
+        "id": "src-pol33-china-mee-gbt24067",
+        "title": "我国碳足迹核算通则国家标准 GB/T 24067-2024《温室气体 产品碳足迹 量化要求和指南》发布",
+        "publisher": "中华人民共和国生态环境部",
+        "version": "官方环境要闻公告，2024 年 9 月 10 日",
+        "url": "https://www.mee.gov.cn/xxgk/hjyw/202409/t20240910_1085619.shtml",
+        "accessedAt": "2026-11-28",
+        "accessStatus": "public-passages-inspected",
+        "rights": "中国生态环境部公开新闻公告；公开记录仅含官方摘要定位及原创分析，不替代付费标准全文。",
+        "preservation": "已直接核对生态环境部官方网站公告 HTML 全文，记录标准编制定位、与 ISO 14067 及 GB/T 24040/24044 的衔接关系及新增指南范围。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "476aabc85d7010462d13deaf3e98f133a0933cad1318904a384d300cff1abee0",
+          "resolvedUrl": "https://www.mee.gov.cn/xxgk/hjyw/202409/t20240910_1085619.shtml"
+        },
+        "reviewStatus": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-pol33-china-mee-gbt24067 to existing public web source src-pol33-china-mee-gbt24067."
+    },
+    {
+      "id": "src-pol33-china-samr-gbt24067",
+      "op": "modify",
+      "from": {
+        "id": "src-pol33-china-samr-gbt24067",
+        "title": "全国标准信息公共服务平台：国家标准 GB/T 24067-2024《温室气体 产品碳足迹 量化要求和指南》公开元数据页",
+        "publisher": "国家市场监督管理总局、国家标准化管理委员会",
+        "version": "现行国家标准公开元数据（2024-08-23 发布，2024-10-01 实施）",
+        "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=73912F93FD4874CC426CEBFCE2898493",
+        "accessedAt": "2026-11-28",
+        "accessStatus": "public-passages-inspected",
+        "rights": "国家标准公开元数据页；页面明文声明该标准采标涉及 ISO/IEC 版权保护、暂不提供在线阅读服务，本书仅记录公开元数据而未检阅标准正文。",
+        "preservation": "已直接核对全国标准信息公共服务平台 HTML 页面，确认标准号、中英文名称、CCS/ICS 分类号、发布与实施日期、主管部门及版权不在线公开声明。",
+        "artifact": {
+          "mediaType": "text/html",
+          "sha256": "6891da972930504af8f6a6773ce318cef16d7c851d20c5cd5f79edaaa6f2222b",
+          "resolvedUrl": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=73912F93FD4874CC426CEBFCE2898493"
+        },
+        "reviewStatus": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Bind verified web-sections reading rd-opt3-pol33-china-samr-gbt24067 to existing public web source src-pol33-china-samr-gbt24067."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-db26-frischknecht-2005-v1",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-frischknecht-2005-v1",
+        "sourceId": "src-db26-frischknecht-2005",
+        "locator": "Frischknecht et al. (2005), Int J LCA 10(1): 3–9, Abstract (Goal, Scope and Background; Method)",
+        "summary": "2000 年瑞士联邦机构与苏黎世联邦理工学院（ETH）系统联合发起协调更新计划，形成 ecoinvent 数据库；v1.1 提供逾 2,500 份一致的产品与服务生命周期清单，几乎全部数据集都在单元过程输入输出层级透明记录，并统一处理市场贸易、多产出与回收以及颗粒物粒径分级等基本流。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-frischknecht-2005 and passage psg-opt3-db26-frischknecht-2005-v1 to existing evidence ev-db26-frischknecht-2005-v1."
+    },
+    {
+      "id": "ev-db26-wernet-2016-v3",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-wernet-2016-v3",
+        "sourceId": "src-db26-wernet-2016",
+        "locator": "Wernet et al. (2016), Int J LCA 21: 1218–1230, Abstract (Purpose & Methods)",
+        "summary": "ecoinvent 自 2003 年首发以来持续更新，2013 年发布的第 3 版将原始数据集与建模选择（系统模型）解耦，使同一套原始单元过程能衍生出包含后果式 LCA 在内的多套系统模型，并为全部交换流引入流属性以支持快速质量与元素平衡核算，同时奠定全球化与区域化影响评价基础。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-wernet-2016 and passage psg-opt3-db26-wernet-2016-v3 to existing evidence ev-db26-wernet-2016-v3."
+    },
+    {
+      "id": "ev-db26-ecoinvent-v311-updates",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-ecoinvent-v311-updates",
+        "sourceId": "src-db26-ecoinvent-v311",
+        "locator": "ecoinvent v3.11 Official Release Page (Nov 2024), New & Updated Data (Agriculture; Batteries)",
+        "summary": "ecoinvent v3.11（2024 年 11 月）持续按部门迭代，例如联合 Agroscope 新增 136 份覆盖瑞士山地、丘陵和平原常规与有机种植的农业数据集，并在电池部门补充中国与全球地理范围的 NMC532 与 NMC622 锂离子电池化学体系，体现透明单元过程库按年分部门滚动演进的特征。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-ecoinvent-v311 and passage psg-opt3-db26-ecoinvent-v311-updates to existing evidence ev-db26-ecoinvent-v311-updates."
+    },
+    {
+      "id": "ev-db26-flcac-uslci",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-flcac-uslci",
+        "sourceId": "src-db26-flcac-uslci",
+        "locator": "Federal LCA Commons Homepage (lcacommons.gov), Collaborating Agencies & Browse Repositories",
+        "summary": "美国联邦 LCA 共享库（Federal LCA Commons）由美国农业部、能源部、环保署、联邦公路管理局、林务局和国家标准技术研究院等联邦机构共建，作为开放获取的中央仓储门户托管 USLCI 及能源、建筑材料、林业等公共数据集，并配套联邦统一基本流列表与 API。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-flcac-uslci and passage psg-opt3-db26-flcac-uslci to existing evidence ev-db26-flcac-uslci."
+    },
+    {
+      "id": "ev-db26-useeio-2022",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-useeio-2022",
+        "sourceId": "src-db26-useeio-2022",
+        "locator": "Ingwersen et al. (2022), Scientific Data 9:194, Abstract",
+        "summary": "USEEIO v2.0 是美国环保署开发的环境扩展投入产出模型，相较 v1 新增废物部门细分、美国生产与消费最终需求向量、用于区分本土与境外影响的国内形态模型以及购买者价格与不同美元基准年换算矩阵，且全部模型数据集可通过开源软件包完整复现。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-useeio-2022 and passage psg-opt3-db26-useeio-2022 to existing evidence ev-db26-useeio-2022."
+    },
+    {
+      "id": "ev-db27-useeio-io-vs-process",
+      "op": "modify",
+      "from": {
+        "id": "ev-db27-useeio-io-vs-process",
+        "sourceId": "src-db26-useeio-2022",
+        "locator": "Ingwersen et al. (2022), Scientific Data 9:194, Abstract (USEEIO v2.0 domestic/foreign & purchaser-price matrices)",
+        "summary": "USEEIO v2.0 等环境扩展投入产出模型以国民经济核算矩阵为基础，天然避免过程法的上游截断，但必须依赖购买者价格换算矩阵与行业聚合假设。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-useeio-2022 and passage psg-opt3-db27-useeio-io-vs-process to existing evidence ev-db27-useeio-io-vs-process."
+    },
+    {
+      "id": "ev-db29-useeio-naics-sectors",
+      "op": "modify",
+      "from": {
+        "id": "ev-db29-useeio-naics-sectors",
+        "sourceId": "src-db26-useeio-2022",
+        "locator": "Ingwersen et al. (2022), USEEIO v2.0 (Scientific Data 9:194): BEA/NAICS-based commodity-by-industry structure",
+        "summary": "USEEIO v2.0 依美国经济分析局（BEA）与北美行业分类体系（NAICS）按货币单位组织行业与商品矩阵，与工程过程库按物理规格划分的单元过程在粒度与分类轴上均非一一对应。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-useeio-2022 and passage psg-opt3-db29-useeio-naics-sectors to existing evidence ev-db29-useeio-naics-sectors."
+    },
+    {
+      "id": "ev-db26-agribalyse-doc",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-agribalyse-doc",
+        "sourceId": "src-db26-agribalyse-doc",
+        "locator": "AGRIBALYSE® Official English Documentation (doc.agribalyse.fr/documentation-en), About Agribalyse Navigation & Link with Ecoinvent & WFLDB",
+        "summary": "法国生态转型署（ADEME）联合农业研究机构建设 AGRIBALYSE® 公共农业与食品数据库，服务生态设计与消费者信息披露，其官方文档明确将“与 ecoinvent 和 WFLDB 的衔接”列为核心架构说明，体现国家级行业公共库在非本土与工业背景链上对全球商业库的依赖。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-agribalyse-doc and passage psg-opt3-db26-agribalyse-doc to existing evidence ev-db26-agribalyse-doc."
+    },
+    {
+      "id": "ev-db26-aist-idea",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-aist-idea",
+        "sourceId": "src-db26-aist-idea",
+        "locator": "AIST RISS Official Portal (riss.aist.go.jp), Research Groups (IDEA Development Research Group & IDEA Lab)",
+        "summary": "日本产业技术综合研究所（AIST）安全科学研究部门专设 IDEA 开发研究组与 IDEA 实验室，长期维护面向日本产业体系的生命周期清单数据库 IDEA；商业发行版的具体内部过程表受许可约束未直接检视。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-aist-idea and passage psg-opt3-db26-aist-idea to existing evidence ev-db26-aist-idea."
+    },
+    {
+      "id": "ev-db26-worldsteel-lci",
+      "op": "modify",
+      "from": {
+        "id": "ev-db26-worldsteel-lci",
+        "sourceId": "src-db26-worldsteel-lci",
+        "locator": "World Steel Association Portal (worldsteel.org), Climate Action & Life Cycle Thinking",
+        "summary": "世界钢铁协会长期维护面向全球与区域钢铁生产路线（高炉—转炉与电弧炉）的行业平均生命周期清单项目，是行业协会 LCI 供给模式的核心代表；具体数据集按协会授权申请获取，本文未直接检视其闭源过程文件。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db26-worldsteel-lci and passage psg-opt3-db26-worldsteel-lci to existing evidence ev-db26-worldsteel-lci."
+    },
+    {
+      "id": "ev-db27-steubing-2016-model-diff",
+      "op": "modify",
+      "from": {
+        "id": "ev-db27-steubing-2016-model-diff",
+        "sourceId": "src-db27-steubing-2016",
+        "locator": "Steubing et al. (2016), Int J LCA 21: 1269–1281, Abstract (Purpose, Methods, Results and discussion)",
+        "summary": "Steubing 等（2016）将功能等效数据集在 ecoinvent v2.2 与 v3.1 的 Cut-off、APOS 及 Consequential 系统模型之间逐一配对，在 GWP100a、ReCiPe 终点（H/A）与生态稀缺 2006 下均观察到系统性分歧，证明数据更新与系统模型规则变更均可显著改写同一产品的评价结果。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db27-steubing-2016 and passage psg-opt3-db27-steubing-2016-model-diff to existing evidence ev-db27-steubing-2016-model-diff."
+    },
+    {
+      "id": "ev-db27-ecoinvent-four-models",
+      "op": "modify",
+      "from": {
+        "id": "ev-db27-ecoinvent-four-models",
+        "sourceId": "src-db27-ecoinvent-sysmodels",
+        "locator": "ecoinvent Knowledge Base — System Models (Feb 14, 2024), Opening & Key Concepts (Subdivision, Allocation, Substitution)",
+        "summary": "ecoinvent v3 从同一套未链接单元过程（UPR）衍生出四套官方系统模型：按分类截断（Cut-off）、EN 15804 截断、替代点分配（APOS）与长期后果替代（Consequential）；所有模型在分配或替代前均优先执行过程细分，而 Cut-off 与 APOS 的结构差异仅体现在废物与可回收材料的负担归属上。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db27-ecoinvent-sysmodels and passage psg-opt3-db27-ecoinvent-four-models to existing evidence ev-db27-ecoinvent-four-models."
+    },
+    {
+      "id": "ev-db29-sysmodels-geographies-clash",
+      "op": "modify",
+      "from": {
+        "id": "ev-db29-sysmodels-geographies-clash",
+        "sourceId": "src-db27-ecoinvent-sysmodels",
+        "locator": "ecoinvent Knowledge Base — System Models (Cut-off, APOS, Consequential, EN15804) & linking rules",
+        "summary": "不同系统模型在回收负担交接、副产品分配与边际替代上采用互不相容的链接规则，跨库或跨系统模型直接拼接上游过程会破坏边界闭合与负担守恒。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db27-ecoinvent-sysmodels and passage psg-opt3-db29-sysmodels-geographies-clash to existing evidence ev-db29-sysmodels-geographies-clash."
+    },
+    {
+      "id": "ev-db27-ecoinvent-geo-nonoverlap",
+      "op": "modify",
+      "from": {
+        "id": "ev-db27-ecoinvent-geo-nonoverlap",
+        "sourceId": "src-db27-ecoinvent-geographies",
+        "locator": "ecoinvent Knowledge Base — Geographies, Geographical Resolution & Global and Rest-of-the-World Activities",
+        "summary": "ecoinvent 规定同一活动的地理范围不得重叠（例如瑞士数据集与欧洲 RER 并存时须构造“不含瑞士的欧洲”），并对美国、巴西、中国、印度等大国的电力系统按子区域电网拆分；全球（GLO）数据集反映全球平均生产，缺省时按产量加权合成，RoW 则覆盖其余地区。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db27-ecoinvent-geographies and passage psg-opt3-db27-ecoinvent-geo-nonoverlap to existing evidence ev-db27-ecoinvent-geo-nonoverlap."
+    },
+    {
+      "id": "ev-db29-geographies-row-mismatch",
+      "op": "modify",
+      "from": {
+        "id": "ev-db29-geographies-row-mismatch",
+        "sourceId": "src-db27-ecoinvent-geographies",
+        "locator": "ecoinvent Knowledge Base — Geographies (GLO, RoW dynamic residual, sub-national grids)",
+        "summary": "ecoinvent 的世界其余地区（RoW）是排除特定国家或区域数据集后的动态残差，将其与另一数据库的国家或全球平均过程直接互换，会悄然改变上游电网结构与供应链地理边界。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db27-ecoinvent-geographies and passage psg-opt3-db29-geographies-row-mismatch to existing evidence ev-db29-geographies-row-mismatch."
+    },
+    {
+      "id": "ev-db28-fedefl-glad-nomenclature",
+      "op": "modify",
+      "from": {
+        "id": "ev-db28-fedefl-glad-nomenclature",
+        "sourceId": "src-db28-fedefl-readme",
+        "locator": "fedelemflowlist README (FlowList & FlowMapping specifications)",
+        "summary": "美国联邦 LCA 共享库专门开发 fedelemflowlist 以定义标准化基本流列表（FlowList）及跨来源流映射格式（FlowMapping），印证不同数据库原生的基本流命名与上下文结构无法直接通约。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-fedefl-readme and passage psg-opt3-db28-fedefl-glad-nomenclature to existing evidence ev-db28-fedefl-glad-nomenclature."
+    },
+    {
+      "id": "ev-db30-fedefl-flowmapping-export",
+      "op": "modify",
+      "from": {
+        "id": "ev-db30-fedefl-flowmapping-export",
+        "sourceId": "src-db28-fedefl-readme",
+        "locator": "fedelemflowlist README (FlowList & FlowMapping pandas formats; openLCA JSON-LD zip export; DOI: 10.3390/app12199687)",
+        "summary": "美国联邦 LCA 共享库 fedelemflowlist 将基本流列表与映射规则标准化为可编程表格，并支持导出为符合 openLCA schema 的 JSON-LD 压缩包供软件直接载入。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-fedefl-readme and passage psg-opt3-db30-fedefl-flowmapping-export to existing evidence ev-db30-fedefl-flowmapping-export."
+    },
+    {
+      "id": "ev-db28-glad-wg1-mapping",
+      "op": "modify",
+      "from": {
+        "id": "ev-db28-glad-wg1-mapping",
+        "sourceId": "src-db28-glad-ef-readme",
+        "locator": "UNEP GLAD Elementary Flow Resources README (GLAD launch June 2020; Working Group on Nomenclature WG1)",
+        "summary": "UNEP 生命周期倡议于 2020 年 6 月启动 GLAD 网络，并专设命名工作组（WG1）托管跨库基本流列表与映射文件，致力于桥接全球不同数据库的基本流分类体系。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-glad-ef-readme and passage psg-opt3-db28-glad-wg1-mapping to existing evidence ev-db28-glad-wg1-mapping."
+    },
+    {
+      "id": "ev-db30-glad-wg1-infrastructure",
+      "op": "modify",
+      "from": {
+        "id": "ev-db30-glad-wg1-infrastructure",
+        "sourceId": "src-db28-glad-ef-readme",
+        "locator": "UNEP GLAD Elementary Flow Resources README (launched June 2020; Working Group on Nomenclature WG1)",
+        "summary": "UNEP 生命周期倡议通过 GLAD 网络及其命名工作组（WG1）公开托管跨体系基本流列表与映射文件，构建全球公共映射基础设施。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-glad-ef-readme and passage psg-opt3-db30-glad-wg1-infrastructure to existing evidence ev-db30-glad-wg1-infrastructure."
+    },
+    {
+      "id": "ev-db28-olca-flowmap-schema",
+      "op": "modify",
+      "from": {
+        "id": "ev-db28-olca-flowmap-schema",
+        "sourceId": "src-db28-olca-schema",
+        "locator": "openLCA JSON-LD Schema (Flow, FlowPropertyFactor, FlowMap, FlowMapEntry, FlowMapRef, ImpactFactor)",
+        "summary": "openLCA 模式将 FlowMap、FlowMapEntry 与 FlowPropertyFactor 设为独立一等实体，说明跨库转换必须显式声明源流、目标流、转换系数与参照属性，不能仅靠名称字符串自动匹配。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-olca-schema and passage psg-opt3-db28-olca-flowmap-schema to existing evidence ev-db28-olca-flowmap-schema."
+    },
+    {
+      "id": "ev-db29-olca-linking-vs-simapro-eilcd",
+      "op": "modify",
+      "from": {
+        "id": "ev-db29-olca-linking-vs-simapro-eilcd",
+        "sourceId": "src-db28-olca-schema",
+        "locator": "olca-schema Introduction — SimaPro CSV name-based hard linking vs. eILCD process instances vs. openLCA ProductSystem/ProcessLink",
+        "summary": "openLCA 模式文档记录：SimaPro CSV 依赖名称硬链接且缺少独立产品系统概念，在协作环境中易发生同名冲突；eILCD 虽支持连接产品系统，但采用过程实例副本且在同一过程含两条相同流时无法仅靠直接交换链接指向不同供应方（除非地点不同）。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-olca-schema and passage psg-opt3-db29-olca-linking-vs-simapro-eilcd to existing evidence ev-db29-olca-linking-vs-simapro-eilcd."
+    },
+    {
+      "id": "ev-db30-olca-format-comparison",
+      "op": "modify",
+      "from": {
+        "id": "ev-db30-olca-format-comparison",
+        "sourceId": "src-db28-olca-schema",
+        "locator": "olca-schema Introduction — Why another LCA data exchange format? (EcoSpold 1, ISO/TS 14048, SimaPro CSV, ILCD/eILCD, EcoSpold II) & Format concepts / JSON-LD / Zip packages",
+        "summary": "openLCA 模式文档逐项对比既有交换格式：EcoSpold 1 缺少参数与公式；ISO/TS 14048 确立过程文档通用要求；SimaPro CSV 无正式规范、靠名称硬链接且无产品系统概念；ILCD 缺少独立全局参数且 eILCD 过程实例链接受限；EcoSpold 2 深度绑定 ecoinvent 父子活动结构；olca-schema 则以 Entity/RefEntity/RootEntity 类型树与 JSON-LD @type/@id 及分类文件夹压缩包实现无损交换。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db28-olca-schema and passage psg-opt3-db30-olca-format-comparison to existing evidence ev-db30-olca-format-comparison."
+    },
+    {
+      "id": "ev-db29-randonneur-attribute-and-disagg",
+      "op": "modify",
+      "from": {
+        "id": "ev-db29-randonneur-attribute-and-disagg",
+        "sourceId": "src-db29-randonneur-readme",
+        "locator": "randonneur README — Theory (attribute-based linking across heterogeneous systems) & Usage (ecoinvent 3.9.1 xylene production -> 3.10 BTX pyrolysis gas 0.117575 + reformate 0.882425)",
+        "summary": "randonneur 文档指出跨系统缺乏统一持久标识时只能退回名称、地点与单位等属性匹配，且旧软件限制会造成难以逆向还原的变换；即使同一数据库从 ecoinvent 3.9.1 升级到 3.10，单一二甲苯生产过程也须一对多拆分为裂解汽油（0.1176）与重整油（0.8824）两条 BTX 路径。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db29-randonneur-readme and passage psg-opt3-db29-randonneur-attribute-and-disagg to existing evidence ev-db29-randonneur-attribute-and-disagg."
+    },
+    {
+      "id": "ev-db30-randonneur-declarative-recipes",
+      "op": "modify",
+      "from": {
+        "id": "ev-db30-randonneur-declarative-recipes",
+        "sourceId": "src-db29-randonneur-readme",
+        "locator": "randonneur README — Data format (5 verbs, conversion_factor TiO2->Titanium 0.599, contrast with wurst) & Brightcon 2022 Common database release identifier standard",
+        "summary": "randonneur 将 LCI 变换声明为独立 JSON 配方（区分于 wurst 将变换写在代码中的命令式做法），支持五类动词、化学计量换算系数（如 TiO2 至 Titanium 系数 0.599）及 Brightcon 2022 统一发行标识符（<database>-<version>-<modifier>）。",
+        "relation": "supports"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-db29-randonneur-readme and passage psg-opt3-db30-randonneur-declarative-recipes to existing evidence ev-db30-randonneur-declarative-recipes."
+    },
+    {
+      "id": "ev-pol33-china-gbt24067-mee",
+      "op": "modify",
+      "from": {
+        "id": "ev-pol33-china-gbt24067-mee",
+        "sourceId": "src-pol33-china-mee-gbt24067",
+        "locator": "生态环境部 2024-09-10 官方发布公告全文",
+        "summary": "生态环境部 2024 年 9 月 10 日公告确认：由生态环境部提出并指导制定的国家推荐性标准 GB/T 24067-2024《温室气体 产品碳足迹 量化要求和指南》已由国家市场监督管理总局（国家标准化管理委员会）批准发布，作为落实 15 部门《实施方案》的通用产品碳足迹核算通则标准。公告说明该标准主要借鉴 ISO 14067，采用与国际通行生命周期评价标准（GB/T 24040 与 GB/T 24044）一致的方式，规定研究范围、原则、量化方法、鉴定性评审与产品碳足迹声明等内容，并相较国际标准增加了编制具体产品碳足迹标准的参考框架与数据地理边界信息建议。",
+        "paraphrase": "生态环境部官方公告界定了 GB/T 24067-2024 作为中国产品碳足迹核算通则的定位，及其借鉴 ISO 14067 并增设产品标准编制框架与地理边界建议的特征。",
+        "relation": "supports",
+        "reviewStatus": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-pol33-china-mee-gbt24067 and passage psg-opt3-pol33-china-gbt24067-mee to existing evidence ev-pol33-china-gbt24067-mee."
+    },
+    {
+      "id": "ev-pol33-china-gbt24067-samr",
+      "op": "modify",
+      "from": {
+        "id": "ev-pol33-china-gbt24067-samr",
+        "sourceId": "src-pol33-china-samr-gbt24067",
+        "locator": "全国标准信息公共服务平台 GB/T 24067-2024 元数据页",
+        "summary": "国家市场监督管理总局（SAMR）全国标准信息公共服务平台公开元数据确认：GB/T 24067-2024（英文名 Greenhouse gases—Carbon footprint of products—Requirements and guidelines for quantification，中国标准文献分类号 CCS Z00，国际标准分类号 ICS 13.020.10）为现行推荐性国家标准，主管部门与归口部门均为生态环境部，由国家市场监督管理总局与国家标准化管理委员会（SAC）于 2024 年 8 月 23 日发布、2024 年 10 月 1 日实施；页面同时明文标注“该标准采用了 ISO、IEC 等国际国外组织的标准，由于涉及版权保护问题，本系统暂不提供在线阅读服务”。",
+        "paraphrase": "国家标准公共服务平台记录了 GB/T 24067-2024 的发布与实施日期，并明文说明因涉及 ISO/IEC 版权保护不提供在线全文阅读。",
+        "relation": "supports",
+        "reviewStatus": "reviewed",
+        "reviewKind": "agent-source-check"
+      },
+      "rationale": "Bind verified web-section reading rd-opt3-pol33-china-samr-gbt24067 and passage psg-opt3-pol33-china-gbt24067-samr to existing evidence ev-pol33-china-gbt24067-samr."
+    }
+  ],
+  "files": [],
+  "outputs": [],
+  "research": {
+    "literature": {
+      "fromUpdatedAt": "2026-11-19",
+      "addedQueries": [
+        "q-opt3-phase2-databases-20261128",
+        "q-opt3-phase3-epd-policy-20261128",
+        "q-opt3-phase4-biodiversity-standards-20261128",
+        "q-opt3-phase5-circularity-ai-20261128"
+      ],
+      "addedRecords": [
+        "work-opt3-ecoinvent-system-models",
+        "work-opt3-db26-frischknecht-2005",
+        "work-opt3-db26-wernet-2016",
+        "work-opt3-db26-ecoinvent-v311",
+        "work-opt3-db26-flcac-uslci",
+        "work-opt3-db26-useeio-2022",
+        "work-opt3-db26-agribalyse-doc",
+        "work-opt3-db26-aist-idea",
+        "work-opt3-db26-worldsteel-lci",
+        "work-opt3-db26-secondary-metadata-registry",
+        "work-opt3-db27-steubing-2016",
+        "work-opt3-db27-ecoinvent-geographies",
+        "work-opt3-db27-comparative-lit-metadata",
+        "work-opt3-db28-fedefl-readme",
+        "work-opt3-db28-glad-ef-readme",
+        "work-opt3-db28-olca-schema",
+        "work-opt3-db29-randonneur-readme",
+        "work-opt3-p21-bulle-2019-impact-world-plus",
+        "work-opt3-p21-wmo-2022-annex",
+        "work-opt3-epd31-environdec-gpi-510",
+        "work-opt3-epd31-ibu-gi-21",
+        "work-opt3-epd31-eco-lca-20",
+        "work-opt3-epd31-eco-digital-11",
+        "work-opt3-epd31-passer-2015",
+        "work-opt3-epd31-durao-2020",
+        "work-opt3-epd31-konradsen-2024",
+        "work-opt3-epd31-otero-2026",
+        "work-opt3-epd31-jrc-cfb-ev-2023-draft",
+        "work-opt3-rev32-ilcd-review-2010",
+        "work-opt3-rev32-eco-verif-80",
+        "work-opt3-rev32-eco-tool-verif-11",
+        "work-opt3-pol33-eu-2023-956-cbam",
+        "work-opt3-pol33-eu-2024-1275-epbd",
+        "work-opt3-pol33-eu-2024-825-ecgt",
+        "work-opt3-pol33-eu-com2023-166",
+        "work-opt3-pol33-eu-com2026-710",
+        "work-opt3-pol33-china-mee-2024-30",
+        "work-opt3-pol33-china-mee-gbt24067",
+        "work-opt3-pol33-china-samr-gbt24067",
+        "work-opt3-std34-eu-com2013-196",
+        "work-opt3-std34-eu-2013-179-pef",
+        "work-opt3-std34-jrc-2019-pef-update",
+        "work-opt3-bio35-verones-2022-gep",
+        "work-opt3-bio35-scherer-2023-fragmentation",
+        "work-opt3-bio35-glam-2026-ecosystem",
+        "work-opt3-dec36-heijungs-kleijn-2001",
+        "work-opt3-dec36-heijungs-suh-kleijn-2005",
+        "work-opt3-sw36-iswara-2020-software",
+        "work-opt3-sw36-mutel-2017-brightway",
+        "work-opt3-norm36-pizzol-2017-normalization",
+        "work-opt3-olca36-ghgp-2011-scope3",
+        "work-opt3-olca36-unep-2015-olca",
+        "work-opt3-ce51-rigamonti-mancini-2021",
+        "work-opt3-ce51-sazdovski-2024-mci-pci",
+        "work-opt3-ce51-barner-2025-iso59020",
+        "work-opt3-ce51-iso59020-metadata",
+        "work-opt3-ai51-langhorst-2025-trees",
+        "work-opt3-ai51-donaldson-2025-llm-bench",
+        "work-opt3-ai51-rao-2026-pcfbench"
+      ],
+      "modifiedRecords": [
+        {
+          "id": "lit-m06",
+          "from": {
+            "id": "lit-m06",
+            "title": "USEtox—the UNEP-SETAC toxicity model: recommended characterisation factors for human toxicity and freshwater ecotoxicity in life cycle impact assessment",
+            "contributors": "Rosenbaum et al.",
+            "year": "2008",
+            "kind": "method-article",
+            "goalSeedIds": [
+              "M06"
+            ],
+            "urls": [
+              {
+                "url": "https://link.springer.com/article/10.1007/s11367-008-0038-4",
+                "role": "出版商"
+              },
+              {
+                "url": "https://www.lifecycleinitiative.org/resources/articles/",
+                "role": "UNEP Life Cycle Initiative public access article listing"
+              },
+              {
+                "url": "https://www.lifecycleinitiative.org/wp-content/uploads/2012/12/USEtox-the-UNEP-SETAC-toxocity-model-recommended-characterisation-factors-for-human-toxicity-and-freshwater-ecotoxicity-in-life-cycle-impact-assessement.pdf",
+                "role": "publisher-formatted original PDF hosted by the Life Cycle Initiative"
+              }
+            ],
+            "identifiers": {
+              "doi": "10.1007/s11367-008-0038-4"
+            },
+            "volumes": [
+              "V5"
+            ],
+            "topics": [
+              "toxicity",
+              "characterization"
+            ],
+            "languages": [
+              "en"
+            ],
+            "regions": [
+              "international"
+            ],
+            "traditions": [
+              "UNEP-SETAC toxicity consensus"
+            ],
+            "discovery": {
+              "queryIds": [
+                "Q-SEED-IMPORT",
+                "q-kb88-usetox-2008-original"
+              ],
+              "reason": "Inherited candidate register §11 for V5 toxicity modelling, consensus formation and limits. The DOI search located the original through the Life Cycle Initiative public access listing. Selected reading is separately registered.",
+              "citationParents": [
+                "lit-com-17"
+              ]
+            },
+            "identityStatus": "verified",
+            "accessStatus": "public-fulltext-available",
+            "readingStatus": "not-close-read",
+            "accessedAt": "2026-11-03",
+            "lastCheckedAt": "2026-11-09",
+            "rights": "© Springer-Verlag 2008. The Life Cycle Initiative publicly lists the publisher-formatted copy under Public access Articles. Public access establishes selected reading access. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+            "limitations": [
+              "The 2026-11-03 seed inspection covered author list, abstract and references. The publisher article HTML displayed a subscription preview again on 2026-11-09. The Life Cycle Initiative publicly hosted the original PDF that day, with selected inspection recorded in rd-kb88-rosenbaum-2008.",
+              "Historical metadata/abstract/partial-page check inherited from 2026-11-03; original search strings and a complete access log were not recorded in the seed register.",
+              "Volume/region/tradition tags are provisional editorial discovery strata, not evidence of intellectual origin, influence or coverage."
+            ],
+            "catalogSourceIds": []
+          }
+        },
+        {
+          "id": "lit-kb88-rosenbaum-2011",
+          "from": {
+            "id": "lit-kb88-rosenbaum-2011",
+            "title": "USEtox human exposure and toxicity factors for comparative assessment of toxic emissions in life cycle analysis: sensitivity to key chemical properties",
+            "contributors": "Ralph K. Rosenbaum, Mark A. J. Huijbregts, Andrew D. Henderson, Manuele Margni, Thomas E. McKone, Dik van de Meent, Michael Z. Hauschild, Shanna Shaked, Ding Sheng Li, Lois S. Gold and Olivier Jolliet",
+            "year": "2011",
+            "kind": "method-article",
+            "goalSeedIds": [],
+            "urls": [
+              {
+                "url": "https://link.springer.com/article/10.1007/s11367-011-0316-4",
+                "role": "publisher article"
+              },
+              {
+                "url": "https://link.springer.com/content/pdf/10.1007/s11367-011-0316-4.pdf",
+                "role": "publisher PDF endpoint used for byte-fixed acquisition"
+              },
+              {
+                "url": "https://www.rivm.nl/documenten/article-usetox-human-exposure-and-toxicity-factors-for-comparative",
+                "role": "RIVM public article listing"
+              },
+              {
+                "url": "https://www.rivm.nl/sites/default/files/2018-11/USEtox%20human%20exposure%20and%20toxicity%20factors%20for%20comparative.pdf",
+                "role": "RIVM public PDF, inspected via web extraction for comparison only"
+              }
+            ],
+            "identifiers": {
+              "doi": "10.1007/s11367-011-0316-4"
+            },
+            "volumes": [
+              "V5"
+            ],
+            "topics": [
+              "toxicity",
+              "human exposure",
+              "historical pathway coverage"
+            ],
+            "languages": [
+              "en"
+            ],
+            "regions": [
+              "international"
+            ],
+            "traditions": [
+              "UNEP-SETAC toxicity consensus"
+            ],
+            "discovery": {
+              "queryIds": [
+                "q-kb88-usetox-2011-original",
+                "q-kb88-usetox-scope-erratum"
+              ],
+              "reason": "The manual §6.1 cites this work for the 1.01 human exposure model. Targeted discovery located the dated exclusion and indoor-extension passages for comparison with 2.0.",
+              "citationParents": [
+                "work-usetox-2-documentation-v11"
+              ]
+            },
+            "identityStatus": "verified",
+            "accessStatus": "public-fulltext-available",
+            "readingStatus": "not-close-read",
+            "accessedAt": "2026-11-09",
+            "lastCheckedAt": "2026-11-09",
+            "rights": "© Springer-Verlag 2011. The publisher endpoint returned the full PDF without login or payment. RIVM separately lists a public article copy. No open redistribution license was verified. Only bibliographic details and authored annotations are registered.",
+            "limitations": [
+              "Separate selected reading rd-kb88-rosenbaum-2011 binds the publisher PDF. The RIVM PDF returned selected text through the web service but direct file acquisition timed out, so the publisher hash is not assigned to the RIVM carrier.",
+              "The historical exclusion statement does not specify the coverage of USEtox 2.0 or a later release."
+            ],
+            "catalogSourceIds": []
+          }
+        },
+        {
+          "id": "work-loc137-ef-guide-2020",
+          "from": {
+            "id": "work-loc137-ef-guide-2020",
+            "title": "Guide for EF compliant data sets (Version 2.0)",
+            "contributors": "Simone Fazio; Luca Zampori; An De Schryver; Oliver Kusche; Léonor Thellier; Edward Diaconu",
+            "year": "2020",
+            "kind": "technical-guidance",
+            "goalSeedIds": [],
+            "urls": [
+              {
+                "url": "https://op.europa.eu/s/xchS",
+                "role": "EU Publications Office permalink"
+              },
+              {
+                "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC120340/jrc120340_guide_ef_data_2.0_final.pdf",
+                "role": "JRC repository official PDF"
+              }
+            ],
+            "identifiers": {
+              "eurNumber": "EUR 30175 EN",
+              "jrcNumber": "JRC120340",
+              "isbn": "978-92-76-17951-1",
+              "doi": "10.2760/537292"
+            },
+            "volumes": [
+              "V2",
+              "V5",
+              "V7"
+            ],
+            "topics": [
+              "EF compliant datasets",
+              "regionalized elementary flows",
+              "European location allowlist",
+              "compliance declarations"
+            ],
+            "languages": [
+              "en"
+            ],
+            "regions": [
+              "European Union",
+              "EFTA",
+              "Global water and land flows"
+            ],
+            "traditions": [
+              "European Environmental Footprint"
+            ],
+            "discovery": {
+              "queryIds": [
+                "q-loc137-spatial-scales-denominators-and-adoption-20261118"
+              ],
+              "reason": "直接对应EF 3.1补篇所修订的母本指南，用于核实欧盟环境足迹允许区域化无机大气基本流清单与国别位置代码白名单边界。",
+              "citationParents": [
+                "work-tox123-ef31-addendum"
+              ]
+            },
+            "identityStatus": "verified",
+            "accessStatus": "public-fulltext-available",
+            "readingStatus": "not-close-read",
+            "accessedAt": "2026-11-18",
+            "lastCheckedAt": "2026-11-19",
+            "rights": "欧盟出版局与联合研究中心公开技术报告；仅保存书目元数据、定位与原创释义，不重分发原PDF文件。",
+            "limitations": [
+              "核读范围聚焦第5.2.3—5.2.6节、第5.2.15节表1（印第24—25页）、第5.4节水资源建模与附录1表6—7（印第47页）区域化位置码白名单；2022年EF 3.1参考包切换条款须与EF 3.1补篇对照阅读。",
+              "2026-11-19（数据适用性比较单元）同载体追加核读第 5.2.17 节（印第 25—27 页，式 F.1、表 2）、第 5.4—5.4.2 节（印第 27—29 页）与第 8.1—8.3 节（印第 38—42 页，表 3—5），核实前 80% 单一总分贡献重标定、单项上限 3.0、支撑子过程禁止独立复用、仅批准类型 1 与类型 2 联合评审及 Look@LCI 1% 门槛，并保留印第 25 页“Nunc The DQR”与印第 26 页将“TiR-SD”误印为“TiR-AD”的原件排印瑕疵。"
+            ],
+            "catalogSourceIds": [
+              "src-loc137-ef-guide-2020"
+            ]
+          }
+        }
+      ]
+    },
+    "readings": {
+      "fromUpdatedAt": "2026-11-19",
+      "addedReadings": [
+        "rd-opt3-db26-frischknecht-2005",
+        "rd-opt3-db26-wernet-2016",
+        "rd-opt3-db26-ecoinvent-v311",
+        "rd-opt3-db26-flcac-uslci",
+        "rd-opt3-db26-useeio-2022",
+        "rd-opt3-db26-agribalyse-doc",
+        "rd-opt3-db26-aist-idea",
+        "rd-opt3-db26-worldsteel-lci",
+        "rd-opt3-db27-steubing-2016",
+        "rd-opt3-db27-ecoinvent-sysmodels",
+        "rd-opt3-db27-ecoinvent-geographies",
+        "rd-opt3-db28-fedefl-readme",
+        "rd-opt3-db28-glad-ef-readme",
+        "rd-opt3-db28-olca-schema",
+        "rd-opt3-db29-randonneur-readme",
+        "rd-opt3-pol33-china-mee-gbt24067",
+        "rd-opt3-pol33-china-samr-gbt24067"
+      ]
+    }
+  },
+  "publicArtifacts": [
+    {
+      "path": "claims/index.html",
+      "sha256": "b5c26b642e994b004ccb5a28cde6d07aa7545f1e6cb363a8a7c0ffac8c852ca3"
+    },
+    {
+      "path": "sources/index.html",
+      "sha256": "6ad44fe51bdcb3c9fbfb9368b73325a06ae43a6f80c6db8f3b333141e0254721"
+    },
+    {
+      "path": "concepts/index.html",
+      "sha256": "8e8da0638f5a138d8c1c520ea8a8f4c6e05a1cbe3e82c96a955a956f652269c2"
+    },
+    {
+      "path": "coverage/index.html",
+      "sha256": "12d53d3209649281a482f8fbe302a4d68e33d7c3c414a2c0975c914ca992e063"
+    },
+    {
+      "path": "research/index.html",
+      "sha256": "60157a28450823be955256aa50e22598ec9a8708ae220674cfa1d77f6f8e02ba"
+    },
+    {
+      "path": "downloads/catalog.json",
+      "sha256": "1d306385a8f07925751d94722dc213a13051dde42d1b5ae2c783995343e1af27"
+    },
+    {
+      "path": "downloads/dependencies.json",
+      "sha256": "011c5ef65c22adbf0beb1815291009fd255cc9283680b866f49b416941816dc3"
+    },
+    {
+      "path": "downloads/bibliography.json",
+      "sha256": "252c5a9416820cc781c1f06bb1d7bcb5f7df3d3a5c172681a80bcb9f8f82d788"
+    },
+    {
+      "path": "downloads/research.json",
+      "sha256": "252c5a9416820cc781c1f06bb1d7bcb5f7df3d3a5c172681a80bcb9f8f82d788"
+    }
+  ]
+}

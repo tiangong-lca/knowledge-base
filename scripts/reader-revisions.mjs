@@ -9,6 +9,9 @@ import { editionDigest, inspectReadableBookEdition, validReadableBookReviewFile 
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const nonempty = value => typeof value === 'string' && Boolean(value.trim());
 const isSha = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+  && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+const isPlainObject = value => Boolean(value) && typeof value === 'object' && !Array.isArray(value);
 export const VALID_REVISION_FILE_RE = /^[a-z0-9][a-z0-9._-]*\.json$/;
 
 const RECORD_FAMILIES = ['claims', 'concepts', 'evidence', 'sources', 'mappings'];
@@ -240,6 +243,89 @@ export function validateRevisionSchema(revision, label = 'revision') {
     }
     if (!validReadableBookReviewFile(ev.file)) {
       throw new Error(`${label}: reviewEvidence file outside allowed directory: ${ev.file}`);
+    }
+  }
+  if (revision.research !== undefined) {
+    if (!isPlainObject(revision.research)) {
+      throw new Error(`${label}: research must be a plain object`);
+    }
+    const researchSections = Object.keys(revision.research);
+    if (!researchSections.length) {
+      throw new Error(`${label}: research must declare at least one of literature or readings`);
+    }
+    const allowedTopKeys = new Set(['literature', 'readings']);
+    for (const key of researchSections) {
+      if (!allowedTopKeys.has(key)) {
+        throw new Error(`${label}: unexpected research key ${key}`);
+      }
+    }
+    const validateUniqueIds = (list, path) => {
+      if (!Array.isArray(list) || !list.every(nonempty)) {
+        throw new Error(`${label}: ${path} must be a non-empty string array`);
+      }
+      const seen = new Set();
+      for (const id of list) {
+        if (seen.has(id)) throw new Error(`${label}: duplicate id ${id} in ${path}`);
+        seen.add(id);
+      }
+      return seen;
+    };
+    const litBlock = revision.research.literature;
+    if (litBlock !== undefined) {
+      if (!isPlainObject(litBlock)) {
+        throw new Error(`${label}: research.literature must be a plain object`);
+      }
+      const allowedLitKeys = new Set(['fromUpdatedAt', 'addedQueries', 'addedRecords', 'modifiedRecords']);
+      for (const key of Object.keys(litBlock)) {
+        if (!allowedLitKeys.has(key)) {
+          throw new Error(`${label}: unexpected research.literature key ${key}`);
+        }
+      }
+      if (litBlock.fromUpdatedAt !== undefined && !validDate(litBlock.fromUpdatedAt)) {
+        throw new Error(`${label}: research.literature.fromUpdatedAt must be a valid YYYY-MM-DD date`);
+      }
+      if (litBlock.addedQueries !== undefined) {
+        validateUniqueIds(litBlock.addedQueries, 'research.literature.addedQueries');
+      }
+      const addedRecordIds = litBlock.addedRecords !== undefined
+        ? validateUniqueIds(litBlock.addedRecords, 'research.literature.addedRecords')
+        : new Set();
+      if (litBlock.modifiedRecords !== undefined) {
+        if (!Array.isArray(litBlock.modifiedRecords)) {
+          throw new Error(`${label}: research.literature.modifiedRecords must be an array`);
+        }
+        const seenMod = new Set();
+        for (const m of litBlock.modifiedRecords) {
+          if (!isPlainObject(m) || !nonempty(m.id) || !isPlainObject(m.from) || m.from.id !== m.id) {
+            throw new Error(`${label}: research.literature.modifiedRecords entries require id and exact previous record object in from`);
+          }
+          if (seenMod.has(m.id)) {
+            throw new Error(`${label}: duplicate id ${m.id} in research.literature.modifiedRecords`);
+          }
+          if (addedRecordIds.has(m.id)) {
+            throw new Error(`${label}: id ${m.id} cannot appear in both research.literature.addedRecords and modifiedRecords`);
+          }
+          seenMod.add(m.id);
+        }
+      }
+    }
+    const rdBlock = revision.research.readings;
+    if (rdBlock !== undefined) {
+      if (!isPlainObject(rdBlock)) {
+        throw new Error(`${label}: research.readings must be a plain object`);
+      }
+      const allowedRdKeys = new Set(['fromUpdatedAt', 'addedReadings']);
+      for (const key of Object.keys(rdBlock)) {
+        if (!allowedRdKeys.has(key)) {
+          throw new Error(`${label}: unexpected research.readings key ${key}`);
+        }
+      }
+      if (rdBlock.fromUpdatedAt !== undefined && !validDate(rdBlock.fromUpdatedAt)) {
+        throw new Error(`${label}: research.readings.fromUpdatedAt must be a valid YYYY-MM-DD date`);
+      }
+      if (rdBlock.addedReadings !== undefined) {
+        validateUniqueIds(rdBlock.addedReadings, 'research.readings.addedReadings');
+      }
     }
   }
 }
@@ -715,6 +801,60 @@ export async function applyRevisionsInverse(input, revisions, root = null) {
         list.splice(row.index, 0, structuredClone(row.from));
       }
     }
+
+    if (rev.research?.literature) {
+      const litRev = rev.research.literature;
+      if (!isPlainObject(previousLiterature)) {
+        throw new Error(`Revision ${rev.id} declares literature transition but literature register is missing`);
+      }
+      if (litRev.fromUpdatedAt !== undefined) {
+        previousLiterature.updatedAt = litRev.fromUpdatedAt;
+      }
+      if ((litRev.addedQueries ?? []).length) {
+        if (!Array.isArray(previousLiterature.protocol?.queries)) {
+          throw new Error(`Revision ${rev.id} declares addedQueries but literature.protocol.queries is missing`);
+        }
+        for (const qid of litRev.addedQueries) {
+          const idx = previousLiterature.protocol.queries.findIndex(q => q.id === qid);
+          if (idx < 0) throw new Error(`Revision ${rev.id} declared added literature query ${qid} not found`);
+          previousLiterature.protocol.queries.splice(idx, 1);
+        }
+      }
+      if ((litRev.addedRecords ?? []).length || (litRev.modifiedRecords ?? []).length) {
+        if (!Array.isArray(previousLiterature.records)) {
+          throw new Error(`Revision ${rev.id} declares literature record transitions but literature.records is missing`);
+        }
+        for (const wid of litRev.addedRecords ?? []) {
+          const idx = previousLiterature.records.findIndex(w => w.id === wid);
+          if (idx < 0) throw new Error(`Revision ${rev.id} declared added literature record ${wid} not found`);
+          previousLiterature.records.splice(idx, 1);
+        }
+        for (const mod of litRev.modifiedRecords ?? []) {
+          const idx = previousLiterature.records.findIndex(w => w.id === mod.id);
+          if (idx < 0) throw new Error(`Revision ${rev.id} declared modified literature record ${mod.id} not found`);
+          previousLiterature.records[idx] = structuredClone(mod.from);
+        }
+      }
+    }
+    if (rev.research?.readings) {
+      const rdRev = rev.research.readings;
+      if (!isPlainObject(previousReadings)) {
+        throw new Error(`Revision ${rev.id} declares readings transition but readings register is missing`);
+      }
+      if (rdRev.fromUpdatedAt !== undefined) {
+        previousReadings.updatedAt = rdRev.fromUpdatedAt;
+      }
+      if ((rdRev.addedReadings ?? []).length) {
+        if (!Array.isArray(previousReadings.readings)) {
+          throw new Error(`Revision ${rev.id} declares addedReadings but readings.readings is missing`);
+        }
+        for (const rid of rdRev.addedReadings) {
+          const idx = previousReadings.readings.findIndex(r => r.id === rid);
+          if (idx < 0) throw new Error(`Revision ${rev.id} declared added reading ${rid} not found`);
+          previousReadings.readings.splice(idx, 1);
+        }
+      }
+    }
   }
 
   return {
@@ -786,6 +926,44 @@ export function applyRevisionsToPlan(basePlan, revisions, currentInput, previous
     for (const artRow of rev.publicArtifacts ?? []) {
       artifactsMap.set(artRow.path, artRow);
     }
+    if (rev.research) {
+      const modFromMap = new Map(
+        (rev.research.literature?.modifiedRecords ?? []).map(row => {
+          const d = editionDigest(row.from);
+          return [`literature:${row.id}`, { raw: d, public: null, protected: d }];
+        }),
+      );
+      const researchKeys = new Set([
+        ...(rev.research.literature?.addedQueries ?? []).map(id => `queries:${id}`),
+        ...(rev.research.literature?.addedRecords ?? []).map(id => `literature:${id}`),
+        ...(rev.research.literature?.modifiedRecords ?? []).map(row => `literature:${row.id}`),
+        ...(rev.research.readings?.addedReadings ?? []).map(id => `readings:${id}`),
+        'researchMetadata:literature-map',
+        'researchMetadata:reading-ledger',
+        'researchMetadata:order:queries',
+        'researchMetadata:order:literature',
+        'researchMetadata:order:readings',
+      ]);
+      for (const key of researchKeys) {
+        const existing = recordMap.get(key);
+        const prevDigest = previousInspect.records[key] ?? null;
+        const currDigest = currentInspect.records[key] ?? null;
+        if (JSON.stringify(prevDigest) === JSON.stringify(currDigest)) continue;
+        const stepFrom = modFromMap.get(key) ?? null;
+        const predecessors = existing
+          ? [...(existing.predecessors ?? []), existing.from, existing.to, stepFrom].filter(Boolean)
+          : [prevDigest, stepFrom].filter(Boolean);
+        recordMap.set(key, {
+          kind: 'record',
+          key,
+          from: existing ? existing.from : prevDigest,
+          to: currDigest,
+          predecessors,
+          rationale: rev.rationale,
+          retired: false,
+        });
+      }
+    }
   }
 
   return {
@@ -794,7 +972,32 @@ export function applyRevisionsToPlan(basePlan, revisions, currentInput, previous
     outputs: outputsMap,
     publicArtifacts: artifactsMap,
     revisions,
+    researchChanged: Boolean(basePlan.researchChanged || revisions.some(rev => Boolean(rev.research))),
   };
+}
+
+function buildResearchRecordDigests(literature, readings) {
+  const digests = {};
+  const setRow = (kind, row) => {
+    const raw = editionDigest(row);
+    digests[`${kind}:${row.id}`] = { raw, public: null, protected: raw };
+  };
+  if (isPlainObject(literature)) {
+    const { records = [], gaps, protocol = {}, ...literatureMetadata } = literature;
+    const { queries = [] } = protocol;
+    for (const q of queries) setRow('queries', q);
+    for (const w of records) setRow('literature', w);
+    setRow('researchMetadata', { id: 'literature-map', data: literatureMetadata });
+    setRow('researchMetadata', { id: 'order:queries', ids: queries.map(r => r.id) });
+    setRow('researchMetadata', { id: 'order:literature', ids: records.map(r => r.id) });
+  }
+  if (isPlainObject(readings)) {
+    const { readings: readingRows = [], gaps: readingGaps, revisions: readingRevisions, ...ledgerMetadata } = readings;
+    for (const r of readingRows) setRow('readings', r);
+    setRow('researchMetadata', { id: 'reading-ledger', data: ledgerMetadata });
+    setRow('researchMetadata', { id: 'order:readings', ids: readingRows.map(r => r.id) });
+  }
+  return digests;
 }
 
 /**
@@ -802,15 +1005,20 @@ export function applyRevisionsToPlan(basePlan, revisions, currentInput, previous
  * so currentBookRecordMatches / currentBookFileMatches / currentBookMdxMatches accept declared
  * post-checkpoint revisions during static validation and Next.js rendering.
  */
-export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog) {
+export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog, currentResearch = null) {
   if (!revisions.length) return basePlan;
   const recordMap = new Map(basePlan.changes.record);
   const fileMap = new Map(basePlan.changes.file);
   const outputsMap = new Map(basePlan.outputs);
   const artifactsMap = new Map(basePlan.publicArtifacts);
 
-  // Reconstruct previous catalog synchronously to compute exact public-projection digests
+  // Reconstruct previous catalog (and optional research registers) synchronously to compute exact digests
   const previousCatalog = structuredClone(currentCatalog);
+  const hasResearch = Boolean(
+    currentResearch?.literature && currentResearch?.readings && revisions.some(rev => Boolean(rev.research)),
+  );
+  const previousLiterature = hasResearch ? structuredClone(currentResearch.literature) : null;
+  const previousReadings = hasResearch ? structuredClone(currentResearch.readings) : null;
   for (let i = revisions.length - 1; i >= 0; i--) {
     const rev = revisions[i];
     for (const family of RECORD_FAMILIES) {
@@ -830,9 +1038,35 @@ export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog) 
         list.splice(row.index, 0, structuredClone(row.from));
       }
     }
+    if (hasResearch && rev.research?.literature) {
+      const litRev = rev.research.literature;
+      if (litRev.fromUpdatedAt !== undefined) previousLiterature.updatedAt = litRev.fromUpdatedAt;
+      for (const qid of litRev.addedQueries ?? []) {
+        const idx = previousLiterature.protocol.queries.findIndex(q => q.id === qid);
+        if (idx >= 0) previousLiterature.protocol.queries.splice(idx, 1);
+      }
+      for (const wid of litRev.addedRecords ?? []) {
+        const idx = previousLiterature.records.findIndex(w => w.id === wid);
+        if (idx >= 0) previousLiterature.records.splice(idx, 1);
+      }
+      for (const mod of litRev.modifiedRecords ?? []) {
+        const idx = previousLiterature.records.findIndex(w => w.id === mod.id);
+        if (idx >= 0) previousLiterature.records[idx] = structuredClone(mod.from);
+      }
+    }
+    if (hasResearch && rev.research?.readings) {
+      const rdRev = rev.research.readings;
+      if (rdRev.fromUpdatedAt !== undefined) previousReadings.updatedAt = rdRev.fromUpdatedAt;
+      for (const rid of rdRev.addedReadings ?? []) {
+        const idx = previousReadings.readings.findIndex(r => r.id === rid);
+        if (idx >= 0) previousReadings.readings.splice(idx, 1);
+      }
+    }
   }
   const currPublic = publicCatalog(currentCatalog);
   const prevPublic = publicCatalog(previousCatalog);
+  const currResearchDigests = hasResearch ? buildResearchRecordDigests(currentResearch.literature, currentResearch.readings) : null;
+  const prevResearchDigests = hasResearch ? buildResearchRecordDigests(previousLiterature, previousReadings) : null;
 
   for (const rev of revisions) {
     for (const family of RECORD_FAMILIES) {
@@ -884,6 +1118,44 @@ export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog) 
     for (const artRow of rev.publicArtifacts ?? []) {
       artifactsMap.set(artRow.path, artRow);
     }
+    if (hasResearch && rev.research) {
+      const modFromMap = new Map(
+        (rev.research.literature?.modifiedRecords ?? []).map(row => {
+          const d = editionDigest(row.from);
+          return [`literature:${row.id}`, { raw: d, public: null, protected: d }];
+        }),
+      );
+      const researchKeys = new Set([
+        ...(rev.research.literature?.addedQueries ?? []).map(id => `queries:${id}`),
+        ...(rev.research.literature?.addedRecords ?? []).map(id => `literature:${id}`),
+        ...(rev.research.literature?.modifiedRecords ?? []).map(row => `literature:${row.id}`),
+        ...(rev.research.readings?.addedReadings ?? []).map(id => `readings:${id}`),
+        'researchMetadata:literature-map',
+        'researchMetadata:reading-ledger',
+        'researchMetadata:order:queries',
+        'researchMetadata:order:literature',
+        'researchMetadata:order:readings',
+      ]);
+      for (const key of researchKeys) {
+        const existing = recordMap.get(key);
+        const prevDigest = prevResearchDigests[key] ?? null;
+        const currDigest = currResearchDigests[key] ?? null;
+        if (JSON.stringify(prevDigest) === JSON.stringify(currDigest)) continue;
+        const stepFrom = modFromMap.get(key) ?? null;
+        const predecessors = existing
+          ? [...(existing.predecessors ?? []), existing.from, existing.to, stepFrom].filter(Boolean)
+          : [prevDigest, stepFrom].filter(Boolean);
+        recordMap.set(key, {
+          kind: 'record',
+          key,
+          from: existing ? existing.from : prevDigest,
+          to: currDigest,
+          predecessors,
+          rationale: rev.rationale,
+          retired: false,
+        });
+      }
+    }
   }
 
   return {
@@ -892,6 +1164,7 @@ export function applyRevisionsToPlanStatic(basePlan, revisions, currentCatalog) 
     outputs: outputsMap,
     publicArtifacts: artifactsMap,
     revisions,
+    researchChanged: Boolean(basePlan.researchChanged || revisions.some(rev => Boolean(rev.research))),
   };
 }
 

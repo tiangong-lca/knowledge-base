@@ -183,7 +183,15 @@ const acceptedPart1 = effectivePart1Reread(acceptedFw, currentPart1Reread);
 export const baseCheckpointPlan = effectiveWholeBookReread(acceptedPart1, currentWholeBookReread);
 const expectationsRepoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const currentBookPlan = currentRevisions.length
-  ? applyRevisionsToPlanStatic(baseCheckpointPlan, currentRevisions, JSON.parse(readFileSync(join(expectationsRepoRoot, 'knowledge', 'catalog.json'), 'utf8')))
+  ? applyRevisionsToPlanStatic(
+      baseCheckpointPlan,
+      currentRevisions,
+      JSON.parse(readFileSync(join(expectationsRepoRoot, 'knowledge', 'catalog.json'), 'utf8')),
+      {
+        literature: JSON.parse(readFileSync(join(expectationsRepoRoot, 'knowledge', 'research', 'literature-map.json'), 'utf8')),
+        readings: JSON.parse(readFileSync(join(expectationsRepoRoot, 'knowledge', 'research', 'readings.json'), 'utf8')),
+      },
+    )
   : baseCheckpointPlan;
 
 export function currentBookRecordMatches(kind, previous, current, projection) {
