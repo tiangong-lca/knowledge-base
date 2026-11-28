@@ -308,6 +308,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 { href: '/en/research/', title: UI_SURFACES.references.en, desc: 'Primary standards, reports, papers, and passage-level citation locators.' },
                 { href: '/en/concepts/', title: UI_SURFACES.conceptIndex.en, desc: 'Core LCA concepts, definitions, and cross-framework mappings.' },
                 { href: '/en/claims/', title: UI_SURFACES.chapterNotes.en, desc: 'All chapter notes with primary sources, validity scopes, and caveats.' },
+                { href: '/en/controversies/', title: UI_SURFACES.controversies.en, desc: 'Part-by-part evidence boundaries, eight LCIA blind spots, ten value-choice loci, and qualified/caveated notes.' },
                 { href: '/en/timeline/', title: UI_SURFACES.timeline.en, desc: 'Key historical milestones from 1969 to 2026 with source provenance.' },
                 { href: '/en/print/', title: UI_SURFACES.fullTextPrint.en, desc: 'Complete book assembled in one continuous printable document.' },
                 { href: '/en/changes/', title: UI_SURFACES.revisionsErrata.en, desc: 'Reader-facing revisions, chapter updates, and errata submission.' },

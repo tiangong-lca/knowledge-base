@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "revisionId": "opt2-controversies-gaps-index-370",
+  "task": "#370",
+  "date": "2026-11-28",
+  "baseCommit": "5758c846a61283070c3f504e68842597cfc322df",
+  "scientificApproval": false,
+  "externalHumanExpertReview": false,
+  "realReaderTrial": false,
+  "summary": "OPT-2 dedicated bilingual A10 Controversies, Boundaries & Knowledge Gaps surface (/zh/controversies/ and /en/controversies/): consolidates Part I-VIII evidence boundaries, 8 mainstream LCIA consensus blind spots, 10 normative value-choice ranking-flip loci, 7 targeted revision triggers, all 135 qualification-linked and 745 caveat-bearing chapter notes (784 distinct notes, 96 overlapping) partitioned deterministically by primary Part, and 3 candid source-access/review boundary blocks; wired into navigation, footer, homes, Book Guide, sitemap.xml, llms.txt, search indexes, interactive header language switcher (lib/search-entries.ts), and legacy /controversies/ redirect without altering compiled CSS (asset:reader-css byte-identical).",
+  "independentReviews": [
+    {
+      "reviewer": "Independent Engineering & Verification Auditor",
+      "agentId": "d5a67593-b69e-4e30-a1d8-a9b87f2ff6ce",
+      "initialVerdict": "CONDITIONAL PASS (1 blocking, 3 advisory)",
+      "disposition": "Resolved B1 by adding '/controversies/' to staticToolRoutes in getPublishedPaths() and adding ZH/EN entries to getSearchEntries() in lib/search-entries.ts so the interactive Fumadocs header language switcher routes cleanly between /zh/controversies/ and /en/controversies/ (129 publishedPaths). Resolved A1-A3: switched Part grouping to deterministic primaryPartOf() partition, expanded scripts/controversies.test.mjs to assert publishedPaths, exact 880 item counts, #gaps-companion, legacy redirect, sitemap, llms.txt, and search indexes, and formatted 1,257 with thousands separator."
+    },
+    {
+      "reviewer": "Independent Zero-Context Bilingual Reader Reviewer",
+      "agentId": "44ac26a5-f5ac-4de5-99b4-f81a4048b95f",
+      "initialVerdict": "CONDITIONAL PASS (1 blocking, 3 advisory)",
+      "disposition": "Resolved B1 by removing raw internal schema token '（qualifies）' from the ZH overview paragraph (now fail-closed guarded in scripts/controversies.test.mjs). Resolved advisories: explicitly disclosed the 96-note overlap / 784 distinct notes in both ZH and EN summaries, expanded MarILCA and PDF on first use in Section 1, added IPCC AR6 before GWP100 in ZH Section 2 Row 4, broadened EN Section 1 lead to 'indicator totals and weighted single scores', clarified Appendix J checkpoint references in Section 3, and added page-specific openGraph/twitter metadata."
+    }
+  ],
+  "verification": {
+    "typecheck": "pass",
+    "buildAndExport": "pass (134 static routes, 129 non-redirect localized HTML pages, 1,257 reviewed claims, byte-identical asset:reader-css)",
+    "checkpointHistory": "pass (checkpoint-2026-11-21, gitVerified=true)",
+    "bilingualParity": "pass (0 errors, 0 parity exceptions)",
+    "unitAndIntegrationTests": "pass (837/837 including scripts/controversies.test.mjs and scripts/seo-policy.test.mjs)"
+  }
+}

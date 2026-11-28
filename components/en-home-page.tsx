@@ -152,6 +152,9 @@ export function EnHomePage() {
           <Link href="/en/claims/">
             {UI_SURFACES.chapterNotes.en}<span>Chapter-end notes with supporting sources, scopes, and caveats</span>
           </Link>
+          <Link href="/en/controversies/">
+            {UI_SURFACES.controversies.en}<span>Evidence boundaries, LCIA blind spots, value-choice flips, and caveats</span>
+          </Link>
           <Link href="/en/changes/">
             {UI_SURFACES.revisionsErrata.en}<span>Reader-facing revisions and errata reporting</span>
           </Link>

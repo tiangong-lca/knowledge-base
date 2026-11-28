@@ -28,6 +28,12 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
         url: '/en/timeline/',
         kind: 'Timeline',
       },
+      {
+        title: 'Controversies, Boundaries & Knowledge Gaps',
+        text: 'Consolidated index of Part I–VIII evidence boundaries, eight mainstream LCIA blind spots, ten value-choice reversal loci, seven revision triggers, and qualified or caveated notes.',
+        url: '/en/controversies/',
+        kind: 'Index',
+      },
       ...enPages.map((p) => ({
         title: p.data.title,
         text: p.data.description ?? '',
@@ -62,6 +68,12 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
       url: '/zh/timeline/',
       kind: '大事记',
     },
+    {
+      title: '争议、边界与知识缺口',
+      text: '集中汇总全书各部证据边界、八类主流 LCIA 共识盲区、十类规范性价值选择翻转点、七类定向修订触发器与全部限定注释。',
+      url: '/zh/controversies/',
+      kind: '索引',
+    },
     ...getSource('zh').getPages().map((p) => ({
       title: p.data.title,
       text: p.data.description ?? '',
@@ -90,7 +102,7 @@ export function getSearchEntries(lang: Locale): SearchEntry[] {
 }
 
 export function getPublishedPaths(): string[] {
-  const staticToolRoutes = ['/', '/coverage/', '/timeline/', '/research/', '/sources/', '/concepts/', '/claims/', '/changes/', '/print/'];
+  const staticToolRoutes = ['/', '/coverage/', '/controversies/', '/timeline/', '/research/', '/sources/', '/concepts/', '/claims/', '/changes/', '/print/'];
   const paths = new Set<string>(['/']);
   for (const lang of ['zh', 'en'] as const) {
     for (const r of staticToolRoutes) {

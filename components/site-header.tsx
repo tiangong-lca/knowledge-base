@@ -200,6 +200,7 @@ export function SiteChrome({ lang = 'zh', children }: { lang?: Locale; children:
         </div>
         <nav aria-label={isEn ? 'Footer navigation' : '页脚导航'}>
           <a href={`${prefix}/timeline/`}>{UI_SURFACES.timeline[lang]}</a>
+          <a href={`${prefix}/controversies/`}>{UI_SURFACES.controversies[lang]}</a>
           <a href={`${prefix}/changes/`}>{UI_SURFACES.revisionsErrata[lang]}</a>
           <a href={`${prefix}/print/`}>{UI_SURFACES.fullTextPrint[lang]}</a>
           <a href="https://github.com/tiangong-lca/knowledge-base">GitHub</a>
