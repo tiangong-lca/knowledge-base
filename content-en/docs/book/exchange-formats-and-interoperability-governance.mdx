@@ -1,6 +1,6 @@
 ---
 title: Data Formats, Mapping, and Conversion Disclosure
-description: Comparing structural limits of major LCA data-exchange formats, public mapping and declarative migration tools, three-tier interoperability redlines, and minimum conversion audit disclosures.
+description: Comparing structural limits of major LCA data-exchange formats, public mapping and declarative migration tools, software implementation differences and reproducibility audits, three-tier interoperability redlines, and minimum conversion disclosures.
 ---
 
 ## Exchange Formats and Lossy Conversion [#exchange-formats-and-lossy-conversion]
@@ -27,6 +27,20 @@ Table 1. Comparison of six major LCA data-exchange formats across identification
 ## Interoperability Redlines and Audit Disclosure [#interoperability-redlines-and-audit-disclosure]
 
 <Prose ids="cl-db30-three-tier-interoperability-redlines cl-db30-mandatory-mapping-audit-disclosure" />
+
+## Software Implementation Differences and Reproducibility Audits [#software-implementation-differences-and-reproducibility-audits]
+
+<Prose ids="cl-sw36-empirical-divergence-and-confounders cl-sw36-architecture-and-reproducibility-pinning" />
+
+Table 2. Comparison of three major LCA software-implementation paradigms across data coupling, factor-pack and solver auditability, and typical cross-software reproducibility risks (synthesized from Iswara et al., 2020; Mutel, 2017; ILCD General Guide, 2010; openLCA schema and randonneur specifications).
+
+| Software paradigm and example | Data-model and import/export coupling | Method-pack, linking, and solver auditability | Typical reproducibility risks and epistemic boundary |
+| --- | --- | --- | --- |
+| Bundled proprietary GUI suites (e.g., commercial SimaPro workflows) | Background libraries commonly bundled with commercial licenses; legacy exchange relies on name-linked CSV | Closed GUI execution limits line-by-line external inspection of internal factor matching and calculation steps | Cross-software export risks dropping non-transferable proprietary datasets; unpinned database and method versions can flip hotspots and top categories (cautionary evidence in Iswara et al., 2020) |
+| Schema-typed open GUI ecosystems (e.g., openLCA) | Strongly typed JSON-LD schema with explicit flow-mapping tables (FlowMap), product systems, and provider strategies | Open source code allows auditing linking and unit-property conversions; LCIA method packs are free but excluded by default and must be installed to match | Missing or mismatched LCIA and normalization packs silently zero unmatched elementary flows (ILCD Section 8.2), collapsing categories such as eutrophication without errors |
+| Modular scriptable open-source frameworks (e.g., Brightway) | Decouples data storage (Brightway2-data) from multi-source import/export (Brightway2-IO) and pairs cleanly with declarative randonneur migration recipes | Static and Monte Carlo matrix calculation (Brightway2-calc) and statistical array data format (stats_arrays) remain inspectable line by line in Python and Jupyter notebooks | Places full responsibility for pinning software environments, database releases, and migration scripts on the team; Mutel (2017) documents architecture only and reports no cross-software numerical benchmarks |
+
+Core definitions and primary sources for software implementation differences and reproducibility audits appear under <ConceptRef id="cn-software-reproducibility-audit" />.
 
 ## Verifiable Metadata and the Bridge to Data Evidence [#verifiable-metadata-and-the-bridge-to-data-evidence]
 

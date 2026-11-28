@@ -221,7 +221,7 @@ async function validatePublication(root, requireCurrent) {
       assertCleanerProductionHeadingHistory(cleanerHeadingHistory);
       assertFunctionalReferenceHeadingHistory(functionalHeadingHistory);
       assertProcessNetworkHeadingHistory(processHeadingHistory);
-      if (!isRevised('/docs/book/process-and-network'))
+      if (!isRevised('/docs/book/process-and-network', '/docs/book/inventory-calculation'))
         errors.push(...validateProcessNetworkCoverage(edition,sources,processAccepted,data,processProse));
       if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit'))
         errors.push(...validateFunctionalReferenceCoverage(edition,sources,functionalAccepted,data,functionalProse));

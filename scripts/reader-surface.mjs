@@ -646,7 +646,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
         errors.push(...validateRenderedCleanerProduction(document,path,book.cleanerAccepted,book.catalog));
       if (!isRevised('/docs/book/service-and-reference', '/docs/functional-unit'))
         errors.push(...validateRenderedFunctionalReference(document,path,book.functionalAccepted,book.catalog,book.functionalProse));
-      if (!isRevised('/docs/book/process-and-network'))
+      if (!isRevised('/docs/book/process-and-network', '/docs/book/inventory-calculation'))
         errors.push(...validateRenderedProcessNetwork(document,path,book.processAccepted,book.catalog,book.processProse));
       if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization'))
         errors.push(...validateRenderedExchangeSemantics(document,path,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));
@@ -737,7 +737,7 @@ async function validateCitationOutput(root, sourceBaseline, locations, available
       errors.push(...validateFunctionalReferenceCoverage(book.edition,book.sources,book.functionalAccepted,book.catalog,book.functionalProse));
     if (!isRevised('/docs/book/inventory-boundary-and-hybrid'))
       errors.push(...validateHybridInventoryCoverage(book.edition,book.sources,book.hybridAccepted,book.catalog,book.hybridProse));
-    if (!isRevised('/docs/book/process-and-network'))
+    if (!isRevised('/docs/book/process-and-network', '/docs/book/inventory-calculation'))
       errors.push(...validateProcessNetworkCoverage(book.edition,book.sources,book.processAccepted,book.catalog,book.processProse));
     if (!isRevised('/docs/book/exchange-and-elementary-flow', '/docs/flows', '/docs/characterization'))
       errors.push(...validateExchangeSemanticsCoverage(book.edition,book.sources,book.exchangeOriginal,book.catalog,book.exchangeProse,book.exchangePartial));

@@ -1,6 +1,6 @@
 ---
 title: Process Networks
-description: Solve for the activity levels needed to meet external demand from process records, and contrast losing a service constraint under a change of representation with omitting internal supply feedback.
+description: Solve for the activity levels needed to meet external demand from process records, contrast representation changes with omitted feedback, and diagnose key drivers via contribution analysis, analytical perturbation, variance decomposition, and the Priority Matrix.
 ---
 
 ## Quantity Coordinates [#quantity-coordinates]
@@ -26,3 +26,19 @@ description: Solve for the activity levels needed to meet external demand from p
 ## Feedback Boundaries [#feedback-boundaries]
 
 <Prose ids="cl-inv-example-truncated cl-inv-example-meaning" />
+
+## Result Decomposition, Perturbation, and Key Issues [#result-decomposition-perturbation-and-key-issues]
+
+<Prose ids="cl-dec36-contribution-and-perturbation cl-dec36-ecoinvent96-perturbation-and-key-issue cl-dec36-ilcd-priority-and-bridge" />
+
+Table 1. Comparison of five post-solution numerical interpretation and diagnostic pathways (synthesized from Heijungs & Kleijn, 2001; Heijungs, Suh & Kleijn, 2005; ILCD General Guide, 2010).
+
+| Diagnostic method | Extra inputs required | Core question answered | Empirical properties and key limits |
+| --- | --- | --- | --- |
+| Contribution analysis | None | Which processes, stages, or flows carry the largest direct shares of total output | Under 1 second on ecoinvent'96; blind to false negatives, pie charts fail under negative shares, restricted to direct attribution on a completed system |
+| Analytical perturbation analysis | None (matrix differentiation) | Which intermediate economic flows or coefficients amplify output most sharply | Under 5 minutes for all 571 ecoinvent'96 flows (~300 hours numerically); multipliers sum to zero, magnitudes above 1 arise from recursive loops, valid locally only |
+| Key-issue analysis (variance decomposition) | Input standard deviations / variances | Which uncertain inputs explain the largest share of total output variance | Strictly non-negative shares avoiding negative-contribution ambiguity; 3 input coefficients drive 69% of ecoinvent'96 carbon dioxide variance (two in P293 account for 60%); diverges from Monte Carlo on near-zero or sign-flipping flows |
+| Paired discernibility analysis | Input probability distributions (paired draws) | Accounting for shared-background co-variation, how often does one option outperform another | Resolves overlapping individual 95% confidence intervals (Portugal vs. Italy 97/100); no analytical shortcut; tracks rank frequency rather than magnitude |
+| ILCD discrete scenarios & Priority Matrix | Alternative modeling choices + data quality ratings | Which methodological choices alter outcomes, and which high-sensitivity, low-quality inputs merit priority refinement | Targets allocation, cut-off, and impact-method choice uncertainty; cannot automatically detect omissions (ignorance), which still require peer review |
+
+Core definitions and primary sources for analytical perturbation, variance-decomposition key-issue analysis, and paired discernibility appear under <ConceptRef id="cn-perturbation-key-issue" />.
