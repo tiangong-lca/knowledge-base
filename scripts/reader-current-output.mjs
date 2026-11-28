@@ -127,7 +127,7 @@ export function validateReadableBookResearchOutput(document, published, literatu
   for (const [index, source] of published.sources.entries()) {
     const article = articles[index], title = article?.querySelector('h2 a');
     if (article?.id !== source.id || title?.getAttribute('href') !== source.url || compact(title?.text) !== compact(source.title)
-        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher}。${formatZhReaderLocator(source.version).replace(/。+$/u, '')}。`))
+        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher.replace(/。+$/u, '')}。${formatZhReaderLocator(source.version).replace(/。+$/u, '')}。`))
       errors.push(`Readable book research source title, order or version differs: ${source.id}`);
     const reading = ledger.readings.find(row => row.id === source.reading?.readingId);
     const work = reading && literature.records.find(row => row.id === reading.workId || row.workId === reading.workId);

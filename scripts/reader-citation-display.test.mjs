@@ -51,12 +51,14 @@ test('formatZhReaderLocator converts all 0-based PDF/NEPIS/notebook index forms 
   assert.equal(formatZhReaderLocator('印刷 pp54–58；PDF 零基索引61–65，重点 p54/index61'), '印刷 pp54–58；PDF 第 62–66 页，重点 p54/PDF 第 62 页');
   assert.equal(formatZhReaderLocator('Annex I§4.5，原刊OJ L471/265–266，PDF零基67–68，脚注47–48'), 'Annex I§4.5，原刊OJ L471/265–266，PDF 第 68–69 页，脚注47–48');
   assert.equal(formatZhReaderLocator('Tables4–5 Γ and Λ rows; visually checked; printed 9'), 'Tables 4–5 Γ and Λ rows; printed 9');
-  const AUDIT_LOG_RE = /reinspection|reacquisition|reread|image[s]?\s+inspected|visually\s+(?:checked|inspected|verified)|visual\s+checks?|in\s+this\s+event|sideways\s+scans|图像核对|图像交叉核对|重新选读|h2\.subheader|\.rendering_researchoutput/i;
+  const AUDIT_LOG_RE = /reinspection|reacquisition|reread|image[s]?\s+inspected|visually\s+(?:checked|inspected|verified)|visual\s+checks?|in\s+this\s+event|sideways\s+scans|图像核对|图像交叉核对|图像核查|图像核实|视觉核对|去空白比对|重新选读|回读|h2\.subheader|\.rendering_researchoutput/i;
   for (const ev of catalog.evidence) {
     const formatted = formatZhReaderLocator(ev.locator);
     assert.doesNotMatch(formatted, /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)|`/i);
     assert.doesNotMatch(formatted, /[，,]\s+[块页单元]/);
-    assert.doesNotMatch(formatted, AUDIT_LOG_RE);
+    assert.doesNotMatch(formatted, AUDIT_LOG_RE, `ZH evidence locator audit log leak (${ev.id}): ${formatted}`);
+    const formattedSummary = formatZhReaderLocator(ev.summary);
+    assert.doesNotMatch(formattedSummary, AUDIT_LOG_RE, `ZH evidence summary audit log leak (${ev.id}): ${formattedSummary}`);
     assert.doesNotMatch(getEnEvidenceLocator(ev, enBib), AUDIT_LOG_RE);
   }
   for (const r of readings.readings) {
