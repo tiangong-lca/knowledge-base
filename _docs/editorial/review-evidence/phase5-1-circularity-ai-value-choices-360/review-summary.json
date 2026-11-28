@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase5-1-circularity-ai-value-choices-360",
+  "issue": "tiangong-lca/knowledge-base#360",
+  "reviewedAt": "2026-11-28",
+  "scientificApproval": false,
+  "scientificApprovalNote": "Automated/AI dual review verifies primary-source fidelity, paywalled-standard and preprint epistemic boundaries, catalog/alignment integrity, rendered HTML typography, bilingual meaning-level parity, and Clean Public Delivery compliance only; it does not constitute human domain-expert scientific approval.",
+  "reviews": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "agentId": "09e3e832-10de-4e13-b5f7-d0c2be0016fc",
+      "initialVerdict": "BLOCKING FINDINGS",
+      "blockingCount": 7,
+      "advisoryCount": 5,
+      "resolvedBlocking": [
+        "B1: Fixed Chinese typo 千克服二氧化碳当量 -> 千克二氧化碳当量（kg CO₂-eq） in cl-ce51-circularity-metrics-vs-cff-and-lca.",
+        "B2: Softened ZH paywalled ISO 59020:2024 wording from normative 明确要求...配对 / 须配对 to permissive 指出可结合补充方法 matching Barner (2025) verbatim ('can be used').",
+        "B3: Separated micro-level MCI (EMF & Granta Design 2015) from macro-level MFA indicators in Rigamonti & Mancini (2021), and moved the 2019 MCI revision mention under Sazdovski et al. (2024) in cl-ce51-mci-pci-and-iso59020-empirical-limits.",
+        "B4: Separated compliance cautions cleanly in cl-ai51-guardrails-and-epistemic-limits: Donaldson et al. (2025) on mandatory independent review and unsuitability for unsupervised high-stakes decisions vs. Rao et al. (2026) on PCFBench leaderboard non-equivalence to audited LCA/EPD, EU CSRD, or California SB-253.",
+        "B5: Disentangled UK EA (2011) 40.28% bin-liner substitution for thick LDPE bags from Danish EPA (2018) integer bag rounding for six undersized bag types in Ch. 40 Table 1 Row 2 (ZH & EN).",
+        "B6: Corrected Ch. 40 Table 1 Row 6 (ZH & EN) from 'normalization revisions alone' to joint characterization and normalization updates (with weights and inventories unchanged) across 2,751/2,752 official EF datasets.",
+        "B7: Added all 7 newly added shared claim slots in exact reading order into knowledge/editions/alignment.json across Ch. 13, Ch. 30, and Ch. 40."
+      ],
+      "resolvedAdvisory": [
+        "A1: Aligned Ch. 40 Table 1 ZH option labels in Rows 5, 7, 8, and 9 to the linked ZH chapters' exact Heavenly-Stem identifiers (方案戊/己, 甲/乙, 路线丁/丙, 方案庚/辛, 投标戊, 方案甲′/乙′).",
+        "A2: Clarified Sazdovski et al. (2024) functional unit (1,000 metric tons per rotation across 100 rotations = 6,666,700 fillings) and retained quality ratios (90% plastics, 85% cardboard).",
+        "A3: Tightened Mantalovas & Di Mino (single mathematical composite) and Niero & Kalbar (indicator-selection and MCDA-method sensitivity) against Rigamonti & Mancini (2021) pp. 1940-1941.",
+        "A4: Scoped PCFBench 98%-100% tool-call compliance to structured tasks alongside syntactically valid BOM outputs, and synced the (<1x or >3x reference mass) parenthetical into EN.",
+        "A5: Added English paraphrase fields to all 7 new entries in knowledge/editions/en/bibliography.json, removed 'Phase 5.1' from knowledge/editions/en/termbase.json, and added explicit preprint qualifiers to publicSummary."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "agentId": "cc291ceb-9318-406c-8f43-16b0ccac8987",
+      "initialVerdict": "BLOCKING FINDINGS",
+      "blockingCount": 4,
+      "advisoryCount": 7,
+      "resolvedBlocking": [
+        "B1: Fixed 千克服二氧化碳当量 -> 千克二氧化碳当量（kg CO₂-eq） across all rendered ZH routes.",
+        "B2: Expanded all standalone first-use acronyms across Ch. 13 (PET, CO₂-eq, resource life cycle impact assessment), Ch. 30 (AI, ML, Large Language Models, IQR, RMSE, BOM, F1 score, LOOCV, median absolute relative error), Ch. 40 Table 1 (all 10 rows in both ZH & EN), and /en/changes/ title/summary.",
+        "B3: Fixed Ch. 13 Table 1 callout to match the four-framework table, added concluding subsection 13.6 (#材料循环小结 / #material-recycling-synthesis) with bridging handoff from 13.5 so legacy closing claims no longer appear stranded under 13.5, and removed forward-reference premise cl-cff109-judgment from cl-ce51-circularity-metrics-vs-cff-and-lca.",
+        "B4: Replaced raw ASCII C_rm with 原料缩放系数 and expanded PEP, RMSE, and EMF in /zh/sources/ evidence summaries."
+      ],
+      "resolvedAdvisory": [
+        "A1: Added bridging sentence closing Ch. 30 Section 30.5 into Section 30.6 verifiable metadata without mutating legacy checkpointed claims.",
+        "A2: Added parenthetical explaining PCFBench Step 6 exclusion (Tasks 1-5 & 7) and localized Task -> 任务 in ZH prose and Table 3.",
+        "A3: Removed consecutive MFA/MCI/LLM re-expansions, unified metric tons, dropped single-use (PVOH), standardized American double quotes and CO₂ eq notation, and wrote F1 score / F1 分数 on first use.",
+        "A4: Synced 10-fold error and excluded upstream energy examples into EN Ch. 30, formatted €240/€120 in EN Ch. 40 Row 9, and added Chinese glosses for Cut-off/APOS/Consequential in ZH Ch. 40 Row 3.",
+        "A5-A6: Retained canonical Europe PMC XML hash URLs matching existing catalog entries; print-link normalization noted as pre-existing renderer behavior outside Phase 5.1 scope.",
+        "A7: Added explicit non-peer-reviewed preprint qualifier to /zh/changes/ and /en/changes/."
+      ]
+    }
+  ],
+  "finalVerdict": "ALL BLOCKING AND IN-SCOPE ADVISORY FINDINGS RESOLVED"
+}
