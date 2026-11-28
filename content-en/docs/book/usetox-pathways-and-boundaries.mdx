@@ -13,21 +13,21 @@ Table 1. Comparison of category architecture, reference basis, and endpoint boun
 
 | Framework and Underlying Model | Midpoint Categories and Units | Terrestrial and Marine Ecotoxicity Coverage | Endpoint Treatment |
 | --- | --- | --- | --- |
-| ILCD 2011 / EF 3.1 (USEtox) | 3: human cancer (`CTUh`), human non-cancer (`CTUh`), freshwater ecotoxicity (`CTUe`) | Neither recommended | Only ILCD assigns a split rating to cancer DALY; all others not recommended |
-| ReCiPe 2016 (USES-LCA 2.0 + USEtox substance database) | 5: cancer and non-cancer (urban-air `1,4-DCB eq.`); freshwater, marine, and terrestrial ecotoxicity (compartment-specific `1,4-DCB eq.`) | Includes marine and industrial soil; excludes agricultural soil to avoid double counting with land use | Multiplies by perspective-invariant `1,4-DCB` damage factors to convert to `DALY` and `species·yr` |
+| ILCD 2011 / EF 3.1 (USEtox) | 3: human cancer (CTUh), human non-cancer (CTUh), freshwater ecotoxicity (CTUe) | Neither recommended | Only ILCD assigns a split rating to cancer DALY; all others not recommended |
+| ReCiPe 2016 (USES-LCA 2.0 + USEtox substance database) | 5: cancer and non-cancer (urban-air 1,4-DCB eq.); freshwater, marine, and terrestrial ecotoxicity (compartment-specific 1,4-DCB eq.) | Includes marine and industrial soil; excludes agricultural soil to avoid double counting with land use | Multiplies by perspective-invariant 1,4-DCB damage factors to convert to DALY and species·yr |
 
 <Prose ids="cl-tox123-hc20-and-metals" />
 
-Table 2. Examples of freshwater metal ecotoxicity reordering between EF 3.0 and EF 3.1 (`CTUe/kg`).
+Table 2. Examples of freshwater metal ecotoxicity reordering between EF 3.0 and EF 3.1 (CTUe/kg).
 
-| Metal Emitted to Freshwater | EF 3.0 (Legacy USEtox `0.5/HC50`) | EF 3.1 (`0.2/HC20` + EU Toxicological Dossiers) | Magnitude and Mechanism of Change |
+| Metal Emitted to Freshwater | EF 3.0 (Legacy USEtox 0.5/HC50) | EF 3.1 (0.2/HC20 + EU Toxicological Dossiers) | Magnitude and Mechanism of Change |
 | --- | --- | --- | --- |
-| Trivalent antimony (`Sb³⁺`) | `1.22×10²` | `1.43×10²` | +18% (no EU dossier; extrapolated solely via `HC20 = 0.34 × HC50`) |
-| Aluminum (`Al`) | `4.09×10⁵` | `4.35×10³` | −99% (benchmark switch combined with EU dossier replacement) |
-| Copper (`Cu`) | `9.92×10⁴` | `4.65×10¹` | Printed as −100% in source table (drop of over three orders of magnitude) |
-| Cadmium (`Cd`) | `2.29×10⁵` | `6.74×10⁵` | +195% (rises to highest-ranked metal) |
-| Silver (`Ag`) | `1.94×10⁴` | `1.77×10⁵` | +813% (moves into top tier) |
-| Mercury (`Hg`) | `2.21×10³` | `3.32×10⁴` | +1,401% (relative weight against copper flips by ~32,000×) |
+| Trivalent antimony (Sb³⁺) | 1.22×10² | 1.43×10² | +18% (no EU dossier; extrapolated solely via HC20 = 0.34 × HC50) |
+| Aluminum (Al) | 4.09×10⁵ | 4.35×10³ | −99% (benchmark switch combined with EU dossier replacement) |
+| Copper (Cu) | 9.92×10⁴ | 4.65×10¹ | Printed as −100% in source table (drop of over three orders of magnitude) |
+| Cadmium (Cd) | 2.29×10⁵ | 6.74×10⁵ | +195% (rises to highest-ranked metal) |
+| Silver (Ag) | 1.94×10⁴ | 1.77×10⁵ | +813% (moves into top tier) |
+| Mercury (Hg) | 2.21×10³ | 3.32×10⁴ | +1,401% (relative weight against copper flips by ~32,000×) |
 
 ## Models and Scope [#models-and-scope]
 
@@ -37,12 +37,12 @@ Table 2. Examples of freshwater metal ecotoxicity reordering between EF 3.0 and 
 
 Table 3. Human non-cancer toxicity characterization factors for 1,4-dichlorobenzene and nickel across ReCiPe 2016 perspectives and EF 3.1.
 
-| Emitted Substance and Compartment | ReCiPe Individualist (20 yr, 2 routes, `kg 1,4-DCB eq./kg`) | ReCiPe Hierarchist (100 yr, 9 routes) | ReCiPe Egalitarian (Infinite, 9 routes) | EF 3.1 (`CTUh/kg`) |
+| Emitted Substance and Compartment | ReCiPe Individualist (20 yr, 2 routes, kg 1,4-DCB eq./kg) | ReCiPe Hierarchist (100 yr, 9 routes) | ReCiPe Egalitarian (Infinite, 9 routes) | EF 3.1 (CTUh/kg) |
 | --- | --- | --- | --- | --- |
-| 1,4-Dichlorobenzene, urban ground-level air | 1 | 1 | 1 | `1.4795×10⁻⁸` |
-| Nickel, urban ground-level air | 36 | 2,300 | 5,800 | `1.1237×10⁻⁶` (~75.95× DCB) |
-| 1,4-Dichlorobenzene, seawater | 0.83 | 0.82 | 0.82 | `4.7713×10⁻⁹` |
-| Nickel, seawater | 0 (no seafood route and seawater not used for drinking) | 23 | 7,900 | `3.4465×10⁻⁸` |
+| 1,4-Dichlorobenzene, urban ground-level air | 1 | 1 | 1 | 1.4795×10⁻⁸ |
+| Nickel, urban ground-level air | 36 | 2,300 | 5,800 | 1.1237×10⁻⁶ (~75.95× DCB) |
+| 1,4-Dichlorobenzene, seawater | 0.83 | 0.82 | 0.82 | 4.7713×10⁻⁹ |
+| Nickel, seawater | 0 (no seafood route and seawater not used for drinking) | 23 | 7,900 | 3.4465×10⁻⁸ |
 
 <Prose ids="cl-tox123-speciation-and-proxies" />
 

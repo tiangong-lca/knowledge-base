@@ -262,6 +262,9 @@ export function frameworkBookHref(href, currentKey) {
     const section = {'从活动平衡到废物贡献':'清单计算','另一个研究怎样使用这份指南':'外部采用'}[decodeURIComponent(fragment ?? '')];
     if (section) return `#${printUnitAnchor(frameworkUnitKey)}-${section}`;
   }
+  if (currentKey === '/docs/appendices/iso-study-design-checklist' && !path && fragment) {
+    return `#${printUnitAnchor(currentKey)}-${decodeURIComponent(fragment)}`;
+  }
   return href;
 }
 

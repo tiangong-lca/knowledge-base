@@ -10,7 +10,7 @@ import { projectExchangeSemanticsRaw, validateExchangeAnnotationOutput } from '.
 import { editionDigest, sha256 } from './reader-current-edition.mjs';
 import { flowBoundaryGuide } from './reader-flow-boundary.mjs';
 import { getPresentationUnits, readerParts } from './reader-numbering.mjs';
-import { readerParagraphText } from './reader-publication-text.mjs';
+import { rawReaderText, readerParagraphText } from './reader-publication-text.mjs';
 import { showEditorialHistoryInProse } from './reader-editorial-mode.mjs';
 import { extractRouteChanges } from './reader-revisions.mjs';
 
@@ -127,7 +127,7 @@ export function validateReadableBookResearchOutput(document, published, literatu
   for (const [index, source] of published.sources.entries()) {
     const article = articles[index], title = article?.querySelector('h2 a');
     if (article?.id !== source.id || title?.getAttribute('href') !== source.url || compact(title?.text) !== compact(source.title)
-        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher}。${formatZhReaderLocator(source.version)}。`))
+        || compact(article?.querySelector('h2 + p')?.text) !== compact(`${source.publisher}。${formatZhReaderLocator(source.version).replace(/。+$/u, '')}。`))
       errors.push(`Readable book research source title, order or version differs: ${source.id}`);
     const reading = ledger.readings.find(row => row.id === source.reading?.readingId);
     const work = reading && literature.records.find(row => row.id === reading.workId || row.workId === reading.workId);
@@ -167,13 +167,13 @@ function validateConceptOutput(document, published) {
   const actual = records.map(node => [
     node.id, compact(node.querySelector('h2')?.text),
     compact(node.querySelector('p.subtle')?.text) ?? null,
-    node.querySelectorAll('.concept-definition .claim-text').map(p => compact(p.text)),
+    node.querySelectorAll('.concept-definition .claim-text').map(p => compact(rawReaderText(p))),
     node.querySelectorAll('.mapping-record').map(mapping => {
       const paragraphs = mapping.querySelectorAll('p');
       return [compact(mapping.querySelector('strong')?.text),
         paragraphs[0]?.querySelectorAll('a').map(link => [link.getAttribute('href'), compact(link.text)]),
-        compact(paragraphs[1]?.text),
-        paragraphs[2]?.querySelectorAll('a').map(link => [link.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, ''), compact(link.text)])];
+        compact(rawReaderText(paragraphs[1])),
+        paragraphs[2]?.querySelectorAll('a').map(link => [link.getAttribute('href')?.replace(/^\/(zh|en)(?=\/)/, ''), compact(rawReaderText(link))])];
     }),
   ]);
   const expected = published.concepts.map(concept => [
@@ -193,14 +193,14 @@ function validateConceptOutput(document, published) {
 function validatePublicRecordOutput(path, document, published) {
   if (path === 'concepts/index.html') return validateConceptOutput(document, published);
   if (path === 'claims/index.html') {
-    const actual = document.querySelectorAll('main#main-content section.claim-block').map(node => [node.id, compact(node.querySelector('.claim-text')?.text)]);
+    const actual = document.querySelectorAll('main#main-content section.claim-block').map(node => [node.id, compact(rawReaderText(node.querySelector('.claim-text')))]);
     const expected = published.claims.map(row => [row.id, compact(row.text)]);
     return JSON.stringify(actual) === JSON.stringify(expected) ? [] : ['Readable book actual claim index differs from the current public catalog'];
   }
   const actual = document.querySelectorAll('main#main-content article.source-record').map(node => [
     node.id, compact(node.querySelector('h2 a')?.text),
     node.querySelectorAll('section.evidence-item').map(evidence => [
-      evidence.id, compact(evidence.querySelector('h3')?.text), compact(evidence.querySelector('h3 + p')?.text),
+      evidence.id, compact(evidence.querySelector('h3')?.text), compact(rawReaderText(evidence.querySelector('h3 + p'))),
     ]),
   ]);
   const expected = published.sources.map(source => [

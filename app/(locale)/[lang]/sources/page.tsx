@@ -12,6 +12,7 @@ import {
   getEnSourceVersion,
 } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 
@@ -74,7 +75,7 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
                     <ul>
                       {(claimsByEvidence.get(evidence.id) ?? []).map(claim => (
                         <li key={claim.id}>
-                          <Link href={`/en/claims/#${claim.id}`}>{enClaimsMap[claim.id]?.text ?? claim.text}</Link>
+                          <Link href={`/en/claims/#${claim.id}`}>{formatMathNotation(enClaimsMap[claim.id]?.text ?? claim.text)}</Link>
                         </li>
                       ))}
                     </ul>
@@ -93,11 +94,11 @@ export default async function LocalizedSourcesPage({ params }: { params: Promise
     <p>历史报告、方法论文、指南和软件文档各有用途。引文保留各自的年代与语境；不同版本或同一作品的不同文本，不能仅凭名称相同互相替代。</p>
     <div className="record-list">{catalog.sources.map(source => <article className="source-record" id={source.id} key={source.id}>
       <h2><a href={source.url} rel="noreferrer">{source.title}</a></h2>
-      <p>{source.publisher}。{formatZhReaderLocator(source.version)}。</p><p className="subtle">网页访问日期：{source.accessedAt}</p>
+      <p>{source.publisher}。{formatZhReaderLocator(source.version).replace(/。+$/u, '')}。</p><p className="subtle">网页访问日期：{source.accessedAt}</p>
       <SourceReading source={source} />
       {(evidenceBySource.get(source.id) ?? []).map(evidence => <section className="evidence-item" id={evidence.id} key={evidence.id}>
-        <h3>{formatZhReaderLocator(evidence.locator)}</h3><p>{formatZhReaderLocator(evidence.summary)}</p><EvidencePassage evidence={evidence} />
-        <details><summary>相关论述</summary><ul>{(claimsByEvidence.get(evidence.id) ?? []).map(claim => <li key={claim.id}><Link href={`/zh/claims/#${claim.id}`}>{claim.text}</Link></li>)}</ul></details>
+        <h3>{formatZhReaderLocator(evidence.locator)}</h3><p>{formatMathNotation(formatZhReaderLocator(evidence.summary))}</p><EvidencePassage evidence={evidence} />
+        <details><summary>相关论述</summary><ul>{(claimsByEvidence.get(evidence.id) ?? []).map(claim => <li key={claim.id}><Link href={`/zh/claims/#${claim.id}`}>{formatMathNotation(claim.text)}</Link></li>)}</ul></details>
       </section>)}
     </article>)}</div>
   </PublicationShell>;

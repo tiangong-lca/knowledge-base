@@ -4,7 +4,6 @@ import { CopyeditHistoricalTitle } from '@/components/copyedit-history';
 import { EnChapterContent } from '@/components/en-chapter-content';
 import { formatZhReaderLocator, getEnSourcePublisher, getEnSourceTitle, getEnSourceVersion } from '@/lib/en-citation-format';
 import { PublicationNote } from '@/components/publication-note';
-import { getBuildIdentity } from '@/lib/build-identity';
 import catalog from '@/lib/catalog';
 import { isSupportedLocale, SUPPORTED_LOCALES } from '@/lib/i18n';
 import { getLegacyCitations, getPrintPages, logicalPageUrl, type ReaderPage } from '@/lib/reader-book';
@@ -101,7 +100,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       );
     };
 
-    const { textDate } = getBuildIdentity();
     return (
       <PublicationShell
         lang="en"
@@ -115,21 +113,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href="/en/coverage/">{UI_SURFACES.bookGuide.en}</Link> for structured navigation. When citing, please record the chapter title, URL, version, and access date.
           </p>
         </div>
-        <section className="print-preface" aria-labelledby="en-editorial-note">
-          <h2 id="en-editorial-note">Editorial Note</h2>
-          <p>
-            <em>The Past and Present of Life Cycle Assessment</em> online edition, <time dateTime={textDate}>{textDate}</time>. Publication years and specific editions of cited works are recorded in chapter-end notes.
-          </p>
-          <p>
-            Each chapter examines its question against specific inspected sections or passages of named primary works. Citing a publication does not imply that the entire document was read or that all of its conclusions are adopted. Uninspected sections and paywalled originals are never used as support; exact scopes and caveats appear in chapter-end notes.
-          </p>
-          <p>
-            In the notes, <em>Source statement</em> reports a cited source, <em>Interpretation</em> clarifies meaning, <em>Calculation</em> shows explicit derivations, <em>Synthesis</em> links multiple premises, and <em>Analytical proposal</em> marks a practice suggested by the author. <em>Validity scope</em> bounds the main-text claim, <em>Context</em> provides background, and <em>Premises referenced</em> points to earlier notes relied upon in a derivation.
-          </p>
-          <p>
-            Source verification was assisted by AI, and editorial review does not constitute independent peer review by external domain experts. Worked teaching cases clearly separate constructed inputs from externally sourced values and do not establish real-world product rankings, regulatory compliance, or third-party certification.
-          </p>
-        </section>
+        <PublicationNote lang="en" />
         <nav aria-label="Book Contents" className="reader-book-contents">
           <h2>Contents</h2>
           <ul>{renderEnTocItems(enFrontMatter)}</ul>

@@ -143,6 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           when <a href={identity.errataUrl} rel="noreferrer">submitting an erratum or supporting evidence</a>. Third-party errata must identify
           both the original publication and the correction notice rather than silently altering a number without provenance.
         </p>
+        <PublicationNote lang="en" />
         <p>
           Detailed commit-level editorial history is maintained in the{' '}
           <a href="https://github.com/tiangong-lca/knowledge-base" rel="noreferrer">GitHub repository</a> separately from the reading surface.

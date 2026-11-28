@@ -18,8 +18,8 @@ Table 1. Comparison of water-resource assessment architectures across four major
 | Framework | Midpoint Indicator and Independent Variable | Endpoint Damage Pathways | Spatial and Methodological Features |
 | --- | --- | --- | --- |
 | ILCD 2011 | Swiss ecological scarcity method (6 scarcity classes, Level III) | 0 (not evaluated) | Rejects pure withdrawal summation (MEEuP) and scarcity-free exergy extraction (CEENE) |
-| EF 3.1 | AWARE proxy midpoint (`m³ world-eq.`, capped at 0.1–100, Level III) | 0 | Defaults to national annual unspecified-use factors; nets 7 positive and 4 negative same-country flows |
-| ReCiPe 2016 | Water Consumption Potential, WCP (uniform `1 m³/m³`, no scarcity weight) | 3: malnutrition health, terrestrial plants, estuarine freshwater fish | Defers all scarcity and vulnerability to endpoints; industrial groundwater does not deduct surface returns |
+| EF 3.1 | AWARE proxy midpoint (m³ world-eq., capped at 0.1–100, Level III) | 0 | Defaults to national annual unspecified-use factors; nets 7 positive and 4 negative same-country flows |
+| ReCiPe 2016 | Water Consumption Potential, WCP (uniform 1 m³/m³, no scarcity weight) | 3: malnutrition health, terrestrial plants, estuarine freshwater fish | Defers all scarcity and vulnerability to endpoints; industrial groundwater does not deduct surface returns |
 | LC-IMPACT | 0 midpoints | 2: malnutrition health across 11,050 watersheds; global wetland species extinction at 0.05° | Argues partial midpoints break rank consistency with endpoints; quantifies damage directly |
 
 <Prose ids="cl-water125-withdrawal-return-accounting" />
@@ -34,9 +34,9 @@ Table 2. Cultural-perspective parameters, cutoff thresholds, and global means fo
 
 | Endpoint Category | Individualist (I) | Hierarchist (H) and Egalitarian (E) | Key Mechanism or Cutoff Threshold |
 | --- | --- | --- | --- |
-| Human health (malnutrition, `DALY/m³`) | `3.10×10⁻⁶` (WSI 0.698; water requirement 1,000 `m³/(yr·person)`) | `2.22×10⁻⁶` (WSI 0.657; water requirement 1,350 `m³/(yr·person)`) | Water requirement in denominator makes I ~40% higher than H/E; zeroed for countries with HDI > 0.88 |
-| Terrestrial vascular plants (`species·yr/m³`) | 0 (zeroed due to insufficient correlation in high-diversity watersheds) | `1.35×10⁻⁸` (area-weighted mean) | Based on net primary productivity (NPP) climate constraints and mean terrestrial species density |
-| Freshwater fish (`species·yr/m³`) | Watershed median `6.04×10⁻¹³` (country mean `1.74×10⁻¹²`) | Identical to Individualist | Applies only to estuarine watersheds within 42° N–42° S; all higher-latitude basins excluded |
+| Human health (malnutrition, DALY/m³) | 3.10×10⁻⁶ (WSI 0.698; water requirement 1,000 m³/(yr·person)) | 2.22×10⁻⁶ (WSI 0.657; water requirement 1,350 m³/(yr·person)) | Water requirement in denominator makes I ~40% higher than H/E; zeroed for countries with HDI > 0.88 |
+| Terrestrial vascular plants (species·yr/m³) | 0 (zeroed due to insufficient correlation in high-diversity watersheds) | 1.35×10⁻⁸ (area-weighted mean) | Based on net primary productivity (NPP) climate constraints and mean terrestrial species density |
+| Freshwater fish (species·yr/m³) | Watershed median 6.04×10⁻¹³ (country mean 1.74×10⁻¹²) | Identical to Individualist | Applies only to estuarine watersheds within 42° N–42° S; all higher-latitude basins excluded |
 
 ## Comparing Two Water-Consumption Locations [#comparing-two-water-locations]
 
@@ -50,11 +50,11 @@ Table 2. Cultural-perspective parameters, cutoff thresholds, and global means fo
 
 Table 3. Cross-dimensional comparison of 1 m³ blue-water consumption across representative countries in EF 3.1 and ReCiPe 2016 (Hierarchist/Egalitarian).
 
-| Country Pair | EF 3.1 AWARE (`m³ world-eq./m³`) | ReCiPe WSI (Physical Withdrawal Stress) | ReCiPe Human Health (`DALY/m³`) | ReCiPe Terrestrial Ecosystems (`species·yr/m³`) | ReCiPe Freshwater Fish (`species·yr/m³`) |
+| Country Pair | EF 3.1 AWARE (m³ world-eq./m³) | ReCiPe WSI (Physical Withdrawal Stress) | ReCiPe Human Health (DALY/m³) | ReCiPe Terrestrial Ecosystems (species·yr/m³) | ReCiPe Freshwater Fish (species·yr/m³) |
 | --- | --- | --- | --- | --- | --- |
-| Australia / Bangladesh | 72.1 / 2.43 (Australia 29.7× higher) | — | `5.76×10⁻¹⁸` / `1.95×10⁻⁶` (Bangladesh 10¹¹× higher) | `3.30×10⁻⁸` / `2.16×10⁻⁹` (Australia 15.3× higher) | `2.42×10⁻¹²` / `2.49×10⁻¹²` (Bangladesh slightly higher) |
-| Chile / China | 80.1 / 42.4 (Chile 1.89× higher) | 0.773 / 0.539 (Chile higher) | `2.93×10⁻⁷` / `7.58×10⁻⁷` (China 2.59× higher) | `4.28×10⁻⁹` / `4.58×10⁻⁹` (China higher) | 0 / `3.91×10⁻¹²` (China higher) |
-| Belgium / Canada | 1.37 / 7.40 (Canada 5.40× higher) | 0.686 / 0.109 (Belgium 6.29× higher) | 0 / 0 (both HDI > 0.88) | `2.14×10⁻⁹` / `1.27×10⁻⁹` (Belgium higher) | 0 / 0 (both above 42° N) |
+| Australia / Bangladesh | 72.1 / 2.43 (Australia 29.7× higher) | — | 5.76×10⁻¹⁸ / 1.95×10⁻⁶ (Bangladesh 10¹¹× higher) | 3.30×10⁻⁸ / 2.16×10⁻⁹ (Australia 15.3× higher) | 2.42×10⁻¹² / 2.49×10⁻¹² (Bangladesh slightly higher) |
+| Chile / China | 80.1 / 42.4 (Chile 1.89× higher) | 0.773 / 0.539 (Chile higher) | 2.93×10⁻⁷ / 7.58×10⁻⁷ (China 2.59× higher) | 4.28×10⁻⁹ / 4.58×10⁻⁹ (China higher) | 0 / 3.91×10⁻¹² (China higher) |
+| Belgium / Canada | 1.37 / 7.40 (Canada 5.40× higher) | 0.686 / 0.109 (Belgium 6.29× higher) | 0 / 0 (both HDI > 0.88) | 2.14×10⁻⁹ / 1.27×10⁻⁹ (Belgium higher) | 0 / 0 (both above 42° N) |
 
 Note: ReCiPe 2016 national figures are drawn from RIVM Report 2016-0104 Appendix Tables S6.1–S6.3 within the alphabetical A–C range to avoid the formatting-corrupted F–Z block of Table S6.2; "—" indicates a pair for which WSI is not contrasted in the main text.
 

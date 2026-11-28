@@ -110,6 +110,7 @@ function paragraphBodyText(node, marker) {
   if (node === marker) return '';
   if (node.nodeType === 3) return node.text;
   if (node.nodeType !== 1) return '';
+  if (node.hasAttribute?.('data-math-raw')) return node.getAttribute('data-math-raw') ?? '';
   return node.childNodes.map(child => paragraphBodyText(child, marker)).join('');
 }
 

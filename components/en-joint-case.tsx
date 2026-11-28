@@ -13,7 +13,7 @@ const labels = {
 const vector = (values: string[]) => `(${values[0]} kg CO₂, ${values[1]} g SO₂)`;
 
 /** Static server output only: uses the shared exact-arithmetic joint-production engine. */
-export function EnJointProductionCase() {
+export function EnJointProductionCase({ print = false }: { print?: boolean } = {}) {
   const spec = publicTeachingCase(rawSpecification) as unknown as typeof rawSpecification;
   const result = evaluateJointProductionCase(spec);
   const bases = {
@@ -23,6 +23,11 @@ export function EnJointProductionCase() {
     wasteY: 'Treating 1 kg of unused Y without recovery',
   };
   const scenarios = [result.scenarios.full, result.scenarios.half, result.scenarios.none];
+  const anchorPrefix = print ? 'en-print--en-docs-book-joint-production-' : '';
+  const inferenceLinks = [
+    { href: `#${anchorPrefix}burden-shares`, title: 'Burden Shares' },
+    { href: `#${anchorPrefix}reference-supply`, title: 'Reference Supply' },
+  ];
 
   return (
     <section
@@ -35,6 +40,15 @@ export function EnJointProductionCase() {
         One Co-Product Batch: Partitioning Shares, Supply Routes, and Comparative Residuals
       </h3>
       <p className="teaching-case-meta">Pedagogical Case · Inventory Accounting</p>
+      <p className="teaching-case-note">
+        The tables below provide inputs and computed outputs for quick lookup; step-by-step derivations appear in{' '}
+        {inferenceLinks.map((link, index) => (
+          <span key={link.href}>
+            {index > 0 ? ' and ' : ''}
+            <a href={link.href}>{link.title}</a>
+          </span>
+        ))}.
+      </p>
       <p>
         One batch of J rigidly outputs {spec.outputKgPerJointBatch.X} kg of X and{' '}
         {spec.outputKgPerJointBatch.Y} kg of Y. Both fulfill distinct specified material services;
@@ -188,9 +202,30 @@ export function EnJointProductionCase() {
         </table>
       </div>
 
+      <p className="teaching-case-note">
+        The double-residual summation diagnostic in the main text is neither a general rejection of all
+        substitution comparisons nor a rule deciding who should receive joint savings.
+      </p>
+      <div className="teaching-case-conditions">
+        <strong>Assumptions and Scope</strong>
+        <ul>
+          <li>X and Y deliver distinct material services; sharing kilograms as a unit does not make them interchangeable.</li>
+          <li>The joint process outputs both co-products in fixed proportions that cannot be varied independently; standalone operations represent stipulated alternative technologies.</li>
+          <li>Each operation’s inventory holds all burdens included for that operation in this example, with no overlap between operations. Other activities and elementary flows are omitted rather than assumed physically zero.</li>
+          <li>The comparison is limited to operating activity changes; unchanged capital burdens lie outside this boundary and cannot be used to evaluate plant construction or investment consequences.</li>
+          <li>Receiving demands for X and Y are fixed. Utilized joint Y matches standalone Y in quality, location, timing, and downstream use on a one-to-one basis; no extra processing or use-phase differences are stipulated.</li>
+          <li>Standalone production can scale down by the listed amounts and the joint process can displace the listed X supply; capacity limits, price feedbacks, rebound effects, time lags, and induced activities are not modeled.</li>
+          <li>Applying this structure to a real decision requires independent evidence on supplier responses and utilization share q; observing a price or sale does not by itself prove physical displacement.</li>
+          <li>Prices in hypothetical currency units (CU) govern only gross-sales partitioning under full utilization; they do not govern supply routes or identify which co-product determines joint output.</li>
+          <li>Physical emissions along every route are strictly positive. Negative residuals arise solely from subtracting reference supply, not from atmospheric removal, negative physical output, or intrinsic product properties.</li>
+          <li>CO₂ and SO₂ retain their separate units without impact characterization or cross-flow summation and cannot establish overall environmental superiority.</li>
+          <li>Partial-utilization scenarios alter explicitly stipulated service-delivery conditions and are not an application of Weidema’s rules or his corrected worked examples.</li>
+        </ul>
+      </div>
+
       <p className="teaching-case-download">
-        <a href="/downloads/cases/joint-batch-v1.json" download>Download case input JSON</a> ·{' '}
-        <a href="/downloads/cases/joint-batch-v1.evaluated.json" download>Download evaluated receipt</a>
+        <a href="/downloads/cases/joint-batch-v1.json" download>Download case input</a> ·{' '}
+        <a href="/downloads/cases/joint-batch-v1.evaluated.json" download>Download calculation results</a>
       </p>
     </section>
   );

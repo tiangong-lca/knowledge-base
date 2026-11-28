@@ -11,6 +11,7 @@ import {
   getEnSourceVersion,
 } from '@/lib/en-citation-format';
 import { EN_PUBLIC_ENABLED, isSupportedLocale } from '@/lib/i18n';
+import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import { UI_SURFACES } from '@/lib/ui-glossary';
 import catalog, { getClaimEvidence } from '@/lib/catalog';
 
@@ -48,10 +49,10 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
           const evidence = getClaimEvidence(catalog, claim);
           return (
             <section className="claim-block" id={claim.id} key={claim.id}>
-              <blockquote className="claim-text">{enClaim?.text ?? claim.text}</blockquote>
+              <blockquote className="claim-text">{formatMathNotation(enClaim?.text ?? claim.text)}</blockquote>
               <div className="claim-annotation">
                 <p>
-                  <strong>{EN_CLAIM_KINDS[claim.kind]}.</strong> {enClaim?.scope ?? claim.scope}
+                  <strong>{EN_CLAIM_KINDS[claim.kind]}.</strong> {formatMathNotation(enClaim?.scope ?? claim.scope)}
                 </p>
                 {evidence.length > 0 && (
                   <ul className="annotation-sources">
@@ -70,7 +71,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
                   </ul>
                 )}
                 {enClaim?.caveats && enClaim.caveats.length > 0 && (
-                  <p className="annotation-limits">{enClaim.caveats.join(' ')}</p>
+                  <p className="annotation-limits">{formatMathNotation(enClaim.caveats.join(' '))}</p>
                 )}
                 {claim.premiseIds.length > 0 && (
                   <details>
@@ -80,7 +81,7 @@ export default async function LocalizedClaimsPage({ params }: { params: Promise<
                         const premEn = enClaimsMap[premId];
                         return (
                           <li key={premId}>
-                            <a href={`#${premId}`}>{premEn?.text ?? premId}</a>
+                            <a href={`#${premId}`}>{formatMathNotation(premEn?.text ?? premId)}</a>
                           </li>
                         );
                       })}

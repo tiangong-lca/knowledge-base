@@ -130,7 +130,9 @@ export function remapProcessNetworkCitations(entries, accepted, history) {
 function paragraphText(node, marker) {
   if (node === marker) return '';
   if (node.nodeType === 3) return node.text;
-  return node.nodeType === 1 ? node.childNodes.map(child => paragraphText(child, marker)).join('') : '';
+  if (node.nodeType !== 1) return '';
+  if (node.hasAttribute?.('data-math-raw')) return node.getAttribute('data-math-raw') ?? '';
+  return node.childNodes.map(child => paragraphText(child, marker)).join('');
 }
 
 /** Actual paragraph text and section membership are checked independently of IDs and note deduplication. */

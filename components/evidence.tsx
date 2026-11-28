@@ -7,6 +7,7 @@ import rawMap from '@/knowledge/research/literature-map.json';
 import rawLedger from '@/knowledge/research/readings.json';
 import { publicResearch } from '@/scripts/research.mjs';
 import catalog, { getClaimEvidence, isKnownClaim } from '@/lib/catalog';
+import { formatMathNotation } from '@/scripts/reader-math-notation.mjs';
 import type { ClaimKind, EvidenceRecord, EvidenceRelation, SourceRecord, SourceArtifact, ReadingLedger } from '@/lib/catalog';
 
 const kinds: Record<ClaimKind, string> = { 'source-statement': '文献陈述', interpretation: '解释', synthesis: '综合论证', calculation: '计算', proposal: '分析建议' };
@@ -64,7 +65,7 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
   const evidence = getClaimEvidence(catalog, claim);
   const evaluation = serviceConstraintsEvaluationFile(claim.caseBinding) ?? loadShiftEvaluationFile(claim.caseBinding);
   return <div className="claim-annotation">
-    <p><strong>{kinds[claim.kind]}。</strong> {claim.scope}</p>
+    <p><strong>{kinds[claim.kind]}。</strong> {formatMathNotation(claim.scope)}</p>
     {evidence.length > 0 && <ul className="annotation-sources">{evidence.map(({ evidence: item, relation }) => {
       const source = sourcesById.get(item.sourceId);
       if (!source) throw new Error(`Unknown citation source: ${item.sourceId}`);
@@ -73,12 +74,12 @@ export function ClaimAnnotation({ id, showCaseInput = true, premiseReferences }:
         <EvidencePassage evidence={item} />
       </li>;
     })}</ul>}
-    {claim.caveats.length > 0 && <p className="annotation-limits">{claim.caveats.map(text => text.replace(/[。；;\s]+$/, '')).join('；')}。</p>}
+    {claim.caveats.length > 0 && <p className="annotation-limits">{formatMathNotation(claim.caveats.map(text => text.replace(/[。；;\s]+$/, '')).join('；') + '。')}</p>}
     {claim.premiseIds.length > 0 && <details><summary>本段依据的前提</summary><ul>{claim.premiseIds.map(premise => {
       const linked = claimsById.get(premise);
       if (!linked) throw new Error(`Unknown premise: ${premise}`);
       const reference = premiseReferences?.get(premise);
-      return <li key={premise}><Link href={reference?.href ?? `/zh/claims/#${premise}`}>{reference?.label ?? linked.text}</Link></li>;
+      return <li key={premise}><Link href={reference?.href ?? `/zh/claims/#${premise}`}>{formatMathNotation(reference?.label ?? linked.text)}</Link></li>;
     })}</ul></details>}
     {showCaseInput && claim.caseBinding?.inputFile && <p><a href={`/downloads/cases/${claim.caseBinding.inputFile}`} download={claim.caseBinding.inputFile}>下载计算输入（版本 {claim.caseBinding.version}）</a>{evaluation && <> <a href={`/downloads/cases/${evaluation}`} download={evaluation}>下载计算结果（版本 {claim.caseBinding.version}）</a></>}</p>}
   </div>;
@@ -90,15 +91,15 @@ export function Prose({ ids }: { ids: string }) {
     const claim = claimsById.get(id);
     if (!claim) { if (isKnownClaim(id)) return <ReviewNotice key={id} />; throw new Error(`Unknown claim: ${id}`); }
     if (claim.status !== 'reviewed') return <ReviewNotice key={id} />;
-    return <p key={id}>{claim.text}<sup className="prose-references"><Link href={`/zh/claims/#${id}`} aria-label="查看这段论述的出处与条件">注</Link></sup></p>;
+    return <p key={id}>{formatMathNotation(claim.text)}<sup className="prose-references"><Link href={`/zh/claims/#${id}`} aria-label="查看这段论述的出处与条件">注</Link></sup></p>;
   })}</div>;
 }
 export function Claim({ id, anchor = false }: { id: string; anchor?: boolean }) {
   const claim = claimsById.get(id);
   if (!claim) { if (isKnownClaim(id)) return <ReviewNotice />; throw new Error(`Unknown claim: ${id}`); }
-  if (!anchor) return <div className="concept-definition"><p className="claim-text">{claim.text}</p><details><summary>出处与条件</summary><ClaimAnnotation id={id} /></details></div>;
+  if (!anchor) return <div className="concept-definition"><p className="claim-text">{formatMathNotation(claim.text)}</p><details><summary>出处与条件</summary><ClaimAnnotation id={id} /></details></div>;
   return <section className="claim-block" id={id}>
-    <blockquote className="claim-text">{claim.text}</blockquote>
+    <blockquote className="claim-text">{formatMathNotation(claim.text)}</blockquote>
     <ClaimAnnotation id={id} />
   </section>;
 }

@@ -58,7 +58,7 @@ function EnPairedChart({
   return (
     <figure hidden={!interactive} className="teaching-case-chart teaching-case-live" tabIndex={0} aria-label="Shared parameter θ and paired difference chart">
       <svg viewBox="0 0 550 295" role="img" aria-labelledby={`${id}-chart-title ${id}-chart-desc`}>
-        <title id={`${id}-chart-title`}>Paired difference Δ = I_B − I_A versus shared θ</title>
+        <title id={`${id}-chart-title`}>Paired difference Δ = I(B) − I(A) versus shared θ</title>
         <desc id={`${id}-chart-desc`}>
           Horizontal axis θ from {thetaLow} to {thetaHigh} {teachingCase.uncertainty.unit}; vertical axis kg CO₂-eq per prescribed service.
           Shaded band is the fixed ±{tolerance} tolerance band. Solid line: smooth substrate; dashed line: rough substrate; circle: current scenario and θ.
@@ -222,8 +222,12 @@ export function EnWallCaseClient({ spec: teachingCase, print = false }: { spec: 
         </table>
       </div>
 
+      <p className="teaching-case-note">
+        Assumes zero material loss, instantaneous recoating without downtime, constant performance and technology over ten years, and no removal of the old coating before recoating Paint A. Application equipment, labor, disposal, and recycling are deliberately omitted; only two emissions and one climate indicator are tracked. Uncovered activities, flows, and impact categories cannot be treated as zero and do not support conclusions about real-world paint performance or full life cycle superiority.
+      </p>
+
       <p>
-        Shared parameter θ ∈ {range(teachingCase.uncertainty.closedRange)} {teachingCase.uncertainty.unit}: the exact same
+        Shared parameter θ ∈ {range(teachingCase.uncertainty.closedRange)} {teachingCase.uncertainty.unit.replace('CO2', 'CO₂')}: the exact same
         value enters both Paint A and Paint B simultaneously (paired parameter, not independent sampling).
       </p>
 
@@ -330,6 +334,9 @@ export function EnWallCaseClient({ spec: teachingCase, print = false }: { spec: 
             </tbody>
           </table>
         </div>
+        <p className="teaching-case-note">
+          Non-electricity burdens for paint production and surface preparation exclude P-E electricity burdens; electricity generation is accounted for solely in P-E. Oxidized CO₂ from fossil CH₄ is not added a second time.
+        </p>
 
         <div className="teaching-case-traces">
           {ALTERNATIVES.map(alt => (
@@ -405,8 +412,16 @@ export function EnWallCaseClient({ spec: teachingCase, print = false }: { spec: 
         </table>
       </div>
 
+      <p className="teaching-case-note">
+        Characterization vector c = {vector(teachingCase.characterization.factorVector)} in{' '}
+        {teachingCase.characterization.factorUnits.map(u => u.replaceAll('CO2', 'CO₂').replaceAll('CH4', 'CH₄')).join(' and ')}, taking central values from{' '}
+        <a href={`/en/sources/#${teachingCase.characterization.sourceId}`}>IPCC AR6 WGI Table 7.15 (7 October 2025 errata)</a>. Fossil CH₄ carries a reported uncertainty of{' '}
+        {teachingCase.characterization.reportedCH4Uncertainty.split(';')[0]} (not propagated here), and θ carries no probability distribution. For the physical meaning and time horizon of GWP100, see{' '}
+        <a href={print ? '#en-print--en-docs-book-wall-service-to-comparison-indicator-meaning' : '#indicator-meaning'}>Indicator Meaning</a>; citation editions and carrier limits appear in the chapter notes.
+      </p>
+
       <p className="teaching-case-download">
-        <a href="/downloads/cases/wall-coating-v1.json" download>Download version {version} input JSON</a> · Fixed service, matrices, characterization factors, scenarios, shared θ domain, and tolerance for full arithmetic reconstruction.
+        <a href="/downloads/cases/wall-coating-v1.json" download>Download version {version} calculation input</a> · Fixed service, matrices, characterization factors, scenarios, shared θ domain, and tolerance for full arithmetic reconstruction.
       </p>
     </section>
   );

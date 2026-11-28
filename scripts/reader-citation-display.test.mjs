@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import {
   formatZhReaderLocator,
   getEnEvidenceLocator,
+  getEnPassageLocator,
   getEnSourceTitle,
   validateEnBibliography,
 } from './reader-citation-display.mjs';
@@ -46,14 +47,28 @@ test('formatZhReaderLocator converts all 0-based PDF/NEPIS/notebook index forms 
   assert.equal(formatZhReaderLocator('印刷 pp155–156；PDF zero indexes0–1；§§1–2'), '印刷 pp155–156；PDF 第 1–2 页；§§1–2');
   assert.equal(formatZhReaderLocator('指定45个扫描页，见pdfIndices'), '指定 45 个扫描页');
   assert.equal(formatZhReaderLocator('Supporting Information §2 输入表，S5 `Power losses` 行'), 'Supporting Information §2 输入表，S5 “Power losses” 行');
+  assert.equal(formatZhReaderLocator('Introduction 印刷 pp1–3；NEPIS blocks20–22，重点 p2/block21'), 'Introduction 印刷 pp1–3；NEPIS 第 21–23 块，重点 p2/NEPIS 第 22 页');
+  assert.equal(formatZhReaderLocator('印刷 pp54–58；PDF 零基索引61–65，重点 p54/index61'), '印刷 pp54–58；PDF 第 62–66 页，重点 p54/PDF 第 62 页');
+  assert.equal(formatZhReaderLocator('Annex I§4.5，原刊OJ L471/265–266，PDF零基67–68，脚注47–48'), 'Annex I§4.5，原刊OJ L471/265–266，PDF 第 68–69 页，脚注47–48');
+  assert.equal(formatZhReaderLocator('Tables4–5 Γ and Λ rows; visually checked; printed 9'), 'Tables 4–5 Γ and Λ rows; printed 9');
+  const AUDIT_LOG_RE = /reinspection|reacquisition|reread|image[s]?\s+inspected|visually\s+(?:checked|inspected|verified)|visual\s+checks?|in\s+this\s+event|sideways\s+scans|图像核对|图像交叉核对|重新选读|h2\.subheader|\.rendering_researchoutput/i;
   for (const ev of catalog.evidence) {
-    assert.doesNotMatch(formatZhReaderLocator(ev.locator), /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)|`/i);
+    const formatted = formatZhReaderLocator(ev.locator);
+    assert.doesNotMatch(formatted, /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)|`/i);
+    assert.doesNotMatch(formatted, /[，,]\s+[块页单元]/);
+    assert.doesNotMatch(formatted, AUDIT_LOG_RE);
+    assert.doesNotMatch(getEnEvidenceLocator(ev, enBib), AUDIT_LOG_RE);
   }
   for (const r of readings.readings) {
     for (const p of r.passages ?? []) {
-      assert.doesNotMatch(formatZhReaderLocator(p.locator), /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)/i);
+      const formatted = formatZhReaderLocator(p.locator);
+      assert.doesNotMatch(formatted, /零基|pdfIndices|pdfIndex|PDF\s*(?:zero\s*)?(?:indices|indexes|index)/i);
+      assert.doesNotMatch(formatted, /[，,]\s+[块页单元]/);
+      assert.doesNotMatch(formatted, AUDIT_LOG_RE, `ZH passage audit log leak (${p.id}): ${formatted}`);
+      const enFormatted = getEnPassageLocator(p, enBib);
+      assert.doesNotMatch(enFormatted, AUDIT_LOG_RE, `EN passage audit log leak (${p.id}): ${enFormatted}`);
       if (p.printedPages) {
-        assert.doesNotMatch(formatZhReaderLocator(p.printedPages), /零基|pdfIndices|pdfIndex/i);
+        assert.doesNotMatch(formatZhReaderLocator(p.printedPages), /零基|pdfIndices|pdfIndex|[，,]\s+[块页单元]/i);
       }
     }
   }

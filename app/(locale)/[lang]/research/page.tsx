@@ -102,7 +102,7 @@ export default async function LocalizedResearchPage({ params }: { params: Promis
       return <article className="source-record" key={source.id} id={source.id}>
         {firstWork && <span id={work.id} />}
         {firstReading && <span id={reading.id} />}
-        <h2><a href={source.url}>{source.title}</a></h2><p>{source.publisher}。{formatZhReaderLocator(source.version)}。</p>
+        <h2><a href={source.url}>{source.title}</a></h2><p>{source.publisher}。{formatZhReaderLocator(source.version).replace(/。+$/u, '')}。</p>
         <p><Link href={`/zh/sources/#${source.id}`}>引文位置与相关论述</Link></p>
         {firstReading && <details><summary>引用章节与页码</summary><ul>{reading.passages.map(passage => <li key={passage.id} id={passage.id}>{formatZhReaderLocator(passage.locator)}{'printedPages' in passage && passage.printedPages && <>，{formatZhReaderLocator(passage.printedPages)}</>}</li>)}</ul></details>}
       </article>;
