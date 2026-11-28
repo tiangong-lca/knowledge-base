@@ -998,6 +998,41 @@
       "title": "Guidance on Organizational Life Cycle Assessment",
       "publisher": "United Nations Environment Programme (UNEP) / SETAC Life Cycle Initiative",
       "version": "2015 edition (152 PDF pp.; lead authors Martínez Blanco, Finkbeiner & Inaba)"
+    },
+    "src-ce51-rigamonti-mancini-2021": {
+      "title": "Life cycle assessment and circularity indicators",
+      "publisher": "The International Journal of Life Cycle Assessment (Springer, Open Access)",
+      "version": "Vol. 26 (2021), pp. 1937–1942, doi:10.1007/s11367-021-01966-2 (Rigamonti & Mancini)"
+    },
+    "src-ce51-sazdovski-2024-mci-pci": {
+      "title": "Comparative assessment of two circularity indicators for the case of reusable versus single-use secondary packages for fresh foods in Spain",
+      "publisher": "Heliyon (Elsevier, Open Access via Europe PMC)",
+      "version": "Vol. 10, Issue 6 (2024), e27922, doi:10.1016/j.heliyon.2024.e27922, PMCID: PMC10951572 (Sazdovski et al.)"
+    },
+    "src-ce51-barner-2025-iso59020": {
+      "title": "How Circular Can the Chemical Industry Sector Be(come)?",
+      "publisher": "Global Challenges (Wiley, Open Access via Europe PMC)",
+      "version": "Vol. 9, Issue 12 (2025), e00358, doi:10.1002/gch2.202500358, PMCID: PMC12697073 (Barner)"
+    },
+    "src-ce51-iso59020-metadata": {
+      "title": "ISO 59020:2024 Circular economy — Measuring and assessing circularity performance",
+      "publisher": "International Organization for Standardization (ISO)",
+      "version": "First edition, May 2024 (ISO/TC 323; metadata only — paywalled full text not inspected)"
+    },
+    "src-ai51-langhorst-2025-trees": {
+      "title": "From Reaction Stoichiometry to Life Cycle Assessment: Decision Tree-Based Estimation Tool",
+      "publisher": "ACS Environmental Au (American Chemical Society, Open Access via Europe PMC)",
+      "version": "Vol. 5, Issue 6 (2025), pp. 550–560, doi:10.1021/acsenvironau.4c00065, PMCID: PMC12635940 (Langhorst et al.)"
+    },
+    "src-ai51-donaldson-2025-llm-bench": {
+      "title": "An Expert-grounded benchmark of General Purpose LLMs in LCA",
+      "publisher": "arXiv preprint (UNEP Life Cycle Initiative Working Group on AI and LCA contributors)",
+      "version": "arXiv:2510.19886v1 [cs.CL], 22 Oct 2025 (preprint — not yet journal peer-reviewed; Donaldson et al.)"
+    },
+    "src-ai51-rao-2026-pcfbench": {
+      "title": "PCFBench: A Diagnostic Benchmark for Product Carbon Footprint Estimation",
+      "publisher": "arXiv preprint (Watershed Technology, Inc.)",
+      "version": "arXiv:2608.27716v1 [cs.AI], 27 Aug 2026 (preprint — not yet journal peer-reviewed; Rao et al.)"
     }
   },
   "evidence": {
@@ -4671,6 +4706,41 @@
       "locator": "Commission Recommendation 2013/179/EU (OJ L 124), Annex III Organisation Environmental Footprint (OEF) Guide structure (cross-checked with UNEP/SETAC 2015 Annex C.F)",
       "summary": "Annex III of Recommendation 2013/179/EU establishes the multi-criteria Organisation Environmental Footprint (OEF) method alongside PEF, structuring the organization's product portfolio and enabling sector-specific rules (OEFSRs) for prescriptive reproducibility.",
       "paraphrase": "EU Recommendation 2013/179/EU Annex III defines the prescriptive multi-criteria OEF method and OEFSR governance structure."
+    },
+    "ev-ce51-rigamonti-2021-divergence-and-hierarchy": {
+      "locator": "Rigamonti and Mancini (2021), Abstract, Sections 1–4, and Table 1 (pp. 1937–1941)",
+      "summary": "Reviews eight case studies evaluating Life Cycle Assessment (LCA) alongside circularity indicators (including micro-level Material Circularity Indicator [MCI], Product Circularity Indicator [PCI], and macro-level material-flow-analysis [MFA] ratios): most separate studies (tires, washing machines, alkaline batteries, food packaging) find conflicting rankings or burden-shifting trade-offs, with Schmidt et al. (2020) on polyethylene terephthalate (PET) bottles as a counterexample reporting aligned trends; single mathematical composites hold only under closed loops with identical boundaries while multi-criteria decision analysis (MCDA) introduces indicator-selection and method sensitivity. Also identifies two structural LCA limits for circularity (linear cradle-to-grave heritage lacking consistent open-loop/quality rules, and resource impact assessment excluding anthropogenic stocks), proposes an LCA-first two-step hierarchy, and warns against mixing circularity scores inside LCA weighting due to opposite score polarities.",
+      "paraphrase": "Rigamonti and Mancini (2021) show that no reviewed study supports choosing environmentally optimal options from circularity indicators alone, and highlight weighting-reversal risks from opposite score polarities."
+    },
+    "ev-ce51-sazdovski-2024-packaging-mci-pci": {
+      "locator": "Sazdovski et al. (2024), Sections 1.2, 2.1–2.3, 3.1–3.2 (Tables 1–4), and 4–5",
+      "summary": "Models distribution of 1,000 metric tons of fresh agricultural produce per rotation across 100 rotations over 10 years in Spain (6,666,700 15-kg package fillings) pairing GaBi Material Flow Analysis (MFA) with MCI (introduced by the Ellen MacArthur Foundation in 2015 and updated in 2019) and PCI for Reusable Plastic Crates (RPCs) vs. Single-Use Cardboard Boxes (CBBs). Preliminary product-level RPC MCI averages 0.993 (0.55 first use, 0.998 thereafter) vs. 0.63 for CBB, while system-level MFA coupling yields 0.85 (MCI) and 0.83 (PCI) for RPC vs. 0.63 and 0.58 for CBB. Exposes gaps vs. physical MFA (MCI/PCI virgin input 60,862–62,562 kg vs. 185,151 kg real MFA build-up), MCI omission of retained quality ratios (90% plastics, 85% cardboard) and component-production scrap (46.75 kg RPC, 59,778 kg CBB captured by PCI), and omission of resource stocks and intermediate R-strategies. Transcription anomalies in reprinted Section 2.3.1 MCI equations are excluded.",
+      "paraphrase": "Sazdovski et al. (2024) show in a Spanish produce-packaging case that system-level MCI and PCI scores depend on boundary and quality-retention framing and diverge from total physical MFA virgin material."
+    },
+    "ev-ce51-barner-2025-iso59020-summary": {
+      "locator": "Barner (2025), \"Definition of Circular Economy\", \"The Chemical Industry\", \"New and Existing Circularity Indicators for the Chemical Sector\", and Tables 1–2",
+      "summary": "Summarizes ISO 59020:2024 (first edition May 2024; paywalled ISO full text not directly inspected, reported via peer-reviewed open-access summary Barner 2025): defines 13 core circularity indicators across Resource Inflows (3 mandatory: reused, recycled, renewable content), Resource Outflows (3 mandatory: actual reused, recycled, biological recirculation + 1 optional lifetime), Energy (1 optional), Water (3 optional), and Economic (2 optional), with no social core indicator, while emphasizing a life-cycle perspective and materiality and stating that complementary methods can be used to measure and assess sustainability impacts. Uses 2023 German chemical-sector data (60.3% non-durable/dissipative, 39.7% commodities, ~11.5% polymers/rubbers/fibers) to show physical circularity ceilings and warns that applying biological recirculation to biodegradable fossil polymers such as polyvinyl alcohol (~2 kg fossil CO2/kg) misclassifies fossil emissions as biological cycling.",
+      "paraphrase": "Barner (2025) summarizes ISO 59020:2024's 13 core indicators (no social core metric, complementary sustainability-impact methods optional) and illustrates chemical-sector ceilings and biodegradable fossil-polymer pitfalls."
+    },
+    "ev-ce51-iso59020-metadata-boundary": {
+      "locator": "ISO public catalog entry ISO 59020:2024 (Standard ID 80650, 1st edition, May 2024)",
+      "summary": "Records official catalog metadata and paywall boundary for ISO 59020:2024; the copyrighted full text was not purchased or directly inspected and this entry serves strictly as boundary context, not clause-level verification.",
+      "paraphrase": "Documents ISO 59020:2024 catalog metadata and the uninspected paywalled full-text boundary."
+    },
+    "ev-ai51-langhorst-2025-cart-lci": {
+      "locator": "Langhorst et al. (2025), Abstract, Sections 2.1–2.5 (Table 1, Eqs. 1–3), and Sections 3–4 (Figs. 2–4)",
+      "summary": "Trains seven mean-absolute-error (MAE) classification and regression trees (CART, max depth 7, min node 4) on 409 mass-balance-closed organic chemical processes (148 main products, 26–270 g/mol, IHS Markit Process Economics Programme yearbook) using 16 molecular and stoichiometric features, evaluated via leave-one-out cross-validation (LOOCV) under ReCiPe(H) V1.13 and ecoinvent 3.5 cut-off. Cuts cradle-to-gate global warming impact MAE by >20% and out-of-range processes (AACE -50% to +100% band) by >40%, leaving 11% outside (89% inside; interquartile range narrowed from -43% to +12% down to -26% to +18%; raw-material scaling coefficient interquartile range -7% to +6%; utility MAEs down 8%–20% individually, 15% combined). Does not report R2 or root-mean-square error (RMSE); excludes 33 inorganic, 15 biochemical, and 9 electrochemical processes plus catalysts/separate solvents; covers CO2-eq direct emissions only and restricts use strictly to early-stage screening.",
+      "paraphrase": "Langhorst et al. (2025) provide peer-reviewed LOOCV evidence that CART trees improve early-stage organic chemical climate screening (89% within -50% to +100%) while staying restricted to organic chemistry and screening use."
+    },
+    "ev-ai51-donaldson-2025-general-llm": {
+      "locator": "Donaldson et al. (2025, arXiv:2510.19886v1 preprint), Abstract, Sections 2.1–2.4 (Table 1), 3.1–3.8 (Table 2), and 4–5 (pp. 1–25)",
+      "summary": "Non-peer-reviewed arXiv preprint evaluating 11 open-weight and commercial general-purpose LLMs on 22 original short-form LCA prompts (single-shot, no retrieval or tools) across 168 blinded reviews by 17 practitioners with >=5 years experience. Finds 37.2% inaccurate or misleading answers (range 25%–62.5%), scientific accuracy 2.111–2.833/4 (no model reached 3.0 \"good\"), only open-weight Llama 4 Scout exceeding 3.0 on explanation (3.167 +/- 0.207, graded independently of citation accuracy), double-digit citation hallucinations up to 40%, 67%–94% format adherence, and no systematic commercial-over-open gap. Notes independent review is mandatory for LCA standard compliance and concludes LLMs remain unsuitable for unsupervised high-stakes decision-making; limited duplicate reviews precluded significant inter-rater reliability and Section 3.2/Table 2 counts govern over Section 4.2 casual prose.",
+      "paraphrase": "Donaldson et al. (2025 preprint) show ungrounded general-purpose LLMs produce inaccurate or misleading LCA answers 37.2% of the time, never reach 3.0 \"good\" accuracy, and hallucinate citations up to 40%."
+    },
+    "ev-ai51-rao-2026-pcfbench-decomp": {
+      "locator": "Rao et al. (2026, arXiv:2608.27716v1 preprint), Abstract, Sections 1 and 3–6 (Tables 2–3, Figs. 1 and 3), and Appendices B, F, H, J, and K (Tables 5–11, Figs. 11–13, pp. 1–46)",
+      "summary": "Non-peer-reviewed vendor-authored arXiv preprint (Watershed Technology, Inc.) introducing 614 expert-labeled items across 6 decomposed cradle-to-gate product carbon footprint (PCF) tasks (numbered Tasks 1–5 and 7, with deterministic arithmetic aggregation numbered Step 6 and excluded from model evaluation; 175 ISO 14025 EPDs, 2,574-item ecoinvent v3.11 picklist, 36 open-access English PDFs / 89 claims) testing 8 frontier LLMs plus Parakeet. Shows matched-input Direct within-2x accuracy (60.0%–77.1%; up to 83.4% with composition and region, median absolute relative error still >25%) collapses to 37%–58% under auditable compositional chaining; 25%–55% fail mass conservation (total input <1x or >3x reference mass) and 47%–86% contain zero-mass \"ghost\" components despite 98%–100% tool-call compliance across structured tasks and syntactically valid BOM outputs; BOM decomposition precision 0.846–0.916 vs. recall 0.641–0.754; triage accuracy 0.620–0.725 with expected calibration error (ECE) 0.258 (~63% accuracy at ~95% confidence); mapping exact match 0.679–0.927 (ECE 0.086, Parakeet 0.759) yet extreme lexical traps (~10,000x catalyst-to-rhodium overestimate); and PDF extraction F1 score only 0.271–0.512 (material) and 0.286–0.531 (energy) with 52.4%–83.6% wrong-scope/over-extracted claims. Explicitly warns against citing leaderboard scores for EU CSRD, California SB-253, or audited LCA/EPD claims, and caveats cradle-to-gate English-only region-agnostic scope plus potential EPD pretraining contamination.",
+      "paraphrase": "Rao et al. (2026 preprint) demonstrate via PCFBench that frontier LLMs suffer compositional collapse (37%–58% within-2x), mass-conservation violations (25%–55%), out-of-scope PDF extractions (52%–84%), and triage overconfidence (ECE 0.258)."
     }
   },
   "passages": {
