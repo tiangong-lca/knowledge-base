@@ -5,9 +5,24 @@ import { fileURLToPath } from 'node:url';
 import { loadShiftChapter, loadShiftEvaluationFile, readLoadShiftCaseFiles,
   restoreLoadShiftFiles, selectLoadShift } from './reader-load-shift.mjs';
 import { sha256 } from './reader-current-edition.mjs';
+import { currentRevisions } from './reader-checkpoint.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const publication = async path => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
+
+function rollbackPostCheckpointFile(path, bytes) {
+  let current = bytes;
+  for (let i = currentRevisions.length - 1; i >= 0; i--) {
+    for (const fileRow of currentRevisions[i].files ?? []) {
+      if (fileRow.path === path && (fileRow.op ?? 'modify') === 'modify') {
+        assert.equal(sha256(current), fileRow.toSha256);
+        current = Buffer.from(fileRow.previous, 'utf8');
+        assert.equal(sha256(current), fileRow.fromSha256);
+      }
+    }
+  }
+  return current;
+}
 
 test('load shift result links qualify only the fixed versioned input', () => {
   const binding = { caseId: 'CASE-FINITE-LOAD-SHIFT', version: '1.0.0', inputFile: 'finite-load-shift-v1.json' };
@@ -23,8 +38,8 @@ test('rollback restores actual old files and does not waive a changed original r
   if (!config.unit) return t.skip('Applies when the actual scientific plan exists');
   const mdx = `content${loadShiftChapter}.mdx`, registry = 'scripts/case-publication.mjs';
   const files = await readLoadShiftCaseFiles(root, config.unit);
-  files.set(registry, await readFile(new URL('../' + registry, import.meta.url)));
-  files.set(mdx, await readFile(new URL('../' + mdx, import.meta.url)));
+  files.set(registry, rollbackPostCheckpointFile(registry, await readFile(new URL('../' + registry, import.meta.url))));
+  files.set(mdx, rollbackPostCheckpointFile(mdx, await readFile(new URL('../' + mdx, import.meta.url))));
   const previous = restoreLoadShiftFiles(files, config.unit.previousMdx);
   for (const [key] of await readLoadShiftCaseFiles(root, config.unit)) assert(!previous.has(key));
   assert.equal(sha256(previous.get(registry)), config.unit.changes.find(row => row.key === registry).from);

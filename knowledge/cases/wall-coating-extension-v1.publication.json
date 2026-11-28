@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "caseId": "CASE-WALL-EXT",
+  "version": "1.0.0",
+  "inputFile": "wall-coating-extension-v1.json",
+  "reviewedAt": "2026-11-28",
+  "reviewKind": "agent-source-check",
+  "approvedInputSha256": "eaa6031b68c128b08f0f0d3f46151b56744546cfb0d77c06c19ff7203d23e1a8",
+  "claims": [
+    {
+      "id": "cl-wallext52-marginal-grid",
+      "kind": "calculation",
+      "scope": "墙面服务教学算例下归因平均电网与后果边际电网对气候差值及容差判定的影响",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-power-average-response",
+        "cl-wall-paired-range",
+        "cl-wall-rough-comparison"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "平均电网 0.30、化石调峰边际 0.65 与清洁边际 0.08 kg CO₂/kWh 均为作者假想教学参数，用于演示供电口径如何改变既有墙面算例结论，不代表任何实测电网数据。"
+      ],
+      "reasoning": "固定墙面服务教学算例的全部涂料用量与电力活动量（涂料 A 20 kWh，涂料 B 平整基底 30 kWh、粗糙基底 50 kWh），仅切换共享供电系数，按线性差值公式精确复算三套供电口径的气候指标与容差判定。",
+      "textTemplate": "把平均电网与边际响应的区别放回贯穿全书的墙面服务教学算例，就能看见同一套物理清单如何因供电口径不同而改变比较结论。保持第八部《墙面服务比较》原算例全部技术系数与 100 m²／十年服务不变（涂料 A 用电 20 kWh，涂料 B 在平整基底用电 30 kWh、粗糙基底连同基底准备共用电 50 kWh），另设三组作者假想教学供电排放强度：归因年均电网 {{evaluated.electricityGrid.average.theta}} kg CO₂/kWh、化石调峰边际电网 {{evaluated.electricityGrid.fossilMarginal.theta}} kg CO₂/kWh 与清洁边际电网 {{evaluated.electricityGrid.cleanMarginal.theta}} kg CO₂/kWh。平整基底下，年均电网给出涂料 B 减涂料 A 的差值 +{{evaluated.electricityGrid.average.smoothDeltaBMinusAKgCO2eq.exact}} kg CO₂-eq（{{evaluated.electricityGrid.average.smoothPaintBKgCO2eq.exact}} 对 {{evaluated.electricityGrid.average.paintAKgCO2eq.exact}}），仍落在预设 ±4 kg CO₂-eq 容差带内；一旦改用化石边际电网，差值立即扩大到 +{{evaluated.electricityGrid.fossilMarginal.smoothDeltaBMinusAKgCO2eq.exact}} kg CO₂-eq（{{evaluated.electricityGrid.fossilMarginal.smoothPaintBKgCO2eq.exact}} 对 {{evaluated.electricityGrid.fossilMarginal.paintAKgCO2eq.exact}}），越出 ±4 容差带而明确判涂料 A 较低；改用清洁边际电网则越过换位点 {{evaluated.electricityGrid.smoothCrossoverTheta.exact}} kg CO₂/kWh，差值翻转为 {{evaluated.electricityGrid.cleanMarginal.smoothDeltaBMinusAKgCO2eq.exact}} kg CO₂-eq（{{evaluated.electricityGrid.cleanMarginal.smoothPaintBKgCO2eq.exact}} 对 {{evaluated.electricityGrid.cleanMarginal.paintAKgCO2eq.exact}}），转为涂料 B 较低。反观粗糙基底，因涂料 B 须额外承担基底准备与多出 30 kWh 用电，即使在清洁边际电网下差值仍达 +{{evaluated.electricityGrid.cleanMarginal.roughDeltaBMinusAKgCO2eq.exact}} kg CO₂-eq（化石边际下升至 +{{evaluated.electricityGrid.fossilMarginal.roughDeltaBMinusAKgCO2eq.exact}} kg CO₂-eq），始终处于容差带外且保持涂料 A 占优。这一对照说明：当两方案仅靠供电强度拉开微弱差距时，归因平均与后果边际的选择可直接决定胜负与显著性；而当物理维护或基底准备带来大幅活动增量时，工程结构差异便会压过电网口径分叉。"
+    },
+    {
+      "id": "cl-wallext52-nmvoc-pof",
+      "kind": "calculation",
+      "scope": "墙面服务教学扩展中非甲烷挥发性有机物光化学臭氧潜势权衡与室内区室遗漏失真",
+      "evidenceIds": [
+        "ev-weight135-ef31-pof-equal-cf"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+          "relation": "supports",
+          "rationale": "欧盟环境足迹（EF 3.1）官方光化学臭氧形成方法表规定排入室外空气的一般 NMVOC 全局表征因子为 1.0 kg NMVOC-eq/kg，且未收录排入室内空气的一般 NMVOC 流（有效因子为 0）；涂料与基底准备的 NMVOC 排放量均为作者假想教学参数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ozone119-pocp-to-lotos",
+        "cl-ozone119-ef-location-copy",
+        "cl-wall-quantities",
+        "cl-wall-rough-demand",
+        "cl-wall-paired-range"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "涂料 A（0.02 kg/kg）、涂料 B（0.25 kg/kg）与基底准备（0.005 kg/m²）的 NMVOC 排放量均为作者假想教学参数，且供电过程 NMVOC 在本模块中暂缺而非断言为零，不构成对现实水性或溶剂型涂料的实证评价。"
+      ],
+      "reasoning": "在保持墙面服务原气候算例不变的前提下，为水性低挥发涂料 A 与溶剂型高挥发涂料 B 增设作者假想 NMVOC 排放量，分别乘以欧盟 EF 3.1 官方室外空气因子 1.0 与室内空气缺失有效因子 0，验证跨类别反转与区室归零效应。",
+      "textTemplate": "把上述光化学臭氧表征口径与区室映射问题接回墙面服务教学算例，可以同时看清“单看气候漏掉权衡”与“记错区室抹去信号”两重陷阱。在不改动第八部原算例任何气候数值的前提下，为两种涂料增设一组作者假想教学非甲烷挥发性有机物（NMVOC）排放：水性低挥发涂料 A 每千克排 0.02 kg（10 kg 共 {{evaluated.photochemicalOzone.inventoryKgNmvoc.paintA.fixed2}} kg），溶剂型高挥发涂料 B 每千克排 0.25 kg（6 kg 共 {{evaluated.photochemicalOzone.inventoryKgNmvoc.paintBSmooth.fixed2}} kg），粗糙基底底漆准备每平方米另排 0.005 kg（100 m² 增 {{evaluated.photochemicalOzone.inventoryKgNmvoc.prepOnly.fixed2}} kg，使粗糙基底涂料 B 达 {{evaluated.photochemicalOzone.inventoryKgNmvoc.paintBRough.fixed2}} kg；供电环节 NMVOC 在本扩展中暂缺，不代表现实为零）。按欧盟 EF 3.1 官方光化学臭氧形成方法表，排入室外空气的一般 NMVOC 表征因子为 1.0 kg NMVOC 当量/kg：平整基底下涂料 B 达 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintBSmooth.fixed2}} kg NMVOC 当量，是涂料 A（{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintA.fixed2}} kg NMVOC 当量）的 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.smoothRatioBToA.exact}} 倍（涂料 B 减涂料 A 差值 +{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.smoothDeltaBMinusA.fixed2}} kg NMVOC 当量），粗糙基底下更拉大至 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.roughRatioBToA.exact}} 倍（{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintBRough.fixed2}} 对 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintA.fixed2}}，差值 +{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.roughDeltaBMinusA.fixed2}} kg NMVOC 当量）。这意味着即便在低碳电网（如 0.10 或 0.08 kg CO₂/kWh）下涂料 B 气候得分更低，一纳入光化学臭氧便立刻出现跨类别权衡反转。然而，如果分析者如实把室内刷墙挥发的溶剂记入“排入室内空气”子区室，而 EF 3.1 光化学臭氧表并未收录室内一般 NMVOC 流（有效因子为 0），两方案的臭氧得分便会同时归零，把涂料 B 原本 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintBSmooth.fixed2}}—{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.paintBRough.fixed2}} kg NMVOC 当量的臭氧负荷以及两方案间 {{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.smoothDeltaBMinusA.fixed2}}—{{evaluated.photochemicalOzone.outdoorEf31KgNmvocEq.roughDeltaBMinusA.fixed2}} kg NMVOC 当量的净差距悄悄抹平。"
+    },
+    {
+      "id": "cl-wallext52-water-aware",
+      "kind": "calculation",
+      "scope": "墙面服务教学扩展中的蓝水耗量权衡与流域稀缺乘数放大效应",
+      "evidenceIds": [
+        "ev-water-aware-mechanism"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-water-aware-mechanism",
+          "relation": "context",
+          "rationale": "AWARE 方法界定了按可用剩余水量归一化并经截断的流域稀缺乘数概念；本模块中的蓝水耗量与 2、80 m³ world-eq./m³ 乘数均为作者假想教学参数。"
+        }
+      ],
+      "premiseIds": [
+        "cl-water125-belgium-canada-mechanism-contrast",
+        "cl-wall-quantities",
+        "cl-wall-rough-comparison",
+        "cl-wallext52-nmvoc-pof"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "本模块中的蓝水耗量与 2、80 m³ world-eq./m³ 稀缺乘数均为作者假想教学设定（位于 AWARE 概念区间内），未计入供电耗水，也不代表任何真实涂料工厂或流域水文测算。"
+      ],
+      "reasoning": "在保持墙面服务原气候算例不变的前提下，为水性涂料 A、溶剂型涂料 B 与基底准备增设作者假想蓝水耗量，并对照同处丰水流域与涂料 A 迁至缺水流域两组乘数，验证跨类别反向权衡与选址放大效应。",
+      "textTemplate": "把耗水与缺水潜势放回墙面服务教学算例，还会看到与光化学臭氧方向相反的另一重跨类别权衡，以及工厂选址对表征结果的剧烈放大。仍保持原算例气候与服务口径不变，另设一组作者假想教学蓝水净耗量：水性涂料 A 每千克耗蓝水 0.002 m³（10 kg 共 {{evaluated.waterScarcity.consumptionM3.paintA.fixed3}} m³），溶剂型涂料 B 每千克耗蓝水 0.0005 m³（6 kg 共 {{evaluated.waterScarcity.consumptionM3.paintBSmooth.fixed3}} m³），粗糙基底准备每平方米耗蓝水 0.00005 m³（100 m² 增 {{evaluated.waterScarcity.consumptionM3.prepOnly.fixed3}} m³，使粗糙基底涂料 B 达 {{evaluated.waterScarcity.consumptionM3.paintBRough.fixed3}} m³；供电耗水在本扩展中暂缺，不代表现实为零）。仅看物理蓝水体积，在光化学臭氧与粗糙基底气候上均占优的涂料 A，耗水量反而是涂料 B 的 {{evaluated.waterScarcity.consumptionM3.smoothRatioAToB.fixed2}} 倍（平整基底）或 {{evaluated.waterScarcity.consumptionM3.roughRatioAToB.exact}} 倍（粗糙基底）。再引入两组作者假想的 AWARE 口径流域稀缺乘数（湿润流域 2 m³ world-eq./m³，干旱缺水流域 80 m³ world-eq./m³）：若两厂同处湿润流域，平整基底下涂料 A 与 B 的缺水潜势分别为 {{evaluated.waterScarcity.uniformHumidM3WorldEq.paintA.fixed3}} 与 {{evaluated.waterScarcity.uniformHumidM3WorldEq.paintBSmooth.fixed3}} m³ world-eq.（涂料 B 减涂料 A 差值 {{evaluated.waterScarcity.uniformHumidM3WorldEq.smoothDeltaBMinusA.fixed3}}）；若物理耗水量一滴不变，仅把涂料 A 工厂迁至干旱缺水流域而涂料 B 留在湿润流域，涂料 A 的缺水潜势便骤增 {{evaluated.waterScarcity.paintAAridPaintBHumidM3WorldEq.paintAFactorJump.exact}} 倍至 {{evaluated.waterScarcity.paintAAridPaintBHumidM3WorldEq.paintA.fixed3}} m³ world-eq.，拉开到涂料 B 平整基底得分的 {{evaluated.waterScarcity.paintAAridPaintBHumidM3WorldEq.smoothRatioAToB.fixed2}} 倍（粗糙基底为 {{evaluated.waterScarcity.paintAAridPaintBHumidM3WorldEq.roughRatioAToB.exact}} 倍）。这表明同一组配方清单一离开单一气候指标，优劣便在气候、臭氧与缺水之间出现三向拉扯，且水指标对地域因子的敏感度远高于纯体积加总。"
+    },
+    {
+      "id": "cl-wallext52-ef31-norm-weight",
+      "kind": "calculation",
+      "scope": "墙面服务教学扩展的两类别部分欧盟环境足迹（EF 3.1）归一化与加权反转检验",
+      "evidenceIds": [
+        "ev-weight135-ef31-nf-wf-workbook",
+        "ev-weight135-ef31-pof-equal-cf"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+          "relation": "supports",
+          "rationale": "欧盟 EF 3.1 随包官方工作簿提供气候变化与光化学臭氧的 2010 年全球每人每年归一化基准（7553.0831628511733 kg CO₂-eq 与 40.859197734777169 kg NMVOC-eq）及 Sala 等（2018）权重（21.06% 与 4.78%）。"
+        },
+        {
+          "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+          "relation": "supports",
+          "rationale": "EF 3.1 官方光化学臭氧表确认室外一般 NMVOC 因子为 1.0 而室内一般 NMVOC 缺失（有效因子为 0），用于演示覆盖缺项如何翻转加权排序。"
+        }
+      ],
+      "premiseIds": [
+        "cl-norm36-four-pitfalls",
+        "cl-wall-paired-range",
+        "cl-wallext52-nmvoc-pof"
+      ],
+      "conceptIds": [
+        "cn-normalization"
+      ],
+      "mappingIds": [],
+      "caveats": [
+        "本计算仅合并气候变化与光化学臭氧两类作为部分教学诊断，略去了其余 14 项欧盟环境足迹类别（含水资源与毒性），绝不等同于完整的 16 类 EF 3.1 单一总分。"
+      ],
+      "reasoning": "对低碳电网（0.10 kg CO₂/kWh）平整墙面服务，分别用官方 EF 3.1 全球人均归一化基准与 Sala 等（2018）权重合成气候与光化学臭氧两项部分加权分，并与室内 NMVOC 缺项归零情景对照，精确复算排序两次反转。",
+      "textTemplate": "前述归一化分母量级差异与覆盖缺项陷阱，可直接用贯穿全书的 100 m²／十年墙面服务作一次部分两类别检验（有别于上文仅含 4 g／2 g 溶剂与 1 g／2 g 氮氧化物的车间小例）。取低碳共享电网（θ = {{evaluated.normalizationWeighting.cleanGridSmooth.theta}} kg CO₂/kWh）下的平整墙面：单看气候变化，涂料 B 得分 {{evaluated.normalizationWeighting.cleanGridSmooth.climateKgCO2eq.paintB.exact}} kg CO₂-eq，略优于涂料 A 的 {{evaluated.normalizationWeighting.cleanGridSmooth.climateKgCO2eq.paintA.exact}} kg CO₂-eq（涂料 B 减涂料 A 差值 {{evaluated.normalizationWeighting.cleanGridSmooth.climateKgCO2eq.deltaBMinusA.exact}}）。将气候指标与第四部增补的作者假想室外非甲烷挥发性有机物（NMVOC）清单（涂料 A 0.20、涂料 B 1.50 kg NMVOC-eq）分别除以欧盟环境足迹（EF 3.1）官方全球每人每年归一化基准（气候 7553.08 kg CO₂-eq、光化学臭氧 40.86 kg NMVOC-eq），可发现涂料 B 的气候仅占全球人均年排放的 {{evaluated.normalizationWeighting.cleanGridSmooth.normalizedPersonEq.paintBClimate.fixed4}} 人年，其 NMVOC 却占到 {{evaluated.normalizationWeighting.cleanGridSmooth.normalizedPersonEq.paintBPofOutdoor.fixed4}} 人年——后者归一化份额高出一个量级。再乘以 Sala 等（2018）最终权重（气候 21.06%、光化学臭氧 4.78%）并以千分之一点（mPt）表示：涂料 A 两类部分加权和为 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintATotal.fixed3}} mPt（气候 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintAClimate.fixed3}}＋臭氧 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintAPof.fixed3}}），涂料 B 跃升至 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintBTotal.fixed3}} mPt（气候 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintBClimate.fixed3}}＋臭氧 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.paintBPof.fixed3}}），高达涂料 A 的 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtOutdoor.ratioBToA.fixed2}} 倍，原本靠气候微弱领跑的涂料 B 立刻反转为明显落后。但若因室内涂装溶剂被记入 EF 3.1 未收录的室内空气区室而令臭氧分归零，涂料 B 的部分得分便跌回 {{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtIndoorOmitted.paintBTotal.fixed3}} mPt，再度反超涂料 A（{{evaluated.normalizationWeighting.cleanGridSmooth.weightedMilliPtIndoorOmitted.paintATotal.fixed3}} mPt）。必须强调，本例刻意只合成两类以暴露分母与缺项机制，仍略去了水资源、毒性等其余 14 项类别，绝非完整的 16 类 EF 3.1 单一总分。"
+    },
+    {
+      "id": "cl-wallext52-lcc-discounting",
+      "kind": "calculation",
+      "scope": "墙面服务教学扩展中业主视角的全生命周期财务成本、维护时点、基底准备与贴现率反转",
+      "evidenceIds": [],
+      "evidenceLinks": [],
+      "premiseIds": [
+        "cl-lcc143-actor-split-incentive-and-discount-rate-reversal",
+        "cl-wall-quantities",
+        "cl-wall-rough-demand",
+        "cl-wallext52-nmvoc-pof"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "涂料单价、施工人工费、基底准备费与 5% 年贴现率均为虚构货币单位（CU）下的作者假想教学参数，不含税费、通胀、处置费与未内部化环境外部性，不代表真实建筑市场报价。"
+      ],
+      "reasoning": "固定墙面服务十年涂刷时刻与用量，按业主财务生命周期成本视角分别计算无贴现（0%）与 5% 年贴现率下平整及粗糙基底总现值，验证单价直觉失效、环境—经济冲突与贴现放大效应。",
+      "textTemplate": "把财务生命周期成本与时间贴现机制直接套用到贯穿全书的 100 m²／十年墙面服务，就能看清为何单看涂料每千克售价、忽略重涂人工与贴现率会得出截然相反的采购判断。设虚构货币单位为 CU，按建筑业主财务现金流视角赋予一组作者假想教学价格：涂料 A 单价 30 CU/kg（第 0 年与第 5 年各购 5 kg，材料合计 {{evaluated.lifeCycleCosting.paintAMaterialTotalCU.exact}} CU），涂料 B 单价贵一倍达 60 CU/kg（第 0 年一次购 6 kg，材料合计 {{evaluated.lifeCycleCosting.paintBMaterialTotalCU.exact}} CU）；每次涂刷施工人工费同为 400 CU；粗糙基底上涂料 B 须在第 0 年额外支付基底准备费 3.50 CU/m²（共 {{evaluated.lifeCycleCosting.prepTotalCU.exact}} CU）。在平整基底且不贴现（0%）时，涂料 A 因第 5 年须二次重涂，总支出高达 {{evaluated.lifeCycleCosting.undiscounted.paintACU.exact}} CU（第 0、5 年各 {{evaluated.lifeCycleCosting.paintAPerTreatmentCU.exact}} CU），涂料 B 仅需 {{evaluated.lifeCycleCosting.undiscounted.paintBSmoothCU.exact}} CU，反而便宜 {{evaluated.lifeCycleCosting.undiscounted.smoothPaintBSavingsCU.exact}} CU（涂料 B 减涂料 A 差值 {{evaluated.lifeCycleCosting.undiscounted.smoothDeltaBMinusACU.exact}} CU）——此时若电网为 0.30 kg CO₂/kWh 且计入室外非甲烷挥发性有机物（NMVOC），业主在经济上更省钱的涂料 B 恰是环境负担更高的方案，呈现典型的经济—环境冲突。一旦换成粗糙基底，涂料 B 须在第 0 年立刻支付 {{evaluated.lifeCycleCosting.prepTotalCU.exact}} CU 准备费，无贴现总支出升至 {{evaluated.lifeCycleCosting.undiscounted.paintBRoughCU.exact}} CU，经济排序微幅翻转为涂料 A 较省 {{evaluated.lifeCycleCosting.undiscounted.roughDeltaBMinusACU.exact}} CU（涂料 B 减涂料 A 差值 +{{evaluated.lifeCycleCosting.undiscounted.roughDeltaBMinusACU.exact}} CU）。若再引入 5% 年贴现率（第 5 年贴现系数约 {{evaluated.lifeCycleCosting.discountFactorYear5At5Pct.fixed4}}），涂料 A 延后至第 5 年的 {{evaluated.lifeCycleCosting.paintAPerTreatmentCU.exact}} CU 折现为 {{evaluated.lifeCycleCosting.discounted5Pct.paintARepaintPvCU.fixed2}} CU，总现值降至 {{evaluated.lifeCycleCosting.discounted5Pct.paintACU.fixed2}} CU，使平整基底下涂料 B 的成本优势从 {{evaluated.lifeCycleCosting.undiscounted.smoothPaintBSavingsCU.exact}} CU 收窄至 {{evaluated.lifeCycleCosting.discounted5Pct.smoothPaintBSavingsCU.fixed2}} CU（差值 {{evaluated.lifeCycleCosting.discounted5Pct.smoothDeltaBMinusACU.fixed2}} CU），同时把粗糙基底下涂料 A 的成本优势从 {{evaluated.lifeCycleCosting.undiscounted.roughDeltaBMinusACU.exact}} CU 扩大逾十二倍至 {{evaluated.lifeCycleCosting.discounted5Pct.roughDeltaBMinusACU.fixed2}} CU。全部价格均属业主财务现金流，严禁再把前文气候或臭氧环境得分按货币估值简单并入同一张账单。"
+    },
+    {
+      "id": "cl-wallext52-pedigree-variance",
+      "kind": "calculation",
+      "scope": "墙面服务教学扩展中涂料 B 非电排放的谱系完整性几何标准差与结构不确定度对比",
+      "evidenceIds": [
+        "ev-ped-completeness-factors"
+      ],
+      "evidenceLinks": [
+        {
+          "evidenceId": "ev-ped-completeness-factors",
+          "relation": "supports",
+          "rationale": "Ciroth 等（2012）表 7 给出完整性评分 2 级与 4 级的取整附加几何标准差 1.03 与 1.08；基础几何标准差 1.2 与涂料 B 非电二氧化碳中位数 18 kg 为作者假想教学设定。"
+        }
+      ],
+      "premiseIds": [
+        "cl-ped-independent-product",
+        "cl-ped-inventory-interval",
+        "cl-ped-inventory-center",
+        "cl-wall-inventory",
+        "cl-wall-rough-comparison",
+        "cl-wallext52-marginal-grid"
+      ],
+      "conceptIds": [],
+      "mappingIds": [],
+      "caveats": [
+        "基础几何标准差 1.2 及将涂料 B 18 kg 非电二氧化碳视作对数正态中位数均为作者假想教学设定；其余四项谱系维度固定为 1 级，且该区间不含真实抽样样本量、系统偏差或模型结构误差。"
+      ],
+      "reasoning": "按上文独立对数正态合成公式，将作者假想基础几何标准差 1.2 与 Ciroth 等（2012）表 7 完整性 2 级（1.03）及 4 级（1.08）因子合成，对比区间宽度变动与基底准备／电网口径引起的结构差值。",
+      "textTemplate": "把这套独立对数正态谱系合成算式放回墙面服务教学算例，就能定量检验“升级数据质量评分”到底能收窄多少不确定度。取涂料 B 供应 6 kg 涂料产生的非电化石二氧化碳排放（3 kg CO₂/kg × 6 kg = {{evaluated.pedigreeUncertainty.medianKgCO2}} kg CO₂，暂把共享供电单独留在结构参数中），设其作为对数正态分布中位数，并赋予作者假想基础几何标准差 {{evaluated.pedigreeUncertainty.basicGsd}}（其余四项谱系指标暂固定为 1 级），分别套用 Ciroth 等（2012）表 7 的完整性取整附加因子：若数据接近完整实测（2 级，附加几何标准差 {{evaluated.pedigreeUncertainty.score2.completenessGsd}}），合成总几何标准差为 {{evaluated.pedigreeUncertainty.score2.gsdTotal}}，±2 个对数标准差区间（约 95%）为 [{{evaluated.pedigreeUncertainty.score2.low95KgCO2}}, {{evaluated.pedigreeUncertainty.score2.high95KgCO2}}] kg CO₂（跨度 {{evaluated.pedigreeUncertainty.score2.width95KgCO2}} kg）；若降格为不完整代理数据（4 级，附加几何标准差 {{evaluated.pedigreeUncertainty.score4.completenessGsd}}），合成总几何标准差升至 {{evaluated.pedigreeUncertainty.score4.gsdTotal}}，区间扩至 [{{evaluated.pedigreeUncertainty.score4.low95KgCO2}}, {{evaluated.pedigreeUncertainty.score4.high95KgCO2}}] kg CO₂（跨度 {{evaluated.pedigreeUncertainty.score4.width95KgCO2}} kg）。两档之间区间跨度仅相差 {{evaluated.pedigreeUncertainty.widthIncreaseKgCO2}} kg CO₂（2 级降至 4 级增幅 {{evaluated.pedigreeUncertainty.widthIncreasePct}}%），因为基础离散度（{{evaluated.pedigreeUncertainty.basicGsd}}）在对数平方和中占主导；相较之下，粗糙基底准备单在 0.30 kg CO₂/kWh 电网下就为涂料 B 净增 {{evaluated.electricityGrid.roughPrepClimateSwingAtAverageKgCO2eq.exact}} kg CO₂-eq，而供电口径从清洁边际（0.08）切至化石边际（0.65）亦在平整基底上把两方案差值推高 {{evaluated.electricityGrid.cleanToFossilSmoothDeltaSwingKgCO2eq.fixed3}} kg CO₂-eq。更关键的是，这一谱系区间仅刻画零均值随机离散的常规假设，既不提供可供显著性检验的真实样本量，也不能替代对基底边界与供电情景的结构核查。"
+    }
+  ]
+}

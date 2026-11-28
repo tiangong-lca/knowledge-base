@@ -1,0 +1,155 @@
+{
+  "caseId": "CASE-WALL-EXT",
+  "version": "1.0.0",
+  "model": "wall-service-cross-part-extension-v1",
+  "createdAt": "2026-11-28",
+  "status": "author-invented-companion-teaching-model; arithmetic and primary-factor bindings reviewed; not an empirical comparative LCA",
+  "numericProvenanceDefault": "AUTHOR-INVENTED: every newly added wall-service electricity marginal intensity, NMVOC emission, blue-water volume, watershed scarcity multiplier, currency unit cost, discount rate and basic GSD; only the explicitly bound EF 3.1 and Ciroth (2012) factors and inherited IPCC AR6 GWP100 factors are primary-sourced exceptions",
+  "wallParent": {
+    "caseId": "CASE-WALL-CONNECT",
+    "version": "1.0.0",
+    "inputFile": "wall-coating-v1.json",
+    "inputSha256": "cc2ba86f5aedfe49437088034382418a5c58a5020c04ba07c6289b9962eae285",
+    "areaM2": "100",
+    "intervalYears": "[0,10)",
+    "paintAKg": "10",
+    "paintBKg": "6",
+    "paintAElectricityKWh": "20",
+    "paintBSmoothElectricityKWh": "30",
+    "paintBRoughElectricityKWh": "50",
+    "toleranceKgCO2eq": "4",
+    "baseGwp100CO2": "1",
+    "baseGwp100FossilCH4": "28.1"
+  },
+  "facts": {
+    "ef31PofNmvocOutdoor": {
+      "value": "1.0",
+      "unit": "kg NMVOC eq./kg",
+      "subject": "nmvoc-air-outdoor-subcompartments",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+      "factId": "nf-weight135-ef31-pof-nmvoc-outdoor"
+    },
+    "ef31PofVocIndoor": {
+      "value": "0",
+      "unit": "kg NMVOC eq./kg",
+      "subject": "nmvoc-and-styrene-air-indoor",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-pof-equal-cf",
+      "factId": "nf-weight135-ef31-pof-voc-indoor"
+    },
+    "ef31NfClimate": {
+      "value": "7553.0831628511733",
+      "unit": "kg CO2 eq./(person·yr)",
+      "subject": "climate-change",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+      "factId": "nf-weight135-ef31-nf-cc"
+    },
+    "ef31NfPof": {
+      "value": "40.859197734777169",
+      "unit": "kg NMVOC eq./(person·yr)",
+      "subject": "photochemical-ozone-formation",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+      "factId": "nf-weight135-ef31-nf-pof"
+    },
+    "ef31WfClimate": {
+      "value": "0.2106",
+      "unit": "dimensionless",
+      "subject": "climate-change",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+      "factId": "nf-weight135-ef31-wf-cc"
+    },
+    "ef31WfPof": {
+      "value": "0.0478",
+      "unit": "dimensionless",
+      "subject": "photochemical-ozone-formation",
+      "sourceId": "src-weight135-ef31-selected-members",
+      "evidenceId": "ev-weight135-ef31-nf-wf-workbook",
+      "factId": "nf-weight135-ef31-wf-pof"
+    },
+    "pedigreeCompletenessScore2": {
+      "value": "1.03",
+      "unit": "GSD",
+      "subject": "pedigree-roundedScoreTwo",
+      "sourceId": "src-book-ciroth-2012-pedigree-refinement",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-roundedScoreTwo"
+    },
+    "pedigreeCompletenessScore4": {
+      "value": "1.08",
+      "unit": "GSD",
+      "subject": "pedigree-roundedScoreFour",
+      "sourceId": "src-book-ciroth-2012-pedigree-refinement",
+      "evidenceId": "ev-ped-completeness-factors",
+      "factId": "nf-ped-roundedScoreFour"
+    }
+  },
+  "electricityGrid": {
+    "unit": "kg CO2/kWh",
+    "averageTheta": "0.30",
+    "fossilMarginalTheta": "0.65",
+    "cleanMarginalTheta": "0.08",
+    "basePaintANonThetaKgCO2eq": "21.967",
+    "basePaintBSmoothNonThetaKgCO2eq": "20.529",
+    "basePaintBRoughNonThetaKgCO2eq": "26.091",
+    "note": "AUTHOR-INVENTED attributional average vs. consequential marginal electricity CO2 intensities applied to the exact CASE-WALL-CONNECT v1 electricity demands (20, 30, 50 kWh); P-E fossil CH4 (0.001 kg/kWh) remains unchanged inside the base non-theta intercept."
+  },
+  "photochemicalOzone": {
+    "unit": "kg NMVOC",
+    "paintAKgPerKg": "0.02",
+    "paintBKgPerKg": "0.25",
+    "prepKgPerM2": "0.005",
+    "electricityKgPerKWh": "0",
+    "note": "AUTHOR-INVENTED illustrative water-borne (low-VOC Paint A) vs. solvent-borne (high-VOC Paint B) NMVOC emissions; P-E NMVOC omitted (stipulated zero in this module, not asserted zero in reality)."
+  },
+  "waterScarcity": {
+    "volumeUnit": "m3",
+    "factorUnit": "m3 world-eq/m3",
+    "paintAM3PerKg": "0.002",
+    "paintBM3PerKg": "0.0005",
+    "prepM3PerM2": "0.00005",
+    "electricityM3PerKWh": "0",
+    "humidMultiplier": "2",
+    "aridMultiplier": "80",
+    "note": "AUTHOR-INVENTED illustrative blue-water consumption and AWARE-style scarcity multipliers inside the conceptual [0.1, 100] m3 world-eq/m3 range; not actual watershed extractions."
+  },
+  "normalizationWeighting": {
+    "referenceThetaClean": "0.10",
+    "referenceThetaDisplay": "0.30",
+    "milliPointScale": "1000",
+    "fullSixteenCategoryScore": false,
+    "note": "Two-category partial EF 3.1 per-capita normalization and Sala et al. (2018) weighting illustration (Climate Change + Photochemical Ozone Formation only; the remaining 14 EF categories are omitted)."
+  },
+  "lifeCycleCosting": {
+    "currencyUnit": "CU",
+    "paintACUPerKg": "30",
+    "paintBCUPerKg": "60",
+    "applicationLaborCUPerTreatment": "400",
+    "prepCUPerM2": "3.5",
+    "repaintYear": "5",
+    "discountRateAnnual": "0.05",
+    "perspective": "building-owner-financial-lcc",
+    "note": "AUTHOR-INVENTED user-perspective financial costs in fictional Currency Units (CU); omits environmental externalities, taxes, disposal and inflation."
+  },
+  "pedigreeUncertainty": {
+    "targetProcess": "P-B non-electric fossil CO2 over 6 kg Paint B",
+    "medianKgCO2": "18",
+    "basicGsd": "1.2",
+    "scoreLowKey": "pedigreeCompletenessScore2",
+    "scoreHighKey": "pedigreeCompletenessScore4",
+    "logIntervalHalfWidthSd": "2",
+    "note": "AUTHOR-INVENTED basic GSD combined with Ciroth et al. (2012) Table 7 rounded completeness GSD factors (scores 2 and 4) under independent lognormal components; other four pedigree indicators fixed at score 1 (GSD = 1)."
+  },
+  "interpretation": {
+    "authorInventedExtension": true,
+    "modifiesWallV1": false,
+    "empiricalPaintValidation": false,
+    "scientificApproval": false,
+    "fullSixteenCategoryEfScore": false,
+    "realSupplierOrWatershedData": false,
+    "realMarketPrices": false
+  }
+}

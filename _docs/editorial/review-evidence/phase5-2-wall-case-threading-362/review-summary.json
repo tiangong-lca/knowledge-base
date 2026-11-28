@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "unit": "phase5-2-wall-case-threading-362",
+  "task": "tiangong-lca/knowledge-base#362",
+  "date": "2026-11-28",
+  "scientificApproval": false,
+  "reviewKind": "dual-independent-agent-review",
+  "limitations": [
+    "No human domain-expert peer review has been conducted.",
+    "No real-reader trial has been conducted.",
+    "All newly added wall-service parameters in CASE-WALL-EXT v1.0.0 are explicitly author-invented teaching inputs (authorized by user Option A on 2026-11-28) and do not constitute empirical product measurements or real market quotes.",
+    "Paywalled ISO/EN/GB full texts remain uninspected."
+  ],
+  "reviewers": [
+    {
+      "role": "Primary-Source & Engineering Auditor",
+      "agentConversationId": "499e299b-e974-4aad-bd92-5f4b19f4d60a",
+      "initialVerdict": "not-ready (4 blocking, 7 advisory)",
+      "finalDisposition": "all-resolved",
+      "blockingResolved": [
+        "B1: Corrected cl-wallext52-nmvoc-pof (ZH & EN) to separate Paint B's absolute outdoor burden (1.50–2.00 kg NMVOC-eq) from the inter-option gap (1.30–1.80 kg NMVOC-eq) using exact evaluated delta tokens.",
+        "B2: Corrected Ch. 38 Table 2 Part VI row (ZH & EN) to match the exact score 2 -> score 4 expansion direction (+1.02 kg / 7.5%) rather than reversing denominator direction.",
+        "B3: Resolved count contradiction in cl-wallext52-cross-part-synthesis (ZH & EN) from 'six' to ten cross-part methodological checks backed by six versioned quantitative extension modules, adding paired shared-theta uncertainty explicitly.",
+        "B4: Closed all missing transitive premiseIds entailment links across cl-wallext52-goal-scope, matrix-decomposition, nmvoc-pof, water-aware, lcc-discounting, paired-vs-marginal, pedigree-variance, and cross-part-synthesis."
+      ],
+      "advisoryResolved": [
+        "A1: Aligned ZH cl-wallext52-goal-scope '遮盖率与十年耐久性能' with wall-coating-v1.json and EN.",
+        "A2: Hardened scripts/wall-extension.mjs (unrounded Module 6 float delta/pct, three-way tie handling in Module 4, validateWallExtensionCase + duplicate ID checks in validateWallExtensionFacts).",
+        "A3: Expanded scripts/wall-extension.test.mjs with negative validateWallExtensionFacts tests and validateCasePublication round-trip check.",
+        "A4: Exposed evaluated savings and swing fields in scripts/wall-extension.mjs and interpolated them into wall-coating-extension-v1.publication.json.",
+        "A5: Matched all 6 EN chapter link titles in Ch. 38 Table 2 verbatim to official EN chapter H1 titles.",
+        "A6: Clarified 'module B4 within B1–B7' and separated smooth-wall vs. rough-wall (module A5) results in cl-wallext52-epd-declared-vs-fu.",
+        "A7: Applied rollbackPostCheckpointFile symmetrically to both registry and mdx in scripts/reader-load-shift.test.mjs."
+      ]
+    },
+    {
+      "role": "Zero-Context Bilingual Reader Reviewer",
+      "agentConversationId": "682e4217-ead5-4bc7-b198-a1d4a9dce5cd",
+      "initialVerdict": "conditional (7 blocking, 6 advisory)",
+      "finalDisposition": "all-resolved",
+      "blockingResolved": [
+        "B1: Moved cl-wallext52-water-aware in Ch. 19 §19.4 immediately after cl-water125-belgium-canada-mechanism-contrast so cl-water125-diagnostic-synthesis flows seamlessly into cl-water-conclusion.",
+        "B2: Moved cl-wallext52-paired-vs-marginal in Ch. 32 §32.3 after cl-unc149-pedigree-mc-boundary so '上述样本量约束' / 'That sample-size bound' keeps its immediate antecedent.",
+        "B3: Fixed absolute vs. difference NMVOC wording in cl-wallext52-nmvoc-pof (ZH & EN).",
+        "B4: Fixed Part VI 2->4 expansion direction (7.5%) in Ch. 38 Table 2 (ZH & EN).",
+        "B5: Removed raw ASCII subscript g_b and full-width equals signs from newly authored ZH prose in Ch. 22 and Ch. 33.",
+        "B6: Aligned Ch. 5 ZH '遮盖率与十年耐久性能' with EN and corrected Ch. 22 EN workshop example phrasing (4 g vs. 2 g NMVOC and 1 g vs. 2 g nitrogen oxides).",
+        "B7: Expanded all standalone acronyms on first use across Ch. 19, 27, 38 (prose + Table 2 ZH & EN), and EN /changes/."
+      ],
+      "advisoryResolved": [
+        "A1: Fixed ten-dimensions / six-extension-modules framing in Ch. 38 synthesis.",
+        "A2: Matched all 6 EN link labels in Ch. 38 Table 2 to exact EN chapter H1 titles.",
+        "A3: Stated explicit Paint B minus Paint A sign convention at first signed difference in Ch. 7, 19, and 27.",
+        "A4: Separated smooth-wall (B4) and rough-wall (A5, +46.9%) clauses in Ch. 35.",
+        "A5: Moved cl-wallext52-marginal-grid in Ch. 12 §12.5 directly after cl-power-alternative-lca for tighter flow.",
+        "A6: Harmonized host-section unit styles (kg NMVOC 当量 / kg NMVOC eq in Ch. 18; m³ world-eq./m³ in Ch. 19), aligned Ch. 27 closing monetary-valuation wording, and removed redundant mid-chapter acronym re-expansions."
+      ]
+    }
+  ]
+}
