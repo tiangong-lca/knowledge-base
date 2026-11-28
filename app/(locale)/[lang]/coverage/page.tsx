@@ -173,32 +173,48 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <h2 id="en-guide-chapters">Parts and Chapters</h2>
               <p className={styles.sectionMeta}>{readerParts.length} parts, {chapters.length} chapters—aligned across web and print editions</p>
             </div>
-            {enPartGroups.map(({ part, enMeta, chapters: partChapters, rangeLabel }) => (
-              <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
-                <div className={styles.partHeading}>
-                  <h3>{enMeta.label}: {enMeta.title}</h3>
-                  <span className={styles.rangeTag}>{rangeLabel}</span>
-                </div>
-                <ol className={styles.chapterList}>
-                  {partChapters.map(unit => {
-                    const page = enPages.get(unit.key);
-                    return (
-                      <li key={unit.key} className={styles.chapterItem}>
-                        <div className={styles.chapterRowTop}>
-                          <div className={styles.chapterTitleWrap}>
-                            <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
-                            <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
-                              {unitEntries[unit.key]?.enTitle ?? unit.title}
-                            </Link>
+            {enPartGroups.map(({ part, enMeta, chapters: partChapters, rangeLabel }) => {
+              const enIntro = (enReaderGuide.partIntroductions as Record<string, string>)[String(part.number)];
+              const enSummary = (enReaderGuide.partSummaries as Record<string, { establishes: string; contrasts: string; gaps: string; bridge: string }>)[String(part.number)];
+              return (
+                <section key={part.number} id={`part-${part.number}`} className={styles.partSection}>
+                  <div className={styles.partHeading}>
+                    <h3>{enMeta.label}: {enMeta.title}</h3>
+                    <span className={styles.rangeTag}>{rangeLabel}</span>
+                  </div>
+                  {enIntro && <p className={styles.partIntro}>{enIntro}</p>}
+                  <ol className={styles.chapterList}>
+                    {partChapters.map(unit => {
+                      const page = enPages.get(unit.key);
+                      return (
+                        <li key={unit.key} className={styles.chapterItem}>
+                          <div className={styles.chapterRowTop}>
+                            <div className={styles.chapterTitleWrap}>
+                              <span className={styles.chapterNumber}>Chapter {unit.ordinal}</span>
+                              <Link href={`/en${unit.key}/`} className={styles.chapterLink}>
+                                {unitEntries[unit.key]?.enTitle ?? unit.title}
+                              </Link>
+                            </div>
                           </div>
-                        </div>
-                        {page?.data.description && <p className={styles.chapterDesc}>{page.data.description}</p>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </section>
-            ))}
+                          {page?.data.description && <p className={styles.chapterDesc}>{page.data.description}</p>}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                  {enSummary && (
+                    <aside className={styles.partClosing} data-guide-part-closing={part.number} aria-label={`${enMeta.label} closing summary`}>
+                      <p className={styles.partClosingTitle}>{enMeta.label} Closing Summary</p>
+                      <dl className={styles.partClosingList}>
+                        <div><dt>What this part establishes</dt><dd>{enSummary.establishes}</dd></div>
+                        <div><dt>Key cross-framework contrasts</dt><dd>{enSummary.contrasts}</dd></div>
+                        <div><dt>Remaining evidence gaps and boundaries</dt><dd>{enSummary.gaps}</dd></div>
+                        <div><dt>{part.number === readerParts.length ? 'Monograph synthesis' : 'Bridge to the next part'}</dt><dd>{enSummary.bridge}</dd></div>
+                      </dl>
+                    </aside>
+                  )}
+                </section>
+              );
+            })}
           </section>
 
           {/* E. Topical Essays */}
@@ -229,7 +245,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <section className={styles.sectionBlock} aria-labelledby="en-guide-appendices">
             <div className={styles.sectionHeader}>
               <h2 id="en-guide-appendices">Appendices</h2>
-              <p className={styles.sectionMeta}>Appendices {appendixRange}: Numerical reconstructions, factor checks, and LCA timeline</p>
+              <p className={styles.sectionMeta}>Appendices {appendixRange}: Numerical reconstructions, factor checks, timeline, reference matrices, and study checklist</p>
             </div>
             <ol className={styles.cardGrid}>
               {appendices.map((unit, idx) => {
@@ -445,6 +461,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                   );
                 })}
               </ol>
+              {readerGuideConfig.partSummaries[String(part.number)] && (
+                <aside className={styles.partClosing} data-guide-part-closing={part.number} aria-label={`${part.label}部末小结`}>
+                  <p className={styles.partClosingTitle}>{part.label}小结</p>
+                  <dl className={styles.partClosingList}>
+                    <div><dt>本部回答</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].establishes}</dd></div>
+                    <div><dt>主要对照</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].contrasts}</dd></div>
+                    <div><dt>仍缺的证据与边界</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].gaps}</dd></div>
+                    <div><dt>{part.number === readerParts.length ? '全书收束' : '承接下一部'}</dt><dd>{readerGuideConfig.partSummaries[String(part.number)].bridge}</dd></div>
+                  </dl>
+                </aside>
+              )}
             </section>
           ))}
         </section>
@@ -479,7 +506,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <section className={styles.sectionBlock} aria-labelledby="guide-appendices" data-guide-section="appendices">
           <div className={styles.sectionHeader}>
             <h2 id="guide-appendices">附录</h2>
-            <p className={styles.sectionMeta}>附录 {appendixRange}：算例方程重建、因子复算与发展大事记</p>
+            <p className={styles.sectionMeta}>附录 {appendixRange}：算例方程重建、因子复算、发展大事记、参引总表与研究核对清单</p>
           </div>
           <ol className={styles.cardGrid} data-guide-appendices-list="">
             {appendices.map(unit => {

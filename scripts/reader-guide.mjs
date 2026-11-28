@@ -14,9 +14,17 @@ export function validateReaderGuideConfig(guide, numbering) {
   const chapterRouteSet = new Set(webUnits.filter(u => u.kind === 'chapter').map(u => u.key));
   const parts = numbering?.parts ?? [];
 
+  const validPartKeys = new Set(parts.map(p => String(p.number)));
   for (const part of parts) {
     const q = guide.partQuestions?.[String(part.number)];
     if (!nonempty(q)) errors.push(`reader-guide.json missing core question for Part ${part.number}`);
+    const s = guide.partSummaries?.[String(part.number)];
+    if (!s || !nonempty(s.establishes) || !nonempty(s.contrasts) || !nonempty(s.gaps) || !nonempty(s.bridge)) {
+      errors.push(`reader-guide.json missing complete partSummaries entry for Part ${part.number}`);
+    }
+  }
+  for (const k of Object.keys(guide.partSummaries ?? {})) {
+    if (!validPartKeys.has(k)) errors.push(`reader-guide.json partSummaries has unknown part key: ${k}`);
   }
 
   if (!Array.isArray(guide.readingModes) || guide.readingModes.length !== 3) {

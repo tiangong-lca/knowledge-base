@@ -14,7 +14,7 @@ checkPaths:
   - "knowledge/**"
   - "releases/**"
 lastReviewedAt: 2026-11-28
-lastReviewedCommit: 3985a3856f23d74d5aa8ccf80dc344f74b7d80cf
+lastReviewedCommit: b8cd7caa95f6a7ebd01dddd34c01e18591c64363
 ---
 
 # Editorial and living review protocol

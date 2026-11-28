@@ -104,6 +104,30 @@ export function compareReaderGuides(zhGuide, enGuide) {
   for (const [part, question] of Object.entries(enGuide?.partQuestions ?? {})) {
     if (typeof question !== 'string' || !question.trim()) diffs.push({ check: 'partQuestions', message: `reader guide: English part ${part} question is empty` });
   }
+  const partNums = keys(zhGuide);
+  const validParts = new Set(partNums);
+  for (const part of partNums) {
+    const enIntro = enGuide?.partIntroductions?.[part];
+    if (typeof enIntro !== 'string' || !enIntro.trim()) {
+      diffs.push({ check: 'partIntroductions', message: `reader guide: English part ${part} opening introduction is missing or empty` });
+    }
+    const zhSum = zhGuide?.partSummaries?.[part];
+    const enSum = enGuide?.partSummaries?.[part];
+    for (const field of ['establishes', 'contrasts', 'gaps', 'bridge']) {
+      if (typeof zhSum?.[field] !== 'string' || !zhSum[field].trim()) {
+        diffs.push({ check: 'partSummaries', message: `reader guide: Chinese part ${part} summary.${field} is missing or empty` });
+      }
+      if (typeof enSum?.[field] !== 'string' || !enSum[field].trim()) {
+        diffs.push({ check: 'partSummaries', message: `reader guide: English part ${part} summary.${field} is missing or empty` });
+      }
+    }
+  }
+  for (const k of Object.keys(enGuide?.partIntroductions ?? {})) {
+    if (!validParts.has(k)) diffs.push({ check: 'partIntroductions', message: `reader guide: English partIntroductions has unexpected key ${k}` });
+  }
+  for (const k of [...Object.keys(zhGuide?.partSummaries ?? {}), ...Object.keys(enGuide?.partSummaries ?? {})]) {
+    if (!validParts.has(k)) diffs.push({ check: 'partSummaries', message: `reader guide: partSummaries has unexpected key ${k}` });
+  }
   const ids = list => (list ?? []).map(item => item?.id);
   if (JSON.stringify(ids(zhGuide?.readingModes)) !== JSON.stringify(ids(enGuide?.readingModes))) {
     diffs.push({ check: 'readingModes', message: `reader guide: reading paths differ (zh ${ids(zhGuide?.readingModes).join(',')}, en ${ids(enGuide?.readingModes).join(',')})` });
